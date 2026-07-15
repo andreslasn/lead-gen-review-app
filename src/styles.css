@@ -224,13 +224,60 @@ input, textarea {
   font: 750 clamp(1rem, 1.1vw + 0.7rem, 1.36rem)/1.1 var(--font-body);
   letter-spacing: -0.035em;
 }
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
+.candidate-table-wrap {
+  max-height: 12rem;
+  overflow: auto;
+  border: 1px solid var(--concrete-100);
+  border-radius: 0.8rem;
 }
-.badges span, .snapshot-meta span {
+.candidate-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+.candidate-table th,
+.candidate-table td {
+  padding: 0.42rem 0.5rem;
+  border-bottom: 1px solid var(--concrete-60);
+  text-align: left;
+  vertical-align: top;
+}
+.candidate-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+  color: var(--black-60);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.candidate-table tr {
+  cursor: pointer;
+}
+.candidate-table tr:hover,
+.candidate-table tr.selected {
+  background: var(--blue-10);
+}
+.candidate-table tr.selected {
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+.candidate-table .candidate-email {
+  display: inline-block;
+  max-width: 15rem;
+  font: 750 0.86rem/1.2 var(--font-body);
+  letter-spacing: -0.02em;
+}
+.candidate-radio {
+  width: 1.35rem;
+  color: var(--primary);
+}
+.candidate-table small {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--black-40);
+}
+.snapshot-meta span {
   display: inline-flex;
   align-items: center;
   max-width: 100%;
@@ -260,39 +307,6 @@ mark {
   background: #faff01;
   color: var(--black-100);
   padding: 0.05rem 0.18rem;
-}
-
-.alternate-strip {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-}
-.alternate-strip button {
-  flex: 0 0 10.4rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 6px;
-  align-items: center;
-  min-height: 2.7rem;
-  padding: 0.45rem 0.55rem;
-  border: 1px solid var(--concrete-100);
-  background: white;
-  color: var(--black-80);
-  text-align: left;
-}
-.alternate-strip button.selected {
-  border-color: var(--primary);
-  background: var(--blue-10);
-  color: var(--primary);
-}
-.alternate-strip span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.alternate-strip small {
-  color: var(--black-60);
 }
 
 .reason-panel {

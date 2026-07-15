@@ -165,6 +165,35 @@ function evidenceHtml(link, fallback = "") {
   return `${prefix}<mark>${quote}</mark>${suffix}`;
 }
 
+function candidateRoleLabel(candidate) {
+  const text = [
+    candidate?.value,
+    candidate?.reason,
+    candidate?.evidence,
+    candidate?.contact_role,
+    candidate?.owner_name,
+  ].join(" ").toLowerCase();
+  const classification = String(candidate?.classification || "").toLowerCase();
+  const contactRole = String(candidate?.contact_role || "").toLowerCase();
+  if (/(recept|prescription|rx|repeat)/i.test(text) || contactRole.includes("prescription")) return "Prescription/refill";
+  if (classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
+  if (classification.includes("clinic") || contactRole.includes("clinic")) return "Clinic contact";
+  if (classification.includes("generic")) return "Generic mailbox";
+  if (classification.includes("third") || classification.includes("directory") || classification.includes("webmaster")) return "Not clinic-owned";
+  return "Unclear";
+}
+
+function candidateSourceLabel(candidate, item) {
+  const source = normalizeHost(candidate?.source_url || candidate?.evidence_links?.[0]?.source_url || item?.website || "");
+  if (item?.source_coverage_status === "verified_official") return source ? `Official · ${source}` : "Official";
+  return source || "Source";
+}
+
+function candidateEvidenceCount(candidate) {
+  const count = candidate?.evidence_links?.length || 0;
+  return count ? `${count} evidence` : "Evidence";
+}
+
 const App = {
   setup() {
     const db = ref(null);
@@ -236,7 +265,11 @@ const App = {
       return counts;
     });
     const currentItem = computed(() => filteredQueue.value[currentIndex.value] || null);
-    const candidates = computed(() => clinic.value?.candidates || []);
+    const candidates = computed(() => {
+      const raw = clinic.value?.candidates || [];
+      const validEmails = raw.filter((candidate) => String(candidate?.value || "").includes("@"));
+      return validEmails.length ? validEmails : raw;
+    });
     const selectedCandidate = computed(() => candidates.value[selectedCandidateIndex.value] || candidates.value[0] || currentItem.value?.best_candidate || null);
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
@@ -371,6 +404,15 @@ const App = {
         decision_duration_ms: Date.now() - itemStartedAt.value,
         queue_lane: currentItem.value?.lane || null,
         selected_candidate_rank: selectedCandidateIndex.value + 1,
+        selected_candidate_role_guess: candidateRoleLabel(candidate || {}),
+        candidate_options: candidates.value.map((option, index) => ({
+          id: option.id || null,
+          value: option.value || "",
+          rank: index + 1,
+          role_guess: candidateRoleLabel(option),
+          source_url: option.source_url || option.evidence_links?.[0]?.source_url || null,
+          selected: index === selectedCandidateIndex.value,
+        })),
       };
       const status = decisionType === "rejected" ? "needs_review" : decisionType === "no_email" ? "no_email" : "confirmed";
       await persistDecisionAndState(decision, status, decision?.is_primary ? decision.id : null, reasonCode, previousState);
@@ -555,10 +597,11 @@ const App = {
           event.preventDefault();
           rejectWithReason(reason);
         }
-        if (key === "escape") pendingReject.value = false;
+      if (key === "escape") pendingReject.value = false;
         return;
       }
       if (event.key === "1") saveDecision("confirmed");
+      if (key === "enter") saveDecision("confirmed");
       if (event.key === "2") pendingReject.value = true;
       if (event.key === "3") markNoPublicEmail();
       if (key === "j") moveCandidate(1);
@@ -617,6 +660,9 @@ const App = {
       lastExportAt,
       DECISION_REASON_CODES,
       safeText,
+      candidateRoleLabel,
+      candidateSourceLabel,
+      candidateEvidenceCount,
       stateLabel,
       visibleBackupReminder,
       selectCandidate,
@@ -655,31 +701,27 @@ const App = {
           <p class="clinic-address">{{ clinic.clinic.address }}</p>
 
           <section class="candidate-card">
-            <div class="candidate-header">
-              <div>
-                <p class="label">Top candidate</p>
-                <p class="candidate-email">{{ selectedCandidate?.value || 'No email candidate' }}</p>
-              </div>
+            <p class="label">Email candidates</p>
+            <div v-if="candidates.length" class="candidate-table-wrap">
+              <table class="candidate-table">
+                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Source</th></tr></thead>
+                <tbody>
+                  <tr v-for="(candidate, index) in candidates" :key="candidate.id || candidate.value || index" :class="{selected:index===selectedCandidateIndex}" @click="selectCandidate(index)" @dblclick="saveDecision('confirmed')">
+                    <td class="candidate-radio">{{ index === selectedCandidateIndex ? '●' : '○' }}</td>
+                    <td><span class="candidate-email">{{ candidate.value }}</span></td>
+                    <td>{{ candidateRoleLabel(candidate) }}</td>
+                    <td><span>{{ candidateSourceLabel(candidate, currentItem) }}</span><small>{{ candidateEvidenceCount(candidate) }}</small></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="badges">
-              <span>{{ selectedCandidate?.classification || 'unknown' }}</span>
-              <span>{{ selectedCandidate?.verification_status || 'unverified' }}</span>
-              <span>{{ selectedCandidate?.usable_contact ? 'machine usable' : 'review' }}</span>
-              <span>{{ clinic.clinic.source_coverage_status || currentItem.source_coverage_status }}</span>
-            </div>
+            <p v-else class="muted">No email candidate packaged for this clinic.</p>
             <p class="candidate-reason">{{ selectedCandidate?.reason || selectedCandidate?.evidence || 'No machine reason recorded.' }}</p>
           </section>
 
           <section class="excerpt-card">
             <p class="label">Evidence excerpt</p>
             <div class="excerpt" v-html="evidenceBody"></div>
-          </section>
-
-          <section v-if="candidates.length > 1" class="alternate-strip" aria-label="Alternate candidates">
-            <button v-for="(candidate, index) in candidates" :key="candidate.id" :class="{selected:index===selectedCandidateIndex}" @click="selectCandidate(index)">
-              <strong>{{ index + 1 }}</strong>
-              <span>{{ candidate.value }}</span>
-            </button>
           </section>
 
           <section v-if="pendingReject" class="reason-panel">
