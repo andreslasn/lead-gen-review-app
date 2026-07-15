@@ -27,7 +27,13 @@ thead { position:sticky; top:0; z-index:1; background:#f9fafb; }
 th,td { padding:12px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
 th { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.05em; }
 tbody tr { cursor:pointer; } tbody tr:hover td { background:#f8fbff; }
-td strong,td small { display:block; } small { color:var(--muted); }
+tbody tr.data-row { height:92px; }
+tbody tr.spacer-row { cursor:default; }
+tbody tr.spacer-row td { padding:0; border:0; background:transparent; }
+td strong,td small { display:block; }
+td strong,td small,td span { overflow:hidden; text-overflow:ellipsis; }
+td strong { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+td small { color:var(--muted); white-space:nowrap; }
 .pill { display:inline-flex; padding:3px 8px; border-radius:999px; background:#edf1f5; font-size:12px; font-weight:850; }
 .pill.confirmed { background:#e8f7ef; color:var(--ok); }.pill.needs_review { background:#fff6df; color:#845500; }.pill.no_email { background:#edf1f5; color:#435261; }.pill.excluded { background:#fff0ef; color:var(--danger); }
 .review-grid { display:grid; grid-template-columns:390px minmax(0,1fr); gap:16px; align-items:start; }

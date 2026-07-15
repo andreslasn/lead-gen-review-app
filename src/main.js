@@ -1,4 +1,4 @@
-import { createApp, computed, onMounted, ref, watch } from "vue";
+import { createApp, computed, onMounted, onUnmounted, ref, watch } from "vue";
 import "./styles.css";
 
 const DB_NAME = "lead-gen-clinic-review";
@@ -7,6 +7,8 @@ const REVIEW_FORMAT = "lead-gen-clinic-review";
 const SCHEMA_VERSION = 1;
 const STATES = ["needs_review", "confirmed", "no_email", "not_processed", "excluded"];
 const REASON_CODES = ["wrong_clinic", "third_party", "invalid", "outdated", "duplicate", "other"];
+const QUEUE_ROW_HEIGHT = 92;
+const QUEUE_OVERSCAN_ROWS = 12;
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -122,6 +124,9 @@ const App = {
     const saveStatus = ref("Loading");
     const error = ref("");
     const lastExportAt = ref(localStorage.getItem("review.lastExportAt") || "");
+    const queueScroller = ref(null);
+    const queueScrollTop = ref(0);
+    const queueViewportHeight = ref(650);
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
     const decisionsByClinic = computed(() => {
@@ -160,6 +165,14 @@ const App = {
         })
         .sort((a, b) => (b.priority || 0) - (a.priority || 0) || a.name.localeCompare(b.name));
     });
+    const visibleQueueStart = computed(() => Math.max(0, Math.floor(queueScrollTop.value / QUEUE_ROW_HEIGHT) - QUEUE_OVERSCAN_ROWS));
+    const visibleQueueEnd = computed(() => Math.min(
+      filteredQueue.value.length,
+      Math.ceil((queueScrollTop.value + queueViewportHeight.value) / QUEUE_ROW_HEIGHT) + QUEUE_OVERSCAN_ROWS,
+    ));
+    const visibleQueue = computed(() => filteredQueue.value.slice(visibleQueueStart.value, visibleQueueEnd.value));
+    const queueTopSpacer = computed(() => visibleQueueStart.value * QUEUE_ROW_HEIGHT);
+    const queueBottomSpacer = computed(() => Math.max(0, (filteredQueue.value.length - visibleQueueEnd.value) * QUEUE_ROW_HEIGHT));
     const selectedCandidate = computed(() => {
       const candidates = clinic.value?.candidates || [];
       return candidates.find((item) => item.id === selectedCandidateId.value) || candidates[0] || null;
@@ -225,13 +238,33 @@ const App = {
     }
 
     function openClinic(id) {
-      localStorage.setItem("review.lastQueueScroll", String(window.scrollY));
+      localStorage.setItem("review.lastQueueScroll", String(queueScroller.value?.scrollTop || 0));
       window.location.hash = `#/clinics/${encodeURIComponent(id)}`;
     }
 
     function backToQueue() {
       window.location.hash = "#/";
-      requestAnimationFrame(() => window.scrollTo(0, Number(localStorage.getItem("review.lastQueueScroll") || 0)));
+      requestAnimationFrame(() => {
+        if (!queueScroller.value) return;
+        const savedScrollTop = Number(localStorage.getItem("review.lastQueueScroll") || 0);
+        queueScroller.value.scrollTop = savedScrollTop;
+        queueScrollTop.value = savedScrollTop;
+      });
+    }
+
+    function updateQueueViewport() {
+      queueViewportHeight.value = queueScroller.value?.clientHeight || 650;
+    }
+
+    function onQueueScroll() {
+      queueScrollTop.value = queueScroller.value?.scrollTop || 0;
+    }
+
+    function resetQueueScroll() {
+      requestAnimationFrame(() => {
+        if (queueScroller.value) queueScroller.value.scrollTop = 0;
+        queueScrollTop.value = 0;
+      });
     }
 
     function selectCandidate(candidate) {
@@ -426,15 +459,29 @@ const App = {
       if (event.key === "Enter") saveAndNext();
     }
 
-    watch(search, (value) => localStorage.setItem("review.filter.search", value));
-    watch(selectedState, (value) => localStorage.setItem("review.filter.state", value));
+    watch(search, (value) => {
+      localStorage.setItem("review.filter.search", value);
+      resetQueueScroll();
+    });
+    watch(selectedState, (value) => {
+      localStorage.setItem("review.filter.state", value);
+      resetQueueScroll();
+    });
     watch(reviewer, (value) => localStorage.setItem("review.reviewer", value));
     watch(selectedCandidate, (value) => { editValue.value = value?.value || ""; });
 
     onMounted(() => {
       window.addEventListener("hashchange", loadRoute);
       window.addEventListener("keydown", onKey);
+      window.addEventListener("resize", updateQueueViewport);
       init();
+      requestAnimationFrame(updateQueueViewport);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("hashchange", loadRoute);
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", updateQueueViewport);
     });
 
     return {
@@ -443,6 +490,10 @@ const App = {
       clinic,
       queue,
       filteredQueue,
+      visibleQueue,
+      queueScroller,
+      queueTopSpacer,
+      queueBottomSpacer,
       counts,
       selectedState,
       search,
@@ -464,6 +515,7 @@ const App = {
       safeText,
       highlightEvidence,
       visibleBackupReminder,
+      onQueueScroll,
       openClinic,
       backToQueue,
       selectCandidate,
@@ -507,19 +559,21 @@ const App = {
         <div class="filters">
           <input v-model="search" type="search" placeholder="Search clinic, registry ID, city, domain, email…" />
         </div>
-        <div class="table-wrap">
+        <div class="table-wrap" ref="queueScroller" @scroll="onQueueScroll">
           <table>
             <thead>
               <tr><th>Clinic / location</th><th>Best candidate</th><th>Evidence</th><th>Scores</th><th>Status</th></tr>
             </thead>
             <tbody>
-              <tr v-for="item in filteredQueue" :key="item.id" @click="openClinic(item.id)">
+              <tr v-if="queueTopSpacer" class="spacer-row" aria-hidden="true"><td colspan="5" :style="{height: queueTopSpacer + 'px'}"></td></tr>
+              <tr v-for="item in visibleQueue" :key="item.id" class="data-row" @click="openClinic(item.id)">
                 <td><strong>{{ item.name }}</strong><small>{{ safeText(item.registry_id) }} · {{ safeText(item.city) }}{{ item.region ? ', ' + item.region : '' }}</small><small>{{ safeText(item.address) }}</small></td>
                 <td><strong>{{ item.best_candidate?.value || '—' }}</strong><small>{{ item.candidate_email_count }} candidate(s) · {{ item.best_candidate?.classification || item.machine_status }}</small></td>
                 <td><span>{{ item.domain || item.website || item.source_coverage_status || '—' }}</span><small>{{ item.best_candidate?.source_url || 'Open review for source evidence' }}</small></td>
                 <td><span>Lead {{ item.lead_score || 0 }}</span><small>Quality {{ item.data_quality_score || 0 }} · hard {{ item.scrape_difficulty_score || 0 }}</small></td>
                 <td><span class="pill" :class="item.status">{{ stateLabel(item.status) }}</span><small v-if="item.local_decision_count">{{ item.local_decision_count }} local decision(s)</small></td>
               </tr>
+              <tr v-if="queueBottomSpacer" class="spacer-row" aria-hidden="true"><td colspan="5" :style="{height: queueBottomSpacer + 'px'}"></td></tr>
             </tbody>
           </table>
         </div>
