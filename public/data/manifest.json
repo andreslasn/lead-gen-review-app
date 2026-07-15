@@ -1,0 +1,23 @@
+{
+  "format": "lead-gen-review-package",
+  "schema_version": 1,
+  "dataset_id": "hu-review-20260715T214414Z",
+  "dataset_version": "2026-07-15T21:44:14.621118+00:00",
+  "base_data_hash": "sha256:b3413c64ce3f22f4daf55f30a296fcbcc42f64282d5002366fbee554413aa629",
+  "country": "HU",
+  "generated_at": "2026-07-15T21:44:14.621118+00:00",
+  "source_commit": "beb136ebc046",
+  "counts": {
+    "clinics": 6366,
+    "candidate_emails": 15827,
+    "states": {
+      "needs_review": 5928,
+      "not_processed": 438
+    }
+  },
+  "files": {
+    "queue": "queue.json",
+    "clinics": "clinics/{clinic_id}.json",
+    "canonical_review_state": "canonical-review-state.json"
+  }
+}

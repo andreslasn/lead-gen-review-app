@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lead Gen clinic review export",
+  "type": "object",
+  "required": [
+    "format",
+    "schema_version",
+    "dataset_id",
+    "dataset_version",
+    "base_data_hash",
+    "reviewer",
+    "exported_at",
+    "decisions",
+    "clinic_states",
+    "audit_events"
+  ],
+  "properties": {
+    "format": {
+      "const": "lead-gen-clinic-review"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "dataset_version": {
+      "type": "string"
+    },
+    "base_data_hash": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "exported_at": {
+      "type": "string"
+    },
+    "app_build": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "decisions": {
+      "type": "array"
+    },
+    "clinic_states": {
+      "type": "array"
+    },
+    "audit_events": {
+      "type": "array"
+    }
+  }
+}
