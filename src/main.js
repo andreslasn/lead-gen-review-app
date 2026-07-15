@@ -241,16 +241,6 @@ const App = {
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
-    const progress = computed(() => ({
-      current: filteredQueue.value.length ? currentIndex.value + 1 : 0,
-      total: filteredQueue.value.length,
-      pct: filteredQueue.value.length ? Math.round(((currentIndex.value + 1) / filteredQueue.value.length) * 100) : 0,
-    }));
-    const sessionRate = computed(() => {
-      const elapsedHours = Math.max((Date.now() - sessionStartedAt.value) / 3600000, 1 / 3600);
-      return Math.round(sessionDecisionCount.value / elapsedHours);
-    });
-    const confidencePct = computed(() => Math.round(Number(selectedCandidate.value?.confidence || 0) * 100));
     const snapshotTitle = computed(() => selectedEvidence.value?.title || selectedEvidence.value?.source_url || selectedCandidate.value?.source_url || "Cached evidence");
     const evidenceBody = computed(() => evidenceHtml(selectedEvidence.value, selectedCandidate.value?.evidence || ""));
 
@@ -606,8 +596,6 @@ const App = {
       laneCounts,
       selectedLane,
       laneLabel,
-      progress,
-      sessionRate,
       reviewer,
       search,
       candidates,
@@ -618,7 +606,6 @@ const App = {
       evidencePane,
       evidenceTab,
       snapshotTitle,
-      confidencePct,
       currentClinicState,
       currentClinicDecisions,
       pendingReject,
@@ -646,24 +633,7 @@ const App = {
   },
   template: `
     <div class="app-shell">
-      <header class="topbar">
-        <div class="brand-block">
-          <p class="eyebrow">Lead review</p>
-          <h1>Clinic email validation</h1>
-        </div>
-        <div class="top-actions">
-          <label class="reviewer-field">Reviewer <input v-model="reviewer" autocomplete="off" /></label>
-          <button class="ghost" @click="exportProgress">Export</button>
-          <label class="ghost import-control">Import<input type="file" accept="application/json" @change="importProgress" /></label>
-        </div>
-      </header>
-
       <section class="queue-bar">
-        <div class="progress-card">
-          <span class="progress-number">{{ progress.current }} / {{ progress.total }}</span>
-          <span class="muted">{{ progress.pct }}% · {{ sessionRate }}/hour this session</span>
-          <div class="progress-track"><span :style="{width: progress.pct + '%'}"></span></div>
-        </div>
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
           <button v-for="lane in ['review','auto_confirm','auto_suppress','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
@@ -674,7 +644,6 @@ const App = {
 
       <div v-if="error" class="alert error">{{ error }}</div>
       <div v-if="visibleBackupReminder()" class="alert">Export a backup soon. Browser storage is local to this browser profile.</div>
-      <div class="statusline">{{ saveStatus }}</div>
 
       <main v-if="currentItem && clinic" class="review-layout">
         <section class="decision-pane">
@@ -691,7 +660,6 @@ const App = {
                 <p class="label">Top candidate</p>
                 <p class="candidate-email">{{ selectedCandidate?.value || 'No email candidate' }}</p>
               </div>
-              <span class="score">{{ confidencePct }}%</span>
             </div>
             <div class="badges">
               <span>{{ selectedCandidate?.classification || 'unknown' }}</span>
@@ -711,7 +679,6 @@ const App = {
             <button v-for="(candidate, index) in candidates" :key="candidate.id" :class="{selected:index===selectedCandidateIndex}" @click="selectCandidate(index)">
               <strong>{{ index + 1 }}</strong>
               <span>{{ candidate.value }}</span>
-              <small>{{ Math.round((candidate.confidence || 0) * 100) }}%</small>
             </button>
           </section>
 
@@ -805,6 +772,8 @@ const App = {
         <h2>No leads in this lane.</h2>
         <p>Change the lane filter or search query.</p>
       </main>
+
+      <button class="floating-export" @click="exportProgress" :title="saveStatus">Export .json</button>
     </div>
   `,
 };
