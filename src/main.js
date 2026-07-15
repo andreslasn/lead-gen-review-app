@@ -1,4 +1,4 @@
-import { createApp, computed, onMounted, onUnmounted, ref, watch } from "vue";
+import { createApp, computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import "./styles.css";
 
 const DB_NAME = "lead-gen-clinic-review";
@@ -6,9 +6,15 @@ const DB_VERSION = 1;
 const REVIEW_FORMAT = "lead-gen-clinic-review";
 const SCHEMA_VERSION = 1;
 const STATES = ["needs_review", "confirmed", "no_email", "not_processed", "excluded"];
-const REASON_CODES = ["wrong_clinic", "third_party", "invalid", "outdated", "duplicate", "other"];
-const QUEUE_ROW_HEIGHT = 92;
-const QUEUE_OVERSCAN_ROWS = 12;
+const DECISION_REASON_CODES = [
+  { key: "w", code: "wrong_clinic", label: "Wrong clinic" },
+  { key: "t", code: "third_party", label: "Third party" },
+  { key: "o", code: "outdated", label: "Outdated" },
+  { key: "d", code: "duplicate", label: "Duplicate" },
+  { key: "i", code: "invalid", label: "Invalid" },
+  { key: "x", code: "other", label: "Other" },
+];
+const PREFETCH_COUNT = 3;
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -38,6 +44,14 @@ function getAll(db, storeName) {
   });
 }
 
+function get(db, storeName, key) {
+  return new Promise((resolve, reject) => {
+    const request = txStore(db, storeName).get(key);
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result || null);
+  });
+}
+
 function put(db, storeName, value) {
   return new Promise((resolve, reject) => {
     const request = txStore(db, storeName, "readwrite").put(value);
@@ -46,11 +60,11 @@ function put(db, storeName, value) {
   });
 }
 
-function get(db, storeName, key) {
+function deleteValue(db, storeName, key) {
   return new Promise((resolve, reject) => {
-    const request = txStore(db, storeName).get(key);
+    const request = txStore(db, storeName, "readwrite").delete(key);
     request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result || null);
+    request.onsuccess = () => resolve(true);
   });
 }
 
@@ -68,6 +82,26 @@ async function sha256(text) {
   return `sha256:${Array.from(new Uint8Array(digest)).map((byte) => byte.toString(16).padStart(2, "0")).join("")}`;
 }
 
+function safeText(value) {
+  return value == null || value === "" ? "—" : String(value);
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function routeClinicId() {
+  return (window.location.hash || "").match(/^#\/clinics\/([^/?]+)/)?.[1] || null;
+}
+
+function normalizeHost(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "").toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
 function stateLabel(value) {
   return {
     needs_review: "Needs review",
@@ -75,25 +109,43 @@ function stateLabel(value) {
     no_email: "No email",
     not_processed: "Not processed",
     excluded: "Excluded",
+  }[value] || value || "Needs review";
+}
+
+function laneLabel(value) {
+  return {
+    review: "Review",
+    auto_confirm: "Auto-confirm audit",
+    auto_suppress: "Auto-suppress",
+    no_email: "No email",
+    all: "All",
   }[value] || value;
 }
 
-function safeText(value) {
-  return value == null || value === "" ? "—" : String(value);
+function candidateLane(item) {
+  const candidate = item.best_candidate || {};
+  const confidence = Number(candidate.confidence || 0);
+  const sourceRole = item.source_coverage_status || "";
+  const sourceHost = normalizeHost(candidate.source_url || item.website || "");
+  const itemHost = normalizeHost(item.website || "");
+  const sameDomain = Boolean(sourceHost && itemHost && sourceHost === itemHost);
+
+  if (!candidate.value) return "no_email";
+  if (
+    candidate.usable_contact
+    && confidence >= 0.9
+    && ["verified_official", "official", "official_verified"].includes(sourceRole)
+    && (sameDomain || candidate.verification_status === "corroborated" || candidate.association_type === "clinic_contact")
+  ) {
+    return "auto_confirm";
+  }
+  if (!candidate.usable_contact && confidence < 0.4) return "auto_suppress";
+  if (["third_party", "directory_operator", "webmaster"].includes(candidate.classification)) return "auto_suppress";
+  return "review";
 }
 
-function routeFromHash() {
-  const hash = window.location.hash || "#/";
-  const match = hash.match(/^#\/clinics\/([^/?]+)/);
-  return match ? { page: "clinic", clinicId: decodeURIComponent(match[1]) } : { page: "queue" };
-}
-
-function highlightEvidence(link) {
-  if (!link) return "";
-  const prefix = escapeHtml(link.prefix_text || "");
-  const quote = escapeHtml(link.exact_quote || "");
-  const suffix = escapeHtml(link.suffix_text || "");
-  return `${prefix}<mark>${quote}</mark>${suffix}`;
+function lanePriority(lane) {
+  return { review: 4, auto_confirm: 3, no_email: 2, auto_suppress: 1 }[lane] || 0;
 }
 
 function escapeHtml(value) {
@@ -105,52 +157,64 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function evidenceHtml(link, fallback = "") {
+  if (!link) return escapeHtml(fallback || "No compact evidence was packaged for this candidate.");
+  const prefix = escapeHtml(link.prefix_text || "");
+  const quote = escapeHtml(link.exact_quote || "");
+  const suffix = escapeHtml(link.suffix_text || "");
+  return `${prefix}<mark>${quote}</mark>${suffix}`;
+}
+
 const App = {
   setup() {
     const db = ref(null);
-    const route = ref(routeFromHash());
     const manifest = ref(null);
     const queue = ref([]);
     const clinic = ref(null);
+    const clinicCache = ref({});
     const decisions = ref([]);
     const localStates = ref([]);
-    const selectedState = ref(localStorage.getItem("review.filter.state") || "needs_review");
-    const search = ref(localStorage.getItem("review.filter.search") || "");
     const reviewer = ref(localStorage.getItem("review.reviewer") || "reviewer");
-    const selectedCandidateId = ref(null);
-    const reasonCode = ref("");
-    const note = ref("");
-    const editValue = ref("");
+    const search = ref(localStorage.getItem("review.filter.search") || "");
+    const selectedLane = ref(localStorage.getItem("review.filter.lane") || "review");
+    const currentIndex = ref(0);
+    const selectedCandidateIndex = ref(0);
+    const evidenceTab = ref("snapshot");
     const saveStatus = ref("Loading");
     const error = ref("");
+    const pendingReject = ref(false);
+    const editMode = ref(false);
+    const editValue = ref("");
+    const note = ref("");
     const lastExportAt = ref(localStorage.getItem("review.lastExportAt") || "");
-    const queueScroller = ref(null);
-    const queueScrollTop = ref(0);
-    const queueViewportHeight = ref(650);
+    const lastAction = ref(null);
+    const sessionStartedAt = ref(Date.now());
+    const sessionDecisionCount = ref(0);
+    const itemStartedAt = ref(Date.now());
+    const evidencePane = ref(null);
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
     const decisionsByClinic = computed(() => {
       const grouped = {};
-      for (const decision of decisions.value) {
-        (grouped[decision.clinic_id] ||= []).push(decision);
-      }
+      for (const decision of decisions.value) (grouped[decision.clinic_id] ||= []).push(decision);
       return grouped;
     });
-    const queueWithLocalState = computed(() => queue.value.map((item) => ({
-      ...item,
-      status: localStateByClinic.value[item.id]?.status || item.status,
-      reviewed_at: localStateByClinic.value[item.id]?.reviewed_at || item.reviewed_at,
-      local_decision_count: (decisionsByClinic.value[item.id] || []).length,
-    })));
-    const counts = computed(() => {
-      const output = Object.fromEntries(STATES.map((state) => [state, 0]));
-      for (const item of queueWithLocalState.value) output[item.status] = (output[item.status] || 0) + 1;
-      return output;
-    });
+    const preparedQueue = computed(() => queue.value.map((item) => {
+      const localState = localStateByClinic.value[item.id];
+      const lane = candidateLane(item);
+      return {
+        ...item,
+        lane,
+        status: localState?.status || item.status,
+        reviewed_at: localState?.reviewed_at || item.reviewed_at,
+        local_decision_count: (decisionsByClinic.value[item.id] || []).length,
+      };
+    }));
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
-      return queueWithLocalState.value
-        .filter((item) => selectedState.value === "all" || item.status === selectedState.value)
+      return preparedQueue.value
+        .filter((item) => selectedLane.value === "all" || item.lane === selectedLane.value)
+        .filter((item) => item.status === "needs_review" || selectedLane.value === "all")
         .filter((item) => {
           if (!needle) return true;
           return [
@@ -158,28 +222,37 @@ const App = {
             item.registry_id,
             item.city,
             item.region,
+            item.address,
             item.domain,
             item.website,
             item.best_candidate?.value,
           ].some((value) => String(value || "").toLowerCase().includes(needle));
         })
-        .sort((a, b) => (b.priority || 0) - (a.priority || 0) || a.name.localeCompare(b.name));
+        .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
     });
-    const visibleQueueStart = computed(() => Math.max(0, Math.floor(queueScrollTop.value / QUEUE_ROW_HEIGHT) - QUEUE_OVERSCAN_ROWS));
-    const visibleQueueEnd = computed(() => Math.min(
-      filteredQueue.value.length,
-      Math.ceil((queueScrollTop.value + queueViewportHeight.value) / QUEUE_ROW_HEIGHT) + QUEUE_OVERSCAN_ROWS,
-    ));
-    const visibleQueue = computed(() => filteredQueue.value.slice(visibleQueueStart.value, visibleQueueEnd.value));
-    const queueTopSpacer = computed(() => visibleQueueStart.value * QUEUE_ROW_HEIGHT);
-    const queueBottomSpacer = computed(() => Math.max(0, (filteredQueue.value.length - visibleQueueEnd.value) * QUEUE_ROW_HEIGHT));
-    const selectedCandidate = computed(() => {
-      const candidates = clinic.value?.candidates || [];
-      return candidates.find((item) => item.id === selectedCandidateId.value) || candidates[0] || null;
+    const laneCounts = computed(() => {
+      const counts = { review: 0, auto_confirm: 0, auto_suppress: 0, no_email: 0, all: preparedQueue.value.length };
+      for (const item of preparedQueue.value) counts[item.lane] = (counts[item.lane] || 0) + 1;
+      return counts;
     });
+    const currentItem = computed(() => filteredQueue.value[currentIndex.value] || null);
+    const candidates = computed(() => clinic.value?.candidates || []);
+    const selectedCandidate = computed(() => candidates.value[selectedCandidateIndex.value] || candidates.value[0] || currentItem.value?.best_candidate || null);
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
+    const progress = computed(() => ({
+      current: filteredQueue.value.length ? currentIndex.value + 1 : 0,
+      total: filteredQueue.value.length,
+      pct: filteredQueue.value.length ? Math.round(((currentIndex.value + 1) / filteredQueue.value.length) * 100) : 0,
+    }));
+    const sessionRate = computed(() => {
+      const elapsedHours = Math.max((Date.now() - sessionStartedAt.value) / 3600000, 1 / 3600);
+      return Math.round(sessionDecisionCount.value / elapsedHours);
+    });
+    const confidencePct = computed(() => Math.round(Number(selectedCandidate.value?.confidence || 0) * 100));
+    const snapshotTitle = computed(() => selectedEvidence.value?.title || selectedEvidence.value?.source_url || selectedCandidate.value?.source_url || "Cached evidence");
+    const evidenceBody = computed(() => evidenceHtml(selectedEvidence.value, selectedCandidate.value?.evidence || ""));
 
     async function init() {
       try {
@@ -187,7 +260,10 @@ const App = {
         await loadStaticData();
         await hydrateLocal();
         await mergeCanonicalState();
-        await loadRoute();
+        await hydrateLocal();
+        const routeId = routeClinicId();
+        const routeIndex = routeId ? filteredQueue.value.findIndex((item) => item.id === decodeURIComponent(routeId)) : -1;
+        await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
         saveStatus.value = "Ready";
         if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
       } catch (err) {
@@ -211,122 +287,123 @@ const App = {
       localStates.value = await getAll(db.value, "clinic_states");
     }
 
-    async function mergeCanonicalState() {
-      try {
-        const response = await fetch("data/canonical-review-state.json", { cache: "no-cache" });
-        if (!response.ok) return;
-        const payload = await response.json();
-        await mergeImport(payload, { silent: true });
-      } catch (_) {
-        return;
-      }
+    async function loadClinic(clinicId) {
+      if (!clinicId) return null;
+      if (clinicCache.value[clinicId]) return clinicCache.value[clinicId];
+      const response = await fetch(`data/clinics/${encodeURIComponent(clinicId)}.json`, { cache: "no-cache" });
+      if (!response.ok) throw new Error("Clinic review file not found.");
+      const payload = await response.json();
+      clinicCache.value = { ...clinicCache.value, [clinicId]: payload };
+      return payload;
     }
 
-    async function loadRoute() {
-      route.value = routeFromHash();
-      if (route.value.page !== "clinic") {
+    async function setIndex(index, { updateHash = true } = {}) {
+      if (!filteredQueue.value.length) {
         clinic.value = null;
         return;
       }
-      const response = await fetch(`data/clinics/${encodeURIComponent(route.value.clinicId)}.json`, { cache: "no-cache" });
-      if (!response.ok) throw new Error("Clinic review file not found.");
-      clinic.value = await response.json();
-      selectedCandidateId.value = clinic.value.candidates?.[0]?.id || null;
-      editValue.value = selectedCandidate.value?.value || "";
-      reasonCode.value = "";
+      currentIndex.value = clamp(index, 0, filteredQueue.value.length - 1);
+      const item = filteredQueue.value[currentIndex.value];
+      pendingReject.value = false;
+      editMode.value = false;
       note.value = "";
+      selectedCandidateIndex.value = 0;
+      evidenceTab.value = "snapshot";
+      clinic.value = await loadClinic(item.id);
+      editValue.value = selectedCandidate.value?.value || "";
+      itemStartedAt.value = Date.now();
+      if (updateHash) window.history.replaceState(null, "", `#/clinics/${encodeURIComponent(item.id)}`);
+      await nextTick();
+      scrollEvidenceToHighlight();
+      prefetchUpcoming();
     }
 
-    function openClinic(id) {
-      localStorage.setItem("review.lastQueueScroll", String(queueScroller.value?.scrollTop || 0));
-      window.location.hash = `#/clinics/${encodeURIComponent(id)}`;
+    function prefetchUpcoming() {
+      for (let offset = 1; offset <= PREFETCH_COUNT; offset += 1) {
+        const next = filteredQueue.value[currentIndex.value + offset];
+        if (next && !clinicCache.value[next.id]) loadClinic(next.id).catch(() => {});
+      }
     }
 
-    function backToQueue() {
-      window.location.hash = "#/";
-      requestAnimationFrame(() => {
-        if (!queueScroller.value) return;
-        const savedScrollTop = Number(localStorage.getItem("review.lastQueueScroll") || 0);
-        queueScroller.value.scrollTop = savedScrollTop;
-        queueScrollTop.value = savedScrollTop;
-      });
+    function scrollEvidenceToHighlight() {
+      const mark = evidencePane.value?.querySelector("mark");
+      if (mark) mark.scrollIntoView({ block: "center" });
+      else if (evidencePane.value) evidencePane.value.scrollTop = 0;
     }
 
-    function updateQueueViewport() {
-      queueViewportHeight.value = queueScroller.value?.clientHeight || 650;
-    }
-
-    function onQueueScroll() {
-      queueScrollTop.value = queueScroller.value?.scrollTop || 0;
-    }
-
-    function resetQueueScroll() {
-      requestAnimationFrame(() => {
-        if (queueScroller.value) queueScroller.value.scrollTop = 0;
-        queueScrollTop.value = 0;
-      });
-    }
-
-    function selectCandidate(candidate) {
-      selectedCandidateId.value = candidate.id;
-      editValue.value = candidate.value;
+    function selectCandidate(index) {
+      selectedCandidateIndex.value = clamp(index, 0, Math.max(candidates.value.length - 1, 0));
+      editValue.value = selectedCandidate.value?.value || "";
+      pendingReject.value = false;
+      nextTick(scrollEvidenceToHighlight);
     }
 
     function moveCandidate(delta) {
-      const candidates = clinic.value?.candidates || [];
-      if (!candidates.length) return;
-      const current = Math.max(0, candidates.findIndex((item) => item.id === selectedCandidateId.value));
-      const next = Math.min(candidates.length - 1, Math.max(0, current + delta));
-      selectCandidate(candidates[next]);
+      if (!candidates.value.length) return;
+      selectCandidate(selectedCandidateIndex.value + delta);
     }
 
-    async function saveDecision(decisionType, overrides = {}) {
+    async function nextLead() {
+      await setIndex(currentIndex.value + 1);
+    }
+
+    async function previousLead() {
+      await setIndex(currentIndex.value - 1);
+    }
+
+    async function saveDecision(decisionType, { reasonCode = null, reviewedValue = null } = {}) {
       if (!clinic.value) return;
       const candidate = selectedCandidate.value;
-      const reviewedValue = (overrides.reviewed_value || editValue.value || candidate?.value || "").trim();
-      if (["confirmed", "edited_confirmed"].includes(decisionType) && !reviewedValue) {
+      const value = (reviewedValue || editValue.value || candidate?.value || "").trim();
+      if (["confirmed", "edited_confirmed"].includes(decisionType) && !value) {
         error.value = "A confirmed decision needs an email value.";
         return;
       }
+      const previousState = currentClinicState.value ? { ...currentClinicState.value } : null;
       const createdAt = nowIso();
-      const decision = {
+      const decision = decisionType === "no_email" ? null : {
         id: uuid(),
         clinic_id: clinic.value.clinic.id,
         contact_point_id: candidate?.id || null,
         decision: decisionType,
-        reviewed_value: reviewedValue || candidate?.value || "",
+        reviewed_value: value || candidate?.value || "",
         original_value: candidate?.value || null,
-        is_primary: decisionType !== "rejected" && Boolean(reviewedValue || candidate?.value),
-        reason_code: reasonCode.value || overrides.reason_code || null,
+        is_primary: decisionType !== "rejected" && Boolean(value || candidate?.value),
+        reason_code: reasonCode,
         note: note.value || null,
         reviewer_id: reviewer.value || "reviewer",
         source_dataset_id: manifest.value?.dataset_id || null,
         source_dataset_version: manifest.value?.dataset_version || null,
         supersedes_id: null,
         created_at: createdAt,
+        evidence_viewed: evidenceTab.value,
+        evidence_link_id: selectedEvidence.value?.id || null,
+        decision_duration_ms: Date.now() - itemStartedAt.value,
+        queue_lane: currentItem.value?.lane || null,
+        selected_candidate_rank: selectedCandidateIndex.value + 1,
       };
-      const status = decisionType === "rejected" ? "needs_review" : "confirmed";
-      await persistDecisionAndState(decision, status, decision.is_primary ? decision.id : null);
+      const status = decisionType === "rejected" ? "needs_review" : decisionType === "no_email" ? "no_email" : "confirmed";
+      await persistDecisionAndState(decision, status, decision?.is_primary ? decision.id : null, reasonCode, previousState);
+      pendingReject.value = false;
+      editMode.value = false;
+      sessionDecisionCount.value += 1;
+      saveStatus.value = `${stateLabel(status)} · press U to undo`;
+      if (status === "needs_review") await nextLead();
+      else await setIndex(currentIndex.value);
     }
 
-    async function saveClinicState(status, reason = "") {
-      if (!clinic.value) return;
-      await persistDecisionAndState(null, status, null, reason);
-    }
-
-    async function persistDecisionAndState(decision, status, primaryDecisionId = null, reason = "") {
-      saveStatus.value = "Saving locally";
+    async function persistDecisionAndState(decision, status, primaryDecisionId = null, reason = null, previousState = null) {
       error.value = "";
       const timestamp = nowIso();
       if (decision) await put(db.value, "decisions", decision);
-      const existing = localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state || {};
+      const existing = previousState || currentClinicState.value || {};
       const state = {
         clinic_id: clinic.value.clinic.id,
         status,
         primary_review_decision_id: primaryDecisionId || existing.primary_review_decision_id || null,
         assigned_to: existing.assigned_to || null,
         reviewer_id: reviewer.value || "reviewer",
-        reason_code: reasonCode.value || reason || null,
+        reason_code: reason || null,
         note: note.value || null,
         version: Number(existing.version || 0) + 1,
         reviewed_at: ["confirmed", "no_email", "excluded"].includes(status) ? timestamp : existing.reviewed_at || null,
@@ -338,21 +415,48 @@ const App = {
         type: decision ? `decision:${decision.decision}` : `state:${status}`,
         created_at: timestamp,
         reviewer_id: reviewer.value || "reviewer",
+        evidence_viewed: evidenceTab.value,
+        decision_duration_ms: Date.now() - itemStartedAt.value,
       };
       await put(db.value, "clinic_states", state);
       await put(db.value, "audit_events", event);
+      lastAction.value = {
+        decision_id: decision?.id || null,
+        state_clinic_id: state.clinic_id,
+        previous_state: previousState,
+        audit_event_id: event.id,
+      };
       await hydrateLocal();
-      saveStatus.value = `Saved locally · ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
     }
 
-    async function saveAndNext() {
+    async function undoLastAction() {
+      if (!lastAction.value || !db.value) return;
+      if (lastAction.value.decision_id) await deleteValue(db.value, "decisions", lastAction.value.decision_id);
+      if (lastAction.value.audit_event_id) await deleteValue(db.value, "audit_events", lastAction.value.audit_event_id);
+      if (lastAction.value.previous_state) await put(db.value, "clinic_states", lastAction.value.previous_state);
+      else await deleteValue(db.value, "clinic_states", lastAction.value.state_clinic_id);
       await hydrateLocal();
-      const currentId = clinic.value?.clinic?.id;
-      const items = filteredQueue.value;
-      const index = items.findIndex((item) => item.id === currentId);
-      const next = items[index + 1] || queueWithLocalState.value.find((item) => item.status === "needs_review" && item.id !== currentId);
-      if (next) openClinic(next.id);
-      else backToQueue();
+      saveStatus.value = "Undone";
+      const index = filteredQueue.value.findIndex((item) => item.id === lastAction.value.state_clinic_id);
+      lastAction.value = null;
+      if (index >= 0) await setIndex(index);
+    }
+
+    function rejectWithReason(reason) {
+      saveDecision("rejected", { reasonCode: reason.code });
+    }
+
+    async function markNoPublicEmail() {
+      await saveDecision("no_email", { reasonCode: "checked_no_public_email", reviewedValue: "" });
+    }
+
+    async function excludeCurrent() {
+      if (!clinic.value) return;
+      const previousState = currentClinicState.value ? { ...currentClinicState.value } : null;
+      await persistDecisionAndState(null, "excluded", null, "out_of_scope", previousState);
+      sessionDecisionCount.value += 1;
+      saveStatus.value = "Excluded · press U to undo";
+      await setIndex(currentIndex.value);
     }
 
     async function exportProgress() {
@@ -385,7 +489,7 @@ const App = {
       URL.revokeObjectURL(link.href);
       lastExportAt.value = exportedAt;
       localStorage.setItem("review.lastExportAt", exportedAt);
-      saveStatus.value = `Exported ${payload.decisions.length} decisions · ${payload.checksum.slice(0, 18)}`;
+      saveStatus.value = `Exported ${payload.decisions.length} decisions`;
     }
 
     async function importProgress(event) {
@@ -400,6 +504,16 @@ const App = {
         error.value = err?.message || String(err);
       } finally {
         event.target.value = "";
+      }
+    }
+
+    async function mergeCanonicalState() {
+      try {
+        const response = await fetch("data/canonical-review-state.json", { cache: "no-cache" });
+        if (!response.ok) return;
+        await mergeImport(await response.json(), { silent: true });
+      } catch (_) {
+        return;
       }
     }
 
@@ -418,15 +532,11 @@ const App = {
       });
       for (const decision of payload.decisions || []) {
         const existing = await get(db.value, "decisions", decision.id);
-        if (!existing || String(existing.created_at || "") <= String(decision.created_at || "")) {
-          await put(db.value, "decisions", decision);
-        }
+        if (!existing || String(existing.created_at || "") <= String(decision.created_at || "")) await put(db.value, "decisions", decision);
       }
       for (const state of payload.clinic_states || []) {
         const existing = await get(db.value, "clinic_states", state.clinic_id);
-        if (!existing || String(existing.updated_at || "") <= String(state.updated_at || "")) {
-          await put(db.value, "clinic_states", state);
-        }
+        if (!existing || String(existing.updated_at || "") <= String(state.updated_at || "")) await put(db.value, "clinic_states", state);
       }
       for (const auditEvent of payload.audit_events || []) {
         if (!(await get(db.value, "audit_events", auditEvent.id))) await put(db.value, "audit_events", auditEvent);
@@ -448,194 +558,252 @@ const App = {
 
     function onKey(event) {
       if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
-      if (route.value.page !== "clinic") return;
+      const key = event.key.toLowerCase();
+      if (pendingReject.value) {
+        const reason = DECISION_REASON_CODES.find((item) => item.key === key);
+        if (reason) {
+          event.preventDefault();
+          rejectWithReason(reason);
+        }
+        if (key === "escape") pendingReject.value = false;
+        return;
+      }
       if (event.key === "1") saveDecision("confirmed");
-      if (event.key === "2") saveDecision("rejected");
-      if (event.key.toLowerCase() === "e") saveDecision("edited_confirmed", { reviewed_value: editValue.value });
-      if (event.key.toLowerCase() === "n") saveClinicState("no_email", "checked_no_public_email");
-      if (event.key.toLowerCase() === "x") saveClinicState("excluded", "out_of_scope");
-      if (event.key.toLowerCase() === "j") moveCandidate(1);
-      if (event.key.toLowerCase() === "k") moveCandidate(-1);
-      if (event.key === "Enter") saveAndNext();
+      if (event.key === "2") pendingReject.value = true;
+      if (event.key === "3") markNoPublicEmail();
+      if (key === "j") moveCandidate(1);
+      if (key === "k") moveCandidate(-1);
+      if (key === "u") undoLastAction();
+      if (key === "arrowright") nextLead();
+      if (key === "arrowleft") previousLead();
     }
 
     watch(search, (value) => {
       localStorage.setItem("review.filter.search", value);
-      resetQueueScroll();
+      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
-    watch(selectedState, (value) => {
-      localStorage.setItem("review.filter.state", value);
-      resetQueueScroll();
+    watch(selectedLane, (value) => {
+      localStorage.setItem("review.filter.lane", value);
+      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
     watch(reviewer, (value) => localStorage.setItem("review.reviewer", value));
-    watch(selectedCandidate, (value) => { editValue.value = value?.value || ""; });
+    watch(evidenceTab, () => nextTick(scrollEvidenceToHighlight));
 
     onMounted(() => {
-      window.addEventListener("hashchange", loadRoute);
       window.addEventListener("keydown", onKey);
-      window.addEventListener("resize", updateQueueViewport);
       init();
-      requestAnimationFrame(updateQueueViewport);
     });
 
     onUnmounted(() => {
-      window.removeEventListener("hashchange", loadRoute);
       window.removeEventListener("keydown", onKey);
-      window.removeEventListener("resize", updateQueueViewport);
     });
 
     return {
       manifest,
-      route,
       clinic,
-      queue,
+      currentItem,
       filteredQueue,
-      visibleQueue,
-      queueScroller,
-      queueTopSpacer,
-      queueBottomSpacer,
-      counts,
-      selectedState,
-      search,
+      laneCounts,
+      selectedLane,
+      laneLabel,
+      progress,
+      sessionRate,
       reviewer,
+      search,
+      candidates,
       selectedCandidate,
+      selectedCandidateIndex,
       selectedEvidence,
-      selectedCandidateId,
+      evidenceBody,
+      evidencePane,
+      evidenceTab,
+      snapshotTitle,
+      confidencePct,
       currentClinicState,
       currentClinicDecisions,
-      reasonCode,
-      note,
+      pendingReject,
+      editMode,
       editValue,
+      note,
       saveStatus,
       error,
       lastExportAt,
-      REASON_CODES,
-      STATES,
-      stateLabel,
+      DECISION_REASON_CODES,
       safeText,
-      highlightEvidence,
+      stateLabel,
       visibleBackupReminder,
-      onQueueScroll,
-      openClinic,
-      backToQueue,
       selectCandidate,
-      moveCandidate,
       saveDecision,
-      saveClinicState,
-      saveAndNext,
+      rejectWithReason,
+      markNoPublicEmail,
+      excludeCurrent,
+      nextLead,
+      previousLead,
+      undoLastAction,
       exportProgress,
       importProgress,
     };
   },
   template: `
-    <div class="shell">
+    <div class="app-shell">
       <header class="topbar">
-        <div>
-          <p class="eyebrow">Lead Gen</p>
-          <h1>Clinic email review</h1>
+        <div class="brand-block">
+          <p class="eyebrow">Lead review</p>
+          <h1>Clinic email validation</h1>
         </div>
-        <div class="reviewer">
-          <label>Reviewer <input v-model="reviewer" autocomplete="off" /></label>
-          <button @click="exportProgress">Export progress</button>
-          <label class="import-button">Import JSON<input type="file" accept="application/json" @change="importProgress" /></label>
+        <div class="top-actions">
+          <label class="reviewer-field">Reviewer <input v-model="reviewer" autocomplete="off" /></label>
+          <button class="ghost" @click="exportProgress">Export</button>
+          <label class="ghost import-control">Import<input type="file" accept="application/json" @change="importProgress" /></label>
         </div>
       </header>
+
+      <section class="queue-bar">
+        <div class="progress-card">
+          <span class="progress-number">{{ progress.current }} / {{ progress.total }}</span>
+          <span class="muted">{{ progress.pct }}% · {{ sessionRate }}/hour this session</span>
+          <div class="progress-track"><span :style="{width: progress.pct + '%'}"></span></div>
+        </div>
+        <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
+        <div class="lane-tabs">
+          <button v-for="lane in ['review','auto_confirm','auto_suppress','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+            {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
+          </button>
+        </div>
+      </section>
+
       <div v-if="error" class="alert error">{{ error }}</div>
       <div v-if="visibleBackupReminder()" class="alert">Export a backup soon. Browser storage is local to this browser profile.</div>
-      <div class="statusline">
-        <span>{{ saveStatus }}</span>
-        <span v-if="manifest">{{ manifest.dataset_id }} · {{ manifest.generated_at }}</span>
-      </div>
+      <div class="statusline">{{ saveStatus }}</div>
 
-      <main v-if="route.page === 'queue'" class="queue">
-        <section class="tabs">
-          <button :class="{active:selectedState==='needs_review'}" @click="selectedState='needs_review'">Needs review <strong>{{ counts.needs_review || 0 }}</strong></button>
-          <button :class="{active:selectedState==='confirmed'}" @click="selectedState='confirmed'">Confirmed <strong>{{ counts.confirmed || 0 }}</strong></button>
-          <button :class="{active:selectedState==='no_email'}" @click="selectedState='no_email'">No email <strong>{{ counts.no_email || 0 }}</strong></button>
-          <button :class="{active:selectedState==='not_processed'}" @click="selectedState='not_processed'">Not processed <strong>{{ counts.not_processed || 0 }}</strong></button>
-          <button :class="{active:selectedState==='excluded'}" @click="selectedState='excluded'">Excluded <strong>{{ counts.excluded || 0 }}</strong></button>
-          <button :class="{active:selectedState==='all'}" @click="selectedState='all'">All <strong>{{ queue.length }}</strong></button>
+      <main v-if="currentItem && clinic" class="review-layout">
+        <section class="decision-pane">
+          <div class="clinic-meta">
+            <span class="pill lane">{{ laneLabel(currentItem.lane) }}</span>
+            <span class="muted">{{ currentItem.city }} · {{ currentItem.registry_id }}</span>
+          </div>
+          <h2>{{ clinic.clinic.name }}</h2>
+          <p class="clinic-address">{{ clinic.clinic.address }}</p>
+
+          <section class="candidate-card">
+            <div class="candidate-header">
+              <div>
+                <p class="label">Top candidate</p>
+                <p class="candidate-email">{{ selectedCandidate?.value || 'No email candidate' }}</p>
+              </div>
+              <span class="score">{{ confidencePct }}%</span>
+            </div>
+            <div class="badges">
+              <span>{{ selectedCandidate?.classification || 'unknown' }}</span>
+              <span>{{ selectedCandidate?.verification_status || 'unverified' }}</span>
+              <span>{{ selectedCandidate?.usable_contact ? 'machine usable' : 'review' }}</span>
+              <span>{{ clinic.clinic.source_coverage_status || currentItem.source_coverage_status }}</span>
+            </div>
+            <p class="candidate-reason">{{ selectedCandidate?.reason || selectedCandidate?.evidence || 'No machine reason recorded.' }}</p>
+          </section>
+
+          <section class="excerpt-card">
+            <p class="label">Evidence excerpt</p>
+            <div class="excerpt" v-html="evidenceBody"></div>
+          </section>
+
+          <section v-if="candidates.length > 1" class="alternate-strip" aria-label="Alternate candidates">
+            <button v-for="(candidate, index) in candidates" :key="candidate.id" :class="{selected:index===selectedCandidateIndex}" @click="selectCandidate(index)">
+              <strong>{{ index + 1 }}</strong>
+              <span>{{ candidate.value }}</span>
+              <small>{{ Math.round((candidate.confidence || 0) * 100) }}%</small>
+            </button>
+          </section>
+
+          <section v-if="pendingReject" class="reason-panel">
+            <p class="label">Reject reason</p>
+            <div class="reason-grid">
+              <button v-for="reason in DECISION_REASON_CODES" :key="reason.code" @click="rejectWithReason(reason)">
+                <strong>{{ reason.key }}</strong> {{ reason.label }}
+              </button>
+            </div>
+            <p class="muted">Press reason key, or Esc to cancel.</p>
+          </section>
+
+          <section v-if="editMode" class="edit-panel">
+            <label>Edit email<input v-model="editValue" /></label>
+            <label>Note<textarea v-model="note" rows="3" placeholder="Optional note"></textarea></label>
+            <button @click="saveDecision('edited_confirmed', { reviewedValue: editValue })">Save edited email</button>
+          </section>
+
+          <div class="action-bar">
+            <button class="primary" @click="saveDecision('confirmed')"><kbd>1</kbd> Confirm</button>
+            <button class="secondary" @click="pendingReject=true"><kbd>2</kbd> Reject</button>
+            <button class="secondary" @click="markNoPublicEmail"><kbd>3</kbd> No public email</button>
+            <button class="quiet" @click="editMode=!editMode">Edit</button>
+            <button class="quiet" @click="excludeCurrent">Exclude</button>
+            <button class="quiet" @click="undoLastAction"><kbd>U</kbd> Undo</button>
+          </div>
+
+          <p class="shortcut-line">J/K alternate · ←/→ lead · decisions auto-advance</p>
         </section>
-        <div class="filters">
-          <input v-model="search" type="search" placeholder="Search clinic, registry ID, city, domain, email…" />
-        </div>
-        <div class="table-wrap" ref="queueScroller" @scroll="onQueueScroll">
-          <table>
-            <thead>
-              <tr><th>Clinic / location</th><th>Best candidate</th><th>Evidence</th><th>Scores</th><th>Status</th></tr>
-            </thead>
-            <tbody>
-              <tr v-if="queueTopSpacer" class="spacer-row" aria-hidden="true"><td colspan="5" :style="{height: queueTopSpacer + 'px'}"></td></tr>
-              <tr v-for="item in visibleQueue" :key="item.id" class="data-row" @click="openClinic(item.id)">
-                <td><strong>{{ item.name }}</strong><small>{{ safeText(item.registry_id) }} · {{ safeText(item.city) }}{{ item.region ? ', ' + item.region : '' }}</small><small>{{ safeText(item.address) }}</small></td>
-                <td><strong>{{ item.best_candidate?.value || '—' }}</strong><small>{{ item.candidate_email_count }} candidate(s) · {{ item.best_candidate?.classification || item.machine_status }}</small></td>
-                <td><span>{{ item.domain || item.website || item.source_coverage_status || '—' }}</span><small>{{ item.best_candidate?.source_url || 'Open review for source evidence' }}</small></td>
-                <td><span>Lead {{ item.lead_score || 0 }}</span><small>Quality {{ item.data_quality_score || 0 }} · hard {{ item.scrape_difficulty_score || 0 }}</small></td>
-                <td><span class="pill" :class="item.status">{{ stateLabel(item.status) }}</span><small v-if="item.local_decision_count">{{ item.local_decision_count }} local decision(s)</small></td>
-              </tr>
-              <tr v-if="queueBottomSpacer" class="spacer-row" aria-hidden="true"><td colspan="5" :style="{height: queueBottomSpacer + 'px'}"></td></tr>
-            </tbody>
-          </table>
-        </div>
+
+        <section class="evidence-pane">
+          <div class="evidence-toolbar">
+            <div>
+              <p class="eyebrow">Captured evidence</p>
+              <h2>{{ snapshotTitle }}</h2>
+            </div>
+            <a v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open live site ↗</a>
+          </div>
+          <nav class="evidence-tabs">
+            <button :class="{active:evidenceTab==='snapshot'}" @click="evidenceTab='snapshot'">Snapshot</button>
+            <button :class="{active:evidenceTab==='live'}" @click="evidenceTab='live'">Live</button>
+            <button :class="{active:evidenceTab==='sources'}" @click="evidenceTab='sources'">Sources</button>
+          </nav>
+
+          <div v-if="evidenceTab==='snapshot'" ref="evidencePane" class="snapshot-pane">
+            <div class="snapshot-meta">
+              <span>{{ selectedEvidence?.evidence_kind || 'evidence' }}</span>
+              <span>{{ selectedEvidence?.observed_at || selectedCandidate?.observed_at || 'unknown time' }}</span>
+              <span>{{ selectedCandidate?.source_url || selectedEvidence?.source_url || 'unknown source' }}</span>
+            </div>
+            <pre class="snapshot-text" v-html="evidenceBody"></pre>
+          </div>
+
+          <div v-else-if="evidenceTab==='live'" class="live-pane">
+            <h3>Live website is intentionally not embedded.</h3>
+            <p>Review decisions should be based on the captured evidence snapshot. Live pages can change and many sites block iframes with CSP or X-Frame-Options.</p>
+            <a class="primary-link" v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open current live page ↗</a>
+          </div>
+
+          <div v-else class="sources-pane">
+            <details open>
+              <summary>Candidate metadata</summary>
+              <dl>
+                <div><dt>Owner</dt><dd>{{ selectedCandidate?.owner_name || selectedCandidate?.owner_type || '—' }}</dd></div>
+                <div><dt>Role</dt><dd>{{ selectedCandidate?.contact_role || selectedCandidate?.associated_role || '—' }}</dd></div>
+                <div><dt>Association</dt><dd>{{ selectedCandidate?.association_type || '—' }}</dd></div>
+                <div><dt>Deliverability</dt><dd>{{ selectedCandidate?.syntax_status || '—' }} · {{ selectedCandidate?.mx_status || '—' }} · {{ selectedCandidate?.deliverability_status || '—' }}</dd></div>
+              </dl>
+            </details>
+            <details>
+              <summary>All sources</summary>
+              <ul>
+                <li v-for="source in clinic.sources" :key="source.url">
+                  <a :href="source.url" target="_blank" rel="noreferrer">{{ source.domain || source.url }}</a>
+                  <span>{{ source.source_role }} · {{ source.ownership_status }} · useful {{ source.useful }}</span>
+                </li>
+              </ul>
+            </details>
+            <details>
+              <summary>Local decision history</summary>
+              <ul>
+                <li v-for="decision in currentClinicDecisions" :key="decision.id">{{ decision.decision }} · {{ decision.reviewed_value }} · {{ decision.created_at }}</li>
+              </ul>
+            </details>
+          </div>
+        </section>
       </main>
 
-      <main v-else-if="clinic" class="review-grid">
-        <section class="decision-panel">
-          <button class="plain" @click="backToQueue">← Queue</button>
-          <h2>{{ clinic.clinic.name }}</h2>
-          <p>{{ safeText(clinic.clinic.registry_id) }} · {{ safeText(clinic.clinic.city) }} · {{ safeText(clinic.clinic.address) }}</p>
-          <dl class="facts">
-            <div><dt>Status</dt><dd>{{ stateLabel(currentClinicState?.status) }}</dd></div>
-            <div><dt>Website</dt><dd><a v-if="clinic.clinic.official_website || clinic.clinic.website" :href="clinic.clinic.official_website || clinic.clinic.website" target="_blank" rel="noreferrer">{{ clinic.clinic.official_domain || clinic.clinic.domain || clinic.clinic.website }}</a><span v-else>—</span></dd></div>
-            <div><dt>Type</dt><dd>{{ clinic.clinic.clinic_type }} · {{ clinic.clinic.funding }}</dd></div>
-            <div><dt>Machine</dt><dd>{{ clinic.machine_status }}</dd></div>
-          </dl>
-          <h3>Candidate emails</h3>
-          <div v-if="clinic.candidates.length" class="candidates">
-            <button v-for="candidate in clinic.candidates" :key="candidate.id" class="candidate" :class="{selected:candidate.id===selectedCandidateId}" @click="selectCandidate(candidate)">
-              <strong>{{ candidate.value }}</strong>
-              <small>{{ candidate.classification }} · {{ Math.round((candidate.confidence || 0) * 100) }}% · {{ candidate.usable_contact ? 'machine usable' : 'review' }}</small>
-              <small>{{ candidate.owner_name || candidate.owner_type }} · {{ candidate.contact_role }}</small>
-            </button>
-          </div>
-          <p v-else class="empty">No email candidate is available. Use No public email only if the available sources were checked.</p>
-          <label>Edit value<input v-model="editValue" /></label>
-          <label>Reason<select v-model="reasonCode"><option value="">No reason code</option><option v-for="reason in REASON_CODES" :key="reason" :value="reason">{{ reason.replaceAll('_', ' ') }}</option></select></label>
-          <label>Note<textarea v-model="note" rows="3" placeholder="Optional reviewer note"></textarea></label>
-          <div class="actions">
-            <button @click="saveDecision('confirmed')">1 Confirm</button>
-            <button class="secondary" @click="saveDecision('rejected')">2 Reject</button>
-            <button class="secondary" @click="saveDecision('edited_confirmed', { reviewed_value: editValue })">E Edit + confirm</button>
-            <button class="secondary" @click="saveClinicState('no_email', 'checked_no_public_email')">N No public email</button>
-            <button class="danger" @click="saveClinicState('excluded', 'out_of_scope')">X Exclude</button>
-            <button @click="saveAndNext">Enter Save + next</button>
-          </div>
-          <p class="shortcuts">J/K candidate · Enter save+next · shortcuts disabled while typing</p>
-          <h3>Local decisions</h3>
-          <ul class="history"><li v-for="decision in currentClinicDecisions" :key="decision.id">{{ decision.decision }} · {{ decision.reviewed_value }} · {{ decision.created_at }}</li></ul>
-        </section>
-        <section class="evidence-panel">
-          <div class="evidence-head">
-            <div><p class="eyebrow">Evidence</p><h2>{{ selectedCandidate?.value || 'No candidate selected' }}</h2></div>
-            <a v-if="selectedEvidence?.open_url" :href="selectedEvidence.open_url" target="_blank" rel="noreferrer">Open original</a>
-          </div>
-          <div v-if="selectedCandidate" class="evidence-meta">
-            <span>{{ selectedEvidence?.evidence_kind || 'evidence' }}</span>
-            <span>{{ selectedEvidence?.title || selectedEvidence?.source_url || selectedCandidate.source_url || '—' }}</span>
-            <span>{{ selectedEvidence?.observed_at || selectedCandidate.observed_at || '—' }}</span>
-          </div>
-          <pre v-if="selectedEvidence" class="evidence-text" v-html="highlightEvidence(selectedEvidence)"></pre>
-          <div v-if="selectedCandidate" class="source-card">
-            <h3>Extraction metadata</h3>
-            <p>{{ selectedCandidate.reason || 'No reason recorded.' }}</p>
-            <p>{{ selectedCandidate.evidence || '' }}</p>
-            <ul><li v-for="ctx in selectedCandidate.page_context" :key="ctx">{{ ctx }}</li></ul>
-          </div>
-          <div class="source-card">
-            <h3>Available sources</h3>
-            <ul><li v-for="source in clinic.sources" :key="source.url"><a :href="source.url" target="_blank" rel="noreferrer">{{ source.domain || source.url }}</a> · {{ source.source_role }} · {{ source.ownership_status }} · useful {{ source.useful }}</li></ul>
-          </div>
-        </section>
+      <main v-else class="empty-state">
+        <h2>No leads in this lane.</h2>
+        <p>Change the lane filter or search query.</p>
       </main>
     </div>
   `,
