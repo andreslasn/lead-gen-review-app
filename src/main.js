@@ -15,12 +15,9 @@ const DECISION_REASON_CODES = [
   { key: "x", code: "other", label: "Other" },
 ];
 const ROLE_OPTIONS = [
-  { value: "clinic_contact", label: "Clinic contact" },
+  { value: "clinic_contact", label: "Generic contact" },
   { value: "doctor_staff", label: "Doctor/staff" },
   { value: "prescription_refill", label: "Prescription/refill" },
-  { value: "covering_provider", label: "Covering/alternate practice" },
-  { value: "other_provider", label: "Other provider" },
-  { value: "source_operator", label: "Municipal/site contact" },
   { value: "not_clinic_owned", label: "Not clinic-owned" },
   { value: "unclear", label: "Unclear" },
 ];
@@ -175,6 +172,15 @@ function evidenceHtml(link, fallback = "") {
   return `${prefix}<mark>${quote}</mark>${suffix}`;
 }
 
+function fullEvidenceHtml(text, email) {
+  const source = String(text || "").replaceAll("\u0000", " ");
+  const needle = String(email || "").trim();
+  if (!source || !needle) return escapeHtml(source);
+  const index = source.toLowerCase().indexOf(needle.toLowerCase());
+  if (index < 0) return escapeHtml(source);
+  return `${escapeHtml(source.slice(0, index))}<mark>${escapeHtml(source.slice(index, index + needle.length))}</mark>${escapeHtml(source.slice(index + needle.length))}`;
+}
+
 function candidateRoleLabel(candidate) {
   const text = [
     candidate?.value,
@@ -187,20 +193,25 @@ function candidateRoleLabel(candidate) {
   const contactRole = String(candidate?.contact_role || "").toLowerCase();
   if (/(recept|prescription|rx|repeat)/i.test(text) || contactRole.includes("prescription")) return "Prescription/refill";
   if (classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
-  if (classification.includes("clinic") || contactRole.includes("clinic")) return "Clinic contact";
-  if (classification.includes("generic")) return "Generic mailbox";
+  if (classification.includes("clinic") || contactRole.includes("clinic")) return "Generic contact";
+  if (classification.includes("generic")) return "Generic contact";
   if (classification.includes("third") || classification.includes("directory") || classification.includes("webmaster")) return "Not clinic-owned";
   return "Unclear";
 }
 
 function candidateRoleCode(candidate) {
   const ownershipClass = candidate?.triage?.ownership_class;
-  if (["same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "covering_provider";
-  if (ownershipClass === "different_provider") return "other_provider";
-  if (ownershipClass === "source_operator") return "source_operator";
-  if (["parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_clinic_owned";
+  if (["target_person", "same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "doctor_staff";
+  if (ownershipClass === "target_practice") return "clinic_contact";
+  if (["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_clinic_owned";
   const label = candidateRoleLabel(candidate);
   return ROLE_OPTIONS.find((option) => option.label === label)?.value || "unclear";
+}
+
+function normalizedRoleCode(role) {
+  if (role === "covering_provider") return "doctor_staff";
+  if (["other_provider", "source_operator"].includes(role)) return "not_clinic_owned";
+  return ROLE_OPTIONS.some((option) => option.value === role) ? role : "unclear";
 }
 
 function candidateEvidenceCount(candidate) {
@@ -302,6 +313,8 @@ const App = {
     const sessionDecisionCount = ref(0);
     const itemStartedAt = ref(Date.now());
     const evidencePane = ref(null);
+    const fullEvidenceText = ref("");
+    let evidenceTextRequest = 0;
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
     const decisionsByClinic = computed(() => {
@@ -372,11 +385,15 @@ const App = {
     });
     const selectedCandidate = computed(() => candidates.value[selectedCandidateIndex.value] || candidates.value[0] || currentItem.value?.best_candidate || null);
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
+    const selectedDocument = computed(() => (clinic.value?.documents || []).find((document) => document.id === selectedEvidence.value?.source_document_id) || null);
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
     const roleOverrideByContact = computed(() => Object.fromEntries(roleOverrides.value.map((item) => [item.contact_point_id, item])));
     const snapshotTitle = computed(() => selectedEvidence.value?.title || selectedEvidence.value?.source_url || selectedCandidate.value?.source_url || "Cached evidence");
     const evidenceBody = computed(() => evidenceHtml(selectedEvidence.value, selectedCandidate.value?.evidence || ""));
+    const fullEvidenceBody = computed(() => fullEvidenceText.value
+      ? fullEvidenceHtml(fullEvidenceText.value, selectedCandidate.value?.value)
+      : evidenceBody.value);
 
     function artifactUrl(path) {
       if (!path) return null;
@@ -388,6 +405,25 @@ const App = {
       const url = artifactUrl(path);
       if (!url) return null;
       return url;
+    }
+
+    async function loadFullEvidenceText() {
+      const requestId = ++evidenceTextRequest;
+      fullEvidenceText.value = "";
+      const path = selectedEvidence.value?.review_text_path || selectedDocument.value?.review_text_path;
+      const url = artifactUrl(path);
+      if (!url) return;
+      try {
+        const response = await fetch(url, { cache: "no-cache" });
+        if (!response.ok) return;
+        const text = await response.text();
+        if (requestId !== evidenceTextRequest) return;
+        fullEvidenceText.value = text;
+        await nextTick();
+        scrollEvidenceToHighlight();
+      } catch {
+        if (requestId === evidenceTextRequest) fullEvidenceText.value = "";
+      }
     }
 
     function candidateDecision(candidate) {
@@ -493,7 +529,7 @@ const App = {
     }
 
     function displayedCandidateRole(candidate) {
-      return roleOverrideByContact.value[candidate?.id]?.role || candidateRoleCode(candidate);
+      return normalizedRoleCode(roleOverrideByContact.value[candidate?.id]?.role || candidateRoleCode(candidate));
     }
 
     async function updateCandidateRole(candidate, role) {
@@ -502,7 +538,7 @@ const App = {
         clinic_id: clinic.value.clinic.id,
         contact_point_id: candidate.id,
         role,
-        original_role: candidate.contact_role || candidateRoleCode(candidate),
+        original_role: normalizedRoleCode(candidate.contact_role || candidateRoleCode(candidate)),
         reviewer_id: reviewer.value || "reviewer",
         updated_at: nowIso(),
       };
@@ -884,6 +920,10 @@ const App = {
     });
     watch(reviewer, (value) => localStorage.setItem("review.reviewer", value));
     watch(evidenceTab, () => nextTick(scrollEvidenceToHighlight));
+    watch(
+      () => [selectedEvidence.value?.review_text_path, selectedEvidence.value?.source_document_id, selectedCandidate.value?.value],
+      () => loadFullEvidenceText(),
+    );
 
     onMounted(() => {
       window.addEventListener("keydown", onKey);
@@ -909,6 +949,7 @@ const App = {
       selectedCandidateIndex,
       selectedEvidence,
       evidenceBody,
+      fullEvidenceBody,
       evidencePane,
       archiveFrame,
       evidenceTab,
@@ -1067,7 +1108,7 @@ const App = {
           </div>
 
           <div v-else ref="evidencePane" class="snapshot-pane">
-            <pre class="snapshot-text" v-html="evidenceBody"></pre>
+            <pre class="snapshot-text" v-html="fullEvidenceBody"></pre>
           </div>
         </section>
       </main>
