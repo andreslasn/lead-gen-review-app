@@ -18,6 +18,9 @@ const ROLE_OPTIONS = [
   { value: "clinic_contact", label: "Clinic contact" },
   { value: "doctor_staff", label: "Doctor/staff" },
   { value: "prescription_refill", label: "Prescription/refill" },
+  { value: "covering_provider", label: "Covering/alternate practice" },
+  { value: "other_provider", label: "Other provider" },
+  { value: "source_operator", label: "Municipal/site contact" },
   { value: "not_clinic_owned", label: "Not clinic-owned" },
   { value: "unclear", label: "Unclear" },
 ];
@@ -191,6 +194,11 @@ function candidateRoleLabel(candidate) {
 }
 
 function candidateRoleCode(candidate) {
+  const ownershipClass = candidate?.triage?.ownership_class;
+  if (["same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "covering_provider";
+  if (ownershipClass === "different_provider") return "other_provider";
+  if (ownershipClass === "source_operator") return "source_operator";
+  if (["parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_clinic_owned";
   const label = candidateRoleLabel(candidate);
   return ROLE_OPTIONS.find((option) => option.label === label)?.value || "unclear";
 }
@@ -220,6 +228,55 @@ function candidateReasonWithoutTriageDuplication(candidate) {
   return reason;
 }
 
+function normalizedMatchText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function candidateEvidenceText(candidate) {
+  return normalizedMatchText([
+    candidate?.owner_name,
+    candidate?.reason,
+    candidate?.evidence,
+    ...(candidate?.evidence_links || []).flatMap((link) => [link.prefix_text, link.exact_quote, link.suffix_text]),
+  ].filter(Boolean).join(" "));
+}
+
+function candidateMatchesTarget(candidate, clinic) {
+  const targetTokens = normalizedMatchText(clinic?.name)
+    .replace(/\b(?:dr|haziorvosi|praxis|rendelo|rendeles)\b/g, " ")
+    .split(/[^a-z0-9]+/)
+    .filter((token) => token.length >= 4);
+  if (!targetTokens.length) return false;
+  const evidence = candidateEvidenceText(candidate);
+  return targetTokens.every((token) => evidence.includes(token));
+}
+
+function candidatePresentationGroup(candidate, clinic) {
+  const ownershipClass = candidate?.triage?.ownership_class;
+  if (
+    candidate?.classification === "invalid"
+    || candidate?.syntax_status === "invalid"
+    || /\.(?:at|biz|co|com|de|eu|hu|info|io|net|org|ro|sk)-(?:ba|ban|be|ben|bol|ert|hez|hoz|nak|nek|ra|re|rol|tol|val|vel)$/i.test(candidate?.value || "")
+  ) return "invalid";
+  if (
+    candidate?.triage?.decision === "suppress"
+    || ["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)
+    || ["third_party", "directory_operator", "legal_imprint_contact", "technical_webmaster", "automated_no_reply"].includes(candidate?.classification)
+    || ["directory_operator", "website_operator", "technical_vendor", "parent_organization"].includes(candidate?.owner_type)
+    || ["directory_listing", "website_operator", "parent_organization_contact"].includes(candidate?.association_type)
+  ) return "other";
+  if (
+    candidate?.usable_contact
+    || candidate?.triage?.decision === "promote"
+    || ["direct", "practice_contact_for_person", "clinic_contact"].includes(candidate?.association_type)
+    || candidateMatchesTarget(candidate, clinic)
+  ) return "primary";
+  return "primary";
+}
+
 const App = {
   setup() {
     const db = ref(null);
@@ -243,6 +300,8 @@ const App = {
     const editMode = ref(false);
     const editValue = ref("");
     const note = ref("");
+    const showOtherCandidates = ref(false);
+    const showInvalidCandidates = ref(false);
     const lastExportAt = ref(localStorage.getItem("review.lastExportAt") || "");
     const lastAction = ref(null);
     const sessionStartedAt = ref(Date.now());
@@ -297,6 +356,25 @@ const App = {
       const raw = clinic.value?.candidates || [];
       const validEmails = raw.filter((candidate) => String(candidate?.value || "").includes("@"));
       return validEmails.length ? validEmails : raw;
+    });
+    const candidateGroups = computed(() => {
+      const groups = { primary: [], other: [], invalid: [] };
+      candidates.value.forEach((candidate, index) => {
+        groups[candidatePresentationGroup(candidate, clinic.value?.clinic)].push({ candidate, index });
+      });
+      return groups;
+    });
+    const displayedCandidateRows = computed(() => {
+      const rows = candidateGroups.value.primary.map((row) => ({ type: "candidate", ...row }));
+      if (candidateGroups.value.other.length) {
+        rows.push({ type: "toggle", group: "other", count: candidateGroups.value.other.length });
+        if (showOtherCandidates.value) rows.push(...candidateGroups.value.other.map((row) => ({ type: "candidate", ...row })));
+      }
+      if (candidateGroups.value.invalid.length) {
+        rows.push({ type: "toggle", group: "invalid", count: candidateGroups.value.invalid.length });
+        if (showInvalidCandidates.value) rows.push(...candidateGroups.value.invalid.map((row) => ({ type: "candidate", ...row })));
+      }
+      return rows;
     });
     const selectedCandidate = computed(() => candidates.value[selectedCandidateIndex.value] || candidates.value[0] || currentItem.value?.best_candidate || null);
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
@@ -473,6 +551,8 @@ const App = {
       note.value = "";
       selectedCandidateIndex.value = 0;
       clinic.value = await loadClinic(item.id);
+      showOtherCandidates.value = candidateGroups.value.primary.length === 0;
+      showInvalidCandidates.value = false;
       evidenceTab.value = selectedEvidence.value?.raw_html_path ? "archive" : "snapshot";
       editValue.value = selectedCandidate.value?.value || "";
       itemStartedAt.value = Date.now();
@@ -850,6 +930,10 @@ const App = {
       lastExportAt,
       DECISION_REASON_CODES,
       ROLE_OPTIONS,
+      candidateGroups,
+      displayedCandidateRows,
+      showOtherCandidates,
+      showInvalidCandidates,
       safeText,
       candidateRoleLabel,
       candidateSourceLabel,
@@ -904,22 +988,33 @@ const App = {
 
           <section class="candidate-card">
             <p class="label">Email candidates</p>
+            <p v-if="candidateGroups.other.length || candidateGroups.invalid.length" class="candidate-group-note">
+              Showing {{ candidateGroups.primary.length }} likely relevant candidate{{ candidateGroups.primary.length === 1 ? '' : 's' }}.
+              {{ candidateGroups.other.length }} other page contact{{ candidateGroups.other.length === 1 ? '' : 's' }} and
+              {{ candidateGroups.invalid.length }} extraction artifact{{ candidateGroups.invalid.length === 1 ? '' : 's' }} are collapsed.
+            </p>
             <div v-if="candidates.length" class="candidate-table-wrap">
               <table class="candidate-table">
                 <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Source</th><th>Decision</th></tr></thead>
                 <tbody>
-                  <tr v-for="(candidate, index) in candidates" :key="candidate.id || candidate.value || index" :class="{selected:index===selectedCandidateIndex, decided: candidateDecision(candidate)}" @mouseenter="previewCandidate(index)" @click="selectCandidate(index)">
-                    <td class="candidate-radio">{{ index === selectedCandidateIndex ? '●' : '○' }}</td>
-                    <td><span class="candidate-email">{{ candidate.value }}</span><small v-if="candidateDecision(candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(candidate) }}</small></td>
-                    <td>
-                      <select class="candidate-role-select" :value="displayedCandidateRole(candidate)" @click.stop @change.stop="updateCandidateRole(candidate, $event.target.value)">
-                        <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
-                      </select>
-                    </td>
-                    <td><span>{{ candidateSourceLabel(candidate, currentItem) }}</span><small>{{ candidateEvidenceCount(candidate) }}</small></td>
-                    <td class="candidate-actions">
-                      <button class="candidate-confirm" @click.stop="selectCandidate(index); saveDecision('confirmed')">Confirm</button>
-                      <button class="candidate-reject" @click.stop="rejectCandidate(index)">Reject</button>
+                  <tr v-for="row in displayedCandidateRows" :key="row.type === 'candidate' ? (row.candidate.id || row.index) : row.group" :class="row.type === 'candidate' ? {selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)} : 'candidate-group-toggle'" @mouseenter="row.type === 'candidate' && previewCandidate(row.index)" @click="row.type === 'candidate' && selectCandidate(row.index)">
+                    <template v-if="row.type === 'candidate'">
+                      <td class="candidate-radio">{{ row.index === selectedCandidateIndex ? '●' : '○' }}</td>
+                      <td><span class="candidate-email">{{ row.candidate.value }}</span><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
+                      <td>
+                        <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
+                          <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
+                        </select>
+                      </td>
+                      <td><span>{{ candidateSourceLabel(row.candidate, currentItem) }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small></td>
+                      <td class="candidate-actions">
+                        <button class="candidate-confirm" @click.stop="selectCandidate(row.index); saveDecision('confirmed')">Confirm</button>
+                        <button class="candidate-reject" @click.stop="rejectCandidate(row.index)">Reject</button>
+                      </td>
+                    </template>
+                    <td v-else colspan="5">
+                      <button v-if="row.group === 'other'" @click.stop="showOtherCandidates = !showOtherCandidates">{{ showOtherCandidates ? 'Hide' : 'Show' }} {{ row.count }} other contact{{ row.count === 1 ? '' : 's' }} from this shared source</button>
+                      <button v-else @click.stop="showInvalidCandidates = !showInvalidCandidates">{{ showInvalidCandidates ? 'Hide' : 'Show' }} {{ row.count }} invalid extraction artifact{{ row.count === 1 ? '' : 's' }}</button>
                     </td>
                   </tr>
                 </tbody>

@@ -239,6 +239,26 @@ input, textarea {
   border-top: 1px solid var(--concrete-100);
   border-bottom: 1px solid var(--concrete-100);
 }
+.candidate-group-note {
+  margin: 0 0 8px;
+  color: var(--black-60);
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+.candidate-group-toggle td {
+  padding: 0 !important;
+  background: var(--blue-10);
+}
+.candidate-group-toggle button {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border-radius: 0;
+  background: transparent;
+  color: var(--primary);
+  text-align: left;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
 .candidate-table {
   width: 100%;
   border-collapse: collapse;

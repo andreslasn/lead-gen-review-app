@@ -56,6 +56,9 @@
     "clinic_states": {
       "type": "array"
     },
+    "role_overrides": {
+      "type": "array"
+    },
     "audit_events": {
       "type": "array"
     }
