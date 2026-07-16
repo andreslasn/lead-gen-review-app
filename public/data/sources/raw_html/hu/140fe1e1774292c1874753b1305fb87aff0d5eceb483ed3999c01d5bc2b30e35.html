@@ -191,7 +191,8 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -229,7 +230,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 </div>
 </div>
 </div>
-</section>
+</section> 
 <section class="header-menu">
 <nav class="container navbar-expand-md" id="header">
 <div class="navbar-wrap">
@@ -255,7 +256,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 </ul>
 </div>
 </div>
-</div>
+</div> 
 </div>
 </nav>
 </section>
@@ -366,7 +367,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 </section>
 <section class="footer-widget-section">
 <div class="container">
-<div class="">
+<div>
 <div class="footer__widgets row">
 <div class="cols col-lg-4 col-xl-2"> <div class="textwidget"><p>Nyíregyházi Jósa András Tagkórház (NYJAT)<br/>
 4400 Nyíregyháza,<br/>
@@ -452,13 +453,13 @@ Tel.: +36 42/281-711</p>
 <div class="mobmenu-overlay"></div><div class="mob-menu-header-holder mobmenu" data-autoclose-submenus="1" data-close-icon="up-open" data-menu-display="mob-menu-slideout" data-open-icon="down-open"><div class="mob-menu-logo-holder"><a class="headertext" data-review-original-href="https://szszbvk.hu" href="#" tabindex="-1"><span>Sz-Sz-B. Vármegyei Oktatókórház</span></a></div><div class="mobmenur-container"><a aria-label="Right Menu Button" class="mobmenu-right-bt mobmenu-trigger-action" data-panel-target="mobmenu-right-panel" data-review-original-href="#" href="#" tabindex="-1"><i class="mob-icon-menu mob-menu-icon"></i><i class="mob-icon-cancel-1 mob-cancel-button"></i></a></div></div> <div class="mobmenu-right-alignment mobmenu-panel mobmenu-right-panel mobmenu-parent-link">
 <a aria-label="Right Menu Button" class="mobmenu-right-bt" data-review-original-href="#" href="#" tabindex="-1"><i class="mob-icon-cancel-1 mob-cancel-button"></i></a>
 <div class="mobmenu-content">
-<div class="menu-menu_mobile-container"><ul aria-label="Main navigation for mobile devices" class="wp-mobile-menu" id="mobmenuright" role="menubar"><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/" href="#" role="menuitem" tabindex="-1">Kezdőlap</a></li><li role="none"><a class="" data-review-original-href="#" href="#" role="menuitem" tabindex="-1">Betegellátás</a>
+<div class="menu-menu_mobile-container"><ul aria-label="Main navigation for mobile devices" class="wp-mobile-menu" id="mobmenuright" role="menubar"><li role="none"><a data-review-original-href="https://szszbvk.hu/" href="#" role="menuitem" tabindex="-1">Kezdőlap</a></li><li role="none"><a data-review-original-href="#" href="#" role="menuitem" tabindex="-1">Betegellátás</a>
 <ul class="sub-menu" role="menu">
-<li role="none"><a class="" data-review-original-href="https://szszbvk.hu/fekvobeteg_ellatas/" href="#" role="menuitem" tabindex="-1">Fekvőbeteg ellátás</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/jaro/" href="#" role="menuitem" tabindex="-1">Szakrendelések</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/orvos/" href="#" role="menuitem" tabindex="-1">Orvoskereső</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/diagnosztika/" href="#" role="menuitem" tabindex="-1">Diagnosztika</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/online-elojegyzes/altalanos-tajekoztato/" href="#" role="menuitem" tabindex="-1">Előjegyzés</a></li> <li role="none"><a class="" data-review-original-href="https://www.eeszt.gov.hu/hu/nyito-oldal" href="#" role="menuitem" tabindex="-1">EESZT</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/egeszsegmegorzes/nyiregyhaza/egeszsegfejlesztesi-iroda-nyiregyhazi-jaras/" href="#" role="menuitem" tabindex="-1">Egészségmegőrzés</a></li></ul>
-</li><li role="none"><a class="" data-review-original-href="#" href="#" role="menuitem" tabindex="-1">Tájékoztatók</a>
+<li role="none"><a data-review-original-href="https://szszbvk.hu/fekvobeteg_ellatas/" href="#" role="menuitem" tabindex="-1">Fekvőbeteg ellátás</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/jaro/" href="#" role="menuitem" tabindex="-1">Szakrendelések</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/orvos/" href="#" role="menuitem" tabindex="-1">Orvoskereső</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/diagnosztika/" href="#" role="menuitem" tabindex="-1">Diagnosztika</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/online-elojegyzes/altalanos-tajekoztato/" href="#" role="menuitem" tabindex="-1">Előjegyzés</a></li> <li role="none"><a data-review-original-href="https://www.eeszt.gov.hu/hu/nyito-oldal" href="#" role="menuitem" tabindex="-1">EESZT</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/egeszsegmegorzes/nyiregyhaza/egeszsegfejlesztesi-iroda-nyiregyhazi-jaras/" href="#" role="menuitem" tabindex="-1">Egészségmegőrzés</a></li></ul>
+</li><li role="none"><a data-review-original-href="#" href="#" role="menuitem" tabindex="-1">Tájékoztatók</a>
 <ul class="sub-menu" role="menu">
-<li role="none"><a class="" data-review-original-href="https://szszbvk.hu/online-elojegyzes/altalanos-tajekoztato/" href="#" role="menuitem" tabindex="-1">Általános tájékoztató</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/online-elojegyzes/idopont-foglalassal-kapcsolatos-altalanos-tajekoztato/" href="#" role="menuitem" tabindex="-1">Időpontfoglalással kapcsolatos általános tájékoztató</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/online-elojegyzes/betegtajekoztatok/" href="#" role="menuitem" tabindex="-1">Betegtájékoztatók</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/tajekoztatok/beleegyezo-nyilatkozatok-es-betegtajekoztatok/" href="#" role="menuitem" tabindex="-1">Beleegyező nyilatkozatok és betegtájékoztatók</a></li> <li role="none"><a class="" data-review-original-href="https://szszbvk.hu/tajekoztatok/betegjogi-kepviselo-elerhetosege/" href="#" role="menuitem" tabindex="-1">Betegjogi képviselő elérhetősége</a></li></ul>
-</li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/esemenyek/" href="#" role="menuitem" tabindex="-1">Események</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/oktatas/" href="#" role="menuitem" tabindex="-1">Oktatás</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/rezidensek/" href="#" role="menuitem" tabindex="-1">Szakorvosképzés</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/karrier/allasok/" href="#" role="menuitem" tabindex="-1">Karrier</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/haziorvosok/" href="#" role="menuitem" tabindex="-1">Háziorvosoknak</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/ikeb/" href="#" role="menuitem" tabindex="-1">IKEB</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/terkep/" href="#" role="menuitem" tabindex="-1">Interaktív térképes kereső</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/palyazatok/" href="#" role="menuitem" tabindex="-1">Pályázatok</a></li><li role="none"><a class="" data-review-original-href="https://szszbvk.hu/rolunk/" href="#" role="menuitem" tabindex="-1">Rólunk</a></li></ul></div>
+<li role="none"><a data-review-original-href="https://szszbvk.hu/online-elojegyzes/altalanos-tajekoztato/" href="#" role="menuitem" tabindex="-1">Általános tájékoztató</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/online-elojegyzes/idopont-foglalassal-kapcsolatos-altalanos-tajekoztato/" href="#" role="menuitem" tabindex="-1">Időpontfoglalással kapcsolatos általános tájékoztató</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/online-elojegyzes/betegtajekoztatok/" href="#" role="menuitem" tabindex="-1">Betegtájékoztatók</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/tajekoztatok/beleegyezo-nyilatkozatok-es-betegtajekoztatok/" href="#" role="menuitem" tabindex="-1">Beleegyező nyilatkozatok és betegtájékoztatók</a></li> <li role="none"><a data-review-original-href="https://szszbvk.hu/tajekoztatok/betegjogi-kepviselo-elerhetosege/" href="#" role="menuitem" tabindex="-1">Betegjogi képviselő elérhetősége</a></li></ul>
+</li><li role="none"><a data-review-original-href="https://szszbvk.hu/esemenyek/" href="#" role="menuitem" tabindex="-1">Események</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/oktatas/" href="#" role="menuitem" tabindex="-1">Oktatás</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/rezidensek/" href="#" role="menuitem" tabindex="-1">Szakorvosképzés</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/karrier/allasok/" href="#" role="menuitem" tabindex="-1">Karrier</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/haziorvosok/" href="#" role="menuitem" tabindex="-1">Háziorvosoknak</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/ikeb/" href="#" role="menuitem" tabindex="-1">IKEB</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/terkep/" href="#" role="menuitem" tabindex="-1">Interaktív térképes kereső</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/palyazatok/" href="#" role="menuitem" tabindex="-1">Pályázatok</a></li><li role="none"><a data-review-original-href="https://szszbvk.hu/rolunk/" href="#" role="menuitem" tabindex="-1">Rólunk</a></li></ul></div>
 </div><div class="mob-menu-right-bg-holder"></div></div>
 
 

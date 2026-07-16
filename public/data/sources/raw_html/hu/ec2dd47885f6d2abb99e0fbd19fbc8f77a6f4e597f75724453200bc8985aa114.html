@@ -47,7 +47,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     background-color: #c756b7;
 }
 .merce-button-25nyr:hover {
-    background-color: #c756b7 !important;
+    background-color: #c756b7 !important;   
 }
 .merce-button-25nyr::before {
     background-color: #5bb2f3;
@@ -105,7 +105,8 @@ padding-left: 0;
 <noscript><img height="1" style="display:none" width="1"/></noscript>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

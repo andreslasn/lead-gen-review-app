@@ -42,7 +42,8 @@
     </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -52,7 +53,7 @@
 <div class="container">
 <div class="navbar-translate">
 <a class="navbar-brand" data-review-original-href="/" href="#" tabindex="-1">
-
+                                                
                         Dr. Mihályi László                    </a>
 <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-toggle="collapse" style="padding: 0;" type="button">
 <span class="sr-only">Toggle navigation</span>
@@ -89,7 +90,7 @@
 <div class="container">
 <div class="main main-raised">
 <div class="py-4">
-<h2 class="">Üzemorvosi rendelő</h2>
+<h2>Üzemorvosi rendelő</h2>
 <div class="place-container row">
 <div class="col-lg-6">
 <h3>Elérhetőség</h3>
@@ -118,7 +119,7 @@
 <label class="control-label required" for="ContactForm2_message">Üzenet <span class="required">*</span></label> <textarea class="form-control" id="ContactForm2_9590_message" name="ContactForm2[9590][message]" rows="4"></textarea> <div class="alert alert-danger" id="ContactForm2_9590_message_em_" style="display:none"></div> </div>
 <div class="form-check form-group">
 <label>
-<input class="" id="ContactForm2_9590_acceptTerms" name="ContactForm2[9590][acceptTerms]" type="checkbox" value="1"/>
+<input id="ContactForm2_9590_acceptTerms" name="ContactForm2[9590][acceptTerms]" type="checkbox" value="1"/>
                                             Megismertem és elfogadom az <a class="open-dialog policy" data-review-original-href="/privacy" href="#" tabindex="-1">adatvédelmi tájékoztatót</a>, és kifejezetten hozzájárulásomat adom, hogy a megadott adataimat a(z) Dr. Mihályi László saját célra kezelje, munkatársai kapcsolatba lépjenek velem a megadott elérhetőségeim egyikén.                                        </label>
 <div class="alert alert-danger" id="ContactForm2_9590_acceptTerms_em_" style="display:none"></div> </div>
 <button class="btn btn-lg btn-submit-booking btn-block btn-success" name="submit" type="submit">

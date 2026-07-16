@@ -1,7 +1,7 @@
 <!doctype html>
 <!DOCTYPE html>
 
-<html class="" data-browser="chrome" lang="hu" ng-app="app">
+<html data-browser="chrome" lang="hu" ng-app="app">
 <head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
 <meta charset="utf-8"/>
 <meta content="ie=edge" http-equiv="x-ua-compatible"/>
@@ -41,18 +41,15 @@
 
  <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="article-full article-35 category-furdo d-flex flex-column browser-chrome menu-30 white-bg normal-container locale-hu" ng-controller="main_ctrl">
 <div id="outdated"></div>
 <div class="loader-wrap">
-<div class="loader">
-<svg class="circular" viewbox="25 25 50 50">
-<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
-</svg>
-</div>
+
 </div>
 <header>
 <div class="module module-10 module-navigation-bar template-navigation-1 style-default load-style-default load-style-structure container-none" id="module_10">
@@ -563,7 +560,7 @@
 </div>
 </div>
 </header>
-<main class="" role="main">
+<main role="main">
 <toaster-container></toaster-container>
 <div class="content-wrap">
 <div class="article-page">
@@ -577,8 +574,8 @@
 <div class="module-inner">
 <div class="module-body">
 <ul class="list p-0 m-0" id="menu_module_30">
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/parkolas" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/parkolas" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <?xml version="1.0" encoding="iso-8859-1"?>
@@ -642,8 +639,8 @@
                 </span>
 </a>
 </li>
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/penztarak" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/penztarak" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <?xml version="1.0" encoding="utf-8"?>
@@ -677,8 +674,8 @@
                 </span>
 </a>
 </li>
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/furdo/arak" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/furdo/arak" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <svg enable-background="new 0 0 512 512" height="512" id="Capa_1" viewbox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m378 73h-19v-17c0-8.284-6.716-15-15-15h-35.032c-6.354-22.948-27.366-41-52.968-41-25.558 0-46.604 18.016-52.968 41h-35.032c-8.284 0-15 6.716-15 15v17h-19c-24.813 0-45 20.187-45 45v349c0 24.813 20.187 45 45 45h244c24.813 0 45-20.187 45-45v-349c0-24.813-20.187-45-45-45zm-195-2h33c8.284 0 15-6.716 15-15 0-14.094 11.449-26 25-26s25 11.906 25 26c0 8.284 6.716 15 15 15h33v42h-146zm210 396c0 8.271-6.729 15-15 15h-244c-8.271 0-15-6.729-15-15v-349c0-8.271 6.729-15 15-15h19v25c0 8.284 6.716 15 15 15h176c8.284 0 15-6.716 15-15v-25h19c8.271 0 15 6.729 15 15z"></path><path d="m176.33 371.53c-7.664-5.054-17.593-2.152-21.55 5.409-5.888 11.027 3.511 24.136 16.15 21.771 13.423-2.813 16.212-20.066 5.4-27.18z"></path><path d="m344 369h-112c-8.284 0-15 6.716-15 15s6.716 15 15 15h112c8.284 0 15-6.716 15-15s-6.716-15-15-15z"></path><path d="m182.71 317.069c-1.833-8.78-10.559-13.948-19.07-11.42-8.681 2.838-12.181 11.364-9.99 18.71 2.848 8.739 11.506 12.19 18.7 9.99 7.661-2.434 11.764-9.77 10.36-17.28z"></path><path d="m344 305h-112c-8.284 0-15 6.716-15 15s6.716 15 15 15h112c8.284 0 15-6.716 15-15s-6.716-15-15-15z"></path><path d="m182.71 253.069c-1.876-8.987-10.824-13.92-19.06-11.42-8.583 2.745-12.238 11.354-10 18.7 2.735 8.569 11.358 12.244 18.7 10 7.664-2.435 11.763-9.775 10.36-17.28z"></path><path d="m232 271h112c8.284 0 15-6.716 15-15s-6.716-15-15-15h-112c-8.284 0-15 6.716-15 15s6.716 15 15 15z"></path></g></svg>
@@ -687,8 +684,8 @@
                 </span>
 </a>
 </li>
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/sportolas-berles" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/sportolas-berles" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <svg enable-background="new 0 0 512 512" height="512" id="Capa_1" viewbox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m86.992 164.134c34.003 0 61.666-27.664 61.666-61.667s-27.663-61.667-61.666-61.667c-34.004 0-61.668 27.664-61.668 61.667 0 34.003 27.664 61.667 61.668 61.667zm0-93.333c17.461 0 31.666 14.205 31.666 31.666s-14.205 31.667-31.666 31.667c-17.462 0-31.668-14.206-31.668-31.667s14.206-31.666 31.668-31.666z"></path><path d="m477.483 351.062c-18.737-9.017-40.228-9.016-58.966 0-11.002 5.294-23.863 8.082-37.104 7.662-14.342-5.868-26.699-13.928-37.029-24.125 39.254 16.009 82.291-13.086 82.291-55.38 0-32.969-26.821-59.791-59.79-59.791-27.399 0-50.538 18.533-57.577 43.717-3.129-17.375-3.103-32.039-2.8-39.321l40.823-40.824c18.342-18.341 18.342-48.185 0-66.526-18.631-18.63-48.9-18.359-67.184.672l-65.259 67.923-14.719 64.066-103.103 103.529c-52.596-21.972-56.745 6.103-97.066 6.103v30c44.9 0 52.941-23.921 80.476-10.673 29.592 14.239 65.52 14.208 95.05 0 27.538-13.25 35.563 10.673 80.475 10.673 16.581 0 33.015-3.691 47.525-10.673 27.538-13.25 35.56 10.673 80.475 10.673 44.932 0 52.935-23.926 80.475-10.673 14.511 6.982 30.944 10.673 47.525 10.673v-30c-12.105 0-24.042-2.664-34.518-7.705zm-110.597-101.635c16.427 0 29.79 13.364 29.79 29.791s-13.363 29.79-29.79 29.79-29.79-13.364-29.79-29.79c0-16.427 13.363-29.791 29.79-29.791zm-76.368 101.634c-21.329 10.264-47.672 10.28-69.034 0-18.738-9.017-40.229-9.016-58.966 0-8.881 4.273-18.81 6.831-29 7.514l93.97-94.354 14.783-64.35c59.972-60.019 59.117-67.175 71.804-67.175 15.222 0 22.683 18.452 12.045 29.09l-47.386 47.385-1.106 3.477c-2.067 6.492-7.307 79.267 35.525 132.016-7.745.792-15.396 2.914-22.635 6.397z"></path><path d="m418.518 433.493c-21.328 10.264-47.672 10.28-69.034 0-18.737-9.017-40.228-9.016-58.966 0-21.329 10.264-47.672 10.28-69.034 0-18.738-9.017-40.229-9.016-58.966 0-21.33 10.264-47.671 10.28-69.034 0-18.739-9.017-40.23-9.016-58.966 0-10.478 5.042-22.414 7.706-34.518 7.706v30c44.9 0 52.941-23.921 80.476-10.673 14.511 6.983 30.944 10.673 47.524 10.673 44.9 0 52.941-23.921 80.476-10.673 29.534 14.211 65.464 14.236 95.05 0 10.472-5.039 22.48-5.039 32.949 0 29.533 14.211 65.465 14.237 95.051 0 27.538-13.25 35.56 10.673 80.475 10.673v-30c-12.104 0-24.041-2.665-34.517-7.706-18.738-9.016-40.229-9.015-58.966 0z"></path></g></svg>
@@ -697,8 +694,8 @@
                 </span>
 </a>
 </li>
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/gyik" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/gyik" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <svg height="512pt" viewbox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path d="m255 401c-11.046875 0-20-8.953125-20-20s8.953125-20 20-20 20 8.953125 20 20-8.953125 20-20 20zm20-90v-26.855469c38.671875-9.355469 65.464844-44.441406 63.9375-84.117187-1.660156-43.203125-37.105469-78.332032-80.695312-79.964844-23.289063-.882812-45.28125 7.460938-61.90625 23.472656-16.339844 15.738282-25.335938 36.855469-25.335938 59.464844 0 11.046875 8.953125 20 20 20s20-8.953125 20-20c0-11.640625 4.644531-22.527344 13.082031-30.652344 8.726563-8.402344 20.316407-12.773437 32.660157-12.316406 22.816406.859375 41.363281 19.101562 42.226562 41.535156.800781 20.90625-13.628906 39.378906-34.320312 43.917969-17.457032 3.832031-29.648438 18.917969-29.648438 36.691406v28.824219c0 11.046875 8.953125 20 20 20s20-8.953125 20-20zm113.460938 164.105469c9.449218-5.722657 12.46875-18.019531 6.746093-27.464844-5.726562-9.449219-18.023437-12.46875-27.46875-6.746094-33.59375 20.347657-72.234375 31.105469-111.738281 31.105469-119.101562 0-216-96.898438-216-216s96.898438-216 216-216 216 96.898438 216 216c0 42.589844-12.664062 84.042969-36.625 119.886719-6.140625 9.179687-3.671875 21.601562 5.507812 27.742187 9.183594 6.140625 21.605469 3.671875 27.742188-5.511718 28.378906-42.441407 43.375-91.585938 43.375-142.117188 0-68.378906-26.628906-132.667969-74.980469-181.019531-48.351562-48.351563-112.640625-74.980469-181.019531-74.980469s-132.667969 26.628906-181.019531 74.980469c-48.351563 48.351562-74.980469 112.640625-74.980469 181.019531s26.628906 132.667969 74.980469 181.019531c48.351562 48.351563 112.640625 74.980469 181.019531 74.980469 46.8125 0 92.617188-12.757812 132.460938-36.894531zm0 0"></path></svg>
@@ -717,8 +714,8 @@
 <div class="module-inner">
 <div class="module-body">
 <ul class="list p-0 m-0" id="menu_module_40">
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/furdo/strandfurdo" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/furdo/strandfurdo" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <svg enable-background="new 0 0 512 512" height="512" id="Capa_1" viewbox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m19.105 365.835c194.577-55.312 265.697 56.463 481.68.085 8.016-2.092 12.817-10.287 10.725-18.302s-10.287-12.816-18.302-10.725c-42.403 11.069-79.157 15.166-112.44 15.21l-43.487-70.09c25.706 31.941 73.481 33.782 101.473 4.016 12.307-13.086 18.781-30.182 18.231-48.138-1.846-60.194-75.597-87.203-116.214-44.014-19.566 20.806-23.115 50.389-12.099 74.259l-59.504-95.904 88.302-25.481c27.423-7.913 40.383-39.303 26.45-64.27-10.117-18.128-31.115-26.77-51.059-21.014l-133.683 38.577c-34.661 10.003-50.183 50.295-31.151 80.971l40.406 65.123c-29.127 18.08-121.51 75.368-122.491 76.048-23.189 2.451-48.023 7.112-75.038 14.792-7.968 2.265-12.592 10.561-10.327 18.53 2.264 7.97 10.563 12.592 18.528 10.327zm343.519-151.404c14.12-15.014 37.69-15.695 52.661-1.616 14.998 14.105 15.723 37.661 1.616 52.662-14.103 14.996-37.661 15.723-52.661 1.616-14.999-14.106-15.723-37.662-1.616-52.662zm-120.793 28.638-48.313-77.869c-8.533-13.753-1.586-31.84 13.976-36.331l133.683-38.577c6.467-1.868 13.267.935 16.546 6.809 4.524 8.107.296 18.267-8.571 20.826l-107.331 30.973c-9.553 2.757-13.82 13.887-8.587 22.32l111.286 179.362c-69.987-5.875-126.854-26.983-198.86-30.189l91.334-56.671c7.039-4.367 9.205-13.614 4.837-20.653z"></path><path d="m493.208 406.893c-206.643 53.942-279.154-57.666-482.306.085-7.968 2.265-12.592 10.561-10.327 18.53s10.564 12.593 18.53 10.327c194.577-55.312 265.697 56.463 481.68.085 8.016-2.092 12.817-10.287 10.725-18.302-2.092-8.016-10.287-12.816-18.302-10.725z"></path></g></svg>
@@ -727,8 +724,8 @@
                 </span>
 </a>
 </li>
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/furdo/elmenyfurdo" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/furdo/elmenyfurdo" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <?xml version="1.0" encoding="utf-8"?>
@@ -796,7 +793,7 @@
                 </span>
 </a>
 </li>
-<li class="">
+<li>
 <a class="active" data-review-original-href="https://www.cserkeszolo.hu/furdo/gyogyaszati-kozpont" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
@@ -814,8 +811,8 @@
                 </span>
 </a>
 </li>
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/furdo/szauna-sziget" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/furdo/szauna-sziget" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <?xml version="1.0" encoding="utf-8"?>
@@ -853,8 +850,8 @@
                 </span>
 </a>
 </li>
-<li class="">
-<a class="" data-review-original-href="https://www.cserkeszolo.hu/furdo/wellness-szolgaltatasok" href="#" tabindex="-1">
+<li>
+<a data-review-original-href="https://www.cserkeszolo.hu/furdo/wellness-szolgaltatasok" href="#" tabindex="-1">
 <span class="name-wrap">
 <span class="iconwrap">
 <svg height="126" viewbox="0 0 169 126" width="169" xmlns="http://www.w3.org/2000/svg">

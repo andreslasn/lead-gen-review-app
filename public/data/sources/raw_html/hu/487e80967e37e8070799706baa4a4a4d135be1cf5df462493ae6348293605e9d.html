@@ -121,13 +121,14 @@ body .featherlight .featherlight-close-icon {
     top: 40px;
     right: 40px;
     background: 0 0;
-    color: #6f6e6e;
-border: 1px solid #6f6e6e;
+    color: #6f6e6e;   
+border: 1px solid #6f6e6e;  
 border-radius: 0;
 }</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -208,7 +209,7 @@ border-radius: 0;
 <img alt="Csongrád" id="logo"/>
 </a>
 
-<div class="" id="et-navigation">
+<div id="et-navigation">
 <ul class="nav" id="et-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-2772" id="menu-item-2772"><a data-review-original-href="https://www.csongrad.hu" href="#" tabindex="-1">Címlap</a>
 <ul class="sub-menu">
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2782" id="menu-item-2782"><a data-review-original-href="https://www.csongrad.hu/polgarmesteri-koszonto/" href="#" tabindex="-1">Polgármesteri köszöntő</a></li>
@@ -643,9 +644,9 @@ Csongrádfürdő.hu</a>
 
 
 </div> </div>
-</div>
-</div>
-</div>
+</div> 
+</div> 
+</div> 
 <footer class="footer_columns_3" id="footer">
 <div class="container">
 <div class="et_pb_extra_row container-width-change-notify">
@@ -759,11 +760,11 @@ zoom: 1;
 <a class="et-extra-icon et-extra-icon-background-none et-extra-icon-instagram" data-review-original-href="https://instagram.com" href="#" tabindex="-1"></a>
 </li>
 </ul>
-</div>
+</div> 
 </div>
 </div>
 </footer>
-</div>
+</div> 
 
 
 

@@ -107,13 +107,13 @@ body.custom-background { background-image: url("http://gadoros.hu/wp-content/upl
     position: relative;
     z-index: 10;
     top: 350px;
-
+	   
 }
 .header-image {
     position: relative;
     top: -160px;
-
-
+	
+	 
 }
 }
 
@@ -151,7 +151,7 @@ width: 100%;
 .main-navigation li a:hover,
 .main-navigation li a:focus {
         color: #fff;
-
+				
 }
 /*Menü lenyíló fül betű szín*/
 .main-navigation li ul li a {
@@ -180,7 +180,7 @@ width: 100%;
 .widget-area .widget {
 	margin-bottom: 5px;
 	margin-bottom: .7rem;
-
+	
 
 }
 .img.wp-iamge-4768 {
@@ -226,7 +226,8 @@ width: 100%;
                         			</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

@@ -59,16 +59,16 @@ Egészségügy | Radostyán Község Önkormányzata	</title>
 
 
 <style id="ui-fontsize.css-inline-css" type="text/css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 </style>
 
 <style id="wpa-style-inline-css" type="text/css">
 
 .wpa-hide-ltr#skiplinks a, .wpa-hide-ltr#skiplinks a:hover, .wpa-hide-ltr#skiplinks a:visited {
-
+	
 }
 .wpa-hide-ltr#skiplinks a:active,  .wpa-hide-ltr#skiplinks a:focus {
-
+	
 }
 	:root { --admin-bar-top : 7px; }
 </style>
@@ -153,7 +153,8 @@ body.custom-background { background-color: #ededa8; }
 }		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -733,7 +734,7 @@ Holnap: <span style="color: #ff0000;"><strong>Endre, Elek</strong></span> napja 
 
     height: auto !important;
 
-
+    
     padding: 18px 0px !important;
 
     background-color: #ffffff !important;
@@ -747,8 +748,8 @@ Holnap: <span style="color: #ff0000;"><strong>Endre, Elek</strong></span> napja 
     font-family: Helvetica,Arial,sans-serif !important;
 
     font-weight: bold !important;
-                color: #000000 !important;
-        font-size: 16px !important;
+                color: #000000 !important;    
+        font-size: 16px !important;    
         text-align: center !important;        margin: 0 0 10px !important;
     padding: 0 !important;
 }
@@ -766,34 +767,34 @@ Holnap: <span style="color: #ff0000;"><strong>Endre, Elek</strong></span> napja 
 }
 
 .sfsi_subscribe_Popinner input[type=email] {
-        font-family: Helvetica,Arial,sans-serif !important;
+        font-family: Helvetica,Arial,sans-serif !important;    
     font-style: normal !important;
-            color: #000000 !important;
-        font-size: 14px !important;
+            color: #000000 !important;    
+        font-size: 14px !important;    
         text-align: center !important;    }
 
 .sfsi_subscribe_Popinner input[type=email]::-webkit-input-placeholder {
 
-        font-family: Helvetica,Arial,sans-serif !important;
+        font-family: Helvetica,Arial,sans-serif !important;    
     font-style: normal !important;
-               color: #000000 !important;
-        font-size: 14px !important;
+               color: #000000 !important;    
+        font-size: 14px !important;    
         text-align: center !important;    }
 
 .sfsi_subscribe_Popinner input[type=email]:-moz-placeholder {
     /* Firefox 18- */
-        font-family: Helvetica,Arial,sans-serif !important;
+        font-family: Helvetica,Arial,sans-serif !important;    
     font-style: normal !important;
-            color: #000000 !important;
-        font-size: 14px !important;
-        text-align: center !important;
+            color: #000000 !important;    
+        font-size: 14px !important;    
+        text-align: center !important;    
 }
 
 .sfsi_subscribe_Popinner input[type=email]::-moz-placeholder {
     /* Firefox 19+ */
-        font-family: Helvetica,Arial,sans-serif !important;
+        font-family: Helvetica,Arial,sans-serif !important;    
         font-style: normal !important;
-                color: #000000 !important;
+                color: #000000 !important;    
             font-size: 14px !important;                text-align: center !important;    }
 
 .sfsi_subscribe_Popinner input[type=email]:-ms-input-placeholder {
@@ -806,11 +807,11 @@ Holnap: <span style="color: #ff0000;"><strong>Endre, Elek</strong></span> napja 
 
 .sfsi_subscribe_Popinner input[type=submit] {
 
-        font-family: Helvetica,Arial,sans-serif !important;
+        font-family: Helvetica,Arial,sans-serif !important;    
     font-weight: bold !important;
-            color: #000000 !important;
-        font-size: 16px !important;
-        text-align: center !important;
+            color: #000000 !important;    
+        font-size: 16px !important;    
+        text-align: center !important;    
         background-color: #dedede !important;    }
 
 .sfsi_shortcode_container {

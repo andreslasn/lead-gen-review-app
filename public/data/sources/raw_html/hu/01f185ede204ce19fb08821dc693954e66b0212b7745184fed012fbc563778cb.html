@@ -60,7 +60,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -79,7 +80,7 @@
 <style>
 .image-container a:focus {
   display: inline-block;
-  /* padding: 2px;*/
+  /* padding: 2px;*/ 
 }
 </style>
 <style>
@@ -607,13 +608,13 @@ Egészséges tanácsadásra időpontot foglalni az <a data-review-original-href=
 <div class="col-sm-4">
 <ul class="kozep">
 <li>
-<a class="" data-review-original-href="https://www.hegyvidek.hu/hirlevel" href="#" tabindex="-1" target="_self" title="Hírlevél">Hírlevél</a><span class="aural">,</span>
+<a data-review-original-href="https://www.hegyvidek.hu/hirlevel" href="#" tabindex="-1" target="_self" title="Hírlevél">Hírlevél</a><span class="aural">,</span>
 </li>
 <li>
-<a class="" data-review-original-href="https://eugyintezes.hegyvidek.hu/" href="#" tabindex="-1" target="_self" title="Ügyintézés">Ügyintézés</a><span class="aural">,</span>
+<a data-review-original-href="https://eugyintezes.hegyvidek.hu/" href="#" tabindex="-1" target="_self" title="Ügyintézés">Ügyintézés</a><span class="aural">,</span>
 </li>
 <li>
-<a class="" data-review-original-href="/honlapterkep" href="#" tabindex="-1" target="_self" title="Honlaptérkép">Honlaptérkép</a><span class="aural">.</span>
+<a data-review-original-href="/honlapterkep" href="#" tabindex="-1" target="_self" title="Honlaptérkép">Honlaptérkép</a><span class="aural">.</span>
 </li>
 </ul>
 <div>
@@ -622,13 +623,13 @@ Egészséges tanácsadásra időpontot foglalni az <a data-review-original-href=
 </div>
 <div class="col-sm-4"><ul class="kozep">
 <li>
-<a class="" data-review-original-href="/adatvedelem" href="#" tabindex="-1" target="_self" title="Adatvédelem">Adatvédelem</a><span class="aural">,</span>
+<a data-review-original-href="/adatvedelem" href="#" tabindex="-1" target="_self" title="Adatvédelem">Adatvédelem</a><span class="aural">,</span>
 </li>
 <li>
-<a class="" data-review-original-href="/onkormanyzat/dokumentumtar/akadalymentesitesi" href="#" tabindex="-1" target="_self" title="Akadálymentesítési nyilatkozat">Akadálymentesítési nyilatkozat</a><span class="aural">,</span>
+<a data-review-original-href="/onkormanyzat/dokumentumtar/akadalymentesitesi" href="#" tabindex="-1" target="_self" title="Akadálymentesítési nyilatkozat">Akadálymentesítési nyilatkozat</a><span class="aural">,</span>
 </li>
 <li>
-<a class="" data-review-original-href="/impresszum" href="#" tabindex="-1" target="_self" title="Impresszum">Impresszum</a><span class="aural">.</span>
+<a data-review-original-href="/impresszum" href="#" tabindex="-1" target="_self" title="Impresszum">Impresszum</a><span class="aural">.</span>
 </li>
 </ul></div>
 <div class="col-sm-4">
@@ -659,7 +660,7 @@ Egészséges tanácsadásra időpontot foglalni az <a data-review-original-href=
 </div></footer>
 <div class="hidden-md hidden-lg" id="sidebar-button"><span class="glyphicon"></span></div>
 <div class="hidden-md hidden-lg" id="sidebar-close"><span class="glyphicon"></span></div>
-<div class="" id="back-top"></div>
+<div id="back-top"></div>
 
 <div aria-hidden="true" aria-labelledby="modalSearchLabel" class="modal fade" id="searchModal" role="dialog" tabindex="-1">
 <div class="modal-dialog">

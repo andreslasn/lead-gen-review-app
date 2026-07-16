@@ -68,7 +68,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -82,7 +83,7 @@
 </a>
 
 <div class="loader_hatter d-none">
-<div class="loader"></div>
+
 </div>
 
 <div class="header2 bg-sotet">
@@ -106,7 +107,7 @@
 </button>
 
 <div class="collapse navbar-collapse" id="header-menu">
-<ul class="navbar-nav ms-auto">
+<ul class="navbar-nav ms-auto"> 
 <li class="nav-item">
 <a class="nav-link" data-review-original-href="/szakembereink" href="#" tabindex="-1">
                                 Orvosaink, szakembereink

@@ -76,20 +76,21 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body id="top">
 <div class="container">
-<div class="hidden-xs row top-navbar">
+<div class="hidden-xs row top-navbar"> 
 <ul class="nav navbar-nav navbar-left" id="fomenu">
-<li class=""><a class="" data-review-original-href="/kapcsolat" href="#" tabindex="-1">Kapcsolat</a></li>
-<li class=""><a aria-controls="collapseNewsletter" aria-expanded="false" class="" data-review-original-href="" data-target="#collapseNewsletter" data-toggle="collapse" href="#" tabindex="-1">Feliratkozás hírlevélre</a></li>
+<li><a data-review-original-href="/kapcsolat" href="#" tabindex="-1">Kapcsolat</a></li>
+<li><a aria-controls="collapseNewsletter" aria-expanded="false" data-review-original-href="" data-target="#collapseNewsletter" data-toggle="collapse" href="#" tabindex="-1">Feliratkozás hírlevélre</a></li>
 
-<li class=""><a class="" data-review-original-href="https://maltaikarrier.hrmaster.hu/DataCenter/Registration/" href="#" tabindex="-1">Álláshirdetések</a></li>
+<li><a data-review-original-href="https://maltaikarrier.hrmaster.hu/DataCenter/Registration/" href="#" tabindex="-1">Álláshirdetések</a></li>
 
-<li class="tabor"><a class="" data-review-original-href="https://panaszbejelento.maltai.hu" href="#" tabindex="-1" target="_blank">Panaszbejelentés</a></li>
+<li class="tabor"><a data-review-original-href="https://panaszbejelento.maltai.hu" href="#" tabindex="-1" target="_blank">Panaszbejelentés</a></li>
 <li>
 <a class="fomenu" data-review-original-href="/stilus/valt/am" href="#" tabindex="-1"><img alt="Akadálymentességre váltó ikon" class="icon-access"/></a>
 </li>
@@ -98,7 +99,7 @@
 </li>
 </ul>
 <ul class="nav navbar-nav navbar-right lang">
-<li class="">
+<li>
 <div data-review-disabled-form="true">
 <div class="form-group search">
 <input aria-describedby="inputSearch" class="form-control global-search" id="inputSearch" name="szo" placeholder="Keresés" type="text"/>
@@ -107,8 +108,8 @@
 </div>
 </div>
 </li>
-<li class=""><a class="text-uppercase language-select" data-review-original-href="/nyelv/valt/hu/cikk/hir/5215" href="#" tabindex="-1">HU</a></li>
-<li class=""><a class="text-uppercase language-select" data-review-original-href="/nyelv/valt/en/cikk/hir/5215" href="#" tabindex="-1">EN</a></li>
+<li><a class="text-uppercase language-select" data-review-original-href="/nyelv/valt/hu/cikk/hir/5215" href="#" tabindex="-1">HU</a></li>
+<li><a class="text-uppercase language-select" data-review-original-href="/nyelv/valt/en/cikk/hir/5215" href="#" tabindex="-1">EN</a></li>
 </ul>
 </div>
 <div class="collapse row" id="collapseNewsletter">
@@ -155,7 +156,7 @@
 </div>
 </div>
 <div class="navbar-collapse collapse">
-<div class="row">
+<div class="row"> 
 <ul class="nav navbar-nav navbar-bottom navbar-left">
 <div class="row sese">
 <li class="visible-xs lang-collapse hu"><a class="text-uppercase" data-review-original-href="/nyelv/valt/hu/cikk/hir/5215" href="#" tabindex="-1">HU</a></li>
@@ -200,7 +201,7 @@
 <li class="visible-xs"><a class="text-uppercase" data-review-original-href="/kereses" href="#" tabindex="-1">Keresés</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right bottom-nav">
-<li><a class="" data-review-original-href="https://kozmaimreatya.hu/" href="#" tabindex="-1" target="_blank"><img alt="Máltai Szeretetszolgálat" class="img-responsive pray"/>Kozma Imre atya emlékoldala </a></li>
+<li><a data-review-original-href="https://kozmaimreatya.hu/" href="#" tabindex="-1" target="_blank"><img alt="Máltai Szeretetszolgálat" class="img-responsive pray"/>Kozma Imre atya emlékoldala </a></li>
 <li><a class="napiEvangeliumOpen" data-review-original-href="" data-target="#napiEvangeliumModal" data-toggle="modal" href="#" tabindex="-1"><img alt="Máltai Szeretetszolgálat" class="img-responsive pray"/>Napi evangélium</a></li>
 </ul>
 </div>
@@ -232,7 +233,7 @@
 	 </p>
 </div>
 <div class="col-md-8">
-<div class="">
+<div>
 <img alt="Rendelés az átányi egészségházban. Fotó: Kovács Bence / Magyar Máltai Szeretetszolgálat" class="img-responsive op-img"/>
 <div class="img-info">
 <p><i class="fa fa-camera"></i> Fotó: Rendelés az átányi egészségházban. Fotó: Kovács Bence / Magyar Máltai Szeretetszolgálat</p>
@@ -252,8 +253,8 @@
 </div>
 <div class="news-list-item article-item article-icon-group last">
 <a class="javascript:" data-review-original-href="" href="#" tabindex="-1" target="_blank"><img alt="Máltai Szeretetszolgálat" class="img-responsive article-icon"/></a>
-<a "="" class="" data-review-original-href="javascript:emailCurrentPage()" href="#" tabindex="-1" target="blank"><img alt="Ez a cikk érdekelhet téged" class="img-responsive article-icon"/></a>
-<a class="" data-review-original-href="javascript:window.print()" href="#" tabindex="-1"><img alt="Máltai Szeretetszolgálat" class="img-responsive article-icon"/></a>
+<a "="" data-review-original-href="javascript:emailCurrentPage()" href="#" tabindex="-1" target="blank"><img alt="Ez a cikk érdekelhet téged" class="img-responsive article-icon"/></a>
+<a data-review-original-href="javascript:window.print()" href="#" tabindex="-1"><img alt="Máltai Szeretetszolgálat" class="img-responsive article-icon"/></a>
 </div>
 </div>
 </div>

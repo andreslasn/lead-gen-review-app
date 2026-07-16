@@ -87,7 +87,8 @@
 
 <style type="text/css">html body { background-color : #ffffff; background-image : url(http://www.revitalmedbeauty.hu/2014/wp-content/themes/revitalmedbeauty/img/bg.png); background-position : top left; background-repeat : repeat; background-attachment : scroll; }#header > .header_inner { height : 182px; } #header > .header_inner > a.logo { top : 41px; left : 0px; } #header > .header_inner > a.logo, #header > .header_inner > a.logo > img { width : 494px; height : 45px; } #header .wrap_nav { top : 126px; } #header .wrap_social_icons { top : 62px; right : -2px; } #header .header_html { top : 30px; right : 0px; } @media only screen and (max-width : 1023px) { #header > .header_inner > a.logo { top : auto; left : auto; } #header > .header_inner { height : auto; } #header .wrap_nav { top : auto; right : auto; } #header .wrap_social_icons { top : auto; right : auto; } } @media only screen and (max-width : 400px) { #header > .header_inner > a.logo, #header > .header_inner > a.logo > img { max-width : 100%; height : auto; } } </style><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

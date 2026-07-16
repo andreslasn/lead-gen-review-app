@@ -24,7 +24,7 @@
         color: red;
         font-weight: bold;
     }
-
+    
     .mukodo * {
       box-sizing: border-box;
     }
@@ -34,7 +34,7 @@
       width: 50%;
       padding: 0px 20px 0px 20px;
     }
-
+    
     .row_muklek p{
         margin-top: -10px;
     }
@@ -43,9 +43,9 @@
       content: "";
       display: table;
       clear: both;
-    }
-
-
+    }    
+    
+    
     .myButton{
         background-color:#d0451b;
     }
@@ -64,15 +64,16 @@
 		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#d0451b',GradientType=0);
 		background-color:#bc3315;
 	}
-
+    
 	.myButton:active{
 		position:relative;
 		top:1px;
-	}
+	}    
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

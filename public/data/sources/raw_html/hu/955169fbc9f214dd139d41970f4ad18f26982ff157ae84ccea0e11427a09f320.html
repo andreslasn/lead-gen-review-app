@@ -109,7 +109,8 @@
 <img alt="Barion Pixel" data-pagespeed-url-hash="3458882673" height="1" style="display:none" width="1"/>
 </noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -910,7 +911,7 @@
 </button>
 <div aria-atomic="true" aria-live="polite" class="screen-reader-text" data-wp-text="state.ariaLabel"></div>
 <div aria-hidden="true" class="scrim" style="background-color: var(--wp--preset--color--base)"></div>
-</div>
+</div> 
 <style>body div .wpcf7-form .fit-the-fullspace{position:absolute;margin-left:-999em}</style><style id="wp-interactivity-router-animations-inline-css">.wp-interactivity-router-loading-bar{position:fixed;top:0;left:0;margin:0;padding:0;width:100vw;max-width:100vw!important;height:4px;background-color:#000;opacity:0}.wp-interactivity-router-loading-bar.start-animation{animation:wp-interactivity-router-loading-bar-start-animation 30s cubic-bezier(.03,.5,0,1) forwards}.wp-interactivity-router-loading-bar.finish-animation{animation:wp-interactivity-router-loading-bar-finish-animation 300ms ease-in}@keyframes wp-interactivity-router-loading-bar-start-animation {
 				0% { transform: scaleX(0); transform-origin: 0 0; opacity: 1 }
 				100% { transform: scaleX(1); transform-origin: 0 0; opacity: 1 }

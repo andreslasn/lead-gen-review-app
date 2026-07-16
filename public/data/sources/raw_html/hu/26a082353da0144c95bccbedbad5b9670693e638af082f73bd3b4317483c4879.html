@@ -330,7 +330,8 @@ display: inline-block;
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -610,7 +611,7 @@ box-shadow: 0 0 0 0 #FFFFFF;
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <meta content="FastReport 5.0 http://www.fast-report.com" name="Generator"/>
 <title></title>
-<style type="text/css"><!--
+<style type="text/css"><!-- 
 @media print {#frreport {display:block;} #frreportspan {display:block;} @page {margin: 0cm 0cm 0cm 0cm;} }
 .page_break {page-break-before: always; page-break-inside: avoid; break-inside: avoid;}
 .s0 {
@@ -855,7 +856,7 @@ P {margin: 0;}
 <div class="row">
 <div class="col-lg-12" id="sp-footer1"><div class="sp-column"><div class="sp-module"><div class="sp-module-content"><div class="mod-sppagebuilder sp-page-builder" data-module_id="167">
 <div class="page-content">
-<section class="sppb-section" id="section-id-1700817818748"><div class="sppb-row-container"><div class="sppb-row"><div class="sppb-row-column" id="column-wrap-id-1700817818753"><div class="sppb-column" id="column-id-1700817818753"><div class="sppb-column-addons"><div class="sppb-addon-wrapper addon-root-navigation" id="sppb-addon-wrapper-1700825949522"><div class="clearfix" id="sppb-addon-1700825949522"><div class="sppb-link-list-wrap sppb-link-list-nav sppb-nav-align-center"><nav aria-label="Menu" role="navigation"><ul id="nav-menu"><li class=""><a aria-label="Tiszaújváros oldal" data-review-original-href="https://www.tiszaujvaros.hu" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> www.tiszaujvaros.hu</a></li><li class=""><a aria-label="EESZT portál nyitó oldala" data-review-original-href="https://www.eeszt.gov.hu/hu/nyito-oldal" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> EESZT lakossági portál</a></li><li class=""><a aria-label="Lakossági információs portál nyitó oldala" data-review-original-href="http://neak.gov.hu/felso_menu/lakossagnak" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> NEAK- lakossági információ</a></li><li class=""><a aria-label="Nemzeti Jogszabálytár portál nyitó oldala" data-review-original-href="https://njt.hu/" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> Nemzeti Jogszabálytár</a></li></ul></nav></div><style type="text/css">#sppb-addon-1700825949522{
+<section class="sppb-section" id="section-id-1700817818748"><div class="sppb-row-container"><div class="sppb-row"><div class="sppb-row-column" id="column-wrap-id-1700817818753"><div class="sppb-column" id="column-id-1700817818753"><div class="sppb-column-addons"><div class="sppb-addon-wrapper addon-root-navigation" id="sppb-addon-wrapper-1700825949522"><div class="clearfix" id="sppb-addon-1700825949522"><div class="sppb-link-list-wrap sppb-link-list-nav sppb-nav-align-center"><nav aria-label="Menu" role="navigation"><ul id="nav-menu"><li><a aria-label="Tiszaújváros oldal" data-review-original-href="https://www.tiszaujvaros.hu" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> www.tiszaujvaros.hu</a></li><li><a aria-label="EESZT portál nyitó oldala" data-review-original-href="https://www.eeszt.gov.hu/hu/nyito-oldal" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> EESZT lakossági portál</a></li><li><a aria-label="Lakossági információs portál nyitó oldala" data-review-original-href="http://neak.gov.hu/felso_menu/lakossagnak" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> NEAK- lakossági információ</a></li><li><a aria-label="Nemzeti Jogszabálytár portál nyitó oldala" data-review-original-href="https://njt.hu/" href="#" tabindex="-1" target="_blank"><i aria-hidden="true" class="fas fa-external-link-alt"></i> Nemzeti Jogszabálytár</a></li></ul></nav></div><style type="text/css">#sppb-addon-1700825949522{
 }#sppb-addon-1700825949522{
 }
 @media (max-width: 1199.98px) {#sppb-addon-1700825949522{}}

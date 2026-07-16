@@ -87,7 +87,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 
 <style id="ui-fontsize.css-inline-css" type="text/css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
@@ -175,8 +175,8 @@ a,
 .comment-tabs li.active a,
 .wp-pagenavi a:hover,
 .wp-pagenavi a:active,
-.wp-pagenavi span.current { border-bottom-color: #ba2822!important; }
-
+.wp-pagenavi span.current { border-bottom-color: #ba2822!important; }				
+				
 
 .s2 .post-nav li a:hover i,
 .s2 .widget_rss ul li a,
@@ -195,27 +195,27 @@ a,
 .s2 .widget_calendar caption { background-color: #ba2822; }
 
 .s2 .alx-tabs-nav li.active a { border-bottom-color: #ba2822; }
-.post-comments span:before { border-right-color: #ba2822; }
-
+.post-comments span:before { border-right-color: #ba2822; }				
+				
 
 .search-expand,
 #nav-topbar.nav-container { background-color: #323232; }
 @media only screen and (min-width: 720px) {
 	#nav-topbar .nav ul { background-color: #323232; }
-}
-
+}			
+				
 
 #header { background-color: #ffffff; }
 @media only screen and (min-width: 720px) {
 	#nav-header .nav ul { background-color: #ffffff; }
-}
-
+}			
+				
 
 #nav-header.nav-container { background-color: #ba2822; }
 @media only screen and (min-width: 720px) {
 	#nav-header .nav ul { background-color: #ba2822; }
-}
-
+}			
+				
 #footer-bottom { background-color: #23282d; }
 .site-title a img { max-height: 200px; }
 body { background-color: #ededed; }
@@ -225,7 +225,8 @@ body { background-color: #ededed; }
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

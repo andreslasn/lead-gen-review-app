@@ -49,7 +49,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -615,7 +616,7 @@
 <div class="form-group m-0">
 <label class="checkbox d-flex flex-column pb-0">
 <span>Csak szöveges értékelések megjelenítése</span>
-<input checked="" class="" id="is_status-review" itemprop="isStatusReview" name="is_status-review" type="checkbox"/>
+<input checked="" id="is_status-review" itemprop="isStatusReview" name="is_status-review" type="checkbox"/>
 <span class="checkmark"></span>
 </label>
 </div>

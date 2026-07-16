@@ -31,7 +31,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -274,7 +275,7 @@
 </header>
 <div class="col d-none d-lg-block" id="menu-col">
 <div class="container" id="menu-container">
-<ul class="">
+<ul>
 <li class="menu__item">
 <a data-review-original-href="#" href="#" tabindex="-1">
             Barlangszínház
@@ -427,7 +428,7 @@
 </div>
 </div>
 </div>
-<div class="" id="slider-progress">
+<div id="slider-progress">
 </div>
 </div>
 <div class="outer position-absolute">
@@ -574,7 +575,7 @@
 <hr class="divider"/>
 <div class="row footer">
 <div class="col-12 col-lg-6 col-xl-4 footer-item text-center text-lg-left">
-<h2 class="">
+<h2>
                     Megközelítés és kapcsolat
                 </h2>
 <span class="title">Cím</span>
@@ -587,7 +588,7 @@
 <a class="contact" data-review-original-href="mailto:kofejtopenztar@prokultura.hu" href="#" tabindex="-1">kofejtopenztar@prokultura.hu</a>
 </div>
 <div class="col-12 col-lg-6 col-xl-4 footer-item subscribes text-center text-lg-left">
-<h2 class="">
+<h2>
                     Hírlevél feliratkozás
                 </h2>
 <span>Amennyiben szeretne naprakész lenni iratkozzon fel hírlevelünkre</span>
@@ -612,7 +613,7 @@
 <div class="form-group">
 <label class="checkbox text-left" for="accept">
                         Hozzájárulok a megadott adataim kapcsolatfelvétel céljából történő kezeléséhez.
-                        <a class="" data-review-original-href="https://www.fertorakosikofejto.hu/hu/adatkezelesi-tajekoztato" href="#" tabindex="-1" target="_blank">
+                        <a data-review-original-href="https://www.fertorakosikofejto.hu/hu/adatkezelesi-tajekoztato" href="#" tabindex="-1" target="_blank">
                             Adatkezelési tájékoztató
                         </a>
 <input class="required" data-msg-required="Kérem, fogadja el!" id="accept" name="accept" type="checkbox" value="1"/>
@@ -632,7 +633,7 @@
 </div>
 <div class="col-12 col-xl-4 footer-item text-center text-lg-left">
 <div class="partners">
-<h2 class="">
+<h2>
                         Együttműködő partnereink
                     </h2>
 <img alt="Pro Kultúra Sopron" class="partner"/>
@@ -648,7 +649,7 @@
 <a data-review-original-href="https://sopronmedia.hu/" href="#" rel="external" tabindex="-1"><img alt="SopronMédia" class="partner smaller-img" title="SopronMédia"/></a>
 </div>
 <div class="icons">
-<h2 class="">
+<h2>
         Kövessen minket!
     </h2>
 <a data-review-original-href="https://www.facebook.com/barlangszinhaz/" href="#" tabindex="-1" target="_blank">
@@ -663,7 +664,7 @@
 </div> </div>
 <div class="col-12 footer-item icons-rwd text-center text-lg-left">
 <div class="icons">
-<h2 class="">
+<h2>
         Kövessen minket!
     </h2>
 <a data-review-original-href="https://www.facebook.com/barlangszinhaz/" href="#" tabindex="-1" target="_blank">
@@ -732,7 +733,7 @@
 <div class="form-group text-left">
 <label class="checkbox w-100" for="accept-privacy">
                                         Hozzájárulok a megadott adataim kapcsolatfelvétel céljából történő kezeléséhez.
-                                        <a class="" data-review-original-href="https://www.fertorakosikofejto.hu/hu/adatkezelesi-tajekoztato" href="#" tabindex="-1" target="_blank">
+                                        <a data-review-original-href="https://www.fertorakosikofejto.hu/hu/adatkezelesi-tajekoztato" href="#" tabindex="-1" target="_blank">
                                             Adatkezelési tájékoztató
                                         </a>
 <input class="required" data-msg-required="Kérem, fogadja el!" id="accept-privacy" name="accept-privacy" type="checkbox" value="1"/>

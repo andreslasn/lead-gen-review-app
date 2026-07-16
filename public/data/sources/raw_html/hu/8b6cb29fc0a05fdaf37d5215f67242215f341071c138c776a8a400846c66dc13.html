@@ -323,7 +323,8 @@ body > div.elementor.elementor-439 > div.elementor-element.elementor-element-5a0
         </style>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -455,19 +456,19 @@ body > div.elementor.elementor-439 > div.elementor-element.elementor-element-5a0
   position:relative;
 }
 
-
-
+	
+	
 #uc_ue_accordion_menu_elementor_591822e .collapsed .uc-menu-item-pointer:after{
 	content: "";
     background-image: url(https://www.kisvarda.hu/wp-content/uploads/ac_assets/ue_accordion_menu//fa_unicode.svg);
-
-
+    
+      
             font-family: "Font Awesome 5 Free";
         content: "\f107" !important;;
         font-weight: 900;
         line-height:1em;
   		background-image:none;
-
+      
 
     display: inline-block;
     background-repeat: no-repeat;
@@ -478,17 +479,17 @@ body > div.elementor.elementor-439 > div.elementor-element.elementor-element-5a0
 }
 
 #uc_ue_accordion_menu_elementor_591822e .expanded .uc-menu-item-pointer:after{
-
+    
   	content:"";
     background-image: url(https://www.kisvarda.hu/wp-content/uploads/ac_assets/ue_accordion_menu//fa_unicode.svg);
-
-
+	
+      
             font-family: "Font Awesome 5 Free";
         content: "\f106" !important;;
         font-weight: 900;
         line-height:1em;
   		background-image:none;
-
+        
 
     display: inline-block;
     background-repeat: no-repeat;
@@ -499,10 +500,10 @@ body > div.elementor.elementor-439 > div.elementor-element.elementor-element-5a0
 
 #uc_ue_accordion_menu_elementor_591822e .uc-side-menu-items ul li a{
 	display: flex;
-  	justify-content: start;
+  	justify-content: start;  	
 }
 
-
+	
 
 
 #uc_ue_accordion_menu_elementor_591822e .uc-side-menu-items
@@ -550,7 +551,7 @@ body > div.elementor.elementor-439 > div.elementor-element.elementor-element-5a0
 }
 
 .uc-no-transition .sub-menu {
-    transition: none;
+    transition: none;  
 }
 
 </style>
@@ -638,7 +639,7 @@ body > div.elementor.elementor-439 > div.elementor-element.elementor-element-5a0
 </div>
 </div>
 </div>
-</div>
+</div> 
 
 </div> </div>
 </div>
@@ -1086,7 +1087,7 @@ Kedd, Csütörtök: 12-16-ig								</div>
 <h2 class="ekit-team-modal-title">Dr. Csontó László</h2>
 <p class="ekit-team-modal-position">háziorvos</p>
 <div class="ekit-team-modal-content">
-									Rendelési hely és idő:
+									Rendelési hely és idő: 
 Kisvárda Szent György Tér 2
 Hétfő, Szerda, Péntek:
 8-13-ig
@@ -1144,7 +1145,7 @@ Kedd, Csütörtök: 12-17-ig								</div>
 <h2 class="ekit-team-modal-title">Dr Kiséry Zoltán</h2>
 <p class="ekit-team-modal-position">háziorvos</p>
 <div class="ekit-team-modal-content">
-									Rendelési hely és idő:
+									Rendelési hely és idő: 
 Kisvárda Szent György Tér 2
 Hétfő, Szerda: 12-17-ig
 Kedd, Csütörtök:
@@ -1209,7 +1210,7 @@ Péntek: 10-14-ig								</div>
 <h2 class="ekit-team-modal-title">Dr. Nagy Éva</h2>
 <p class="ekit-team-modal-position">gyermekorvos</p>
 <div class="ekit-team-modal-content">
-									Rendelési hely és idő:
+									Rendelési hely és idő: 
 Kisvárda Szent György Tér 2
 Hétfő, Kedd, Szerda,
 Csütörtök, Péntek:
@@ -1331,7 +1332,7 @@ Csütörtök, Péntek:
 <h2 class="ekit-team-modal-title">Dr. Soltész Borbála</h2>
 <p class="ekit-team-modal-position">fogorvos</p>
 <div class="ekit-team-modal-content">
-									Rendelési hely és idő:
+									Rendelési hely és idő: 
 Kisvárda Szent György Tér 2
 Hétfő, Szerda, Péntek:
 8-14-ig
@@ -1756,7 +1757,7 @@ Péntek: 7-13-ig								</div>
   display: flex;
   justify-content: center;
   min-height: 1px;
-}
+} 
 
 /* message in editor styles */
 #uc_cookie_consent_elementor_8b69374 .ue-cookie-consent-added{
@@ -1798,7 +1799,7 @@ Péntek: 7-13-ig								</div>
     line-height: 1;
   }
 
-  #uc_cookie_consent_elementor_8b69374 .ue-cookie-close i,
+  #uc_cookie_consent_elementor_8b69374 .ue-cookie-close i, 
   #uc_cookie_consent_elementor_8b69374 .ue-cookie-close svg{
     pointer-events: none;
   }
@@ -2060,7 +2061,7 @@ Péntek: 7-13-ig								</div>
 		.events_calendar_list .calendar-event-details:hover .calendar-event-title,
         .etn-event-item:hover .etn-title a,
 		.etn-recurring-widget .etn-date-text,
-
+		
 		.etn-event-header ul li i {
             color: #3a623c;
         }

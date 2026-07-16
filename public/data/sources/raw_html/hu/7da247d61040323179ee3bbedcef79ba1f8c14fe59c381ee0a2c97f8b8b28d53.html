@@ -131,7 +131,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 					div[id*='ajaxsearchlite'].asl_r {
 						position: absolute;
 					}
-
+				
 						div.asl_r.asl_w.vertical .resdrg {
 							display: flex;
 							flex-wrap: wrap;
@@ -281,11 +281,11 @@ color: #FCB041 !important;
 .custom-responsive-table {
 	width: 75%;
 }
-
+	
 .custom-responsive-table tfoot tr:last-child td:last-child {
 	border: none;
 }
-
+	
 	.custom-responsive-table td[data-header="Teljes összeg (ezer forint)"], .custom-responsive-table td[data-header="Összesen (ezer forint)"]{
         text-align: right;
         padding-right: 7%;
@@ -295,7 +295,7 @@ color: #FCB041 !important;
         text-align: center;
     }
 }
-
+	
 @media (max-width: 768px) {
     .custom-responsive-table th {
         display: none;
@@ -325,7 +325,7 @@ color: #FCB041 !important;
     .custom-responsive-table tr {
         border-bottom: 1px solid #ddd;
     }
-
+	
 	    .custom-responsive-table td[data-header="Teljes összeg (ezer forint)"], .custom-responsive-table td[data-header="Összesen (ezer forint)"], .custom-responsive-table td[data-header="Megvalósult fejlesztések"] {
         padding-bottom: 10%;
     }
@@ -490,7 +490,8 @@ add_filter('mec_event_date_format', function($format){
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

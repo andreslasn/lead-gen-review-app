@@ -45,11 +45,12 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="">
+<body>
 <div class="uk-hidden-visually uk-notification uk-notification-top-left uk-width-auto">
 <div class="uk-notification-message">
 <a class="uk-link-reset" data-review-original-href="#tm-main" href="#" tabindex="-1">Fő tartalom átugrása</a>
@@ -93,23 +94,23 @@
 <div class="uk-flex-middle uk-grid-small uk-child-width-auto" uk-grid="">
 <div class="el-item">
 <a class="el-content uk-button uk-button-default" data-review-original-href="/intezmenyek/egeszsegugy" href="#" tabindex="-1">
-
-        Rendelési idők
-
+    
+        Rendelési idők    
+    
 </a>
 </div>
 <div class="el-item">
 <a class="el-content uk-button uk-button-default" data-review-original-href="/gyakori-kerdesek/nyitvatartasok" href="#" tabindex="-1">
-
-        Nyitvatartások
-
+    
+        Nyitvatartások    
+    
 </a>
 </div>
 <div class="el-item">
 <a class="el-content uk-button uk-button-default" data-review-original-href="/gyakori-kerdesek/hibabejelentes" href="#" tabindex="-1">
-
-        Hibabejelentés
-
+    
+        Hibabejelentés    
+    
 </a>
 </div>
 </div>
@@ -124,7 +125,7 @@
 {
 	text-indent:5px !important;
 }
-#jp_link_6a5892b5bfce1  span.separator
+#jp_link_6a5892b5bfce1  span.separator 
 {
 	display:inline-block;
 	width:100%;
@@ -155,7 +156,7 @@
 #jp_link_6a5892b5bfce1 .menu_img_level_4{
 	margin-left:0px;
 } */
-#jp_link_6a5892b5bfce1.uk-nav-default .uk-nav-sub,
+#jp_link_6a5892b5bfce1.uk-nav-default .uk-nav-sub,  
 #jp_link_6a5892b5bfce1.jp_link_bg
 {
   /* line-height:0px !important; */
@@ -170,7 +171,7 @@
 {
 	padding:0px !important;
 }
-.jp_custom_icon, .jp_link_bg
+.jp_custom_icon, .jp_link_bg 
 {
 	cursor:pointer;
 }
@@ -184,36 +185,36 @@
 
 
 
-#jp_link_6a5892b5bfce1 .jp_link_bg:hover,
+#jp_link_6a5892b5bfce1 .jp_link_bg:hover, 
 #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg:hover,
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg:hover
 {
    }
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_current_active_bg,
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_current_active_bg, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg{
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg a,
-#jp_link_6a5892b5bfce1 a.jp_link_bg,
+#jp_link_6a5892b5bfce1 .jp_link_bg a, 
+#jp_link_6a5892b5bfce1 a.jp_link_bg, 
 #jp_link_6a5892b5bfce1  .separator.jp_link_bg
 {
 	text-decoration:none !important;text-transform:none !important;}
 
-#jp_link_6a5892b5bfce1 a.jp_link_bg:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg a:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg:hover a,
+#jp_link_6a5892b5bfce1 a.jp_link_bg:hover,  
+#jp_link_6a5892b5bfce1 .jp_link_bg a:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg:hover a, 
 #jp_link_6a5892b5bfce1 a.jp_active_link:hover,
 #jp_link_6a5892b5bfce1 .separator.jp_link_bg:hover
 {
-   text-decoration:none !important;text-transform:none !important;
+   text-decoration:none !important;text-transform:none !important; 
 }
 #jp_link_6a5892b5bfce1  a.jp_current_active,
-#jp_link_6a5892b5bfce1  .separator.jp_current_active
+#jp_link_6a5892b5bfce1  .separator.jp_current_active 
 {
 	text-decoration:none !important;text-transform:none !important;}
 
 #jp_link_6a5892b5bfce1  .jp_menu_icon_span
 {
-
+	
 	padding:5px;
     	margin-left: auto;
 }
@@ -235,11 +236,11 @@
 {
     background-color:#000000 !important;    mask: url("https://szokolya.hu/modules/mod_jp_yootheme_menu/assets/arrowcircle-down.svg") no-repeat 50% 50%;
 	mask-size:100% !important;
-
+	
 	width:15px;
 	height:15px;
 	display:inline-block;
-
+    		
 }
 #jp_link_6a5892b5bfce1  .jp_menu_icon:hover
 {
@@ -247,9 +248,9 @@
 #jp_link_6a5892b5bfce1  li.uk-open > div > div> div > .jp_menu_icon_span .jp_menu_icon, #jp_link_6a5892b5bfce1  li.uk-open > a .jp_menu_icon_span .jp_menu_icon
 {
 	mask: url("https://szokolya.hu/modules/mod_jp_yootheme_menu/assets/arrowcircle-up.svg") no-repeat 50% 50%;
-		}
+		}  
 
-#jp_link_6a5892b5bfce1  li.uk-open > div > div> div > .jp_menu_icon_span .jp_menu_icon:hover,
+#jp_link_6a5892b5bfce1  li.uk-open > div > div> div > .jp_menu_icon_span .jp_menu_icon:hover, 
 #jp_link_6a5892b5bfce1  li.uk-open > a .jp_menu_icon_span .jp_menu_icon:hover
 {
 	}
@@ -268,18 +269,18 @@
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-#jp_link_6a5892b5bfce1  .jp_menu_icon:hover,
+#jp_link_6a5892b5bfce1  .jp_menu_icon:hover, 
 #jp_link_6a5892b5bfce1  .jp_menu_icon_span:hover .jp_menu_icon,
-#jp_link_6a5892b5bfce1  li.uk-open > div > div> div > .jp_menu_icon_span .jp_menu_icon:hover,
+#jp_link_6a5892b5bfce1  li.uk-open > div > div> div > .jp_menu_icon_span .jp_menu_icon:hover, 
 #jp_link_6a5892b5bfce1  li.uk-open > a .jp_menu_icon_span .jp_menu_icon:hover
 {
-
-
+	  
+    
 }
 
 #jp_link_6a5892b5bfce1  li.uk-open > div > div> div > .jp_menu_icon_span .jp_menu_icon, #jp_link_6a5892b5bfce1  li.uk-open > a .jp_menu_icon_span .jp_menu_icon
 {
-
+	 
 	}
 
 /* GLOBAL SETTINGS CSS - END */
@@ -288,29 +289,29 @@
 #jp_link_6a5892b5bfce1 .jp_link_bg_level_2
 {
    padding:3px 3px 3px 20px !important;}
-#jp_link_6a5892b5bfce1 .jp_link_bg_level_2:hover,
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_2.jp_active_link:hover,
+#jp_link_6a5892b5bfce1 .jp_link_bg_level_2:hover, 
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_2.jp_active_link:hover, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_2:hover
 {
    }
 
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_2.jp_current_active_bg,
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_2.jp_current_active_bg, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_2
 {
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_2 a,
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_2 a, 
 #jp_link_6a5892b5bfce1 a.jp_link_level_2.jp_link_level_2,
 #jp_link_6a5892b5bfce1 .separator.jp_link_level_2
 {
 	text-decoration:none !important;text-transform:none !important;}
-#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_2:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_2 a:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_2:hover a,
+#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_2:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_2 a:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_2:hover a, 
 #jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_2:hover,
-#jp_link_6a5892b5bfce1 .separator.jp_link_level_2:hover
+#jp_link_6a5892b5bfce1 .separator.jp_link_level_2:hover 
 {
-   text-decoration:none !important;text-transform:none !important;
-
+   text-decoration:none !important;text-transform:none !important;   
+   
 }
 
 #jp_link_6a5892b5bfce1  a.jp_current_active.jp_link_level_2,
@@ -326,23 +327,23 @@
 #jp_link_6a5892b5bfce1 .jp_link_bg_level_3:hover, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_3.jp_active_link:hover, #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_3:hover
 {
    }
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_3.jp_current_active_bg,
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_3.jp_current_active_bg, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_3
 {
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_3 a,
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_3 a, 
 #jp_link_6a5892b5bfce1 a.jp_link_bg_level_3.jp_link_level_3,
 #jp_link_6a5892b5bfce1 .separator.jp_link_level_3
 {
 	text-decoration:none !important;text-transform:none !important;}
-#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_3:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_3 a:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_3:hover a,
+#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_3:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_3 a:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_3:hover a, 
 #jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_3:hover ,
-#jp_link_6a5892b5bfce1 .separator.jp_link_level_3:hover
+#jp_link_6a5892b5bfce1 .separator.jp_link_level_3:hover 
 {
-   text-decoration:none !important;text-transform:none !important;
-
+   text-decoration:none !important;text-transform:none !important;   
+   
 }
 
 #jp_link_6a5892b5bfce1  a.jp_current_active.jp_link_level_3,
@@ -356,28 +357,28 @@
 #jp_link_6a5892b5bfce1 .jp_link_bg_level_4
 {
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg_level_4:hover,
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_4.jp_active_link:hover,
+#jp_link_6a5892b5bfce1 .jp_link_bg_level_4:hover, 
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_4.jp_active_link:hover, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_4:hover
 {
    }
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_4.jp_current_active_bg,
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_4.jp_current_active_bg, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_4
 {
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_4 a,
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_4 a, 
 #jp_link_6a5892b5bfce1 a.jp_link_bg_level_4.jp_link_level_4,
 #jp_link_6a5892b5bfce1 .separator.jp_link_level_4
 {
 	text-decoration:none !important;text-transform:none !important;}
-#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_4:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_4 a:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_4:hover a,
+#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_4:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_4 a:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_4:hover a, 
 #jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_4:hover,
-#jp_link_6a5892b5bfce1 .separator.jp_link_level_4:hover
+#jp_link_6a5892b5bfce1 .separator.jp_link_level_4:hover 
 {
-   text-decoration:none !important;text-transform:none !important;
-
+   text-decoration:none !important;text-transform:none !important;   
+   
 }
 
 #jp_link_6a5892b5bfce1  a.jp_current_active.jp_link_level_4,
@@ -391,66 +392,66 @@
 #jp_link_6a5892b5bfce1 .jp_link_bg_level_5
 {
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg_level_5:hover,
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_5.jp_active_link:hover,
+#jp_link_6a5892b5bfce1 .jp_link_bg_level_5:hover, 
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_5.jp_active_link:hover, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_5:hover
 {
    }
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_5.jp_current_active_bg,
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_bg_level_5.jp_current_active_bg, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_5
 {
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_5 a,
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_5 a, 
 #jp_link_6a5892b5bfce1 a.jp_link_bg_level_5.jp_link_level_5,
 #jp_link_6a5892b5bfce1 .separator.jp_link_level_5
 {
 	text-decoration:none !important;text-transform:none !important;}
-#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_5:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_5 a:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_5:hover a,
+#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_5:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_5 a:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_5:hover a, 
 #jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_5:hover,
-#jp_link_6a5892b5bfce1 .separator.jp_link_level_5:hover
+#jp_link_6a5892b5bfce1 .separator.jp_link_level_5:hover 
 {
-   text-decoration:none !important;text-transform:none !important;
-
+   text-decoration:none !important;text-transform:none !important;   
+   
 }
 
 #jp_link_6a5892b5bfce1 a.jp_current_active.jp_link_level_5,
 #jp_link_6a5892b5bfce1 .separator.jp_current_active.jp_link_level_5
 {
 	text-decoration:none !important;text-transform:none !important;}
-
-/* LEVEL 4 SETTINGS CSS - END */
-
+ 
+/* LEVEL 4 SETTINGS CSS - END */ 
+	
 /* LEVEL 5,6,7,8 SETTINGS CSS - START */
 #jp_link_6a5892b5bfce1 .jp_link_bg_level_6, #jp_link_6a5892b5bfce1 .jp_link_bg_level_7, #jp_link_6a5892b5bfce1 .jp_link_bg_level_8, #jp_link_6a5892b5bfce1 .jp_link_bg_level_9
 {
    }
 #jp_link_6a5892b5bfce1 .jp_link_bg_level_6:hover, #jp_link_6a5892b5bfce1 .jp_link_bg_level_7:hover, #jp_link_6a5892b5bfce1 .jp_link_bg_level_8:hover, #jp_link_6a5892b5bfce1 .jp_link_bg_level_9:hover,
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_6.jp_active_link:hover, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_7.jp_active_link:hover, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_8.jp_active_link:hover, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_9.jp_active_link:hover,
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_6.jp_active_link:hover, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_7.jp_active_link:hover, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_8.jp_active_link:hover, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_9.jp_active_link:hover, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_6:hover, #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_7:hover, #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_8:hover, #jp_link_6a5892b5bfce1 li.uk-active > .jp_link_bg_level_9:hover
 {
    }
 
-#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_6.jp_current_active_bg,#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_7.jp_current_active_bg, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_8.jp_current_active_bg, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_9.jp_current_active_bg,
+#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_6.jp_current_active_bg,#jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_7.jp_current_active_bg, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_8.jp_current_active_bg, #jp_link_6a5892b5bfce1 li.uk-active > a.jp_link_level_9.jp_current_active_bg, 
 #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_6, #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_7, #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_8, #jp_link_6a5892b5bfce1 li.uk-active > .jp_current_active_bg_level_9
 {
    }
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_6 a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_7 a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_8 a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_9 a,
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_6 a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_7 a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_8 a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_9 a, 
 #jp_link_6a5892b5bfce1 a.jp_link_level_6.jp_link_level_6, #jp_link_6a5892b5bfce1 a.jp_link_level_7.jp_link_level_7, #jp_link_6a5892b5bfce1 a.jp_link_level_8.jp_link_level_8, #jp_link_6a5892b5bfce1 a.jp_link_level_9.jp_link_level_9,
 #jp_link_6a5892b5bfce1 .separator.jp_link_level_6, #jp_link_6a5892b5bfce1 .separator.jp_link_level_7, #jp_link_6a5892b5bfce1 .separator.jp_link_level_8, #jp_link_6a5892b5bfce1 .separator.jp_link_level_9
 {
 	text-decoration:none !important;text-transform:none !important;}
-#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_6:hover, #jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_7:hover, #jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_8:hover, #jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_9:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_6 a:hover, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_7 a:hover, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_8 a:hover, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_9 a:hover,
-#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_6:hover a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_7:hover a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_8:hover a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_9:hover a,
+#jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_6:hover, #jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_7:hover, #jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_8:hover, #jp_link_6a5892b5bfce1 a.jp_link_bg.jp_link_bg_level_9:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_6 a:hover, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_7 a:hover, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_8 a:hover, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_9 a:hover, 
+#jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_6:hover a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_7:hover a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_8:hover a, #jp_link_6a5892b5bfce1 .jp_link_bg.jp_link_bg_level_9:hover a, 
 #jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_6:hover, #jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_7:hover,#jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_8:hover,#jp_link_6a5892b5bfce1 a.jp_active_link.jp_link_level_9:hover,
-#jp_link_6a5892b5bfce1 .separator.jp_link_level_6:hover, #jp_link_6a5892b5bfce1 .separator.jp_link_level_7:hover, #jp_link_6a5892b5bfce1 .separator.jp_link_level_8:hover , #jp_link_6a5892b5bfce1 .separator.jp_link_level_9:hover
+#jp_link_6a5892b5bfce1 .separator.jp_link_level_6:hover, #jp_link_6a5892b5bfce1 .separator.jp_link_level_7:hover, #jp_link_6a5892b5bfce1 .separator.jp_link_level_8:hover , #jp_link_6a5892b5bfce1 .separator.jp_link_level_9:hover  
 {
-   text-decoration:none !important;text-transform:none !important;
-
+   text-decoration:none !important;text-transform:none !important;   
+   
 }
-
+ 
 #jp_link_6a5892b5bfce1  a.jp_current_active.jp_link_level_6, #jp_link_6a5892b5bfce1  a.jp_current_active.jp_link_level_7, #jp_link_6a5892b5bfce1  a.jp_current_active.jp_link_level_8, #jp_link_6a5892b5bfce1  a.jp_current_active.jp_link_level_9,
 #jp_link_6a5892b5bfce1  .separator.jp_current_active.jp_link_level_6, #jp_link_6a5892b5bfce1  .separator.jp_current_active.jp_link_level_7, #jp_link_6a5892b5bfce1  .separator.jp_current_active.jp_link_level_8, #jp_link_6a5892b5bfce1  .separator.jp_current_active.jp_link_level_9
 {
@@ -501,7 +502,7 @@
 <div class="tm-headerbar-default tm-headerbar tm-headerbar-top">
 <div class="uk-container">
 <div class="uk-grid uk-grid-medium uk-child-width-auto uk-flex-middle">
-<div class="">
+<div>
 <a aria-label="Back to home" class="uk-logo" data-review-original-href="https://szokolya.hu/" href="#" tabindex="-1">
 <picture>
 <source sizes="(min-width: 222px) 222px" type="image/webp"/>
@@ -802,7 +803,7 @@
 					Nyári igazgatási szünet				</div>
 <div class="eb-content">
 <a data-ebox-cmd="closeKeep" data-review-original-href="#" href="#" tabindex="-1">
-<img alt="" class="" height="auto" width="100%"/>
+<img alt="" height="auto" width="100%"/>
 </a> </div>
 </div>
 </div>

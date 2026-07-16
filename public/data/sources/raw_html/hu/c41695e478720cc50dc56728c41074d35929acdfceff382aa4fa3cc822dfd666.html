@@ -59,7 +59,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -521,7 +522,7 @@
 <li>szerda: 13:00 - 14:00</li>
 <li>csütörtökön: 15:00 - 16:00</li>
 </ul>
-<p><b>Helye:</b> Császár, Kisfaludy út 3. Tel.:34/376-144
+<p><b>Helye:</b> Császár, Kisfaludy út 3. Tel.:34/376-144 
 </p><p><b>Fogorvos:</b> Dr. Kruglova Galina</p>
 <table class="table">
 <caption>Fogászati ügyelet</caption>

@@ -115,7 +115,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -172,7 +173,7 @@
 <div class="app-header-desktop">
 <div class="app-header-desktop__wrapper">
 <div class="app-header-desktop__info">
-<div class="">
+<div>
 <a class="app-header-desktop__logo" data-review-original-href="https://foglaljorvost.hu/" href="#" tabindex="-1">
 <img/>
 </a>

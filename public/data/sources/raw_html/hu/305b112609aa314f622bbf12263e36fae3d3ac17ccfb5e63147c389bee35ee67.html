@@ -38,12 +38,13 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="loading">
-<div class="loader active"></div>
+<body>
+
 <a class="screenreader-text" data-review-original-href="#main-content" href="#" id="skip-nav" tabindex="-1">
         Ugrás a tartalomra
     </a>
@@ -79,9 +80,7 @@
 <span class="input-group-addon headerSearch" data-placement="bottom" data-toggle="tooltip" title="Keresés indítása"><button aria-label="Keresés indítása" type="submit"><i aria-hidden="true" class="fas fa-search"></i></button></span>
 </div>
 <div class="resultSearch">
-<div class="loader">
-<div class="loading"></div>
-</div>
+
 <ul class="hidden">
 </ul>
 </div>
@@ -158,13 +157,13 @@
             </a>
 <span aria-hidden="true" class="icon icon-menu-arrow"></span>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/rendelok/visegradi-utca" href="#" rel="noopener" tabindex="-1">
                 Visegrádi utcai szakrendelő
             </a>
 <span aria-hidden="true" class="icon icon-menu-arrow"></span>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/szakrendelesek" href="#" rel="noopener" tabindex="-1">
                 Szakrendelések A-Z
             </a>
@@ -179,19 +178,19 @@
             <i aria-hidden="true" class="fas fa-chevron-down"></i>
 </button>
 <ul class="level-2">
-<li class="">
+<li>
 <a data-review-original-href="/orvosok" href="#" rel="noopener" tabindex="-1">
                 Keresés
             </a>
 <span aria-hidden="true" class="icon icon-menu-arrow"></span>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/korzetek/haziorvos/felnott" href="#" rel="noopener" tabindex="-1">
                 Felnőtt
             </a>
 <span aria-hidden="true" class="icon icon-menu-arrow"></span>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/korzetek/haziorvos/gyerek" href="#" rel="noopener" tabindex="-1">
                 Gyerek
             </a>
@@ -206,25 +205,25 @@
             <i aria-hidden="true" class="fas fa-chevron-down"></i>
 </button>
 <ul class="level-2">
-<li class="">
+<li>
 <a data-review-original-href="/korzetek/fogaszat/felnott" href="#" rel="noopener" tabindex="-1">
                 Felnőtt
             </a>
 <span aria-hidden="true" class="icon icon-menu-arrow"></span>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/korzetek/fogaszat/gyerek" href="#" rel="noopener" tabindex="-1">
                 Gyerek
             </a>
 <span aria-hidden="true" class="icon icon-menu-arrow"></span>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/szakrendelesek/fogszabalyozas" href="#" rel="noopener" tabindex="-1">
                 Fogszabályozás
             </a>
 <span aria-hidden="true" class="icon icon-menu-arrow"></span>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/szakrendelesek/szajsebeszet" href="#" rel="noopener" tabindex="-1">
                 Szájsebészet
             </a>

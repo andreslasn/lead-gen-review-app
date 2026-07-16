@@ -120,7 +120,8 @@ body.custom-background { background-color: #7a9f79; }
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -133,7 +134,7 @@ body.custom-background { background-color: #7a9f79; }
 <div id="site-logo">
 <a class="custom-logo-link" data-review-original-href="https://nagyatad.hu/" href="#" rel="home" tabindex="-1"><img alt="Logo for Nagyatád - A megújulás városa" class="custom-logo" decoding="async" height="99" width="150"/></a> </div><div id="site-header-extra">
 <nav aria-label="Secondary Menu" id="site-secondary-nav">
-<ul class="" id="site-secondary-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1121" id="menu-item-1121"><a data-review-original-href="https://nagyatad.hu/aktualitasok/" href="#" tabindex="-1">Hírek</a></li>
+<ul id="site-secondary-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1121" id="menu-item-1121"><a data-review-original-href="https://nagyatad.hu/aktualitasok/" href="#" tabindex="-1">Hírek</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1122" id="menu-item-1122"><a data-review-original-href="https://nagyatad.hu/turizmus/" href="#" tabindex="-1">Turisztikai információk</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1114" id="menu-item-1114"><a data-review-original-href="https://nagyatad.hu/onkormanyzat/e-ugyintezes/" href="#" tabindex="-1">Ügyintézés</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1279" id="menu-item-1279"><a data-review-original-href="https://nagyatad.hu/onkormanyzat/polgarmesteri-hivatal/elerhetosegek/" href="#" tabindex="-1">Elérhetőségek</a></li>
@@ -507,7 +508,7 @@ body.custom-background { background-color: #7a9f79; }
 </footer>
 </div>
 
-<div class="afc_popup" id="afc_sidebar_1756"><a class="afc_close_content" data-review-original-href="#" href="#" tabindex="-1"><img alt="advanced-floating-content-close-btn" class="img"/></a><a data-review-original-href="/onkormanyzat/aktualis-projektek/" href="#" tabindex="-1"><img alt="" class="alignnone wp-image-2728 size-medium" height="213" width="300"/></a></div><div class="afc_popup" id="afc_sidebar_6025"><a class="afc_close_content" data-review-original-href="#" href="#" tabindex="-1"><img alt="advanced-floating-content-close-btn" class="img"/></a><a data-review-original-href="https://nagyatad.hu/onkormanyzat/aktualis-projektek/" href="#" tabindex="-1"><img alt="" class="alignleft wp-image-6026 size-large" height="169" width="560"/></a></div>
+<div class="afc_popup" id="afc_sidebar_1756"><a class="afc_close_content" data-review-original-href="#" href="#" tabindex="-1"><img alt="advanced-floating-content-close-btn" class="img"/></a><a data-review-original-href="/onkormanyzat/aktualis-projektek/" href="#" tabindex="-1"><img alt="" class="alignnone wp-image-2728 size-medium" height="213" width="300"/></a></div><div class="afc_popup" id="afc_sidebar_6025"><a class="afc_close_content" data-review-original-href="#" href="#" tabindex="-1"><img alt="advanced-floating-content-close-btn" class="img"/></a><a data-review-original-href="https://nagyatad.hu/onkormanyzat/aktualis-projektek/" href="#" tabindex="-1"><img alt="" class="alignleft wp-image-6026 size-large" height="169" width="560"/></a></div> 
 
 
 

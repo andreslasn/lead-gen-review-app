@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <html lang="hu">
-<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/> 
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -72,7 +72,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <meta content="WP Rocket 3.23" data-wpr-features="wpr_preconnect_external_domains wpr_oci wpr_cdn wpr_desktop" name="generator"/><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -94,7 +95,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 </div>
 <div class="js-body-overlay body__overlay"></div>
-<header class="">
+<header>
 <nav class="header-nav">
 <div class="header__logo ofi-contain-center-center">
 <a data-review-original-href="https://www.budapest13.hu" href="#" tabindex="-1">
@@ -423,19 +424,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <section class="information-box white">
 <div class="container-fluid">
 <div class="row justify-content-center">
-<div class="">
+<div>
 <h2 class="information-box__title">
                     Országgyűlési választások 2026                </h2>
 </div>
 </div>
 <div class="row justify-content-center">
-<div class="">
+<div>
 <div class="row">
 <div class="col-lg-6">
 <div class="card-information-box gray300">
 <div class="card-information-box__top text-block">
 <h3 class="card-information-box__top__title" tabindex="0">
-
+                                                    
                                                     Választásokkal kapcsolatos hírek
                                                                                                         <a class="card-information-box__top__text-link" data-review-original-href="https://www.budapest13.hu/hirek/" href="#" tabindex="-1">
                                                         További hírek                                                        <img alt="" class="link-arrow" decoding="async"/>
@@ -520,9 +521,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="card-information-box gray300">
 <div class="card-information-box__top text-block">
 <h3 class="card-information-box__top__title" tabindex="0">
-
+                                                    
                                                     Tisztelt Választópolgárok!
-
+                                                    
                                                                                                 </h3>
 <div class="card-information-box__top__text">
 <div class="text-block__wrapper" tabindex="0">
@@ -586,7 +587,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <img alt="" decoding="async"/>
 <h3 aria-label="Szolgáltatás neve: Közösségi költségvetés" class="highlighted-services__card-title custom-h4" tabindex="0">
 
-
+                
                 Közösségi költségvetés
                         </h3>
 </div>
@@ -603,7 +604,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="highlighted-services__card__logo">
 <h3 aria-label="Szolgáltatás neve: Hatósági ügyintézés" class="highlighted-services__card-title custom-h4" tabindex="0">
 
-
+                
                 Hatósági ügyintézés
                         </h3>
 </div>
@@ -619,7 +620,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <img alt="" decoding="async"/>
 <h3 aria-label="Szolgáltatás neve: Közterület-felügyelet" class="highlighted-services__card-title custom-h4" tabindex="0">
 
-
+                
                 Közterület-felügyelet
                         </h3>
 </div>
@@ -635,7 +636,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <img alt="Szociális intézmények" decoding="async"/>
 <h3 aria-label="Szolgáltatás neve: Bentlakásos idősellátás" class="highlighted-services__card-title custom-h4" tabindex="0">
 
-
+                
                 Bentlakásos idősellátás
                         </h3>
 </div>
@@ -651,7 +652,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <img alt="Közalapítványok" decoding="async"/>
 <h3 aria-label="Szolgáltatás neve: Bölcsődei és családi bölcsődei nevelés" class="highlighted-services__card-title custom-h4" tabindex="0">
 
-
+                
                 Bölcsődei és családi bölcsődei nevelés
                         </h3>
 </div>
@@ -667,7 +668,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <img alt="Egészségügyi intézmények" decoding="async"/>
 <h3 aria-label="Szolgáltatás neve: Háziorvosi és gyermekorvosi ellátás" class="highlighted-services__card-title custom-h4" tabindex="0">
 
-
+                
                 Háziorvosi és gyermekorvosi ellátás
                         </h3>
 </div>
@@ -683,7 +684,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <img alt="Egészségügyi intézmények" decoding="async"/>
 <h3 aria-label="Szolgáltatás neve: Fogorvosi ellátás" class="highlighted-services__card-title custom-h4" tabindex="0">
 
-
+                
                 Fogorvosi ellátás
                         </h3>
 </div>
@@ -714,8 +715,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 <div class="js-related-tenders-active related-tenders__actives">
 <div class="related-tenders__loader-wrapper js-tenders-active-loader">
-<div class="loader">
-</div> </div>
+ </div>
 </div>
 <div class="row">
 <div class="col-12">
@@ -741,9 +741,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="card-information-box gray100">
 <div class="card-information-box__top text-block">
 <h3 class="card-information-box__top__title card-information-box__top__title--border" tabindex="0">
-
+                                                    
                                                     Befizetés ügyintézés
-
+                                                    
                                                                                                 </h3>
 <div class="card-information-box__top__text">
 <div class="text-block__wrapper" tabindex="0">
@@ -759,9 +759,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="card-information-box gray100">
 <div class="card-information-box__top text-block">
 <h3 class="card-information-box__top__title card-information-box__top__title--border" tabindex="0">
-
+                                                    
                                                     Étlapok
-
+                                                    
                                                                                                 </h3>
 </div>
 <div class="related-decrees-box">
@@ -1077,7 +1077,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 </section>
 </main>
-<footer class="">
+<footer>
 <div class="main-footer">
 <div class="container-fluid">
 <div class="row">

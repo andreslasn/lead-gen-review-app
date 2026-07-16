@@ -1,0 +1,64 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+Csodaliget Házi Gyermek Orvosi Rendelő
+(
+6283171285
+)
+Verzió
+#
+5
+Nyitva tartási értékek javítása.
+Szerkesztette
+urbalazs
+nagyjából 1 évvel ezelőtt
+Módosításcsomag
+167857400
+0
+Hely:
+46,8616041
+,
+19,5709177
+Címkék
+addr:city
+Ballószög
+addr:housenumber
+3
+addr:postcode
+6035
+addr:street
+Rákóczi út
+amenity
+doctors
+contact:email
+balloszogigyermekrendeles@gmail.com
+contact:phone
++36 76 427 321
+healthcare
+doctor
+name
+opening_hours
+Mo-Tu,Th-Fr 14:00-17:00; We 09:00-11:00
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

@@ -78,7 +78,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -109,7 +110,7 @@
 <div class="flex items-center pr-[14px] lg:pl-4 py-[5px] sm:w-2/3 h-auto">
 <div class="flex items-center h-auto" x-cloak="" x-data="" x-init="$store.env.isApp &amp;&amp; $el.remove()">
 <a class="pb-resp w-full max-w-[254px]" data-review-original-href="/" href="#" tabindex="-1" title="weborvos_logo">
-<img alt="Weborvos logó" class="" height="30" loading="eager" width="254"/>
+<img alt="Weborvos logó" height="30" loading="eager" width="254"/>
 </a>
 </div>
 </div>
@@ -217,9 +218,9 @@
 <div :class="textHover ? 'font-main text-primary ' : 'text-primary-title'" @mouseenter="textHover = true" @mouseleave="textHover = false" class="relative py-[8px] w-auto ps-[10px] box-border mx-auto font-bold text-[16px] leading-[20px] pr-[36px] font-main max-w-[1240px]" x-data="{ textHover: false }">
 <div>
 <span class="inline-block whitespace-nowrap align-middle bg-primary-medium text-white uppercase font-normal me-[6px] px-[4px] text-[14px] font-main">
-
+        
           Nézzen bele
-
+        
       </span>
 <span class="align-middle text-[16px] leading-[20px] font-bold" x-text="notif.title">
 </span>
@@ -295,9 +296,9 @@
 <div :class="textHover ? 'font-main text-primary ' : 'text-primary-title'" @mouseenter="textHover = true" @mouseleave="textHover = false" class="relative py-[8px] w-auto ps-[10px] box-border mx-auto font-bold text-[16px] leading-[20px] pr-[36px] font-main max-w-[1240px]" x-data="{ textHover: false }">
 <div>
 <span class="inline-block whitespace-nowrap align-middle bg-primary-medium text-white uppercase font-normal me-[6px] px-[4px] text-[14px] font-main">
-
+        
           Nézzen bele
-
+        
       </span>
 <span class="align-middle text-[16px] leading-[20px] font-bold" x-text="notif.title">
 </span>
@@ -356,17 +357,17 @@
 </div>
 <div class="font-semibold text-xs">
 <p class="text-sm leading-snug text-xs inline">
-
+  
     Közzétéve:
-
+  
   2013. 10. 09. 07:27
-
+  
     -
-
-
+  
+  
 </p>
 
-
+        
         • 1 perc olvasás
       </div>
 </div>
@@ -454,7 +455,7 @@
 <a class="capitalize" data-review-original-href="/archivum/lapszemle/" href="#" tabindex="-1">
         Lapszemle •
       </a>
-
+    
     1 perc
   </small>
 </span>
@@ -479,7 +480,7 @@
 <a class="capitalize" data-review-original-href="/archivum/lapszemle/" href="#" tabindex="-1">
         Lapszemle •
       </a>
-
+    
     2 perc
   </small>
 </span>
@@ -504,7 +505,7 @@
 <a class="capitalize" data-review-original-href="/archivum/lapszemle/" href="#" tabindex="-1">
         Lapszemle •
       </a>
-
+    
     1 perc
   </small>
 </span>
@@ -529,7 +530,7 @@
 <a class="capitalize" data-review-original-href="/archivum/lapszemle/" href="#" tabindex="-1">
         Lapszemle •
       </a>
-
+    
     1 perc
   </small>
 </span>

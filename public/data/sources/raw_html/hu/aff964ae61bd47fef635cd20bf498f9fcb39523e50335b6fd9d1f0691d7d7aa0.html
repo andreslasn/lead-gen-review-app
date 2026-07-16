@@ -57,7 +57,8 @@ ul li {
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -73,7 +74,7 @@ ul li {
 <span class="icon-bar"></span>
 </button>
 <a class="navbar-brand" data-review-original-href="/" href="#" tabindex="-1" title="Főoldal">Révfülöp</a>
-</div>
+</div> 
 
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav navbar-right">
@@ -135,7 +136,7 @@ ul li {
 </li>
 <li><a data-review-original-href="/helyi_ertektar" href="#" tabindex="-1">Helyi értéktár</a></li>
 <li><a data-review-original-href="/szallas" href="#" tabindex="-1">Szállás</a></li>
-</ul>
+</ul> 
 </div>
 </div>
 </nav>

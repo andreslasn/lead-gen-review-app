@@ -68,7 +68,7 @@ h1 {
 }
 
 #site-logo a {
-	color:#FFFFFF;
+	color:#FFFFFF; 
 }
 
 #site-motto {
@@ -153,7 +153,8 @@ h1 {
 #menu a {font-size:14px; padding:0px 25px 0px 3px;}	</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

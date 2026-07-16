@@ -30,10 +30,10 @@
 		h1, h2, h3, h4, h5, h6 {
 			font-family: 'Open Sans', sans-serif !important;
 		}
-		#resumenav a {
+		#resumenav a {		
 			font-weight: bold !important;
 		}
-
+		
 		#simplemodal-overlay {background-color:#000;}
 		#simplemodal-container {background-color:#dda; border:8px solid #222; padding:12px;}
 	</style>
@@ -44,7 +44,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

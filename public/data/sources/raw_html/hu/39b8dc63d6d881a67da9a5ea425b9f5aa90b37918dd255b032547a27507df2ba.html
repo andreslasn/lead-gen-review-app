@@ -20,7 +20,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -48,14 +49,14 @@
 <a data-review-original-href="https://ittlakunk.hu" href="#" tabindex="-1">
 <h6 class="heading -mt-1 text-27px tracking-tighter">
 
+            
 
-
-
+                        
 
             ittlakunk.hu
+            
 
-
-
+                        
 
         </h6>
 </a>
@@ -95,20 +96,20 @@
 <button class="p-3 text-gray-900 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" type="button" x-on:click="open = false;  $dispatch('closeoverlay');">
 <span class="sr-only">Close</span>
 <svg class="btn-icon-size32" fill="currentColor" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path></svg>
-</button>
+</button> 
 </div>
 <div class="max-w-5xl">
 <div wire:effects='{"partials":[],"listeners":["show-user-modal"]}' wire:id="RxUBmosJEeKSvpayPGBy" wire:key="lw-1879989633-0-nezzide-0-0" wire:name="user.modal-router" wire:snapshot='{"data":{"route":"upload","intent":null,"email":null,"forceClose":false,"skipModals":0,"destroySkipped":false},"memo":{"id":"RxUBmosJEeKSvpayPGBy","name":"user.modal-router","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"fc248f04d3f413fc92ff51793b12283472302f6ba58b6bb0cb10aaee51550680"}'>
  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 <div class="py-6 px-6 bg-gray-400 rounded-lg h-[592px] hidden lg:block relative bg-no-repeat bg-bottom" style="background-image: url('/images/custom-illustrations/Ittlakunk-banner-bg-01.svg')">
-
+ 
 <h2 class="heading mb-4 text-2xl leading-8">
-
+            
 
             Miért?
+            
 
-
-
+            
 </h2>
 
 <ul class="list-disc list-inside">
@@ -128,14 +129,14 @@
 <img alt="" class="absolute -bottom-3 left-1/2 transform -translate-x-1/2"/>
 </div>
 <div class="flex flex-col justify-between md:pt-5">
-
+ 
 <h1 class="heading mb-4 text-2xl leading-8 mt-0">
-
+            
 
             Itt informálhatod a helyieket. Töltsd föl
+            
 
-
-
+            
 </h1>
 
 <div class="grid grid-cols-2 grid-rows-3 gap-2">
@@ -249,7 +250,7 @@
 </div>
 </div>
 <span class="absolute top-2 right-16 h-[14px] w-[14px] rotate-45 bg-white"></span>
-</div>
+</div> 
 </div>
 <div class="block ml-px md:relative" x-data="{ open: false }">
 <button @click="open = !open" aria-expanded="true" aria-haspopup="true" class="relative w-12 h-12 px-2 py-2 rounded-r-md focus:z-10 btn-primary" id="option-menu-button" type="button">
@@ -277,7 +278,7 @@
     eladó tárgyaid
 </a>
 </div>
-</div>
+</div> 
 
 <div class="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm" x-cloak="" x-show="open" x-transition.opacity=""></div>
 </div>
@@ -320,28 +321,28 @@
 </div>
 <h6 class="heading text-lg">
 
+            
 
-
-
+                        
 
             Nem vagy bejelentkezve
+            
 
-
-
+                        
 
         </h6>
 </div>
 <div class="mb-5">
 <h6 class="heading text-primary-500">
 
+            
 
-
-
+                        
 
             Szolgáltatás
+            
 
-
-
+                        
 
         </h6>
 <nav aria-label="Main navigation" class="flex flex-col justify-start" x-data="{
@@ -369,7 +370,7 @@
 
 }">
 <a @click.prevent="go('/hirek')" class="flex h-11 my-1.5 items-center gap-3 rounded px-3 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/hirek" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
 <path d="M18.5417 7.73025C18.5084 7.60012 18.4406 7.4814 18.3454 7.3867L13.3229 2.19251C13.2596 2.12291 13.1805 2.0695 13.0922 2.03677C13.004 2.00404 12.9092 1.99293 12.8158 2.00437H4.73412C4.27994 2 3.84251 2.17569 3.51753 2.493C3.19255 2.81032 3.00647 3.24343 3 3.69759L3 18.2004C3.00647 18.6828 3.20375 19.1429 3.54868 19.4802C3.8936 19.8175 4.35807 20.0044 4.84046 20H16.6112C17.1175 20.0044 17.6048 19.808 17.9666 19.4538C18.3284 19.0997 18.5352 18.6167 18.5417 18.1104V7.73025ZM16.6276 18.4458H4.84046C4.78113 18.4396 4.72656 18.4105 4.68837 18.3647C4.65018 18.3188 4.63138 18.2599 4.63597 18.2004V3.69759C4.63597 3.66505 4.64889 3.63384 4.6719 3.61083C4.69491 3.58782 4.72612 3.5749 4.75866 3.5749H12.325V7.58301C12.327 7.66236 12.3455 7.74041 12.3793 7.81223C12.4131 7.88405 12.4615 7.94805 12.5213 8.00018C12.6046 8.07668 12.7029 8.13508 12.8099 8.17168C12.9169 8.20829 13.0303 8.22231 13.143 8.21286H16.9302V18.0287C16.943 18.0768 16.9444 18.1272 16.9342 18.1759C16.924 18.2247 16.9026 18.2703 16.8715 18.3093C16.8405 18.3482 16.8009 18.3794 16.7556 18.4003C16.7104 18.4211 16.661 18.4311 16.6112 18.4295L16.6276 18.4458Z"></path>
 </svg>
 <div class="pt-[2px]">Hírek</div>
@@ -379,7 +380,7 @@
 <div class="flex h-11 my-1.5 items-center gap-3 rounded px-3 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide border border-primary-500 bg-primary-50 text-primary-500">
 <div class="flex justify-between w-full">
 <a @click.prevent="go('/holmi')" class="flex items-center h-8 gap-3 lg:gap-1" data-review-original-href="/holmi" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M4.42503 2.27165C4.45221 2.27254 4.47175 2.27318 4.49856 2.27318H17.0394C17.0584 2.27318 17.0709 2.27273 17.0909 2.27199C17.1055 2.27146 17.124 2.27078 17.152 2.27003C17.1967 2.26882 17.2877 2.26661 17.3851 2.27977C17.4741 2.29181 17.6702 2.32845 17.8483 2.48327C17.9899 2.60632 18.0684 2.75679 18.1049 2.90327L20.1614 7.68527C20.2006 7.77648 20.2208 7.87473 20.2208 7.97401V8.26636C20.2208 9.66305 19.2807 10.8318 17.9866 11.1443V19.0833C17.9866 19.4869 17.6594 19.8142 17.2557 19.8142H4.28239C3.87874 19.8142 3.55151 19.4869 3.55151 19.0833V11.1753C2.18359 10.9175 1.17302 9.71444 1.17302 8.26636C1.17302 8.19654 1.18282 8.129 1.2011 8.06505C1.15418 7.90098 1.16419 7.71987 1.24252 7.55333L3.43529 2.89093C3.46613 2.77104 3.52762 2.63941 3.64369 2.52171C3.82375 2.33912 4.0352 2.29483 4.13251 2.28073C4.2315 2.26639 4.3256 2.26885 4.36847 2.26996L4.37003 2.27001L4.42503 2.27165ZM5.01326 11.0832V18.3524H7.87598V14.6981C7.87598 14.4254 7.96853 14.14 8.18555 13.92C8.40347 13.699 8.68993 13.6018 8.96722 13.6018H12.5709C12.8482 13.6018 13.1347 13.699 13.3526 13.92C13.5696 14.14 13.6622 14.4254 13.6622 14.6981V18.3524H16.5248V11.126C15.9599 10.9741 15.466 10.658 15.0934 10.2315C14.56 10.8421 13.7781 11.2264 12.8952 11.2264C12.0122 11.2264 11.2303 10.8421 10.6969 10.2315C10.1635 10.8421 9.38161 11.2264 8.49867 11.2264C7.61573 11.2264 6.8338 10.8421 6.30041 10.2315C5.95987 10.6213 5.51803 10.9189 5.01326 11.0832ZM9.33773 15.0635V17.987H12.2004V15.0635H9.33773Z" fill-rule="evenodd"></path>
 </svg>
 <div class="pt-[2px]">Bolt/szolgáltatás</div>
@@ -391,21 +392,21 @@
 </div>
 <hr class="w-full h-px bg-gray-500"/>
 <a @click.prevent="go('/programok')" class="flex h-11 my-1.5 items-center gap-3 rounded px-3 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/programok" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
 <path d="M17.9771 3.71429H16.1429V2.85714C16.1429 2.62981 16.0526 2.4118 15.8918 2.25105C15.7311 2.09031 15.513 2 15.2857 2C15.0584 2 14.8404 2.09031 14.6796 2.25105C14.5189 2.4118 14.4286 2.62981 14.4286 2.85714V3.71429H7.57143V2.85714C7.57143 2.62981 7.48112 2.4118 7.32038 2.25105C7.15963 2.09031 6.94161 2 6.71429 2C6.48696 2 6.26894 2.09031 6.10819 2.25105C5.94745 2.4118 5.85714 2.62981 5.85714 2.85714V3.71429H4.02286C3.76099 3.70975 3.50081 3.75698 3.25726 3.85328C3.0137 3.94958 2.79156 4.09304 2.6036 4.27542C2.41564 4.45781 2.26556 4.67552 2.16198 4.91607C2.05839 5.15662 2.00335 5.41526 2 5.67714V18.8943C2.02628 19.2105 2.17584 19.5036 2.41638 19.7105C2.65693 19.9174 2.96917 20.0213 3.28571 20H18.7143C19.0308 20.0213 19.3431 19.9174 19.5836 19.7105C19.8242 19.5036 19.9737 19.2105 20 18.8943V5.67714C19.9967 5.41526 19.9416 5.15662 19.838 4.91607C19.7344 4.67552 19.5844 4.45781 19.3964 4.27542C19.2084 4.09304 18.9863 3.94958 18.7427 3.85328C18.4992 3.75698 18.239 3.70975 17.9771 3.71429ZM15.02 12.9114L10.4771 17.1971C10.3169 17.3542 10.1015 17.4422 9.87714 17.4422C9.65278 17.4422 9.43737 17.3542 9.27714 17.1971L6.96286 14.8229C6.88406 14.7424 6.82189 14.6472 6.7799 14.5427C6.7379 14.4381 6.7169 14.3264 6.71809 14.2138C6.71929 14.1011 6.74265 13.9899 6.78686 13.8863C6.83106 13.7827 6.89523 13.6888 6.97571 13.61C7.0562 13.5312 7.15141 13.469 7.25592 13.427C7.36042 13.385 7.47218 13.364 7.58481 13.3652C7.69743 13.3664 7.80872 13.3898 7.91231 13.434C8.0159 13.4782 8.10978 13.5424 8.18857 13.6229L9.90286 15.3886L13.8371 11.6771C14.004 11.5395 14.2167 11.47 14.4327 11.4826C14.6487 11.4952 14.8518 11.589 15.0015 11.7452C15.1512 11.9014 15.2363 12.1084 15.2397 12.3247C15.2431 12.541 15.1647 12.7506 15.02 12.9114ZM3.71429 5.67714C3.72291 5.60355 3.76007 5.53628 3.81777 5.4898C3.87548 5.44332 3.94912 5.42133 4.02286 5.42857H5.85714V6.28571C5.85714 6.51304 5.94745 6.73106 6.10819 6.89181C6.26894 7.05255 6.48696 7.14286 6.71429 7.14286C6.94161 7.14286 7.15963 7.05255 7.32038 6.89181C7.48112 6.73106 7.57143 6.51304 7.57143 6.28571V5.42857H14.4286V6.28571C14.4286 6.51304 14.5189 6.73106 14.6796 6.89181C14.8404 7.05255 15.0584 7.14286 15.2857 7.14286C15.513 7.14286 15.7311 7.05255 15.8918 6.89181C16.0526 6.73106 16.1429 6.51304 16.1429 6.28571V5.42857H17.9771C18.0509 5.42133 18.1245 5.44332 18.1822 5.4898C18.2399 5.53628 18.2771 5.60355 18.2857 5.67714V8.85714H3.71429V5.67714Z"></path>
 </svg>
 <div class="pt-[2px]">Program</div>
 </a>
 <hr class="w-full h-px bg-gray-500"/>
 <a @click.prevent="go('/apro')" class="flex h-11 my-1.5 items-center gap-3 rounded px-3 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/apro" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 13.4545C12.3556 13.4545 13.4545 12.3556 13.4545 11C13.4545 9.64439 12.3556 8.54545 11 8.54545C9.64439 8.54545 8.54545 9.64439 8.54545 11C8.54545 12.3556 9.64439 13.4545 11 13.4545Z" fill-rule="evenodd"></path>
 </svg>
 <div class="pt-[2px]">bolhapiac</div>
 </a>
 <hr class="w-full h-px bg-gray-500"/>
 <a @click.prevent="go('/arcok')" class="flex h-11 my-1.5 items-center gap-3 rounded px-3 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/arcok" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="32" viewbox="0 0 22 22" width="32" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.456 10.8054C14.3636 10.3022 15.0789 9.51014 15.4893 8.55397C15.8998 7.59779 15.9821 6.53171 15.7234 5.5234C15.4647 4.51509 14.8795 3.62177 14.0601 2.98395C13.2406 2.34613 12.2332 2 11.1965 2C10.1598 2 9.15242 2.34613 8.33294 2.98395C7.51346 3.62177 6.92834 4.51509 6.66961 5.5234C6.41087 6.53171 6.49321 7.59779 6.90366 8.55397C7.31412 9.51014 8.0294 10.3022 8.93701 10.8054C5.46986 11.3923 3 13.4034 3 15.837V19.061C3.01412 19.3219 3.12995 19.5667 3.32243 19.7424C3.51491 19.9182 3.76855 20.0107 4.02846 20.0001H18.3334C18.5933 20.0107 18.8469 19.9182 19.0394 19.7424C19.2319 19.5667 19.3477 19.3219 19.3618 19.061V15.837C19.3618 13.4112 16.8998 11.3923 13.456 10.8054Z"></path>
 </svg>
 <div class="pt-[2px]">közösség</div>
@@ -430,7 +431,7 @@
 <svg class="btn-icon-size56" fill="currentColor" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg> Vissza
             </a>
 <div class="flex items-center px-2">
-<svg class="" fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M4.42503 2.27165C4.45221 2.27254 4.47175 2.27318 4.49856 2.27318H17.0394C17.0584 2.27318 17.0709 2.27273 17.0909 2.27199C17.1055 2.27146 17.124 2.27078 17.152 2.27003C17.1967 2.26882 17.2877 2.26661 17.3851 2.27977C17.4741 2.29181 17.6702 2.32845 17.8483 2.48327C17.9899 2.60632 18.0684 2.75679 18.1049 2.90327L20.1614 7.68527C20.2006 7.77648 20.2208 7.87473 20.2208 7.97401V8.26636C20.2208 9.66305 19.2807 10.8318 17.9866 11.1443V19.0833C17.9866 19.4869 17.6594 19.8142 17.2557 19.8142H4.28239C3.87874 19.8142 3.55151 19.4869 3.55151 19.0833V11.1753C2.18359 10.9175 1.17302 9.71444 1.17302 8.26636C1.17302 8.19654 1.18282 8.129 1.2011 8.06505C1.15418 7.90098 1.16419 7.71987 1.24252 7.55333L3.43529 2.89093C3.46613 2.77104 3.52762 2.63941 3.64369 2.52171C3.82375 2.33912 4.0352 2.29483 4.13251 2.28073C4.2315 2.26639 4.3256 2.26885 4.36847 2.26996L4.37003 2.27001L4.42503 2.27165ZM5.01326 11.0832V18.3524H7.87598V14.6981C7.87598 14.4254 7.96853 14.14 8.18555 13.92C8.40347 13.699 8.68993 13.6018 8.96722 13.6018H12.5709C12.8482 13.6018 13.1347 13.699 13.3526 13.92C13.5696 14.14 13.6622 14.4254 13.6622 14.6981V18.3524H16.5248V11.126C15.9599 10.9741 15.466 10.658 15.0934 10.2315C14.56 10.8421 13.7781 11.2264 12.8952 11.2264C12.0122 11.2264 11.2303 10.8421 10.6969 10.2315C10.1635 10.8421 9.38161 11.2264 8.49867 11.2264C7.61573 11.2264 6.8338 10.8421 6.30041 10.2315C5.95987 10.6213 5.51803 10.9189 5.01326 11.0832ZM9.33773 15.0635V17.987H12.2004V15.0635H9.33773Z" fill-rule="evenodd"></path>
 </svg>
 <div class="gap-1 px-2 pt-2 pb-1 text-lg tracking-wide text-gray-900 uppercase font-sansSecondaryRegular">
@@ -517,7 +518,7 @@
 <svg class="btn-icon-size56" fill="currentColor" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg> Vissza
             </a>
 <div class="flex items-center px-2">
-<svg class="" fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M4.42503 2.27165C4.45221 2.27254 4.47175 2.27318 4.49856 2.27318H17.0394C17.0584 2.27318 17.0709 2.27273 17.0909 2.27199C17.1055 2.27146 17.124 2.27078 17.152 2.27003C17.1967 2.26882 17.2877 2.26661 17.3851 2.27977C17.4741 2.29181 17.6702 2.32845 17.8483 2.48327C17.9899 2.60632 18.0684 2.75679 18.1049 2.90327L20.1614 7.68527C20.2006 7.77648 20.2208 7.87473 20.2208 7.97401V8.26636C20.2208 9.66305 19.2807 10.8318 17.9866 11.1443V19.0833C17.9866 19.4869 17.6594 19.8142 17.2557 19.8142H4.28239C3.87874 19.8142 3.55151 19.4869 3.55151 19.0833V11.1753C2.18359 10.9175 1.17302 9.71444 1.17302 8.26636C1.17302 8.19654 1.18282 8.129 1.2011 8.06505C1.15418 7.90098 1.16419 7.71987 1.24252 7.55333L3.43529 2.89093C3.46613 2.77104 3.52762 2.63941 3.64369 2.52171C3.82375 2.33912 4.0352 2.29483 4.13251 2.28073C4.2315 2.26639 4.3256 2.26885 4.36847 2.26996L4.37003 2.27001L4.42503 2.27165ZM5.01326 11.0832V18.3524H7.87598V14.6981C7.87598 14.4254 7.96853 14.14 8.18555 13.92C8.40347 13.699 8.68993 13.6018 8.96722 13.6018H12.5709C12.8482 13.6018 13.1347 13.699 13.3526 13.92C13.5696 14.14 13.6622 14.4254 13.6622 14.6981V18.3524H16.5248V11.126C15.9599 10.9741 15.466 10.658 15.0934 10.2315C14.56 10.8421 13.7781 11.2264 12.8952 11.2264C12.0122 11.2264 11.2303 10.8421 10.6969 10.2315C10.1635 10.8421 9.38161 11.2264 8.49867 11.2264C7.61573 11.2264 6.8338 10.8421 6.30041 10.2315C5.95987 10.6213 5.51803 10.9189 5.01326 11.0832ZM9.33773 15.0635V17.987H12.2004V15.0635H9.33773Z" fill-rule="evenodd"></path>
 </svg>
 <div class="gap-1 px-2 pt-2 pb-1 text-lg tracking-wide text-gray-900 uppercase font-sansSecondaryRegular">
@@ -598,7 +599,7 @@
 
 }">
 <a @click.prevent="go('/hirek')" class="flex h-8 items-center gap-1 rounded px-2 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/hirek" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
 <path d="M18.5417 7.73025C18.5084 7.60012 18.4406 7.4814 18.3454 7.3867L13.3229 2.19251C13.2596 2.12291 13.1805 2.0695 13.0922 2.03677C13.004 2.00404 12.9092 1.99293 12.8158 2.00437H4.73412C4.27994 2 3.84251 2.17569 3.51753 2.493C3.19255 2.81032 3.00647 3.24343 3 3.69759L3 18.2004C3.00647 18.6828 3.20375 19.1429 3.54868 19.4802C3.8936 19.8175 4.35807 20.0044 4.84046 20H16.6112C17.1175 20.0044 17.6048 19.808 17.9666 19.4538C18.3284 19.0997 18.5352 18.6167 18.5417 18.1104V7.73025ZM16.6276 18.4458H4.84046C4.78113 18.4396 4.72656 18.4105 4.68837 18.3647C4.65018 18.3188 4.63138 18.2599 4.63597 18.2004V3.69759C4.63597 3.66505 4.64889 3.63384 4.6719 3.61083C4.69491 3.58782 4.72612 3.5749 4.75866 3.5749H12.325V7.58301C12.327 7.66236 12.3455 7.74041 12.3793 7.81223C12.4131 7.88405 12.4615 7.94805 12.5213 8.00018C12.6046 8.07668 12.7029 8.13508 12.8099 8.17168C12.9169 8.20829 13.0303 8.22231 13.143 8.21286H16.9302V18.0287C16.943 18.0768 16.9444 18.1272 16.9342 18.1759C16.924 18.2247 16.9026 18.2703 16.8715 18.3093C16.8405 18.3482 16.8009 18.3794 16.7556 18.4003C16.7104 18.4211 16.661 18.4311 16.6112 18.4295L16.6276 18.4458Z"></path>
 </svg>
 <div class="pt-[2px]">Hírek</div>
@@ -606,7 +607,7 @@
 <div class="relative" x-data="{ open: false }">
 <div class="flex h-8 items-center gap-1 rounded px-2 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide border border-primary-500 bg-primary-50 text-primary-500">
 <a @click.prevent="go('/holmi')" class="flex items-center h-8 gap-3 lg:gap-1" data-review-original-href="/holmi" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M4.42503 2.27165C4.45221 2.27254 4.47175 2.27318 4.49856 2.27318H17.0394C17.0584 2.27318 17.0709 2.27273 17.0909 2.27199C17.1055 2.27146 17.124 2.27078 17.152 2.27003C17.1967 2.26882 17.2877 2.26661 17.3851 2.27977C17.4741 2.29181 17.6702 2.32845 17.8483 2.48327C17.9899 2.60632 18.0684 2.75679 18.1049 2.90327L20.1614 7.68527C20.2006 7.77648 20.2208 7.87473 20.2208 7.97401V8.26636C20.2208 9.66305 19.2807 10.8318 17.9866 11.1443V19.0833C17.9866 19.4869 17.6594 19.8142 17.2557 19.8142H4.28239C3.87874 19.8142 3.55151 19.4869 3.55151 19.0833V11.1753C2.18359 10.9175 1.17302 9.71444 1.17302 8.26636C1.17302 8.19654 1.18282 8.129 1.2011 8.06505C1.15418 7.90098 1.16419 7.71987 1.24252 7.55333L3.43529 2.89093C3.46613 2.77104 3.52762 2.63941 3.64369 2.52171C3.82375 2.33912 4.0352 2.29483 4.13251 2.28073C4.2315 2.26639 4.3256 2.26885 4.36847 2.26996L4.37003 2.27001L4.42503 2.27165ZM5.01326 11.0832V18.3524H7.87598V14.6981C7.87598 14.4254 7.96853 14.14 8.18555 13.92C8.40347 13.699 8.68993 13.6018 8.96722 13.6018H12.5709C12.8482 13.6018 13.1347 13.699 13.3526 13.92C13.5696 14.14 13.6622 14.4254 13.6622 14.6981V18.3524H16.5248V11.126C15.9599 10.9741 15.466 10.658 15.0934 10.2315C14.56 10.8421 13.7781 11.2264 12.8952 11.2264C12.0122 11.2264 11.2303 10.8421 10.6969 10.2315C10.1635 10.8421 9.38161 11.2264 8.49867 11.2264C7.61573 11.2264 6.8338 10.8421 6.30041 10.2315C5.95987 10.6213 5.51803 10.9189 5.01326 11.0832ZM9.33773 15.0635V17.987H12.2004V15.0635H9.33773Z" fill-rule="evenodd"></path>
 </svg>
 <div class="pt-[2px]">Bolt/szolgáltatás</div>
@@ -646,22 +647,22 @@
                             Vallási intézmények, templomok
                         </a>
 </div>
-</div>
+</div> 
 </div>
 <a @click.prevent="go('/programok')" class="flex h-8 items-center gap-1 rounded px-2 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/programok" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
 <path d="M17.9771 3.71429H16.1429V2.85714C16.1429 2.62981 16.0526 2.4118 15.8918 2.25105C15.7311 2.09031 15.513 2 15.2857 2C15.0584 2 14.8404 2.09031 14.6796 2.25105C14.5189 2.4118 14.4286 2.62981 14.4286 2.85714V3.71429H7.57143V2.85714C7.57143 2.62981 7.48112 2.4118 7.32038 2.25105C7.15963 2.09031 6.94161 2 6.71429 2C6.48696 2 6.26894 2.09031 6.10819 2.25105C5.94745 2.4118 5.85714 2.62981 5.85714 2.85714V3.71429H4.02286C3.76099 3.70975 3.50081 3.75698 3.25726 3.85328C3.0137 3.94958 2.79156 4.09304 2.6036 4.27542C2.41564 4.45781 2.26556 4.67552 2.16198 4.91607C2.05839 5.15662 2.00335 5.41526 2 5.67714V18.8943C2.02628 19.2105 2.17584 19.5036 2.41638 19.7105C2.65693 19.9174 2.96917 20.0213 3.28571 20H18.7143C19.0308 20.0213 19.3431 19.9174 19.5836 19.7105C19.8242 19.5036 19.9737 19.2105 20 18.8943V5.67714C19.9967 5.41526 19.9416 5.15662 19.838 4.91607C19.7344 4.67552 19.5844 4.45781 19.3964 4.27542C19.2084 4.09304 18.9863 3.94958 18.7427 3.85328C18.4992 3.75698 18.239 3.70975 17.9771 3.71429ZM15.02 12.9114L10.4771 17.1971C10.3169 17.3542 10.1015 17.4422 9.87714 17.4422C9.65278 17.4422 9.43737 17.3542 9.27714 17.1971L6.96286 14.8229C6.88406 14.7424 6.82189 14.6472 6.7799 14.5427C6.7379 14.4381 6.7169 14.3264 6.71809 14.2138C6.71929 14.1011 6.74265 13.9899 6.78686 13.8863C6.83106 13.7827 6.89523 13.6888 6.97571 13.61C7.0562 13.5312 7.15141 13.469 7.25592 13.427C7.36042 13.385 7.47218 13.364 7.58481 13.3652C7.69743 13.3664 7.80872 13.3898 7.91231 13.434C8.0159 13.4782 8.10978 13.5424 8.18857 13.6229L9.90286 15.3886L13.8371 11.6771C14.004 11.5395 14.2167 11.47 14.4327 11.4826C14.6487 11.4952 14.8518 11.589 15.0015 11.7452C15.1512 11.9014 15.2363 12.1084 15.2397 12.3247C15.2431 12.541 15.1647 12.7506 15.02 12.9114ZM3.71429 5.67714C3.72291 5.60355 3.76007 5.53628 3.81777 5.4898C3.87548 5.44332 3.94912 5.42133 4.02286 5.42857H5.85714V6.28571C5.85714 6.51304 5.94745 6.73106 6.10819 6.89181C6.26894 7.05255 6.48696 7.14286 6.71429 7.14286C6.94161 7.14286 7.15963 7.05255 7.32038 6.89181C7.48112 6.73106 7.57143 6.51304 7.57143 6.28571V5.42857H14.4286V6.28571C14.4286 6.51304 14.5189 6.73106 14.6796 6.89181C14.8404 7.05255 15.0584 7.14286 15.2857 7.14286C15.513 7.14286 15.7311 7.05255 15.8918 6.89181C16.0526 6.73106 16.1429 6.51304 16.1429 6.28571V5.42857H17.9771C18.0509 5.42133 18.1245 5.44332 18.1822 5.4898C18.2399 5.53628 18.2771 5.60355 18.2857 5.67714V8.85714H3.71429V5.67714Z"></path>
 </svg>
 <div class="pt-[2px]">Program</div>
 </a>
 <a @click.prevent="go('/apro')" class="flex h-8 items-center gap-1 rounded px-2 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/apro" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20ZM11 13.4545C12.3556 13.4545 13.4545 12.3556 13.4545 11C13.4545 9.64439 12.3556 8.54545 11 8.54545C9.64439 8.54545 8.54545 9.64439 8.54545 11C8.54545 12.3556 9.64439 13.4545 11 13.4545Z" fill-rule="evenodd"></path>
 </svg>
 <div class="pt-[2px]">bolhapiac</div>
 </a>
 <a @click.prevent="go('/arcok')" class="flex h-8 items-center gap-1 rounded px-2 py-1 font-sansSecondaryCondRegular text-lg uppercase tracking-wide text-gray-900 hover:bg-gray-100" data-review-original-href="/arcok" href="#" tabindex="-1">
-<svg class="" fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+<svg fill="currentColor" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.456 10.8054C14.3636 10.3022 15.0789 9.51014 15.4893 8.55397C15.8998 7.59779 15.9821 6.53171 15.7234 5.5234C15.4647 4.51509 14.8795 3.62177 14.0601 2.98395C13.2406 2.34613 12.2332 2 11.1965 2C10.1598 2 9.15242 2.34613 8.33294 2.98395C7.51346 3.62177 6.92834 4.51509 6.66961 5.5234C6.41087 6.53171 6.49321 7.59779 6.90366 8.55397C7.31412 9.51014 8.0294 10.3022 8.93701 10.8054C5.46986 11.3923 3 13.4034 3 15.837V19.061C3.01412 19.3219 3.12995 19.5667 3.32243 19.7424C3.51491 19.9182 3.76855 20.0107 4.02846 20.0001H18.3334C18.5933 20.0107 18.8469 19.9182 19.0394 19.7424C19.2319 19.5667 19.3477 19.3219 19.3618 19.061V15.837C19.3618 13.4112 16.8998 11.3923 13.456 10.8054Z"></path>
 </svg>
 <div class="pt-[2px]">közösség</div>
@@ -671,10 +672,10 @@
 <section class="mb-10">
 <div wire:effects='{"partials":[],"url":{"open":{"as":null,"use":"push","alwaysShow":false,"except":"any"},"service":{"as":"service","use":"push","alwaysShow":false,"except":""},"maxDistance":{"as":"r","use":"push","alwaysShow":false,"except":2000},"sort":{"as":"sort","use":"push","alwaysShow":false,"except":"default"},"placeId":{"as":"place_id","use":"push","alwaysShow":false,"except":null},"zip":{"as":"zip","use":"push","alwaysShow":false,"except":null},"user_lat":{"as":"lat","use":"push","alwaysShow":false,"except":null},"user_lng":{"as":"lng","use":"push","alwaysShow":false,"except":null},"searchQuery":{"as":"mit","use":"push","alwaysShow":false,"except":""},"tag":{"as":"cimke","use":"push","alwaysShow":false,"except":null}},"listeners":["resetThing","resetPlace","refreshComponent","set-coordinates"]}' wire:id="xMkYgfhpw41rIPT3s3gI" wire:key="lw-3365581335-0" wire:name="global-search-wrapper" wire:snapshot='{"data":{"open":"any","service":"","companyCategory":null,"companyTopCategory":0,"companySubCategory":0,"maxDistance":2000,"latitude":0,"longitude":0,"hasNearbyResults":true,"hasPlace":false,"markers":[[],{"s":"arr"}],"sort":"default","placeName":"XIV. ker\u00fclet - Zugl\u00f3","placeId":null,"zip":null,"user_lat":null,"user_lng":null,"searchQuery":"","tag":"","thingName":"","paginators":[[],{"s":"arr"}]},"memo":{"id":"xMkYgfhpw41rIPT3s3gI","name":"global-search-wrapper","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":{"lw-2594261503-0":["div","RrG6NNioj7VydZ8vU33M"]},"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"a5cf12a5c5c5ba5501e3722113049aff989a4481e6743ed44cb5ab88ca1aefac"}'>
 <div autocomplete="off" class="relative z-30" wire:effects='{"partials":[],"listeners":["set-coordinates","globalSearchSubmitted"]}' wire:id="RrG6NNioj7VydZ8vU33M" wire:key="lw-2594261503-0" wire:name="global-search-bar" wire:snapshot='{"data":{"placeInput":"XIV. ker\u00fclet - Zugl\u00f3","thingInput":"","onFilterPage":false,"zone":[[],{"key":14,"class":"zone","s":"elmdl"}],"feature":[null,{"s":"feature"}],"selectedFeature":[null,{"s":"feature"}],"companyCategory":null,"newsCategory":null,"homepage":false,"inputClasses":"w-full pt-6 pb-1 pl-12 pr-8 truncate text-xl text-gray-900 placeholder-transparent bg-transparent border-0 outline-none peer font-sansSecondaryRegular focus:ring-0","labelClasses":"absolute pl-12 pr-2 text-sm text-gray-800 transition-all transform translate-y-4 pointer-events-none font-sansSecondaryRegular left-0 -top-2 peer-placeholder-shown:-translate-y-1\/2 peer-placeholder-shown:top-1\/2 peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-xl peer-placeholder-shown:text-gray-800 peer-focus:-top-2 peer-focus:translate-y-3 peer-focus:pr-2 peer-focus:text-sm peer-focus:text-gray-800","user_lat":null,"user_lng":null},"memo":{"id":"RrG6NNioj7VydZ8vU33M","name":"global-search-bar","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"76e4a74bd3a3aada82729cd49b30cec54f430ce79a4394fc04f9051c2c65076f"}' x-data="globalSearch" x-on:close-autocomplete-boxes.window="autoCompleteThings.close(); autoCompletePlaces.close();" x-screen="mobile = ($width&lt;1024)">
+ 
 
 
-
-
+ 
 <div data-review-disabled-form="true">
 <div id="place_search_wrapper" wire:ignore="" x-bind:class="mobile ? 'pointer-events-none' : ''">
 <div class="relative w-full">
@@ -703,7 +704,7 @@
 <label class="absolute pl-12 pr-2 text-sm text-gray-800 transition-all transform translate-y-4 pointer-events-none font-sansSecondaryRegular left-0 -top-2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-xl peer-placeholder-shown:text-gray-800 peer-focus:-top-2 peer-focus:translate-y-3 peer-focus:pr-2 peer-focus:text-sm peer-focus:text-gray-800" x-listbox:label="">
                 Miben keresel?</label>
 </div>
-<ul class="" style="display: none" x-listbox:options="" x-transition.origin.top.right="">
+<ul style="display: none" x-listbox:options="" x-transition.origin.top.right="">
 <template x-bind:key="option.id" x-for="option in options">
 <li x-bind:class="{
                         'bg-primary-400/10': $listboxOption.isActive,
@@ -731,7 +732,7 @@
 </div>
 </div>
 </div>
-
+ 
 <button class="btn" type="submit" wire:loading.class="btn-disable" wire:target="noTargetFound" x-bind:class="{ 'animate-pulse-gradient': thingChanged || placeChanged || contentTypeChanged }">
  <span class="contents"><span>Keresek</span>
 <svg class="btn-icon-size48" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span>
@@ -760,7 +761,7 @@
 </div>
 </div>
 </div>
-
+ 
 <button class="btn" type="submit" wire:loading.class="btn-disable" wire:target="noTargetFound">
  <span class="contents"><span>Keresek</span>
 <svg class="btn-icon-size48" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></span>
@@ -770,7 +771,7 @@
 </div>
 </div>
 </div>
-</section>
+</section> 
 </div>
 <div class="container">
 <section class="mb-16">
@@ -790,7 +791,7 @@
 </div>
 <div wire:effects='{"partials":[],"listeners":["set-coordinates"]}' wire:id="PVQgXMftybj9G0MKw9o5" wire:key="distance-107254-6a5888f1dad06" wire:name="distance-widget" wire:snapshot='{"data":{"default":true,"content":[[],{"key":107254,"class":"content","relations":["fields","fields.meta","location","location.media","pathEntry","zones","tags","relatedContent","owner","admin","categories","primaryZone","company"],"s":"elmdl"}],"lat":0,"lng":0,"placeName":"XIV. ker\u00fclet - Zugl\u00f3"},"memo":{"id":"PVQgXMftybj9G0MKw9o5","name":"distance-widget","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"bb3c786b8fea43e12d7d015d4320346837ffe9d7bbb862579a4d8c08d822dd1c"}'>
    <div x-data="{ tooltip: 'Kattints és kiderül, milyen messze van tőled!' }">
-
+ 
 <div class="flex h-6 items-center rounded bg-white px-2 hover:bg-gray-400 border border-gray-900 cursor-pointer" x-tooltip="tooltip">
 
  <p class="font-bold text-13px"><span class="hide-when-processing">? km-re</span>
@@ -816,9 +817,9 @@
 <div class="ml-2">
 <button wire:effects='{"partials":[]}' wire:id="D9mqybHdk1Mkh22pyoIA" wire:key="like-107254-6a5888f1dbd43" wire:name="like-button" wire:snapshot='{"data":{"count":2,"contentId":107254,"liked":false,"highlight":true,"border":true,"tooltip":"A kedvel\u00e9shez l\u00e9pj be."},"memo":{"id":"D9mqybHdk1Mkh22pyoIA","name":"like-button","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"ed20fc52034ac949bfe0436012f03fe78f3d2108b0cd1b55d82ecb1d4dd75746"}'>
  <div x-data="{ tooltip: 'A kedveléshez lépj be.' }">
-
+ 
 <div class="flex h-6 items-center rounded bg-white px-2 hover:bg-gray-400 border border-gray-900" x-tooltip="tooltip">
- <svg class="text-danger-500 h-3 w-3 mr-1" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg>
+ <svg class="text-danger-500 h-3 w-3 mr-1" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg> 
  <p class="font-bold text-13px">2</p>
 </div>
   </div>
@@ -827,14 +828,14 @@
 </div>
 <h1 class="heading pr-2 mb-1 text-4xl leading-10 text-gray-900 md:text-5xl">
 
+            
 
-
-
+                        
 
             Dózsa György úti háziorvosi rendelő - dr. Kovács Anett
+            
 
-
-
+                        
 
         </h1>
 <a data-review-original-href="https://www.google.com/maps/dir/?api=1&amp;destination=1146+Budapest%2C+D%C3%B3zsa+Gy%C3%B6rgy+%C3%BAt+7.+fsz.+3." href="#" tabindex="-1">
@@ -895,7 +896,7 @@
 </div>
 <div>
 <div class="h-px mx-4 bg-gray-400 md:mx-10"></div>
-<div class="">
+<div>
 <div class="flex items-center justify-between px-4 pt-3 md:px-10 pb-3">
 <div class="flex items-center justify-start">
 <a class="flex items-center lg:space-x-2 rounded px-2 py-1 font-sansSecondaryRegular text-base uppercase text-gray-800 hover:bg-gray-100" data-review-original-href="#comments" href="#" tabindex="-1" title="értékelem">
@@ -996,12 +997,12 @@
 
 <section class="mb-8" data-nosnippet="">
 <h2 class="heading icon-heading mb-5">
-<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px]" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M444.52 3.52L28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"></path></svg>
+<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px]" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M444.52 3.52L28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"></path></svg>                        
 
             A közelben ajánljuk még
+            
 
-
-
+                        
 
         </h2>
 <div class="grid gap-8 md:grid-cols-2">
@@ -1019,7 +1020,7 @@
 </div>
 <div wire:effects='{"partials":[],"listeners":["set-coordinates"]}' wire:id="GQtnlfmOIvxE1HuruSMY" wire:key="distance-273636-6a5888f1eb924" wire:name="distance-widget" wire:snapshot='{"data":{"default":false,"content":[[],{"key":273636,"class":"content","relations":["fields","fields.meta","location","primaryZone","zones","owner"],"s":"elmdl"}],"lat":0,"lng":0,"placeName":"XIV. ker\u00fclet - Zugl\u00f3"},"memo":{"id":"GQtnlfmOIvxE1HuruSMY","name":"distance-widget","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"bf534b496bec46e716c1d145f7db12b768c8be9ac290709ea1d92523b7187e65"}'>
    <div x-data="{ tooltip: 'Kattints és kiderül, milyen messze van tőled!' }">
-
+ 
 <div class="flex h-6 items-center rounded bg-white px-2 hover:bg-gray-400 cursor-pointer" x-tooltip="tooltip">
 
  <p class="font-bold text-13px"><span class="hide-when-processing">? km-re</span>
@@ -1042,12 +1043,12 @@
   </div>
   </div>
 </div>
-<div class="">
+<div>
 <button wire:effects='{"partials":[]}' wire:id="6orGkYRE3wWR0nBCvm9J" wire:key="like-273636-6a5888f1ec55c" wire:name="like-button" wire:snapshot='{"data":{"count":0,"contentId":273636,"liked":false,"highlight":true,"border":false,"tooltip":"A kedvel\u00e9shez l\u00e9pj be."},"memo":{"id":"6orGkYRE3wWR0nBCvm9J","name":"like-button","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"0680def4f58343137c7733fc3b7c8f7ab314bf3677476f3919276ed0dbceb0b6"}'>
  <div x-data="{ tooltip: 'A kedveléshez lépj be.' }">
-
+ 
 <div class="flex h-6 items-center rounded bg-white px-2 hover:bg-gray-400" x-tooltip="tooltip">
- <svg class="text-danger-500 h-3 w-3 mr-1" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg>
+ <svg class="text-danger-500 h-3 w-3 mr-1" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg> 
  <p class="font-bold text-13px">0</p>
 </div>
   </div>
@@ -1068,18 +1069,18 @@
 </div>
 <div class="flex grow flex-col p-4 md:flex-row">
 <div class="flex flex-1 flex-col justify-between">
-<div class="">
+<div>
 <a data-review-original-href="https://ad.adverticum.net/C/7910325/7910327/791032900?" href="#" tabindex="-1">
 <h3 class="heading mb-0 text-2xl leading-7 -mt-2 text-secondary-500">
 
+            
 
-
-
+                        
 
             Procopius Numizmatika - Régi pénz felvásárlás
+            
 
-
-
+                        
 
         </h3>
 </a>
@@ -1103,12 +1104,12 @@
 <div wire:effects='{"partials":[],"listeners":["set-coordinates"]}' wire:id="sCmzNoszDxjjMrqF9yy9" wire:key="distance-271348-6a5888f1ed925" wire:name="distance-widget" wire:snapshot='{"data":{"default":false,"content":[[],{"key":271348,"class":"content","relations":["fields","fields.meta","location","primaryZone","zones","owner"],"s":"elmdl"}],"lat":0,"lng":0,"placeName":"XIV. ker\u00fclet - Zugl\u00f3"},"memo":{"id":"sCmzNoszDxjjMrqF9yy9","name":"distance-widget","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"623c152c4e0b55dd011dd331b1c4f5f83ec534995a1c82c026a56e36a1597dee"}'>
 </div>
 </div>
-<div class="">
+<div>
 <button wire:effects='{"partials":[]}' wire:id="7QEvejVLJshw2AEaS9Yc" wire:key="like-271348-6a5888f1ee474" wire:name="like-button" wire:snapshot='{"data":{"count":5,"contentId":271348,"liked":false,"highlight":true,"border":false,"tooltip":"A kedvel\u00e9shez l\u00e9pj be."},"memo":{"id":"7QEvejVLJshw2AEaS9Yc","name":"like-button","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"eadc8725f7dfc9e60a6a6966f812314aba89e0f80aafe4037ea7c3d1a0fcac94"}'>
  <div x-data="{ tooltip: 'A kedveléshez lépj be.' }">
-
+ 
 <div class="flex h-6 items-center rounded bg-white px-2 hover:bg-gray-400" x-tooltip="tooltip">
- <svg class="text-danger-500 h-3 w-3 mr-1" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg>
+ <svg class="text-danger-500 h-3 w-3 mr-1" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z"></path></svg> 
  <p class="font-bold text-13px">5</p>
 </div>
   </div>
@@ -1129,18 +1130,18 @@
 </div>
 <div class="flex grow flex-col p-4 md:flex-row">
 <div class="flex flex-1 flex-col justify-between">
-<div class="">
+<div>
 <a data-review-original-href="https://ittlakunk.hu/mediaajanlat?utm_source=adatlap" href="#" tabindex="-1">
 <h3 class="heading mb-0 text-2xl leading-7 -mt-2 text-secondary-500">
 
+            
 
-
-
+                        
 
             KERÜLJ A KERÜLETI ITTLAKUNK.HU KIEMELT AJÁNLÓJÁBA A SAJÁT CÉGEDDEL!
+            
 
-
-
+                        
 
         </h3>
 </a>
@@ -1150,19 +1151,19 @@
 </div>
 </div>
 </div>
-</section>
+</section> 
 
 <h2 class="heading icon-heading mb-5">
-<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px]" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>
+<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px]" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg>                        
 
             Fotók, videók
+            
 
-
-
+                        
 
         </h2>
 <div class="rounded-lg p-8 shadow-xl scroll-mt-16" id="comments" wire:effects='{"partials":[],"url":{"paginators.page":{"as":"page","use":"push","alwaysShow":false,"except":null}},"listeners":["delete","reply-created"]}' wire:id="AzSt3iUlSIv65QHiDdhz" wire:key="lw-305289588-0-nezzide-0" wire:name="comments" wire:snapshot='{"data":{"model":[[],{"key":107254,"class":"content","relations":["fields","fields.meta","location","location.media","pathEntry","zones","tags","relatedContent","owner","admin","categories","primaryZone","company"],"s":"elmdl"}],"text":"","writable":true,"showAvatars":true,"showNotificationOptions":false,"newestFirst":true,"selectedNotificationSubscriptionType":"participating","noCommentsText":null,"showReplies":false,"showReactions":true,"paginators":[{"page":1},{"s":"arr"}]},"memo":{"id":"AzSt3iUlSIv65QHiDdhz","name":"comments","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"3a588ae456112c643c217504b399a3182755679236e65a7fbcbb0c3b91d68b3b"}'>
-
+ 
 <h3 class="heading icon-heading mb-8">
 
 <svg class="mr-2 h-6 w-6 pt-1 text-gray-500" fill="currentColor" viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"></path></svg>        Értékelések
@@ -1179,7 +1180,7 @@
         vagy
         <a data-review-original-href="#" href="#" tabindex="-1">csatlakozz</a>.
     </p>
-
+ 
 <div class="flex flex-col divide-y divide-gray-500">
  <p class="prose text-center">Még nincsen értékelés</p>
 
@@ -1205,12 +1206,12 @@
 <div class="flex items-center justify-between">
 <span>
 <h2 class="heading icon-heading">
-<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96zM432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg>
+<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96zM432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg>                        
 
             Bemutatkozás
+            
 
-
-
+                        
 
         </h2>
 </span>
@@ -1243,12 +1244,12 @@
 <div class="flex items-center justify-between">
 <span>
 <h2 class="heading icon-heading">
-<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg>
+<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg>                        
 
             Nyitvatartás
+            
 
-
-
+                        
 
         </h2>
 </span>
@@ -1338,12 +1339,12 @@
 <div class="flex items-center justify-between">
 <span>
 <h2 class="heading icon-heading">
-<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M499.99 176h-59.87l-16.64-41.6C406.38 91.63 365.57 64 319.5 64h-127c-46.06 0-86.88 27.63-103.99 70.4L71.87 176H12.01C4.2 176-1.53 183.34.37 190.91l6 24C7.7 220.25 12.5 224 18.01 224h20.07C24.65 235.73 16 252.78 16 272v48c0 16.12 6.16 30.67 16 41.93V416c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h256v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-54.07c9.84-11.25 16-25.8 16-41.93v-48c0-19.22-8.65-36.27-22.07-48H494c5.51 0 10.31-3.75 11.64-9.09l6-24c1.89-7.57-3.84-14.91-11.65-14.91zm-352.06-17.83c7.29-18.22 24.94-30.17 44.57-30.17h127c19.63 0 37.28 11.95 44.57 30.17L384 208H128l19.93-49.83zM96 319.8c-19.2 0-32-12.76-32-31.9S76.8 256 96 256s48 28.71 48 47.85-28.8 15.95-48 15.95zm320 0c-19.2 0-48 3.19-48-15.95S396.8 256 416 256s32 12.76 32 31.9-12.8 31.9-32 31.9z"></path></svg>
+<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M499.99 176h-59.87l-16.64-41.6C406.38 91.63 365.57 64 319.5 64h-127c-46.06 0-86.88 27.63-103.99 70.4L71.87 176H12.01C4.2 176-1.53 183.34.37 190.91l6 24C7.7 220.25 12.5 224 18.01 224h20.07C24.65 235.73 16 252.78 16 272v48c0 16.12 6.16 30.67 16 41.93V416c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h256v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-54.07c9.84-11.25 16-25.8 16-41.93v-48c0-19.22-8.65-36.27-22.07-48H494c5.51 0 10.31-3.75 11.64-9.09l6-24c1.89-7.57-3.84-14.91-11.65-14.91zm-352.06-17.83c7.29-18.22 24.94-30.17 44.57-30.17h127c19.63 0 37.28 11.95 44.57 30.17L384 208H128l19.93-49.83zM96 319.8c-19.2 0-32-12.76-32-31.9S76.8 256 96 256s48 28.71 48 47.85-28.8 15.95-48 15.95zm320 0c-19.2 0-48 3.19-48-15.95S396.8 256 416 256s32 12.76 32 31.9-12.8 31.9-32 31.9z"></path></svg>                        
 
             Parkolás
+            
 
-
-
+                        
 
         </h2>
 </span>
@@ -1371,12 +1372,12 @@
 <div class="flex items-center justify-between">
 <span>
 <h2 class="heading icon-heading">
-<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"></path></svg>
+<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"></path></svg>                        
 
             Kapcsolat
+            
 
-
-
+                        
 
         </h2>
 </span>
@@ -1411,10 +1412,10 @@
 </div>
 </a>
 </span>
-
+                            
 
                                                                 |
-
+                                                        
 
                                                 <span class="inline-block"><button @click="clickHandler" class="hidden md:block" x-data="{
     'label': 'szám mutatása',
@@ -1495,12 +1496,12 @@
 <div class="flex items-center justify-between">
 <span>
 <h2 class="heading icon-heading">
-<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>
+<svg class="w-6 h-6 mr-3 text-gray-500 pt-[2px] text-gray-500" fill="currentColor" viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"></path></svg>                        
 
             Címkék
+            
 
-
-
+                        
 
         </h2>
 </span>
@@ -1601,20 +1602,20 @@
 <button class="p-3 text-gray-900 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" type="button" x-on:click="open = false;  $dispatch('closeoverlay');">
 <span class="sr-only">Close</span>
 <svg class="btn-icon-size32" fill="currentColor" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path></svg>
-</button>
+</button> 
 </div>
 <div class="max-w-5xl">
 <div wire:effects='{"partials":[],"listeners":["show-user-modal"]}' wire:id="A5zqUwIWw9FOrjB8HOsn" wire:key="lw-1879989633-0-nezzide-0-2" wire:name="user.modal-router" wire:snapshot='{"data":{"route":"upload","intent":null,"email":null,"forceClose":false,"skipModals":0,"destroySkipped":false},"memo":{"id":"A5zqUwIWw9FOrjB8HOsn","name":"user.modal-router","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"847e8ae9f4e00ba4c8782380e1a45c362bb7c643a3cc62876a732dabb110195b"}'>
  <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 <div class="py-6 px-6 bg-gray-400 rounded-lg h-[592px] hidden lg:block relative bg-no-repeat bg-bottom" style="background-image: url('/images/custom-illustrations/Ittlakunk-banner-bg-01.svg')">
-
+ 
 <h2 class="heading mb-4 text-2xl leading-8">
-
+            
 
             Miért?
+            
 
-
-
+            
 </h2>
 
 <ul class="list-disc list-inside">
@@ -1634,14 +1635,14 @@
 <img alt="" class="absolute -bottom-3 left-1/2 transform -translate-x-1/2"/>
 </div>
 <div class="flex flex-col justify-between md:pt-5">
-
+ 
 <h1 class="heading mb-4 text-2xl leading-8 mt-0">
-
+            
 
             Itt informálhatod a helyieket. Töltsd föl
+            
 
-
-
+            
 </h1>
 
 <div class="grid grid-cols-2 grid-rows-3 gap-2">
@@ -1754,7 +1755,7 @@
 </div>
 </div>
 </div>
-</div>
+</div> 
 </div>
 <div class="block ml-px md:relative" x-data="{ open: false }">
 <button @click="open = !open" aria-expanded="true" aria-haspopup="true" class="relative w-12 h-12 px-2 py-2 rounded-r-md focus:z-10 btn-primary" id="option-menu-button" type="button">
@@ -1782,7 +1783,7 @@
     eladó tárgyaid
 </a>
 </div>
-</div>
+</div> 
 
 <div class="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm" x-cloak="" x-show="open" x-transition.opacity=""></div>
 </div>
@@ -1794,15 +1795,15 @@
 <div>
 <h2 class="heading mb-0 text-lg leading-8 text-white lg:text-2xl">
 
+            
 
-
-
+                        
 
             Tudtad hogy
                         feltöltheted saját üzletedet, cégedet?
+            
 
-
-
+                        
 
         </h2>
 <p class="-mt-1 text-primary-50">A versenytársaid már jó eséllyel itt vannak, ne késlekedj!</p>
@@ -1841,14 +1842,14 @@
 <path d="M14 7C14 5.89543 14.8954 5 16 5H18V32L14 30.0364V7Z" fill="#C4C4C4" opacity="0.25"></path>
 </svg>
 <div class="flex flex-col items-center lg:ml-6 lg:items-start">
-
+ 
 <h6 class="heading leading-2 text-lg">
-
+            
 
             Iratkozz fel hírlevelünkre!
+            
 
-
-
+            
 </h6>
  <p class="text-center text-sm text-gray-800 lg:text-left">Heti rendszerességgel értesítünk a helyi hírekről, információkról!</p>
 </div>
@@ -1860,7 +1861,7 @@
 <input autocomplete="nope" id="my_name_S8pFZC5Vj42239Vc" name="my_name_S8pFZC5Vj42239Vc" tabindex="-1" type="text" value="" wire:model.defer="extraFields.my_name"/>
 <input autocomplete="off" name="valid_from" tabindex="-1" type="text" value="eyJpdiI6ImxNbUlvL3Uva2cwUlZYN09ZdkdLdGc9PSIsInZhbHVlIjoiTmtHcEJGa3VsNVRPa0JqYk4yU3MwUT09IiwibWFjIjoiZjNlMmNhZDNhZmQ0YWNhYzk3M2ZlN2MzOGEyYjgxNmU2M2MxNTFlY2UzN2Y5MmIzZDE5YmQ0ZWViYWJkMDA2MiIsInRhZyI6IiJ9" wire:model.defer="extraFields.valid_from"/>
 </div>
-
+  
 <button class="btn btn-primary btn-size48 btn-right-rounded-b-mobil flex w-full lg:w-auto justify-center gap-2" type="submit" wire:click="subscribe" wire:loading.class="btn-disable" wire:target="subscribe">
  <span class="contents"><div class="pt-[2px]">feliratkozok</div>
 <svg class="btn-icon-size48" fill="currentColor" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>
@@ -1876,14 +1877,14 @@
 <div class="mb-8 lg:mb-0">
 <h6 class="heading leading-2 mb-4 text-lg">
 
+            
 
-
-
+                        
 
             ittlakóknak
+            
 
-
-
+                        
 
         </h6>
 <ul class="space-y-2" role="list">
@@ -1912,14 +1913,14 @@
 <div class="mb-8 lg:mb-0">
 <h6 class="heading leading-2 mb-4 text-lg">
 
+            
 
-
-
+                        
 
             Helyi vállalkozásoknak
+            
 
-
-
+                        
 
         </h6>
 <ul class="space-y-2" role="list">
@@ -1943,14 +1944,14 @@
 <div class="mb-8 lg:mb-0">
 <h6 class="heading leading-2 mb-4 text-lg">
 
+            
 
-
-
+                        
 
             Az ittlakunk.hu
+            
 
-
-
+                        
 
         </h6>
 <ul class="space-y-2" role="list">
@@ -1993,11 +1994,11 @@
 <div class="flex flex-col justify-between md:items-center lg:flex-row">
 <p class="text-sm text-gray-800">Copyright © 2010–2026 ittlakunk.hu | az oldalt az ittlakunk.hu Kft. üzemelteti</p>
 <p class="text-sm text-gray-800">Szerverhoszting:
-                <a class="" data-review-original-href="https://www.zts.hu/" href="#" tabindex="-1">
+                <a data-review-original-href="https://www.zts.hu/" href="#" tabindex="-1">
     Zerotime
 </a>
                 | Design:
-                <a class="" data-review-original-href="https://varadi.tv/" href="#" tabindex="-1">
+                <a data-review-original-href="https://varadi.tv/" href="#" tabindex="-1">
     Varadi
 </a></p>
 </div>
@@ -2013,8 +2014,8 @@
 
 
 <div wire:effects='{"partials":[],"listeners":["openModal","destroyComponent"]}' wire:id="huZvd81p6Pif2cp1ILPt" wire:key="lw-4026445918-2-nezzide-0-2" wire:name="wire-elements-modal" wire:snapshot='{"data":{"activeComponent":null,"components":[[],{"s":"arr"}]},"memo":{"id":"huZvd81p6Pif2cp1ILPt","name":"wire-elements-modal","path":"holmi\/egeszseg\/dozsa-gyorgy-uti-haziorvosi-rendelo-dr-kovacs-anett","method":"GET","release":"a-a-a","children":[],"scripts":[],"assets":[],"errors":[],"locale":"hu","islands":[]},"checksum":"c4031612b2ecc437753ccf964bbdf554152d74bcbc31705ca8179f7789ad6c2e"}'>
-
-
+ 
+ 
 <div class="fixed inset-0 z-9999 overflow-y-auto" style="display: none;" x-data="LivewireUIModal()" x-on:close.stop="setShowPropertyTo(false)" x-on:keydown.escape.window="closeModalOnEscape()" x-show="show">
 <div class="flex min-h-screen items-end justify-center px-4 pb-10 pt-4 text-center sm:block sm:p-0">
 <div class="fixed inset-0 transform transition-all" x-on:click="closeModalOnClickAway()" x-show="show" x-transition:enter="ease-out duration-300" x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0" x-transition:leave="ease-in duration-200" x-transition:leave-end="opacity-0" x-transition:leave-start="opacity-100">
@@ -2025,7 +2026,7 @@
 <div class="absolute right-4 top-4">
 <button class="rounded-full bg-white p-3 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" tabindex="-1" type="button" x-on:click="closeModal()">
 <span class="sr-only">Close</span>
-<svg class="btn-icon-size32" fill="currentColor" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path></svg> </button>
+<svg class="btn-icon-size32" fill="currentColor" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path></svg> </button> 
 </div>
   </div>
 </div>
@@ -2091,7 +2092,7 @@
 </div>
 </div>
 <div class="w-full">
-
+ 
 <button class="btn justify-center gap-2 btn-primary btn-size48 w-full" type="submit" wire:loading.class="btn-disable" wire:target="noTargetFound" x-bind:class="{ 'animate-pulse-gradient': thingChanged || placeChanged || contentTypeChanged }">
  <span class="contents"><span class="pt-px md:flex">Keresek</span>
 <svg class="btn-icon-size48" fill="currentColor" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></span>

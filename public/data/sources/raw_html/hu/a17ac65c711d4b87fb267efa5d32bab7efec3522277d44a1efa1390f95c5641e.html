@@ -50,7 +50,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -141,11 +142,11 @@
 <a data-review-original-href="/" href="#" tabindex="-1">Címlap</a>
 </li>
 <li aria-haspopup="true" id="menuitem_2" role="menuitem">
-
+          
           Település
                       <ul role="menu">
 <li aria-haspopup="true" id="menuitem_2_1" role="menuitem">
-
+          
           Magunkról
                       <ul role="menu">
 <li id="menuitem_2_1_1" role="menuitem">
@@ -178,7 +179,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_2_2" role="menuitem">
-
+          
           Kikapcsolódás
                       <ul role="menu">
 <li id="menuitem_2_2_1" role="menuitem">
@@ -196,7 +197,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_2_3" role="menuitem">
-
+          
           Közösségeink
                       <ul role="menu">
 <li id="menuitem_2_3_1" role="menuitem">
@@ -211,7 +212,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_2_4" role="menuitem">
-
+          
           Helyi szolgáltatások
                       <ul role="menu">
 <li id="menuitem_2_4_1" role="menuitem">
@@ -229,7 +230,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_2_5" role="menuitem">
-
+          
           Befektetői információk
                       <ul role="menu">
 <li id="menuitem_2_5_1" role="menuitem">
@@ -244,7 +245,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_2_6" role="menuitem">
-
+          
           Építésügy, fejlesztés
                       <ul role="menu">
 <li id="menuitem_2_6_1" role="menuitem">
@@ -259,7 +260,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_2_7" role="menuitem">
-
+          
           Hírek
                       <ul role="menu">
 <li id="menuitem_2_7_1" role="menuitem">
@@ -274,7 +275,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_2_8" role="menuitem">
-
+          
           Közelekedés
                       <ul role="menu">
 <li id="menuitem_2_8_1" role="menuitem">
@@ -285,11 +286,11 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_3" role="menuitem">
-
+          
           Önkormányzat
                       <ul role="menu">
 <li aria-haspopup="true" id="menuitem_3_1" role="menuitem">
-
+          
           Vezetők
                       <ul role="menu">
 <li id="menuitem_3_1_1" role="menuitem">
@@ -301,7 +302,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_3_2" role="menuitem">
-
+          
           Képviselő-testület
                       <ul role="menu">
 <li id="menuitem_3_2_1" role="menuitem">
@@ -316,7 +317,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_3_3" role="menuitem">
-
+          
           Önkormányzati működés
                       <ul role="menu">
 <li id="menuitem_3_3_1" role="menuitem">
@@ -340,7 +341,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_3_4" role="menuitem">
-
+          
           Bizottságok
                       <ul role="menu">
 <li id="menuitem_3_4_1" role="menuitem">
@@ -355,7 +356,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_3_5" role="menuitem">
-
+          
           Döntéshozatal
                       <ul role="menu">
 <li id="menuitem_3_5_1" role="menuitem">
@@ -379,7 +380,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_3_6" role="menuitem">
-
+          
           Nemzetiségi önkormányzatok
                       <ul role="menu">
 <li id="menuitem_3_6_1" role="menuitem">
@@ -393,11 +394,11 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_4" role="menuitem">
-
+          
           Hivatal
                       <ul role="menu">
 <li aria-haspopup="true" id="menuitem_4_1" role="menuitem">
-
+          
           Közös Önkormányzati Hivatal
                       <ul role="menu">
 <li id="menuitem_4_1_1" role="menuitem">
@@ -424,14 +425,14 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_4_2" role="menuitem">
-
+          
           Ügyfélszolgálat
                       <ul role="menu">
 <li id="menuitem_4_2_1" role="menuitem">
 <a data-review-original-href="/ugyfelfogadas" href="#" tabindex="-1">Ügyfélfogadás</a>
 </li>
 <li aria-haspopup="true" id="menuitem_4_2_2" role="menuitem">
-
+          
           Nyomtatványok
                       <ul role="menu">
 <li id="menuitem_4_2_2_1" role="menuitem">
@@ -475,7 +476,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_4_3" role="menuitem">
-
+          
           Hivatalos hirdetmények
                       <ul role="menu">
 <li id="menuitem_4_3_1" role="menuitem">
@@ -502,7 +503,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_4_4" role="menuitem">
-
+          
           Nyilvánosság
                       <ul role="menu">
 <li id="menuitem_4_4_1" role="menuitem">
@@ -523,7 +524,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_4_5" role="menuitem">
-
+          
           Gazdálkodási adatok
                       <ul role="menu">
 <li id="menuitem_4_5_1" role="menuitem">
@@ -558,11 +559,11 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_5" role="menuitem">
-
+          
           Intézményrendszer
                       <ul role="menu">
 <li aria-haspopup="true" id="menuitem_5_1" role="menuitem">
-
+          
           Oktatás
                       <ul role="menu">
 <li id="menuitem_5_1_1" role="menuitem">
@@ -577,7 +578,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_5_2" role="menuitem">
-
+          
           Egészségügy
                       <ul role="menu">
 <li id="menuitem_5_2_1" role="menuitem">
@@ -595,7 +596,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_5_3" role="menuitem">
-
+          
           Kultúra
                       <ul role="menu">
 <li id="menuitem_5_3_1" role="menuitem">
@@ -604,7 +605,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_5_4" role="menuitem">
-
+          
           Szociális ellátás
                       <ul role="menu">
 <li id="menuitem_5_4_1" role="menuitem">
@@ -619,7 +620,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_5_5" role="menuitem">
-
+          
           Gyermekvédelem
                       <ul role="menu">
 <li id="menuitem_5_5_1" role="menuitem">
@@ -631,7 +632,7 @@
 <a data-review-original-href="/telepulesuzemeltetes" href="#" tabindex="-1">Településüzemeltetés</a>
 </li>
 <li aria-haspopup="true" id="menuitem_5_7" role="menuitem">
-
+          
           Rendvédelem
                       <ul role="menu">
 <li id="menuitem_5_7_1" role="menuitem">
@@ -648,7 +649,7 @@
 <a data-review-original-href="/elnyert-palyazatok" href="#" tabindex="-1">Elnyert pályázatok</a>
 </li>
 <li aria-haspopup="true" id="menuitem_7" role="menuitem">
-
+          
           Közérdekű adatok
                       <ul role="menu">
 <li id="menuitem_7_1" role="menuitem">
@@ -660,11 +661,11 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_8" role="menuitem">
-
+          
           Választási információk
                       <ul role="menu">
 <li aria-haspopup="true" id="menuitem_8_1" role="menuitem">
-
+          
           Választási szervek
                       <ul role="menu">
 <li id="menuitem_8_1_1" role="menuitem">
@@ -682,7 +683,7 @@
 <a data-review-original-href="/valasztasi-ugyintezes" href="#" tabindex="-1">Választási ügyintézés</a>
 </li>
 <li aria-haspopup="true" id="menuitem_8_3" role="menuitem">
-
+          
           Aktuális választások
                       <ul role="menu">
 <li id="menuitem_8_3_1" role="menuitem">
@@ -697,7 +698,7 @@
 </ul>
 </li>
 <li aria-haspopup="true" id="menuitem_8_4" role="menuitem">
-
+          
           Korábbi választások
                       <ul role="menu">
 <li id="menuitem_8_4_1" role="menuitem">
@@ -770,7 +771,7 @@
 <span>V. felnőtt háziorvosi körzet</span>
 </h1>
 <div class="social-media-sharing">
-<ul class="">
+<ul>
 <li>
 <a class="facebook-share share" data-review-original-href="http://www.facebook.com/share.php?u=https://cegled.asp.lgov.hu/v-felnott-haziorvosi-korzet&amp;title=V. felnőtt háziorvosi körzet" href="#" tabindex="-1" target="_blank" title="Facebook">
 <img alt="Facebook"/>

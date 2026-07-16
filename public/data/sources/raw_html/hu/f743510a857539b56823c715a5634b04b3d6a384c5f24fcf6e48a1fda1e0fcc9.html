@@ -114,31 +114,31 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .panoramic-slider-container.default .slider .slide img {
 	min-width: 600px;
 }
-
+	
 
 /* Mobile Menu and other mobile stylings */
 @media only screen and (max-width: 960px) {
 	.main-navigation.translucent {
 		position: relative;
 	}
-
+	
 	.main-navigation.translucent {
 		background-color: #006489 !important;
 	}
 
 	#main-menu.panoramic-mobile-menu-standard-color-scheme {
 		background-color: #006489;
-	}
-
+	}	
+	
 	.slider-placeholder {
 		display: none;
 	}
-
+	
 	.header-image .overlay,
 	.panoramic-slider-container.default .slider .slide .overlay {
 		top: 25%;
     }
-
+	
 	.panoramic-slider-container.default .prev.top-padded,
 	.panoramic-slider-container.default .next.top-padded{
 		margin-top: -26px;
@@ -162,7 +162,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     	font-size: 28px;
 		color: #FFFFFF;
 	}
-
+	
 	/* Menu close button */
     .main-menu-close {
         display: block;
@@ -179,7 +179,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     	width: 36px;
         line-height: 33px;
         cursor: pointer;
-
+    	
 	    -webkit-transition: all 0.2s ease 0s;
 	     -moz-transition: all 0.2s ease 0s;
 	      -ms-transition: all 0.2s ease 0s;
@@ -193,7 +193,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		font-size: 23px;
 		line-height: 35px;
 	}
-
+    
 	.main-menu-close:hover .otb-fa,
     .main-menu-close:hover .fa-solid {
     	font-weight: 700 !important;
@@ -202,12 +202,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         position: relative;
         left: -4px;
     }
-
+    
 	.main-menu-close .fa-angle-left {
 		position: relative;
         left: -5px;
     }
-
+    	
     .main-navigation ul {
         display: block;
     }
@@ -262,7 +262,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     	border-bottom-color: #FFFFFF;
 	}
     #main-menu.panoramic-mobile-menu-standard-color-scheme li a:hover {
-    	background-color: rgba(0, 0, 0, 0.2);
+    	background-color: rgba(0, 0, 0, 0.2); 
   	}
     .main-navigation ul ul a {
     	text-transform: none;
@@ -276,7 +276,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         padding: 6px 39px !important;
     }
     .main-navigation ul ul ul ul li a {
-
+    	
         padding: 6px 47px !important;
     }
     .main-navigation ul ul ul ul ul li a {
@@ -312,7 +312,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		color: #FFFFFF;
     	font-weight: 700 !important;
     }
-
+    
     /* 1st level selected item */
     #main-menu.panoramic-mobile-menu-standard-color-scheme a:hover,
 	#main-menu.panoramic-mobile-menu-standard-color-scheme li.current-menu-item > a,
@@ -333,7 +333,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 	#main-menu.panoramic-mobile-menu-standard-color-scheme ul ul li.current_page_ancestor > a {
 		background-color: rgba(0, 0, 0, 0.2);
 	}
-
+	
 	/* 3rd level selected item */
 	#main-menu.panoramic-mobile-menu-standard-color-scheme ul ul ul li.current-menu-item > a,
 	#main-menu.panoramic-mobile-menu-standard-color-scheme ul ul ul li.current_page_item > a,
@@ -391,9 +391,9 @@ h1, h2, h3, h4, h5, h6,
     			input[type="button"],
 				input[type="reset"],
 				input[type="submit"],
-
+    			
     			.panoramic-bookingpress-use-theme-styles .bpa-front-btn--primary span,
-
+    			
     			.wp-block-search__button{font-family:"Righteous","Helvetica Neue",sans-serif !important;}
 </style>
 
@@ -401,7 +401,8 @@ h1, h2, h3, h4, h5, h6,
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -467,13 +468,7 @@ h1, h2, h3, h4, h5, h6,
 </ul></div> </div>
 </nav>
 </header>
-<div class="header-image loading">
-<img alt="" decoding="async" fetchpriority="high" height="592" loading="eager" width="1500"/>
-<div class="overlay top-padded">
-<div class="opacity">
-<h2>Üdvözöljük településünkön!</h2> </div>
-</div>
-</div>
+
 <div class="site-content site-container" id="content">
 <a data-review-original-href="" href="#" id="site-content" name="site-content" tabindex="-1"></a>
 <div class="content-area" id="primary">

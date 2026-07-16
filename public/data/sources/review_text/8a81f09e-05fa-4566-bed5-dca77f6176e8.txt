@@ -1,0 +1,71 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+XXIV. felnőtt háziorvosi körzet
+(
+12740895337
+)
+Verzió
+#
+2
+Nyitva tartási értékek javítása.
+Szerkesztette
+urbalazs
+nagyjából 1 évvel ezelőtt
+Módosításcsomag
+167930924
+0
+Hely:
+46,9633990
+,
+18,9424762
+Címkék
+addr:city
+Dunaújváros
+addr:housenumber
+10
+addr:postcode
+2400
+addr:street
+Vasmű út
+amenity
+doctors
+contact:email
+dujv24praxis@gmail.com
+contact:phone
++36 25 550 474
+healthcare
+doctor
+level
+name
+opening_hours
+Mo,We,Fr 09:00-12:00; Tu 15:00-17:00; Th 13:00-16:00; PH off
+opening_hours:prenatal
+Fr 08:00-09:00; PH off
+opening_hours:preventive
+Mo,We 08:00-09:00; Tu 13:00-15:00; Th 12:00-13:00; PH off
+operator
+dr. Táborosi Éva
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

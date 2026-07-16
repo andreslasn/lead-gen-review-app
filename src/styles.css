@@ -215,7 +215,7 @@ input, textarea {
   font-size: 0.84rem;
 }
 
-.candidate-card, .excerpt-card, .reason-panel, .edit-panel {
+.candidate-card, .reason-panel, .edit-panel {
   border: 0;
   border-top: 1px solid var(--concrete-100);
   border-radius: 0;
@@ -377,21 +377,6 @@ input, textarea {
   gap: 8px;
 }
 .triage-summary p { margin: 6px 0 0; color: var(--black-80); }
-.triage-summary blockquote {
-  margin: 6px 0 0;
-  padding-left: 8px;
-  border-left: 3px solid var(--blue-40);
-  color: var(--black-80);
-}
-.excerpt-card {
-  overflow: hidden;
-}
-.excerpt {
-  max-height: 7.2rem;
-  overflow: auto;
-  color: var(--black-80);
-  font-size: 0.84rem;
-}
 mark {
   border-radius: 0.25rem;
   background: #faff01;

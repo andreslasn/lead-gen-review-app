@@ -99,7 +99,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -880,7 +881,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </a></li><li class="share-email"><a aria-labelledby="sharing-email-12635" class="share-email sd-button share-icon no-text" data-email-share-error-text="If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-error-title="Do you have email set up?" data-email-share-nonce="c0f25e04f3" data-email-share-track-url="https://kisszallas.hu/haziorvos-allas-palyazat/?share=email" data-review-original-href="mailto:?subject=%5BShared%20Post%5D%20H%C3%A1ziorvos%20%C3%A1ll%C3%A1s%20p%C3%A1ly%C3%A1zat&amp;body=https%3A%2F%2Fkisszallas.hu%2Fhaziorvos-allas-palyazat%2F&amp;share=email" data-shared="sharing-email-12635" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank">
 <span hidden="" id="sharing-email-12635">Email a link to a friend (Opens in new window)</span>
 <span>Email</span>
-</a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-83182211-12635-6a588d0dac908" data-src="https://widgets.wp.com/likes/?ver=16.0#blog_id=83182211&amp;post_id=12635&amp;origin=kisszallas.hu&amp;obj_id=83182211-12635-6a588d0dac908" data-title="Like or Reblog" id="like-post-wrapper-83182211-12635-6a588d0dac908"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> <span class="loading"><svg aria-hidden="true" class="jetpack-spinner" focusable="false" height="18" viewbox="0 0 100 100" width="18" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" fill="none" r="46" stroke="#ddd" stroke-width="8"></circle><path d="M 50 4 A 46 46 0 0 1 96 50" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="8"><animatetransform attributename="transform" dur="1.4s" from="0 50 50" repeatcount="indefinite" to="360 50 50" type="rotate"></animatetransform></path></svg><span class="screen-reader-text">Loading…</span></span></div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div></div>
+</a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-83182211-12635-6a588d0dac908" data-src="https://widgets.wp.com/likes/?ver=16.0#blog_id=83182211&amp;post_id=12635&amp;origin=kisszallas.hu&amp;obj_id=83182211-12635-6a588d0dac908" data-title="Like or Reblog" id="like-post-wrapper-83182211-12635-6a588d0dac908"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> </div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div></div>
 <div class="art-postfootericons art-metadata-icons"><span class="art-postcategoryicon"><span class="categories">Kategória:</span> <a data-review-original-href="https://kisszallas.hu/category/egyeb/" href="#" rel="category tag" tabindex="-1">Egyéb</a></span></div>
 </article>
 <div class="art-block widget widget_text clearfix" id="text-8">
@@ -1250,7 +1251,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="cli-modal-dialog" role="document">
 <div class="cli-modal-content cli-bar-popup">
 <button class="cli-modal-close" id="cliModalClose" type="button">
-<svg class="" viewbox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+<svg viewbox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
 <span class="wt-cli-sr-only">Close</span>
 </button>
 <div class="cli-modal-body">

@@ -1,7 +1,7 @@
 <!doctype html>
 <!DOCTYPE html>
 
-<html class="" lang="hu" ng-app="app">
+<html lang="hu" ng-app="app">
 <head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
 <meta content="light only" name="color-scheme"/>
 <meta charset="utf-8"/>
@@ -32,26 +32,23 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="article-content-page d-flex flex-column browser-chrome doctors-page">
 <div id="outdated"></div>
 <div class="loader-wrap">
-<div class="loader">
-<svg class="circular" viewbox="25 25 50 50">
-<circle class="path" cx="50" cy="50" fill="none" r="20" stroke-miterlimit="10" stroke-width="2"></circle>
-</svg>
-</div>
+
 </div>
 <toaster-container></toaster-container>
-<header class="">
+<header>
 <div class="container">
 <div class="row row-top d-none d-lg-flex">
 <div class="d-none d-lg-flex col-lg-3 align-items-center">
 <div class="logo-wrap">
-<a class="" data-review-original-href="https://olivamed.eu" href="#" tabindex="-1">
+<a data-review-original-href="https://olivamed.eu" href="#" tabindex="-1">
 <img alt=""/>
 </a>
 </div>

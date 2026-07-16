@@ -97,7 +97,7 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
     :root {
         --site-title-color: #0095d6;
     }
-
+    
     /* Typograhpy */
     :root {
         --font-heading: "Gelasio", serif;
@@ -112,11 +112,11 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 	.site-title a {
         font-family: "Roboto", serif;
 	}
-
+    
 	.site-description {
         font-family: "Aleo", serif;
 	}
-
+    
 /*# sourceURL=ace-news-style-inline-css */
 </style>
 
@@ -149,7 +149,8 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

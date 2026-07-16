@@ -15,7 +15,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -105,13 +106,13 @@
 </ul>
 </li>
 <li ng-class="{active: $root.selectedMenu == 'index'}">
-<a class="" data-review-original-href="http://www.drnagy-iroda.hu/hu/partnerek/" data-toggle="" href="#" id="index" tabindex="-1">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/partnerek/" data-toggle="" href="#" id="index" tabindex="-1">
               Partnerek
             </a>
 </li>
 </ul>
 <span class="flag-selector">
-<a class="" data-review-original-href="http://www.drnagy-iroda.hu/en" href="#" tabindex="-1">
+<a data-review-original-href="http://www.drnagy-iroda.hu/en" href="#" tabindex="-1">
       EN
     </a>
 <a class="active" data-review-original-href="http://www.drnagy-iroda.hu/hu" href="#" tabindex="-1">

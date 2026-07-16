@@ -125,12 +125,12 @@ body.custom-background { background-color: #a0a0a0; }
         bottom: 15px; /* Kicsit közelebb az aljához */
         right: 15px;  /* Kicsit közelebb a széléhez */
     }
-
+    
     /* Mobilon a felugró nagy kép kitöltheti a képernyő 90%-át, mert a 60% túl kicsi lenne */
     .kep-popup-tartalom {
-        max-width: 90%;
+        max-width: 90%; 
     }
-
+    
     /* Mobilon az X gombot kicsit arrébb toljuk, hogy könnyebb legyen rányomni */
     .kep-popup-bezar {
         top: 15px;
@@ -140,7 +140,8 @@ body.custom-background { background-color: #a0a0a0; }
 }		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -347,7 +348,7 @@ Csütörtök – Péntek:   8:00-11:30, 13:00-14:00</p>
 <img alt="Fix kép" decoding="async"/>
 </a></div>
 <span class="footer-text">
-				Web admin: Róbert Sallai - RS Informatika - rsinformatika.hu
+				Web admin: Róbert Sallai - RS Informatika - rsinformatika.hu 
 			</span>
 <span class="credit-link">
 				WordPress Theme: Dynamico by ThemeZee.			</span>

@@ -1,0 +1,60 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+Dr. Bencze Miklós
+(
+8656322769
+)
+Verzió
+#
+1
+Szank: POI-k létrehozása, épületek rögzítése, házszámozások, úttípusok és útfelszínek megadása, utak igazítása.
+Szerkesztette
+GhostOfSparta
+nagyjából 5 évvel ezelőtt
+Módosításcsomag
+103428015
+0
+Hely:
+46,5529480
+,
+19,6699765
+Címkék
+amenity
+doctors
+contact:email
+szankrendelo@gmail.com
+contact:phone
++36 77 587 553
+healthcare
+doctor
+healthcare:speciality
+general
+name
+url
+http://szank.hu/egeszsegugy/
+wheelchair
+yes
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

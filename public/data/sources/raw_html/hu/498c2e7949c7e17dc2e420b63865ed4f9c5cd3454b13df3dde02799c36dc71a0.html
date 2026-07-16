@@ -64,10 +64,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 		.themecolor_bg, .wpb_button.wpb_btn_themecolor, .wpb_button.wpb_btn_themecolor:hover, input[type='submit'], #wp-calendar #today, .vc_progress_bar .vc_single_bar.bar_themecolor .vc_bar, #site-navigation .header_cart_button .cart_product_count, .woocommerce a.added_to_cart,.woocommerce-page a.added_to_cart, .header-search .search-input, .pricing-box .plan-badge, article.format-quote .quoute-text, article.format-link .link-text, article.format-status .status-text {background-color:#4eb0a1;}
 	::selection{background-color:#4eb0a1;}::-moz-selection{background-color:#4eb0a1;}
-		dt,.wpb_button.wpb_btn_themecolor.wpb_btn-minimal, .themecolor_txt, #site-header #site-navigation ul li a:hover, #site-header #site-navigation .search_button:hover, #site-header #site-navigation .header_cart_button:hover, #site-header #site-navigation ul li ul li.current-menu-item > a, #site-header #site-navigation ul li ul li.current-menu-item > a:hover, .single-post #site-header #site-navigation ul li ul li.current_page_parent > a, #site-header #site-navigation ul li ul li.current-menu-ancestor > a, #site-navigation ul li.menu-item-has-children:hover:after, #site-header #site-navigation ul li.megamenu ul li a:hover, #site-header #site-navigation ul li.current-menu-item > a,.single-post #site-header #site-navigation ul li.current_page_parent > a, #site-header #site-navigation ul li.current-menu-ancestor > a, #site-header #site-navigation ul li.current-menu-ancestor.menu-item-has-children:after, a:hover, #site-header #site-navigation ul li.megamenu ul li.current-menu-item > a,.single-post #site-header #site-navigation ul li.megamenu ul li.current_page_parent > a,#site-header #site-navigation ul li.megamenu ul li.current-menu-ancestor > a, .widget a, span.required, #comments .comment-reply-link:hover,#comments .comment-meta a:hover, .vc_toggle_default .vc_toggle_title .vc_toggle_icon:after, .post-entry-header .entry-meta a:hover, #comments p.comment-notes:before, p.logged-in-as:before, p.must-log-in:before, article.sticky .post-preview:after, .separator_w_icon i, blockquote:after, article.format-chat p:nth-child(odd):before, .entry-meta-footer a:hover, .footer-sidebar a:hover, .team_member_position, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a, .woocommerce-MyAccount-navigation ul li.is-active a{color:#4eb0a1;}
-
+		dt,.wpb_button.wpb_btn_themecolor.wpb_btn-minimal, .themecolor_txt, #site-header #site-navigation ul li a:hover, #site-header #site-navigation .search_button:hover, #site-header #site-navigation .header_cart_button:hover, #site-header #site-navigation ul li ul li.current-menu-item > a, #site-header #site-navigation ul li ul li.current-menu-item > a:hover, .single-post #site-header #site-navigation ul li ul li.current_page_parent > a, #site-header #site-navigation ul li ul li.current-menu-ancestor > a, #site-navigation ul li.menu-item-has-children:hover:after, #site-header #site-navigation ul li.megamenu ul li a:hover, #site-header #site-navigation ul li.current-menu-item > a,.single-post #site-header #site-navigation ul li.current_page_parent > a, #site-header #site-navigation ul li.current-menu-ancestor > a, #site-header #site-navigation ul li.current-menu-ancestor.menu-item-has-children:after, a:hover, #site-header #site-navigation ul li.megamenu ul li.current-menu-item > a,.single-post #site-header #site-navigation ul li.megamenu ul li.current_page_parent > a,#site-header #site-navigation ul li.megamenu ul li.current-menu-ancestor > a, .widget a, span.required, #comments .comment-reply-link:hover,#comments .comment-meta a:hover, .vc_toggle_default .vc_toggle_title .vc_toggle_icon:after, .post-entry-header .entry-meta a:hover, #comments p.comment-notes:before, p.logged-in-as:before, p.must-log-in:before, article.sticky .post-preview:after, .separator_w_icon i, blockquote:after, article.format-chat p:nth-child(odd):before, .entry-meta-footer a:hover, .footer-sidebar a:hover, .team_member_position, .wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header a, .woocommerce-MyAccount-navigation ul li.is-active a{color:#4eb0a1;}		
+	
 		.wpb_button.wpb_btn_themecolor, .wpb_button.wpb_btn_themecolor:hover, input[type='submit'], th, #comments .comment-reply-link:hover, #site-navigation, #site-navigation ul li ul, .woocommerce-MyAccount-navigation ul li.is-active {border-color:#4eb0a1;}
-
+	
 		.widget-area .widget .tagcloud a:hover, .post-navigation a:hover {background-color:#4eb0a1;}
 		article.format-image .post-preview a:after{background-color:#4eb0a1; background-color:rgba(78,176,161, 0.75);}
 		article.format-image .post-preview a:hover:after, article.format-image .post-preview a.touch-hover:after {background-color:#4eb0a1; background-color:rgba(78,176,161, 1);}
@@ -306,13 +306,14 @@ line-height: 1.5;
     line-height: 26px;
 }</style><style data-type="vc_shortcodes-custom-css" type="text/css">.vc_custom_1753708661040{margin-top: -80px !important;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="page-template page-template-page-right-sidebar page-template-page-right-sidebar-php page page-id-3392 wpb-js-composer js-comp-ver-6.1 vc_responsive" data-rsssl="1">
 <div id="wrapper">
-<header class="" id="site-header" role="banner">
+<header id="site-header" role="banner">
 <div id="header-wrapper">
 <div class="clearfix" id="header-container">
 <div id="site-logo">
@@ -498,7 +499,7 @@ P: 8.00 – 12.00</h4>
 <div class="cli-modal-dialog" role="document">
 <div class="cli-modal-content cli-bar-popup">
 <button class="cli-modal-close" id="cliModalClose" type="button">
-<svg class="" viewbox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+<svg viewbox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
 <span class="wt-cli-sr-only">Close</span>
 </button>
 <div class="cli-modal-body">

@@ -1,0 +1,73 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+1. Sz. Háziorvosi Rendelő: Dr. Takács Katalin
+(
+8620556507
+)
+Verzió
+#
+5
+Orgovány: Háziorvosi rendelők adatainak felülvizsgálata.
+Szerkesztette
+GhostOfSparta
+több mint 1 évvel ezelőtt
+Módosításcsomag
+158908383
+0
+Hely:
+46,7512109
+,
+19,4772229
+Címkék
+addr:city
+Orgovány
+addr:housenumber
+60
+addr:postcode
+6077
+addr:street
+Kossuth Lajos utca
+amenity
+doctors
+contact:email
+sanitak@freemail.hu
+contact:phone
++36 76 376 031
+healthcare
+doctor
+healthcare:speciality
+general
+level
+name
+opening_hours
+Mo,Tu,Th,Fr 08:00-13:00; We 10:00-15:00
+operator
+Sani-Tak Háziorvosi és Szolgáltató Bt.
+url
+https://orgovany.asp.lgov.hu/haziorvos
+wheelchair
+yes
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

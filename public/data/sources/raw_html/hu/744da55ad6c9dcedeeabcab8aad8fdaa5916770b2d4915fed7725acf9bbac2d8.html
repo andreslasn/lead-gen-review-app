@@ -103,7 +103,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -898,7 +899,7 @@ A 11. számú és a 13. számú gyermek háziorvosi praxisok 2023. szeptember 1.
 </a>
 </h3>
 <div class="ln-2 my-2" data-morkinlineeditable_field="article_lead2" data-morkinlineeditable_value="A volt kormányfő néhány napja még a magyar demokrácia halála miatt aggódott. ">
-                A volt kormányfő néhány napja még a magyar demokrácia halála miatt aggódott.
+                A volt kormányfő néhány napja még a magyar demokrácia halála miatt aggódott. 
             </div>
 </div>
 <div class="clearfix"></div>

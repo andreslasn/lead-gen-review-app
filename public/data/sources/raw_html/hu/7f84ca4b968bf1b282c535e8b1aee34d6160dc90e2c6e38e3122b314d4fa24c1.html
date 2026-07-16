@@ -90,7 +90,8 @@ a,abbr,acronym,address,applet,b,big,blockquote,body,center,cite,code,dd,del,dfn,
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -558,7 +559,7 @@ background-color: black;
 .ays_cmd_window-cursor .ays_cmd_i-cursor-indicator {
 background-color: transparent;
 }
-.ays-pb-modal_2 .ays_pb_description > *,
+.ays-pb-modal_2 .ays_pb_description > *, 
 .ays-pb-modal_2 .ays_pb_timer,
 .ays-pb-modal_2 .ays_content_box p,
 .ays-pb-modal_2 .ays-pb-dismiss-ad > button#ays_pb_dismiss_ad{
@@ -567,11 +568,11 @@ font-family: inherit;
 }
 .ays-pb-modal_2 .close-image-btn{
 color: #1e73be !important;
-}
+}    
 .ays-pb-modal_2 .close-image-btn:hover,
 .ays-pb-modal_2 .close-template-btn:hover{
 color: #1e73be !important;
-}
+}    
 .ays-pb-modal_2 .ays_pb_material_close_circle_icon{
 fill: #1e73be !important;
 }
@@ -705,7 +706,7 @@ animation-duration: 1s !important;
 animation-duration: 8s !important;
 }
 .ays-pb-disable-scroll-on-popup{
-overflow:auto !important;
+overflow:auto !important; 
 overflow-y: auto !important
 }
 .ays-pb-modals .ays-pb-modal_2 .ays_pb_description + hr{

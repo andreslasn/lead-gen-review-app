@@ -24,7 +24,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -51,7 +52,7 @@
 <table align="center" border="0" width="100%">
 <tr>
 <td>
-						Keresés: 
+						Keresés: 						
 						</td>
 <td><input class="inputmezosearch" id="search" maxlength="50" name="search" type="text"/>
 </td>
@@ -135,8 +136,8 @@
 <br/>
 <div class="oldal_box_top">
 <a data-review-original-href="image/baracspuszta_.pdf" href="#" tabindex="-1" target="_blank">
-				Kiadvány      32 oldal
-
+				Kiadvány      32 oldal				
+					
 				</a>
 </div>
 <div class="oldal_box_kozepre">
@@ -168,8 +169,8 @@
 <div class="oldal_box_bottom"> 
 			</div>
 <br/>
-<div class="oldal_box_top">
-			Látogatók
+<div class="oldal_box_top"> 
+			Látogatók			
 			</div>
 <div class="latogato_body">
 <table align="center" width="90%">

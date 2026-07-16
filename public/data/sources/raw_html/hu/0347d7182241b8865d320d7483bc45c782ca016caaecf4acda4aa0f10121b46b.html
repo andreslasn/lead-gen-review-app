@@ -14,7 +14,7 @@
 
 <style>
   ﻿body {
-
+	
 }
 
 a:hover, a:focus, a:active {
@@ -40,9 +40,9 @@ h2 {
 }
 
 .vcenter {
-	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */    
     display: flex;
-    align-items: center;
+    align-items: center;	
 }
 
 
@@ -67,7 +67,7 @@ h2 {
 }
 
 .vonal {
-	border-bottom: 5px solid #fff;
+	border-bottom: 5px solid #fff;	
 }
 
 .footer {
@@ -77,7 +77,7 @@ h2 {
 
 .vonal-also {
 	border-bottom: 5px solid #444;
-	margin-bottom: 0px;
+	margin-bottom: 0px;	
 }
 
 .copyright, .gdpr-info {
@@ -99,7 +99,7 @@ h2 {
 	background-color: #444;
 	padding: 10px 15px;
 	opacity: 0.3;
-	position: fixed;
+	position: fixed; 
 	bottom: 50px;
 	right: 30px;
 	-webkit-transition: all 0.8s; /* Safari */
@@ -112,7 +112,7 @@ h2 {
 	opacity: 1;
 }
 
-@media(max-width:990px) {
+@media(max-width:990px) {	
 
 
 }
@@ -125,7 +125,8 @@ h2 {
 }  </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

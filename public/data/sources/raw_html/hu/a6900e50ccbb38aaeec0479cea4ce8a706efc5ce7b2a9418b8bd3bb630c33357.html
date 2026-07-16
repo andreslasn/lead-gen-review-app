@@ -123,7 +123,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 /* Szövegek rövidítése */
 
-
+ 
 .elementor-icon-box-title > a {
   display: inline-block;
   max-width: 25ch; /* kb 20 karakter */
@@ -155,7 +155,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </noscript>
 <meta content="WP Rocket 3.23" data-wpr-features="wpr_lazyload_css_bg_img wpr_delay_js wpr_defer_js wpr_lazyload_images wpr_cdn wpr_preload_links wpr_host_fonts_locally" name="generator"/><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

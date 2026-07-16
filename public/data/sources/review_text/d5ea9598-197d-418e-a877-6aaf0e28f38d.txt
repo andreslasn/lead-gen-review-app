@@ -1,0 +1,71 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+3. felnőtt háziorvosi körzet
+(
+12770260473
+)
+Verzió
+#
+2
+Nyitva tartási értékek javítása.
+Szerkesztette
+urbalazs
+nagyjából 1 évvel ezelőtt
+Módosításcsomag
+167930924
+0
+Hely:
+46,9633589
+,
+18,9425074
+Címkék
+addr:city
+Dunaújváros
+addr:housenumber
+10
+addr:postcode
+2400
+addr:street
+Vasmű út
+amenity
+doctors
+contact:email
+dujv3korzet@gmail.com
+contact:phone
++36 25 550 455
+healthcare
+doctor
+level
+name
+opening_hours
+Mo 14:00-18:00; Tu, Th 08:00-11:00; We 13:00-16:00; Fr 09:00-11:00; PH off
+opening_hours:prenatal
+Fr 08:00-09:00; PH off
+opening_hours:preventive
+Tu,Th 11:00-12:00; We 16:00-17:00; Fr 11:00-12:00; PH off
+operator
+dr. Szulik Éva
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

@@ -60,7 +60,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -142,7 +143,7 @@
 <div class="main-container container">
 <header id="page-header" role="banner">
 
-</header>
+</header> 
 <div class="row">
 <section class="col-md-9 col-sm-12">
 <a data-review-original-href="" href="#" id="main-content" tabindex="-1"></a>
@@ -313,7 +314,7 @@ Az egészségnevelés feladata: az emberek tudatos és felelősségteljes magata
 <p><small>Személyesen hétköznapokon 9-15 óra között a 3529 Miskolc, Csabai kapu 9-11. szám alatt
 Telefonon minden nap 9-15 óra között a +36 46 431 310 telefonszámon</small></p>
 <p>
-A KEF célja, hogy a város lakossága képes legyen egészsége megőrzésére és fejlesztésére,
+A KEF célja, hogy a város lakossága képes legyen egészsége megőrzésére és fejlesztésére, 
 minél nagyobb mértékben legyen mentes a szenvedélybetegségektől és egészségkárosító magatartásoktól.
 </p>
 <div class="more-bg"><i aria-hidden="true" class="fa fa-plus-square"> </i></div>
@@ -321,7 +322,7 @@ minél nagyobb mértékben legyen mentes a szenvedélybetegségektől és egész
 </a>
 </section>
 </div>
-</aside>
+</aside> 
 </div>
 </div>
 <footer class="footer container-fluid">
@@ -587,7 +588,7 @@ minél nagyobb mértékben legyen mentes a szenvedélybetegségektől és egész
 <div class="region region-copyright">
 <section class="block block-block clearfix" id="block-block-15">
 
-
+      
   Minden jog fenntartva 2017 <i aria-hidden="true" class="fa fa-copyright"></i> -  Miskolci Egészségfejlesztési Intézet
 </section>
 </div>

@@ -38,11 +38,12 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="" id="bg">
+<body id="bg">
 <a class="wbr-akm-sr-only" data-review-original-href="#tartalom" href="#" tabindex="-1">Ugrás a fő tartalomhoz</a>
 
 <div aria-hidden="true" aria-labelledby="Süti kezelés" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="cookieModal" tabindex="-1">
@@ -73,10 +74,10 @@
 <li class="menu-item menu-item-has-children"><a data-review-original-href="#" href="#" tabindex="-1">Beteginformációk</a>
 <ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/betegfelvetel/" href="#" tabindex="-1" title="Betegfelvétel">Betegfelvétel</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/betegjogok/" href="#" tabindex="-1" title="Betegjogok">Betegjogok</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/betegtajekoztatok/" href="#" tabindex="-1" title="Betegtájékoztatók">Betegtájékoztatók</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/beleegyezo-nyilatkozatok/" href="#" tabindex="-1" title="Beleegyező nyilatkozatok">Beleegyező nyilatkozatok</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/dokumentacio-kikeres/" href="#" tabindex="-1" title="Dokumentáció kikérés">Dokumentáció kikérés</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/egyeb-kenyelmet-nyujto-szolgaltatasok/" href="#" tabindex="-1" title="Egyéb szolgáltatások">Egyéb szolgáltatások</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/hazirend/" href="#" tabindex="-1" title=" Házirend és szabályzatok"> Házirend és szabályzatok</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/eszrevetelek-reklamaciok-ugyintezese/" href="#" tabindex="-1" title="Észrevételek, reklamációk ügyintézése">Észrevételek, reklamációk ügyintézése</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/ugyfelfogadasi-idok/" href="#" tabindex="-1" title="Ügyfélfogadási idők">Ügyfélfogadási idők</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/lelkipasztori-szolgalat/" href="#" tabindex="-1" title="Lelkipásztori szolgálat">Lelkipásztori szolgálat</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/teritesi-kotelezettseg/" href="#" tabindex="-1" title="Térítési kötelezettség">Térítési kötelezettség</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/beteginformaciok/varolistak/" href="#" tabindex="-1" title="Várólisták">Várólisták</a></li></ul></li><li class="menu-item menu-item-has-children current"><a data-review-original-href="#" href="#" tabindex="-1">Járóbeteg ellátás</a>
 <ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/jarobeteg-ellatas/kozponti-ambulanciak/" href="#" tabindex="-1" title="Központi ambulanciák">Központi ambulanciák</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/jarobeteg-ellatas/ady-endre-utcai-szakrendelo/" href="#" tabindex="-1" title="Ady Endre utcai szakrendelő">Ady Endre utcai szakrendelő</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/jarobeteg-ellatas/kispesti-diagnosztikai-kozpont/" href="#" tabindex="-1" title="Kispesti Diagnosztikai Központ">Kispesti Diagnosztikai Központ</a></li></ul></li><li class="menu-item menu-item-has-children"><a data-review-original-href="#" href="#" tabindex="-1">Fekvőbeteg ellátás</a>
-<ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/fekvobeteg-ellatas/koves-utcai-telephely/" href="#" tabindex="-1" title="Köves utcai telephely">Köves utcai telephely</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/fekvobeteg-ellatas/csepeli-telephely/" href="#" tabindex="-1" title="Csepeli telephely">Csepeli telephely</a></li></ul></li><li class="menu-item"><a class="" data-review-original-href="https://delpestikorhaz.hu/fekvobeteg-osztalyok/surgossegi-betegellato-osztaly/" href="#" tabindex="-1" title="Sürgősségi ellátás">Sürgősségi ellátás</a></li><li class="menu-item menu-item-has-children"><a data-review-original-href="#" href="#" tabindex="-1">Magunkról</a>
-<ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/vezetoseg/" href="#" tabindex="-1" title="Vezetőség">Vezetőség</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/elerhetosegek/" href="#" tabindex="-1" title="Elérhetőségek">Elérhetőségek</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/sajtokapcsolat/" href="#" tabindex="-1" title="Sajtókapcsolat">Sajtókapcsolat</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/galeria/" href="#" tabindex="-1" title="Galéria">Galéria</a></li></ul></li><li class="menu-item"><a class="" data-review-original-href="https://delpestikorhaz.hu/efi/" href="#" tabindex="-1" title="Egészségfejlesztési Iroda">Egészségfejlesztési Iroda</a></li><li class="menu-item menu-item-has-children"><a data-review-original-href="#" href="#" tabindex="-1">Megközelítés</a>
+<ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/fekvobeteg-ellatas/koves-utcai-telephely/" href="#" tabindex="-1" title="Köves utcai telephely">Köves utcai telephely</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/fekvobeteg-ellatas/csepeli-telephely/" href="#" tabindex="-1" title="Csepeli telephely">Csepeli telephely</a></li></ul></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/fekvobeteg-osztalyok/surgossegi-betegellato-osztaly/" href="#" tabindex="-1" title="Sürgősségi ellátás">Sürgősségi ellátás</a></li><li class="menu-item menu-item-has-children"><a data-review-original-href="#" href="#" tabindex="-1">Magunkról</a>
+<ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/vezetoseg/" href="#" tabindex="-1" title="Vezetőség">Vezetőség</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/elerhetosegek/" href="#" tabindex="-1" title="Elérhetőségek">Elérhetőségek</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/sajtokapcsolat/" href="#" tabindex="-1" title="Sajtókapcsolat">Sajtókapcsolat</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/galeria/" href="#" tabindex="-1" title="Galéria">Galéria</a></li></ul></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/efi/" href="#" tabindex="-1" title="Egészségfejlesztési Iroda">Egészségfejlesztési Iroda</a></li><li class="menu-item menu-item-has-children"><a data-review-original-href="#" href="#" tabindex="-1">Megközelítés</a>
 <ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/megkozelites/kozponti-telephely/" href="#" tabindex="-1" title="Központi telephely">Központi telephely</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/megkozelites/csepeli-telephely/" href="#" tabindex="-1" title="Csepeli telephely">Csepeli telephely</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/megkozelites/ady-endre-utcai-szakrendelo/" href="#" tabindex="-1" title="Ady Endre Utcai Szakrendelő">Ady Endre Utcai Szakrendelő</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/megkozelites/kispesti-diagnosztikai-kozpont/" href="#" tabindex="-1" title="Kispesti Diagn. Közp.">Kispesti Diagn. Közp.</a></li></ul></li><li class="menu-item menu-item-has-children"><a data-review-original-href="#" href="#" tabindex="-1">Információk háziorvosoknak</a>
-<ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/informaciok-haziorvosoknak/laboratoriumi-vizsgalatkero-lap/" href="#" tabindex="-1" title="Laboratóriumi vizsgálatkérő lap">Laboratóriumi vizsgálatkérő lap</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/informaciok-haziorvosokknak/tovabbkepzesek/" href="#" tabindex="-1" title="Továbbképzések">Továbbképzések</a></li></ul></li><li class="menu-item"><a class="" data-review-original-href="https://delpestikorhaz.hu/hazirend-es-szabalyzatok/" href="#" tabindex="-1" title="Házirend és szabályzatok">Házirend és szabályzatok</a></li><li class="menu-item"><a class="" data-review-original-href="https://delpestikorhaz.hu/magunkrol/kozerdeku-adatok/1-szervezeti-szemelyzeti-adatok/1-9-az-intezet-altal-alapitott-kozalapitv/" href="#" tabindex="-1" title="Alapítványunk">Alapítványunk</a></li><li class="menu-item"><a class="" data-review-original-href="https://delpestikorhaz.hu/allasok/" href="#" tabindex="-1" title="Állások">Állások</a></li>
+<ul class="sub-menu"><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/informaciok-haziorvosoknak/laboratoriumi-vizsgalatkero-lap/" href="#" tabindex="-1" title="Laboratóriumi vizsgálatkérő lap">Laboratóriumi vizsgálatkérő lap</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/informaciok-haziorvosokknak/tovabbkepzesek/" href="#" tabindex="-1" title="Továbbképzések">Továbbképzések</a></li></ul></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/hazirend-es-szabalyzatok/" href="#" tabindex="-1" title="Házirend és szabályzatok">Házirend és szabályzatok</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/magunkrol/kozerdeku-adatok/1-szervezeti-szemelyzeti-adatok/1-9-az-intezet-altal-alapitott-kozalapitv/" href="#" tabindex="-1" title="Alapítványunk">Alapítványunk</a></li><li class="menu-item"><a data-review-original-href="https://delpestikorhaz.hu/allasok/" href="#" tabindex="-1" title="Állások">Állások</a></li>
 </ul>
 </aside>
 <div class="sigma_aside-overlay aside-trigger-left"></div>
@@ -1656,147 +1657,147 @@
 </div> <div class="row justify-content-center wbr-gallery">
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457829_1.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457829_1.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457830_2.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457830_2.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457830_3.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457830_3.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457831_4.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457831_4.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457831_5.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457831_5.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457832_6.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457832_6.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457832_7.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457832_7.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457833_9.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457833_9.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457833_8.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457833_8.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457835_10.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457835_10.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457835_11.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457835_11.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457835_12.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457835_12.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457836_13.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457836_13.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457836_14.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457836_14.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457837_15.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457837_15.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457838_16.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457838_16.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457839_17.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457839_17.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457839_18.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457839_18.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457839_19.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457839_19.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457840_20.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457840_20.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
 </div>
 <div class="col-lg-3 col-md-4 col-sm-6">
 <div class="wbr-gallery-cont mb-3">
-<a class="" data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457840_21.jpg" href="#" tabindex="-1">
+<a data-review-original-href="https://delpestikorhaz.hu/uploads/delpestikorhaz-1699457840_21.jpg" href="#" tabindex="-1">
 <img alt="Betegeink írták " class="img-fluid" title="Betegeink írták "/>
 </a>
 </div>
@@ -2892,7 +2893,7 @@ A kismedencei ultrahangvizsgálathoz telt húgyhólyag szükséges.</p>
 </div>
 </div>
 </div>
-</footer>
+</footer> 
 
 
 

@@ -21,7 +21,7 @@
 
 
 <meta content="#ffffff" name="msapplication-TileColor"/>
-<meta content="#ffffff" name="theme-color"/>
+<meta content="#ffffff" name="theme-color"/> 
 <style>
 	.lpost--onkormanyzat,
 	.lpost__more--onkormanyzat,
@@ -305,7 +305,8 @@
 	}
 </style> <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -334,10 +335,10 @@
 <nav class="primary">
 <ul class="primary__list primary__list--main">
 <li class="primary__item primary__item--main">
-<button class="primary__button primary__button--main"><span>Önkormányzat</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--main"><span>Önkormányzat</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--mid">
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Vezetők</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Vezetők</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/onkormanyzat/polgarmester" href="#" tabindex="-1"><span>Polgármester</span></a>
@@ -347,14 +348,14 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Képviselő-testület</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Képviselő-testület</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/onkormanyzat/kepviselo-testulet-tagjai" href="#" tabindex="-1"><span>Képviselő-testület tagjai</span></a>
 </li>
 </ul> </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Bizottságok</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Bizottságok</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/onkormanyzat/fejlesztesi-bizottsag-2" href="#" tabindex="-1"><span>Fejlesztési Bizottság</span></a>
@@ -376,7 +377,7 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Döntéshozatal</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Döntéshozatal</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/onkormanyzat/eloterjesztesek" href="#" tabindex="-1"><span>Előterjesztések</span></a>
@@ -407,7 +408,7 @@
 <a class="primary__link primary__link--mid" data-review-original-href="https://pecel.hu/onkormanyzat/onkormanyzati-kituntetesek" href="#" tabindex="-1"><span>Önkormányzati kitüntetések</span></a>
 </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Pályázatok</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Pályázatok</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/onkormanyzat/csapadekviz-elvezetes-csatari-dulo-es-levendulas-teruletreszek" href="#" tabindex="-1"><span>Csapadékvíz-elvezetés (Csatári dűlő és Levendulás területrészek)</span></a>
@@ -451,7 +452,7 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--main">
-<button class="primary__button primary__button--main"><span>HIVATAL</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--main"><span>HIVATAL</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--mid">
 <li class="primary__item primary__item--mid">
 <a class="primary__link primary__link--mid" data-review-original-href="https://pecel.hu/hivatal/ugyfelfogadas-elerhetosegek" href="#" tabindex="-1"><span>Ügyfélfogadás, elérhetőségek</span></a>
@@ -460,7 +461,7 @@
 <a class="primary__link primary__link--mid" data-review-original-href="https://pecel.hu/hivatal/jegyzo-es-aljegyzo" href="#" tabindex="-1"><span>Jegyző, aljegyző</span></a>
 </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Szervezeti egységek</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Szervezeti egységek</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/hivatal/kabinet" href="#" tabindex="-1"><span>Kabinet</span></a>
@@ -482,7 +483,7 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Választások</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Választások</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/hivatal/helyi-valasztasi-iroda-vezetojenek-hatarozatai" href="#" tabindex="-1"><span>Helyi Választási Iroda vezetőjének határozatai</span></a>
@@ -508,7 +509,7 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--main">
-<button class="primary__button primary__button--main"><span>INTÉZMÉNYRENDSZER</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--main"><span>INTÉZMÉNYRENDSZER</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--mid">
 <li class="primary__item primary__item--mid">
 <a class="primary__link primary__link--mid" data-review-original-href="https://pecel.hu/intezmenyek/egeszsegugy" href="#" tabindex="-1"><span>Egészségügy</span></a>
@@ -535,7 +536,7 @@
 <a class="primary__link primary__link--mid" data-review-original-href="https://pecel.hu/intezmenyek/helyi-eselyegyenlosegi-program" href="#" tabindex="-1"><span>Helyi esélyegyenlőségi program</span></a>
 </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Közétkeztetés</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Közétkeztetés</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/intezmenyek/tajekoztato" href="#" tabindex="-1"><span>Tájékoztató</span></a>
@@ -570,10 +571,10 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--main">
-<button class="primary__button primary__button--main"><span>VÁROSUNK</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--main"><span>VÁROSUNK</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--mid">
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Magunkról</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Magunkról</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/varosunk/pecel-tortenete-napjainkig" href="#" tabindex="-1"><span>Pécel története napjainkig</span></a>
@@ -589,7 +590,7 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Közösségeink</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Közösségeink</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/varosunk/civil-szervezetek" href="#" tabindex="-1"><span>Civil szervezetek</span></a>
@@ -602,7 +603,7 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Fejlesztés</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Fejlesztés</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/varosunk/projektjeink" href="#" tabindex="-1"><span>Projektjeink</span></a>
@@ -619,10 +620,10 @@
 <a class="primary__link primary__link--main" data-review-original-href="/hirek" href="#" tabindex="-1"><span>HÍREK</span></a>
 </li>
 <li class="primary__item primary__item--main">
-<button class="primary__button primary__button--main"><span>Választási információk</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--main"><span>Választási információk</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--mid">
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Választási szervek</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Választási szervek</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/varosunk/valasztasi-iroda" href="#" tabindex="-1"><span>Választási iroda</span></a>
@@ -635,7 +636,7 @@
 <a class="primary__link primary__link--mid" data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1"><span>Választási ügyintézés</span></a>
 </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>Korábbi választások</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>Korábbi választások</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/hivatal/helyi-valasztasi-iroda-vezetojenek-hatarozatai" href="#" tabindex="-1"><span>Helyi Választási Iroda vezetőjének határozatai</span></a>
@@ -651,7 +652,7 @@
 </li>
 </ul> </li>
 <li class="primary__item primary__item--mid">
-<button class="primary__button primary__button--mid"><span>2024. évi általános választások</span><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="primary__button primary__button--mid"><span>2024. évi általános választások</span><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 <ul class="primary__list primary__list--sub">
 <li class="primary__item primary__item--sub">
 <a class="primary__link primary__link--sub" data-review-original-href="https://pecel.hu/hivatal/valasztopolgaroknak" href="#" tabindex="-1"><span>Választópolgároknak</span></a>
@@ -705,8 +706,8 @@
 </article> </div>
 </div>
 <div class="header__controls">
-<button class="header__prev"><svg class="icon icon--left" viewbox="0 0 256 512"><path class="" d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z"></path></svg></button>
-<button class="header__next"><svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
+<button class="header__prev"><svg class="icon icon--left" viewbox="0 0 256 512"><path d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z"></path></svg></button>
+<button class="header__next"><svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg></button>
 </div>
 </div>
 </div>
@@ -964,7 +965,7 @@
 <span>Helyi esélyegyenlőségi program</span>
 </a>
 <a class="secondary__item" data-review-original-href="https://kozadat.hu/kereso/" href="#" tabindex="-1" target="_blank">
-<svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 414.065 414.065" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0"><g><path d="m271.995 223.747 41.409 8.219c.429 20.311 17.243 36.429 37.554 36s36.429-17.243 36-37.554c-.429-20.311-17.243-36.429-37.554-36a36.785 36.785 0 0 0-32.851 21.867l-42.483-8.432a60.265 60.265 0 0 0-16.887-41.664l54.987-77.678c23.193 11.028 50.934 1.166 61.962-22.027 11.028-23.193 1.166-50.934-22.027-61.962-23.193-11.028-50.934-1.166-61.962 22.027-8.418 17.705-4.829 38.787 8.975 52.708l-54.456 76.927c-25.044-15.041-57.264-9.986-76.5 12l-71.491-55.521c9.384-18.063 2.349-40.314-15.714-49.698-18.063-9.384-40.314-2.349-49.698 15.714-9.384 18.063-2.349 40.314 15.714 49.698a36.856 36.856 0 0 0 39.406-3.448l72.87 56.591c-12.108 24.737-5.937 54.533 15 72.426l-44.285 62.613c-23.445-14.228-53.986-6.756-68.214 16.69-14.228 23.445-6.756 53.986 16.69 68.214 23.445 14.228 53.986 6.756 68.214-16.69 11.057-18.221 9.254-41.466-4.482-57.763l45.48-64.32a60.419 60.419 0 0 0 49.414 1.109l53.963 79.716c-15.871 16.78-15.134 43.249 1.646 59.12 16.78 15.871 43.249 15.134 59.12-1.646 15.871-16.78 15.134-43.249-1.646-59.12a41.818 41.818 0 0 0-46.1-7.662l-53.185-78.568a60.63 60.63 0 0 0 21.131-31.886z" fill="#ffffff" opacity="1"></path></g></svg>
+<svg height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 414.065 414.065" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0"><g><path d="m271.995 223.747 41.409 8.219c.429 20.311 17.243 36.429 37.554 36s36.429-17.243 36-37.554c-.429-20.311-17.243-36.429-37.554-36a36.785 36.785 0 0 0-32.851 21.867l-42.483-8.432a60.265 60.265 0 0 0-16.887-41.664l54.987-77.678c23.193 11.028 50.934 1.166 61.962-22.027 11.028-23.193 1.166-50.934-22.027-61.962-23.193-11.028-50.934-1.166-61.962 22.027-8.418 17.705-4.829 38.787 8.975 52.708l-54.456 76.927c-25.044-15.041-57.264-9.986-76.5 12l-71.491-55.521c9.384-18.063 2.349-40.314-15.714-49.698-18.063-9.384-40.314-2.349-49.698 15.714-9.384 18.063-2.349 40.314 15.714 49.698a36.856 36.856 0 0 0 39.406-3.448l72.87 56.591c-12.108 24.737-5.937 54.533 15 72.426l-44.285 62.613c-23.445-14.228-53.986-6.756-68.214 16.69-14.228 23.445-6.756 53.986 16.69 68.214 23.445 14.228 53.986 6.756 68.214-16.69 11.057-18.221 9.254-41.466-4.482-57.763l45.48-64.32a60.419 60.419 0 0 0 49.414 1.109l53.963 79.716c-15.871 16.78-15.134 43.249 1.646 59.12 16.78 15.871 43.249 15.134 59.12-1.646 15.871-16.78 15.134-43.249-1.646-59.12a41.818 41.818 0 0 0-46.1-7.662l-53.185-78.568a60.63 60.63 0 0 0 21.131-31.886z" fill="#ffffff" opacity="1"></path></g></svg>
 <span>Közadatkereső</span>
 </a>
 <a class="secondary__item" data-review-original-href="https://pecel.hu/onkormanyzat/akadalymentesitesi-nyilatkozat" href="#" tabindex="-1" target="">
@@ -994,8 +995,8 @@
 <header class="content-header">
 <nav class="breadcrumbs">
 <a class="breadcrumbs__link" data-review-original-href="https://www.pecel.hu" href="#" tabindex="-1"><svg class="icon icon--home" viewbox="0 0 576 512"><path d="M570.24 247.41L512 199.52V104a8 8 0 0 0-8-8h-32a8 8 0 0 0-7.95 7.88v56.22L323.87 45a56.06 56.06 0 0 0-71.74 0L5.76 247.41a16 16 0 0 0-2 22.54L14 282.25a16 16 0 0 0 22.53 2L64 261.69V448a32.09 32.09 0 0 0 32 32h128a32.09 32.09 0 0 0 32-32V344h64v104a32.09 32.09 0 0 0 32 32h128a32.07 32.07 0 0 0 32-31.76V261.67l27.53 22.62a16 16 0 0 0 22.53-2L572.29 270a16 16 0 0 0-2.05-22.59zM463.85 432H368V328a32.09 32.09 0 0 0-32-32h-96a32.09 32.09 0 0 0-32 32v104h-96V222.27L288 77.65l176 144.56z"></path></svg>Kezdőlap</a>
-<svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg> <a class="breadcrumbs__link" data-review-original-href="https://www.pecel.hu/intezmenyek" href="#" tabindex="-1">Intézmények</a>
-<svg class="icon icon--right" viewbox="0 0 256 512"><path class="" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg> <a class="breadcrumbs__link" data-review-original-href="https://www.pecel.hu/intezmenyek/egeszsegugy" href="#" tabindex="-1">Egészségügy</a>
+<svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg> <a class="breadcrumbs__link" data-review-original-href="https://www.pecel.hu/intezmenyek" href="#" tabindex="-1">Intézmények</a>
+<svg class="icon icon--right" viewbox="0 0 256 512"><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg> <a class="breadcrumbs__link" data-review-original-href="https://www.pecel.hu/intezmenyek/egeszsegugy" href="#" tabindex="-1">Egészségügy</a>
 </nav> <h1 class="content-header__title">Egészségügy</h1>
 <hr class="content-header__rule"/>
 </header> <section class="toggles content__toggles">
@@ -1367,7 +1368,7 @@
 <span>Helyi esélyegyenlőségi program</span>
 </a>
 <a class="secondary__item" data-review-original-href="https://kozadat.hu/kereso/" href="#" tabindex="-1" target="_blank">
-<svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 414.065 414.065" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0"><g><path d="m271.995 223.747 41.409 8.219c.429 20.311 17.243 36.429 37.554 36s36.429-17.243 36-37.554c-.429-20.311-17.243-36.429-37.554-36a36.785 36.785 0 0 0-32.851 21.867l-42.483-8.432a60.265 60.265 0 0 0-16.887-41.664l54.987-77.678c23.193 11.028 50.934 1.166 61.962-22.027 11.028-23.193 1.166-50.934-22.027-61.962-23.193-11.028-50.934-1.166-61.962 22.027-8.418 17.705-4.829 38.787 8.975 52.708l-54.456 76.927c-25.044-15.041-57.264-9.986-76.5 12l-71.491-55.521c9.384-18.063 2.349-40.314-15.714-49.698-18.063-9.384-40.314-2.349-49.698 15.714-9.384 18.063-2.349 40.314 15.714 49.698a36.856 36.856 0 0 0 39.406-3.448l72.87 56.591c-12.108 24.737-5.937 54.533 15 72.426l-44.285 62.613c-23.445-14.228-53.986-6.756-68.214 16.69-14.228 23.445-6.756 53.986 16.69 68.214 23.445 14.228 53.986 6.756 68.214-16.69 11.057-18.221 9.254-41.466-4.482-57.763l45.48-64.32a60.419 60.419 0 0 0 49.414 1.109l53.963 79.716c-15.871 16.78-15.134 43.249 1.646 59.12 16.78 15.871 43.249 15.134 59.12-1.646 15.871-16.78 15.134-43.249-1.646-59.12a41.818 41.818 0 0 0-46.1-7.662l-53.185-78.568a60.63 60.63 0 0 0 21.131-31.886z" fill="#ffffff" opacity="1"></path></g></svg>
+<svg height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 414.065 414.065" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0"><g><path d="m271.995 223.747 41.409 8.219c.429 20.311 17.243 36.429 37.554 36s36.429-17.243 36-37.554c-.429-20.311-17.243-36.429-37.554-36a36.785 36.785 0 0 0-32.851 21.867l-42.483-8.432a60.265 60.265 0 0 0-16.887-41.664l54.987-77.678c23.193 11.028 50.934 1.166 61.962-22.027 11.028-23.193 1.166-50.934-22.027-61.962-23.193-11.028-50.934-1.166-61.962 22.027-8.418 17.705-4.829 38.787 8.975 52.708l-54.456 76.927c-25.044-15.041-57.264-9.986-76.5 12l-71.491-55.521c9.384-18.063 2.349-40.314-15.714-49.698-18.063-9.384-40.314-2.349-49.698 15.714-9.384 18.063-2.349 40.314 15.714 49.698a36.856 36.856 0 0 0 39.406-3.448l72.87 56.591c-12.108 24.737-5.937 54.533 15 72.426l-44.285 62.613c-23.445-14.228-53.986-6.756-68.214 16.69-14.228 23.445-6.756 53.986 16.69 68.214 23.445 14.228 53.986 6.756 68.214-16.69 11.057-18.221 9.254-41.466-4.482-57.763l45.48-64.32a60.419 60.419 0 0 0 49.414 1.109l53.963 79.716c-15.871 16.78-15.134 43.249 1.646 59.12 16.78 15.871 43.249 15.134 59.12-1.646 15.871-16.78 15.134-43.249-1.646-59.12a41.818 41.818 0 0 0-46.1-7.662l-53.185-78.568a60.63 60.63 0 0 0 21.131-31.886z" fill="#ffffff" opacity="1"></path></g></svg>
 <span>Közadatkereső</span>
 </a>
 <a class="secondary__item" data-review-original-href="https://pecel.hu/onkormanyzat/akadalymentesitesi-nyilatkozat" href="#" tabindex="-1" target="">

@@ -144,64 +144,64 @@
     margin-bottom: 1rem !important;
     min-height: 155px;
     justify-items: center;
-  }
-  .ibb-banner-decor {
+  } 
+  .ibb-banner-decor { 
     overflow-x: hidden;
     display: block;
   }
-
+  
   .ibb-banner-decor > div {
     display: inline-block !important;
   }
-
-  .ibb-banner-decor::after {
-    color: #8A8693; content: 'HIRDETÉS';
-    display: block;
-    font-family: "Inter";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0.04em;
-    height: fit-content;
-    margin-top: auto;
+  
+  .ibb-banner-decor::after { 
+    color: #8A8693; content: 'HIRDETÉS'; 
+    display: block; 
+    font-family: "Inter"; 
+    font-size: 12px; 
+    font-weight: 400; 
+    line-height: 14px; 
+    letter-spacing: 0.04em; 
+    height: fit-content; 
+    margin-top: auto; 
     padding-top: 4px;
     padding-bottom: 9px;
-  }
-  .ibb-banner-decor-txt::before {
-    color: #8A8693;
-    content: 'HIRDETÉS';
-    display: block;
-    font-family: "Inter";
-    font-size: 8px;
+  } 
+  .ibb-banner-decor-txt::before { 
+    color: #8A8693; 
+    content: 'HIRDETÉS'; 
+    display: block; 
+    font-family: "Inter"; 
+    font-size: 8px; 
     font-weight: 400;
-    line-height: 14px;
+    line-height: 14px; 
     letter-spacing: 0.04em;
     height: fit-content;
     margin-top: auto; margin-bottom: 2px;
-  }
-  .dark .bannerDesktopContainer {
+  } 
+  .dark .bannerDesktopContainer { 
     background: #001f3d;
   }
   .dark .ibb-banner-decor::after {
-    color: #c3c3c3;
+    color: #c3c3c3; 
   }
-  .stickyContainer{
+  .stickyContainer{ 
     overflow: initial;
   }
-  .stickyContainer div:first-of-type{
+  .stickyContainer div:first-of-type{ 
     position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+    position: sticky; 
+    top: 0px; 
   } #footballPage .bannerDesktopContainer{
-    background: hsl(0deg 0% 59% / 50%); margin-bottom: 20px !important;
+    background: hsl(0deg 0% 59% / 50%); margin-bottom: 20px !important; 
   }
-  #footballPage .ibb-banner-decor::before { color: white; }
+  #footballPage .ibb-banner-decor::before { color: white; } 
   .footballOffer1GridArea{ grid-area: footballOffer1; }
   .footballOffer2GridArea{ grid-area: footballOffer2; }
-  .footballRight1Offer{ grid-area: footballRightOffer; }
-  .noAdLabel::before{ content: none; }
+  .footballRight1Offer{ grid-area: footballRightOffer; } 
+  .noAdLabel::before{ content: none; } 
   .darkmode .bannerDesktopContainer{ color: black; }
-
+  
   .ibb-banner-decor2 {
 /*    overflow-x: hidden; */
     display: block;
@@ -209,31 +209,31 @@
     width: 100%;
   }
 
-  .ibb-banner-decor2::after {
-    color: #8A8693; content: 'HIRDETÉS';
-    display: block;
-    font-family: "Inter";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0.04em;
-    height: fit-content;
+  .ibb-banner-decor2::after { 
+    color: #8A8693; content: 'HIRDETÉS'; 
+    display: block; 
+    font-family: "Inter"; 
+    font-size: 12px; 
+    font-weight: 400; 
+    line-height: 14px; 
+    letter-spacing: 0.04em; 
+    height: fit-content; 
     margin-top: auto;
     padding-top: 9px;
     padding-bottom: 9px;
-  }
+  } 
   .dark .ibb-banner-decor2::after {
-    color: #c3c3c3;
+    color: #c3c3c3; 
   }
-
+  
   .ibb-banner-decor.empty,.ibb-banner-decor:has([id^=div-gpt-ad-]):not(:has([id^=div-gpt-ad-] :is(div,iframe,a))),.ibb-banner-decor:has([id^=div-gpt-ad-][style*='display: none']),.ibb-banner-decor:not(:has(:is(div,iframe,a))) {
     display: none !important;
-  }
+  }  
 
   .ibb-banner-decor2.empty,.ibb-banner-decor2:has([id^=div-gpt-ad-]):not(:has([id^=div-gpt-ad-] :is(div,iframe,a))),.ibb-banner-decor2:has([id^=div-gpt-ad-][style*='display: none']),.ibb-banner-decor2:not(:has(:is(div,iframe,a))) {
     display: none !important;
-  }
-
+  }  
+  
   .quality-placement-badge{
     top: 0.65rem !important;
   }
@@ -284,7 +284,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -675,7 +676,7 @@
 </div>
 <div class="space-y-6 lg:col-start-1">
 <section class="lead-image relative border-b border-gray-300">
-<div class="" style="">
+<div style="">
 <a data-lightbox="https://image.blikk.hu/1/MbLktkpTURBXy83YjA4OTYwNzg2YmU5ZTVkNjJhYjI1ZGVkNmQ0YzJlMC5qcGeSlQMAzG_NDdXNB8eTCaY4ZGFkZTMG/plasztanne-dr-kovacs-krisztina-a-kozonsegdijaval-foto-k-h-gyogyvarazs" data-review-original-href="https://image.blikk.hu/1/MbLktkpTURBXy83YjA4OTYwNzg2YmU5ZTVkNjJhYjI1ZGVkNmQ0YzJlMC5qcGeSlQMAzG_NDdXNB8eTCaY4ZGFkZTMG/plasztanne-dr-kovacs-krisztina-a-kozonsegdijaval-foto-k-h-gyogyvarazs" data-title="Plásztánné dr. Kovács Krisztina a közönségdíjával / Fotó: K&amp;H gyógyvarázs" href="#" tabindex="-1">
 <picture>
 <source media="(max-width: 360px)" type="image/webp"/>
@@ -795,7 +796,7 @@
 <div class="flex justify-between items-center">
 <div class="text-muted">
                         2026. 02. 04. 11:15
-
+                        
                     </div>
 <div class="space-x-2 text-white flex items-center">
 <a class="flex gap-2 items-center text-black mr-2 dark:invert has-[span:empty]:hidden" data-review-original-href="#coral_thread" href="#" tabindex="-1">
@@ -1171,9 +1172,9 @@
 <aside class="rightSide pb-4 border-gray-400 border-b" style="order: 4;">
 <div class="flex flex-col gap-4 pl-3 py-2 border-l border-gray-400">
 <h3 class="flex line-clamp-2 font-blick text-heading-6 uppercase" style="color: #E3061B; border-color: #E3061B;">
-
+                    
                         Extra ajánló
-
+                    
                 </h3>
 <a class="flex flex-row gap-4" data-review-original-href="https://www.glamour.hu/extra-ajanlo/menopauza-kutatas-magany-segitseg/prm8fgd" href="#" tabindex="-1">
 <div class="relative shrink-0">
@@ -1181,7 +1182,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Kutatás: erről nem beszélnek a magyar nők eleget egymás között
                             </p>
 <span class="font-blick font-light text-gray-500 text-bodycopy-xs">Támogatott Tartalom</span>
@@ -1193,7 +1194,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Napi ajánlott vízmennyiség: ennyit kell inni a hőségben, hogy megelőzzük a bajt
                             </p>
 <span class="font-blick font-light text-gray-500 text-bodycopy-xs">Támogatott Tartalom</span>
@@ -1205,7 +1206,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Nem este dől el, hogyan alszunk: 5 nappali hiba, ami tönkreteszi a pihenést
                             </p>
 <span class="font-blick font-light text-gray-500 text-bodycopy-xs">Támogatott Tartalom</span>
@@ -1217,7 +1218,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 A legtöbben elkövetik ezt a hibát a strandon – utána jönnek a kellemetlen tünetek
                             </p>
 <span class="font-blick font-light text-gray-500 text-bodycopy-xs">Támogatott Tartalom</span>
@@ -1229,7 +1230,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Innen ismerhető fel, hogy túl sok vasat eszünk-e
                             </p>
 <span class="font-blick font-light text-gray-500 text-bodycopy-xs">Támogatott Tartalom</span>
@@ -1241,7 +1242,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Ezért nem mindegy, melyik órában fekszünk le aludni
                             </p>
 <span class="font-blick font-light text-gray-500 text-bodycopy-xs">Támogatott Tartalom</span>
@@ -1253,7 +1254,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 A furcsa panasz, ami a legjobban tervezett nyaralást is képes tönkretenni
                             </p>
 <span class="font-blick font-light text-gray-500 text-bodycopy-xs">Támogatott Tartalom</span>
@@ -1284,9 +1285,9 @@
 <aside class="rightSide pb-4 border-gray-400 border-b" style="order: 6;">
 <div class="flex flex-col gap-4 pl-3 py-2 border-l border-gray-400">
 <h3 class="flex line-clamp-2 font-blick text-heading-6 uppercase">
-
+                    
                         Futball-láz Amerikában
-
+                    
                 </h3>
 <div class="rightside-track [&amp;_.slick-track]:flex [&amp;_.slick-track]:items-center" data-slick='{"infinite":true,"swipeToSlide":true,"autoplay":true,"autoplaySpeed":3000,"dots":false,"slidesToScroll":1}'>
 <a data-review-original-href="https://ad.doubleclick.net/ddm/trackclk/N2575109.156236BLIKK.HU/B35678527.450132649;dc_trk_aid=643982963;dc_trk_cid=259292451;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ltd=;dc_tdv=1" href="#" tabindex="-1" target="_blank">
@@ -1307,7 +1308,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Zászlókat égettek, majdnem meglincseltek egy mexikói drukkert, egymással is verekedtek az argentin szurkolók – videók
                             </p>
 </div>
@@ -1318,7 +1319,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 A Blikk megtudta, miért volt ott Csányi Sándor a francia-spanyol vb-elődöntőn, melyet Orbán Viktor a nézők között szurkolt végig
                             </p>
 </div>
@@ -1330,7 +1331,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 „Tudtam, hogy óriási vitát fog kiváltani” – Megtörte a csendet a focista, akinek eltiltását Trump kérésére felfüggesztették
                             </p>
 </div>
@@ -1342,7 +1343,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Biztonsági őrök védték a luxusvillát: a spanyolok vb-elődöntője után megpróbáltak betörni Lamine Yamalhoz
                             </p>
 </div>
@@ -1354,7 +1355,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Kiderült, kiről kapta a nevét Yamal – Ezt még rajongói közül is csak kevesen tudták
                             </p>
 </div>
@@ -1366,7 +1367,7 @@
 </div>
 <div class="flex flex-col items-start gap-1">
 <p class="font-blick font-light line-clamp-4">
-
+                                
                                 Talán még Beckhamék sem hittek a szemüknek, olyan simán jutott Spanyolország a vb döntőjébe – fotók
                             </p>
 </div>
@@ -1406,9 +1407,9 @@
 <aside class="rightSide flex flex-col gap-4" style="order: 8;">
 <a data-review-original-href="/sport" href="#" tabindex="-1">
 <h3 class="flex line-clamp-2 pl-2 border-l-2 border-brand-red font-blick text-heading-6 uppercase" style="color: #508216; border-color: #508216;">
-
+                
                     Sport
-
+                
             </h3>
 </a>
 <a class="flex flex-col gap-4 pb-6 border-b border-gray-400" data-review-original-href="https://www.blikk.hu/sport/magyar-foci/nb-i-sorsolas-2026-2027/rfdte6f" href="#" tabindex="-1">
@@ -1418,7 +1419,7 @@
 <div class="flex flex-col gap-2">
 <div class="flex flex-col gap-1">
 <div class="line-clamp-3 font-blick text-heading-6">
-
+                                
                                 Végre elkészült az NB I első két fordulójának pontos menetrendje – Mutatjuk
                             </div>
 </div>
@@ -1431,7 +1432,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col gap-1">
 <div class="line-clamp-4 font-blick font-light">
-
+                                
                                 Az új klubja 359 millió forintot fizetett a magyar válogatott labdarúgóért
                             </div>
 </div>
@@ -1444,7 +1445,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col gap-1">
 <div class="line-clamp-4 font-blick font-light">
-
+                                
                                 „Lesz egy kis lámpaláz” – Így készül az első meccsére a Groupamában az új Fradi-edző, Borbély Balázs
                             </div>
 </div>
@@ -1454,7 +1455,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col">
 <div class="line-clamp-2 font-blick font-light">
-
+                                
                                 Budapesten forgatta első videóklipjét az olimpiai bajnok sztársportoló, magyar előadó is hatással volt rá – videó
                             </div>
 </div>
@@ -1464,7 +1465,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col">
 <div class="line-clamp-2 font-blick font-light">
-
+                                
                                 Tisztelgés a sérült sportolók előtt: matyó népviseletben teljesíti a 44. Balaton-átúszását Bajzát László
                             </div>
 </div>
@@ -1474,7 +1475,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col">
 <div class="line-clamp-2 font-blick font-light">
-
+                                
                                 Kerkez Milosnak három hét után elege lett a pihenésből
                             </div>
 </div>
@@ -1500,9 +1501,9 @@
 </section>
 <aside class="rightSide flex flex-col gap-4" style="order: 10;">
 <h3 class="flex line-clamp-2 pl-2 border-l-2 border-brand-red font-blick text-heading-6 uppercase" style="color: #DE54B7; border-color: #DE54B7;">
-
+                
                     Rúzs
-
+                
             </h3>
 <a class="flex flex-col gap-4 pb-6 border-b border-gray-400" data-review-original-href="https://www.kiskegyed.hu/most-tortenik/reagalt-orban-viktor-gulyas-gergely-lemondott/xk0sz6h?pages_sidebar_source=blikk" href="#" tabindex="-1" target="_blank">
 <div class="relative shrink-0">
@@ -1511,8 +1512,8 @@
 <div class="flex flex-col gap-2">
 <div class="flex flex-col gap-1">
 <div class="line-clamp-3 font-blick text-heading-6">
-
-                                Nem hiszel a fülednek, de így reagált Orbán Viktor arra, hogy lemondott Gulyás Gergely
+                                
+                                Nem hiszel a fülednek, de így reagált Orbán Viktor arra, hogy lemondott Gulyás Gergely 
                             </div>
 </div>
 </div>
@@ -1524,7 +1525,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col gap-1">
 <div class="line-clamp-4 font-blick font-light">
-
+                                
                                 Most jött: Szijjártó Péter lemond a mandátumáról
                             </div>
 </div>
@@ -1537,7 +1538,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col gap-1">
 <div class="line-clamp-4 font-blick font-light">
-
+                                
                                  Így történt meg a zárószavazás az Alaptörvény-módosításáért a Parlamentben. Ezt közölte Forsthoffer Ágnes, majd...
                             </div>
 </div>
@@ -1547,7 +1548,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col">
 <div class="line-clamp-2 font-blick font-light">
-
+                                
                                 Most jött: Beismerő vallomást tett a Szőlő utcai egyik vezető
                             </div>
 </div>
@@ -1557,7 +1558,7 @@
 <div class="flex flex-col gap-2 items-start">
 <div class="flex flex-col">
 <div class="line-clamp-2 font-blick font-light">
-
+                                
                                 Gyász: 41 évesen meghalt a magyar triatlonsport kiemelkedő alakja
                             </div>
 </div>

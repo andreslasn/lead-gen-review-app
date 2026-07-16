@@ -21,14 +21,15 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body>
 <span id="top"></span>
 <button class="btn border-none fixed-bottom" data-target="#exampleModal" data-toggle="modal" title="Accessibility Tools">
-<img alt="Accessibility tool logo" class="" id="accessBtn" tabindex="2"/>
+<img alt="Accessibility tool logo" id="accessBtn" tabindex="2"/>
 </button>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 <div class="logoBox">
@@ -60,7 +61,7 @@
         </div>
 </div>
 </nav>
-<div class="">
+<div>
 <div class="carousel slide" data-ride="carousel" id="carouselExampleInterval">
 <div class="carousel-inner">
 <div class="label">

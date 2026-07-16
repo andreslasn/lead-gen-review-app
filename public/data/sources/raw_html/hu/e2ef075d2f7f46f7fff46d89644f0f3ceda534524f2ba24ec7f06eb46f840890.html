@@ -71,19 +71,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </style>
 
 <style id="ui-fontsize.css-inline-css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
 <style id="wpa-style-inline-css">
 
 .wpa-hide-ltr#skiplinks a, .wpa-hide-ltr#skiplinks a:hover, .wpa-hide-ltr#skiplinks a:visited {
-
+	
 }
 .wpa-hide-ltr#skiplinks a:active,  .wpa-hide-ltr#skiplinks a:focus {
-
+	
 }
-
+	
 		:focus { outline: 2px solid#233c7f!important; outline-offset: 2px !important; }
 		:root { --admin-bar-top : 7px; }
 /*# sourceURL=wpa-style-inline-css */
@@ -111,12 +111,12 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
                 body .wp-post-author-wrap .awpa-display-name > a:hover {
                     color: #b81e1e;
                 }
-                .wp-post-author-meta .wp-post-author-meta-more-posts a.awpa-more-posts:hover,
+                .wp-post-author-meta .wp-post-author-meta-more-posts a.awpa-more-posts:hover, 
                 .awpa-review-field .right-star .awpa-rating-button:not(:disabled):hover {
                     color: #b81e1e;
                     border-color: #b81e1e;
                 }
-
+            
 /*# sourceURL=awpa-wp-post-author-styles-inline-css */
 </style>
 
@@ -170,7 +170,8 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
 <meta content="https://opusztaszer.com/wp-content/uploads/2020/05/favicon.png" name="msapplication-TileImage"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

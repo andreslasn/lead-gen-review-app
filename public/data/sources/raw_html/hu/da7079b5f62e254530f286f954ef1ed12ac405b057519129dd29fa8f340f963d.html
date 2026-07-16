@@ -43,7 +43,7 @@
 <style id="calendar-style-inline-css">
     .calnk a:hover {
         background-position:0 0;
-        text-decoration:none;
+        text-decoration:none;  
         color:#000000;
         border-bottom:1px dotted #000000;
      }
@@ -53,21 +53,21 @@
         border-bottom:1px dotted #000000;
     }
     .calnk a {
-        text-decoration:none;
-        color:#000000;
+        text-decoration:none; 
+        color:#000000; 
         border-bottom:1px dotted #000000;
     }
-    .calnk a span {
-        display:none;
+    .calnk a span { 
+        display:none; 
     }
     .calnk a:hover span {
-        color:#333333;
-        background:#F6F79B;
+        color:#333333; 
+        background:#F6F79B; 
         display:block;
-        position:absolute;
-        margin-top:1px;
-        padding:5px;
-        width:150px;
+        position:absolute; 
+        margin-top:1px; 
+        padding:5px; 
+        width:150px; 
         z-index:100;
         line-height:1.2em;
     }
@@ -288,7 +288,7 @@
 		.site-footer .mejs-controls {
 			border: 1px solid;
 		}
-
+		
 			.content-sidebar .widget_twentyfourteen_ephemera .widget-title:before {
 				background: #0a3c7b;
 			}
@@ -298,7 +298,7 @@
 				border-top-color: #0a3c7b;
 			}
 
-			.content-sidebar .widget .widget-title,
+			.content-sidebar .widget .widget-title, 
 			.content-sidebar .widget .widget-title a,
 			.paging-navigation,
 			.paging-navigation a:hover,
@@ -310,7 +310,7 @@
 			h1.site-title a {
 				color: #fff;
 			}
-
+		
 		.menu-toggle:active,
 		.menu-toggle:focus,
 		.menu-toggle:hover {
@@ -385,7 +385,7 @@
 				background-color: #000000;
 			}
 		}
-
+	
 			.contributor-posts-link,
 			button,
 			.button,
@@ -446,7 +446,7 @@
 					color: #fff;
 				}
 			}
-
+		
 		/* Generated variants of custom accent color. */
 		a,
 		.content-sidebar .widget a {
@@ -582,7 +582,7 @@
 		.site-navigation .current-menu-ancestor > a {
 			color: #313131;
 		}
-
+	
 		/* Higher contrast Accent Color against contrast color */
 		.site-navigation .current_page_item > a,
 		.site-navigation .current_page_ancestor > a,
@@ -677,7 +677,8 @@ display: none;
 }		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

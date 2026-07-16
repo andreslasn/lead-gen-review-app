@@ -91,7 +91,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -332,7 +333,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </button>
 </div>
 <nav>
-<ul class="">
+<ul>
 <li class="border-b border-white/15" x-data="{ isOpen: false }">
 <button class="flex items-center justify-between gap-24 w-full text-left px-4 py-14 font-bold" x-on:click="isOpen = !isOpen">
                   Kozármislenyről
@@ -341,31 +342,31 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </svg>
 </button>
 <ul class="pb-12" x-show="isOpen">
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/bemutatkozas/" href="#" tabindex="-1" target="">Bemutatkozás</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/tortenelem/" href="#" tabindex="-1" target="">Történelem</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/galeriak/" href="#" tabindex="-1" target="">Galériák</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/diszpolgarok/" href="#" tabindex="-1" target="">Díszpolgárok</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/testvertelepulesek/" href="#" tabindex="-1" target="">Testvértelepülések</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/intezmenyek/" href="#" tabindex="-1" target="">Intézmények</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/civil-szervezetek/" href="#" tabindex="-1" target="">Civil szervezetek</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/ujszolottek-ligete/" href="#" tabindex="-1" target="">Újszülöttek ligete</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/kozarmislenyrol/misleny-magazin/" href="#" tabindex="-1" target="">Misleny Magazin</a>
 </li>
 </ul>
@@ -378,19 +379,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </svg>
 </button>
 <ul class="pb-12" x-show="isOpen">
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzat/kepviselo-testulet/" href="#" tabindex="-1" target="">Képviselő-testület</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzat/bizottsagok/" href="#" tabindex="-1" target="">Bizottságok</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzat/nemzetisegi-onkormanyzatok/" href="#" tabindex="-1" target="">Nemzetiségi önkormányzat</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzat/egeszsegugy/" href="#" tabindex="-1" target="">Egészségügy</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzat/csaladsegito/" href="#" tabindex="-1" target="">Családsegítő</a>
 </li>
 </ul>
@@ -403,19 +404,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </svg>
 </button>
 <ul class="pb-12" x-show="isOpen">
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzati-hivatal/ugykorok/" href="#" tabindex="-1" target="">Ügykörök</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/hirdetmenyek/" href="#" tabindex="-1" target="">Hirdetmények</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzati-hivatal/kozerdeku-adatok/" href="#" tabindex="-1" target="">Közérdekű adatok</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/dokumentumok/" href="#" tabindex="-1" target="">Dokumentumok</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <button class="flex items-center justify-between gap-24 w-full text-left pl-12 py-8 pr-4" x-on:click="isOpen = !isOpen">
                   Pályázatok
                   <svg aria-hidden="true" class="shrink-0 size-10 stroke-white" fill="none" viewbox="0 0 9 5" x-bind:class="{ 'rotate-180': isOpen }" xmlns="http://www.w3.org/2000/svg">
@@ -423,27 +424,27 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </svg>
 </button>
 <ul class="pb-12" x-show="isOpen">
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-20 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/palyazatok/meghirdetett-palyazataink/" href="#" tabindex="-1" target="">Meghirdetett pályázataink</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-20 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/palyazatok/elnyert-tamogatasok/" href="#" tabindex="-1" target="">Elnyert támogatások</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-20 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/palyazatok/allaspalyazatok/" href="#" tabindex="-1" target="">Álláspályázatok</a>
 </li>
 </ul>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/dokumentumok/?term=&amp;amp;category=donteshozatal-ulesek&amp;amp;start_date=&amp;amp;end_date=&amp;amp;order=date_desc" href="#" tabindex="-1" target="">Döntéshozatal, ülések</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/dokumentumok/?term=&amp;amp;category=rendeletek" href="#" tabindex="-1" target="">Rendeletek</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/onkormanyzati-hivatal/tarstelepulesek/" href="#" tabindex="-1" target="">Társtelepülések</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://epapir.gov.hu/" href="#" tabindex="-1" target="_blank">E-ügyintézés</a>
 </li>
 </ul>
@@ -459,13 +460,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </svg>
 </button>
 <ul class="pb-12" x-show="isOpen">
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://kozarmisleny.hu/valasztas/valasztasi-szervek/" href="#" tabindex="-1" target="">Választási szervek</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1" target="_blank">Választási ügyintézés</a>
 </li>
-<li class="" x-data="{ isOpen: false }">
+<li x-data="{ isOpen: false }">
 <a class="block no-underline pl-12 py-8 pr-4" data-review-original-href="https://vtr.valasztas.hu/ogy2026" href="#" tabindex="-1" target="_blank">2026 évi választás</a>
 </li>
 </ul>

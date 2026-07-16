@@ -96,7 +96,7 @@
 body.custom-background { background-color: #e2e2e2; background-image: url("https://kozegy.eu/wp-content/uploads/2022/04/KOZE-bkgr-scaled.jpg"); background-position: center center; background-size: auto; background-repeat: no-repeat; background-attachment: fixed; }
 </style>
 <style media="all" type="text/css">
-
+    
     .content-main-bg,
     .news-article-bg,
     body .widget-title:before,
@@ -204,21 +204,13 @@ body.custom-background { background-color: #e2e2e2; background-image: url("https
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="page-template-default page page-id-94 custom-background wp-embed-responsive tribe-no-js right-sidebar theme-single-layout-1 theme-scheme-default theme-boxed-layout">
-<div class="preloader hide-no-js">
-<div class="preloader-wrapper">
-<span class="dot"></span>
-<div class="dots">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-</div>
+
 <div class="hfeed site" id="page">
 <a class="skip-link screen-reader-text" data-review-original-href="#content" href="#" tabindex="-1">Skip to the content</a>
 <header class="site-header-layout header-layout-2 header-overlay-enabled" id="site-header" role="banner">

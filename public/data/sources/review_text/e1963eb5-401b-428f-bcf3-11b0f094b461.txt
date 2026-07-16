@@ -1,0 +1,25 @@
+Védőnő kereső
+Területi védőnő kereséséhez a Település mezőben kezdje el begépelni azon település irányítószámát,
+ahol védőnőt szeretne keresni! Amennyiben megfelelően adta meg a település irányítószámát a rendszer
+automatikusan listázza a hozzá tartozó települést.
+Az irányítószám és a hozzá tartozó településre kattintva rögzítheti ezt a Település mezőben, ezt
+követően térjen át az utca mezőbe!
+Az utca mezőbe írja be a keresett utcát, a közterület jellege (út, utca, tér, stb.) nélkül pl: Kossuth!
+Az utca mezőben nem szükséges nagy kezdőbetű használata, mivel a rendszer képes így is a keresésre
+pl.: kossuth. A pontos házszám megjelölése sem szükséges. pl. Kossuth utca 30.
+Az utcanevek helyesírására azonban ügyeljen!
+Nem megfelelő választás esetén az "Új keresés" gombbal törölheti a bevitt adatot.
+Ha mind a település, mind pedig az utca nevét rögzítette a keresőben, nyomja meg a keresés gombot!
+Ekkor a rendszer listázza a védőnő nevét és az általa ellátott utcát/utcákat.
+A keresés abban az esetben is működik, ha csak a települést tölti ki utca nélkül. Ebben az esetben a
+rendszer a település összes utcáját listázza.
+Probléma esetén a
+vmo@nngyk.gov.hu
+e-mail címre írhat.
+Védőnő kereső1
+Keresés településnév alapján, amenyiben nem biztos az irányítószámban.
+Település
+Település irányítószámmal
+Utca
+Keresés
+Új keresés

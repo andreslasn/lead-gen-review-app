@@ -53,7 +53,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -91,7 +92,7 @@
 <li class="nav-item pr-2 d-none d-lg-block">
 <span class="text-light opacity-7 pl-0">
 <i class="fas fa-map-marker-alt mr-1"></i>
-                                    7100 Szekszárd, Keselyűsi út 4-8.
+                                    7100 Szekszárd, Keselyűsi út 4-8.   
                                 </span>
 </li>
 <li class="nav-item pr-2">
@@ -292,7 +293,7 @@
 <p class="m-0"><a class="text-white" data-review-original-href="https://www.google.com/maps/search/?api=1&amp;query=46.34644189999999,18.71489230000000" href="#" tabindex="-1">7100
 											Szekszárd, Keselyűsi
 											út 4-8.
-
+											 
 											</a></p>
 </li>
 <li class="mb-1"><i class="fas fa-phone text-color-primary"></i>
@@ -312,7 +313,7 @@
 <p class="m-0"><a class="text-white" data-review-original-href="https://www.google.com/maps/search/?api=1&amp;query=46.38564890000000,18.82661760000000" href="#" tabindex="-1">7132
 											Bogyiszló, Kossuth
 											utca 14.
-
+											 
 											</a></p>
 </li>
 <li class="mb-1"><i class="fas fa-phone text-color-primary"></i>

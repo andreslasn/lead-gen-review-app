@@ -31,12 +31,13 @@
     </style>
 <style>
 	    #logo {
-	        left: 15px !important;
+	        left: 15px !important;   
 	    }
 	</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -75,83 +76,83 @@
 <nav>
 <ul>
 <li class="dropdown" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu" href="#" tabindex="-1">
+<a data-review-original-href="https://szigetcsep.hu" href="#" tabindex="-1">
 <span>Választási információk</span>
 </a>
 <ul class="dropdown-menu"> <li class="dropdown-submenu" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/cikk/valasztasi-szervek" href="#" tabindex="-1">
+<a data-review-original-href="https://szigetcsep.hu/cikk/valasztasi-szervek" href="#" tabindex="-1">
 <span>Választási szervek</span>
 </a>
-<ul class="dropdown-menu"> <li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/cikk/valasztasi-iroda2026" href="#" tabindex="-1">
+<ul class="dropdown-menu"> <li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/cikk/valasztasi-iroda2026" href="#" tabindex="-1">
 <span>A választási iroda</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/cikk/valasztasi-bizottsagok2026" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/cikk/valasztasi-bizottsagok2026" href="#" tabindex="-1">
 <span>Választási bizottságok</span>
 </a>
 </li>
 </ul>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1">
 <span>Választási ügyintézés</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://www.valasztas.hu/" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://www.valasztas.hu/" href="#" tabindex="-1">
 <span>2026. évi általános választások</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/valasztasi-hirdetmenyek" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/valasztasi-hirdetmenyek" href="#" tabindex="-1">
 <span>Korábbi választások</span>
 </a>
 </li>
 </ul>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu" href="#" tabindex="-1">
 <span>Főoldal</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/hirek" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/hirek" href="#" tabindex="-1">
 <span>Hírek</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/esemenyek" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/esemenyek" href="#" tabindex="-1">
 <span>Események</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/hirdetmenyek" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/hirdetmenyek" href="#" tabindex="-1">
 <span>Hirdetmények</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/kiadvanyok" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/kiadvanyok" href="#" tabindex="-1">
 <span>Kiadványok</span>
 </a>
 </li>
 <li class="dropdown" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/szigetcseprol" href="#" tabindex="-1">
+<a data-review-original-href="https://szigetcsep.hu/szigetcseprol" href="#" tabindex="-1">
 <span>Szigetcsépről</span>
 </a>
-<ul class="dropdown-menu"> <li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/cikk/szigetcsep-fekvese" href="#" tabindex="-1">
+<ul class="dropdown-menu"> <li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/cikk/szigetcsep-fekvese" href="#" tabindex="-1">
 <span>Szigetcsép fekvése</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/cikk/szigetcsep-tortenete" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/cikk/szigetcsep-tortenete" href="#" tabindex="-1">
 <span>Szigetcsép története</span>
 </a>
 </li>
-<li class="" role="presentation">
-<a class="" data-review-original-href="https://szigetcsep.hu/cikk/szigetcsep-nevezetessegei" href="#" tabindex="-1">
+<li role="presentation">
+<a data-review-original-href="https://szigetcsep.hu/cikk/szigetcsep-nevezetessegei" href="#" tabindex="-1">
 <span>Szigetcsép nevezetességei</span>
 </a>
 </li>
@@ -165,7 +166,7 @@
 </div>
 </div>
 </header>
-
+ 
 
 
 <section class="sidebar-right" id="page-content">
@@ -218,10 +219,10 @@
 </div>
 
 
+ 
 
 
-
-
+ 
 <p><strong>ORVOSI RENDELŐ</strong>
 <br/>2317 Szigetcsép, Szabadság utca 54.</p>
 <p><strong>Dr. Varga Ágnes Julianna</strong>
@@ -324,11 +325,11 @@
 <a class="post-next" data-review-original-href="https://szigetcsep.hu/cikk/ovoda-rolunk" href="#" tabindex="-1">
 <div class="post-next-title"><span>Következő cikk</span>Óvoda</div>
 </a>
-</div>
+</div> 
 </div>
 </div>
 
-</div>
+</div> 
 </div>
 
 
@@ -352,11 +353,11 @@
 </div>
 </div>
 
-</div>
+</div> 
 </div>
 </div>
 </section>
-
+ 
 
 
 <footer id="footer" style="background-color:white;">
@@ -472,7 +473,7 @@ KRID azonosító: 757456392</p>
 </div>
 </div>
 </footer>
-
+ 
 </div>
 
 

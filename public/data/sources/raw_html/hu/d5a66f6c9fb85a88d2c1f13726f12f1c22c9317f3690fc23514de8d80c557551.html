@@ -82,14 +82,14 @@
 		.kozadat-1 a, .kozadat-2 a, .kozadat-3 a, .kozadat-4 a {
 			text-decoration:none;
 			color:black;
-		}
+		}		
 
 		.kozadat-1 a:hover, .kozadat-2 a:hover, .kozadat-3 a:hover, .kozadat-4 a:hover {
 			text-decoration:underline;
-		}
+		}		
 
 
-		.kozadat-1 {
+		.kozadat-1 {		
 			background-color:#6d7960;
 			color:white;
 
@@ -100,15 +100,15 @@
 		}
 
 
-		.kozadat-2 {
+		.kozadat-2 {		
 			background-color:#bebebe;
 		}
 
-		.kozadat-3 {
+		.kozadat-3 {		
 			background-color:#cccccc;
 		}
 
-		.kozadat-4 {
+		.kozadat-4 {		
 			background-color:#d9d9d9;
 		}
 
@@ -126,7 +126,7 @@
 			padding-left:30px;
 			font-weight:bold;
 		}
-
+		
         .vakbarat {position:absolute;right:10px;top:10px;display:block}
 	</style>
 
@@ -134,7 +134,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -713,7 +714,7 @@
     #cookiebar p {color:white;display:inline-block;}
     #cookiebar a {color:white;font-weight:bold;}
     #cookiebar #cookieaccept {display:inline-block;background-color:#cb0a03;color:#fff;border:none;margin:10px;border-color:white;padding:8px 10px;cursor:pointer;}
-
+    
 </style>
 
 </body>

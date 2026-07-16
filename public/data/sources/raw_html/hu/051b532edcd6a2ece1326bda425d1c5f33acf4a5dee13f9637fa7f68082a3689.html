@@ -812,7 +812,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </noscript>
 <meta content="WP Rocket 3.22.1" data-wpr-features="wpr_lazyload_css_bg_img wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_oci wpr_image_dimensions wpr_cdn wpr_preload_links wpr_host_fonts_locally wpr_desktop" name="generator"/><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -1713,7 +1714,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 </div>
 <div data-nosnippet="true" id="cmplz-manage-consent"><button aria-controls="cmplz-cookiebanner-1-optin" aria-haspopup="dialog" class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Sütibeállítások</button>
-</div><div class="eael-ext-scroll-to-top-wrap scroll-to-top-hide"><span class="eael-ext-scroll-to-top-button"><svg class="e-font-icon-svg e-fas-chevron-up" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></span></div>
+</div><div class="eael-ext-scroll-to-top-wrap scroll-to-top-hide"><span class="eael-ext-scroll-to-top-button"><svg class="e-font-icon-svg e-fas-chevron-up" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></span></div> 
 <div class="elementor elementor-833 elementor-location-popup" data-elementor-id="833" data-elementor-post-type="elementor_library" data-elementor-settings='{"a11y_navigation":"yes","triggers":[],"timing":[]}' data-elementor-type="popup">
 <div class="elementor-element elementor-element-2bbf1d3 e-con-full e-flex e-con e-parent" data-e-type="container" data-element_type="container" data-id="2bbf1d3" data-particle-mobile-disabled="false" data-particle_enable="false" data-settings='{"background_background":"classic","position":"fixed"}'>
 <div class="elementor-element elementor-element-3c003c6 elementor-widget elementor-widget-posts" data-e-type="widget" data-element_type="widget" data-id="3c003c6" data-settings='{"full_content_row_gap":{"unit":"px","size":35,"sizes":[]}}' data-widget_type="posts.full_content">
@@ -1754,8 +1755,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 fill: #ffffff;
                 width: 16px;
                 height: 16px;
-            }
-
+            } 
+        
 /*# sourceURL=eael-scroll-to-top-inline-css */
 </style>
 

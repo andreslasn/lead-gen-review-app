@@ -71,7 +71,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -83,7 +84,7 @@
 <div data-review-disabled-form="true">
 <input id="Esemeny_Uj" name="Esemeny_Uj" type="hidden" value="/fo-Kereses_pb_fut.html"/>
 <input id="Honnan" name="Honnan" type="hidden" value="0"/>
-<label for="Mitkeres">Keresés:
+<label for="Mitkeres">Keresés: 
                         <input autocomplete="off" id="Mitkeres" name="Mitkeres" placeholder="Keresés..." type="text"/>
 <input type="submit" value=""/>
 </label>

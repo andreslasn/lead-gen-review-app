@@ -52,7 +52,8 @@
 <title>Pont: ‪Körte utcai Orvosi Rendelő (Dr. Gulyás Gábor)‬ (‪3029462408‬) | OpenStreetMap</title>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -227,7 +228,7 @@
 </div>
 </div>
 </div>
-<div class="" id="content">
+<div id="content">
 <div class="bg-body flex-shrink-0 z-1" id="sidebar">
 <div class="search_forms d-none d-md-block">
 <div data-review-disabled-form="true">
@@ -315,11 +316,7 @@
 <div class="position-absolute end-0 bg-body p-4 ps-3">
 </div>
 </div>
-<div class="my-3 text-center loader" hidden="" id="sidebar_loader">
-<div class="spinner-border" role="status">
-<span class="visually-hidden">Betöltés…</span>
-</div>
-</div>
+
 <div class="p-3 position-relative z-n1" id="sidebar_content">
 <h2 class="me-4 text-break">Pont: <bdi>Körte utcai Orvosi Rendelő (Dr. Gulyás Gábor)</bdi> (<bdi>3029462408</bdi>)</h2>
 <div class="mb-3 border-bottom border-secondary-subtle pb-3">
@@ -336,7 +333,7 @@
 </div>
 <div class="changeset_line d-flex gap-2 align-items-center">
 <span class="me-auto">
-
+    
     Módosításcsomag
     #<a data-review-original-href="/changeset/154002363" href="#" tabindex="-1">154002363</a>
 </span>

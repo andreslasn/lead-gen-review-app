@@ -54,13 +54,14 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body>
 <div class="body">
-<header class="" data-plugin-options="{ 'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 110, 'stickyHeaderContainerHeight': 82 }" id="header">
+<header data-plugin-options="{ 'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 110, 'stickyHeaderContainerHeight': 82 }" id="header">
 <div class="header-body border-top-0">
 <div class="header-container container">
 <div class="header-row">
@@ -566,7 +567,7 @@
 <p class="m-0"><a class="text-white" data-review-original-href="https://www.google.com/maps/place/Szeksz%C3%A1rd,+Garay+t%C3%A9r+4,+7100/@46.3484827,18.6993123,17z/data=!3m1!4b1!4m5!3m4!1s0x4742ee75c2308a23:0x86f89aead5dd7d15!8m2!3d46.348479!4d18.701501" href="#" tabindex="-1">7694
 											Hosszúhetény, Fő
 											utca 166.
-
+											 
 											</a></p>
 </li>
 <li class="mb-1"><i class="fas fa-phone text-color-primary"></i>

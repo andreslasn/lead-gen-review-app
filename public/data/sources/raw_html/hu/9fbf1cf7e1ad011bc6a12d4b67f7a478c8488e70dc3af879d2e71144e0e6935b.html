@@ -67,7 +67,8 @@ float:right;
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -91,13 +92,13 @@ float:right;
 </div>
 <div class="plg_system_eprivacy_declined" style="display:none">
 <p>
-<button class="plg_system_eprivacy_reconsider">Reconsider Cookies</button>
+<button class="plg_system_eprivacy_reconsider">Reconsider Cookies</button> 
             You have declined cookies.  This decision can be reversed.        </p>
 </div>
 <div class="plg_system_eprivacy_accepted" style="display:none">
 <p>
 <button class="plg_system_eprivacy_reconsider">Change Cookie Consent</button>
-<button class="plg_system_eprivacy_accepted">Remove Cookies</button>
+<button class="plg_system_eprivacy_accepted">Remove Cookies</button> 
             You have allowed cookies to be placed on your computer.  This decision can be reversed.        </p>
 </div>
 </div>
@@ -111,7 +112,7 @@ float:right;
 <section id="g-navigation">
 <div class="g-container"> <div class="g-grid">
 <div class="g-block size-15" id="htk-logo">
-<div class="g-content g-particle" id="logo-5250-particle"> <a class="" data-review-original-href="/" href="#" rel="home" tabindex="-1" title="">
+<div class="g-content g-particle" id="logo-5250-particle"> <a data-review-original-href="/" href="#" rel="home" tabindex="-1" title="">
 <img alt="Halásztelek címere"/>
 </a>
 </div>

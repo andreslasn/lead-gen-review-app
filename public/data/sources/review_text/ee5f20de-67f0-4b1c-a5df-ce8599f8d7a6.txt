@@ -1,0 +1,64 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+Körte utcai Orvosi Rendelő (Dr. Gulyás Gábor)
+(
+3029462408
+)
+Verzió
+#
+5
+Find all the http:// website tags in OSM that redirect to https:// and update them.
+Szerkesztette
+b-jazz-bot
+nagyjából 2 évvel ezelőtt
+Módosításcsomag
+154002363
+0
+Hely:
+47,9599665
+,
+21,7157183
+Címkék
+addr:city
+Nyíregyháza
+addr:housenumber
+16/B
+addr:postcode
+4400
+addr:street
+Körte utca
+amenity
+doctors
+email
+gulyasgdr@gmail.com
+name
+opening_hours
+Mo,Th-Fr 08:00-12:00; Tu 13:00-17:00; We 15:00-18:00
+phone
++36 42 404 947
+website
+https://www.nyiregyhaziorvos.hu/
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

@@ -39,7 +39,8 @@ img.spo-ico{padding: 0 0px 0 0px;width:16px;height:16px;}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -108,7 +109,7 @@ img.spo-ico{padding: 0 0px 0 0px;width:16px;height:16px;}
 </div>
 <div class="art-blockcontent">
 <div class="art-blockcontent-body">
-
+		
 		﻿<div data-review-disabled-form="true">
 <table border="0" cellpadding="0" cellspacing="0" class="mod_login" width="100%">
 <tr><td><span id="mod_login_usernametext"><label for="mod_login_username">Felhasználónév</label></span><br/>
@@ -903,9 +904,9 @@ img.spo-ico{padding: 0 0px 0 0px;width:16px;height:16px;}
 </div>
 <div class="art-blockcontent">
 <div class="art-blockcontent-body">
-
+		
 		Oldalainkat 3 vendég böngészi
-
+		
 				<div class="cleared"></div>
 </div>
 </div>

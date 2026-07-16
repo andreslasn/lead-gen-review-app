@@ -46,7 +46,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -138,7 +139,7 @@ http://www.hazipatika.com/napi_egeszseg/fertozo_betegsegek/cikkek/az_influenza_a
 <br/>
 <a class="more" data-review-original-href="#" href="#" tabindex="-1">Bővebben</a>
 <div class="long_text">- A diéta jelentősége
-- Leggyakoribb egészségügyi diéták
+- Leggyakoribb egészségügyi diéták 
 - Fogyókúra diéták
 - Előnyök
 - Hátrányok, veszélyek</div>

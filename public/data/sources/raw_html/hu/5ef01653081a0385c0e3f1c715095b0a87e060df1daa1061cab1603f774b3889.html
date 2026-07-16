@@ -83,7 +83,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
    .floating-container-covid{
   	width:75px;
     position:fixed;
-
+    
     z-index:9999;
     background:#1080d0;
     border-radius:150px;
@@ -114,7 +114,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       right:13px;
   }
 }
-
+  
 @media screen and (max-width: 1022px){
     .floating-container-covid{
       bottom:1%;
@@ -235,12 +235,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="wp-singular page-template-default page page-id-1862 page-child parent-pageid-1879 wp-theme-infinite wp-child-theme-infinite-child gdlr-core-body infinite-body infinite-body-front infinite-full infinite-with-sticky-navigation infinite-blockquote-style-1 gdlr-core-link-to-lightbox" data-home-url="https://torzsapeter.hu/" data-rsssl="1">
-<div class="infinite-mobile-header-wrap"><div class="infinite-mobile-header infinite-header-background infinite-style-slide infinite-sticky-mobile-navigation" id="infinite-mobile-header"><div class="infinite-mobile-header-container infinite-container clearfix"><div class="infinite-logo infinite-item-pdlr"><div class="infinite-logo-inner"><a class="" data-review-original-href="https://torzsapeter.hu/" href="#" tabindex="-1"><img alt="Dr. Torzsa Péter foglalkozásai és logó" height="165" title="torzsa-logo-v2-2" width="748"/></a></div></div><div class="infinite-mobile-menu-right"><div class="infinite-mobile-menu"><a class="infinite-mm-menu-button infinite-mobile-menu-button infinite-mobile-button-hamburger-with-border" data-review-original-href="#infinite-mobile-menu" href="#" tabindex="-1"><i class="fa fa-bars"></i></a><div class="infinite-mm-menu-wrap infinite-navigation-font" data-slide="right" id="infinite-mobile-menu"><ul class="m-menu" id="menu-main-navigation"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1328"><a data-review-original-href="https://torzsapeter.hu/" href="#" tabindex="-1">Főoldal</a></li>
+<div class="infinite-mobile-header-wrap"><div class="infinite-mobile-header infinite-header-background infinite-style-slide infinite-sticky-mobile-navigation" id="infinite-mobile-header"><div class="infinite-mobile-header-container infinite-container clearfix"><div class="infinite-logo infinite-item-pdlr"><div class="infinite-logo-inner"><a data-review-original-href="https://torzsapeter.hu/" href="#" tabindex="-1"><img alt="Dr. Torzsa Péter foglalkozásai és logó" height="165" title="torzsa-logo-v2-2" width="748"/></a></div></div><div class="infinite-mobile-menu-right"><div class="infinite-mobile-menu"><a class="infinite-mm-menu-button infinite-mobile-menu-button infinite-mobile-button-hamburger-with-border" data-review-original-href="#infinite-mobile-menu" href="#" tabindex="-1"><i class="fa fa-bars"></i></a><div class="infinite-mm-menu-wrap infinite-navigation-font" data-slide="right" id="infinite-mobile-menu"><ul class="m-menu" id="menu-main-navigation"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1328"><a data-review-original-href="https://torzsapeter.hu/" href="#" tabindex="-1">Főoldal</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-1639"><a data-review-original-href="/szolgaltatasaink" href="#" tabindex="-1">Szolgáltatásaink</a>
 <ul class="sub-menu">
 <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1862 current_page_item menu-item-1894"><a aria-current="page" data-review-original-href="https://torzsapeter.hu/szolgaltatasaink/csaladorvosi-ellatas-haziorvos" href="#" tabindex="-1">Családorvosi ellátás</a></li>
@@ -270,7 +271,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="infinite-header-background"></div>
 <div class="infinite-header-container infinite-container">
 <div class="infinite-header-container-inner clearfix">
-<div class="infinite-logo infinite-item-pdlr"><div class="infinite-logo-inner"><a class="" data-review-original-href="https://torzsapeter.hu/" href="#" tabindex="-1"><img alt="Dr. Torzsa Péter foglalkozásai és logó" height="165" title="torzsa-logo-v2-2" width="748"/></a></div></div> <div class="infinite-navigation infinite-item-pdlr clearfix">
+<div class="infinite-logo infinite-item-pdlr"><div class="infinite-logo-inner"><a data-review-original-href="https://torzsapeter.hu/" href="#" tabindex="-1"><img alt="Dr. Torzsa Péter foglalkozásai és logó" height="165" title="torzsa-logo-v2-2" width="748"/></a></div></div> <div class="infinite-navigation infinite-item-pdlr clearfix">
 <div class="infinite-main-menu" id="infinite-main-menu"><ul class="sf-menu" id="menu-main-navigation-1"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1328 infinite-normal-menu"><a data-review-original-href="https://torzsapeter.hu/" href="#" tabindex="-1">Főoldal</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-1639 infinite-normal-menu"><a class="sf-with-ul-pre" data-review-original-href="/szolgaltatasaink" href="#" tabindex="-1">Szolgáltatásaink</a>
 <ul class="sub-menu">

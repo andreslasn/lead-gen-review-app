@@ -76,7 +76,7 @@ ul.filebird-block-filebird-gallery{margin:auto!important;padding:0!important;wid
 
 
 <style id="ui-fontsize.css-inline-css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
@@ -185,7 +185,8 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
         </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -198,7 +199,7 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
 <div id="top-header" style="">
 <div class="container">
 
-<div class="" id="et-secondary-nav">
+<div id="et-secondary-nav">
 <ul class="nav" id="et-secondary-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-240"><a data-review-original-href="#" href="#" tabindex="-1">Közérdekű adatok</a>
 <ul class="sub-menu">
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7634"><a data-review-original-href="https://balatonszentgyorgy.hu/altalanos-kozzeteteli-lista/" href="#" tabindex="-1">Általános közzétételi lista</a></li>
@@ -579,11 +580,11 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
 </ayg-pagination> </ayg-theme-classic>
 </div>
 </div></div> <div class="widget_text widget et_pb_widget widget_custom_html" id="custom_html-4"><h4 class="widgettitle">Online tudástár</h4><div class="textwidget custom-html-widget"></div></div> </div>
+</div> 
+</div> 
+</div> 
 </div>
-</div>
-</div>
-</div>
-</div>
+</div> 
 <span id="back_to_top" title="Vissza a tetejére"></span>
 
 
@@ -606,7 +607,7 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
 			Bezár			</button>
 </div>
 </div>
-<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Francois+One:regular&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Francois One';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/francoisone/v22/_Xmr-H4zszafZw3A-KPSZut9zwiU.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Francois One';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/francoisone/v22/_Xmr-H4zszafZw3A-KPSZut9zwiX.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Francois One';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/francoisone/v22/_Xmr-H4zszafZw3A-KPSZut9zwiR.woff2) format('woff2');}</style>
+<style id="et-builder-googlefonts-inline">/* Original: https://fonts.googleapis.com/css?family=Francois+One:regular&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Francois One';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/francoisone/v22/_Xmr-H4zszafZw3A-KPSZut9zwiU.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Francois One';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/francoisone/v22/_Xmr-H4zszafZw3A-KPSZut9zwiX.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Francois One';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/francoisone/v22/_Xmr-H4zszafZw3A-KPSZut9zwiR.woff2) format('woff2');}</style> 
 
 
 

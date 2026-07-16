@@ -100,7 +100,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -110,7 +111,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 
 
-
+   
 <div class="d-none d-sm-block" id="check-mobile"></div>
 <div aria-hidden="true" class="modal" id="header-karok" role="dialog" tabindex="-1">
 <div class="modal-dialog mx-0 mx-md-2" role="document">
@@ -709,7 +710,7 @@ font-family: 'Montserrat', sans-serif;
 </p>
 </h6>
 <h6>
-<i aria-hidden="true" class="fa fa-desktop"></i> SEMEDUNIV (KRID: 648905308)
+<i aria-hidden="true" class="fa fa-desktop"></i> SEMEDUNIV (KRID: 648905308)                
             </h6>
 <h6 class="sociallinks">
 <a class="follow-box" data-review-original-href="https://facebook.com/semmelweisegyetem" href="#" tabindex="-1" target="_blank" title="Facebook - Kövess minket!">

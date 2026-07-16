@@ -1,0 +1,215 @@
+Kezdőlap
+Rólunk
+Páciensek
+Orvosok
+Rendelők
+Kapcsolat
+Betegirányítás
+Orvoshonlap
+Telefonközpont
+0
+szolgáltatás
+Az
+Erodium Orvosi Betegirányító Rendszer
+a páciensek számára jelenleg ennyi különböző ellátáshoz nyújt hozzáférést.
+páciens
+által kiszolgált orvosok összesített parxismérete.
+behívás
+által eddig ellátásra szólított páciensek száma.
+A váróteremnek nem kell feszültséggel és frusztrációval teli helynek lennie!
+Megkérdeztük a pácienseket, hogy milyen volt a várakozás az Erodium rendszer bevezetése előtt?
+Sokat bosszankodott
+34
+A várakozó páciensek harmada
+sokat bosszankodott várakozás közben.
+Néha bosszankodott
+52
+Minden második várakozó páciens
+bosszankodott néha a várakozás során.
+Nem volt problémája
+15
+Hatból mindössze egy páciens válaszolta,
+hogy nem érte kellemetlenség várakozáskor.
+Milyen megoldást kínál az Erodium Orvosi Betegirányító Rendszer?
+Időpontfoglalási lehetőség
+A páciensek előre foglalhatnak időpontot maguknak interneten, az automata telefonközpontban vagy a várótermi terminálon.
+Átlátható behívási sorrend
+A behívási sorrendet a rendszer állítja össze a foglalt időpontokra is tekintettel, a várólista minden hívás után megjelenik.
+Rövidebb várakozás
+A páciensek közötti holtidő jelentősen lecsökken, az ellátás végeztével a következő várakozó azonnal szólításra kerülhet.
+Mit mondanak a páciensek?
+A rendszer bevezetése után papíralapú és online kérdőíves formában követjük a páciensek véleményét.
+Kellemesebben telik-e a várakozási idő az új rendszer bevezetése óta?
+93
+A rendszer bevezetését követően azonnal jelentősen javul a légkör a váróteremben. Azonnal megszűnnek a sorrenddel kapcsolatos viták és trükközések.
+Mennyire tartja jónak a páciensek behívási rendszerét?
+84
+A szólított páciens neve megjelenik a várótermi képernyőn, illetve hangosan bemondásra is kerül. Minden szólítás után megjelenik a várólista.
+Csökkent-e véleménye szerint a várakozási idő az új rendszerrel?
+74
+A válaszadók 74%-a szerint jelentősen, további 18% szerint kis mértékben csökkent a várakozási idő. Mindössze 2% jelezte, hogy többet kell várnia, mint korábban.
+Mennyire tartja egyszerűnek a várótermi terminál használatát?
+91
+A páciensek elsöprő többsége, a gyerekektől az igazán idősekig hamar megtanulja és minden probléma nélkül használja a várótermi terminált.
+Mi a páciensek véleménye?
+"Az új rendszerrel megszüntethető az "én voltam itt előbb" magyar mentalitás, valamint a hiába való időpontfoglalás, amikor órákon át elfelejtenek még be is hívni a foglalt időpontban, ezért az érkezési sorrend alapján kerültem be. Most nyomon követhetem a "csúszást" és nem kell izgulnom azért, hogy bekerülök-e egyáltalán."
+"A rendszer tökéletesen alkalmas a várótermi konfliktusok megelőzésére. Nagyon jó az is, hogy külön bejelentkezési lehetőség van az orvoshoz és az asszisztenshez. Az idősebb korosztályhoz tartozóknak - főként ha először használják a terminált - segítségre van szükségük, de a betegtársak segítőkészebbek, mint vártam. Nagyon hasznos és praktikus."
+"Nagyon örülök, hogy ezt a rendszert a háziorvosom használja. Praktikus, érthető, és nem utolsósorban kényelmes. Kulturált a beteg gyógyítás, és én ennek nagyon örülök. A doktornő és az asszisztensnő is nagyon kedvesek. Nem túl régóta vagyok a doktornőnél, de nagyon jó hogy mertem orvost váltani."
+"Ilyen kellemes környezetű rendelőben még nem jártam, nagyon ötletes a kivetítő, egyben nyugtatónak is tartom. Nem beszélve a tanácsokról és egyéb statisztikákról amelyek szintén hasznosak, és jókor hagyja abba, mivel egy idő után fárasztó. Gratulálok a fejlesztőknek, minden orvosi rendelőben elkelne egy ilyen rendszer!"
+Mit mondanak a felhasználó orvosok?
+Dr. Fodor Zsuzsanna (Pusztaföldvár)
+"Nagyszerű a rendszer, sokat segit a mindennapi munkában, gördülékennyé teszi az ellátást, számunkra is átlátható és tervezhető a rendelési idő, mi is és a betegeink is ragaszkodnak hozzá!"
+Dr. Tokody Attila (Váchartyán)
+"Kultúrált, praktikus, korát messzemenően meghaladó, korszerű betegirányítási, előjegyzési online alapú rendszer,ami a betegek és orvosok kölcsönös érdeke a napi rendelési logisztikánkban."
+Dr. Kulcsár Enikő (Balatonalmádi)
+"Amióta Erodium "beköltözött" a váróba, nincs várótermi harc, jelentősen csökkent a várakozási idő, csökkent a rendelést zavaró telefonhívások mennyisége, és a betegek a neten történő időpont foglalást is nagyon díjazzák."
+Dr. Rácz Zsolt (Tét)
+"Kifejezetten a háziorvosi munkára szabott betegirányító rendszer, csak előnyeit lehet sorolni - jelentősen átláthatóbbá, tervezhetőbbé teszi a rendelés menetét. Csak ajánlani tudom minden érdeklődő háziorvos kollégámnak!"
+Hol találkozhat velünk?
+Az listában az Erodium Rendszert bevezető orvosi rendelőket tekintheti át.
+Alsóörs
+,
+Apaj
+Bágyogszovát
+Balassagyarmat
+Balatonalmádi
+Berettyóújfalu
+Biatorbágy
+Budapest II.
+Budapest III.
+Budapest IV.
+Budapest IX.
+Budapest V.
+Budapest VIII.
+Budapest XI.
+Budapest XIII.
+Budapest XIV.
+Budapest XVII.
+Budapest XX.
+Budapest XXI.
+Cegléd
+Csorna
+Csorvás
+Dabas
+Dorog
+Dunakeszi
+Dunakiliti
+Dunaújváros
+Dunavarsány
+Eger
+Érd
+Felcsút
+Fertőszentmiklós
+Fót
+Földeák
+Göd
+Gyomaendrőd
+Gyömrő
+Hajdúböszörmény
+Hajdúszoboszló
+Halásztelek
+Halmaj
+Harkány
+Hódmezővásárhely
+Ikervár
+Jakabszállás
+Jánossomorja
+Jászberény
+Kaba
+Kaposvár
+Karcag
+Kecskemét
+Királyegyháza
+Kiskunfélegyháza
+Kismaros
+Kistarcsa
+Komárom
+Kosd
+Kőszeg
+Lajoskomárom
+Makó
+Mány
+Marcali
+Martonvásár
+Miskolc
+Monorierdő
+Mosonszolnok
+Nádudvar
+Nagykovácsi
+Nagymaros
+Nőtincs
+Nyáregyháza
+Nyergesújfalu
+Orosháza
+Őrbottyán
+Paks
+Pánd
+Pécel
+Pécs
+Pécsvárad
+Pellérd
+Polgár
+Pomáz
+Pusztaföldvár
+Püspökladány
+Salgótarján
+Sárosd
+Sárvár
+Siklós
+Siófok
+Solymár
+Szarvas
+Szeged
+Szentendre
+Szigetszentmiklós
+Szolnok
+Szombathely
+Szomor
+Sződ
+Sződliget
+Tápiószentmárton
+Tárnok
+Tata
+Tatabánya
+Tét
+Tiszatarján
+Tolna
+Tótvázsony
+Újszilvás
+Üllés
+Vác
+Vácduka
+Váchartyán
+Vácrátót
+Veresegyház
+Verőce
+Veszprém
+További információ
+Tájékoztató pácienseknek
+Orvosi rendelők és rendelési idők megtekintése, a segítség a rendszer használatához:
+https://www.erodium.hu/info/paciens
+Tájékoztató orvosoknak
+A rendszer felépítésének megismerése, árajánlat kérése saját rendszerre:
+https://www.erodium.hu/info/orvos
+Tájékoztató hirdetőknek
+A hirdetési felületek áttekintése, hirdetések közzététele a rendszeren keresztül:
+https://www.erodium.hu/info/hirdeto
+Referencia rendelőnk
+Orvosszakmai kérdésekben az
+orvos@erodium.hu
+címen vagyunk elérhetőek.
+Referencia rendelőnk az alábbi elérhetőségeken áll rendelkezésre:
+Felnőtt Háziorvosi Rendelő
+Dr. Cserni István
+2621 Verőce, Losonczi u. 2.
+Internet:
+www.cserni.hu
+E-mail:
+istvan@cserni.hu
+Telefon: 06-1-4454-014
+Referencia rendelőnk rendszerünk által kezelt információs oldalát és naprakész rendelési időit a
+www.erodium.hu/info/rendelesek/veroce/dr.cserni.istvan
+oldalon tekintheti meg.
+Copyright © 2026 betegiranyito.hu. A felhasznált sablon a
+Designscrazed
+oldalról származik.

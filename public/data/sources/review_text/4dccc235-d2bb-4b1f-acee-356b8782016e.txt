@@ -1,0 +1,368 @@
+Adatkezelési tájékoztató (honlap)
+Adatkezelő
+: Inspekció 99 BT. (8000 Székesfehérvár Szekfű Gy. u. 7. cégjsz.: 07-06-008656 Székesfehérvári Törvényszék Cégbírósága, adósz.: 20352079-2-07, e-mail: drhanti@inspekcio.hu).
+Adatfeldolgozók
+: e-mail kiszolgáló (az adatkezelő oldalán), tárhelyszolgáltató: Carina Novum KFT. 1097 Budapest, Vaskapu utca 1/B. e-mail: mrichard@carina-novum.hu, aki al-adatfeldolgozóként veszi igénybe a Tárhely.Eu KFT-t (1144 Budapest, Ormánság u. 4.).
+Az adatkezelés célja
+: a honlap fenntartása-üzemeltetése-látogathatóságának biztosítása.
+Adatkezelés alapja
+: a látogató önkéntes és kifejezett hozzájárulása melyet a „Rendben” gombra kattintással e tájékoztató kifejezett megértésének és elfogadásának tanusításával ad meg.
+A honlap látogatásával kapcsolatos (napló)adatok tárolásának ideje
+: legfeljebb 14 hónap. A látogatónak
+jogosultsága van
+a róla kezelt adatokkal kapcsolatban jogszabály szabta keretek között a tájékoztatáshoz, helyesbítéshez, adatkezelés korlátozásához, hozzájárulása visszavonásához, adatai törléséhez, és jogorvoslathoz (www.naih.hu, illetve www.birosag.hu).
+Kezelt adatok köre és forrása
+: Weboldalunk ún. „sütiket” (angolul „cookies”) használ kizárólag a honlap látogathatósága érdekében. A cookie olyan kis fájl, amely valamilyen karakterláncot tartalmaz, és akkor kerül a számítógépre, amikor a felhasználó felkeresi valamelyik webhelyet. Az adott webhely felkeresésekor a cookie-nak köszönhetően a webhely képes felismerni a felhasználó böngészőjét. A cookie-k tárolhatnak felhasználói beállításokat is. A böngésző beállítható úgy, hogy utasítsa el az összes cookie-t (ekkor a honlap nem használható), vagy hogy jelezze, ha a rendszer éppen cookie-t küld. Bizonyos webhelyfunkciók vagy -szolgáltatások nem működnek megfelelően cookie-k nélkül. Utóbb böngészőjében a cookie-kat törölheti, illetve ún. inkognitómódban böngészve annak bezárásakor általában automatikusan törlődnek azok.
+Csak a legszükségesebb cookie-kat használja az oldal
+(ci_session, PHPsessid HTTP cookie-k legfeljebb 1 napos tárolással)
+.
+A honlap a böngésző internetes tárhelyében tárolhat böngészési adatokat az adott eszközön. Így az adatok a böngésző bezárása, majd ismételt megnyitása után is hozzáférhetők, hacsak nem törli azokat a böngészőprogram beállításainál.
+Az Ön látogatása a honlapot kiszolgáló számítógépszerveren (tárhelyszolgáltató) naplózásra kerül.
+Ezek a „szervernaplók” a webes kérést, az ún. internetprotokoll címét, a böngészőprogram és operációs program típusát és verzióját, nyelvét, a kérés dátumát és idejét, valamint egy vagy több, a böngészőt azonosítani képes cookie-t foglalnak magukba. Az internetkapcsolattal rendelkező eszközök mindegyikéhez tartozik egy szám, amely internetprotokoll - (IP) cím - néven ismert. Ezeket a számokat általában ún. tömbökben osztják ki földrajzi tényezők alapján.
+Az IP-címet gyakran arra is lehet használni, hogy meghatározzák a helyet, ahonnan egy adott eszköz (azaz Ön) csatlakozik az internethez – a webhely ezt is kezelheti.
+Rendben
+Inspekció 99
+Főoldal
+Háziorvosi ellátás
+Igazságügyi orvosszakértés
+Egészségügyi-jogi és egészségbiztosítási szakértés
+Publikációk, előadások, oktatás
+Medico Juris Érdekvédelmi Szövetség
+Nyelvoktatás
+Orvosi Betéti Társaság szakértői és tanácsadó cég
+DR. MED. DR. JUR. HANTI PÉTER LL. M.
+orvos-jogász
+igazságügyi szakértő egészségbiztosítás és háziorvostan szakterületen
+egészségügyi-jogi és egészségbiztosítási szakértő
+egészségügyi és biztosítási szakjogász
+8000 Székesfehérvár, Szekfű Gy. u. 7.
+drhanti@inspekcio.hu
+Folyó ügyek c. elektronikus egészségügyi-jogi periodika
+Egészségügyi-jogi országos tréningsorozat egészségügyi vállalkozóknak
+Általános Szerződési Feltételek
+Adatkezelési tájékoztató (egészségügyi szolgáltatás, 2018.05.25-től)
+Adatkezelési tájékoztató (egészségügyi szolgáltatás, 2019.01.01-től)
+Adatkezelési tájékoztató (egészségügyi szolgáltatás, 2020.01.01-től - megtekinthető az orvosi rendelő várójában)
+Adatkezelési tájékoztató (igazságügyi szakértés, 2018.05.25-től)
+5. SZÁMÚ FELNŐTT HÁZIORVOSI SZOLGÁLAT SZÉKESFEHÉRVÁR
+DR. HANTI PÉTER C. FŐORVOS, HÁZIORVOSTAN, EGÉSZSÉGBIZTOSÍTÁS SZAKORVOSA
+EGÉSZSÉGÜGYI KÖZSZOLGÁLTATÁS
+8000 SZÉKESFEHÉRVÁR SZEKFŰ GYULA UTCA 9. TEL.: 06 22 330 300
+Leleteiket nem látjuk automatikusan - csak ha szólnak róla !
+A társadalombiztosítás egészségügyi szolgáltatásaira szerződött rendelés.
+A szolgálathoz tartozó terület:
+Ács köz, Agyag u., Alkony u., Antal dülő, Aszalvölgyi u., Aszalvölgyi vízmű, Asztalos köz, Attila u., Barátság liget, Bádogos köz, Berényi u. 2-től és 3-tól, Cento u., Cserkész u., Csucskai u., Csutora u., Damjanich u., Európa Ipari Park, Építőmunkás u., Forgó u., Gábor Áron u., Gogol u., Gödör u., Gugásvölgyi u., Hajnal u., Illyés Gyula tér, Kecskeméti u., Kertalja köz, Kertalja u., Kiskút u., Kissós u., Koppány u., Köműves köz, Kund u., Marhacsapás u., Mester u., Munkás u., Nemes u., Ond u., Orgona u., Óvoda u., Pestispincék u., Pörös u., Szent Flórián krt., Szövetség u., Téglás köz, Tompa Mihály u., Vadász u., Vajda sor, Wass Albert köz
+Rendelési idő (a preventiv-megelőző rendelés és terhestanácsadás csak előjegyzés alapján)
+hétfő 14.30-18.00; preventiv rendelés 14.00-14.30
+kedd 7.00-11.00
+szerda 14.30-17.30; preventiv rendelés 14-14.30, 17.30-18.00
+csütörtök 7.30-11.00; preventiv rendelés 7-7.30
+páros péntek 13.30-16.00; preventiv rendelés 13-13.30, 16-16.30, terhestanácsadás 12-13
+páratlan péntek 7.30-11.00; preventiv rendelés 7-7.30, 11-11.30, terhestanácsadás 6-7.
+Munkanapokon 16-8 óráig; munkaszüneti napokon pedig 0-24 óráig a betegellátást a székesfehérvári központi orvosi ügyelet biztosítja: Székesfehérvár, Seregélyesi u. 3. tel.: 1830
+Hivatásos jogosítványhoz szükséges egészségügyi alkalmassági vizsgálatot is végzünk.
+Szolgálatunkon keresztül lehetőség van életkorhoz kötött szűrővizsgálatok igénybevételére.
+Bejelentkezés a rendelő telefonszámán saját rendelési időnkben lehetséges a még szabad időpontok erejéig. A bejelentkezett időpontnál is előfordulhat időbeli csúszás.
+Beutaló nélkül igénybe vehető szakorvosi rendelő által nyújtott járóbeteg-szakellátások:
+bőrgyógyászat, nőgyógyászat, urológia, fül-orr-gégészet, szemészet, pszichiátria-addiktológia, sebészet, traumatológia (baleseti sebészet); bőr- és nemibeteg-gondozóban, tüdőgondozóban és onkológiai gondozóban gondozásba vettek számára
+Betegjogi képviselő: Megléczné Ocsenás Mária, Integrált Jogvédelmi Szolgálat tel.: 06 20 4899 658
+Felügyeleti szerv: Fejér Megyei Kormányhivatal Járási Hivatalának Járási Népegészségügyi Intézete, Székesfehérvár Mátyás király krt. 25.
+Egészségügyi közvetítői eljárásban illetékes: Magyar Igazságügyi Szakértői Kamara (1095 Budapest, Mester u. 30-32., tel.: 06 1 614 7739)
+Szolgálatunk hatályos felelősség-biztosítással és a felügyeleti szerv által FE-08/NEO/01274-2/2025 számon kiadott határozatlan idejű működési engedéllyel rendelkezik.
+Hirdetmények:
+Térítési díj ellenében igénybe vehető ellátások-szolgáltatások
+Szakértői kompetencia:
+Társadalombiztosítási és szociális ellátások:
+üzemi baleset, foglalkozási megbetegedés, rokkantsági és rehabilitációs ellátások, egészségkárosodás, munkaképesség-változás, fogyatékosság, mozgáskorlátozottság, közlekedési és önkiszolgálási képesség, gondozási szükséglet, tartós betegség, keresőképesség (táppénz) szakvéleményezése
+orvosi szempontból
+Egyes (pl. gépjárművezetői) egészségügyi alkalmassági vizsgálatokhoz kapcsolódó szakvéleményezés.
+Egészségpénztárak által nyújtott szolgáltatásokhoz kapcsolódó jogviták.
+A kötelező egészségbiztosítás (TB) egészségügyi szolgáltatásaihoz és baleseti ellátásokhoz kapcsolódó megtérítés és visszatérítés [ideértve a közfinanszírozott egészségügyi szolgáltatók
+Nemzeti Egészségbiztosítási Alapkezelő (NEAK) szakmai és pénzügyi ellenőrzéseihez
+kapcsolódó jogvitákat is].
+Háziorvosi ellátással
+kapcsolatos ügyek, praxisok értékbecslése.
+Üzleti biztosító
+személybiztosítási szolgáltatásaihoz kapcsolódó jogviták: élet-, egészség-, betegség-, baleset-, utasbiztosításhoz szükséges kockázatelbírálás és kárszakértés.
+A személyvizsgálatokat Székesfehérváron végzem, de helyszíni vizsgálatra is lehetőség van. Elektronikus kézbesítés lehetséges. A szakértői kirendeléseknek, megbízásoknak rövid határidővel teszek eleget.
+Szakértői konzultáció is lehetséges: leletek, korábbi szakvélemények egyéb dokumentumok-iratok értelmezése, lehetőségek megbeszélése.
+Szakvéleményhez bárki hozzájuthat a fenti szakterületet érintő ügyekben
+pereskedés előtt: egyezségkötés érdekében, közvetítés során, illetve későbbi perben való felhasználásra (pl. a per esélyeit megítélendő)
+a szakértő közvetlen megbízásával: gyorsan és egyszerűen (ún.
+magánszakvélemény
+), vagy
+bíróságon vagy közjegyzőn keresztül
+hivatalosan
+kérve szakértő kirendelését
+peren kívül
+: lassabb, nehézkesebb, drágább (viszont az így elkészült szakvélemény később a perben nagyobb súllyal esik a latba); illetve
+per folyamán a bíróság által
+kirendelt vagy magánszakértőként
+Az új európai adatvédelmi rendelet (GDPR) minden egészségügyi szolgáltató számára is kötelezően ismerendő és alkalmazandó:
+Jellemzően adatvédelmi hatásvizsgálatot kell végezniük, adatvédelmi szabályzat alkotása javasolt, adatkezelési nyilvántartást kell vezetniük.
+Főszabályként ún. adatvédelmi tisztviselőről (DPO) is szükséges gondoskodniuk és bejelenteniük az adatvédelmi hatósághoz.
+DPO a vonatkozó adatvédelmi elméletet és gyakorlatot szakértői szinten ismerő személy lehet, akinél nem áll fenn összeférhetetlenség (az őt megbízó szolgáltatónak nem ügyvezetője, vagy vezető orvosa).
+Szabályszegésért akár 20 millió euró bírság is kiszabható.
+Inspekció 99 BT. szakértői és tanácsadó cég
+dr. Hanti Péter, DPO
+egészségügyi-jogi szakértői tanácsadás
+többek között
+műhibaperekkel kapcsolatos sikerkilátási vizsgálatok
+akár non-stop, on-line szakértői konzultáció egészségügyi szolgáltatóknak,
+vezetői tanácsadás
+jogi kockázatmenedzsment a betegellátásban - profilaxis az egészségügyi szolgáltatásban
+Kiemelt témák:
+működési formák az egészségügyben, az egészségügyi
+tevékenység végzésének
+általános feltételei, működési nyilvántartás; színlelt foglalkoztatási szerződések
+egészségügyi szolgáltatások engedélyeztetése,
+személyi és tárgyi minimumfeltételek
+egészségügyi magánvállalkozás jogi menedzsmentje;
+praxisjog
+; munkavédelem és kockázatértékelés; adózás
+betegjogok, orvosjogok
+egészségügyi
+adatkezelés és dokumentáció
+orvosi (egészségügyi szolgáltatói) -
+kártérítési
+, büntetőjogi, szabálysértési, közigazgatási, etikai, munkavállalói, egészségügyi szolgálati jogviszonybeli; munkáltatói - felelősség; egészségügyi szolgáltatóval szembeni egyéb eljárási formák
+az egészségügyi beavatkozások kockázatának komplex értelmezése, tájékoztatási dilemmák megoldása
+jogi kockázatkezelési stratégia
+szavatosság és jótállás; reklámjog
+, versenyjog, fogyasztóvédelem az egészségügyben
+orvosi (egészségügyi szakmai)
+felelősségbiztosítás
+elkerülhető csapdái, és egyéb biztosítási tippek
+kapcsolat az
+egészségügyi hatóság ("ÁNTSZ")-NEAK
+-betegjogi képviselő-önkormányzat intézményeivel
+gyógyszer
+-, gyógyászati ellátás és
+gyógyászati segédeszköz
+rendelés; kábítószerrendelés, "színezős gyógyszeradatbázisok", szakorvosi javaslatok, közgyógyászati és egyéb szociális ellátások
+várólista-szabályok, beutalási rend, betegszállítás és mentés, utazási költségtérítés
+ellátási csomagok a TB rendszerben,
+jogszerű térítési díjak
+a közfinanszírozott egészségügyi ellátásokban; alkalmassági vizsgálatok
+külföldi beteg
+ellátásának veszélyei és specialitásai, határon átnyúló egészségügyi szolgáltatások és ellátások
+folyamatos
+kötelező továbbképzés
+szabályai
+ügyelet
+és készenlét - munkaidőszabályozás az egészségügyben
+gyógyszer- és gyógyászati segédeszköz ismertetés egészségügyi szolgáltatókra vonatkozó szabályai
+pszichiátriai jogi vonatkozások, veszélyeztető állapotok; távoltartás; hozzátartozók közötti erőszak; kiskorú elhanyagolása és veszélyeztetése;
+cselekvőképesség-beszámíthatóság
+; ittas és bódult állapot jogi megítélése
+halottvizsgálat,
+kórboncolás-hatósági boncolás
+, látlelet-biológiai mintavételek (vérvétel) szabályai
+Cikkek médiumai
+Webdoki, 2007-2008.
+Medical Online, 2013-2025.
+Lege Artis Medicinae, 2012-2013.
+Korszerű Kaleidoszkóp, 2015-2017.
+Immun-onkológia, 2016
+Családorvosi Fórum, 2007.
+A KÖR, 2007-2008.
+Háziorvosi Továbbképző Szemle, 2008-2009.
+Granum, 2010-2011.
+Medicus Anonymus, 2011-2013.
+Praxismenedzsment, 2012-2014.
+Orvostovábbképző Szemle, 2015.
+Dental Hírek, 2011-2015.
+Esztétika a fogászatban, 2011-2013.
+Lézer a fogászatban, 2013.
+Fogtechnika Dental Labor, 2013.
+Implantológia, 2013.
+Dental Tribune, 2015.
+Egészségügyi Szolgáltatók Lapja (pilot verzió, Fórum Média Kiadó, 2013)
+Med. et Jur., 2010-2025.
+Európai Jog, 2014
+Könyvek, önálló publikációk
+A betegek jogai és kötelezettségei (Fórum Média Kiadó, 2011; átdolgozás 2012)
+Egészségügy szakadatbázis, elektronikus Jogtár kiegészítés (pilot verzió, Complex Kiadó, 2012)
+Felelősség és kockázatmenedzsment az egészségügyben (Complex Kiadó, 2013)
+Kommentár az egészségügyi és a hozzájuk kapcsolódó személyes adatok kezeléséről és védelméről szóló 1997. évi XLVII. törvényhez (Complex Kiadó, 2013, átdolgozás 2019-2024)
+Könyvfejezetek
+A vállalkozó orvosok nagy kézikönyve (Complex Kiadó, 2011)
+Egészségkárosodáshoz kapcsolódó ellátások (Complex Kiadó, 2012)
+A gyógyszerészeti jog nagy kézikönyve (Complex Kiadó, 2013)
+Kommentár az egészségügyről szóló 1997. évi CLIV. törvényhez (Complex Kiadó, 2015, átdolgozás 2019-2024)
+Prezentációk
+kórházi szakorvosoknak, háziorvosoknak, asszisztenseknek egészségügyi-jogi témákról-aktualitásokról - Budapest, Székesfehérvár, Göd, Dunaújváros, Várpalota, Kaposvár, Pécs, Szekszárd, Baja, Visegrád, Siófok, Tata, Kiskunhalas, Paks, Velence, Bükfürdő, Miskolc, Szeged, Budaörs 2007-2025
+megtekinthető referencia előadás (Semmelweis Egyetem Elméleti Orvostudományi Központ Budapest - Vakcina nap, 2016.10.22.)
+Oktatás
+Semmelweis Egyetem Egészségügyi Menedzserképző Központ, oktató 2020
+ELTE Jogi Továbbképző Intézet egészségügyi szakjogászképzés, óraadó tanár 2011-től
+Óbudai Egyetem, kórház- és orvostechnikai mérnök MSc szakképzés, előadó 2024-től
+egészségügyi-jogi ismeretek oktatása laikusoknak; egészségügyi szakemberek képzése-továbbképzése; aktualitásokról szóló előadások, prezentációk, tréningek
+jogi ismeretek oktatása laikusoknak
+egészségügyi ismeretek oktatása laikusoknak, egészségügyi alap- és középfokú képzésben résztvevőknek (belgyógyászati alapismeretek oktatása szociális ápolóknak-gondozóknak, 2008)
+Letölthető anyagok
+(A letölthető anyagokat a szerzői jog védi és az abban foglaltak nem minősülnek jogi tanácsadásnak. Egészségügyi szakemberekhez szólnak; tájékoztató jellegűek, nem feltétlenül teljes körűek, egyes részeiben pedig a szerző álláspontját-véleményét tükrözik.)
+Térítési díjak a háziorvosi praxisban 2006. szeptember 19.
+Fehérvári Orvosklub 2006. november 21.
+Fehérvári Orvosklub 2006. december 19.
+Fehérvári Orvosklub 2007. január 16.
+Fehérvári Orvosklub 2007. február 20.
+Fehérvári Orvosklub 2007. március 20.
+Fehérvári Orvosklub 2007. április 17.
+Fehérvári Orvosklub 2007. május 15.
+Fehérvári Orvosklub 2007. június 19.
+Fehérvári Orvosklub 2007. szeptember 18.
+Folyó ügyek 2007. október 16.
+Folyó ügyek 2007. november 20.
+Folyó ügyek 2007. december 31.
+Folyó ügyek 2008. február 20.
+Folyó ügyek különszám 2008. március 13. pénztártörvény
+Folyó ügyek 2008. március 31.
+Folyó ügyek különszám 2008. március 31. élet a vizitdíj után
+Folyó ügyek 2008. április 30.
+Folyó ügyek 2008. május 31.
+Folyó ügyek 2008. június 30.
+Folyó ügyek 2008. október 31.
+Folyó ügyek 2008. november 30.
+Folyó ügyek 2009. január 1.
+Folyó ügyek 2009. január 31.
+Folyó ügyek 2009. február 28.
+Folyó ügyek 2009. március 31.
+Folyó ügyek 2009. április 30.
+Folyó ügyek 2009. május 31.
+Folyó ügyek 2009. július 1.
+Folyó ügyek 2009. július 31.
+Folyó ügyek 2009. augusztus 31.
+Folyó ügyek 2009. október 1.
+Folyó ügyek 2009. október 31.
+Folyó ügyek 2009. november 30.
+Folyó ügyek 2010. január 2.
+Folyó ügyek 2010. január 31.
+Folyó ügyek 2010. február 28.
+Folyó ügyek 2010. április 1.
+Folyó ügyek 2010. április 30.
+Folyó ügyek 2010. május 31.
+Folyó ügyek 2010. június 30.
+Folyó ügyek 2010. augusztus 1.
+Folyó ügyek 2010. augusztus 31.
+Folyó ügyek 2010. szeptember 30.
+Folyó ügyek 2010. október 31.
+Folyó ügyek 2010. november 30.
+Folyó ügyek 2010. december 31.
+Folyó ügyek 2011. január 31.
+Folyó ügyek 2011. február 28.
+Folyó ügyek 2011. március 31.
+Folyó ügyek 2011. április 30.
+Folyó ügyek 2011. május 31.
+Folyó ügyek 2011. július 1.
+Folyó ügyek 2011. július 31.
+Folyó ügyek 2011. augusztus 31.
+Folyó ügyek 2011. október 1.
+Folyó ügyek 2011. október 31.
+Folyó ügyek 2011. november 30.
+Folyó ügyek 2012. január 1.
+Folyó ügyek 2012. január 31.
+Folyó ügyek 2012. február 29. - MEGRENDELHETŐ!
+Folyó ügyek 2012. március 31. - MEGRENDELHETŐ!
+Folyó ügyek 2012. április 30. - MEGRENDELHETŐ!
+Folyó ügyek 2012. június 1. - MEGRENDELHETŐ!
+Folyó ügyek 2012. június 30. - MEGRENDELHETŐ!
+Folyó ügyek 2012. július 31. - MEGRENDELHETŐ!
+Folyó ügyek 2012. augusztus 31. - MEGRENDELHETŐ!
+Folyó ügyek 2012. szeptember 30. - MEGRENDELHETŐ!
+Folyó ügyek 2012. november 1. - MEGRENDELHETŐ!
+Folyó ügyek 2012. december 1. - MEGRENDELHETŐ!
+Folyó ügyek 2012. december 31. - MEGRENDELHETŐ!
+Folyó ügyek 2013. január 31. - MEGRENDELHETŐ!
+Folyó ügyek 2013. február 28. - MEGRENDELHETŐ!
+Folyó ügyek 2013. március 31. - MEGRENDELHETŐ!
+Folyó ügyek 2013. április 30. - MEGRENDELHETŐ!
+Folyó ügyek 2013. május 31. - MEGRENDELHETŐ!
+Folyó ügyek 2013. június 30. - MEGRENDELHETŐ!
+Folyó ügyek 2013. július 31. - MEGRENDELHETŐ!
+Folyó ügyek 2013. augusztus 31. - MEGRENDELHETŐ!
+Folyó ügyek 2013. szeptember 30. - MEGRENDELHETŐ!
+Folyó ügyek 2013. október 31. - MEGRENDELHETŐ!
+Folyó ügyek 2013. november 30. - MEGRENDELHETŐ!
+Folyó ügyek 2014. január 1. - MEGRENDELHETŐ!
+Folyó ügyek 2014. február 1. - MEGRENDELHETŐ!
+Folyó ügyek 2014. március 1. - MEGRENDELHETŐ!
+Folyó ügyek 2014. március 31. - MEGRENDELHETŐ!
+Folyó ügyek 2014. május 1. - MEGRENDELHETŐ!
+Folyó ügyek 2014. május 31. - MEGRENDELHETŐ!
+Folyó ügyek 2014. június 30. - MEGRENDELHETŐ !
+Folyó ügyek 2014. július 31. - MEGRENDELHETŐ!
+Folyó ügyek 2014. augusztus 31. - MEGRENDELHETŐ!
+Folyó ügyek 2014. szeptember 30. - MEGRENDELHETŐ!
+Folyó ügyek 2014. október 31. - MEGRENDELHETŐ!
+Folyó ügyek 2014. november 30. - MEGRENDELHETŐ!
+Folyó ügyek 2015. január 1. - MEGRENDELHETŐ!
+Folyó ügyek 2015. január 31. - MEGRENDELHETŐ!
+Folyó ügyek 2015. február 28. - MEGRENDELHETŐ!
+Folyó ügyek 2015. március 31. - MEGRENDELHETŐ!
+Folyó ügyek 2015. április 30. - MEGRENDELHETŐ!
+Folyó ügyek 2015. május 31. - MEGRENDELHETŐ!
+Folyó ügyek 2015. június 30. - MEGRENDELHETŐ!
+Folyó ügyek 2015. július 31. - MEGRENDELHETŐ!
+Folyó ügyek 2015. augusztus 31. - MEGRENDELHETŐ!
+Folyó ügyek 2015. szeptember 30. - MEGRENDELHETŐ!
+Folyó ügyek 2015. október 31. - MEGRENDELHETŐ!
+Folyó ügyek 2015. november 30. - MEGRENDELHETŐ!
+Folyó ügyek 2015. december 31. - MEGRENDELHETŐ!
+Folyó ügyek 2016. január 31. - MEGRENDELHETŐ!
+Folyó ügyek 2016. február 29. - MEGRENDELHETŐ!
+Folyó ügyek 2016. március 31. - MEGRENDELHETŐ!
+Folyó ügyek 2016. április 30. - MEGRENDELHETŐ!
+Folyó ügyek 2016. május 31. - MEGRENDELHETŐ!
+Folyó ügyek 2016. június 30. - MEGRENDELHETŐ!
+Folyó ügyek 2016. július 31. - MEGRENDELHETŐ!
+Folyó ügyek 2016. augusztus 31. - MEGRENDELHETŐ!
+Folyó ügyek 2016. szeptember 30. - MEGRENDELHETŐ!
+Folyó ügyek 2016. október 31. - MEGRENDELHETŐ!
+Folyó ügyek 2016. november 30. - MEGRENDELHETŐ!
+Folyó ügyek 2016. december 31. - MEGRENDELHETŐ!
+Folyó ügyek 2017. január 31. - MEGRENDELHETŐ!
+Folyó ügyek 2017. február 28. - MEGRENDELHETŐ!
+Folyó ügyek 2017. március 31. - MEGRENDELHETŐ!
+Folyó ügyek 2017. április 30. - MEGRENDELHETŐ!
+Folyó ügyek 2017. május 31. - MEGRENDELHETŐ!
+Folyó ügyek 2017. június 30. - MEGRENDELHETŐ!
+Folyó ügyek 2017. július 31. - MEGRENDELHETŐ!
+Folyó ügyek 2017. augusztus 31. - MEGRENDELHETŐ!
+Folyó ügyek 2017. szeptember 30. - MEGRENDELHETŐ
+Folyó ügyek 2017. október 31. - MEGRENDELHETŐ!
+Folyó ügyek 2017. november 30. - MEGRENDELHETŐ!
+Folyó ügyek 2017. december 31. - MEGRENDELHETŐ!
+Folyó ügyek 2018. január 31. - MEGRENDELHETŐ!
+Folyó ügyek 2018. február 28. - MEGRENDELHETŐ!
+Folyó ügyek 2018. március 31. - MEGRENDELHETŐ!
+Folyó ügyek 2018. április 30. - MEGRENDELHETŐ!
+Folyó ügyek 2018. május 31. - MEGRENDELHETŐ!
+Folyó ügyek 2018. június 30. - MEGRENDELHETŐ!
+Folyó ügyek 2018. július 31. - MEGRENDELHETŐ!
+Folyó ügyek 2018. augusztus 31. - MEGRENDELHETŐ!
+A Folyó ügyek továbbra is havonta megjelenik és megrendelhető, de absztraktja már nem kerül fel a honlapra.
+A Szövetség egyesületi formában létrejött civilszervezet. Elsődlegesen érdek- és jogvédelmi szervezetként működik. Célja, hogy tagjai érdekeit különösen – de nem kizárólagosan - az alábbi területeken a leghatékonyabban képviselje és érvényre juttassa:
+a) Egészségügyben foglalkoztatottak illetve e területen működő egészségügyi szolgáltatók érdekeinek széleskörű védelme.
+b) Társadalombiztosítási és szociális ellátások iránti igény-érvényesítés elősegítése.
+c) Biztosítási és kereskedelmi szerződésből fakadó igény-érvényesítés elősegítése.
+d) Személyi sérülés, betegség, egészségromlás, fogyatékosság elszenvedése kapcsán jelentkező kártérítési igények érvényesítésének elősegítése.
+e) Gazdálkodó szervezetek, vállalkozások üzleti érdekeinek védelme, üzleti kapcsolataikból fakadó igény-érvényesítés elősegítése.
+f) Általános érdek- és jogvédelmi feladatok ellátása, ideértve a fogyasztói érdekképviseletet is.
+A Szövetség fenti feladatkörében:
+a) Ellátja tagjai jogvédelmét és érdekképviseletét.
+b) Előadásokat, képzéseket, továbbképzéseket, tanfolyamokat szervez; tanácsokat ad.
+c) Működését érintő területeken a jogharmonizációban és a jogszabályrendszer egységes szerkezetbe tételével, jogszabályok előkészítésében, azok véleményezésében, valamint a meglévőknek a szakmailag és jogilag indokolt módosítások indítványozásában közreműködik.
+d) Együttműködik a Szövetség céljai közé tartozó területekre specializálódott szakemberekkel és társszervezetekkel.
+e) A médiumok – ideértve minden info-kommunikációs csatornát is – útján tagjainak közvélemény általi megítélését jobbító, működésük, véleményük megismerését segítő kommunikációt folyat.
+A Szövetség tevékenysége politikamentes, a célkitűzései szerinti szakmapolitikai kérdéseket viszont kompetenciájába tartozónak tekinti.
+dr. Hanti Péter Elnök, alapító tag
+Magyar Igazságügyi Szakértői Kamara rendes tagja
+Hanti Norbert
+angoltanár
+Egyéni és kiscsoportos angol nyelvoktatás, nyelvvizsgára felkészítés, üzleti angol oktatás, fordítás, tolmácsolás.
+Speciális igény esetén személyre szabott kurzus.
+Cégeknek szerződés alapján is.
+Kapcsolat:
+noreszh@gmail.com
+© Inspekció 99 Orvosi BT. - 2018.

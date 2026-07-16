@@ -19,7 +19,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -29,12 +30,12 @@
 <div id="head"></div>
 <div id="menu">
 <ul>
-<li class=""><a class="" data-review-original-href="/" href="#" tabindex="-1">Hírek</a></li>
-<li class=""><a class="" data-review-original-href="/documents" href="#" tabindex="-1">Dokumentumok</a></li>
-<li class=""><a class="" data-review-original-href="/gallery" href="#" tabindex="-1">Képgaléria</a></li>
-<li class=""><a class="" data-review-original-href="/links" href="#" tabindex="-1">Linkek</a></li>
-<li class=""><a class="" data-review-original-href="/guestbook" href="#" tabindex="-1">Vendégkönyv</a></li>
-<li class=""><a class="" data-review-original-href="/availability" href="#" tabindex="-1">Elérhetőség</a></li>
+<li><a data-review-original-href="/" href="#" tabindex="-1">Hírek</a></li>
+<li><a data-review-original-href="/documents" href="#" tabindex="-1">Dokumentumok</a></li>
+<li><a data-review-original-href="/gallery" href="#" tabindex="-1">Képgaléria</a></li>
+<li><a data-review-original-href="/links" href="#" tabindex="-1">Linkek</a></li>
+<li><a data-review-original-href="/guestbook" href="#" tabindex="-1">Vendégkönyv</a></li>
+<li><a data-review-original-href="/availability" href="#" tabindex="-1">Elérhetőség</a></li>
 <li><a data-review-original-href="http://www.magyarorszag.hu/" href="#" tabindex="-1" target="_blank">eMagyarország Ügyfélkapu</a></li>
 <li><a data-review-original-href="mailto:pmhiv@enying.eu" href="#" tabindex="-1">E-mail küldés</a></li>
 <li class="eyeless"><a data-review-original-href="/default/eyeless" href="#" tabindex="-1"><img alt="Icon_wai"/></a></li>
@@ -178,8 +179,8 @@
 <div id="center">
 <div id="breadcrumbs">
 <a data-review-original-href="/" href="#" tabindex="-1">Főoldal</a> »
-
-
+    
+  
       <strong>Egészségügyi szolgáltatók</strong>
 </div>
 <div class="body">

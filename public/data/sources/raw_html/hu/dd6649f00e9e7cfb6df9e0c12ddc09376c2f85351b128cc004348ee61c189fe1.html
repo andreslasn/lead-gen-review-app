@@ -45,7 +45,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -81,10 +82,10 @@
 <li class="stuck-show home">
 <a aria-label="Kezdőoldal" data-review-original-href="/" href="#" tabindex="-1" target=""></a>
 </li>
-<li class="">
+<li>
 <a aria-label="Híreink" data-review-original-href="/media/hirek" href="#" tabindex="-1" target="">Híreink</a>
 </li>
-<li class="">
+<li>
 <span aria-label="A város" tabindex="0">
 							A Város
 							<i class="fa fa-caret-down"></i>
@@ -97,16 +98,16 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="A város története" data-review-original-href="/a-varos" href="#" tabindex="-1" target="">A város története</a>
 </li>
-<li class="">
+<li>
 <a aria-label="A város címere" data-review-original-href="/a-varos/a-varos-cimere" href="#" tabindex="-1" target="">A város címere</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Földrajzi adatok" data-review-original-href="/a-varos/foldrajzi-adatok" href="#" tabindex="-1" target="">Földrajzi adatok</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Testvérvárosok" data-review-original-href="/a-varos/testvervarosok" href="#" tabindex="-1" target="">Testvérvárosok</a>
 </li>
 </ul>
@@ -119,34 +120,34 @@
 <div>
 <div class="title">Intézmények</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Önkormányzati Szociális Szolgálat" data-review-original-href="/intezmenyek/onkormanyzati-szocialis-szolgalat" href="#" tabindex="-1" target="">Önkormányzati Szociális Szolgálat</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Önkormányzati Tűzoltóparancsnokság" data-review-original-href="/intezmenyek/onkormanyzati-tuzoltoparancsnoksag" href="#" tabindex="-1" target="">Önkormányzati Tűzoltóparancsnokság</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Egészségügyi szolgáltatók" data-review-original-href="/intezmenyek/rendelointezet" href="#" tabindex="-1" target="">Egészségügyi szolgáltatók</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Mentőállomás" data-review-original-href="/intezmenyek/mentoallomas" href="#" tabindex="-1" target="">Mentőállomás</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Rendőrség" data-review-original-href="/intezmenyek/rendorseg" href="#" tabindex="-1" target="">Rendőrség</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Kulturális intézmények" data-review-original-href="/intezmenyek/kulturalis-intezmenyek" href="#" tabindex="-1" target="">Kölcsey Ferenc Művelődési Központ és Könyvtár</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Sportlétesítmények" data-review-original-href="/intezmenyek/sportletesitmenyek" href="#" tabindex="-1" target="">Sportlétesítmények</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Ebrendészeti telep" data-review-original-href="/intezmenyek/ebrendeszeti-telep" href="#" tabindex="-1" target="">Ebrendészeti telep</a>
 </li>
 </ul>
 <div class="title">Alapítványok</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Alapítványok" data-review-original-href="/onkormanyzat/alapitvanyok" href="#" tabindex="-1" target="">Alapítványok</a>
 </li>
 </ul>
@@ -158,25 +159,25 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Oroszlány Város Óvodái" data-review-original-href="/intezmenyek/oroszlany-varos-ovodai" href="#" tabindex="-1" target="">Oroszlány Város Óvodái</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Általános Iskolák" data-review-original-href="/intezmenyek/altalanos-iskolak" href="#" tabindex="-1" target="">Általános Iskolák</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Középfokú Intézmények" data-review-original-href="/intezmenyek/kozepfoku-intezmenyek" href="#" tabindex="-1" target="">Középfokú Intézmények</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Tatabányai Tankerületi Központ" data-review-original-href="/intezmenyek/tatabanyai-tankeruleti-kozpont" href="#" tabindex="-1" target="">Tatabányai Tankerületi Központ</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Pedagógiai Szakszolgálat" data-review-original-href="/intezmenyek/pedagogiai-szakszolgalat" href="#" tabindex="-1" target="">Pedagógiai Szakszolgálat</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Bakfark Bálint AMI" data-review-original-href="/intezmenyek/bakfark-balint-alapfoku-muveszeti-intezmeny" href="#" tabindex="-1" target="">Bakfark Bálint AMI</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Tatabányai Szakképzési Centrum" data-review-original-href="/intezmenyek/tatabanyai-szakkepzesi-centrum" href="#" tabindex="-1" target="">Tatabányai Szakképzési Centrum</a>
 </li>
 </ul>
@@ -188,25 +189,25 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Nevezetességek, látnivalók" data-review-original-href="/a-varos/nevezetessegek-latnivalok" href="#" tabindex="-1" target="">Nevezetességek, látnivalók</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Bányászati Múzeum" data-review-original-href="/a-varos/banyaszati-muzeum" href="#" tabindex="-1" target="">Bányászati Múzeum</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Szlovák tájház" data-review-original-href="/a-varos/szlovak-" href="#" tabindex="-1" target="">Szlovák tájház</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Majk" data-review-original-href="/a-varos/majk" href="#" tabindex="-1" target="">Majk</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Vértesszentkereszt" data-review-original-href="/a-varos/vertesszentkereszt" href="#" tabindex="-1" target="">Vértesszentkereszt</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Kiadványok" data-review-original-href="/media/kiadvanyok" href="#" tabindex="-1" target="">Kiadványok</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Települési Értéktár" data-review-original-href="/a-varos/telepulesi-ertektar" href="#" tabindex="-1" target="">Települési Értéktár</a>
 </li>
 </ul>
@@ -218,7 +219,7 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a data-review-original-href="/onkormanyzat/beruhazasok" href="#" tabindex="-1">Beruházások</a>
 </li>
 </ul>
@@ -230,7 +231,7 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Kitüntetettek" data-review-original-href="/a-varos/kituntetettek" href="#" tabindex="-1" target="">Kitüntetettek</a>
 </li>
 </ul>
@@ -239,7 +240,7 @@
 </ul>
 </div>
 </li>
-<li class="">
+<li>
 <span aria-label="Városháza" tabindex="0">
 							Városháza
 							<i class="fa fa-caret-down"></i>
@@ -252,52 +253,52 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Polgármesteri Hivatal" data-review-original-href="/hivatalok/polgarmesteri-hivatal" href="#" tabindex="-1" target="">Polgármesteri Hivatal</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Ügyfélfogadás" data-review-original-href="/hivatalok/polgarmesteri-hivatal/ugyfelfogadas" href="#" tabindex="-1" target="">Ügyfélfogadás</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Polgármester" data-review-original-href="/hivatalok/polgarmesteri-hivatal/polgarmester" href="#" tabindex="-1" target="">Polgármester</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Polgármesteri köszöntő" data-review-original-href="/a-varos/polgarmesteri-koszonto" href="#" tabindex="-1" target="">Polgármesteri köszöntő</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Jegyző" data-review-original-href="/hivatalok/polgarmesteri-hivatal/jegyzo" href="#" tabindex="-1" target="">Jegyző</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Jogi- és működtetési csoport" data-review-original-href="/hivatalok/polgarmesteri-hivatal/jogi-es-mukodtetesi-csoport" href="#" tabindex="-1" target="">Jogi- és működtetési csoport</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Humánpolitikai csoport" data-review-original-href="/hivatalok/polgarmesteri-hivatal/humanpolitikai-csoport" href="#" tabindex="-1" target="">Humánpolitikai csoport</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Közétkeztetési csoport" data-review-original-href="/hivatalok/polgarmesteri-hivatal/kozetkeztetesi-csoport" href="#" tabindex="-1" target="">Közétkeztetési csoport</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Pénzügyi Iroda" data-review-original-href="/hivatalok/polgarmesteri-hivatal/penzugyi-iroda" href="#" tabindex="-1" target="">Pénzügyi Iroda</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Hatósági és Humánszolgáltatási Iroda" data-review-original-href="/hivatalok/polgarmesteri-hivatal/hatosagi-es-humanszolgaltatasi-iroda" href="#" tabindex="-1" target="">Hatósági és Humánszolgáltatási Iroda</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Városrendészeti Iroda" data-review-original-href="/hivatalok/polgarmesteri-hivatal/varosrendeszeti-iroda" href="#" tabindex="-1" target="">Városrendészeti Iroda</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Aljegyző" data-review-original-href="/hivatalok/polgarmesteri-hivatal/aljegyzo" href="#" tabindex="-1" target="">Aljegyző</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Műszaki Iroda" data-review-original-href="/hivatalok/polgarmesteri-hivatal/muszaki-iroda" href="#" tabindex="-1" target="">Műszaki Iroda</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Projektiroda" data-review-original-href="/hivatalok/polgarmesteri-hivatal/projektiroda" href="#" tabindex="-1" target="">Projektiroda</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Képviselő-testületi csoport" data-review-original-href="/hivatalok/polgarmesteri-hivatal/kepviselo-testuleti-csoport" href="#" tabindex="-1" target="">Képviselő-testületi csoport</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Belső ellenőrzés" data-review-original-href="/hivatalok/polgarmesteri-hivatal/belso-ellenorzes" href="#" tabindex="-1" target="">Belső ellenőrzés</a>
 </li>
 </ul>
@@ -310,40 +311,40 @@
 <div>
 <div class="title">Képviselő testület</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Képviselő testület" data-review-original-href="/onkormanyzat/kepviselo-testulet" href="#" tabindex="-1" target="">Képviselő testület</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Képviselői tájékoztatók" data-review-original-href="/onkormanyzat/vedett-tartalom" href="#" tabindex="-1" target="">Képviselői tájékoztatók</a>
 </li>
 </ul>
 <div class="title">Bizottságok</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Pénzügyi és Humán Bizottság" data-review-original-href="/onkormanyzat/penzugyi-es-human-bizottsag" href="#" tabindex="-1" target="">Pénzügyi és Humán Bizottság</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Város- és Gazdaságfejlesztési Bizottság" data-review-original-href="/onkormanyzat/varos-es-gazdasagfejlesztesi-bizottsag" href="#" tabindex="-1" target="">Város- és Gazdaságfejlesztési Bizottság</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Együttes Bizottság" data-review-original-href="/onkormanyzat/egyuttes-bizottsag" href="#" tabindex="-1" target="">Együttes Bizottság</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Archív bizottságok" data-review-original-href="/onkormanyzat/archiv-bizottsagok" href="#" tabindex="-1" target="">Archív bizottságok</a>
 </li>
 </ul>
 <div class="title">Nemzetiségi önkormányzatok</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Oroszlányi Szlovák Nemzetiségi Önkormányzat" data-review-original-href="/onkormanyzat/oroszlanyi-szlovak-nemzetisegi-onkormanyzat" href="#" tabindex="-1" target="">Oroszlányi Szlovák Nemzetiségi Önkormányzat</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Oroszlányi Roma Nemzetiségi Önkormányzat" data-review-original-href="/onkormanyzat/oroszlanyi-roma-nemzetisegi-onkormanyzat" href="#" tabindex="-1" target="">Oroszlányi Roma Nemzetiségi Önkormányzat</a>
 </li>
 </ul>
 <div class="title">Ifjúsági önkormányzat</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Oroszlányi Ifjúsági Önkormányzat" data-review-original-href="/onkormanyzat/ifjusagi-onkormanyzat" href="#" tabindex="-1" target="">Oroszlányi Ifjúsági Önkormányzat</a>
 </li>
 </ul>
@@ -356,43 +357,43 @@
 <div>
 <div class="title">Rendeletek, határozatok, beszámolók</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Rendeletek" data-review-original-href="/onkormanyzat/rendeletek" href="#" tabindex="-1" target="">Rendeletek</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Határozatok" data-review-original-href="/onkormanyzat/hatarozatok" href="#" tabindex="-1" target="">Határozatok</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Vészhelyzetben hozott polgármesteri határozatok" data-review-original-href="/onkormanyzat/veszhelyzetben-hozott-polgarmesteri-hatarozatok" href="#" tabindex="-1" target="">Vészhelyzetben hozott polgármesteri határozatok</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Szerződések" data-review-original-href="/onkormanyzat/szerzodesek" href="#" tabindex="-1" target="">Szerződések</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Költségvetési beszámolók" data-review-original-href="/onkormanyzat/koltsegvetesi-beszamolok" href="#" tabindex="-1" target="">Költségvetési beszámolók</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Céljellegű támogatások" data-review-original-href="/onkormanyzat/celjellegu-tamogatasok" href="#" tabindex="-1" target="">Céljellegű támogatások</a>
 </li>
 </ul>
 <div class="title">Tervek, szabályzatok</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Tervek, koncepciók" data-review-original-href="/onkormanyzat/tervek-koncepciok" href="#" tabindex="-1" target="">Tervek, koncepciók</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Közérdekű adatok" data-review-original-href="/onkormanyzat/kozerdeku-adatok" href="#" tabindex="-1" target="">Közérdekű adatok</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Gazdasági Program" data-review-original-href="/onkormanyzat/gazdasagi-program" href="#" tabindex="-1" target="">Gazdasági Program</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Település Arculati Kézikönyv" data-review-original-href="/onkormanyzat/telepuleskepi-arculati-kezikonyv" href="#" tabindex="-1" target="">Település Arculati Kézikönyv</a>
 </li>
 </ul>
 <div class="title">Programtervek, elképzelések 2024-2029</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Programtervek, elképzelések 2024-2029" data-review-original-href="/onkormanyzat/programtervek-elkepzelesek-2024-2029" href="#" tabindex="-1" target="">Programtervek, elképzelések 2024-2029</a>
 </li>
 </ul>
@@ -404,7 +405,7 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Közbeszerzések" data-review-original-href="/onkormanyzat/kozbeszerzesek" href="#" tabindex="-1">Közbeszerzések</a>
 </li>
 </ul>
@@ -416,10 +417,10 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Uniós projektek" data-review-original-href="/onkormanyzat/unios-projektek" href="#" tabindex="-1">Uniós támogatású projektek</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="/onkormanyzat/hazai-projektek" href="#" tabindex="-1">Hazai támogatású projektek</a>
 </li>
 </ul>
@@ -432,34 +433,34 @@
 <div>
 <div class="title">Ügyintézés</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Ügyintézés" data-review-original-href="/hivatalok/ugyintezes" href="#" tabindex="-1" target="">Ügyintézés</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Elektronikus ügyintézés" data-review-original-href="/hivatalok/ugyintezes/onkormanyzati-elektronikus-ugyintezes" href="#" tabindex="-1" target="">Elektronikus ügyintézés</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Járási Hivatal" data-review-original-href="/hivatalok/jarasi-hivatal" href="#" tabindex="-1" target="">Járási Hivatal</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Posta" data-review-original-href="/intezmenyek/posta" href="#" tabindex="-1" target="">Posta</a>
 </li>
 </ul>
 <div class="title">Pályázatok, hirdetések</div>
 <ul>
-<li class="">
+<li>
 <a data-review-original-href="/onkormanyzat/palyazatok" href="#" tabindex="-1">Ingatlan- és állás pályázatok</a>
 </li>
 </ul>
 <div class="title">Hirdetmények</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Hirdetmények" data-review-original-href="/onkormanyzat/hirdetmenyek" href="#" tabindex="-1" target="">Hirdetmények</a>
 </li>
 </ul>
 <div class="title">Közérdekű bejelentések és panaszok bejelentése</div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Közlemény a közérdekű bejelentések és panaszok bejelentéséről" data-review-original-href="/hivatalok/polgarmesteri-hivatal/panaszkezeles" href="#" tabindex="-1" target="">Közlemény a közérdekű bejelentések és panaszok bejelentéséről</a>
 </li>
 </ul>
@@ -468,7 +469,7 @@
 </ul>
 </div>
 </li>
-<li class="">
+<li>
 <span aria-label="Média" tabindex="0">
 							Média
 							<i class="fa fa-caret-down"></i>
@@ -481,22 +482,22 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Fotógaléria" data-review-original-href="/media/fototar" href="#" tabindex="-1" target="">Fotógaléria</a>
 </li>
-<li class="">
+<li>
 <a aria-label="2840" data-review-original-href="/media/2840" href="#" tabindex="-1" target="">2840</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Oroszlányi Médiacentrum" data-review-original-href="https://www.oroszlanyimedia.hu/" href="#" tabindex="-1" target="_blank">Oroszlányi Médiacentrum</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Oroszlány az Facebookon" data-review-original-href="https://www.facebook.com/oroszlany.hu" href="#" tabindex="-1" target="_blank">Oroszlány az Facebookon</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Oroszlány az Instagramon" data-review-original-href="https://www.instagram.com/oroszlany_hungary/" href="#" tabindex="-1" target="_blank">Oroszlány az Instagramon</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Lakossági médiahasználat" data-review-original-href="/media/a-varos-lakoinak-mediahasznalata" href="#" tabindex="-1" target="">Lakossági médiahasználat</a>
 </li>
 </ul>
@@ -505,10 +506,10 @@
 </ul>
 </div>
 </li>
-<li class="">
+<li>
 <a aria-label="Közérdekű adatok" data-review-original-href="/kozerdeku" href="#" tabindex="-1">Közérdekű adatok</a>
 </li>
-<li class="">
+<li>
 <span aria-label="Választás" tabindex="0">
 							Választás
 							<i class="fa fa-caret-down"></i>
@@ -521,10 +522,10 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Választási iroda" data-review-original-href="/onkormanyzat/2026-evi-parlamenti-valasztasok/2026-valasztasi-iroda" href="#" tabindex="-1" target="">Választási iroda</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Választási bizottság" data-review-original-href="/onkormanyzat/2026-evi-parlamenti-valasztasok/2026-valasztasi-bizottsag" href="#" tabindex="-1" target="">Választási bizottság</a>
 </li>
 </ul>
@@ -536,10 +537,10 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Választási ügyintézés" data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1" target="_blank">Választási ügyintézés</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Országgyűlési képviselők választása 2026" data-review-original-href="https://vtr.valasztas.hu/ogy2026" href="#" tabindex="-1" target="_blank">Országgyűlési képviselők választása 2026</a>
 </li>
 </ul>
@@ -551,10 +552,10 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Választási Iroda" data-review-original-href="/onkormanyzat/2026-evi-parlamenti-valasztasok/2026-valasztasi-iroda" href="#" tabindex="-1" target="">Választási Iroda</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Választási Bizottság" data-review-original-href="/onkormanyzat/2026-evi-parlamenti-valasztasok/2026-valasztasi-bizottsag" href="#" tabindex="-1" target="">Választási Bizottság</a>
 </li>
 </ul>
@@ -566,28 +567,28 @@
 			</span>
 <div>
 <ul>
-<li class="">
+<li>
 <a aria-label="Parlamenti választások 2018" data-review-original-href="/onkormanyzat/valasztas2018" href="#" tabindex="-1" target="">Parlamenti választások 2018</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Helyi önkormányzati képviselők és polgármester választása 2019." data-review-original-href="/onkormanyzat/helyi-onkormanyzati-kepviselok-es-polgarmester-valasztasa-2019" href="#" tabindex="-1" target="">Helyi önkormányzati képviselők és polgármester választása 2019.</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Az Európai Parlament tagjainak választása 2019." data-review-original-href="/onkormanyzat/az-europai-parlament-tagjainak-valasztasa-2019" href="#" tabindex="-1" target="">Az Európai Parlament tagjainak választása 2019.</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Parlamenti választások 2022" data-review-original-href="/onkormanyzat/valasztas2022" href="#" tabindex="-1" target="">Parlamenti választások 2022</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Időközi helyi önkormányzati képviselő választás 2023/1" data-review-original-href="/onkormanyzat/idokozi-helyi-onkormanyzati-kepviselo-valasztas-2023-1" href="#" tabindex="-1" target="">Időközi helyi önkormányzati képviselő választás 2023/1</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Időközi helyi önkormányzati képviselő választás 2023/2" data-review-original-href="/onkormanyzat/idokozi-helyi-onkormanyzati-kepviselo-valasztas-2023-2" href="#" tabindex="-1" target="">Időközi helyi önkormányzati képviselő választás 2023/2</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Általános választások 2024" data-review-original-href="/onkormanyzat/2024-evi-altalanos-valasztasok" href="#" tabindex="-1" target="">Általános választások 2024</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Időközi választások 2024" data-review-original-href="/onkormanyzat/2024-evi-idokozi-valasztasok" href="#" tabindex="-1" target="">Időközi választások 2024</a>
 </li>
 </ul>

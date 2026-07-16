@@ -166,7 +166,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 		.events_calendar_list .calendar-event-details:hover .calendar-event-title,
         .etn-event-item:hover .etn-title a,
 		.etn-recurring-widget .etn-date-text,
-
+		
 		.etn-event-header ul li i {
             color: #5D78FF;
         }
@@ -275,7 +275,8 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

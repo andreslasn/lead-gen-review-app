@@ -368,7 +368,8 @@ h4:before,
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -401,7 +402,7 @@ h4:before,
 </div></a>
 </div>
 <nav class="uk-navbar uk-hidden-small uk-flex uk-flex-right">
-<div class="">
+<div>
 <div class="uk-float-left">
 <ul class="uk-navbar-nav uk-hidden-small">
 <li aria-expanded="false" aria-haspopup="true" class="uk-parent" data-uk-dropdown="{'preventflip':'y'}"><a data-review-original-href="#" href="#" tabindex="-1">Városunk</a>
@@ -627,7 +628,7 @@ h4:before,
 <div class="uk-modal-dialog uk-modal-dialog-small">
 <a class="uk-modal-close uk-close" data-review-original-href="" href="#" tabindex="-1"></a>
 <div class="uk-modal-header"><h3 class="uk-panel-title">Log In</h3></div>
-<div class="">
+<div>
 <div data-review-disabled-form="true">
 <div class="uk-form-row">
 <div class="uk-form-icon uk-width-1-1">
@@ -660,7 +661,7 @@ h4:before,
 </div></div>
 </div> </div>
 <div class="modal-x">
-<div class="">
+<div>
 <div class="uk-modal" id="impressum">
 <div class="uk-modal-dialog"><a class="uk-modal-close uk-close" data-review-original-href="/" href="#" tabindex="-1"></a>
 <div class="uk-modal-header">Impressum</div>

@@ -196,7 +196,8 @@ body #tribe-events-pg-template{
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -1309,7 +1310,7 @@ body #tribe-events-pg-template{
 <button aria-label="Cookie settings" id="cookie-settings-icon" style="display: none;">
 <img alt="Logo" class="cookie-logo"/>
 </button>
-<div class="szechenyi_2020_logo" id="szechenyi_2020_logo"><a data-review-original-href="https://val.hu/petofi-sandor-utca-fejlesztese/" href="#" tabindex="-1"><img alt="Széchenyi 2020 logó az alsó pozícióban" loading="lazy" width="300px"/></a></div>
+<div class="szechenyi_2020_logo" id="szechenyi_2020_logo"><a data-review-original-href="https://val.hu/petofi-sandor-utca-fejlesztese/" href="#" tabindex="-1"><img alt="Széchenyi 2020 logó az alsó pozícióban" loading="lazy" width="300px"/></a></div> 
 <a data-review-original-href="https://val.hu/magyar-falu-program/" href="#" style="
             position: fixed;
             bottom: 110px;
@@ -1323,7 +1324,7 @@ body #tribe-events-pg-template{
                 display: block;
              "/>
 </a>
-
+ 
 
 
 

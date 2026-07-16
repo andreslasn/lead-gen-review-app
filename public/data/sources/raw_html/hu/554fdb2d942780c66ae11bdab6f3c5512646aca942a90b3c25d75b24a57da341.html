@@ -79,7 +79,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 </style>
 
 <style id="ui-fontsize.css-inline-css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
@@ -96,7 +96,7 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
 
 
 <style id="admin-menu-logo-css" type="text/css">
-            .asenha-admin-logo .ab-item,
+            .asenha-admin-logo .ab-item, 
             .asenha-admin-logo a {
                 line-height: 28px !important;
                 display: flex;
@@ -107,12 +107,12 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
                 vertical-align: middle;
                 height: 20px !important;
             }
-
+            
             @media screen and (max-width: 782px) {
                 #wpadminbar li#wp-admin-bar-asenha-admin-bar-logo {
                     display: block;
                 }
-
+                
                 #wpadminbar li#wp-admin-bar-asenha-admin-bar-logo a {
                     display: flex;
                     margin-left: 8px;
@@ -136,7 +136,7 @@ a {transition:.4s !important}
 a:focus{color:red;border-bottom: 3px solid red;}
 :not( .mejs-button ) > button:focus{border: 2px solid red;}}
 
-.navigation-top .current-menu-item > a,
+.navigation-top .current-menu-item > a, 
 .navigation-top .current_page_item > a,
 .main-navigation a:hover {
     color: #fff;
@@ -154,7 +154,8 @@ select:focus{
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

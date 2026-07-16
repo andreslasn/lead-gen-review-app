@@ -25,7 +25,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -119,9 +120,9 @@
 <div class="container">
 <div class="section-head">
 <ul class="bcrumbs clearfix padding-vertical-10">
-<li class=""><a data-review-original-href="" href="#" tabindex="-1">Kezdőlap</a></li>
-<li class=""><a data-review-original-href="hirek" href="#" tabindex="-1">Hírek</a></li>
-<li class=""><a data-review-original-href="hirek-esemenyek" href="#" tabindex="-1">Hírek, események</a></li>
+<li><a data-review-original-href="" href="#" tabindex="-1">Kezdőlap</a></li>
+<li><a data-review-original-href="hirek" href="#" tabindex="-1">Hírek</a></li>
+<li><a data-review-original-href="hirek-esemenyek" href="#" tabindex="-1">Hírek, események</a></li>
 <li class="active">Kitüntették Kecskemét kiválóságait a Közgyűlésen</li>
 </ul>
 </div>

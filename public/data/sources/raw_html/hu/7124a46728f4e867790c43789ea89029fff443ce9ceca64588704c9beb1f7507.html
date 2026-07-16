@@ -9,7 +9,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -117,7 +118,7 @@
 <tr>
 <td valign="top">
 <div id="tartalom">
-
+         
            ﻿<h1>Köszöntöm honlapomon!
 <br/></h1>
 <p>A honlap betegeim tájékoztatásának céljából készült. Információkat találhat a rendelésről, előjegyzésről többek között. Ötleket, észrevételeket szívesen veszek személyes találkozásaink során a honlappal kapcsolatosan.

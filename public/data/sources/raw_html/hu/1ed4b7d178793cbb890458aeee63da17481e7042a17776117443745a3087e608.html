@@ -73,7 +73,8 @@ div.mod_search225 input[type="search"]{ width:auto; }
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -2008,15 +2009,15 @@ div.mod_search225 input[type="search"]{ width:auto; }
 <div class="sz2020"><img alt="sz2020" style="float: right;"/></div>
 <div class="szt" style="position: fixed; bottom: 50px; left: 0; width: 15%; z-index: 999;"><a data-review-original-href="/index.php/onkormanyzat/projektek" href="#" tabindex="-1"><img alt=""/></a></div></div>
 
-<style type="text/css">
+<style type="text/css">  
 	.jb.cookie.color p a {
 		color: #37a4fc;
-	}
+	} 
 
 	.jb.bgcolor {
 		background: #000000;
 	}
-
+	
 	.jb.cookie.top {
 		border-bottom: 1px solid #024175;
 	}
@@ -2024,11 +2025,11 @@ div.mod_search225 input[type="search"]{ width:auto; }
 	.jb.cookie.bottom {
 		border-top: 1px solid #37a4fc;
 	}
-
+	
 	.jb.color {
 		color: #ffffff;
 	}
-
+	
 	.jb.accept {
 		color: #ffffff;
 		background-image: -webkit-linear-gradient(#37a4fc 0%, #025fab 100%);
@@ -2041,7 +2042,7 @@ div.mod_search225 input[type="search"]{ width:auto; }
 		padding: 0;
 		border: 1px solid #024175;
 	}
-
+	
 	.jb.decline.link {
 		color: #37a4fc;
 		padding: 0;

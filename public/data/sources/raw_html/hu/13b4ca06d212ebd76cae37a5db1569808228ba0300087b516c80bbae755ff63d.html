@@ -107,7 +107,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -116,7 +117,7 @@
 
 
 
- <body class="marinelli html not-front not-logged-in two-sidebars page-node page-node- page-node-147 node-type-bal-menu">
+ <body class="marinelli html not-front not-logged-in two-sidebars page-node page-node- page-node-147 node-type-bal-menu"> 
 <div id="skip-link">
 <a class="element-invisible" data-review-original-href="#content" href="#" tabindex="-1" title="Jump to the main content of this page">Jump to Content</a>
 </div>

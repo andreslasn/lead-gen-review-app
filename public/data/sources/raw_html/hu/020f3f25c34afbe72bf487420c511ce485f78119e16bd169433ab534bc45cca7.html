@@ -28,7 +28,7 @@
 
 
 
-
+ 
 
 
 
@@ -36,7 +36,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -45,7 +46,7 @@
 <nav aria-label="Fourth navbar example" class="navbar navbar-expand-lg navbar-dark navbar-blue">
 <div class="container d-flex justify-content-between justify-content-lg-center">
 <a class="navbar-brand" data-review-original-href="https://levelektelepules.hu" href="#" tabindex="-1">
-<img alt="Levelek Címer" class=""/>
+<img alt="Levelek Címer"/>
 </a>
 <a class="navbar-brand" data-review-original-href="https://levelektelepules.hu" href="#" tabindex="-1">Főoldal</a>
 <button aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbars" data-bs-toggle="collapse" type="button">
@@ -233,7 +234,7 @@
 </div>
 <div class="row d-flex justify-content-center pb-5">
 <div class="col-12 col-sm-6 col-md-5 p-3">
-<div class="">
+<div>
 <div class="row info-details">
 <div class="col-12"><i class="fas fa-user font-color-blue institution-icon"></i><label for="">Intézményvezető: Dr. Székely Anita</label></div>
 <div class="col-12"><i class="fas fa-globe font-color-blue institution-icon"></i>Weboldal: <a data-review-original-href="https://levelekirendelo.nyvm.hu/" for="" href="#" tabindex="-1">https://levelekirendelo.nyvm.hu/</a></div>
@@ -251,7 +252,7 @@
 </div>
 </div>
 <div class="col-12 col-sm-6 pt-3">
-<div class="">
+<div>
 <div class="row">
 <div class="col-12">
 
@@ -263,7 +264,7 @@
 <div class="row d-flex justify-content-center">
 <div class="col-12 col-md-10 col-xl-8">
 <div class="module-swiper module-swiper-no-margin d-flex flex-column align-items-center">
-<h4 class=""><span class="">Képek</span></h4>
+<h4><span>Képek</span></h4>
 
 <div class="swiper mySwiper">
 <div class="swiper-wrapper">

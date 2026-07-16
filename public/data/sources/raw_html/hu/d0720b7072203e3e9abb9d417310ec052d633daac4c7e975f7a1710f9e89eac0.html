@@ -875,7 +875,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -885,7 +886,7 @@
 
 </noscript>
 <div class="page-container" id="app">
-<the-header :hide-login-link="false" api-url="https://api.munipolis.com/api" class="" link-admin="https://www.munipolis.hu/admin/login" link-home="https://www.munipolis.hu" link-info-page-about="https://info.munipolis.hu/a-munipolis-rol/" link-info-page-app="https://info.munipolis.hu/#download" link-info-page-enterprises="https://info.munipolis.hu/cegek/" link-info-page-groups="https://info.munipolis.hu/csoportok/" link-info-page-institutions="https://info.munipolis.hu/intezmeny/" link-info-page-landing="https://info.munipolis.hu" link-info-page-municipalities="https://info.munipolis.hu/onkormanyzatok/" link-login="https://www.munipolis.hu/bejelentkezes" link-logout="https://www.munipolis.hu/kijelentkezes" link-my-issues="https://www.munipolis.hu/bejelenteseim" link-my-timeline="https://www.munipolis.hu/az-en-hirfolyamom" link-no-result="https://www.munipolis.hu/rolunk#recommend-anchor" link-register="https://www.munipolis.hu/regisztracio" link-user-agreements="https://www.munipolis.hu/beallit" link-user-settings="https://www.munipolis.hu/profilbeallitasok" link-user-subscriptions="https://www.munipolis.hu/figyelt-becsulet" user="null">
+<the-header :hide-login-link="false" api-url="https://api.munipolis.com/api" link-admin="https://www.munipolis.hu/admin/login" link-home="https://www.munipolis.hu" link-info-page-about="https://info.munipolis.hu/a-munipolis-rol/" link-info-page-app="https://info.munipolis.hu/#download" link-info-page-enterprises="https://info.munipolis.hu/cegek/" link-info-page-groups="https://info.munipolis.hu/csoportok/" link-info-page-institutions="https://info.munipolis.hu/intezmeny/" link-info-page-landing="https://info.munipolis.hu" link-info-page-municipalities="https://info.munipolis.hu/onkormanyzatok/" link-login="https://www.munipolis.hu/bejelentkezes" link-logout="https://www.munipolis.hu/kijelentkezes" link-my-issues="https://www.munipolis.hu/bejelenteseim" link-my-timeline="https://www.munipolis.hu/az-en-hirfolyamom" link-no-result="https://www.munipolis.hu/rolunk#recommend-anchor" link-register="https://www.munipolis.hu/regisztracio" link-user-agreements="https://www.munipolis.hu/beallit" link-user-settings="https://www.munipolis.hu/profilbeallitasok" link-user-subscriptions="https://www.munipolis.hu/figyelt-becsulet" user="null">
 </the-header>
 <div class="main-content">
 <header role="banner">

@@ -1,0 +1,64 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+Háziorvos
+(
+1874123033
+)
+Verzió
+#
+4
+addr:country=HU
+címkék törlése.
+Szerkesztette
+urbalazs
+nagyjából 2 évvel ezelőtt
+Módosításcsomag
+150681467
+0
+Hely:
+46,8292462
+,
+17,6268021
+Címkék
+addr:city
+Révfülöp
+addr:housenumber
+addr:postcode
+8253
+addr:street
+Villa Filip tér
+amenity
+doctors
+email
+revfulopirendelo@gmail.com
+healthcare
+doctor
+name
+opening_hours
+Mo 08:00-12:00; Tu-We 09:00-12:00; Th 14:00-16:00; Fr 09:00-12:00
+phone
++36 87 464 150
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

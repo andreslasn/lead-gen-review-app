@@ -63,7 +63,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 						float: right;
 						margin-bottom: 2.5em;
 					}
-
+				
 					.woocommerce-js a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit {
 						font-size: 100%;
 						line-height: 1;
@@ -185,12 +185,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <meta content="http://petegisz.hu/wp-content/uploads/2024/06/logo-e1718354226463.png" name="msapplication-TileImage"/>
 <style id="wp-custom-css">
-			.entry-date, .post-date, .published {
-   display: none !important;
+			.entry-date, .post-date, .published { 
+   display: none !important; 
 }		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -580,7 +581,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 </section>
 </div>
-</div>
+</div> 
 </div>
 <footer class="elementor elementor-58 elementor-location-footer" data-elementor-id="58" data-elementor-post-type="elementor_library" data-elementor-type="footer">
 <section class="elementor-section elementor-top-section elementor-element elementor-element-86544f8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-e-type="section" data-element_type="section" data-id="86544f8" data-settings='{"background_background":"classic"}'>

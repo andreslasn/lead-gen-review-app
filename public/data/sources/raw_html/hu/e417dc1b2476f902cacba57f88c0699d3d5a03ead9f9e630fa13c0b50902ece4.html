@@ -65,7 +65,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -81,7 +82,7 @@
 <div class="region-inner region-branding-inner">
 <div class="branding-data clearfix">
 <div class="logo-img">
-<a class="custom-site-title-link active" data-review-original-href="/start" href="#" rel="home" tabindex="-1" title="Budapest Főváros II. Kerület Önkormányzata"><img alt="Budapest Főváros II. Kerület Önkormányzata" data-pagespeed-url-hash="512898956" id="logo"/></a>
+<a class="custom-site-title-link active" data-review-original-href="/start" href="#" rel="home" tabindex="-1" title="Budapest Főváros II. Kerület Önkormányzata"><img alt="Budapest Főváros II. Kerület Önkormányzata" data-pagespeed-url-hash="512898956" id="logo"/></a> 
 </div>
 <hgroup class="site-name-slogan">
 <h1 class="site-name"><a class="active" data-review-original-href="/" href="#" tabindex="-1" title="Címlap">Budapest Főváros II. Kerület Önkormányzata</a></h1>
@@ -94,9 +95,9 @@
 <div class="block-inner clearfix">
 <div class="content clearfix">
 <div class="customtag-item" style="visibility: visible;">
-<a data-review-original-href="/aktualis/parkolas-a-ii-keruletben?galeria=true" href="#" style="background-color: #135a7d" tabindex="-1"><span class="">Parkolás</span></a>
-<a data-review-original-href="/node/41787" href="#" style="background-color: #135a7d" tabindex="-1"><span class="">Elérhetőségek, háziorvosok</span></a>
-<a data-review-original-href="/node/41928" href="#" style="background-color: #135a7d" tabindex="-1"><span class="">Választási információk</span></a>
+<a data-review-original-href="/aktualis/parkolas-a-ii-keruletben?galeria=true" href="#" style="background-color: #135a7d" tabindex="-1"><span>Parkolás</span></a>
+<a data-review-original-href="/node/41787" href="#" style="background-color: #135a7d" tabindex="-1"><span>Elérhetőségek, háziorvosok</span></a>
+<a data-review-original-href="/node/41928" href="#" style="background-color: #135a7d" tabindex="-1"><span>Választási információk</span></a>
 </div>
 
 </div>
@@ -591,8 +592,8 @@
 </div>
 </div>
 </div>
-</div>
-
+</div> 
+ 
 
 <footer class="section section-footer" id="section-footer">
 <div class="zone-wrapper zone-postscript-wrapper clearfix" id="zone-postscript-wrapper">

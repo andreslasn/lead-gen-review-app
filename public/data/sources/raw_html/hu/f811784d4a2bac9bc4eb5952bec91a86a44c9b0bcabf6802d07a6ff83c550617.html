@@ -288,7 +288,7 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a {
 
     }
 
-
+ 
 
     .footer_inner .footer_top .three_columns .column2 {
 
@@ -316,7 +316,7 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a {
 
     }
 
-
+ 
 
     .footer_inner .footer_top .three_columns .column2 {
 
@@ -324,7 +324,7 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a {
 
     }
 
-
+ 
 
     .footer_inner .footer_top .three_columns .column2 .menu-footer-menu-container {
 
@@ -371,7 +371,8 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a {
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -406,10 +407,10 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a {
 <div class="main_menu_header_inner_right_holder">
 <nav class="main_menu drop_down">
 <ul class="clearfix" id="menu-main-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-241 current_page_item active narrow" id="nav-menu-item-1065"><a class="current" data-review-original-href="https://adokirendel.hu/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Kezdőlap</span><span class="plus"></span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1086"><a class="" data-review-original-href="https://adokirendel.hu/haziorvos/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Háziorvos</span><span class="plus"></span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1193"><a class="" data-review-original-href="https://adokirendel.hu/uzemorvos/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Üzemorvos</span><span class="plus"></span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1198"><a class="" data-review-original-href="https://adokirendel.hu/insumed/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Insumed</span><span class="plus"></span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1064"><a class="" data-review-original-href="https://adokirendel.hu/kapcsolat/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Kapcsolat</span><span class="plus"></span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1086"><a data-review-original-href="https://adokirendel.hu/haziorvos/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Háziorvos</span><span class="plus"></span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1193"><a data-review-original-href="https://adokirendel.hu/uzemorvos/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Üzemorvos</span><span class="plus"></span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1198"><a data-review-original-href="https://adokirendel.hu/insumed/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Insumed</span><span class="plus"></span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page narrow" id="nav-menu-item-1064"><a data-review-original-href="https://adokirendel.hu/kapcsolat/" href="#" tabindex="-1"><i class="menu_icon blank fa"></i><span>Kapcsolat</span><span class="plus"></span></a></li>
 </ul> </nav>
 <div class="header_inner_right">
 <div class="side_menu_button_wrapper right">
@@ -422,11 +423,11 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a {
 </div>
 </div>
 <nav class="mobile_menu">
-<ul class="" id="menu-main-menu-1"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-241 current_page_item active" id="mobile-menu-item-1065"><a class="current" data-review-original-href="https://adokirendel.hu/" href="#" tabindex="-1"><span>Kezdőlap</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1086"><a class="" data-review-original-href="https://adokirendel.hu/haziorvos/" href="#" tabindex="-1"><span>Háziorvos</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1193"><a class="" data-review-original-href="https://adokirendel.hu/uzemorvos/" href="#" tabindex="-1"><span>Üzemorvos</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1198"><a class="" data-review-original-href="https://adokirendel.hu/insumed/" href="#" tabindex="-1"><span>Insumed</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1064"><a class="" data-review-original-href="https://adokirendel.hu/kapcsolat/" href="#" tabindex="-1"><span>Kapcsolat</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
+<ul id="menu-main-menu-1"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-241 current_page_item active" id="mobile-menu-item-1065"><a class="current" data-review-original-href="https://adokirendel.hu/" href="#" tabindex="-1"><span>Kezdőlap</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1086"><a data-review-original-href="https://adokirendel.hu/haziorvos/" href="#" tabindex="-1"><span>Háziorvos</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1193"><a data-review-original-href="https://adokirendel.hu/uzemorvos/" href="#" tabindex="-1"><span>Üzemorvos</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1198"><a data-review-original-href="https://adokirendel.hu/insumed/" href="#" tabindex="-1"><span>Insumed</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page" id="mobile-menu-item-1064"><a data-review-original-href="https://adokirendel.hu/kapcsolat/" href="#" tabindex="-1"><span>Kapcsolat</span></a><span class="mobile_arrow"><i class="fa fa-angle-right"></i><i class="fa fa-angle-down"></i></span></li>
 </ul></nav> </div>
 </div>
 </div>
@@ -455,21 +456,21 @@ header:not(.with_hover_bg_color) nav.main_menu > ul > li:hover > a {
 <rs-slides>
 <rs-slide data-color="light" data-in="o:0;" data-key="rs-2" data-out="a:false;" data-thumb="//adokirendel.hu/wp-content/uploads/2025/04/portre_wide2-1-50x100.jpg" data-title="Slide" style="position: absolute;">
 <img alt="" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//adokirendel.hu/wp-content/uploads/2025/04/portre_wide2-1.jpg" data-no-retina="" data-parallax="off" decoding="async" fetchpriority="high" height="927" title="portre_wide2" width="1920"/>
-<rs-layer data-basealign="slide" data-color="#526371" data-dim="w:546px,546px,503px,285px;" data-frame_0="y:50;" data-frame_1="e:power2.out;st:200;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:77,68,63,45;l:85,75,70,50;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:-88px,-82px,-80px,-62px;" id="slider-1-slide-2-layer-0" style="z-index:5;font-family:'Open Sans';">Háziorvos
+<rs-layer data-basealign="slide" data-color="#526371" data-dim="w:546px,546px,503px,285px;" data-frame_0="y:50;" data-frame_1="e:power2.out;st:200;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:77,68,63,45;l:85,75,70,50;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:-88px,-82px,-80px,-62px;" id="slider-1-slide-2-layer-0" style="z-index:5;font-family:'Open Sans';">Háziorvos 
 							</rs-layer><rs-layer data-basealign="slide" data-color="#526371" data-frame_0="y:50;" data-frame_1="e:power2.out;st:400;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:35,28,25,18;l:46,37,32,23;fw:300;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:38px,27px,22px,34px;" id="slider-1-slide-2-layer-1" style="z-index:6;font-family:'Open Sans';">Dr. Csabai Imre háziorvos<br/>
-Két évtizede Budakeszi szolgálatában
+Két évtizede Budakeszi szolgálatában 
 							</rs-layer><rs-layer data-basealign="slide" data-color="#000000" data-frame_0="y:50;" data-frame_1="e:power2.out;st:600;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:125px,110px,102px,108px;" id="slider-1-slide-2-layer-2" style="z-index:7;font-family:'Roboto';"><a class="qbutton default" data-review-original-href="https://themeforest.net/item/bridge-creative-multipurpose-wordpress-theme/7315054?ref=QODE" href="#" itemprop="url" style="" tabindex="-1" target="_self">További részletek</a>
 </rs-layer> </rs-slide>
 <rs-slide data-in="o:0;" data-key="rs-1" data-out="a:false;" data-thumb="//adokirendel.hu/wp-content/uploads/2017/04/slide-1-50x100.jpg" data-title="Slide" style="position: absolute;">
 <img alt="m" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//adokirendel.hu/wp-content/uploads/2017/04/slide-1.jpg" data-no-retina="" data-parallax="15" decoding="async" height="749" title="slide-1" width="1920"/>
-<rs-layer data-basealign="slide" data-color="#526371" data-dim="w:546px,546px,503px,285px;" data-frame_0="y:50;" data-frame_1="e:power2.out;st:200;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:77,68,63,45;l:85,75,70,50;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:-88px,-84px,-78px,-62px;" id="slider-1-slide-1-layer-0" style="z-index:5;font-family:'Open Sans';">Üzemorvosi szolgálat
-							</rs-layer><rs-layer data-basealign="slide" data-color="#8c8c8c" data-frame_0="y:50;" data-frame_1="e:power2.out;st:400;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:35,28,25,18;l:46,37,32,23;fw:300;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:38px,25px,24px,34px;" id="slider-1-slide-1-layer-1" style="z-index:6;font-family:'Open Sans';">Budapesten a belváros szívében
+<rs-layer data-basealign="slide" data-color="#526371" data-dim="w:546px,546px,503px,285px;" data-frame_0="y:50;" data-frame_1="e:power2.out;st:200;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:77,68,63,45;l:85,75,70,50;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:-88px,-84px,-78px,-62px;" id="slider-1-slide-1-layer-0" style="z-index:5;font-family:'Open Sans';">Üzemorvosi szolgálat 
+							</rs-layer><rs-layer data-basealign="slide" data-color="#8c8c8c" data-frame_0="y:50;" data-frame_1="e:power2.out;st:400;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:35,28,25,18;l:46,37,32,23;fw:300;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:38px,25px,24px,34px;" id="slider-1-slide-1-layer-1" style="z-index:6;font-family:'Open Sans';">Budapesten a belváros szívében 
 							</rs-layer><rs-layer data-basealign="slide" data-color="#000000" data-frame_0="y:50;" data-frame_1="e:power2.out;st:600;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;" data-type="text" data-xy="xo:302px,125px,82px,38px;y:m;yo:125px,108px,104px,108px;" id="slider-1-slide-1-layer-2" style="z-index:7;font-family:'Roboto';"><a class="qbutton default" data-review-original-href="https://themeforest.net/item/bridge-creative-multipurpose-wordpress-theme/7315054?ref=QODE" href="#" itemprop="url" style="" tabindex="-1" target="_self">További részletek</a>
 </rs-layer> </rs-slide>
 <rs-slide data-color="light" data-in="o:0;" data-key="rs-3" data-out="a:false;" data-thumb="//adokirendel.hu/wp-content/uploads/2025/04/adoki_insumed-50x100.jpg" data-title="Slide" style="position: absolute;">
 <img alt="" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//adokirendel.hu/wp-content/uploads/2025/04/adoki_insumed.jpg" data-no-retina="" data-parallax="off" decoding="async" height="1600" title="adoki_insumed" width="2400"/>
-<rs-layer data-basealign="slide" data-dim="w:980px,980px,588px,285px;" data-frame_0="y:50;" data-frame_1="e:power2.out;st:200;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:77,68,63,45;l:85,75,70,50;a:center;" data-type="text" data-xy="x:c;y:m;yo:-88px,-82px,-78px,-72px;" id="slider-1-slide-3-layer-0" style="z-index:5;font-family:'Open Sans';">Insumed tanácsadás
-							</rs-layer><rs-layer data-basealign="slide" data-frame_0="y:50;" data-frame_1="e:power2.out;st:400;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:35,28,25,18;l:46,37,32,23;fw:300;a:center;" data-type="text" data-xy="x:c;y:m;yo:-4px,-10px,24px,0;" id="slider-1-slide-3-layer-1" style="z-index:6;font-family:'Open Sans';">Budakeszin és Budapesten a belváros szívében
+<rs-layer data-basealign="slide" data-dim="w:980px,980px,588px,285px;" data-frame_0="y:50;" data-frame_1="e:power2.out;st:200;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:77,68,63,45;l:85,75,70,50;a:center;" data-type="text" data-xy="x:c;y:m;yo:-88px,-82px,-78px,-72px;" id="slider-1-slide-3-layer-0" style="z-index:5;font-family:'Open Sans';">Insumed tanácsadás 
+							</rs-layer><rs-layer data-basealign="slide" data-frame_0="y:50;" data-frame_1="e:power2.out;st:400;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;s:35,28,25,18;l:46,37,32,23;fw:300;a:center;" data-type="text" data-xy="x:c;y:m;yo:-4px,-10px,24px,0;" id="slider-1-slide-3-layer-1" style="z-index:6;font-family:'Open Sans';">Budakeszin és Budapesten a belváros szívében 
 							</rs-layer><rs-layer data-basealign="slide" data-color="#000000" data-frame_0="y:50;" data-frame_1="e:power2.out;st:600;sp:500;" data-frame_999="o:0;st:w;" data-rsp_bd="off" data-rsp_o="off" data-text="w:normal;" data-type="text" data-xy="x:c;y:m;yo:86px,72px,104px,74px;" id="slider-1-slide-3-layer-2" style="z-index:7;font-family:'Roboto';"><a class="qbutton default" data-review-original-href="https://themeforest.net/item/bridge-creative-multipurpose-wordpress-theme/7315054?ref=QODE" href="#" itemprop="url" style="" tabindex="-1" target="_self">További részletek</a>
 </rs-layer> </rs-slide>
 </rs-slides>

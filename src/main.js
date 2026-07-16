@@ -15,12 +15,9 @@ const DECISION_REASON_CODES = [
   { key: "x", code: "other", label: "Other" },
 ];
 const ROLE_OPTIONS = [
-  { value: "clinic_contact", label: "Clinic contact" },
+  { value: "clinic_contact", label: "Generic contact" },
   { value: "doctor_staff", label: "Doctor/staff" },
   { value: "prescription_refill", label: "Prescription/refill" },
-  { value: "covering_provider", label: "Covering/alternate practice" },
-  { value: "other_provider", label: "Other provider" },
-  { value: "source_operator", label: "Municipal/site contact" },
   { value: "not_clinic_owned", label: "Not clinic-owned" },
   { value: "unclear", label: "Unclear" },
 ];
@@ -175,6 +172,15 @@ function evidenceHtml(link, fallback = "") {
   return `${prefix}<mark>${quote}</mark>${suffix}`;
 }
 
+function fullEvidenceHtml(text, email) {
+  const source = String(text || "").replaceAll("\u0000", " ");
+  const needle = String(email || "").trim();
+  if (!source || !needle) return escapeHtml(source);
+  const index = source.toLowerCase().indexOf(needle.toLowerCase());
+  if (index < 0) return escapeHtml(source);
+  return `${escapeHtml(source.slice(0, index))}<mark>${escapeHtml(source.slice(index, index + needle.length))}</mark>${escapeHtml(source.slice(index + needle.length))}`;
+}
+
 function candidateRoleLabel(candidate) {
   const text = [
     candidate?.value,
@@ -187,26 +193,25 @@ function candidateRoleLabel(candidate) {
   const contactRole = String(candidate?.contact_role || "").toLowerCase();
   if (/(recept|prescription|rx|repeat)/i.test(text) || contactRole.includes("prescription")) return "Prescription/refill";
   if (classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
-  if (classification.includes("clinic") || contactRole.includes("clinic")) return "Clinic contact";
-  if (classification.includes("generic")) return "Generic mailbox";
+  if (classification.includes("clinic") || contactRole.includes("clinic")) return "Generic contact";
+  if (classification.includes("generic")) return "Generic contact";
   if (classification.includes("third") || classification.includes("directory") || classification.includes("webmaster")) return "Not clinic-owned";
   return "Unclear";
 }
 
 function candidateRoleCode(candidate) {
   const ownershipClass = candidate?.triage?.ownership_class;
-  if (["same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "covering_provider";
-  if (ownershipClass === "different_provider") return "other_provider";
-  if (ownershipClass === "source_operator") return "source_operator";
-  if (["parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_clinic_owned";
+  if (["target_person", "same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "doctor_staff";
+  if (ownershipClass === "target_practice") return "clinic_contact";
+  if (["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_clinic_owned";
   const label = candidateRoleLabel(candidate);
   return ROLE_OPTIONS.find((option) => option.label === label)?.value || "unclear";
 }
 
-function candidateSourceLabel(candidate, item) {
-  const source = normalizeHost(candidate?.source_url || candidate?.evidence_links?.[0]?.source_url || item?.website || "");
-  if (item?.source_coverage_status === "verified_official") return source ? `Official · ${source}` : "Official";
-  return source || "Source";
+function normalizedRoleCode(role) {
+  if (role === "covering_provider") return "doctor_staff";
+  if (["other_provider", "source_operator"].includes(role)) return "not_clinic_owned";
+  return ROLE_OPTIONS.some((option) => option.value === role) ? role : "unclear";
 }
 
 function candidateEvidenceCount(candidate) {
@@ -308,6 +313,8 @@ const App = {
     const sessionDecisionCount = ref(0);
     const itemStartedAt = ref(Date.now());
     const evidencePane = ref(null);
+    const fullEvidenceText = ref("");
+    let evidenceTextRequest = 0;
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
     const decisionsByClinic = computed(() => {
@@ -378,11 +385,15 @@ const App = {
     });
     const selectedCandidate = computed(() => candidates.value[selectedCandidateIndex.value] || candidates.value[0] || currentItem.value?.best_candidate || null);
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
+    const selectedDocument = computed(() => (clinic.value?.documents || []).find((document) => document.id === selectedEvidence.value?.source_document_id) || null);
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
     const roleOverrideByContact = computed(() => Object.fromEntries(roleOverrides.value.map((item) => [item.contact_point_id, item])));
     const snapshotTitle = computed(() => selectedEvidence.value?.title || selectedEvidence.value?.source_url || selectedCandidate.value?.source_url || "Cached evidence");
     const evidenceBody = computed(() => evidenceHtml(selectedEvidence.value, selectedCandidate.value?.evidence || ""));
+    const fullEvidenceBody = computed(() => fullEvidenceText.value
+      ? fullEvidenceHtml(fullEvidenceText.value, selectedCandidate.value?.value)
+      : evidenceBody.value);
 
     function artifactUrl(path) {
       if (!path) return null;
@@ -394,6 +405,25 @@ const App = {
       const url = artifactUrl(path);
       if (!url) return null;
       return url;
+    }
+
+    async function loadFullEvidenceText() {
+      const requestId = ++evidenceTextRequest;
+      fullEvidenceText.value = "";
+      const path = selectedEvidence.value?.review_text_path || selectedDocument.value?.review_text_path;
+      const url = artifactUrl(path);
+      if (!url) return;
+      try {
+        const response = await fetch(url, { cache: "no-cache" });
+        if (!response.ok) return;
+        const text = await response.text();
+        if (requestId !== evidenceTextRequest) return;
+        fullEvidenceText.value = text;
+        await nextTick();
+        scrollEvidenceToHighlight();
+      } catch {
+        if (requestId === evidenceTextRequest) fullEvidenceText.value = "";
+      }
     }
 
     function candidateDecision(candidate) {
@@ -499,7 +529,7 @@ const App = {
     }
 
     function displayedCandidateRole(candidate) {
-      return roleOverrideByContact.value[candidate?.id]?.role || candidateRoleCode(candidate);
+      return normalizedRoleCode(roleOverrideByContact.value[candidate?.id]?.role || candidateRoleCode(candidate));
     }
 
     async function updateCandidateRole(candidate, role) {
@@ -508,7 +538,7 @@ const App = {
         clinic_id: clinic.value.clinic.id,
         contact_point_id: candidate.id,
         role,
-        original_role: candidate.contact_role || candidateRoleCode(candidate),
+        original_role: normalizedRoleCode(candidate.contact_role || candidateRoleCode(candidate)),
         reviewer_id: reviewer.value || "reviewer",
         updated_at: nowIso(),
       };
@@ -890,6 +920,10 @@ const App = {
     });
     watch(reviewer, (value) => localStorage.setItem("review.reviewer", value));
     watch(evidenceTab, () => nextTick(scrollEvidenceToHighlight));
+    watch(
+      () => [selectedEvidence.value?.review_text_path, selectedEvidence.value?.source_document_id, selectedCandidate.value?.value],
+      () => loadFullEvidenceText(),
+    );
 
     onMounted(() => {
       window.addEventListener("keydown", onKey);
@@ -915,6 +949,7 @@ const App = {
       selectedCandidateIndex,
       selectedEvidence,
       evidenceBody,
+      fullEvidenceBody,
       evidencePane,
       archiveFrame,
       evidenceTab,
@@ -936,7 +971,6 @@ const App = {
       showInvalidCandidates,
       safeText,
       candidateRoleLabel,
-      candidateSourceLabel,
       candidateEvidenceCount,
       candidateReasonWithoutTriageDuplication,
       displayedCandidateRole,
@@ -995,24 +1029,23 @@ const App = {
             </p>
             <div v-if="candidates.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Source</th><th>Decision</th></tr></thead>
+                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Decision</th></tr></thead>
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.type === 'candidate' ? (row.candidate.id || row.index) : row.group" :class="row.type === 'candidate' ? {selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)} : 'candidate-group-toggle'" @mouseenter="row.type === 'candidate' && previewCandidate(row.index)" @click="row.type === 'candidate' && selectCandidate(row.index)">
                     <template v-if="row.type === 'candidate'">
                       <td class="candidate-radio">{{ row.index === selectedCandidateIndex ? '●' : '○' }}</td>
-                      <td><span class="candidate-email">{{ row.candidate.value }}</span><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
+                      <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
                       <td>
                         <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
                           <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
                         </select>
                       </td>
-                      <td><span>{{ candidateSourceLabel(row.candidate, currentItem) }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small></td>
                       <td class="candidate-actions">
                         <button class="candidate-confirm" @click.stop="selectCandidate(row.index); saveDecision('confirmed')">Confirm</button>
                         <button class="candidate-reject" @click.stop="rejectCandidate(row.index)">Reject</button>
                       </td>
                     </template>
-                    <td v-else colspan="5">
+                    <td v-else colspan="4">
                       <button v-if="row.group === 'other'" @click.stop="showOtherCandidates = !showOtherCandidates">{{ showOtherCandidates ? 'Hide' : 'Show' }} {{ row.count }} other contact{{ row.count === 1 ? '' : 's' }} from this shared source</button>
                       <button v-else @click.stop="showInvalidCandidates = !showInvalidCandidates">{{ showInvalidCandidates ? 'Hide' : 'Show' }} {{ row.count }} invalid extraction artifact{{ row.count === 1 ? '' : 's' }}</button>
                     </td>
@@ -1028,13 +1061,7 @@ const App = {
                 <strong>{{ selectedCandidate.triage.ownership_class }} · {{ Math.round(Number(selectedCandidate.triage.confidence || 0) * 100) }}%</strong>
               </div>
               <p>{{ selectedCandidate.triage.reason }}</p>
-              <blockquote v-if="selectedCandidate.triage.exact_quote">{{ selectedCandidate.triage.exact_quote }}</blockquote>
             </div>
-          </section>
-
-          <section class="excerpt-card">
-            <p class="label">Evidence excerpt</p>
-            <div class="excerpt" v-html="evidenceBody"></div>
           </section>
 
           <section v-if="pendingReject" class="reason-panel">
@@ -1081,7 +1108,7 @@ const App = {
           </div>
 
           <div v-else ref="evidencePane" class="snapshot-pane">
-            <pre class="snapshot-text" v-html="evidenceBody"></pre>
+            <pre class="snapshot-text" v-html="fullEvidenceBody"></pre>
           </div>
         </section>
       </main>

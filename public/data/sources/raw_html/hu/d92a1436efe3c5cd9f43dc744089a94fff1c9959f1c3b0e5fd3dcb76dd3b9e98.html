@@ -75,7 +75,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -367,7 +368,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="site-info">
 <span class="copyright-text">© 2016 VMag</span>
 <span class="sep"> | </span>
-
+							
 				VMag by <a data-review-original-href="https://accesspressthemes.com/" href="#" rel="designer" tabindex="-1">AccessPress Themes</a>.				<div class="clear"></div>
 </div>
 <div class="footer-menu-wrapper">

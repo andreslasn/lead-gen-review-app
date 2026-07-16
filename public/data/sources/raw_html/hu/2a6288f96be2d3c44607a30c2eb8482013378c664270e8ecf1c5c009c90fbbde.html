@@ -13,14 +13,14 @@
 	justify-content: space-around;
 	flex-flow: wrap;
 	}
-
+	
 	.box {
 	width: 20%;
         height: auto;
 	margin: 10px;
 	box-sizing: border-box;
 	}
-
+	
 	@media screen and (max-width: 1200px) {
 		.box {
 			width: 40%;
@@ -31,7 +31,7 @@
 			width: 90%;
 		}
 	}
-
+	
 </style>
 
 <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
@@ -102,7 +102,8 @@ font-weight:700;}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -361,7 +362,7 @@ font-weight:700;}
 </div>
 </div>
 </li>
-</ul>
+</ul> 
 <div class="yt-resmenu" id="yt-responivemenu">
 <button class="btn btn-navbar collapsed" data-target=".nav-collapse" data-toggle="collapse" type="button">
 <i class="fa fa-bars"></i> Menu			</button>

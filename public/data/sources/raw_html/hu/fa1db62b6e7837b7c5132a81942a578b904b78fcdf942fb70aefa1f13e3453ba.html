@@ -79,7 +79,8 @@ body.custom-background { background-image: url("https://ett.aeek.hu/wp-content/u
 <meta content="https://ett.okfo.gov.hu/wp-content/uploads/2016/08/cropped-ettlogo_uj_square-270x270.jpg" name="msapplication-TileImage"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

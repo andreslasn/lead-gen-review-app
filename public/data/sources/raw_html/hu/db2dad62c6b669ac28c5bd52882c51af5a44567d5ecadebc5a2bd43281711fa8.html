@@ -232,7 +232,7 @@ body.custom-background { background-color: #2391db; }
 		position: absolute;
 		top: 5px;
 		right: 10px;
-		outline: none;
+		outline: none;		
 		text-decoration: none;
 		text-shadow: 0 0 0px #fff;
 		-webkit-transition: all 0.5s ease 0s;
@@ -254,7 +254,7 @@ body.custom-background { background-color: #2391db; }
 	.mysticky-welcomebar-fixed.mysticky-welcomebar-showx-desktop .mysticky-welcomebar-close {
 		display: inline-block;
 		cursor: pointer;
-	}
+	}	
 	/* Animated Buttons */
 		.mysticky-welcomebar-btn a {
 			-webkit-animation-duration: 1s;
@@ -288,7 +288,7 @@ body.custom-background { background-color: #2391db; }
 			-webkit-animation-name: flash;
 			animation-name: flash;
 		}
-
+		
 		@keyframes shake {
 			from,
 			to {
@@ -318,7 +318,7 @@ body.custom-background { background-color: #2391db; }
 			-webkit-animation-name: shake;
 			animation-name: shake;
 		}
-
+		
 		@-webkit-keyframes swing {
 			20% {
 				-webkit-transform: rotate3d(0, 0, 1, 15deg);
@@ -339,7 +339,7 @@ body.custom-background { background-color: #2391db; }
 				-webkit-transform: rotate3d(0, 0, 1, -5deg);
 				transform: rotate3d(0, 0, 1, -5deg);
 			}
-
+	
 			to {
 				-webkit-transform: rotate3d(0, 0, 1, 0deg);
 				transform: rotate3d(0, 0, 1, 0deg);
@@ -379,7 +379,7 @@ body.custom-background { background-color: #2391db; }
 			-webkit-animation-name: swing;
 			animation-name: swing;
 		}
-
+		
 		@-webkit-keyframes tada {
 			from {
 				-webkit-transform: scale3d(1, 1, 1);
@@ -450,7 +450,7 @@ body.custom-background { background-color: #2391db; }
 			-webkit-animation-name: tada;
 			animation-name: tada;
 		}
-
+		
 		@-webkit-keyframes heartBeat {
 			0% {
 				-webkit-transform: scale(1);
@@ -513,7 +513,7 @@ body.custom-background { background-color: #2391db; }
 		  -webkit-animation-timing-function: ease-in-out;
 		  animation-timing-function: ease-in-out;
 		}
-
+		
 		@-webkit-keyframes wobble {
 			from {
 				-webkit-transform: translate3d(0, 0, 0);
@@ -587,7 +587,7 @@ body.custom-background { background-color: #2391db; }
 				transform: translate3d(0, 0, 0);
 			}
 		}
-
+		
 		.mysticky-welcomebar-attention-wobble.animation-start .mysticky-welcomebar-btn a {
 			-webkit-animation-name: wobble;
 			animation-name: wobble;
@@ -610,7 +610,7 @@ body.custom-background { background-color: #2391db; }
 				flex: unset;
 			}
 		}
-
+		
 		@media only screen and (min-width: 768px) {
 			.mysticky-welcomebar-display-desktop.mysticky-welcomebar-entry-effect-fade.entry-effect {
 				opacity: 1;
@@ -620,12 +620,12 @@ body.custom-background { background-color: #2391db; }
 			}
 			.mysticky-welcomebar-display-desktop.mysticky-welcomebar-position-top.mysticky-welcomebar-fixed ,
 			.mysticky-welcomebar-display-desktop.mysticky-welcomebar-position-top.mysticky-welcomebar-entry-effect-slide-in.entry-effect.mysticky-welcomebar-fixed {
-				top: 0;
+				top: 0;			
 			}
 			.mysticky-welcomebar-display-desktop.mysticky-welcomebar-position-bottom.mysticky-welcomebar-fixed ,
 			.mysticky-welcomebar-display-desktop.mysticky-welcomebar-position-bottom.mysticky-welcomebar-entry-effect-slide-in.entry-effect.mysticky-welcomebar-fixed {
 				bottom: 0;
-			}
+			}	
 		}
 		@media only screen and (max-width: 767px) {
 			.mysticky-welcomebar-display-mobile.mysticky-welcomebar-entry-effect-fade.entry-effect {
@@ -664,7 +664,7 @@ body.custom-background { background-color: #2391db; }
 				flex-direction: column;
 			}
 			/*.welcombar-contact-lead .mysticky-welcomebar-fixed-wrap {flex-wrap: wrap; justify-content: center;}*/
-
+			
 			.mysticky-welcomebar-fixed .mystickymenu-front.mysticky-welcomebar-lead-content {margin: 10px 0 10px 20px !important;}
 
 			.mysticky-welcomebar-fixed .mysticky-welcomebar-btn {
@@ -714,16 +714,16 @@ body.custom-background { background-color: #2391db; }
 		.morphext > .morphext__animated {
 		  display: inline-block;
 		}
-
+		
 		.mysticky-welcomebar-btn a {
 			outline: none !important;
 			cursor: pointer;
 			position: relative;
-		}
+		}		
 		.mysticky-welcomebar-hover-effect-border1 {
 			position: relative;
 		}
-		.mysticky-welcomebar-hover-effect-border1 a {
+		.mysticky-welcomebar-hover-effect-border1 a { 
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -827,7 +827,7 @@ body.custom-background { background-color: #2391db; }
 			height: 100%;
 		}
 		.mysticky-welcomebar-hover-effect-border2 a:hover:after {
-			width: 100%;
+			width: 100%; 
 		}
 		.mysticky-welcomebar-hover-effect-border3 a {
 			position: relative;
@@ -1046,7 +1046,8 @@ body.custom-background { background-color: #2391db; }
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -1215,7 +1216,7 @@ body.custom-background { background-color: #2391db; }
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1319" id="menu-item-1319"><a data-review-original-href="https://kunhegyes.hu/hulladeknaptar-2025-ii-felev/" href="#" tabindex="-1">Hulladéknaptár 2026. év</a></li>
 </ul></div></aside><aside class="widget widget_nav_menu" id="nav_menu-6"><h2 class="widget-title">Kapcsolat</h2><div class="menu-social-links-menu-container"><ul class="menu" id="menu-social-links-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30" id="menu-item-30"><a data-review-original-href="https://www.facebook.com/kunhegyesvaros.onkormanyzat.9" href="#" tabindex="-1">Facebook</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33" id="menu-item-33"><a data-review-original-href="mailto:hivatal@kunhegyes.hu" href="#" tabindex="-1">Email</a></li>
-</ul></div></aside><aside class="widget widget_block" id="block-10"><div class="kozvil-widget loader" data-key="QIxcOPz5OAkJJ6YDvd1Dqktd" data-stepped="true"></div>
+</ul></div></aside><aside class="widget widget_block" id="block-10">
 </aside> </div>
 <div class="right-sidebar">
 <aside class="widget widget_text" id="text-6"><h2 class="widget-title">Pályázatok</h2> <div class="textwidget"><p><a data-review-original-href="https://kunhegyes.hu/ginop-plusz-1-2-4-24/" href="#" tabindex="-1">„Mikro- és kisvállalkozások támogatása a leghátrányosabb helyzetű régiókban, illetve a Szabad Vállalkozási Zónákban”</a></p>

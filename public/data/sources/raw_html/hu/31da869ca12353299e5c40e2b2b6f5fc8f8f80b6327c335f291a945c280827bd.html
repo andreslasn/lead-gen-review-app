@@ -22,7 +22,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -43,18 +44,18 @@
 <div class="d-flex justify-content-end gap-4" style="height: fit-content">
 <span class="d-none d-lg-block text-uppercase">2026. július 16., csütörtök</span>
 <a data-review-original-href="mailto:info@hajduboszormeny.hu" href="#" tabindex="-1">
-<svg aria-hidden="true" class="" focusable="false" height="28px" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg aria-hidden="true" focusable="false" height="28px" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <path d="M14.250,27.1000 C6.668,27.1000 0.500,21.832 0.500,14.250 C0.500,6.668 6.668,0.500 14.250,0.500 C21.832,0.500 27.1000,6.668 27.1000,14.250 C27.1000,21.832 21.832,27.1000 14.250,27.1000 ZM21.381,19.080 C21.550,19.080 21.688,18.942 21.688,18.773 L21.688,10.140 L14.692,15.696 C14.563,15.799 14.406,15.850 14.250,15.850 C14.094,15.850 13.937,15.799 13.808,15.696 L6.812,10.140 L6.812,18.773 C6.812,18.942 6.950,19.080 7.119,19.080 L21.381,19.080 ZM20.308,9.420 L14.250,14.231 L8.191,9.420 L20.308,9.420 ZM23.110,9.727 L23.110,18.773 C23.110,19.726 22.334,20.503 21.381,20.503 L7.119,20.503 C6.165,20.503 5.390,19.726 5.390,18.773 L5.390,9.727 C5.390,8.773 6.166,7.997 7.119,7.997 L21.381,7.997 C22.334,7.997 23.110,8.773 23.110,9.727 Z" fill="rgb(248, 242, 241)" fill-rule="evenodd"></path>
 </svg>
 <span class="sr-only">Email küldése</span></a>
 <div class="d-flex align-items-center gap-1">
 <a data-review-original-href="https://www.facebook.com/profile.php?id=100063469846569&amp;locale=hu_HU" href="#" tabindex="-1" target="_blank">
-<svg aria-hidden="true" class="" focusable="false" height="28px" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg aria-hidden="true" focusable="false" height="28px" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <path d="M13.1000,0.443 C6.513,0.443 0.444,6.513 0.444,13.1000 C0.444,21.487 6.513,27.556 13.1000,27.556 C21.487,27.556 27.556,21.487 27.556,13.1000 C27.556,6.513 21.487,0.443 13.1000,0.443 ZM17.856,9.266 C17.856,9.521 17.749,9.623 17.500,9.623 C17.020,9.623 16.540,9.623 16.062,9.642 C15.584,9.662 15.323,9.879 15.323,10.379 C15.313,10.914 15.323,11.438 15.323,11.984 L17.377,11.984 C17.669,11.984 17.769,12.084 17.769,12.378 C17.769,13.092 17.769,13.809 17.769,14.529 C17.769,14.820 17.676,14.911 17.382,14.913 L15.306,14.913 L15.306,20.717 C15.306,21.028 15.209,21.126 14.903,21.126 L12.669,21.126 C12.400,21.126 12.295,21.021 12.295,20.751 L12.295,14.922 L10.522,14.922 C10.243,14.922 10.144,14.820 10.144,14.540 C10.144,13.818 10.144,13.097 10.144,12.376 C10.144,12.098 10.249,11.993 10.523,11.993 L12.295,11.993 L12.295,10.432 C12.274,9.731 12.442,9.038 12.782,8.424 C13.135,7.804 13.701,7.334 14.375,7.100 C14.812,6.941 15.274,6.861 15.739,6.865 L17.493,6.865 C17.744,6.865 17.849,6.975 17.849,7.222 C17.858,7.908 17.858,8.588 17.856,9.266 L17.856,9.266 Z" fill="rgb(248, 242, 241)" fill-rule="evenodd"></path>
 </svg>
 <span class="sr-only">Facebook</span></a>
 <a data-review-original-href="https://www.instagram.com/hajduboszormeny_varosi_hivatal/" href="#" tabindex="-1" target="_blank">
-<svg aria-hidden="true" class="" fill="rgb(248, 242, 241)" focusable="false" height="28px" viewbox="-143 145 512 512" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg aria-hidden="true" fill="rgb(248, 242, 241)" focusable="false" height="28px" viewbox="-143 145 512 512" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <path d="M113,446c24.8,0,45.1-20.2,45.1-45.1c0-9.8-3.2-18.9-8.5-26.3c-8.2-11.3-21.5-18.8-36.5-18.8s-28.3,7.4-36.5,18.8 c-5.3,7.4-8.5,16.5-8.5,26.3C68,425.8,88.2,446,113,446z"></path> <polygon points="211.4,345.9 211.4,308.1 211.4,302.5 205.8,302.5 168,302.6 168.2,346 "></polygon> <path d="M183,401c0,38.6-31.4,70-70,70c-38.6,0-70-31.4-70-70c0-9.3,1.9-18.2,5.2-26.3H10v104.8C10,493,21,504,34.5,504h157 c13.5,0,24.5-11,24.5-24.5V374.7h-38.2C181.2,382.8,183,391.7,183,401z"></path> <path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M241,374.7v104.8 c0,27.3-22.2,49.5-49.5,49.5h-157C7.2,529-15,506.8-15,479.5V374.7v-52.3c0-27.3,22.2-49.5,49.5-49.5h157 c27.3,0,49.5,22.2,49.5,49.5V374.7z"></path>
 </svg>
 <span class="sr-only">Instagram</span></a>
@@ -617,7 +618,7 @@
 <img alt="Hajdúböszörmény címere"/>
 <p>Hajdúböszörmény Önkormányzata © 2026 <span class="slash_divider"></span> Minden jog fenntartva!</p>
 </div>
-</footer>
+</footer> 
 
 
 

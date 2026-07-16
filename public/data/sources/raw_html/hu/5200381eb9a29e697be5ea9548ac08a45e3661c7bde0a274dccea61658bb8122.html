@@ -26,17 +26,18 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="">
+<body>
 <div class="page ccm-page page-type-page page-template-without-sidebar" id="layout">
 
 <header>
 <div class="container">
 <div class="logo">
-<a class="" data-review-original-href="/" href="#" tabindex="-1">
+<a data-review-original-href="/" href="#" tabindex="-1">
 <img alt="Szekszárd logo"/>
 </a>
 </div>

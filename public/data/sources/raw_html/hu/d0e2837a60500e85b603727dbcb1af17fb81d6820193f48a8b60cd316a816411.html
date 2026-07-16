@@ -52,12 +52,13 @@ Gyógyszerek feliratására az alábbi e-mail..." property="og:description"/>
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="loading">
-<div class="loader active"></div>
+<body>
+
 <div class="cookieBox">
 <div class="container">
 <div class="row inline-row text-center">
@@ -96,9 +97,7 @@ Gyógyszerek feliratására az alábbi e-mail..." property="og:description"/>
 </div>
 </div>
 <div class="resultSearch">
-<div class="loader">
-<div class="loading"></div>
-</div>
+
 <ul class="hidden">
 </ul>
 </div>
@@ -140,9 +139,7 @@ Gyógyszerek feliratására az alábbi e-mail..." property="og:description"/>
 </div>
 </div>
 <div class="resultSearch">
-<div class="loader">
-<div class="loading"></div>
-</div>
+
 <ul class="hidden">
 </ul>
 </div>

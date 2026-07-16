@@ -50,7 +50,7 @@
 
 
 
-
+ 
 
 
 
@@ -72,7 +72,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -144,7 +145,7 @@
 <span></span>
 </i>
 <ul>
-<li class=""><a data-review-original-href="/" href="#" tabindex="-1" title="Főoldal"><span>Főoldal</span></a></li><li class=""><input type="checkbox"/><a data-review-original-href="#" href="#" tabindex="-1" title="A patikáról"><span>A patikáról</span></a><i aria-hidden="true" class="fa fa-angle-down"></i><ul><li class=""><a data-review-original-href="/bemutatkozas/" href="#" tabindex="-1" title="Rólunk"><span>Rólunk</span></a></li><li class=""><a data-review-original-href="/szolgaltatasok/" href="#" tabindex="-1" title="Szolgáltatások"><span>Szolgáltatások</span></a></li><li class=""><a data-review-original-href="/patikarobot/" href="#" tabindex="-1" title="Patikarobot"><span>Patikarobot</span></a></li><li class="active"><a data-review-original-href="/haziorvos-debrecen/" href="#" tabindex="-1" title="Háziorvos"><span>Háziorvos</span></a></li><li class=""><a data-review-original-href="/ugyelet/" href="#" tabindex="-1" title="Ügyelet"><span>Ügyelet</span></a></li></ul></li><li class=""><a data-review-original-href="/kapcsolat/" href="#" tabindex="-1" title="Kapcsolat"><span>Kapcsolat</span></a></li><li class=""><input type="checkbox"/><a data-review-original-href="#" href="#" tabindex="-1" title="Szállítás és fizetés"><span>Szállítás és fizetés</span></a><i aria-hidden="true" class="fa fa-angle-down"></i><ul><li class=""><a data-review-original-href="/sulyfelar/" href="#" tabindex="-1" title="Súlyfelár"><span>Súlyfelár</span></a></li><li class=""><a data-review-original-href="/utanvet-kezelesi-dij/" href="#" tabindex="-1" title="Utánvét kezelési díj"><span>Utánvét kezelési díj</span></a></li><li class=""><a data-review-original-href="/banki-fizetesi-tajekoztato/" href="#" tabindex="-1" title="Banki fizetési tájékoztató"><span>Banki fizetési tájékoztató</span></a></li><li class=""><a data-review-original-href="/szallitasi-informaciok/" href="#" tabindex="-1" title="Szállítási információk"><span>Szállítási információk</span></a></li></ul></li><li class=""><a data-review-original-href="/webaruhaz/" href="#" tabindex="-1" title="Webáruház"><span>Webáruház</span></a></li>
+<li><a data-review-original-href="/" href="#" tabindex="-1" title="Főoldal"><span>Főoldal</span></a></li><li><input type="checkbox"/><a data-review-original-href="#" href="#" tabindex="-1" title="A patikáról"><span>A patikáról</span></a><i aria-hidden="true" class="fa fa-angle-down"></i><ul><li><a data-review-original-href="/bemutatkozas/" href="#" tabindex="-1" title="Rólunk"><span>Rólunk</span></a></li><li><a data-review-original-href="/szolgaltatasok/" href="#" tabindex="-1" title="Szolgáltatások"><span>Szolgáltatások</span></a></li><li><a data-review-original-href="/patikarobot/" href="#" tabindex="-1" title="Patikarobot"><span>Patikarobot</span></a></li><li class="active"><a data-review-original-href="/haziorvos-debrecen/" href="#" tabindex="-1" title="Háziorvos"><span>Háziorvos</span></a></li><li><a data-review-original-href="/ugyelet/" href="#" tabindex="-1" title="Ügyelet"><span>Ügyelet</span></a></li></ul></li><li><a data-review-original-href="/kapcsolat/" href="#" tabindex="-1" title="Kapcsolat"><span>Kapcsolat</span></a></li><li><input type="checkbox"/><a data-review-original-href="#" href="#" tabindex="-1" title="Szállítás és fizetés"><span>Szállítás és fizetés</span></a><i aria-hidden="true" class="fa fa-angle-down"></i><ul><li><a data-review-original-href="/sulyfelar/" href="#" tabindex="-1" title="Súlyfelár"><span>Súlyfelár</span></a></li><li><a data-review-original-href="/utanvet-kezelesi-dij/" href="#" tabindex="-1" title="Utánvét kezelési díj"><span>Utánvét kezelési díj</span></a></li><li><a data-review-original-href="/banki-fizetesi-tajekoztato/" href="#" tabindex="-1" title="Banki fizetési tájékoztató"><span>Banki fizetési tájékoztató</span></a></li><li><a data-review-original-href="/szallitasi-informaciok/" href="#" tabindex="-1" title="Szállítási információk"><span>Szállítási információk</span></a></li></ul></li><li><a data-review-original-href="/webaruhaz/" href="#" tabindex="-1" title="Webáruház"><span>Webáruház</span></a></li>
 </ul>
 </div>
 <div class="pop">
@@ -448,7 +449,7 @@
 </picture>
 </div>
 <div class="bot">
-<ul class="footer1"><li class=""><a data-review-original-href="/impresszum/" href="#" tabindex="-1" title="Impresszum"><span>Impresszum</span></a></li><li class=""><a data-review-original-href="/altalanos-szerzodesi-feltetelek/" href="#" tabindex="-1" title="ÁSZF"><span>ÁSZF</span></a></li><li class=""><a data-review-original-href="/adatvdelemi-nyilatkozat/" href="#" tabindex="-1" title="Adatvédelmi tájékoztató"><span>Adatvédelmi tájékoztató</span></a></li><li class=""><a data-review-original-href="/elallas-a-szerzodestol/" href="#" tabindex="-1" title="Elállás a szerződéstől"><span>Elállás a szerződéstől</span></a></li></ul>
+<ul class="footer1"><li><a data-review-original-href="/impresszum/" href="#" tabindex="-1" title="Impresszum"><span>Impresszum</span></a></li><li><a data-review-original-href="/altalanos-szerzodesi-feltetelek/" href="#" tabindex="-1" title="ÁSZF"><span>ÁSZF</span></a></li><li><a data-review-original-href="/adatvdelemi-nyilatkozat/" href="#" tabindex="-1" title="Adatvédelmi tájékoztató"><span>Adatvédelmi tájékoztató</span></a></li><li><a data-review-original-href="/elallas-a-szerzodestol/" href="#" tabindex="-1" title="Elállás a szerződéstől"><span>Elállás a szerződéstől</span></a></li></ul>
 <a class="face_link" data-review-original-href="https://www.facebook.com/tocospatika/" href="#" tabindex="-1" target="_blank" title="Tócos patika facebook">
 <picture>
 <source type="image/webp"/>

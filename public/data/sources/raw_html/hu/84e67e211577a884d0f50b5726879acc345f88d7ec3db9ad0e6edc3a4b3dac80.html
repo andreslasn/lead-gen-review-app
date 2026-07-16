@@ -192,7 +192,8 @@ margin-top: 20px !important;
 </style>
 <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -704,7 +705,7 @@ Kiskunfélegyháza, Dr. Holló Lajos u. 23.<br/>
 </button><h2 class="title">BOOK<br/>NOW</h2>
 <div class="form_inputs row m0">
 <input id="_wpnonce" name="_wpnonce" type="hidden" value="a590dc1980"/><input name="_wp_http_referer" type="hidden" value="/doctor/dr-tamasi-jozsef/"/>
-<div class="loading"></div>
+
 <input class="form-control" name="lastNameNotAvailable" type="hidden" value="0"/>
 <div class="row m0 input_row">
 <div class="col-sm-12 col-md-12 col-lg-6 p0">
@@ -753,7 +754,7 @@ Kiskunfélegyháza, Dr. Holló Lajos u. 23.<br/>
 BEZÁRÁS			</button>
 </div>
 </div>
-
+ 
 
 
 

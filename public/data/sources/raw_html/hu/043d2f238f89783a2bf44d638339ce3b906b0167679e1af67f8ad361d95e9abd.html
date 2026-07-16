@@ -49,12 +49,13 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body>
-<div class="t3-wrapper">
+<div class="t3-wrapper"> 
 
 <div class="ja-topbar clearfix">
 <div class="container">
@@ -81,9 +82,9 @@
 </div>
 <div class="t3-off-canvas-body">
 <div class="t3-module module" id="Mod122"><div class="module-inner"><div class="module-ct"><ul class="nav nav-pills nav-stacked menu">
-<li class="item-101 default current active"><a class="" data-review-original-href="/" href="#" tabindex="-1" title="Főoldal">Főoldal</a></li><li class="item-103 deeper dropdown parent"><span class="nav-header">Bemutatkozás</span>
-<ul class="dropdown-menu"><li class="item-145"><a class="" data-review-original-href="/bemutatkozas/magamrol" href="#" tabindex="-1">Magamról</a></li><li class="item-144"><a class="" data-review-original-href="/bemutatkozas/hogyan-dolgozok" href="#" tabindex="-1">Hogyan dolgozok?</a></li></ul></li><li class="item-105 deeper dropdown parent"><span class="nav-header">Szolgáltatások</span>
-<ul class="dropdown-menu"><li class="item-153"><a class="" data-review-original-href="/szolgaltatasok/mire-szamithat-a-vizit-soran" href="#" tabindex="-1">Mire számíthat a vizit során?</a></li><li class="item-154"><a class="" data-review-original-href="/szolgaltatasok/milyen-szolgaltatasokat-kinal-rendelonk" href="#" tabindex="-1">Milyen szolgáltatásokat kínál rendelőnk?</a></li><li class="item-155"><a class="" data-review-original-href="/szolgaltatasok/arlista" href="#" tabindex="-1">Árlista</a></li><li class="item-185"><a class="" data-review-original-href="/szolgaltatasok/fizetesi-lehetosegek" href="#" tabindex="-1">Fizetési lehetőségek</a></li></ul></li><li class="item-106"><a class="" data-review-original-href="/aktualis" href="#" tabindex="-1">Aktuális</a></li><li class="item-108"><a class="" data-review-original-href="/kapcsolat" href="#" tabindex="-1">Kapcsolat</a></li></ul>
+<li class="item-101 default current active"><a data-review-original-href="/" href="#" tabindex="-1" title="Főoldal">Főoldal</a></li><li class="item-103 deeper dropdown parent"><span class="nav-header">Bemutatkozás</span>
+<ul class="dropdown-menu"><li class="item-145"><a data-review-original-href="/bemutatkozas/magamrol" href="#" tabindex="-1">Magamról</a></li><li class="item-144"><a data-review-original-href="/bemutatkozas/hogyan-dolgozok" href="#" tabindex="-1">Hogyan dolgozok?</a></li></ul></li><li class="item-105 deeper dropdown parent"><span class="nav-header">Szolgáltatások</span>
+<ul class="dropdown-menu"><li class="item-153"><a data-review-original-href="/szolgaltatasok/mire-szamithat-a-vizit-soran" href="#" tabindex="-1">Mire számíthat a vizit során?</a></li><li class="item-154"><a data-review-original-href="/szolgaltatasok/milyen-szolgaltatasokat-kinal-rendelonk" href="#" tabindex="-1">Milyen szolgáltatásokat kínál rendelőnk?</a></li><li class="item-155"><a data-review-original-href="/szolgaltatasok/arlista" href="#" tabindex="-1">Árlista</a></li><li class="item-185"><a data-review-original-href="/szolgaltatasok/fizetesi-lehetosegek" href="#" tabindex="-1">Fizetési lehetőségek</a></li></ul></li><li class="item-106"><a data-review-original-href="/aktualis" href="#" tabindex="-1">Aktuális</a></li><li class="item-108"><a data-review-original-href="/kapcsolat" href="#" tabindex="-1">Kapcsolat</a></li></ul>
 </div></div></div>
 </div>
 </div>
@@ -122,7 +123,7 @@
 <div class="t3-megamenu" data-responsive="true">
 <ul class="nav navbar-nav level0" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
 <li class="current active is-home" data-class="is-home" data-id="101" data-level="1" itemprop="name">
-<a class="" data-review-original-href="/" data-target="#" href="#" itemprop="url" tabindex="-1" title="Főoldal">Főoldal </a>
+<a data-review-original-href="/" data-target="#" href="#" itemprop="url" tabindex="-1" title="Főoldal">Főoldal </a>
 </li>
 <li class="dropdown mega" data-id="103" data-level="1" itemprop="name">
 <span class="dropdown-toggle separator" data-target="#" data-toggle="dropdown"> Bemutatkozás<em class="caret"></em></span>
@@ -131,10 +132,10 @@
 <div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
 <ul class="mega-nav level1" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
 <li data-id="145" data-level="2" itemprop="name">
-<a class="" data-review-original-href="/bemutatkozas/magamrol" data-target="#" href="#" itemprop="url" tabindex="-1">Magamról </a>
+<a data-review-original-href="/bemutatkozas/magamrol" data-target="#" href="#" itemprop="url" tabindex="-1">Magamról </a>
 </li>
 <li data-id="144" data-level="2" itemprop="name">
-<a class="" data-review-original-href="/bemutatkozas/hogyan-dolgozok" data-target="#" href="#" itemprop="url" tabindex="-1">Hogyan dolgozok? </a>
+<a data-review-original-href="/bemutatkozas/hogyan-dolgozok" data-target="#" href="#" itemprop="url" tabindex="-1">Hogyan dolgozok? </a>
 </li>
 </ul>
 </div></div>
@@ -148,16 +149,16 @@
 <div class="col-xs-12 mega-col-nav" data-width="12"><div class="mega-inner">
 <ul class="mega-nav level1" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
 <li data-id="153" data-level="2" itemprop="name">
-<a class="" data-review-original-href="/szolgaltatasok/mire-szamithat-a-vizit-soran" data-target="#" href="#" itemprop="url" tabindex="-1">Mire számíthat a vizit során? </a>
+<a data-review-original-href="/szolgaltatasok/mire-szamithat-a-vizit-soran" data-target="#" href="#" itemprop="url" tabindex="-1">Mire számíthat a vizit során? </a>
 </li>
 <li data-id="154" data-level="2" itemprop="name">
-<a class="" data-review-original-href="/szolgaltatasok/milyen-szolgaltatasokat-kinal-rendelonk" data-target="#" href="#" itemprop="url" tabindex="-1">Milyen szolgáltatásokat kínál rendelőnk? </a>
+<a data-review-original-href="/szolgaltatasok/milyen-szolgaltatasokat-kinal-rendelonk" data-target="#" href="#" itemprop="url" tabindex="-1">Milyen szolgáltatásokat kínál rendelőnk? </a>
 </li>
 <li data-id="155" data-level="2" itemprop="name">
-<a class="" data-review-original-href="/szolgaltatasok/arlista" data-target="#" href="#" itemprop="url" tabindex="-1">Árlista </a>
+<a data-review-original-href="/szolgaltatasok/arlista" data-target="#" href="#" itemprop="url" tabindex="-1">Árlista </a>
 </li>
 <li data-id="185" data-level="2" itemprop="name">
-<a class="" data-review-original-href="/szolgaltatasok/fizetesi-lehetosegek" data-target="#" href="#" itemprop="url" tabindex="-1">Fizetési lehetőségek </a>
+<a data-review-original-href="/szolgaltatasok/fizetesi-lehetosegek" data-target="#" href="#" itemprop="url" tabindex="-1">Fizetési lehetőségek </a>
 </li>
 </ul>
 </div></div>
@@ -165,10 +166,10 @@
 </div></div>
 </li>
 <li data-id="106" data-level="1" itemprop="name">
-<a class="" data-review-original-href="/aktualis" data-target="#" href="#" itemprop="url" tabindex="-1">Aktuális </a>
+<a data-review-original-href="/aktualis" data-target="#" href="#" itemprop="url" tabindex="-1">Aktuális </a>
 </li>
 <li data-id="108" data-level="1" itemprop="name">
-<a class="" data-review-original-href="/kapcsolat" data-target="#" href="#" itemprop="url" tabindex="-1">Kapcsolat </a>
+<a data-review-original-href="/kapcsolat" data-target="#" href="#" itemprop="url" tabindex="-1">Kapcsolat </a>
 </li>
 </ul>
 </div>
@@ -195,17 +196,17 @@
 
 <h2>
 <a data-review-original-href="#" href="#" style="color:#454339;" tabindex="-1" title="Köszöntöm Honlapomon!">
-
-					Köszöntöm Honlapomon!
+										
+					Köszöntöm Honlapomon!					
 											</a>
 </h2>
 <p>
-<div class="hidden-xs" style="text-align:justify; font-size: 1.2em;">Dr. Molnár Zsuzsanna szülész, nőgyógyász szakorvos vagyok. Honlapom azok számára készült akik szeretnék megismerni  nőgyógyászati magánrendelésem és szakmai munkám.
+<div class="hidden-xs" style="text-align:justify; font-size: 1.2em;">Dr. Molnár Zsuzsanna szülész, nőgyógyász szakorvos vagyok. Honlapom azok számára készült akik szeretnék megismerni  nőgyógyászati magánrendelésem és szakmai munkám. 
 A rendelő bemutatásán kívül tájékoztató anyagokat, szakmai aktualitásokat is olvashatnak tőlem.
 Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látogató számára.<br/><br/>Szeretettel várom rendelőmben!<br/><br/>
 <a class="btn btn-pink btn-lg" data-review-original-href="/kapcsolat" href="#" tabindex="-1" title="Kérjen időpontot rendelésemre"> Kérjen időpontot rendelésemre </a>
 </div>
-<div class="visible-xs" style="text-align:justify; font-size: 1em; margin: 0 -20px -60px -20px;"><img alt="Dr. Molnár Zsuzsanna PhD Szülész-nőgyógyász weboldala" class="logo-img" width="100%"/><br/>Dr. Molnár Zsuzsanna szülész, nőgyógyász szakorvos vagyok. Honlapom azok számára készült akik szeretnék megismerni  nőgyógyászati magánrendelésem és szakmai munkám.
+<div class="visible-xs" style="text-align:justify; font-size: 1em; margin: 0 -20px -60px -20px;"><img alt="Dr. Molnár Zsuzsanna PhD Szülész-nőgyógyász weboldala" class="logo-img" width="100%"/><br/>Dr. Molnár Zsuzsanna szülész, nőgyógyász szakorvos vagyok. Honlapom azok számára készült akik szeretnék megismerni  nőgyógyászati magánrendelésem és szakmai munkám. 
 A rendelő bemutatásán kívül tájékoztató anyagokat, szakmai aktualitásokat is olvashatnak tőlem.
 Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látogató számára.<br/><br/>Szeretettel várom rendelőmben!
 </div> </p>
@@ -245,7 +246,7 @@ Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látoga
 <h4><a data-review-original-href="#" href="#" tabindex="-1"> </a></h4>
 </div>
 </div>
-</div>
+</div> 
 </div>
 </div>
 </div></div></div></div></div><div class="t3-module module padding-bottom" id="Mod137" style="background-color:#ffffff; "><div class="container"><div class="module-inner"><div class="module-ct">
@@ -397,8 +398,8 @@ Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látoga
 <div class="features-content primary">
 
 <h2>
-
-						Mire számíthat a vizit során?
+												
+						Mire számíthat a vizit során?						
 											</h2>
 <p>
 <span style="font-size:1em;">Az első vizsgálatkor mindenki izgul, mert nem tudja mi fog történni. Ez természetes. Sokat segít, ha megismeri hogyan készüljön, mire számíthat a nőgyógyászati vizit során. Ezért készítettem tájékoztatónkat. Olvassa el Ön is!					</span></p>
@@ -445,8 +446,8 @@ Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látoga
 </div>
 <div class="features-item col-xs-12 col-md-6 pull-left">
 <h2 style="color:#454339;">
-
-						Kiváló partnereink
+												
+						Kiváló partnereink						
 											</h2>
 <p><div class="hidden-xs" style="font-size: 1.2em; text-align: justify;">Mint mindenkinek, úgy nekem is fontosak a kapcsolatok. Tekintse meg, hogy kikkel állok partnerségi viszonyban.</div>
 <div class="visible-xs" style="margin: 0 -15px; font-size: 1em; text-align: justify;">Mint mindenkinek, úgy nekem is fontosak a kapcsolatok. Tekintse meg, hogy kikkel állok partnerségi viszonyban.</div>
@@ -504,16 +505,16 @@ Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látoga
 <div class="copyright">
 <div class="module">
 <small>Copyright © 2026 Dr. Molnár Zsuzsanna PhD debreceni szülész, nőgyógyász magánrendelése. Minden jog fenntartva.</small>
-</div>
-<style type="text/css">
+</div> 
+<style type="text/css">  
 	.jb.cookie.color p a {
 		color: #eb6090;
-	}
+	} 
 
 	.jb.bgcolor {
 		background: #ffffff;
 	}
-
+	
 	.jb.cookie.top {
 		border-bottom: 1px solid #eb6090;
 	}
@@ -521,11 +522,11 @@ Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látoga
 	.jb.cookie.bottom {
 		border-top: 1px solid #eb6090;
 	}
-
+	
 	.jb.color {
 		color: #000000;
 	}
-
+	
 	.jb.accept {
 		color: #ffffff;
 		background-image: -webkit-linear-gradient(#eb6090 0%, #eb6090 100%);
@@ -538,7 +539,7 @@ Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látoga
 		padding: 0;
 		border: 1px solid #eb6090;
 	}
-
+	
 	.jb.decline.link {
 		color: #eb6090;
 		padding: 0;
@@ -549,7 +550,7 @@ Remélem, a honlap hasznos információkkal szolgál minden érdeklődő látoga
 
 <div class="jb cookie-bg bgcolor"></div>
 <h2>Ez a weboldal a felhasználói élmény javítása érdekében sütiket használ.</h2>
-<p class="jb color">A honlap további használatával hozzájárulását adja a sütik használatához.
+<p class="jb color">A honlap további használatával hozzájárulását adja a sütik használatához.												
 <a data-review-original-href="#jbcookies" data-target="#jbcookies" data-toggle="modal" href="#" tabindex="-1">További információk</a>
 </p>
 <div class="jb accept">Rendben</div>
