@@ -334,6 +334,12 @@ input, textarea {
   color: var(--error);
   border: 1px solid #efaaa2;
 }
+.candidate-reassign {
+  margin-top: 4px;
+  background: var(--blue-10);
+  color: var(--primary);
+  border: 1px solid var(--blue-40);
+}
 .candidate-radio {
   width: 1.35rem;
   color: var(--primary);
@@ -422,6 +428,49 @@ mark {
   color: white;
 }
 
+.reassign-panel {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid var(--concrete-100);
+  background: var(--blue-10);
+}
+.reassign-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.reassign-heading p {
+  margin: 0 0 3px;
+}
+.reassign-search {
+  width: 100%;
+  padding: 0.62rem 0.72rem;
+  border: 1px solid var(--blue-40);
+  border-radius: 0.55rem;
+  background: white;
+}
+.reassign-target {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 0.58rem 0.68rem;
+  border: 1px solid var(--concrete-100);
+  border-radius: 0.55rem;
+  background: white;
+  color: var(--black-100);
+  text-align: left;
+}
+.reassign-target:hover {
+  border-color: var(--primary);
+  background: var(--lake-20);
+}
+.reassign-target span,
+.reassign-target small {
+  color: var(--black-60);
+}
+
 .action-bar {
   position: sticky;
   bottom: 0;
@@ -473,14 +522,35 @@ mark {
 
 .evidence-pane {
   display: grid;
-  grid-template-rows: 48px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
 }
 .evidence-toolbar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
   padding: 8px 10px;
   border-bottom: 1px solid var(--concrete-100);
+}
+.evidence-provenance {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+.evidence-provenance strong {
+  font-size: 0.76rem;
+}
+.evidence-provenance span {
+  overflow: hidden;
+  color: var(--black-60);
+  font-size: 0.68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.evidence-provenance.evidence-text strong,
+.evidence-provenance.evidence-excerpt strong {
+  color: #8a5a00;
 }
 
 .evidence-links {
@@ -493,13 +563,20 @@ mark {
 .evidence-screenshot {
   display: block;
   width: 100%;
-  max-height: 420px;
+  height: auto;
+  max-height: none;
   object-fit: contain;
   object-position: top;
   margin: 12px 0;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
+}
+.screenshot-pane {
+  min-height: 0;
+  overflow: auto;
+  padding: 0 12px 18px;
+  background: #f5f6f8;
 }
 
 .archive-pane {
@@ -555,6 +632,11 @@ mark {
   background: #111827;
   color: #e9eef8;
   font: 0.84rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.text-fallback-pane .snapshot-text {
+  border: 1px dashed #c49a42;
+  background: #f7f4ec;
+  color: #252525;
 }
 .live-pane {
   display: grid;
