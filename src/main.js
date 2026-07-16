@@ -120,23 +120,40 @@ function stateLabel(value) {
 
 function laneLabel(value) {
   return {
-    review: "Review",
-    auto_confirm: "Auto-confirm audit",
-    auto_suppress: "Auto-suppress",
+    high_confidence: "High confidence",
+    low_confidence: "Low confidence",
     no_email: "No email",
     all: "All",
   }[value] || value;
 }
 
+function confidencePool(lane) {
+  if (["review", "auto_confirm"].includes(lane)) return "high_confidence";
+  if (lane === "auto_suppress") return "low_confidence";
+  return lane;
+}
+
+function normalizedLaneSelection(value) {
+  if (["review", "auto_confirm", "high_confidence"].includes(value)) return "high_confidence";
+  if (["auto_suppress", "low_confidence"].includes(value)) return "low_confidence";
+  if (["no_email", "all"].includes(value)) return value;
+  return "high_confidence";
+}
+
 function candidateLane(item) {
   const candidate = item.best_candidate || {};
   const confidence = Number(candidate.confidence || 0);
+  const triage = candidate.triage || {};
+  const triageConfidence = Number(triage.confidence || 0);
+  const targetOwnership = ["target_person", "target_practice", "same_professional_other_practice", "covering_provider"].includes(triage.ownership_class);
+  const nonTargetOwnership = ["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(triage.ownership_class);
   const sourceRole = item.source_coverage_status || "";
   const sourceHost = normalizeHost(candidate.source_url || item.website || "");
   const itemHost = normalizeHost(item.website || "");
   const sameDomain = Boolean(sourceHost && itemHost && sourceHost === itemHost);
 
   if (!candidate.value) return "no_email";
+  if (triage.decision === "suppress" || (nonTargetOwnership && triageConfidence >= 0.9)) return "auto_suppress";
   if (
     candidate.usable_contact
     && confidence >= 0.9
@@ -145,6 +162,7 @@ function candidateLane(item) {
   ) {
     return "auto_confirm";
   }
+  if (targetOwnership && triageConfidence >= 0.9) return "review";
   if (!candidate.usable_contact && confidence < 0.4) return "auto_suppress";
   if (["third_party", "directory_operator", "webmaster"].includes(candidate.classification)) return "auto_suppress";
   return "review";
@@ -331,7 +349,7 @@ const App = {
     const roleOverrides = ref([]);
     const reviewer = ref(localStorage.getItem("review.reviewer") || "reviewer");
     const search = ref(localStorage.getItem("review.filter.search") || "");
-    const selectedLane = ref(localStorage.getItem("review.filter.lane") || "review");
+    const selectedLane = ref(normalizedLaneSelection(localStorage.getItem("review.filter.lane")));
     const currentIndex = ref(0);
     const selectedCandidateIndex = ref(0);
     const evidenceTab = ref("snapshot");
@@ -367,6 +385,7 @@ const App = {
       return {
         ...item,
         lane,
+        confidence_pool: confidencePool(lane),
         status: localState?.status || item.status,
         reviewed_at: localState?.reviewed_at || item.reviewed_at,
         local_decision_count: (decisionsByClinic.value[item.id] || []).length,
@@ -375,7 +394,7 @@ const App = {
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
       return preparedQueue.value
-        .filter((item) => selectedLane.value === "all" || item.lane === selectedLane.value)
+        .filter((item) => selectedLane.value === "all" || item.confidence_pool === selectedLane.value)
         .filter((item) => item.status === "needs_review" || selectedLane.value === "all")
         .filter((item) => {
           if (!needle) return true;
@@ -393,8 +412,8 @@ const App = {
         .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
     });
     const laneCounts = computed(() => {
-      const counts = { review: 0, auto_confirm: 0, auto_suppress: 0, no_email: 0, all: preparedQueue.value.length };
-      for (const item of preparedQueue.value) counts[item.lane] = (counts[item.lane] || 0) + 1;
+      const counts = { high_confidence: 0, low_confidence: 0, no_email: 0, all: preparedQueue.value.length };
+      for (const item of preparedQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
       return counts;
     });
     const currentItem = computed(() => filteredQueue.value[currentIndex.value] || null);
@@ -571,39 +590,77 @@ const App = {
           source, track, input, textarea, select, button {
             display: none !important;
           }
+          [data-review-dimmer] {
+            background: rgba(0, 0, 0, 0.2) !important;
+            display: block !important;
+            inset: 0 !important;
+            pointer-events: none !important;
+            position: fixed !important;
+            z-index: 2147483645 !important;
+          }
+          [data-review-email-highlight] {
+            background: #fff36d !important;
+            border-radius: 4px !important;
+            box-shadow: 0 2px 10px rgba(255, 45, 125, 0.35) !important;
+            color: #000 !important;
+            outline: 3px solid #ff2d7d !important;
+            outline-offset: 2px !important;
+            padding: 1px 2px !important;
+            position: relative !important;
+            z-index: 2147483647 !important;
+          }
         `;
         (document.head || document.documentElement).append(style);
       }
-      for (const element of document.querySelectorAll("[class*='cookie' i], [id*='cookie' i], [class*='consent' i], [id*='consent' i]")) {
-        element.style.setProperty("display", "none", "important");
-      }
-      for (const element of document.querySelectorAll(`
-        img, picture, svg, video, canvas, object, embed, iframe, source, track,
-        input, textarea, select, button, noscript, template,
-        [aria-busy='true'], [class*='skeleton' i], [class*='spinner' i],
-        [class*='preloader' i], [class*='placeholder' i]
-      `)) {
-        element.remove();
-      }
-      const seenNavigation = new Set();
-      for (const navigation of document.querySelectorAll("nav")) {
-        const navigationText = String(navigation.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
-        if (!navigationText || seenNavigation.has(navigationText)) navigation.remove();
-        else seenNavigation.add(navigationText);
-      }
-      let removedEmptyElement = true;
-      while (removedEmptyElement) {
-        removedEmptyElement = false;
-        const elements = [...document.body.querySelectorAll("*")].reverse();
-        for (const element of elements) {
-          if (element.matches("script, style, link, meta, br, hr, [data-review-spotlight]")) continue;
-          const visibleText = String(element.textContent || "").replace(/\s+/g, "").trim();
-          if (visibleText) continue;
-          element.remove();
-          removedEmptyElement = true;
+      document.querySelectorAll("[data-review-dimmer], [data-review-spotlight]").forEach((element) => element.remove());
+      for (const highlight of document.querySelectorAll("[data-review-email-highlight]")) {
+        if (highlight.tagName === "MARK") {
+          const parent = highlight.parentNode;
+          highlight.replaceWith(...highlight.childNodes);
+          parent?.normalize();
+        } else {
+          highlight.removeAttribute("data-review-email-highlight");
         }
       }
-      document.querySelectorAll("[data-review-spotlight]").forEach((element) => element.remove());
+      if (document.body.dataset.reviewTextNormalized !== "true") {
+        for (const element of document.querySelectorAll("[class*='cookie' i], [id*='cookie' i], [class*='consent' i], [id*='consent' i]")) {
+          element.style.setProperty("display", "none", "important");
+        }
+        for (const element of document.querySelectorAll(`
+          img, picture, svg, video, canvas, object, embed, iframe, source, track,
+          input, textarea, select, button, noscript, template,
+          [aria-busy='true'], [class*='skeleton' i], [class*='spinner' i],
+          [class*='preloader' i], [class*='placeholder' i]
+        `)) {
+          element.remove();
+        }
+        const seenNavigation = new Set();
+        for (const navigation of document.querySelectorAll("nav")) {
+          const navigationText = String(navigation.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
+          if (!navigationText || seenNavigation.has(navigationText)) navigation.remove();
+          else seenNavigation.add(navigationText);
+        }
+        let removedEmptyElement = true;
+        while (removedEmptyElement) {
+          removedEmptyElement = false;
+          const elements = [...document.body.querySelectorAll("*")].reverse();
+          for (const element of elements) {
+            if (element.matches("script, style, link, meta, br, hr")) continue;
+            const visibleText = String(element.textContent || "").replace(/\s+/g, "").trim();
+            if (visibleText) continue;
+            element.remove();
+            removedEmptyElement = true;
+          }
+        }
+        const normalizedText = String(document.body.innerText || document.body.textContent || "")
+          .replace(/\s+/g, " ")
+          .trim();
+        const proofText = document.createElement("div");
+        proofText.setAttribute("data-review-proof-text", "true");
+        proofText.textContent = normalizedText;
+        document.body.replaceChildren(proofText);
+        document.body.dataset.reviewTextNormalized = "true";
+      }
       if (!needle) return;
       let target = null;
       let matchedRange = null;
@@ -632,21 +689,18 @@ const App = {
         );
       }
       if (!target) return;
+      if (matchedRange) {
+        const highlight = document.createElement("mark");
+        highlight.setAttribute("data-review-email-highlight", "true");
+        matchedRange.surroundContents(highlight);
+        target = highlight;
+      } else {
+        target.setAttribute("data-review-email-highlight", "true");
+      }
+      const dimmer = document.createElement("div");
+      dimmer.setAttribute("data-review-dimmer", "true");
+      document.body.append(dimmer);
       target.scrollIntoView({ block: "center", inline: "nearest" });
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        const sourceRect = matchedRange?.getBoundingClientRect() || target.getBoundingClientRect();
-        const padding = 6;
-        const pageX = document.defaultView?.scrollX || document.documentElement.scrollLeft || 0;
-        const pageY = document.defaultView?.scrollY || document.documentElement.scrollTop || 0;
-        const left = Math.max(pageX + 8, sourceRect.left + pageX - padding);
-        const top = Math.max(pageY + 8, sourceRect.top + pageY - padding);
-        const width = Math.max(20, sourceRect.width + (padding * 2));
-        const height = Math.max(20, sourceRect.height + (padding * 2));
-        const highlight = document.createElement("div");
-        highlight.setAttribute("data-review-spotlight", "true");
-        highlight.style.cssText = `position:absolute!important;left:${left}px!important;top:${top}px!important;width:${width}px!important;height:${height}px!important;z-index:2147483646!important;pointer-events:none!important;border:3px solid #ff2d7d!important;border-radius:5px!important;box-shadow:0 2px 10px rgba(255,45,125,.35)!important;background:rgba(255,243,109,.28)!important;box-sizing:border-box!important;`;
-        document.body.append(highlight);
-      }));
     }
 
     async function init() {
@@ -1203,7 +1257,7 @@ const App = {
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
           <span class="queue-summary">{{ manifest?.counts?.clinics || 0 }} clinics</span>
-          <button v-for="lane in ['review','auto_confirm','auto_suppress','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['high_confidence','low_confidence','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
@@ -1215,7 +1269,7 @@ const App = {
       <main v-if="currentItem && clinic" class="review-layout">
         <section class="decision-pane">
           <div class="clinic-meta">
-            <span class="pill lane">{{ laneLabel(currentItem.lane) }}</span>
+            <span class="pill lane">{{ laneLabel(currentItem.confidence_pool) }}</span>
             <span class="muted">{{ currentItem.city }} · {{ currentItem.registry_id }}</span>
           </div>
           <h2>{{ clinic.clinic.name }}</h2>
@@ -1230,7 +1284,7 @@ const App = {
             </p>
             <div v-if="candidateGroups.primary.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Decision</th></tr></thead>
+                <thead><tr><th></th><th>Email</th><th>Type</th><th>Decision</th></tr></thead>
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
                     <td class="candidate-radio">{{ row.index === selectedCandidateIndex ? '●' : '○' }}</td>
@@ -1292,13 +1346,6 @@ const App = {
               <small>{{ target.address }}</small>
             </button>
           </section>
-
-          <div class="action-bar">
-            <button class="secondary" @click="markNoPublicEmail"><kbd>3</kbd> No public email</button>
-            <button class="quiet" @click="editMode=!editMode">Edit</button>
-            <button class="quiet" @click="excludeCurrent">Exclude</button>
-            <button class="quiet" @click="undoLastAction"><kbd>U</kbd> Undo</button>
-          </div>
 
           <p class="shortcut-line">J/K alternate · ←/→ lead · decisions auto-advance</p>
         </section>
