@@ -508,6 +508,21 @@ const App = {
       const needle = String(selectedCandidate.value?.value || "").trim().toLowerCase();
       if (!document || !needle) return;
       document.documentElement.style.setProperty("zoom", "1", "important");
+      if (!document.getElementById("review-evidence-media-constraints")) {
+        const style = document.createElement("style");
+        style.id = "review-evidence-media-constraints";
+        style.textContent = `
+          img, svg, video, canvas, object, embed {
+            max-inline-size: 100% !important;
+            max-block-size: 72vh !important;
+            object-fit: contain !important;
+          }
+          picture {
+            max-inline-size: 100% !important;
+          }
+        `;
+        (document.head || document.documentElement).append(style);
+      }
       for (const element of document.querySelectorAll("[class*='cookie' i], [id*='cookie' i], [class*='consent' i], [id*='consent' i]")) {
         element.style.setProperty("display", "none", "important");
       }
@@ -1109,7 +1124,7 @@ const App = {
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
-          <span class="queue-summary">{{ manifest?.counts?.clinics || 0 }} clinics · {{ manifest?.counts?.candidate_emails || 0 }} candidate emails</span>
+          <span class="queue-summary">{{ manifest?.counts?.clinics || 0 }} clinics</span>
           <button v-for="lane in ['review','auto_confirm','auto_suppress','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
