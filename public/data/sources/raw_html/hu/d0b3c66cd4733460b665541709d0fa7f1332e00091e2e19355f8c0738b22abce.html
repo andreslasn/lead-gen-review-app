@@ -1,0 +1,322 @@
+<!doctype html>
+
+
+Warning: mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/www/pnet1412_szezatom/public_html/szederkeny.hu/moduls/X32465_news/functions/X32465_news_news_sheet_from_list.php on line 45
+
+Warning: mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/www/pnet1412_szezatom/public_html/szederkeny.hu/moduls/X32465_news/functions/X32465_news_news_sheet_from_list.php on line 56
+<!DOCTYPE html>
+
+<html>
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+<title>Szederkény község honlapja</title>
+<meta content="A település Baranya megyében az 57. számú főút mentén Pécs és Mohács között a Karasica patak jobb és bal partján egy völgyben helyezkedik el." name="description"/>
+
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+
+<section id="topbar">
+<div class="container clearfix">
+<div class="row">
+<div class="col pt-0">
+<div class="contact-info pt-2" style="position: relative;"><a data-review-original-href="/" href="#" tabindex="-1"><img class="cimer_fej" data-aos="slide-right" data-aos-duration="1500"/></a><a class="float-right" data-review-original-href="https://mail.boly.hu/mail/" href="#" tabindex="-1" target="_blank"></a></div>
+</div>
+<div class="col text-center pt-2"><a data-review-original-href="/moduls/M78487_gyengenlatoknak/index.php" href="#" tabindex="-1"><img class="flag"/></a><a data-review-original-href="/" href="#" tabindex="-1"><img class="flag ml-1"/></a><a data-review-original-href="/rolunk/die-geschichte-der-stadt-boly" href="#" tabindex="-1"><img class="flag ml-1"/></a></div>
+<div class="col d-none d-md-block pt-1">
+<div class="text-right container clearfix">
+<div class="social-links">
+
+<div class="row padMar">
+<div class="col-12 col-md-12 col-lg-12 col-xl-11 offset-md-0 offset-lg-2 offset-xl-1 d-none d-sm-block padMar">
+<div class="input-group">
+<div class="input-group-prepend"></div><input class="form-control autocomplete" id="M85487_kereso" placeholder="Keresés" type="text"/>
+<div class="input-group-append"><button class="btn btn-primary"><i class="fa fa-search"></i></button></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<div class="container-fluid"><nav class="navbar navbar-light navbar-expand-lg sticky-top text-uppercase" style="font-size: 11pt;">
+<div class="container">
+<div class="col-xs-6"></div><button class="navbar-toggler" data-target="#navcol-1" data-toggle="collapse">
+<span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navcol-1">
+<ul class="nav navbar-nav ml-auto"><li class="nav-item dropdown" data-bs-hover-animate="pulse">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle text-nowrap" data-review-original-href="#" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" tabindex="-1">Önkormányzat</a>
+<div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu" role="menu">
+<a class="nav-link text-nowrap" data-review-original-href="/onkormanyzat/kepviselo-testulet" href="#" tabindex="-1">KÉPVISELŐ-TESTÜLET</a>
+<a class="nav-link text-nowrap" data-review-original-href="/onkormanyzat/nemzetisegi-onkormanyzatok" href="#" tabindex="-1">NEMZETISÉGI ÖNKORMÁNYZATOK</a>
+<a class="nav-link text-nowrap" data-review-original-href="/onkormanyzat/szederkenyi-kozos-onkormanyzati-hivatal" href="#" tabindex="-1">SZEDERKÉNYI KÖZÖS ÖNKORMÁNYZATI HIVATAL</a>
+<a class="nav-link text-nowrap" data-review-original-href="/onkormanyzat/szabalyzatok" href="#" tabindex="-1">SZABÁLYZATOK</a>
+</div>
+</li>
+<li class="nav-item dropdown" data-bs-hover-animate="pulse">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle text-nowrap" data-review-original-href="#" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" tabindex="-1">E-ügyintézés</a>
+<div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu" role="menu">
+<a class="nav-link text-nowrap" data-review-original-href="/e-ugyintezes/elektronikus-ugyintezes-es-kapcsolattartas" href="#" tabindex="-1">ELEKTRONIKUS ÜGYINTÉZÉS ÉS KAPCSOLATTARTÁS</a>
+<a class="nav-link text-nowrap" data-review-original-href="/e-ugyintezes/nyilvantartasok-dokumentumtar" href="#" tabindex="-1">NYILVÁNTARTÁSOK, DOKUMENTUMTÁR</a>
+<a class="nav-link text-nowrap" data-review-original-href="/e-ugyintezes/nyomtatvanyok-urlapok-kerelmek" href="#" tabindex="-1">NYOMTATVÁNYOK, ŰRLAPOK, KÉRELMEK</a>
+</div>
+</li>
+<li class="nav-item dropdown" data-bs-hover-animate="pulse">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle text-nowrap" data-review-original-href="#" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" tabindex="-1">Turizmus</a>
+<div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu" role="menu">
+<a class="nav-link text-nowrap" data-review-original-href="/turizmus/latnivalok" href="#" tabindex="-1">LÁTNIVALÓK</a>
+<a class="nav-link text-nowrap" data-review-original-href="/turizmus/szallashelyek" href="#" tabindex="-1">SZÁLLÁSHELYEK</a>
+</div>
+</li>
+<li class="nav-item dropdown" data-bs-hover-animate="pulse">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle text-nowrap" data-review-original-href="#" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink" tabindex="-1">Intézmények</a>
+<div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu" role="menu">
+<a class="nav-link text-nowrap" data-review-original-href="/intezmenyek/szederkenyi-ovoda-es-bolcsode" href="#" tabindex="-1">SZEDERKÉNYI ÓVODA és BÖLCSŐDE</a>
+<a class="nav-link text-nowrap" data-review-original-href="/intezmenyek/szederkenyi-altalanos-iskola" href="#" tabindex="-1">SZEDERKÉNYI ÁLTALÁNOS ISKOLA</a>
+<a class="nav-link text-nowrap" data-review-original-href="/intezmenyek/nyugdijas-haz" href="#" tabindex="-1">NYUGDÍJAS HÁZ</a>
+<a class="nav-link text-nowrap" data-review-original-href="/intezmenyek/civil-szervezetek" href="#" tabindex="-1">CIVIL SZERVEZETEK</a>
+</div>
+</li>
+<a class="nav-link text-nowrap" data-review-original-href="/informaciok" href="#" tabindex="-1">Információk</a>
+<a class="nav-link text-nowrap" data-review-original-href="/kozerdeku-adatok" href="#" tabindex="-1">Közérdekű adatok</a>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+
+<div class="container-fluid text-center" id="masodik-cont"></div>
+<section class="pt-4 pb-4">
+<div class="container">
+<div class="row">
+<div class="col"><br/><div class="row justify-content-center d-flex mx-0 hirek-blokk">
+<div></div>
+<div class="text-center col-md-3"><span class="text-secondary"><small>Publikálva:</small> <strong>2019.07.15.</strong><br/></span></div><div class="col-lg-10 col-xl-9">
+<h5 class="text-uppercase bg-light text-center p-3 font-weight-bolder rounded">Egészségügyi Ellátás</h5>
+<div class="text-justify hircikk"><p><br/>
+<span style="font-size:18px;"><span style="color:#2980b9;"><strong><u>Fogászat:</u></strong></span><br/>
+<strong>Dr. Kiss Péter</strong></span><br/>
+ </p>
+<p><strong><span style="color:#e74c3c;">ÁTMENETI VÁLTOZÁS</span></strong>:<span style="color:#2980b9;"> </span><strong><a data-review-original-href="https://www.szederkeny.hu/fogorvosi-rendeles-helyenek-atmeneti-valtozasa" href="#" tabindex="-1"><span style="color:#2980b9;">https://www.szederkeny.hu/fogorvosi-rendeles-helyenek-atmeneti-valtozasa</span></a></strong></p>
+<p><span style="font-size:18px;"><br/>
+<u><strong>Elérhetőség</strong></u><br/>
+<strong>Rendelő címe:</strong> 7751 Szederkény Pécsi út 19/b<br/>
+<strong>Rendelő telefonszáma: </strong>30/211 5601<br/>
+<br/>
+<u><strong>Rendelési idő</strong></u><br/>
+<strong>hétfő: </strong>14.00-19.00<br/>
+<strong>kedd: </strong>9.00-17.00<br/>
+<strong>szerda: </strong>8.00-16.00<br/>
+<strong>csütörtök: </strong>8.00-13.00 (iskolafogászat)<br/>
+<strong>péntek:</strong> 8.00-12.00<br/>
+<br/>
+<span style="color:#2980b9;"><strong><u>Felnőtt háziorvos:</u></strong></span><br/>
+<strong>Dr. Berente Eszter</strong></span><br/>
+<span style="font-size:18px;"><br/>
+<u><strong>Elérhetőség</strong></u><br/>
+<strong>Rendelő címe:</strong> 7751 Szederkény Pécsi út 19/b<br/>
+<strong>Rendelő  telefonszáma: </strong>69/354-128<br/>
+<br/>
+<u><strong>Rendelési idő</strong></u></span></p>
+<div class="table-responsive"><table class="Table" height="313" style="border-collapse: collapse; border: 1pt solid windowtext;" width="510">
+<tbody>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>hétfő</b></span></span></p>
+</td>
+<td style="border:solid windowtext 1.0pt; width:92.15pt; border-left:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">08.00 – 12.00</span></span></p>
+</td>
+<td style="border:solid windowtext 1.0pt; width:235.35pt; border-left:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="314"> </td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>kedd</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">08.00 – 12.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:235.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="314"> </td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>szerda</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">11.30 – 16.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:235.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="314"> </td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>csütörtök</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">14.00 – 16.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:235.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="314">
+<p>Máriakéménd: 08.00 - 10.00<br/>
+			Monyoród: 10.00 - 11.00</p>
+</td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>péntek</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">08.00 – 12.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:235.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="314">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""></span></span></p>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p><span style="font-size:18px;"></span></p>
+<p> </p>
+<p><span style="font-size:18px;"><span style="color:#2980b9;"><u><strong>Gyermekorvos:</strong></u></span><br/>
+<strong>Dr. Ofodile Solomon Nnamdi</strong><br/>
+<br/>
+<u><strong>Elérhetőség</strong></u><br/>
+<strong>Rendelő címe:</strong> 7751 Szederkény Pécsi út 21.<br/>
+<strong>Rendelő telefonszáma:</strong> 69/354-121<br/>
+<br/>
+<u><strong>Rendelési idő</strong></u></span></p>
+<div class="table-responsive"><table class="Table" style="border-collapse:collapse; border:solid windowtext 1.0pt">
+<tbody>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>hétfő</b></span></span></p>
+</td>
+<td style="border:solid windowtext 1.0pt; width:92.15pt; border-left:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">08.00 – 12.00</span></span></p>
+</td>
+<td style="border:solid windowtext 1.0pt; width:191.35pt; border-left:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="255">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>kedd</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">08.00 – 09.00</span></span></p>
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">16.00 – 17.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:191.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="255">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">09.00 – 10.00 óvodai, iskolai szűrés</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>szerda</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">08.00 – 10.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:191.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="255">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">10.00 – 12.00 tanácsadás</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>csütörtök</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">13.00 – 15.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:191.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="255">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">09.00 – 10.00 Monyoród</span></span></p>
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">10.00 – 12.00 Máriakéménd </span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border:solid windowtext 1.0pt; width:62.1pt; border-top:none; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="83">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""><b>péntek</b></span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:92.15pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="123">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times="">08.00 – 12.00</span></span></p>
+</td>
+<td style="border-bottom:solid windowtext 1.0pt; width:191.35pt; border-top:none; border-left:none; border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt" valign="top" width="255">
+<p class="MsoBodyText" style="margin-top:0cm; margin:12pt 0cm 0cm; text-align:justify"><span style="font-size:12pt"><span new="" roman="" style="font-family:" times=""></span></span></p>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p><span style="font-size:18px;"><br/>
+<span style="color:#2980b9;"><u><strong>Orvosi ügyelet:</strong></u></span></span><br/>
+<br/>
+<img alt="" style="width: 666px; height: 1000px;"/></p>
+<p> </p>
+</div>
+<br/><br/>
+<div class="text-center" style="clear: both;">
+<br/><br/><br/><br/>
+<a class="btn btn-warning" data-review-original-href="/" href="#" tabindex="-1"><i class="fa fa-toggle-left"></i> Vissza a főoldalra</a>
+</div>
+</div>
+<div class="col"></div>
+</div></div>
+</div>
+</div>
+</section>
+
+<div class="footer-dark" style="background-color: #303030;">
+<footer>
+<div class="container">
+<div class="row">
+
+<div class="col-xl-4 item">
+<h3><strong>Szederkényi Közös Önkormányzati Hivatal 1</strong><br/></h3>
+<p style="font-size: 15px;"><strong>Cím:</strong> 7751 Szederkény, Kossuth L. u. 1.<br/><strong>Tel.:</strong> <a data-review-original-href="tel:+3669354154" href="#" tabindex="-1">69/354-154</a><br/><strong>E-mail:</strong> <a data-review-original-href="mailto:hivatal@szederkeny.hu" href="#" tabindex="-1">hivatal@szederkeny.hu</a><br/><br/></p>
+</div>
+
+<div class="col offset-xl-6">
+<div><img style="width: 100px"/></div>
+</div>
+</div>
+
+<p class="copyright"><a data-review-original-href="http://szederkeny.hu" href="#" tabindex="-1">szederkeny.hu</a> © 2019<i class="far fa-edit d-none"></i></p>
+
+</div>
+</footer>
+</div>
+
+<a class="cd-top" data-review-original-href="#" href="#" tabindex="-1"> </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

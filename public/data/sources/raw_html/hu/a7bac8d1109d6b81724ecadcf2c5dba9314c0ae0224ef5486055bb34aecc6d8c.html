@@ -1,0 +1,2233 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<title> Herendi Porcelán</title>
+
+
+
+
+
+<style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body x-data="" x-on:paginated.window="scrollAfterPagination()">
+
+<noscript></noscript>
+
+<nav class="navigation">
+<div class="navigation__menu__wrapper" x-data="headerNavigation" x-on:click.away="closeNav" x-on:open-menu.window.debounce.100ms="openCategory($event.detail)">
+<button class="navigation__menu__toggler" type="button" x-bind:class="{ 'is-open' : open }" x-on:click="toggleNav">
+<span class="inline-block md:hidden">
+<svg class="icon w-4 h-4" height="16px" version="1.1" viewbox="0 0 20 16" width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Ham</title>
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Nav/Header/HeaderE/Compact" stroke="currentColor" stroke-width="1.5" transform="translate(-24.000000, -22.000000)">
+<g id="Group" transform="translate(20.000000, 16.000000)">
+<line id="Line-03" x1="5" x2="23" y1="21" y2="21"></line>
+<line id="Line-02" x1="5" x2="23" y1="14" y2="14"></line>
+<line id="Line-01" x1="5" x2="23" y1="7" y2="7"></line>
+</g>
+</g>
+</g>
+</svg> </span>
+</button>
+<ul class="navigation__menu__social">
+<li>
+<a data-review-original-href="https://www.facebook.com/Herendporcelan" href="#" tabindex="-1" target="_blank">
+<svg class="icon w-4 h-4" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m10.6853353 20h-9.57995579c-.61016949 0-1.10537951-.4940476-1.10537951-1.1041667v-17.79166663c0-.61011905.49521002-1.10416667 1.10537951-1.10416667h17.79218869c.6101695 0 1.1024318.49404762 1.1024318 1.10416667v17.79166663c0 .6101191-.4922623 1.1041667-1.1024318 1.1041667h-5.0965365v-7.7440476h2.5998526l.3890936-3.02083335h-2.9889462v-1.92559524c0-.875.2446573-1.4702381 1.4944731-1.4702381h1.5976418v-2.69940476c-.2711864-.03571428-1.2232866-.11904762-2.3286661-.11904762-2.3050848 0-3.8791452 1.4077381-3.8791452 3.98809524v2.22619048h-2.60869565v3.02083335h2.60869565z" fill="currentColor" fill-rule="evenodd"></path></svg> </a>
+</li>
+<li>
+<a data-review-original-href="https://instagram.com/herendporcelain/" href="#" tabindex="-1" target="_blank">
+<svg class="icon w-4 h-4" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m10 0c-2.71441202 0-3.05629237.01190476-4.12319481.05952381-1.0639552.04761905-1.79192455.2172619-2.42852933.46428571-.65723548.25595239-1.21426466.59821429-1.76834659 1.15476191-.55702918.55654762-.89890952 1.11309524-1.15531978 1.77083333-.24756852.63690476-.41556145 1.36309524-.46271736 2.42857143-.05010315 1.06547619-.06189213 1.4077381-.06189213 4.12202381 0 2.7172619.01178898 3.0565476.06189213 4.1220238.04715591 1.0654762.21514884 1.7916667.46271736 2.4285714.25641026.6577381.5982906 1.2142858 1.15531978 1.7708334.55408193.5565476 1.11111111.8988095 1.76834659 1.1547619.63660478.2470238 1.36457413.4136905 2.42852933.4642857 1.06690244.047619 1.40878279.0595238 4.12319481.0595238 2.714412 0 3.0562924-.0119048 4.1231948-.0595238 1.0639552-.0505952 1.7919246-.2172619 2.4285293-.4642857.6572355-.2559524 1.2142647-.5982143 1.7683466-1.1547619.5570292-.5565476.8989096-1.1130953 1.1553198-1.7708334.2475685-.6369047.4155615-1.3630952.4627174-2.4285714.0501031-1.0654762.0618921-1.4047619.0618921-4.1220238 0-2.71428571-.011789-3.05654762-.0618921-4.12202381-.0471559-1.06547619-.2151489-1.79166667-.4627174-2.42857143-.2564102-.65773809-.5982906-1.21428571-1.1553198-1.77083333-.5540819-.55654762-1.1111111-.89880952-1.7683466-1.15476191-.6366047-.24702381-1.3645741-.41666666-2.4285293-.46428571-1.0669024-.04761905-1.4087828-.05952381-4.1231948-.05952381m0 1.80059524c2.6702034 0 2.9855585.01190476 4.040672.05952381.9755378.04464285 1.5060418.20833333 1.8538167.34523809.4686118.18154762.8016504.39583334 1.1523725.74702381.3507221.35119048.5658709.68452381.7486 1.14880953.1355733.35416666.300619.88392857.3448276 1.85714285.0471559 1.05654762.0589449 1.37202381.0589449 4.04166667 0 2.6696429-.011789 2.9880952-.0589449 4.0416667-.0442086.9732143-.2092543 1.5029762-.3448276 1.8571428-.1827291.4672619-.3978779.7976191-.7486 1.1488095-.3507221.3511905-.6837607.5654762-1.1523725.7470239-.3477749.1369047-.8782789.3005952-1.8538167.3452381-1.0551135.047619-1.3704686.0595238-4.040672.0595238-2.67020336 0-2.9855585-.0119048-4.04067197-.0595238-.97553787-.0446429-1.50604185-.2083334-1.85676393-.3452381-.4656646-.1815477-.79870321-.3958334-1.14942528-.7470239-.35072208-.3511904-.56587092-.6815476-.74860006-1.1488095-.13557324-.3541666-.30061893-.8839285-.34482759-1.8571428-.04715591-1.0535715-.05894489-1.3720238-.05894489-4.0416667 0-2.66964286.01178898-2.98511905.05894489-4.04166667.04420866-.97321428.20925435-1.50297619.34482759-1.85714285.18272914-.46428572.39787798-.79761905.74860006-1.14880953.35072207-.35119047.68376068-.56547619 1.14942528-.74702381.35072208-.13690476.88122606-.30059524 1.85676393-.34523809 1.05511347-.04761905 1.37046861-.05952381 4.04067197-.05952381m0 3.06547619c-2.83524904 0-5.13409962 2.29761905-5.13409962 5.13392857 0 2.8363095 2.29885058 5.1339286 5.13409962 5.1339286 2.835249 0 5.1340996-2.2976191 5.1340996-5.1339286 0-2.83630952-2.2988506-5.13392857-5.1340996-5.13392857m0 8.46428567c-1.8420277 0-3.33333333-1.4880952-3.33333333-3.3303571s1.49130563-3.33333333 3.33333333-3.33333333 3.3333333 1.49107143 3.3333333 3.33333333-1.4913056 3.3303571-3.3333333 3.3303571m6.5369879-8.66964281c0 .66369047-.5363985 1.20238095-1.1995284 1.20238095-.66313 0-1.1995285-.53869048-1.1995285-1.20238095 0-.66071429.5363985-1.19940477 1.1995285-1.19940477.6631299 0 1.1995284.53869048 1.1995284 1.19940477" fill="currentColor" fill-rule="evenodd"></path></svg> </a>
+</li>
+<li>
+<a data-review-original-href="https://www.youtube.com/channel/UCLvGftPUuKC3il78gbaSYsw" href="#" tabindex="-1" target="_blank">
+<svg class="icon w-4 h-4" height="18" viewbox="0 0 26 18" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m9.00092528 14-.00092528-8 8 4.0137916zm16.73907472-9.11720798s-.2543125-1.76345137-1.0335-2.54000977c-.9888125-1.01968277-2.0970625-1.02448128-2.604875-1.08366286-3.638375-.25911939-9.0959375-.25911939-9.0959375-.25911939h-.011375s-5.4575625 0-9.0959375.25911939c-.508625.05918158-1.6160625.06398009-2.6056875 1.08366286-.7791875.7765584-1.0326875 2.54000977-1.0326875 2.54000977s-.26 2.07135558-.26 4.14191141v1.94179587c0 2.0713556.26 4.1419114.26 4.1419114s.2535 1.7634514 1.0326875 2.5400098c.989625 1.0196828 2.2888125.9876927 2.8673125 1.0940596 2.08.1967388 8.84.2575199 8.84.2575199s5.46325-.0079975 9.101625-.2671169c.5078125-.0599813 1.6160625-.0647798 2.604875-1.0844626.7791875-.7765584 1.0335-2.5400098 1.0335-2.5400098s.26-2.0705558.26-4.1419114v-1.94179587c0-2.07055583-.26-4.14191141-.26-4.14191141z" fill="currentColor" fill-rule="evenodd" transform="translate(0 -1)"></path></svg> </a>
+</li>
+</ul>
+<nav class="navigation__menu" x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="-translate-x-full" x-transition:leave-end="-translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="navigation__menu__header">
+<button class="navigation__menu__close" type="button" x-on:click="closeNav">
+<svg class="w-[28px] h-[28px] text-gold" height="24" viewbox="0 0 20 20" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Nav/Rows/MM/T1" stroke="currentColor" stroke-width="1.5" transform="translate(-24.000000, -12.000000)">
+<g id="all" transform="translate(20.000000, 0.000000)">
+<g id="ICN" transform="translate(0.000000, 8.000000)">
+<line id="Line-02" x1="5.51471863" x2="22.4852814" y1="22.4852814" y2="5.51471863"></line>
+<line id="Line-01" x1="5.51471863" x2="22.4852814" y1="5.51471863" y2="22.4852814"></line>
+</g>
+</g>
+</g>
+</g>
+</svg> </button>
+<a class="navigation__menu__logo" data-review-original-href="https://herend.com" href="#" tabindex="-1">
+<img alt="Herendi Porcelánmanufaktúra"/>
+</a>
+</div>
+<div class="navigation__menu__body">
+<ul class="navigation__menu__list product-menu">
+<li class="navigation__menu__item" x-data="toggleable" x-on:click.away="setClosed" x-on:open-menu.window.debounce.100ms="open = ($event.detail == '12')">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                    Termékek
+                                    <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="-translate-x-full" x-transition:leave-end="-translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                            Termékek
+                                        </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                        Asztalkultúra
+                                                        <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                Asztalkultúra
+                                                            </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/keszletek" href="#" tabindex="-1">
+                                                                            Készletek
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/talak-talcak" href="#" tabindex="-1">
+                                                                            Tálak, tálcák
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/tanyerok" href="#" tabindex="-1">
+                                                                            Tányérok
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/cseszek-bogrek-poharak" href="#" tabindex="-1">
+                                                                            Csészék, bögrék, poharak
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/kannak-cukortartok" href="#" tabindex="-1">
+                                                                            Kannák, cukortartók
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/szerviz-kiegeszitok" href="#" tabindex="-1">
+                                                                            Szervíz kiegészítők
+                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                        Figurák
+                                                        <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                Figurák
+                                                            </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                                            Állat figurák
+                                                                            <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                                    Állat figurák
+                                                                                </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/mitikus-zodiakus-mesehos-1?" href="#" tabindex="-1">
+                                                                                            Mitikus, zodiákus, mesehős
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/madarak" href="#" tabindex="-1">
+                                                                                            Madarak
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/haziallatok" href="#" tabindex="-1">
+                                                                                            Háziállatok
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/vizi-allatok" href="#" tabindex="-1">
+                                                                                            Vízi állatok
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/vadon-elo-egzoikus-allatok" href="#" tabindex="-1">
+                                                                                            Vadon élő, egzotikus állatok
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/erdo-mezo-allatai" href="#" tabindex="-1">
+                                                                                            Erdő, mező állatai
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/egyeb-allatfigurak" href="#" tabindex="-1">
+                                                                                            Egyéb állatfigurák
+                                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                                            Emberalak figurák
+                                                                            <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                                    Emberalak figurák
+                                                                                </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/kulonleges-figurak" href="#" tabindex="-1">
+                                                                                            Különleges figurák
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/tortenelmi-magyaros" href="#" tabindex="-1">
+                                                                                            Történelmi, magyaros
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/keleti-figurak" href="#" tabindex="-1">
+                                                                                            Keleti figurák
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/mitikus-zodiakus-mesehos" href="#" tabindex="-1">
+                                                                                            Mitikus, zodiákus, mesehős
+                                                                                        </a>
+</li>
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/egyeb-emberalakok" href="#" tabindex="-1">
+                                                                                            Egyéb emberalakok
+                                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                                            Egyéb figurák
+                                                                            <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                                    Egyéb figurák
+                                                                                </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item">
+<a class="navigation__menu__item is-sub" data-review-original-href="https://herend.com/termekeink/egyeb-figura" href="#" tabindex="-1">
+                                                                                            Egyéb figura
+                                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                        Lakberendezés
+                                                        <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                Lakberendezés
+                                                            </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/szorakozas" href="#" tabindex="-1">
+                                                                            Szórakozás
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/kaspo-gyertyatarto" href="#" tabindex="-1">
+                                                                            Kaspó, gyertyatartó
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/bonbonier" href="#" tabindex="-1">
+                                                                            Bonbonier
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/vaza-lampavaza" href="#" tabindex="-1">
+                                                                            Váza, lámpaváza
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/falital-disztal" href="#" tabindex="-1">
+                                                                            Falitál, dísztál
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/keplap" href="#" tabindex="-1">
+                                                                            Képlap
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/egyeb-lakberendezesi-targy" href="#" tabindex="-1">
+                                                                            Egyéb lakberendezési tárgy
+                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/ekszerek" href="#" tabindex="-1">
+                                                        Ékszerek
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/termekeink/egyeb" href="#" tabindex="-1">
+                                                        Egyéb
+                                                    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__menu__item" x-data="toggleable" x-on:click.away="setClosed" x-on:open-menu.window.debounce.100ms="open = ($event.detail == '14')">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                    Kollekciók
+                                    <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="-translate-x-full" x-transition:leave-end="-translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                            Kollekciók
+                                        </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                        Lakberendezés
+                                                        <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                Lakberendezés
+                                                            </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/lakberendezes|4|klasszik" href="#" tabindex="-1">
+                                                                            Klasszik
+                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                        Asztalkultúra
+                                                        <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                Asztalkultúra
+                                                            </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|victoria-evolution" href="#" tabindex="-1">
+                                                                            Victoria evolution
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|rothschild-evolution" href="#" tabindex="-1">
+                                                                            Rothschild evolution
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|apponyi-evolution" href="#" tabindex="-1">
+                                                                            Apponyi evolution
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|virag" href="#" tabindex="-1">
+                                                                            Virág
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|gyumolcs" href="#" tabindex="-1">
+                                                                            Gyümölcs
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|kinai" href="#" tabindex="-1">
+                                                                            Kínai
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|vizivilag" href="#" tabindex="-1">
+                                                                            Vízivilág
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|arany" href="#" tabindex="-1">
+                                                                            Arany
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|kulonleges-keszletek" href="#" tabindex="-1">
+                                                                            Különleges készletek
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/asztalkultura|1|egyeb" href="#" tabindex="-1">
+                                                                            Egyéb
+                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                                        Figurák
+                                                        <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="submenu-opened" x-transition:enter-start="submenu-closed" x-transition:leave-end="submenu-closed" x-transition:leave-start="submenu-opened">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                                                Figurák
+                                                            </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/figurak|7|pikkelyes" href="#" tabindex="-1">
+                                                                            Pikkelyes
+                                                                        </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kollekciok/figurak|7|naturalisztikus" href="#" tabindex="-1">
+                                                                            Naturalisztikus
+                                                                        </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/keszletosszeallito" href="#" tabindex="-1">
+                                                        Készletösszeállító
+                                                    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__menu__item" x-data="toggleable" x-on:click.away="setClosed" x-on:open-menu.window.debounce.100ms="open = ($event.detail == '15')">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                    Ajándékok
+                                    <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="-translate-x-full" x-transition:leave-end="-translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                            Ajándékok
+                                        </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/herend-forma-1-rajongoi-klub" href="#" tabindex="-1">
+                                                        Herend - FORMA 1 Rajongói Klub
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/holgyeknek" href="#" tabindex="-1">
+                                                        Hölgyeknek
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/uraknak" href="#" tabindex="-1">
+                                                        Uraknak
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/eskuvo" href="#" tabindex="-1">
+                                                        Esküvő
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/szuletesnap" href="#" tabindex="-1">
+                                                        Születésnap
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/keresztelo" href="#" tabindex="-1">
+                                                        Keresztelő
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/valentin-nap" href="#" tabindex="-1">
+                                                        Valentin nap
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/husvet" href="#" tabindex="-1">
+                                                        Húsvét
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/anyak-napja" href="#" tabindex="-1">
+                                                        Anyák napja
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/ajandekok/karacsony" href="#" tabindex="-1">
+                                                        Karácsony
+                                                    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__menu__item" x-data="toggleable" x-on:click.away="setClosed" x-on:open-menu.window.debounce.100ms="open = ($event.detail == '4')">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                    Herendről
+                                    <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="-translate-x-full" x-transition:leave-end="-translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                            Herendről
+                                        </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/tortenet" href="#" tabindex="-1">
+                                                        Történet
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/technologia" href="#" tabindex="-1">
+                                                        Technológia
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/film" href="#" tabindex="-1">
+                                                        Film
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/uzletek" href="#" tabindex="-1">
+                                                        Üzletek
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/hirek" href="#" tabindex="-1">
+                                                        Hírek
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/esemenyek" href="#" tabindex="-1">
+                                                        Események
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kiadvanyok" href="#" tabindex="-1">
+                                                        Kiadványok
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kapcsolat" href="#" tabindex="-1">
+                                                        Kapcsolat
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herendiszakkepzoiskola.hu" href="#" tabindex="-1">
+                                                        Iskolánk
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/kiallitasok" href="#" tabindex="-1">
+                                                        Kiállítások világszerte
+                                                    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="navigation__menu__item" x-data="toggleable" x-on:click.away="setClosed" x-on:open-menu.window.debounce.100ms="open = ($event.detail == '5')">
+<a class="navigation__menu__product__item" data-review-original-href="" href="#" tabindex="-1" x-bind:class="{ 'is-open' : open }" x-on:click.prevent="toggle">
+                                    Látogatás Herenden
+                                    <svg class="w-[28px] h-[28px] text-gray-03" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Triangle-right" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<polyline id="Line-01" points="20 4 10 14 20 24" stroke="currentColor" stroke-width="1.5" transform="translate(15.000000, 14.000000) scale(-1, 1) translate(-15.000000, -14.000000) "></polyline>
+</g>
+</svg> </a>
+<nav class="navigation__submenu" x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="-translate-x-full" x-transition:leave-end="-translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="navigation__submenu__header">
+<button class="navigation__menu__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px] text-gold" height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN large/Arrow left</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Arrow-left" stroke="none" stroke-linecap="round" stroke-width="1">
+<polyline id="Line-01" points="12.5 9 7.5 14 12.5 19" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></polyline>
+<line id="Path-8" stroke="currentColor" stroke-width="1.5" x1="8" x2="20" y1="14" y2="14"></line>
+</g>
+</svg>                                            Látogatás Herenden
+                                        </button>
+</div>
+<ul class="navigation__menu__list">
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/minimanufaktura" href="#" tabindex="-1">
+                                                        Minimanufaktúra
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/porcelanmuveszeti-muzeum" href="#" tabindex="-1">
+                                                        Porcelánművészeti Múzeum
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/apicius-etterem-kavehaz" href="#" tabindex="-1">
+                                                        Apicius Étterem &amp; Kávéház
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/paletta-etterem" href="#" tabindex="-1">
+                                                        Paletta Étterem
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/herendi-porcelan-palota" href="#" tabindex="-1">
+                                                        Fabrikáció, festőkurzus Budapesten
+                                                    </a>
+</li>
+<li class="navigation__submenu__item" x-data="toggleable" x-on:click.away="setClosed">
+<a class="navigation__menu__product__item" data-review-original-href="https://herend.com/porcelanium-latogatokozpont-informaciok" href="#" tabindex="-1">
+                                                        Információk
+                                                    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+<ul class="navigation__menu__list">
+<li class="navigation__menu__item">
+<a data-review-original-href="/hirek" href="#" tabindex="-1">
+                                Hírek
+                            </a>
+</li>
+<li class="navigation__menu__item">
+<a data-review-original-href="/uzletek" href="#" tabindex="-1">
+                                Üzletek
+                            </a>
+</li>
+<li class="navigation__menu__item">
+<a data-review-original-href="/kapcsolat" href="#" tabindex="-1">
+                                Kontakt
+                            </a>
+</li>
+<li class="navigation__menu__item">
+<a data-review-original-href="/esemenyek" href="#" tabindex="-1">
+                                Események
+                            </a>
+</li>
+</ul>
+</div>
+<div class="navigation__menu__footer">
+<ul class="flex md:hidden px-5 py-3 gap-5 items-center justify-center">
+<li>
+<a data-review-original-href="https://www.facebook.com/Herendporcelan" href="#" tabindex="-1" target="_blank">
+<svg class="icon w-4 h-4" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m10.6853353 20h-9.57995579c-.61016949 0-1.10537951-.4940476-1.10537951-1.1041667v-17.79166663c0-.61011905.49521002-1.10416667 1.10537951-1.10416667h17.79218869c.6101695 0 1.1024318.49404762 1.1024318 1.10416667v17.79166663c0 .6101191-.4922623 1.1041667-1.1024318 1.1041667h-5.0965365v-7.7440476h2.5998526l.3890936-3.02083335h-2.9889462v-1.92559524c0-.875.2446573-1.4702381 1.4944731-1.4702381h1.5976418v-2.69940476c-.2711864-.03571428-1.2232866-.11904762-2.3286661-.11904762-2.3050848 0-3.8791452 1.4077381-3.8791452 3.98809524v2.22619048h-2.60869565v3.02083335h2.60869565z" fill="currentColor" fill-rule="evenodd"></path></svg> </a>
+</li>
+<li>
+<a data-review-original-href="https://instagram.com/herendporcelain/" href="#" tabindex="-1" target="_blank">
+<svg class="icon w-4 h-4" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m10 0c-2.71441202 0-3.05629237.01190476-4.12319481.05952381-1.0639552.04761905-1.79192455.2172619-2.42852933.46428571-.65723548.25595239-1.21426466.59821429-1.76834659 1.15476191-.55702918.55654762-.89890952 1.11309524-1.15531978 1.77083333-.24756852.63690476-.41556145 1.36309524-.46271736 2.42857143-.05010315 1.06547619-.06189213 1.4077381-.06189213 4.12202381 0 2.7172619.01178898 3.0565476.06189213 4.1220238.04715591 1.0654762.21514884 1.7916667.46271736 2.4285714.25641026.6577381.5982906 1.2142858 1.15531978 1.7708334.55408193.5565476 1.11111111.8988095 1.76834659 1.1547619.63660478.2470238 1.36457413.4136905 2.42852933.4642857 1.06690244.047619 1.40878279.0595238 4.12319481.0595238 2.714412 0 3.0562924-.0119048 4.1231948-.0595238 1.0639552-.0505952 1.7919246-.2172619 2.4285293-.4642857.6572355-.2559524 1.2142647-.5982143 1.7683466-1.1547619.5570292-.5565476.8989096-1.1130953 1.1553198-1.7708334.2475685-.6369047.4155615-1.3630952.4627174-2.4285714.0501031-1.0654762.0618921-1.4047619.0618921-4.1220238 0-2.71428571-.011789-3.05654762-.0618921-4.12202381-.0471559-1.06547619-.2151489-1.79166667-.4627174-2.42857143-.2564102-.65773809-.5982906-1.21428571-1.1553198-1.77083333-.5540819-.55654762-1.1111111-.89880952-1.7683466-1.15476191-.6366047-.24702381-1.3645741-.41666666-2.4285293-.46428571-1.0669024-.04761905-1.4087828-.05952381-4.1231948-.05952381m0 1.80059524c2.6702034 0 2.9855585.01190476 4.040672.05952381.9755378.04464285 1.5060418.20833333 1.8538167.34523809.4686118.18154762.8016504.39583334 1.1523725.74702381.3507221.35119048.5658709.68452381.7486 1.14880953.1355733.35416666.300619.88392857.3448276 1.85714285.0471559 1.05654762.0589449 1.37202381.0589449 4.04166667 0 2.6696429-.011789 2.9880952-.0589449 4.0416667-.0442086.9732143-.2092543 1.5029762-.3448276 1.8571428-.1827291.4672619-.3978779.7976191-.7486 1.1488095-.3507221.3511905-.6837607.5654762-1.1523725.7470239-.3477749.1369047-.8782789.3005952-1.8538167.3452381-1.0551135.047619-1.3704686.0595238-4.040672.0595238-2.67020336 0-2.9855585-.0119048-4.04067197-.0595238-.97553787-.0446429-1.50604185-.2083334-1.85676393-.3452381-.4656646-.1815477-.79870321-.3958334-1.14942528-.7470239-.35072208-.3511904-.56587092-.6815476-.74860006-1.1488095-.13557324-.3541666-.30061893-.8839285-.34482759-1.8571428-.04715591-1.0535715-.05894489-1.3720238-.05894489-4.0416667 0-2.66964286.01178898-2.98511905.05894489-4.04166667.04420866-.97321428.20925435-1.50297619.34482759-1.85714285.18272914-.46428572.39787798-.79761905.74860006-1.14880953.35072207-.35119047.68376068-.56547619 1.14942528-.74702381.35072208-.13690476.88122606-.30059524 1.85676393-.34523809 1.05511347-.04761905 1.37046861-.05952381 4.04067197-.05952381m0 3.06547619c-2.83524904 0-5.13409962 2.29761905-5.13409962 5.13392857 0 2.8363095 2.29885058 5.1339286 5.13409962 5.1339286 2.835249 0 5.1340996-2.2976191 5.1340996-5.1339286 0-2.83630952-2.2988506-5.13392857-5.1340996-5.13392857m0 8.46428567c-1.8420277 0-3.33333333-1.4880952-3.33333333-3.3303571s1.49130563-3.33333333 3.33333333-3.33333333 3.3333333 1.49107143 3.3333333 3.33333333-1.4913056 3.3303571-3.3333333 3.3303571m6.5369879-8.66964281c0 .66369047-.5363985 1.20238095-1.1995284 1.20238095-.66313 0-1.1995285-.53869048-1.1995285-1.20238095 0-.66071429.5363985-1.19940477 1.1995285-1.19940477.6631299 0 1.1995284.53869048 1.1995284 1.19940477" fill="currentColor" fill-rule="evenodd"></path></svg> </a>
+</li>
+<li>
+<a data-review-original-href="https://www.youtube.com/channel/UCLvGftPUuKC3il78gbaSYsw" href="#" tabindex="-1" target="_blank">
+<svg class="icon w-4 h-4" height="18" viewbox="0 0 26 18" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m9.00092528 14-.00092528-8 8 4.0137916zm16.73907472-9.11720798s-.2543125-1.76345137-1.0335-2.54000977c-.9888125-1.01968277-2.0970625-1.02448128-2.604875-1.08366286-3.638375-.25911939-9.0959375-.25911939-9.0959375-.25911939h-.011375s-5.4575625 0-9.0959375.25911939c-.508625.05918158-1.6160625.06398009-2.6056875 1.08366286-.7791875.7765584-1.0326875 2.54000977-1.0326875 2.54000977s-.26 2.07135558-.26 4.14191141v1.94179587c0 2.0713556.26 4.1419114.26 4.1419114s.2535 1.7634514 1.0326875 2.5400098c.989625 1.0196828 2.2888125.9876927 2.8673125 1.0940596 2.08.1967388 8.84.2575199 8.84.2575199s5.46325-.0079975 9.101625-.2671169c.5078125-.0599813 1.6160625-.0647798 2.604875-1.0844626.7791875-.7765584 1.0335-2.5400098 1.0335-2.5400098s.26-2.0705558.26-4.1419114v-1.94179587c0-2.07055583-.26-4.14191141-.26-4.14191141z" fill="currentColor" fill-rule="evenodd" transform="translate(0 -1)"></path></svg> </a>
+</li>
+</ul>
+<div class="navigation__menu__language__selector" x-data="toggleable" x-on:click.away="setClosed">
+<button class="language__select" type="button" x-bind:class="{ 'is-open' : open }" x-on:click="toggle">
+<svg class="w-3 flex-none" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<mask height="24" id="mask0_905_16" maskunits="userSpaceOnUse" style="mask-type:alpha" width="24" x="0" y="0">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+</mask>
+<g mask="url(#mask0_905_16)">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+<path d="M26 16H-2V24H26V16Z" fill="#69C34C"></path>
+<path d="M26 0H-2V8H26V0Z" fill="#B52E1E"></path>
+<path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="black" stroke-opacity="0.2" stroke-width="2"></path>
+</g>
+</svg> Magyar (Hungarian)
+                </button>
+<div class="language__select__dropdown" x-cloak="" x-show="open" x-transition:enter-end="max-h-[120px] overflow-hidden" x-transition:enter-start="max-h-0 overflow-hidden" x-transition:leave-end="max-h-0 overflow-hidden" x-transition:leave-start="max-h-[120px] overflow-hidden">
+<a class="language__select__item" data-review-original-href="https://herend.com" href="#" tabindex="-1">
+<svg class="w-3 flex-none" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<mask height="24" id="mask0_905_16" maskunits="userSpaceOnUse" style="mask-type:alpha" width="24" x="0" y="0">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+</mask>
+<g mask="url(#mask0_905_16)">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+<path d="M26 16H-2V24H26V16Z" fill="#69C34C"></path>
+<path d="M26 0H-2V8H26V0Z" fill="#B52E1E"></path>
+<path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="black" stroke-opacity="0.2" stroke-width="2"></path>
+</g>
+</svg> Magyar (Hungarian)
+                    </a>
+<a class="language__select__item" data-review-original-href="https://herend.com/en" href="#" tabindex="-1">
+<svg class="w-3 flex-none" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<mask height="24" id="mask0_907_31" maskunits="userSpaceOnUse" style="mask-type:alpha" width="24" x="0" y="0">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+</mask>
+<g mask="url(#mask0_907_31)">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+<path clip-rule="evenodd" d="M-1 19H27V22H-1V19ZM-1 14H27V17H-1V14ZM-2 9H26V12H-2V9ZM-1 4H27V7H-1V4ZM-1 -1H27V2H-1V-1Z" fill="#B52E1E" fill-rule="evenodd"></path>
+<path d="M12 -2H-2V12H12V-2Z" fill="#48A5DB"></path>
+<path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="black" stroke-opacity="0.2" stroke-width="2"></path>
+</g>
+</svg> Angol (English)
+                    </a>
+</div>
+</div>
+<a class="navigation__menu__webcam" data-review-original-href="https://herend.com/webkamera" href="#" tabindex="-1">
+<svg class="w-3 text-gray-06 flex-none" height="10px" version="1.1" viewbox="0 0 10 10" width="10px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN small/Webcam</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-small/Webcam" stroke="none" stroke-width="1">
+<path d="M6,1 C6.55228475,1 7,1.44771525 7,2 L9,2 C9.55228475,2 10,2.44771525 10,3 L10,8 C10,8.55228475 9.55228475,9 9,9 L1,9 C0.44771525,9 -1.5440923e-16,8.55228475 0,8 L0,3 C-6.76353751e-17,2.44771525 0.44771525,2 1,2 L3,2 L3,2 C3,1.44771525 3.44771525,1 4,1 L6,1 Z M5,3 C3.61928813,3 2.5,4.11928813 2.5,5.5 C2.5,6.88071187 3.61928813,8 5,8 C6.38071187,8 7.5,6.88071187 7.5,5.5 C7.5,4.11928813 6.38071187,3 5,3 Z" fill="currentColor" id="Combined-Shape"></path>
+</g>
+</svg> Webcam
+            </a>
+</div>
+</nav>
+</div>
+<div class="site-title">
+<h1>Herendi Porcelánmanufaktúra</h1>
+</div>
+<div class="site-header__logo">
+<a data-review-original-href="https://herend.com" href="#" tabindex="-1">
+<img alt="Herendi Porcelánmanufaktúra"/>
+</a>
+</div>
+<div class="navigation__links">
+<div class="navigation__links__wrapper">
+<a data-review-original-href="https://herend.com/webkamera" href="#" tabindex="-1">
+<svg class="icon w-3 h-3 text-gray-06" height="10px" version="1.1" viewbox="0 0 10 10" width="10px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN/ICN small/Webcam</title>
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-small/Webcam" stroke="none" stroke-width="1">
+<path d="M6,1 C6.55228475,1 7,1.44771525 7,2 L9,2 C9.55228475,2 10,2.44771525 10,3 L10,8 C10,8.55228475 9.55228475,9 9,9 L1,9 C0.44771525,9 -1.5440923e-16,8.55228475 0,8 L0,3 C-6.76353751e-17,2.44771525 0.44771525,2 1,2 L3,2 L3,2 C3,1.44771525 3.44771525,1 4,1 L6,1 Z M5,3 C3.61928813,3 2.5,4.11928813 2.5,5.5 C2.5,6.88071187 3.61928813,8 5,8 C6.38071187,8 7.5,6.88071187 7.5,5.5 C7.5,4.11928813 6.38071187,3 5,3 Z" fill="currentColor" id="Combined-Shape"></path>
+</g>
+</svg> <span>Webkamera</span>
+</a>
+<a data-review-original-href="" href="#" tabindex="-1" x-data="" x-on:click.prevent="$dispatch('languagemodal:open')">
+<svg class="icon w-3 h-3 rounded-full" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<mask height="24" id="mask0_905_16" maskunits="userSpaceOnUse" style="mask-type:alpha" width="24" x="0" y="0">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+</mask>
+<g mask="url(#mask0_905_16)">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+<path d="M26 16H-2V24H26V16Z" fill="#69C34C"></path>
+<path d="M26 0H-2V8H26V0Z" fill="#B52E1E"></path>
+<path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="black" stroke-opacity="0.2" stroke-width="2"></path>
+</g>
+</svg> <span>HU</span>
+</a>
+</div>
+<ul class="navigation__controls">
+<li class="flex items-center" x-data="toggleable" x-on:click.away="setClosed">
+<button x-on:click="toggle">
+<svg class="icon w-4 h-4" height="24" viewbox="0 0 17 18" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="ICN-01" stroke="currentColor" transform="translate(-6.000000, -5.000000)">
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="17" x2="21.5029437" y1="17" y2="21.5029437"></line>
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" x1="16.7029437" x2="14.3029437" y1="16.7029437" y2="14.3029437"></line>
+<circle cx="11.5" cy="10.5" id="Oval" r="4.75" stroke-width="1.5"></circle>
+</g>
+</g>
+</svg> </button>
+<div class="slide-over" wire:id="k2Q3J3DrGJAab2ZmFGqB" wire:initial-data='{"fingerprint":{"id":"k2Q3J3DrGJAab2ZmFGqB","name":"navigation.search","locale":"hu","path":"porcelanium-latogatokozpont-informaciok","method":"GET","v":"acj"},"effects":{"listeners":[]},"serverMemo":{"children":[],"errors":[],"htmlHash":"57116547","data":{"phrases":[]},"dataMeta":{"modelCollections":{"phrases":{"class":"App\\Models\\SearchPhrase","id":[1,3],"relations":[],"connection":"mysql"}}},"checksum":"9495b6ab495432899676bf195ff78836d2c90fa249e62c8bab3f67f1742c6e4f"}}' x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="translate-x-full" x-transition:leave-end="translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="slide-over__bg" x-on:click="setClosed"></div>
+<div class="slide-over__content">
+<div class="slide-over__header">
+            Keresés
+
+            <button class="slide-over__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px]" height="24" viewbox="0 0 20 20" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Nav/Rows/MM/T1" stroke="currentColor" stroke-width="1.5" transform="translate(-24.000000, -12.000000)">
+<g id="all" transform="translate(20.000000, 0.000000)">
+<g id="ICN" transform="translate(0.000000, 8.000000)">
+<line id="Line-02" x1="5.51471863" x2="22.4852814" y1="22.4852814" y2="5.51471863"></line>
+<line id="Line-01" x1="5.51471863" x2="22.4852814" y1="5.51471863" y2="22.4852814"></line>
+</g>
+</g>
+</g>
+</g>
+</svg> </button>
+</div>
+<div class="slide-over__body">
+<div data-review-disabled-form="true">
+<div class="form-control relative">
+<input class="w-full rounded-full border border-gold h-[44px] pl-[45px] text-gray-09 duration-300" name="phrase" placeholder="Mit keres?" type="text"/>
+<svg class="w-[28px] absolute bottom-2 left-2 text-gray-05" height="24" viewbox="0 0 17 18" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="ICN-01" stroke="currentColor" transform="translate(-6.000000, -5.000000)">
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="17" x2="21.5029437" y1="17" y2="21.5029437"></line>
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" x1="16.7029437" x2="14.3029437" y1="16.7029437" y2="14.3029437"></line>
+<circle cx="11.5" cy="10.5" id="Oval" r="4.75" stroke-width="1.5"></circle>
+</g>
+</g>
+</svg> </div>
+</div>
+<div class="px-2">
+<div class="my-3 mx-2 text-tiny text-gray-06">
+                Írja be a keresett kifejezést, és nyomja meg az Enter-t
+            </div>
+<div class="text-gray-08 flex flex-col mx-2 gap-1">
+<div class="text-small font-semibold">
+                    Népszerű keresések
+                </div>
+<a class="flex hover:bg-black hover:bg-opacity-5 p-2 rounded-[4px]" data-review-original-href="https://herend.com/kereses/Herend%20Herald" href="#" tabindex="-1">
+<svg class="w-[28px] text-gray-05" height="24" viewbox="0 0 17 18" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="ICN-01" stroke="currentColor" transform="translate(-6.000000, -5.000000)">
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="17" x2="21.5029437" y1="17" y2="21.5029437"></line>
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" x1="16.7029437" x2="14.3029437" y1="16.7029437" y2="14.3029437"></line>
+<circle cx="11.5" cy="10.5" id="Oval" r="4.75" stroke-width="1.5"></circle>
+</g>
+</g>
+</svg>                        Herend Herald
+                    </a>
+<a class="flex hover:bg-black hover:bg-opacity-5 p-2 rounded-[4px]" data-review-original-href="https://herend.com/kereses/%C3%93ra,%20fali%C3%B3ra" href="#" tabindex="-1">
+<svg class="w-[28px] text-gray-05" height="24" viewbox="0 0 17 18" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="ICN-01" stroke="currentColor" transform="translate(-6.000000, -5.000000)">
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="17" x2="21.5029437" y1="17" y2="21.5029437"></line>
+<line id="Line-01" stroke-linecap="round" stroke-linejoin="round" x1="16.7029437" x2="14.3029437" y1="16.7029437" y2="14.3029437"></line>
+<circle cx="11.5" cy="10.5" id="Oval" r="4.75" stroke-width="1.5"></circle>
+</g>
+</g>
+</svg>                        Óra, falióra
+                    </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+ </li>
+<li class="flex items-center" x-data="toggleable" x-on:open-login.window="setOpened">
+<button x-on:click="toggle">
+<svg class="icon w-4 h-4" height="18px" version="1.1" viewbox="0 0 20 18" width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN 02</title>
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="Nav/Menu/Main-menu-ICNs3/01" stroke="currentColor" stroke-width="1.5" transform="translate(-37.000000, -5.000000)">
+<g id="Group" transform="translate(33.000000, 0.000000)">
+<circle cx="14" cy="27" id="body" r="9.25"></circle>
+<circle cx="14" cy="10.5" id="head" r="4.75"></circle>
+</g>
+</g>
+</g>
+</svg> </button>
+<div x-show="open">
+<div class="slide-over" wire:id="Y3vUS0z7MKGqTp88hJGy" wire:initial-data='{"fingerprint":{"id":"Y3vUS0z7MKGqTp88hJGy","name":"auth.login","locale":"hu","path":"porcelanium-latogatokozpont-informaciok","method":"GET","v":"acj"},"effects":{"listeners":[]},"serverMemo":{"children":[],"errors":[],"htmlHash":"d83946d7","data":{"email":null,"password":null,"rules":{"email":["required","email"],"password":"required"},"url":"https:\/\/herend.com\/porcelanium-latogatokozpont-informaciok"},"dataMeta":[],"checksum":"4031551426641c2826a242d8c6807551548010f61c3d44eacc15eafb72ef0bc5"}}' x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="translate-x-full" x-transition:leave-end="translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="slide-over__bg" x-on:click="setClosed"></div>
+<div class="slide-over__content">
+<div class="slide-over__header">
+            Bejelentkezés
+
+            <button class="slide-over__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px]" height="24" viewbox="0 0 20 20" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Nav/Rows/MM/T1" stroke="currentColor" stroke-width="1.5" transform="translate(-24.000000, -12.000000)">
+<g id="all" transform="translate(20.000000, 0.000000)">
+<g id="ICN" transform="translate(0.000000, 8.000000)">
+<line id="Line-02" x1="5.51471863" x2="22.4852814" y1="22.4852814" y2="5.51471863"></line>
+<line id="Line-01" x1="5.51471863" x2="22.4852814" y1="5.51471863" y2="22.4852814"></line>
+</g>
+</g>
+</g>
+</g>
+</svg> </button>
+</div>
+<div class="slide-over__body">
+<div class="px-4 my-2 flex flex-col gap-2">
+<div class="input has-icon-left">
+<svg class="icon w-3 h-3 text-gold" height="18px" version="1.1" viewbox="0 0 20 18" width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ICN 02</title>
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="Nav/Menu/Main-menu-ICNs3/01" stroke="currentColor" stroke-width="1.5" transform="translate(-37.000000, -5.000000)">
+<g id="Group" transform="translate(33.000000, 0.000000)">
+<circle cx="14" cy="27" id="body" r="9.25"></circle>
+<circle cx="14" cy="10.5" id="head" r="4.75"></circle>
+</g>
+</g>
+</g>
+</svg> <input autofocus="" id="login_email" name="login_email" placeholder="Email cím" type="text" wire:keydown.enter="login()" wire:model="email" |=""/>
+</div>
+<div class="input has-icon-left">
+<svg class="icon w-3 h-3 text-gold" height="24" viewbox="0 0 16 15" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Navigation" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Login---Desktop-HD" stroke="currentColor" stroke-width="1.5" transform="translate(-1116.000000, -131.000000)">
+<g id="Login" transform="translate(1080.000000, -0.000000)">
+<g id="A-Column" transform="translate(0.000000, 0.000000)">
+<g id="Input-02" transform="translate(20.000000, 116.000000)">
+<g id="ICN-left" transform="translate(10.000000, 8.000000)">
+<line id="Line" x1="7" x2="21" y1="14.5" y2="14.5"></line>
+<line id="Line-Copy" transform="translate(14.000000, 14.500000) rotate(-300.000000) translate(-14.000000, -14.500000) " x1="7" x2="21" y1="14.5" y2="14.5"></line>
+<line id="Line-Copy-2" x1="17.5" x2="10.5" y1="8.43782217" y2="20.5621778"></line>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> <input id="login_password" name="login_password" placeholder="Jelszó" type="password" wire:keydown.enter="login()" wire:model="password"/>
+</div>
+<div class="form-control">
+<button class="button button-gray w-full" type="button" wire:click="login()">
+<span>Bejelentkezés</span>
+</button>
+</div>
+<div class="flex justify-between">
+<a class="underline text-gray-08 hover:text-gray-10" data-review-original-href="https://herend.com/felhasznalo/elfelejtett-jelszo" href="#" tabindex="-1">
+                Elfelejtett jelszó
+            </a>
+<a class="underline text-gray-08 hover:text-gray-10" data-review-original-href="https://herend.com/felhasznalo/regisztracio" href="#" tabindex="-1">
+                Regisztráció
+            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+ </div>
+</li>
+<li class="flex items-center" x-data="toggleable" x-on:click.away="setClosed" x-on:open-cart.window="setOpened">
+<button x-on:click="toggle">
+<svg class="icon w-4 h-4" height="24" version="1.1" viewbox="0 0 17 20" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Landing" stroke="none" stroke-width="1">
+<g id="Landing---Desktop-HD" stroke="currentColor" stroke-width="1.5" transform="translate(-1399.000000, -90.000000)">
+<g id="Header" transform="translate(0.000000, 80.000000)">
+<g id="ICNs" transform="translate(1336.000000, 6.000000)">
+<g id="Group" transform="translate(57.489362, 0.000000)">
+<path d="M20.6301949,8.25 L21.6166914,22.4868603 L6.63296303,22.75 L7.12015068,8.48686029 L20.6301949,8.25 Z" id="Rectangle"></path>
+<path d="M18,9 C18,6.790861 16.209139,5 14,5 C11.790861,5 10,6.790861 10,9" id="Oval" stroke-linecap="round"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </button>
+<div x-show="open">
+<div class="slide-over" wire:id="aJXyXiGUs2WPaS3afdUW" wire:initial-data='{"fingerprint":{"id":"aJXyXiGUs2WPaS3afdUW","name":"navigation.cart","locale":"hu","path":"porcelanium-latogatokozpont-informaciok","method":"GET","v":"acj"},"effects":{"listeners":["cartUpdated"]},"serverMemo":{"children":[],"errors":[],"htmlHash":"423187e0","data":{"items":[],"itemCount":0,"total":0,"gross_total":6000,"delivery_price":6000},"dataMeta":[],"checksum":"ae0738790de750f22ac634dd066cac01d669925ee451f4b8631443987e4e0144"}}' x-cloak="" x-show="open" x-transition:enter-end="translate-x-0" x-transition:enter-start="translate-x-full" x-transition:leave-end="translate-x-full" x-transition:leave-start="translate-x-0">
+<div class="slide-over__bg" x-on:click="setClosed"></div>
+<div class="slide-over__content">
+<div class="slide-over__header">
+<div class="flex items-center justify-between w-full">
+<div>
+                Kosár
+            </div>
+<div class="font-sans text-small text-gray-05 normal-case">
+                0 termék
+            </div>
+</div>
+<button class="slide-over__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px] h-[28px]" height="24" viewbox="0 0 20 20" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Nav/Rows/MM/T1" stroke="currentColor" stroke-width="1.5" transform="translate(-24.000000, -12.000000)">
+<g id="all" transform="translate(20.000000, 0.000000)">
+<g id="ICN" transform="translate(0.000000, 8.000000)">
+<line id="Line-02" x1="5.51471863" x2="22.4852814" y1="22.4852814" y2="5.51471863"></line>
+<line id="Line-01" x1="5.51471863" x2="22.4852814" y1="5.51471863" y2="22.4852814"></line>
+</g>
+</g>
+</g>
+</g>
+</svg> </button>
+</div>
+<div class="slide-over__body">
+</div>
+<div class="slide-over__footer border-t border-gray-03">
+<div class="flex items-center justify-between mb-3">
+<div class="text-small">
+                    Összesen<sup>*</sup>
+</div>
+<div>
+                    HUF <span class="font-semibold">6 000</span>
+</div>
+</div>
+<div class="text-tiny text-gray-06">
+                Tartalmazza a szállítási költséget ide: Magyarország
+            </div>
+<a class="button button-gray w-full my-2" data-review-original-href="https://herend.com/kosar" href="#" tabindex="-1">
+<span>Kosár részletek</span>
+</a>
+<a class="button button-light w-full" data-review-original-href="https://herend.com/kosar" href="#" tabindex="-1">
+<span>Kassza</span>
+</a>
+</div>
+</div>
+</div>
+ </div>
+</li>
+<li class="flex items-center">
+<button type="button">
+<svg class="icon w-4 h-4" fill="none" height="351" viewbox="0 0 351 351" width="351" xmlns="http://www.w3.org/2000/svg">
+<circle cx="175.5" cy="175.5" fill="#FFFC02" r="174.5" stroke="black" stroke-width="2"></circle>
+<circle cx="107" cy="135" fill="black" r="51"></circle>
+<circle cx="247" cy="135" fill="black" r="51"></circle>
+<circle cx="176" cy="247" fill="black" r="51"></circle>
+</svg> </button>
+</li>
+</ul>
+</div>
+</nav>
+<header class="site-header">
+<ul class="site-header__links">
+<li>
+<a data-review-original-href="" href="#" tabindex="-1" x-data="" x-on:click.prevent="$dispatch('open-menu', 12)">
+                            Termékek
+                        </a>
+</li>
+<li>
+<a data-review-original-href="" href="#" tabindex="-1" x-data="" x-on:click.prevent="$dispatch('open-menu', 14)">
+                            Kollekciók
+                        </a>
+</li>
+<li>
+<a data-review-original-href="" href="#" tabindex="-1" x-data="" x-on:click.prevent="$dispatch('open-menu', 15)">
+                            Ajándékok
+                        </a>
+</li>
+</ul>
+<div class="site-header__logo">
+<a data-review-original-href="https://herend.com" href="#" tabindex="-1">
+<img alt="Herendi Porcelánmanufaktúra"/>
+</a>
+</div>
+<ul class="site-header__links justify-end">
+<li>
+<a data-review-original-href="" href="#" tabindex="-1" x-data="" x-on:click.prevent="$dispatch('open-menu', 4)">
+                            Herendről
+                        </a>
+</li>
+<li>
+<a data-review-original-href="" href="#" tabindex="-1" x-data="" x-on:click.prevent="$dispatch('open-menu', 5)">
+                            Látogatás Herenden
+                        </a>
+</li>
+</ul>
+</header>
+<main>
+<div class="my-8 title">
+        Porcelanium Látogatóközpont Információk
+    </div>
+<div class="mb-8">
+<div class="container fullsizetext">
+<div class="content-block">
+<div><h3 class="block font-serif text-t1 md:text-t1-md mb-4 text-t2 md:text-t2-md" style="text-align: center;"><strong><span class="text-gold">Egész évben kultúra, művészet, élmények</span></strong></h3>
+<p><img alt="" height="238" style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; display: block; margin-left: auto; margin-right: auto;" width="405"/></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: justify;"> </p>
+<p style="text-align: justify;">A Herend felé utazónak már messziről feltűnik az az impozáns épületegyüttes, amely 1999 óta a Porcelanium Látogatóközpontnak ad otthont. A Herendi Porcelánmanufaktúra küldetése itt is tetten érhető: a minőségi porcelán előállításán túl ideális körülményeket teremteni arra, hogy ezt a különös szakmát és technológiát népszerűsítse, és az iparművészeti hagyományokat továbbadja. </p>
+<p style="text-align: left;"> </p>
+<p style="text-align: justify;">A Minimanufaktúrában a porcelánkészítés rejtelmeibe pillanthat be a látogató. Aki pedig – ha csak egy rövid időre – maga is porcelánkészítő mesterré szeretne válni, kézbe foghatja a nyers porcelánmasszát vagy a festőecsetet, a műhelyek teret adnak az alkotásnak!</p>
+<p style="text-align: justify;"> </p>
+<p style="text-align: justify;">A Porcelanium Látogatóközpont szemközti épületszárnyában a Viktória Márkabolt várja az érdeklődőket. A Porcelánművészeti Múzeum állandó gyűjteményes és minden évszakban megújuló időszaki kiállításai ismertetik a Manufaktúra fejlődéstörténetét. A porcelán világába tett kirándulást követően az Apicius Étterem és Kávéház és a Paletta Étterem vendéglátását élvezheti a látogató.</p>
+<p style="text-align: center;"> </p></div>
+</div>
+</div>
+<div class="container fullsizetext">
+<div class="content-block">
+<div><h3 style="text-align: center;"> </h3>
+<h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">NYITVATARTÁS</span></h3>
+<h3 style="text-align: center;"><span class="text-big text-gold"><strong>PORCELANIUM LÁTOGATÓKÖZPONT</strong></span></h3>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><span style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">2026. május 18-tól</span></p>
+<table cellpadding="0" cellspacing="0" class="content-table" style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 63px; width: 692.422px; margin-left: auto; margin-right: auto;">
+<tbody style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<tr style="height: 21px;">
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; width: 177.337px; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">MINIMANUFAKTÚRA</span></td>
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center; width: 239.45px; height: 21px;">
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">keddtől-vasárnapig</p>
+</td>
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center; width: 274.825px; height: 21px;">
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">10:00 - 17:00</p>
+</td>
+</tr>
+<tr style="height: 21px;">
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; width: 177.337px; height: 21px;"><span class="text-medium text-small" style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">PORCELÁNMŰVÉSZETI MÚZEUM</span></span></td>
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center; width: 239.45px; height: 21px;">
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">keddtől-vasárnapig</p>
+</td>
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center; width: 274.825px; height: 21px;">
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">10:00 - 17:00</p>
+</td>
+</tr>
+<tr style="height: 21px;">
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; width: 177.337px; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">APICIUS KÁVÉHÁZ</span></td>
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center; width: 239.45px; height: 21px;">
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">keddtől-vasárnapig</p>
+</td>
+<td style="--tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center; width: 274.825px; height: 21px;">
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">09:30 - 17:00</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><span class="text-gold"><strong><span class="text-big">APICIUS ÉTTEREM</span></strong></span></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;">hétfő szünnap</p>
+<p style="text-align: center;">keddtől péntekig előzetes bejelentkezés alapján 4 fő feletti csoportok számára nyitunk ki</p>
+<p class="MsoNormal" style="text-align: center;">szombaton és vasárnap előzetes bejelentkezés alapján 10 fő feletti csoportok számára nyitunk ki</p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong>Bejelentkezési határidő:</strong> legkésőbb 1 héttel érkezés előtt.</p>
+<p style="text-align: center;">Telefon: +36 88/523-235</p>
+<p style="text-align: center;">E-mail: <a data-review-original-href="mailto:apicius@herend.com" href="#" tabindex="-1">apicius@herend.com</a></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong><span class="text-big text-gold">VIKTÓRIA MÁRKABOLT</span></strong></p>
+<p> </p>
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center;"><span style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">2026. május 18-tól</span></p>
+<table cellpadding="0" cellspacing="0" class="content-table" style="width: 57.7798%; margin-left: auto; margin-right: auto; height: 92px;">
+<tbody style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="width: 21.7557%;">HÉTFŐTŐL-PÉNTEKIG</td>
+<td style="text-align: center; width: 29.333%;">9:00–17:00</td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="width: 21.7557%;">SZOMBAT</td>
+<td style="text-align: center; width: 29.333%;">9:00–17:00</td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="width: 21.7557%;">VASÁRNAP</td>
+<td style="text-align: center; width: 29.333%;">9:00-17:00</td>
+</tr>
+</tbody>
+</table>
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; text-align: center;"> </p></div>
+</div>
+</div>
+<div class="container fullsizetext">
+<div class="content-block">
+<div><h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">ÜNNEPI NYITVATARTÁS</span></h3>
+<p style="text-align: center;"><span class="text-big text-gold" style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-text-opacity: 1;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">MINIMANUFAKTÚRA, PORCELÁNMŰVÉSZETI MÚZEUM ÉS APICIUS KÁVÉHÁZ</span></span></p>
+<p style="text-align: center;"> </p>
+<table cellpadding="0" cellspacing="0" class="content-table" style="width: 100%; height: 278px;">
+<tbody style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;">Első nyitvatartási nap 2026-ban</td>
+<td style="text-align: right; height: 21px;">március 31. kedd</td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. április 03. Nagypéntek</span></td>
+<td style="text-align: right; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. április 04. Nagyszombat</span></td>
+<td style="text-align: right; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;">2026. április 05. HÚSVÉT vasárnap</td>
+<td style="text-align: right; height: 21px;">zárva</td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. április 06. HÚSVÉT hétfő</span></td>
+<td style="text-align: right; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. május 1. péntek</span></td>
+<td style="text-align: right; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. május 24. PÜNKÖSD vasárnap</span></td>
+<td style="text-align: right; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;">2026. május 25. PÜNKÖSD hétfő</td>
+<td style="text-align: right; height: 21px;">zárva</td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. augusztus 20. csütörtök</span></td>
+<td style="text-align: right; height: 21px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 21px;">2026. október 23. péntek</td>
+<td style="text-align: right; height: 21px;">zárva</td>
+</tr>
+<tr style="height: 24px;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 24px;">2026. október 24. szombat</td>
+<td style="text-align: right; height: 24px;">nyitva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 22px;">2026. október 25. vasárnap</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; height: 22px;">2026. november 1. vasárnap</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: left;"> </p>
+<p style="text-align: left;"> </p>
+<p style="text-align: center;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;"><span class="text-big text-gold" style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-text-opacity: 1;">VIKTÓRIA MÁRKABOLT</span></span></p>
+<table cellpadding="0" cellspacing="0" class="content-table" style="width: 100%; height: 331px;">
+<tbody style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. március 15. vasárnap</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. április 03. Nagypéntek</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px; text-align: left;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. április 04. Nagyszombat</span></td>
+<td style="text-align: right; height: 22px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. április 05-06. HÚSVÉT vasárnap és hétfő</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. május 1. péntek</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. május 24-25. PÜNKÖSD vasárnap és hétfő</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. augusztus 20. csütörtök</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. október 23. péntek</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;"><span style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. október 24. szombat</span></td>
+<td style="text-align: right; height: 23px;"><span style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;"><span style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;"><span style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. október 25. vasárnap</span></span></td>
+<td style="text-align: right; height: 22px;"><span style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">zárva</span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. november 1. vasárnap</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. december 24., 25., 26. KARÁCSONY</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">2026. december 28, 29, 30. hétfő-szerda</span></td>
+<td style="text-align: right; height: 22px;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;">nyitva</span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2026. december 31. csütörtök</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+<tr style="height: 22px;">
+<td style="height: 22px;">2027. január 1. péntek</td>
+<td style="text-align: right; height: 22px;">zárva</td>
+</tr>
+</tbody>
+</table>
+<p style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;"> </p></div>
+</div>
+</div>
+<div class="container fullsizetext">
+<div class="content-block">
+<div><h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><strong>BELÉPŐJEGYÁRAK 2026</strong></h3>
+<p style="text-align: center;"><span class="text-medium"><strong>Kombinált belépőjegy</strong></span><br/><strong>(Minimanufaktúra-látogatás magyar nyelvű vezetéssel és Múzeumlátogatás)</strong></p>
+<p> </p>
+<table class="content-table" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 70%;">Felnőtt:</td>
+<td style="text-align: right;">4 300 Ft</td>
+</tr>
+<tr>
+<td>Nyugdíjas (65 éves kortól):</td>
+<td style="text-align: right;"> 3 200 Ft</td>
+</tr>
+<tr>
+<td>Diák (6-18 éves korig):</td>
+<td style="text-align: right;">3 200 Ft</td>
+</tr>
+<tr>
+<td>Diák &amp; Apicius kávéházi menü (6-18 éves korig):</td>
+<td style="text-align: right;">4 200 Ft</td>
+</tr>
+<tr>
+<td>Családi (2 szülő és gyermekeik):</td>
+<td style="text-align: right;"> 9 800 Ft</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p style="text-align: center;"><span class="text-medium" style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">Kombinált belépőjegy</span></span><br style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000;"/><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder;">(Minimanufaktúra-látogatás angol nyelvű vezetéssel és Múzeumlátogatás)</span></p>
+<p> </p>
+<table class="content-table" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 70%;">Felnőtt és Nyugdíjas:</td>
+<td style="text-align: right;"> 6 500 Ft</td>
+</tr>
+<tr>
+<td>Diák (6-18 éves korig):</td>
+<td style="text-align: right;">4 400 Ft</td>
+</tr>
+<tr>
+<td>Diák &amp; Apicius kávéházi menü (6-18 éves korig):</td>
+<td style="text-align: right;">5 500 Ft</td>
+</tr>
+<tr>
+<td>Családi (2 szülő és gyermekeik):</td>
+<td style="text-align: right;"> 16 500 Ft</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p class="MsoNormal" style="text-align: justify;"><span style="--tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; font-weight: bolder; text-align: justify;">A Felnőtt és a Nyugdíjas belépőjegy</span><span style="text-align: justify;"> tartalmaz egy kupont, ami az Apicius Kávéházban váltható be. Családi kombinált belépőjegy és Diák belépőjegy esetén kávéházi fogyasztást nem tartalmaz a belépőjegy.</span></p>
+<p> </p>
+<p style="text-align: justify;">A Diák belépőjegy &amp; Apicius kávéházi menü a Minimanufaktúra- és Múzeumlátogatás mellett házi keksz és 1 kakaó/cappuccino/tea fogyasztását tartalmazza az Apicius Kávéházban. A szolgáltatás igénybevételéhez előzetes bejelentkezés szükséges.</p>
+<p> </p>
+<p style="text-align: justify;">Gyermekeknek 6. életévük betöltéséig a belépés ingyenes.</p>
+<p style="text-align: justify;">Minimum 20 fős diákcsoportok látogatása esetén 5% kedvezményt adunk a belépőjegyárból. Kísérő pedagógusok diákjeggyel tekinthetik meg létesítményeinket.</p>
+<p style="text-align: justify;">Keretszerződéssel rendelkező, rendszeresen csoportokat küldő utazási irodák részére 10% engedményt adunk.</p>
+<p> </p>
+<p style="text-align: justify;"><strong><a data-review-original-href="http://www.hungarycard.hu/" href="#" rel="noopener" tabindex="-1" target="_blank">Hungary Card</a></strong> felmutatása esetén a kombinált belépőjegyek árából 10% kedvezményt biztosítunk.<br/><br/></p>
+<p> </p>
+<h3 class="MsoNormal block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><strong>KREATÍV MŰHELYFOGLALKOZÁSOK</strong></h3>
+<table class="content-table" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 70%;">Porcelánrózsa-készítés (30 perc):</td>
+<td style="text-align: right;">5 500 Ft</td>
+</tr>
+<tr>
+<td>Porcelánfigura-összeillesztés (30 perc):</td>
+<td style="text-align: right;">5 500 Ft</td>
+</tr>
+<tr>
+<td>Akvarellfestés Herendi-minták alapján (30 perc):</td>
+<td style="text-align: right;">5 500 Ft</td>
+</tr>
+<tr>
+<td>
+<p>Porcelánfestő-kurzus (már 1 naptól!):</p>
+<p><a data-review-original-href="http://herend.com/latogatas-herenden/letesitmenyeink/v/minimanufaktura/" href="#" tabindex="-1">Bővebb információ</a></p>
+</td>
+<td style="text-align: right;"> 88 000 Ft/fő/nap</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><strong>MÚZEUMLÁTOGATÁS</strong></h3>
+<table class="content-table" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 70%;">Felnőtt:</td>
+<td style="text-align: right;">3 200 Ft</td>
+</tr>
+<tr>
+<td>Nyugdíjas (65 éves kortól):</td>
+<td style="text-align: right;">2 300 Ft</td>
+</tr>
+<tr>
+<td>Diák (6-18 éves korig):</td>
+<td style="text-align: right;">2 300 Ft</td>
+</tr>
+<tr>
+<td>Családi (2 szülő és gyermekeik):</td>
+<td style="text-align: right;">5 600 Ft</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;">Áraink az áfát tartalmazzák.</p>
+<p style="text-align: justify;"><strong>Fizetési lehetőségek</strong> a Minimanufaktúra pénztárában: forint, bankkártya (Visa, MasterCard, JCB), SZÉP kártya.</p></div>
+</div>
+</div>
+<div class="container fullsizetext">
+<div class="content-block">
+<div><h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><span class="text-text"><strong>IDEGENVEZETÉS</strong></span></h3>
+<p style="text-align: justify;">A Minimanufaktúra magyar és angol nyelvű helyi idegenvezetéssel látogatható. Angol nyelvű vezetési igényt kérjük előzetesen jelezni! Az idegenvezetés időtartama filmvetítéssel együtt kb. 40 perc. A teljes program (Minimanufaktúra, Múzeum, Kávéházi vendéglátás) a kombinált jeggyel kb. 2 óra. <span style="color: rgb(76 76 76/var(--tw-text-opacity));">Egyéni látogatóinkat az előzetesen befoglalt csoportokhoz is csatlakoztathatjuk. Az utolsó idegenvezetést 16:20-kor indítjuk.</span></p>
+<p style="text-align: justify;">A Múzeumban előre bejelentett igény esetén magyar és angol nyelven biztosítunk tárlatvezetést.</p>
+<p> </p>
+<table class="content-table" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 371px;">Múzeumi magyar nyelvű tárlatvezetés díja:</td>
+<td style="text-align: right;">11 000 Ft/csoport</td>
+</tr>
+<tr>
+<td>Múzeumi angol nyelvű tárlatvezetés díja:</td>
+<td style="text-align: right;"> 16 500 Ft/csoport</td>
+</tr>
+</tbody>
+</table>
+<p> </p></div>
+</div>
+</div>
+<div class="container fullsizetext">
+<div class="content-block">
+<div data-review-disabled-form="true">
+<div class="login-form__title">
+        Bejelentkezés
+    </div>
+<div class="login-form__subtitle">
+        A Minimanufaktúra idegenvezetéssel tekinthető meg.<br/>
+<br/>
+Kérjük, hogy adatait pontosan adja meg a sikeres bejelentkezés érdekében!
+    </div>
+<div class="mb-2 form-control input required">
+<label for="name">
+            Név
+        </label>
+<input class="input" id="name" name="name" placeholder="A Ön neve" required="" type="text" wire:model="data.name"/>
+</div>
+<div class="mb-2 form-control input required">
+<label for="email">
+            E-mail
+        </label>
+<input class="input" id="email" name="email" placeholder="Az Ön e-mail címe" required="" type="email" wire:model="data.email"/>
+</div>
+<div class="mb-2 form-control input required">
+<label for="number_of_visitors">
+            Hány fő érkezik
+        </label>
+<input class="input" id="number_of_visitors" name="number_of_visitors" placeholder="Hány fő érkezik" required="" type="number" wire:model="data.number_of_visitors"/>
+</div>
+<div class="mb-2 form-control input required">
+<label for="arrival_at">
+            Dátum
+        </label>
+<input class="input" id="arrival_at" name="arrival_at" required="" type="datetime-local" wire:model="data.arrival_at" x-bind:min="`${new Date().getFullYear()}-${new Date().getMonth() + 1 &lt; 10 ? '0' + (new Date().getMonth() + 1) : new Date().getMonth() + 1}-${new Date().getDate() &lt; 10 ? '0' + new Date().getDate() : new Date().getDate()}T${new Date().getHours()}:00`" x-data=""/>
+</div>
+<div class="mb-4 form-control input required">
+<label for="login_language">
+            A Minimanufaktúra idegenvezetéssel tekinthető meg.
+            <br/>
+            Milyen nyelvő vezetést választ?
+        </label>
+<div class="select">
+<select class="input" id="lang" name="lang" required="" wire:model="data.lang">
+<option value="">
+                    Kérjük válasszon!
+                </option>
+<option value="hu">
+                    Magyar
+                </option>
+<option value="en">
+                    Angol
+                </option>
+<option value="de">
+                    Német
+                </option>
+</select>
+<div class="icon">
+<svg class="w-[16px]" height="24" viewbox="0 0 12 8" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Product-list" stroke="none" stroke-linecap="round" stroke-width="1">
+<g id="Category---Desktop-HD" stroke="currentColor" stroke-width="2" transform="translate(-1320.000000, -687.000000)">
+<g id="Result-header" transform="translate(0.000000, 660.000000)">
+<g id="btn-02" transform="translate(1273.000000, 20.000000)">
+<g id="ICN" transform="translate(45.000000, 2.000000)">
+<polyline id="arrow" points="3 6 8 11 13 6"></polyline>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </div>
+</div>
+</div>
+<div class="mb-2 form-control input required">
+<label for="comment">
+            Megjegyzés
+        </label>
+<textarea class="input" id="comment" name="comment" wire:model="data.comment" x-data="">
+        </textarea>
+</div>
+<div class="form-control">
+<button class="font-bold uppercase button button-gold" data-action="submit" data-callback="handle" data-sitekey="6Lc_V6ghAAAAAOCNK0LjwfJEuYFuCEDb9NLYZ9i4" type="submit">
+<span>Bejelentkezés</span>
+</button>
+</div>
+</div>
+ </div>
+</div>
+<div class="container fullsizetext">
+<div class="content-block">
+<div><h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><strong>TÉRKÉP</strong></h3>
+<p style="text-align: center;"><span class="text-medium">Tekintse meg elhelyezkedésünket a térképen, hogy biztosan megtaláljon minket és látnivalóinkat!</span></p>
+<p> </p>
+<p style="text-align: justify;">Létesítményeink a városközpontban, koncentráltan – a várost átszelő utca két oldalán – találhatók. A Porcelanium mögött nagy parkoló és mosdók is rendelkezésre állnak. A Porcelanium előtt szökőkút áll a tér közepén, ahol padok biztosítanak kis pihenést az élmények között. Herendi mintákkal díszített oroszlánok kiváló fotótémák és különleges élmények.</p>
+<p> </p>
+<div style="width: 100%; display: block; text-align: center;"></div>
+<p> </p>
+<h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;">LEGYEN A VENDÉGÜNK, VÁRJUK HERENDEN!</h3>
+<p> </p></div>
+</div>
+</div>
+<div class="container fullsizetext">
+<div class="content-block">
+<div><h3 class="block font-serif text-t2 md:text-t2-md mb-4" style="text-align: center;"><span class="text-text"><strong>ELÉRHETŐSÉGEINK</strong></span></h3>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><span class="text-gold text-medium"><strong>PORCELANIUM LÁTOGATÓKÖZPONT</strong></span></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong><span class="text-gold">Minimanufaktúra</span></strong></p>
+<p style="text-align: center;">8440 Herend, Kossuth Lajos u. 139.</p>
+<p style="text-align: center;">Telefon: +36 88/523-231</p>
+<p style="text-align: center;">Mobil: +36 <span style="color: rgb(76 76 76/var(--tw-text-opacity));">20/378-38-87</span></p>
+<p style="text-align: center;">E-mail: <a data-review-original-href="mailto:porcelanium.cassa@herend.com" href="#" tabindex="-1">porcelanium.cassa@herend.com</a></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong><span class="text-gold">Porcelánművészeti Múzeum</span></strong></p>
+<p style="text-align: center;">8440 Herend, Kossuth Lajos u. 138.</p>
+<p style="text-align: center;">Telefon: +36 88/523-197</p>
+<p style="text-align: center;">E-mail: <span class="text-text"><a data-review-original-href="mailto:attila.kramlik@herend.com" href="#" tabindex="-1">attila.kramlik@herend.com</a></span></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><span class="text-gold"><strong>Apicius Étterem és Kávéház</strong></span></p>
+<p style="text-align: center;">8440 Herend, Kossuth Lajos u. 137.</p>
+<p style="text-align: center;">Telefon: +36 88/523-235</p>
+<p style="text-align: center;">E-mail: <a data-review-original-href="mailto:apicius@herend.com" href="#" tabindex="-1">apicius@herend.com</a></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><span class="text-gold"><strong>Viktória Márkabolt</strong></span></p>
+<p style="text-align: center;">8440 Herend, Kossuth Lajos u. 135.</p>
+<p style="text-align: center;">Telefon: +36 88/523-223</p>
+<p style="text-align: center;">E-mail: <a data-review-original-href="mailto:victoriashop@herend.com" href="#" tabindex="-1">victoriashop@herend.com</a></p></div>
+</div>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="site-footer__links">
+<section class="site-footer__col" x-data="{ open: false }">
+<div @click="open = !open" class="site-footer__col__title" x-bind:class="{ 'is-open' : open }">
+<span>Jogi megfelelés</span>
+<svg class="icon w-5 h-5" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Plus" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<line id="Line-02" stroke="currentColor" stroke-width="1.5" x1="4" x2="24" y1="14" y2="14"></line>
+<line id="Line-01" stroke="currentColor" stroke-width="1.5" x1="14" x2="14" y1="4" y2="24"></line>
+</g>
+</svg> </div>
+<div class="site-footer__col__body" x-bind:class="{ 'is-open' : open }">
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/impresszum" href="#" tabindex="-1">
+                                                Impresszum
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/kapcsolat" href="#" tabindex="-1">
+                                                Kapcsolat
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/munkatarsak" href="#" tabindex="-1">
+                                                Munkatársak
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/jogi-nyilatkozat" href="#" tabindex="-1">
+                                                Jogi nyilatkozat
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/ti" href="#" tabindex="-1">
+                                                TI
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/adatvedelem" href="#" tabindex="-1">
+                                                Adatvédelem
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/uzletszabalyzat" href="#" tabindex="-1">
+                                                Üzletszabályzat
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/fogyasztovedelem" href="#" tabindex="-1">
+                                                Fogyasztóvédelem
+                                            </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/simplepay-adattovabbitasi-nyilatkozat" href="#" tabindex="-1">
+                                                Adattovábbítási nyilatkozat
+                                            </a>
+</li>
+</ul>
+</div>
+</section>
+<section class="site-footer__col" x-data="{ open: false }">
+<div @click="open = !open" class="site-footer__col__title" x-bind:class="{ 'is-open' : open }">
+<span>Termék struktúra</span>
+<svg class="icon w-5 h-5" height="24" viewbox="0 0 28 28" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="ICN/ICN-large/Plus" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<line id="Line-02" stroke="currentColor" stroke-width="1.5" x1="4" x2="24" y1="14" y2="14"></line>
+<line id="Line-01" stroke="currentColor" stroke-width="1.5" x1="14" x2="14" y1="4" y2="24"></line>
+</g>
+</svg> </div>
+<div class="site-footer__col__body is-multiple" x-bind:class="{ 'is-open' : open }">
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/egyeb" href="#" tabindex="-1">
+                                                Egyéb
+                                            </a>
+</li>
+</ul>
+<ul>
+<li><b>Asztalkultúra</b></li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/keszletek" href="#" tabindex="-1">
+                                                    Készletek
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/talak-talcak" href="#" tabindex="-1">
+                                                    Tálak, tálcák
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/tanyerok" href="#" tabindex="-1">
+                                                    Tányérok
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/cseszek-bogrek-poharak" href="#" tabindex="-1">
+                                                    Csészék, bögrék, poharak
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/kannak-cukortartok" href="#" tabindex="-1">
+                                                    Kannák, cukortartók
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/szerviz-kiegeszitok" href="#" tabindex="-1">
+                                                    Szervíz kiegészítők
+                                                </a>
+</li>
+</ul>
+<ul>
+<li><b>Figurák</b></li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/allat-figurak" href="#" tabindex="-1">
+                                                    Állat figurák
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/emberalak-figurak" href="#" tabindex="-1">
+                                                    Emberalak figurák
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/egyeb-figurak" href="#" tabindex="-1">
+                                                    Egyéb figurák
+                                                </a>
+</li>
+</ul>
+<ul>
+<li><b>Lakberendezés</b></li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/szorakozas" href="#" tabindex="-1">
+                                                    Szórakozás
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/kaspo-gyertyatarto" href="#" tabindex="-1">
+                                                    Kaspó, gyertyatartó
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/bonbonier" href="#" tabindex="-1">
+                                                    Bonbonier
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/vaza-lampavaza" href="#" tabindex="-1">
+                                                    Váza, lámpaváza
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/falital-disztal" href="#" tabindex="-1">
+                                                    Falitál, dísztál
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/egyeb-lakberendezesi-targy" href="#" tabindex="-1">
+                                                    Egyéb lakberendezési tárgy
+                                                </a>
+</li>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/keplap" href="#" tabindex="-1">
+                                                    Képlap
+                                                </a>
+</li>
+</ul>
+<ul>
+<li>
+<a data-review-original-href="https://herend.com/termekeink/ekszerek" href="#" tabindex="-1">
+                                                Ékszerek
+                                            </a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+<div class="mx-4 mt-4 text-xs">
+            Csomagküldés esetén igénybe veheti a Magyar Posta szolgáltatásait. <br/>
+            Részletek: <a class="hover:text-gold duration-300 underline" data-review-original-href="https://www.posta.hu/belfoldi_csomagmegoldasok" href="#" tabindex="-1" target="_blank">https://www.posta.hu/belfoldi_csomagmegoldasok</a>
+</div>
+<div class="site-footer__branding">
+<span><img alt="Herendi Porcelánmanufaktúra"/></span>
+</div>
+<div class="site-footer__legal">
+<p>
+<b>© Herendi Porcelánmanufaktúra Zrt.</b>
+<br/>www.herend.com
+        </p>
+<p class="mt-4 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-4">
+<img alt="" class="w-[260px]"/>
+<img alt="" class="w-[100px]"/>
+</p>
+</div>
+</footer>
+<div :class="{ 'is-visible' : visible }" @click="window.scrollTo({ top: 0, behavior: 'smooth' })" class="topnav" x-data="{ visible: false }" x-on:scroll.window="(window.scrollY &gt; 150) ? visible = true : visible = false;">
+<svg class="icon w-6 h-6 text-gold" fill="currentColor" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M17,13.41,12.71,9.17a1,1,0,0,0-1.42,0L7.05,13.41a1,1,0,0,0,0,1.42,1,1,0,0,0,1.41,0L12,11.29l3.54,3.54a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29A1,1,0,0,0,17,13.41Z"></path></svg></div>
+<div class="modal" wire:id="NYmNGcGQqqZa2SEYc7jd" wire:initial-data='{"fingerprint":{"id":"NYmNGcGQqqZa2SEYc7jd","name":"modal.language-modal","locale":"hu","path":"porcelanium-latogatokozpont-informaciok","method":"GET","v":"acj"},"effects":{"listeners":[]},"serverMemo":{"children":[],"errors":[],"htmlHash":"a4789ccf","data":{"product":null,"productCategory":null,"redirectRoute":null,"languages":{"hu":"Magyar","en":"English"},"selectedCode":"hu"},"dataMeta":{"collections":["languages"]},"checksum":"f4c5751166569d18998bab6f333889d32b780529f98420312ac7ff1584338565"}}' x-cloak="" x-data="toggleable" x-on:languagemodal:open.window="setOpened" x-show="open" x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0" x-transition:leave-end="opacity-0" x-transition:leave-start="opacity-100">
+<div class="modal__bg" x-on:click="setClosed()"></div>
+<div class="modal__content">
+<div class="modal__header relative h-[44px]">
+            Nyelv
+            <button class="modal__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px]" height="24" viewbox="0 0 20 20" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Nav/Rows/MM/T1" stroke="currentColor" stroke-width="1.5" transform="translate(-24.000000, -12.000000)">
+<g id="all" transform="translate(20.000000, 0.000000)">
+<g id="ICN" transform="translate(0.000000, 8.000000)">
+<line id="Line-02" x1="5.51471863" x2="22.4852814" y1="22.4852814" y2="5.51471863"></line>
+<line id="Line-01" x1="5.51471863" x2="22.4852814" y1="5.51471863" y2="22.4852814"></line>
+</g>
+</g>
+</g>
+</g>
+</svg> </button>
+</div>
+<div class="modal__body">
+<div class="px-4 py-2 flex flex-col gap-2">
+<div class="form-control">
+<label class="flex items-center cursor-pointer gap-2 p-2 rounded radio bg-gray-01" for="lang_hu">
+<input id="lang_hu" type="radio" value="hu" wire:model="selectedCode"/>
+<svg class="w-[24px] rounded-full" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<mask height="24" id="mask0_905_16" maskunits="userSpaceOnUse" style="mask-type:alpha" width="24" x="0" y="0">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+</mask>
+<g mask="url(#mask0_905_16)">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+<path d="M26 16H-2V24H26V16Z" fill="#69C34C"></path>
+<path d="M26 0H-2V8H26V0Z" fill="#B52E1E"></path>
+<path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="black" stroke-opacity="0.2" stroke-width="2"></path>
+</g>
+</svg> <span>Magyar</span>
+</label>
+</div>
+<div class="form-control">
+<label class="flex items-center cursor-pointer gap-2 p-2 rounded radio" for="lang_en">
+<input id="lang_en" type="radio" value="en" wire:model="selectedCode"/>
+<svg class="w-[24px] rounded-full" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<mask height="24" id="mask0_907_31" maskunits="userSpaceOnUse" style="mask-type:alpha" width="24" x="0" y="0">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+</mask>
+<g mask="url(#mask0_907_31)">
+<path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="white"></path>
+<path clip-rule="evenodd" d="M-1 19H27V22H-1V19ZM-1 14H27V17H-1V14ZM-2 9H26V12H-2V9ZM-1 4H27V7H-1V4ZM-1 -1H27V2H-1V-1Z" fill="#B52E1E" fill-rule="evenodd"></path>
+<path d="M12 -2H-2V12H12V-2Z" fill="#48A5DB"></path>
+<path d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z" stroke="black" stroke-opacity="0.2" stroke-width="2"></path>
+</g>
+</svg> <span>English</span>
+</label>
+</div>
+</div>
+</div>
+<div class="modal__footer">
+</div>
+</div>
+</div>
+<div class="modal" wire:id="u0a5GGjleKvTZERPh4Jo" wire:initial-data='{"fingerprint":{"id":"u0a5GGjleKvTZERPh4Jo","name":"modal.region-modal","locale":"hu","path":"porcelanium-latogatokozpont-informaciok","method":"GET","v":"acj"},"effects":{"listeners":[]},"serverMemo":{"children":[],"errors":[],"htmlHash":"a7c8dc3e","data":{"redirectUrl":"https:\/\/herend.com\/porcelanium-latogatokozpont-informaciok","countries":[{"code":"vi","is_eu":false,"is_arabic":false,"denied":false,"title":"Amerikai Virgin-szigetek","title_international":"U.S. Virgin Islands"},{"code":"ar","is_eu":false,"is_arabic":false,"denied":false,"title":"Argent\u00edna","title_international":"Argentina"},{"code":"at","is_eu":true,"is_arabic":false,"denied":false,"title":"Ausztria","title_international":"Austria"},{"code":"au","is_eu":false,"is_arabic":false,"denied":false,"title":"Ausztr\u00e1lia","title_international":"Australia"},{"code":"az","is_eu":false,"is_arabic":false,"denied":false,"title":"Azerbajdzs\u00e1n","title_international":"Azerbaijan"},{"code":"bs","is_eu":false,"is_arabic":false,"denied":false,"title":"Bahama-szigetek","title_international":"Bahamas"},{"code":"bh","is_eu":false,"is_arabic":true,"denied":false,"title":"Bahrein","title_international":"Bahrain"},{"code":"bb","is_eu":false,"is_arabic":false,"denied":false,"title":"Barbados","title_international":"Barbados"},{"code":"be","is_eu":true,"is_arabic":false,"denied":false,"title":"Belgium","title_international":"Belgium"},{"code":"bm","is_eu":false,"is_arabic":false,"denied":false,"title":"Bermuda","title_international":"Bermuda"},{"code":"br","is_eu":false,"is_arabic":false,"denied":false,"title":"Braz\u00edlia","title_international":"Brazil"},{"code":"bg","is_eu":true,"is_arabic":false,"denied":false,"title":"Bulg\u00e1ria","title_international":"Bulgaria"},{"code":"cl","is_eu":false,"is_arabic":false,"denied":false,"title":"Chile","title_international":"Chile"},{"code":"cz","is_eu":true,"is_arabic":false,"denied":false,"title":"Csehorsz\u00e1g","title_international":"Czechia"},{"code":"dk","is_eu":true,"is_arabic":false,"denied":false,"title":"D\u00e1nia","title_international":"Denmark"},{"code":"kr","is_eu":false,"is_arabic":false,"denied":false,"title":"D\u00e9l-Korea","title_international":"South Korea"},{"code":"za","is_eu":false,"is_arabic":false,"denied":false,"title":"D\u00e9l-afrikai K\u00f6zt\u00e1rsas\u00e1g","title_international":"South Africa"},{"code":"ae","is_eu":false,"is_arabic":true,"denied":false,"title":"Egyes\u00fclt Arab Em\u00edrs\u00e9gek","title_international":"United Arab Emirates"},{"code":"gb","is_eu":false,"is_arabic":false,"denied":false,"title":"Egyes\u00fclt Kir\u00e1lys\u00e1g","title_international":"United Kingdom"},{"code":"us","is_eu":false,"is_arabic":false,"denied":true,"title":"Egyes\u00fclt \u00c1llamok","title_international":"United States"},{"code":"fi","is_eu":true,"is_arabic":false,"denied":false,"title":"Finnorsz\u00e1g","title_international":"Finland"},{"code":"fr","is_eu":true,"is_arabic":false,"denied":false,"title":"Franciaorsz\u00e1g","title_international":"France"},{"code":"ph","is_eu":false,"is_arabic":false,"denied":false,"title":"F\u00fcl\u00f6p-szigetek","title_international":"Philippines"},{"code":"gt","is_eu":false,"is_arabic":false,"denied":false,"title":"Guatemala","title_international":"Guatemala"},{"code":"gr","is_eu":true,"is_arabic":false,"denied":false,"title":"G\u00f6r\u00f6gorsz\u00e1g","title_international":"Greece"},{"code":"an","is_eu":false,"is_arabic":false,"denied":false,"title":"Holland Antill\u00e1k","title_international":"Netherlands Antilles"},{"code":"nl","is_eu":true,"is_arabic":false,"denied":false,"title":"Hollandia","title_international":"Netherlands"},{"code":"hk","is_eu":false,"is_arabic":false,"denied":false,"title":"Hongkong KKT","title_international":"Hong Kong SAR China"},{"code":"hr","is_eu":true,"is_arabic":false,"denied":false,"title":"Horv\u00e1torsz\u00e1g","title_international":"Croatia"},{"code":"in","is_eu":false,"is_arabic":false,"denied":false,"title":"India","title_international":"India"},{"code":"id","is_eu":false,"is_arabic":false,"denied":false,"title":"Indon\u00e9zia","title_international":"Indonesia"},{"code":"il","is_eu":true,"is_arabic":false,"denied":false,"title":"Izrael","title_international":"Israel"},{"code":"jp","is_eu":false,"is_arabic":false,"denied":true,"title":"Jap\u00e1n","title_international":"Japan"},{"code":"ky","is_eu":false,"is_arabic":false,"denied":false,"title":"Kajm\u00e1n-szigetek","title_international":"Cayman Islands"},{"code":"ca","is_eu":false,"is_arabic":false,"denied":false,"title":"Kanada","title_international":"Canada"},{"code":"qa","is_eu":false,"is_arabic":true,"denied":false,"title":"Katar","title_international":"Qatar"},{"code":"kz","is_eu":false,"is_arabic":false,"denied":false,"title":"Kazahszt\u00e1n","title_international":"Kazakhstan"},{"code":"co","is_eu":false,"is_arabic":false,"denied":false,"title":"Kolumbia","title_international":"Colombia"},{"code":"kw","is_eu":false,"is_arabic":true,"denied":false,"title":"Kuvait","title_international":"Kuwait"},{"code":"cn","is_eu":false,"is_arabic":false,"denied":false,"title":"K\u00edna","title_international":"China"},{"code":"pl","is_eu":true,"is_arabic":false,"denied":false,"title":"Lengyelorsz\u00e1g","title_international":"Poland"},{"code":"lv","is_eu":true,"is_arabic":false,"denied":false,"title":"Lettorsz\u00e1g","title_international":"Latvia"},{"code":"lb","is_eu":false,"is_arabic":false,"denied":false,"title":"Libanon","title_international":"Lebanon"},{"code":"lt","is_eu":true,"is_arabic":false,"denied":false,"title":"Litv\u00e1nia","title_international":"Lithuania"},{"code":"lu","is_eu":true,"is_arabic":false,"denied":false,"title":"Luxemburg","title_international":"Luxembourg"},{"code":"hu","is_eu":true,"is_arabic":false,"denied":false,"title":"Magyarorsz\u00e1g","title_international":"Hungary"},{"code":"mv","is_eu":false,"is_arabic":false,"denied":false,"title":"Mald\u00edv-szigetek","title_international":"Maldives"},{"code":"ma","is_eu":false,"is_arabic":true,"denied":false,"title":"Marokk\u00f3","title_international":"Morocco"},{"code":"mx","is_eu":false,"is_arabic":false,"denied":false,"title":"Mexik\u00f3","title_international":"Mexico"},{"code":"mc","is_eu":false,"is_arabic":false,"denied":false,"title":"Monaco","title_international":"Monaco"},{"code":"mt","is_eu":true,"is_arabic":false,"denied":false,"title":"M\u00e1lta","title_international":"Malta"},{"code":"no","is_eu":false,"is_arabic":false,"denied":false,"title":"Norv\u00e9gia","title_international":"Norway"},{"code":"de","is_eu":true,"is_arabic":false,"denied":false,"title":"N\u00e9metorsz\u00e1g","title_international":"Germany"},{"code":"it","is_eu":true,"is_arabic":false,"denied":false,"title":"Olaszorsz\u00e1g","title_international":"Italy"},{"code":"om","is_eu":false,"is_arabic":true,"denied":false,"title":"Om\u00e1n","title_international":"Oman"},{"code":"ru","is_eu":false,"is_arabic":false,"denied":true,"title":"Oroszorsz\u00e1g","title_international":"Russia"},{"code":"pa","is_eu":false,"is_arabic":false,"denied":false,"title":"Panama","title_international":"Panama"},{"code":"pe","is_eu":false,"is_arabic":false,"denied":false,"title":"Peru","title_international":"Peru"},{"code":"pt","is_eu":true,"is_arabic":false,"denied":false,"title":"Portug\u00e1lia","title_international":"Portugal"},{"code":"pr","is_eu":false,"is_arabic":false,"denied":false,"title":"Puerto Rico","title_international":"Puerto Rico"},{"code":"ro","is_eu":true,"is_arabic":false,"denied":false,"title":"Rom\u00e1nia","title_international":"Romania"},{"code":"es","is_eu":true,"is_arabic":false,"denied":false,"title":"Spanyolorsz\u00e1g","title_international":"Spain"},{"code":"ch","is_eu":false,"is_arabic":false,"denied":false,"title":"Sv\u00e1jc","title_international":"Switzerland"},{"code":"se","is_eu":true,"is_arabic":false,"denied":false,"title":"Sv\u00e9dorsz\u00e1g","title_international":"Sweden"},{"code":"sa","is_eu":false,"is_arabic":true,"denied":false,"title":"Sza\u00fad-Ar\u00e1bia","title_international":"Saudi Arabia"},{"code":"sg","is_eu":false,"is_arabic":false,"denied":false,"title":"Szingap\u00far","title_international":"Singapore"},{"code":"sk","is_eu":true,"is_arabic":false,"denied":false,"title":"Szlov\u00e1kia","title_international":"Slovakia"},{"code":"si","is_eu":true,"is_arabic":false,"denied":false,"title":"Szlov\u00e9nia","title_international":"Slovenia"},{"code":"sd","is_eu":false,"is_arabic":true,"denied":false,"title":"Szud\u00e1n","title_international":"Sudan"},{"code":"sy","is_eu":false,"is_arabic":true,"denied":false,"title":"Sz\u00edria","title_international":"Syria"},{"code":"tw","is_eu":false,"is_arabic":false,"denied":false,"title":"Tajvan","title_international":"Taiwan"},{"code":"th","is_eu":false,"is_arabic":false,"denied":false,"title":"Thaif\u00f6ld","title_international":"Thailand"},{"code":"tt","is_eu":false,"is_arabic":false,"denied":false,"title":"Trinidad \u00e9s Tobago","title_international":"Trinidad &amp; Tobago"},{"code":"tr","is_eu":false,"is_arabic":false,"denied":true,"title":"T\u00f6r\u00f6korsz\u00e1g","title_international":"Turkey"},{"code":"ua","is_eu":false,"is_arabic":false,"denied":false,"title":"Ukrajna","title_international":"Ukraine"},{"code":"ve","is_eu":false,"is_arabic":false,"denied":false,"title":"Venezuela","title_international":"Venezuela"},{"code":"mk","is_eu":false,"is_arabic":false,"denied":false,"title":"\u00c9szak-Maced\u00f3nia","title_international":"North Macedonia"},{"code":"ee","is_eu":true,"is_arabic":false,"denied":false,"title":"\u00c9sztorsz\u00e1g","title_international":"Estonia"},{"code":"ie","is_eu":true,"is_arabic":false,"denied":false,"title":"\u00cdrorsz\u00e1g","title_international":"Ireland"},{"code":"nz","is_eu":false,"is_arabic":false,"denied":false,"title":"\u00daj-Z\u00e9land","title_international":"New Zealand"}],"selectedCode":"hu"},"dataMeta":[],"checksum":"b3cc82d6758e3c0352b5c9670319353a47b897c24922a01bc45449fe535c52aa"}}' x-cloak="" x-data="toggleable" x-on:regionmodal:open.window="setOpened" x-show="open" x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0" x-transition:leave-end="opacity-0" x-transition:leave-start="opacity-100">
+<div class="modal__bg" x-on:click="setClosed()"></div>
+<div class="modal__content">
+<div class="modal__header relative h-[44px]">
+<button class="modal__close" type="button" x-on:click="setClosed">
+<svg class="w-[28px]" height="24" viewbox="0 0 20 20" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="Nav/Rows/MM/T1" stroke="currentColor" stroke-width="1.5" transform="translate(-24.000000, -12.000000)">
+<g id="all" transform="translate(20.000000, 0.000000)">
+<g id="ICN" transform="translate(0.000000, 8.000000)">
+<line id="Line-02" x1="5.51471863" x2="22.4852814" y1="22.4852814" y2="5.51471863"></line>
+<line id="Line-01" x1="5.51471863" x2="22.4852814" y1="5.51471863" y2="22.4852814"></line>
+</g>
+</g>
+</g>
+</g>
+</svg> </button>
+</div>
+<div class="modal__body">
+<div class="w-full text-center">
+<img alt="" class="mx-auto"/>
+<h3 class="text-gold uppercase font-serif text-medium font-semibold my-2">
+            Világszerte szállítunk
+        </h3>
+<div class="px-4 my-2 text-base font-regular">
+            Kérjük válassza ki, hova szállítsunk Önnek. Felhívjuk a figyelmét, hogy a szállítási és számlázási
+            országnak egyeznie kell.
+        </div>
+</div>
+</div>
+<div class="modal__footer">
+<div class="w-full pb-[30px] px-4">
+<div class="form-control my-1">
+<label class="block my-1" for="region_select">
+                    Szállítás
+                </label>
+<div class="select">
+<select id="region_select" name="region_select" wire:model="selectedCode">
+<option value="vi">
+                                                                    Amerikai Virgin-szigetek
+                                                            </option>
+<option value="ar">
+                                                                    Argentína
+                                                            </option>
+<option value="at">
+                                                                    Ausztria
+                                                            </option>
+<option value="au">
+                                                                    Ausztrália
+                                                            </option>
+<option value="az">
+                                                                    Azerbajdzsán
+                                                            </option>
+<option value="bs">
+                                                                    Bahama-szigetek
+                                                            </option>
+<option value="bh">
+                                                                    Bahrein
+                                                            </option>
+<option value="bb">
+                                                                    Barbados
+                                                            </option>
+<option value="be">
+                                                                    Belgium
+                                                            </option>
+<option value="bm">
+                                                                    Bermuda
+                                                            </option>
+<option value="br">
+                                                                    Brazília
+                                                            </option>
+<option value="bg">
+                                                                    Bulgária
+                                                            </option>
+<option value="cl">
+                                                                    Chile
+                                                            </option>
+<option value="cz">
+                                                                    Csehország
+                                                            </option>
+<option value="dk">
+                                                                    Dánia
+                                                            </option>
+<option value="kr">
+                                                                    Dél-Korea
+                                                            </option>
+<option value="za">
+                                                                    Dél-afrikai Köztársaság
+                                                            </option>
+<option value="ae">
+                                                                    Egyesült Arab Emírségek
+                                                            </option>
+<option value="gb">
+                                                                    Egyesült Királyság
+                                                            </option>
+<option disabled="" value="us">
+                                                                    Egyesült Államok
+                                                            </option>
+<option value="fi">
+                                                                    Finnország
+                                                            </option>
+<option value="fr">
+                                                                    Franciaország
+                                                            </option>
+<option value="ph">
+                                                                    Fülöp-szigetek
+                                                            </option>
+<option value="gt">
+                                                                    Guatemala
+                                                            </option>
+<option value="gr">
+                                                                    Görögország
+                                                            </option>
+<option value="an">
+                                                                    Holland Antillák
+                                                            </option>
+<option value="nl">
+                                                                    Hollandia
+                                                            </option>
+<option value="hk">
+                                                                    Hongkong KKT
+                                                            </option>
+<option value="hr">
+                                                                    Horvátország
+                                                            </option>
+<option value="in">
+                                                                    India
+                                                            </option>
+<option value="id">
+                                                                    Indonézia
+                                                            </option>
+<option value="il">
+                                                                    Izrael
+                                                            </option>
+<option disabled="" value="jp">
+                                                                    Japán
+                                                            </option>
+<option value="ky">
+                                                                    Kajmán-szigetek
+                                                            </option>
+<option value="ca">
+                                                                    Kanada
+                                                            </option>
+<option value="qa">
+                                                                    Katar
+                                                            </option>
+<option value="kz">
+                                                                    Kazahsztán
+                                                            </option>
+<option value="co">
+                                                                    Kolumbia
+                                                            </option>
+<option value="kw">
+                                                                    Kuvait
+                                                            </option>
+<option value="cn">
+                                                                    Kína
+                                                            </option>
+<option value="pl">
+                                                                    Lengyelország
+                                                            </option>
+<option value="lv">
+                                                                    Lettország
+                                                            </option>
+<option value="lb">
+                                                                    Libanon
+                                                            </option>
+<option value="lt">
+                                                                    Litvánia
+                                                            </option>
+<option value="lu">
+                                                                    Luxemburg
+                                                            </option>
+<option value="hu">
+                                                                    Magyarország
+                                                            </option>
+<option value="mv">
+                                                                    Maldív-szigetek
+                                                            </option>
+<option value="ma">
+                                                                    Marokkó
+                                                            </option>
+<option value="mx">
+                                                                    Mexikó
+                                                            </option>
+<option value="mc">
+                                                                    Monaco
+                                                            </option>
+<option value="mt">
+                                                                    Málta
+                                                            </option>
+<option value="no">
+                                                                    Norvégia
+                                                            </option>
+<option value="de">
+                                                                    Németország
+                                                            </option>
+<option value="it">
+                                                                    Olaszország
+                                                            </option>
+<option value="om">
+                                                                    Omán
+                                                            </option>
+<option disabled="" value="ru">
+                                                                    Oroszország
+                                                            </option>
+<option value="pa">
+                                                                    Panama
+                                                            </option>
+<option value="pe">
+                                                                    Peru
+                                                            </option>
+<option value="pt">
+                                                                    Portugália
+                                                            </option>
+<option value="pr">
+                                                                    Puerto Rico
+                                                            </option>
+<option value="ro">
+                                                                    Románia
+                                                            </option>
+<option value="es">
+                                                                    Spanyolország
+                                                            </option>
+<option value="ch">
+                                                                    Svájc
+                                                            </option>
+<option value="se">
+                                                                    Svédország
+                                                            </option>
+<option value="sa">
+                                                                    Szaúd-Arábia
+                                                            </option>
+<option value="sg">
+                                                                    Szingapúr
+                                                            </option>
+<option value="sk">
+                                                                    Szlovákia
+                                                            </option>
+<option value="si">
+                                                                    Szlovénia
+                                                            </option>
+<option value="sd">
+                                                                    Szudán
+                                                            </option>
+<option value="sy">
+                                                                    Szíria
+                                                            </option>
+<option value="tw">
+                                                                    Tajvan
+                                                            </option>
+<option value="th">
+                                                                    Thaiföld
+                                                            </option>
+<option value="tt">
+                                                                    Trinidad és Tobago
+                                                            </option>
+<option disabled="" value="tr">
+                                                                    Törökország
+                                                            </option>
+<option value="ua">
+                                                                    Ukrajna
+                                                            </option>
+<option value="ve">
+                                                                    Venezuela
+                                                            </option>
+<option value="mk">
+                                                                    Észak-Macedónia
+                                                            </option>
+<option value="ee">
+                                                                    Észtország
+                                                            </option>
+<option value="ie">
+                                                                    Írország
+                                                            </option>
+<option value="nz">
+                                                                    Új-Zéland
+                                                            </option>
+</select>
+<div class="icon">
+<svg class="w-[16px]" height="24" viewbox="0 0 12 8" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Product-list" stroke="none" stroke-linecap="round" stroke-width="1">
+<g id="Category---Desktop-HD" stroke="currentColor" stroke-width="2" transform="translate(-1320.000000, -687.000000)">
+<g id="Result-header" transform="translate(0.000000, 660.000000)">
+<g id="btn-02" transform="translate(1273.000000, 20.000000)">
+<g id="ICN" transform="translate(45.000000, 2.000000)">
+<polyline id="arrow" points="3 6 8 11 13 6"></polyline>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

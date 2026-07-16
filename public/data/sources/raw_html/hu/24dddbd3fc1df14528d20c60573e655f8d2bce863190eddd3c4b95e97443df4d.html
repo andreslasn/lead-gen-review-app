@@ -1,0 +1,775 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Egészségügy - Parád Nagyközség</title>
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+<div class="container padding-top-header bg-color">
+<header>
+<div class="row hidden-xs">
+<div class="header-title">
+<a data-review-original-href="index.php" href="#" tabindex="-1">
+<img alt="Parád" class="img-responsive"/>
+<div class="header-title-text">
+<h1>Parád</h1>
+<h3>Palócok központja</h3>
+</div>
+</a>
+</div>
+</div>
+<div class="row visible-xs">
+<div class="header-title-mobil">
+<a data-review-original-href="index.php" href="#" tabindex="-1">
+<img alt="Parád" class="img-responsive center-block"/>
+</a>
+</div>
+</div>
+</header>
+<div class="navbar navbar-default" role="navigation">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li><a data-review-original-href="index.php" href="#" tabindex="-1">Főoldal</a></li>
+<li><a data-review-original-href="programok.php" href="#" tabindex="-1">Programok</a></li>
+<li class="dropdown"><a class="dropdown-toggle" data-review-original-href="javascript:void(0)" data-toggle="dropdown" href="#" tabindex="-1">Turizmus <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="latnivalok.php" href="#" tabindex="-1">Látnivalók</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="programok.php" href="#" tabindex="-1">Programok</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="szallasok.php" href="#" tabindex="-1">Szállások</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="szolgaltatasok.php#vendeglato" href="#" tabindex="-1">Vendéglátás</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="szolgaltatasok.php#uzletek" href="#" tabindex="-1">Üzletek</a></li>
+</ul>
+</li>
+<li><a data-review-original-href="kezmuvesek.php" href="#" tabindex="-1">Kézművesek</a></li>
+<li class="dropdown"><a class="dropdown-toggle" data-review-original-href="javascript:void(0)" data-toggle="dropdown" href="#" tabindex="-1">Információ <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="programok.php" href="#" tabindex="-1">Programok</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="sport.php" href="#" tabindex="-1">Sport</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="egeszsegugy.php" href="#" tabindex="-1">Egészségügy <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="egeszsegugy.php#haziorvos" href="#" tabindex="-1">Háziorvos</a></li>
+<li><a data-review-original-href="egeszsegugy.php#fogorvos" href="#" tabindex="-1">Fogorvos</a></li>
+<li><a data-review-original-href="egeszsegugy.php#gyogyszertar" href="#" tabindex="-1">Gyógyszertár</a></li>
+<li><a data-review-original-href="egeszsegugy.php" href="#" tabindex="-1">Továbbiak</a></li>
+</ul>
+</li>
+<li class="divider"></li>
+<li><a data-review-original-href="egeszsegugy.php#allatorvos" href="#" tabindex="-1">Állatorvos</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="szolgaltatasok.php" href="#" tabindex="-1">Szolgáltatások, nyitvatartások</a></li>
+</ul>
+</li>
+<li class="dropdown"><a class="dropdown-toggle" data-review-original-href="javascript:void(0)" data-toggle="dropdown" href="#" tabindex="-1">Község <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="koszonto.php" href="#" tabindex="-1">Köszöntő</a></li>
+<li><a data-review-original-href="telepulesunk.php" href="#" tabindex="-1">A település</a></li>
+<li><a data-review-original-href="galeria.php" href="#" tabindex="-1">Galéria</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="szolgaltatasok.php" href="#" tabindex="-1">Szolgáltatások</a></li>
+<li><a data-review-original-href="civil-szervezetek.php" href="#" tabindex="-1">Civil szervezetek</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="egyhaz.php" href="#" tabindex="-1">Egyház</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="parad-diszpolgarai.php" href="#" tabindex="-1">Parád Díszpolgárai</a></li>
+<li><a data-review-original-href="paradi-mozaik.php" href="#" tabindex="-1">Parádi Mozaik</a></li>
+<li><a data-review-original-href="fejlesztesek.php" href="#" tabindex="-1">Fejlesztések</a></li>
+</ul>
+</li>
+<li class="dropdown"><a class="dropdown-toggle" data-review-original-href="javascript:void(0)" data-toggle="dropdown" href="#" tabindex="-1">Intézmények <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="http://www.fayparad.hu" href="#" tabindex="-1" target="_blank">Iskola</a></li>
+<li><a data-review-original-href="http://bendeguzovoda.hu" href="#" tabindex="-1" target="_blank">Bendegúz Óvoda</a></li>
+<li><a data-review-original-href="http://bendeguzovoda.hu/csaladsegito-es-gyermekjoleti-szolgalat.php" href="#" tabindex="-1" target="_blank">Gyermekjóléti Szolgálat</a></li>
+<li><a data-review-original-href="http://bendeguzovoda.hu/csaladsegito-es-gyermekjoleti-szolgalat.php" href="#" tabindex="-1" target="_blank">Családsegítő Szolgálat</a></li>
+<li><a data-review-original-href="egeszsegugy.php" href="#" tabindex="-1">Egészségügy</a></li>
+<li><a data-review-original-href="ono.php" href="#" tabindex="-1">ÖNO</a></li>
+<li><a data-review-original-href="https://www.facebook.com/p/K%C3%B6z%C3%B6ss%C3%A9gi-H%C3%A1z-Par%C3%A1d-100064317236647/" href="#" tabindex="-1" target="_blank">Közösségi Ház - IKSZT</a></li>
+<li><a data-review-original-href="konyvtar.php" href="#" tabindex="-1">Könyvtár</a></li>
+</ul>
+</li>
+<li class="dropdown"><a class="dropdown-toggle" data-review-original-href="javascript:void(0)" data-toggle="dropdown" href="#" tabindex="-1">Közigazgatás <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="onkormanyzat.php" href="#" tabindex="-1">Önkormányzat</a></li>
+<li><a data-review-original-href="roma-nemzetisegi-onkormanyzat.php" href="#" tabindex="-1">Roma nemzetiségi Önk.</a></li>
+<li><a data-review-original-href="onkormanyzati-hivatal.php" href="#" tabindex="-1">Önkormányzati Hivatal</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="nyomtatvanyfajtak.php" href="#" tabindex="-1">Nyomtatványok</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="palyazatok.php" href="#" tabindex="-1">Pályázatok</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="kozerdeku-szervezeti-szemelyzeti-adatok.php" href="#" tabindex="-1">Közérdekű adatok <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="kozerdeku-szervezeti-szemelyzeti-adatok.php" href="#" tabindex="-1">Szervezeti, Személyzeti adatok</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="kozerdeku-tevekenyseg.php" href="#" tabindex="-1">Tevékenységre, működésre vonatkozó adatok</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="kozerdeku-gazdasagi.php" href="#" tabindex="-1">Gazdálkodási adatok</a></li>
+</ul>
+</li>
+<li class="divider"></li>
+<li><a data-review-original-href="jarasi-hivatal.php" href="#" tabindex="-1">Heves Megyei Kormányhivatal</a></li>
+<li><a data-review-original-href="hatosagi-gyamugyi-igazsagugyi.php" href="#" tabindex="-1">Hatósági, Gyámügyi és Igazságügyi Osztály</a></li>
+<li><a data-review-original-href="okmanyiroda.php" href="#" tabindex="-1">Okmányiroda</a></li>
+<li><a data-review-original-href="munkaugyi-kirendeltseg.php" href="#" tabindex="-1">Foglalkoztatási osztály</a></li>
+</ul>
+</li>
+<li><a data-review-original-href="vallalkozok.php" href="#" tabindex="-1">Vállalkozók</a></li>
+<li><a data-review-original-href="kapcsolat.php" href="#" tabindex="-1">Kapcsolat</a></li>
+<li class="dropdown"><a class="dropdown-toggle" data-review-original-href="javascript:void(0)" data-toggle="dropdown" href="#" tabindex="-1">Választási információk <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a data-review-original-href="valasztasi-szervek.php" href="#" tabindex="-1">Választási szervek</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1" target="_blank">Választási ügyintézés</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="https://www.valasztas.hu/" href="#" tabindex="-1" target="_blank">2026. évi választás</a></li>
+<li class="divider"></li>
+<li><a data-review-original-href="korabbi-valasztasok.php" href="#" tabindex="-1">Korábbi választások</a></li>
+</ul>
+</li>
+<li><a data-review-original-href="adatvedelmi-tajekoztatok.php" href="#" tabindex="-1">Adatvédelmi tájékoztatók</a></li>
+<li><a data-review-original-href="uj-telepulesterv.php" href="#" tabindex="-1">Új Településterv</a></li>
+</ul>
+</div>
+</div>
+<article class="col-sm-8">
+<div class="row">
+<section>
+<div class="row padding-trl">
+<div class="widget-header">
+<div class="widget-head box-radius-header">
+<h3 class="widget-title">
+<span>Egészségügy</span>
+</h3>
+</div>
+</div>
+<div class="padding-tb programok szallasok-link box-radius-first egeszsegugy">
+<div>
+<div class="row padding-rl" id="haziorvos">
+<div class="col-sm-12 col-md-8">
+<h3>Háziorvos és Gyermekorvosi Rendelő</h3>
+<h4>Háziorvosi rendelés</h4>
+<p>
+<b>Háziorvos: </b><br/>
+									Dr. Gáll Aranka címzetes főorvosnő<br/>
+<b>Cím: </b>3240 Parád, Ifjúság utca 6.
+									<br/><b>Mobil: </b><a data-review-original-href="tel:+36204854209" href="#" tabindex="-1">+36-20-485-4209</a>
+</p>
+<p>Sürgős esetben a nap folyamán, 8-tól 16 óráig a fenti telefonszámokon lehet orvosi segítséget kérni.</p>
+<table class="table-bordered" style="margin-bottom: 20px;">
+<tr>
+<td></td>
+<td><strong>Parád</strong></td>
+</tr>
+<tr>
+<td>Hérfő</td>
+<td>8:00 - 12:00</td>
+</tr>
+<tr>
+<td>Kedd</td>
+<td>8:00 - 12:00</td>
+</tr>
+<tr>
+<td>Szerda</td>
+<td>13:00 - 17:00</td>
+</tr>
+<tr>
+<td>Csütörtök</td>
+<td>8:00 - 12:00</td>
+</tr>
+<tr>
+<td>Péntek</td>
+<td>8:00 - 12:00</td>
+</tr>
+</table>
+<p>A délutáni rendeléseket az iskolából, óvodából érkező gyerekeknek  és munkából hazaérkező felnőtteknek szeretnénk fenntartani. Természetesen bármelyik megadott időben rendelkezésre állunk felnőttnek, gyereknek egyaránt. A gyerekek ellátására így minden nap, egész rendelési időben van lehetőség!</p>
+<p>Továbbra is lehetőség van a rendszeresen szedett gyógyszerek kérésére a szokott módon. <b>Az asszisztens telefonszáma hívható reggel 7 órától, kivéve szerdán</b>.</p>
+<p>Ezen a lehetőségen kívül e-mail címen is el lehet érni bennünket. E-mailben lehetőség van gyógyszer, igazolás kérésére, vagy orvossal való megbeszélésre: <a data-review-original-href="mailto:ahaziorvosom@gmail.com" href="#" tabindex="-1">ahaziorvosom@gmail.com</a></p>
+<h4>Asszisztensi ellátás</h4>
+<p><strong>Ellátó: </strong>Jakó Gáborné asszisztens
+								<br/><b>Cím: </b>3240 Parád, Ifjúság utca 6.
+								<br/><b>Mobil: </b><a data-review-original-href="tel:+36304685830" href="#" tabindex="-1">+36-30-468-5830</a></p>
+<h4>Ügyeleti ellátás</h4>
+<p><b>Az egységes ügyeleti telefonszám a vármegyében</b>: <a data-review-original-href="tel:1830" href="#" tabindex="-1">1830</a></p>
+<h4>Háziorvosi ügyeleti ellátás</h4>
+<p>A háziorvosi ügyelet a sürgős – a következő rendelési időig nem halasztható - orvosi tevékenységek elvégzése céljából szervezett ellátás<br/>
+								- Hétköznap: 16.00 óra - 22.00 óra között<br/>
+								- Hétvégén, ünnepnapon: 08.00 óra - 14.00 óra között
+								</p>
+<p>
+<ul>
+<li><b>Eger</b>: 3300 Eger, Szálloda utca 2.</li>
+<li><b>Gyöngyös</b>: 3200 Gyöngyös, Dózsa György u. 20-22. <small>(Gyöngyösi Bugát Pál Kórház)</small></li>
+<li><b>Hatvan</b>: 3000 Hatvan, Balassi Bálint u. 16. <small>(Albert Schweitzer Kórház- Rendelőintézet)</small></li>
+<li><b>Heves</b>: 3360 Heves, Fő út 13. <small>(Heves- Rendelőintézet)</small></li>
+<li><b>Pétervására</b>: 3250 Pétervására, Szabadság tér 28.</li>
+</ul>
+</p>
+<h4>Sürgősségi ügyeleti vagy mentőellátás</h4>
+<p><b>Központi ügyeleti telefonszám</b>: <a data-review-original-href="tel:1830" href="#" tabindex="-1">1830</a><br/>
+								Hétköznap: 22.00 óra - 08.00 óra között<br/>
+								Hétvégén, ünnepnapon: 14.00 óra - 08.00 óra között</p>
+<p><b>A telefonszám a teljes ügyeleti időszakban, hétköznap 16.00-08.00 között, hétvégén, ünnepnapon egész nap hívható.</b></p>
+<p>A gyermekek ügyeleti ellátást a járásközponti ügyeleti pontokon, azok működési idejében, valamint az Eger Gyermekügyeleten (3300 Eger, Szálloda utca 2.) hétköznapokon 16:00 órától 22:00 óráig, hétvégén és ünnepnapon 08.00 órától 22:00 óráig végzik. </p>
+</div>
+<div class="col-sm-12 col-md-4 padding-tb-30">
+<img class="img-responsive center-block box-radius"/>
+</div>
+</div>
+<div class="page-divider"></div>
+<div class="row padding-rl">
+<div class="col-xs-12">
+<h3>Védőnő</h3>
+<p>
+<b>Cím: </b>3240 Parád, Kossuth Lajos út 128.
+									<br/><b>Telefon: </b>06/30 584-0386
+									<br/><b>Védőnő: </b>Besenyei-Tóth Fanni								</p>
+<p><b>Védőnői fogadóóra</b> - Kedd: 12.00 – 14.00 óráig</p>
+<p><b>Várandós tanácsadás</b> - Csütörtök: 8.00 – 10.00 óráig</p>
+<p><b>Csecsemő-kisgyermek tanácsadás</b> - Csütörtök: 10.00 – 12.00 óráig</p>
+</div>
+</div>
+<div class="page-divider"></div>
+<div class="row padding-rl" id="fogorvos">
+<div class="col-xs-12">
+<h3>Fogorvosi Rendelő</h3>
+<p><b>Fogorvos: </b>Dr. Felsőbányai Borbála Ildikó			    				<br/><b>Cím: </b>3240 Parád, Kossuth Lajos út 128.
+			    				<br/><b>Telefon: </b><a data-review-original-href="tel:+3636364399" href="#" tabindex="-1">+36 36/364-399</a></p>
+<div class="lista">
+<p><b>Rendelési idő: </b>
+<ul>
+<li><b>Hétfő:</b> 12.00 - 20.00 óráig</li>
+<li><b>Kedd:</b> 8.00 - 12.00 óráig</li>
+<li><b>Szerda:</b> 12.00 - 20.00 óráig</li>
+<li><b>Csütörtök:</b> 8.00 - 12.00 óráig</li>
+<li><b>Péntek:</b> iskolafogászat 9.00 órától - 14.30 óráig</li>
+</ul>
+</p>
+</div>
+<p>A vizsgálathoz és kezeléshez előzetesen egyeztetett időpont szükséges, melyet rendelési időben szíveskedjenek kérni!</p>
+<p><b>Sürgős ellátást igénylő esetek ellátása a rendelési idő első két órájában bejelentkezés nélkül történik.</b></p>
+<p>Időpont rendelési időben az alábbi telefonszámokon kérhető:<br/><a data-review-original-href="tel:+3636364399" href="#" tabindex="-1">+36 36 364 399</a>, <a data-review-original-href="tel:+36301377606" href="#" tabindex="-1">+36 30 137 7606</a></p>
+<p>A vizsgálathoz kérjük készítsék elő:
+			    					<ul>
+<li>Taj kártyájukat</li>
+<li>Lakcímkártyájukat</li>
+<li>Rendszeresen szedett gyógyszereik listáját</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="page-divider"></div>
+<div class="row padding-rl" id="gyogyszertar">
+<div class="col-xs-12 col-md-7">
+<h3>Platán Gyógyszertár</h3>
+<p>
+<b>Cím: </b>3240 Parád, Kossuth út 128/a.
+									<br/><b>Telefon: </b>+36 36/ 544-090
+								</p>
+<p>
+<b>Nyitvatartási idő:</b>
+<br/>Hétfő: 8.00 – 16.00
+	<br/>Kedd: 8.00 – 16.00
+	<br/>Szerda: 8.00 – 16.00
+	<br/>Csütörtök: 8.00 – 16.00
+	<br/>Péntek: 8.00 – 14.00
+</p>
+</div>
+<div class="col-xs-12 col-md-5 padding-tb-30">
+<img class="img-responsive center-block box-radius"/>
+</div>
+</div>
+<div class="page-divider"></div>
+<div class="row padding-rl">
+<div class="col-xs-12 col-md-7">
+<h3>Parádfürdői Állami Kórház</h3>
+<p>
+<b>Cím: </b>3244 Parádfürdő, Kossuth út 221.
+									<br/><b>Telefon: </b>+36 36/ 544-800
+									<br/><b>Web: </b><a data-review-original-href="http://www.paradfurdo.hu/" href="#" tabindex="-1" target="_blank">www.paradfurdo.hu</a>
+<br/><b>Főigazgató: </b>Dr. Rabóczki Anita
+								</p>
+<h3>Egészségfejlesztési Iroda (EFI)</h3>
+<p>
+<b>Cím: </b>3244 Parádfürdő, Kossuth út 221.
+									<br/><b>Telefon: </b>+36 36/ 544-841
+									<br/><b>Email: </b><a data-review-original-href="mailto:efi.info@paradfurdo.hu" href="#" tabindex="-1" target="_top">efi.info@paradfurdo.hu</a>
+<br/><b>Szakmai vezető: </b>Szakács Ibolya
+									<br/><b>Telefon: </b>06/30 485-0803
+								</p>
+<div class="lista">
+<p><b>Nyitvatartás: </b>hétfőtől péntekig 8.00 – 16.00
+						    			<ul>
+<li>Életmód kockázatok felmérése</li>
+<li>Szűrések</li>
+<li>Táplálkozási tanácsadás</li>
+<li>Egyéni és csoportos mozgásprogramok</li>
+<li>Dohányzás leszoktató program</li>
+<li>Alkoholellenes programok</li>
+<li>Lelki egészség tanácsadás</li>
+<li>Komplex személyre szabott életmód programok tervezése</li>
+</ul>
+</p>
+</div>
+<p>Egészségfejlesztési Iroda szolgáltatásai ingyenesek, térítés nélkül vehetők igénybe.</p>
+<p>Előzetes időpont egyeztetés szükséges!</p>
+</div>
+<div class="col-xs-12 col-md-5 padding-tb-30">
+<img class="img-responsive center-block box-radius"/>
+</div>
+</div>
+<div class="page-divider"></div>
+<div class="row padding-rl">
+<div class="col-xs-12 col-md-7">
+<h3>Parádi Idősek Otthona</h3>
+<p>
+<b>Cím: </b>3240 Parád, Toldi Miklós u. 14.
+									<br/><b>Telefon: </b>+36 36/ 413-466, +36 36/ 544 300
+									<br/><b>Fax: </b>+36 36/ 544-127
+									<br/><b>Email: </b><a data-review-original-href="mailto:titkarsag@idosekotthonaparad.hu" href="#" tabindex="-1" target="_top">titkarsag@idosekotthonaparad.hu</a>
+<br/><b>Web: </b><a data-review-original-href="http://www.idosekotthonaparad.hu/" href="#" tabindex="-1" target="_blank">www.idosekotthonaparad.hu</a>
+<br/><b>Igazgató: </b>Romanov Alexandra
+								</p>
+</div>
+<div class="col-xs-12 col-md-5 padding-tb-30">
+<img class="img-responsive center-block box-radius"/>
+</div>
+</div>
+<div class="page-divider"></div>
+<div class="row padding-rl">
+<div class="col-xs-12 col-md-7">
+<h3>Erzsébet Park Hotel*** Superior, Mofetta Parádfürdő</h3>
+<p>Elérhetőség: <a data-review-original-href="http://www.mofetta.com/" href="#" tabindex="-1" target="_blank">www.mofetta.com</a></p>
+</div>
+<div class="col-xs-12 col-md-5 padding-tb-30">
+<img class="img-responsive center-block box-radius"/>
+</div>
+</div>
+<div class="page-divider"></div>
+<div class="row padding-rl" id="allatorvos">
+<div class="col-xs-12">
+<h3>Állatorvos</h3>
+<p>
+<b>Állatorvos: </b>Dr. Seres Attila
+									<br/><b>Cím: </b>3240 Parád, Kossuth Lajos út 182. 
+									<br/><b>Telefon: </b>06/20 983-9930
+								</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="margin-bottom"></div>
+</section>
+</div>
+</article>
+<aside class="col-xs-12 col-sm-4">
+<div class="row padding-top banner-box">
+<div class="widget-header">
+<div class="widget-head box-radius-header">
+<h3 class="widget-title">
+<span>Hasznos oldalak</span>
+</h3>
+</div>
+</div>
+<div class="padding-top margin-bottom white box-radius-first">
+<div class="icon-container">
+<div class="row">
+<div class="col-sm-12">
+<div class="banner-box banner-shadow">
+<div class="banner paloc">
+<a data-review-original-href="palyazatok.php" href="#" tabindex="-1"><img alt="Széchenyi Terv Plusz" class="img-responsive" title=""/></a>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner paloc">
+<img alt="Magyar Falu Program" class="img-responsive" style="max-height: 120px;" title=""/>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner paloc">
+<a data-review-original-href="documents/palyazatok/emo-1/index.html" href="#" tabindex="-1" target="_blank"><img alt="Széchenyi 2020" class="img-responsive" title=""/></a>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="banner-box banner-shadow">
+<div class="banner paloc">
+<a data-review-original-href="https://www.youtube.com/watch?v=uTmvvYvgueM" href="#" tabindex="-1" target="_blank">
+<img alt="Palócnapok Parád" class="img-responsive" title=""/>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="banner-box banner-shadow">
+<div class="banner paloc" style="border: 1px solid #54728a;">
+<div style="background-color: #54728a;">
+<img alt="" class="img-responsive" style="max-height: 120px; box-shadow: none; margin: auto;" title=""/>
+</div>
+<p style="margin-top: 10px">Parád Általános Iskola épületrész és Közösségi Ház energetikai korszerűsítése fejlesztése megvalósult Magyarország Kormányának a Versenyképes Járások Program keretében biztosított 49.875.000.- forint összegű támogatásával</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-12">
+<div class="banner-box banner-shadow">
+<div class="banner paloc">
+<a data-review-original-href="https://ohp-20.asp.lgov.hu/nyitolap" href="#" tabindex="-1" target="_blank"><img alt="E-önkormányzat portál" class="img-responsive" title="E-önkormányzat portál"/></a>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner paloc">
+<a data-review-original-href="https://www.idokep.hu/webkamera/vassgabor" href="#" tabindex="-1" target="_blank"><img alt="Parád webkamera képe" class="img-responsive" title="Parád webkamera képe"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner paloc">
+<a data-review-original-href="http://www.palocnapok.hu" href="#" tabindex="-1" target="_blank">
+<img alt="Palócnapok weboldala" class="img-responsive" title="Palócnapok weboldala"/></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="paradi-mozaik.php" href="#" tabindex="-1"><img alt="Parádi Mozaik" class="img-responsive box-radius" title="Parádi Mozaik"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="befektetok.php" href="#" tabindex="-1"><img alt="Befektetők figyelem" class="img-responsive box-radius" title="Befektetők figyelem"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="documents/2017/parad-telepulesi-arculati-kezikonyv-2017.pdf" href="#" tabindex="-1" target="_blank"><img alt="Parád arculati kézikönyv" class="img-responsive box-radius" title="Parád arculati kézikönyv"/></a>
+</div>
+</div>
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="epitesi-szabalyzat.php" href="#" tabindex="-1"><img alt="Helyi Építési Szabályzat" class="img-responsive box-radius" title="Helyi Építési Szabályzat"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="http://www.szennyviz-recskterseg.hu" href="#" tabindex="-1" target="_blank"><img alt="Szennyvízfejlesztési Project" class="img-responsive box-radius" style="padding-bottom: 15px;" title="Szennyvízfejlesztési Project"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="http://www.erzsebetparkhotel.hu" href="#" tabindex="-1" target="_blank"><img alt="Erzsébet Park Hotel" class="img-responsive box-radius" title="Erzsébet Park Hotel weboldala"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="http://paraditurizmus.5mp.eu/web.php?a=paraditurizmus" href="#" tabindex="-1" target="_blank"><img alt="Parádi turizmus weboldala" class="img-responsive box-radius" title="Parádi turizmus weboldala"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="http://kozadat.hu/kereso/" href="#" tabindex="-1" target="_blank"><img alt="Közadatkereső" class="img-responsive box-radius" title="Közadatkereső"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="http://www.ar3d.hu/ugyfel/referenciak/Parad/parad3d.htm" href="#" tabindex="-1" target="_blank"><img alt="Virtuális séta" class="img-responsive box-radius" title="Virtuális séta"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="https://www.nav.gov.hu/nav/letoltesek/nyomtatvanykitolto_programok/nyomtatvany_apeh/keretprogramok/abevjava_install.html" href="#" tabindex="-1" target="_blank"><img alt="Általános Nyomtatványkitöltő (ÁNYK) - keretprogram" class="img-responsive box-radius" title="Általános Nyomtatványkitöltő (ÁNYK) - keretprogram"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="http://birosag.hu/ugyfelkapcsolati-portal/formanyomtatvanyok" href="#" tabindex="-1" target="_blank"><img alt="Polgári peres elektronikus formanyomtatványok" class="img-responsive box-radius" title="Polgári peres elektronikus formanyomtatványok"/></a>
+</div>
+</div>
+</div>
+
+<div class="col-xs-6">
+<div class="banner-box banner-shadow banner-border">
+<div class="banner">
+<a data-review-original-href="documents/2017/parad-turisztikai-fejlesztesi-terv-2017.pdf" href="#" tabindex="-1" target="_blank"><img alt="Parád Turisztikai Fejlesztési Terve" class="img-responsive box-radius" title="Parád Turisztikai Fejlesztési Terve"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="documents/2017/termeloi-piac.pdf" href="#" tabindex="-1" target="_blank"><img alt="Termelői Piac Parád" class="img-responsive box-radius" title="Termelői Piac Parád"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="documents/2018/beruhazasok.pdf" href="#" tabindex="-1" target="_blank"><img alt="Parád Nagyközség Önkormányzatának tevékenységei, MEGVALÓSULT és MEGVALÓSULÁS előtt álló beruházások" class="img-responsive box-radius" title="Parád Nagyközség Önkormányzatának tevékenységei, MEGVALÓSULT és MEGVALÓSULÁS előtt álló beruházások"/></a>
+</div>
+</div>
+</div>
+
+<div class="col-xs-6">
+<div class="banner-box banner-shadow yoxview">
+<div class="banner">
+<a data-review-original-href="documents/palyazatok/parad-nagykozsegi-onkormanyzat-asp-kozpont-csatlakozasa.docx" href="#" tabindex="-1" target="_blank">
+<img alt="Széchenyi 2020 - Parád" class="img-responsive box-radius" title="Széchenyi 2020 - Parád"/></a>
+</div>
+</div>
+</div>
+
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="documents/palyazatok/a-helyi-identitas-es-kohezio-erositese-paradon/index.html" href="#" tabindex="-1"><img alt="A helyi identitás és kohézió erősítése Parád" class="img-responsive box-radius" title="A helyi identitás és kohézió erősítése Parád"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="documents/2020/piac-kialakitasa-paradon.docx" href="#" tabindex="-1"><img alt="Piac kialakítása Parádon" class="img-responsive box-radius" title="Piac kialakítása Parádon"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="documents/2020/csapadekviz-elvezetes-a-kekesi-uton.docx" href="#" tabindex="-1"><img alt="Csapadékvíz-elvezetés a Kékesi úton" class="img-responsive box-radius" title="Csapadékvíz-elvezetés a Kékesi úton"/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-12">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="https://www.allamkincstar.gov.hu/hu/lakossagi-ugyfelek/eletkezdesi_tamogatas" href="#" tabindex="-1" target="_blank"><img alt="" class="img-responsive box-radius" title=""/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-12">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="https://www.allamkincstar.gov.hu/hu/lakossagi-ugyfelek/allampapir_forgalmazas" href="#" tabindex="-1" target="_blank"><img alt="" class="img-responsive box-radius" title=""/></a>
+</div>
+</div>
+</div>
+<div class="col-xs-6">
+<div class="banner-box banner-shadow">
+<div class="banner">
+<a data-review-original-href="documents/palyazatok/helyi-human-fejlesztesek-paradon/index.html" href="#" tabindex="-1"><img alt="Helyi humán fejlesztések Parádon" class="img-responsive box-radius" title="Helyi humán fejlesztések Parádon"/></a>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="visible-xs visible-sm visible-md hidden-lg">
+<div class="row banner-box max-banner">
+<div class="row padding-left">
+<div class="widget-header">
+<div class="widget-head box-radius-header">
+<h3 class="widget-title">
+<span>Elérhetőségeink</span>
+</h3>
+</div>
+</div>
+<div class="padding-top white box-radius-first">
+<div class="banner-box">
+<div class="banner tovabbi-elerhetoseg">
+<p>
+<b>Cím: </b>3240 Parád, Kossuth Lajos út 91.
+							<br/><b>Tel.: </b>+36 36/ 544-072
+							<br/><b>E-mail: </b>
+<a data-review-original-href="mailto:parad@t-online.hu" href="#" tabindex="-1" target="_top">parad@t-online.hu</a>
+</p>
+<p>
+<a data-review-original-href="kapcsolat.php" href="#" tabindex="-1">További elérhetőségeink</a>
+</p>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="visible-xs hidden-sm hidden-md hidden-lg">
+<div class="margin-bottom"></div>
+</div>
+<div class="clearfix"></div>
+<div class="visible-xs visible-sm visible-md visible-lg">
+<div class="row banner-box max-banner">
+<div class="row padding-left">
+<div class="widget-header">
+<div class="widget-head box-radius-header">
+<h3 class="widget-title">
+<span>Elérhetőségeink</span>
+</h3>
+</div>
+</div>
+<div class="padding-top white box-radius-first">
+<div class="banner-box">
+<div class="banner tovabbi-elerhetoseg">
+<p>
+<b>Cím: </b>3240 Parád, Kossuth Lajos út 91.
+							<br/><b>Tel.: </b>+36 36/ 544-072
+							<br/><b>E-mail: </b>
+<a data-review-original-href="mailto:parad@t-online.hu" href="#" tabindex="-1" target="_top">parad@t-online.hu</a>
+</p>
+<p>
+<a data-review-original-href="kapcsolat.php" href="#" tabindex="-1">További elérhetőségeink</a>
+</p>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<div class="clearfix"></div>
+<footer>
+<div class="footer" id="footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<h3>Archívum</h3>
+<div class="footer-divider"></div>
+<ul>
+<li> <a data-review-original-href="archivum-2026.php" href="#" tabindex="-1">2026</a> | <a data-review-original-href="archivum-2025.php" href="#" tabindex="-1">2025</a></li>
+<li> <a data-review-original-href="archivum-2024.php" href="#" tabindex="-1">2024</a> | <a data-review-original-href="archivum-2023.php" href="#" tabindex="-1">2023</a></li>
+<li> <a data-review-original-href="archivum-2022.php" href="#" tabindex="-1">2022</a> | <a data-review-original-href="archivum-2021.php" href="#" tabindex="-1">2021</a></li>
+<li> <a data-review-original-href="archivum-2020.php" href="#" tabindex="-1">2020</a> | <a data-review-original-href="archivum-2019.php" href="#" tabindex="-1">2019</a></li>
+<li> <a data-review-original-href="archivum-2018.php" href="#" tabindex="-1">2018</a> | <a data-review-original-href="archivum-2017.php" href="#" tabindex="-1">2017</a></li>
+<li> <a data-review-original-href="archivum-2016.php" href="#" tabindex="-1">2016</a> | <a data-review-original-href="archivum-2015.php" href="#" tabindex="-1">2015</a></li>
+<li> <a data-review-original-href="archivum-2014.php" href="#" tabindex="-1">2014</a> | <a data-review-original-href="archivum-2013.php" href="#" tabindex="-1">2013</a></li>
+<li> <a data-review-original-href="archivum-2012.php" href="#" tabindex="-1">2012</a> | <a data-review-original-href="archivum-2011.php" href="#" tabindex="-1">2011</a></li>
+<li> <a data-review-original-href="archivum-2010.php" href="#" tabindex="-1">2010</a> | <a data-review-original-href="archivum-2009.php" href="#" tabindex="-1">2009</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<h3>Turizmus</h3>
+<div class="footer-divider"></div>
+<ul>
+<li> <a data-review-original-href="szallasok.php" href="#" tabindex="-1">Szállások</a> </li>
+<li> <a data-review-original-href="programok.php" href="#" tabindex="-1">Programok</a> </li>
+<li> <a data-review-original-href="latnivalok.php" href="#" tabindex="-1">Látnivalók</a> </li>
+<li> <a data-review-original-href="kezmuvesek.php" href="#" tabindex="-1">Kézművesek</a> </li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+<h3>Hasznos</h3>
+<div class="footer-divider"></div>
+<ul>
+<li><a data-review-original-href="egeszsegugy.php#haziorvos" href="#" tabindex="-1">Háziorvos</a></li>
+<li><a data-review-original-href="egeszsegugy.php#fogorvos" href="#" tabindex="-1">Fogorvos</a></li>
+<li><a data-review-original-href="egeszsegugy.php#gyogyszertar" href="#" tabindex="-1">Gyógyszertár</a></li>
+<li><a data-review-original-href="egeszsegugy.php" href="#" tabindex="-1">Egészségügy</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<div class="container">
+<p class="text-center"><a data-review-original-href="documents/onkormanyzat/adatkezelesi-tajekoztato-parad.pdf" href="#" style="color: #fff; background: transparent;" tabindex="-1" target="_blank">Adatkezelési tájékoztató</a></p>
+<p class="text-center">Minden jog fenntartva - <span id="footerdate"></span> - Parád Nagyközség Önkormányzata</p>
+
+<h6 class="text-center impresszum-link">A weboldal tartalmának, képeinek másodközlése, felhasználása csak a tulajdonos írásos engedélyével lehetséges - <a data-review-original-href="impresszum.php" href="#" tabindex="-1">Impresszum</a></h6>
+</div>
+</div>
+
+</footer>
+</div>
+
+<div id="fb-root"></div>
+
+
+
+
+<dialog id="galleryModal" style="border:none; padding:0; background:transparent; margin:0; max-width:100vw; max-height:100vh; width:100%; height:100%;">
+<div id="modalContainer" style="display:flex; align-items:center; justify-content:center; width: 100vw; height: 100vh; background:rgba(0,0,0,0.9); position:fixed; top:0; left:0;">
+<button id="prevBtn" style="position:absolute; left:10px; background:rgba(255,255,255,0.1); color:white; border:none; border-radius:50%; width:44px; height:44px; cursor:pointer; font-size:24px; z-index:110;">❮</button>
+<img id="modalImg" style="max-width:95%; max-height:85vh; border-radius:4px; box-shadow: 0 0 20px rgba(0,0,0,0.8); object-fit:contain;"/>
+<button id="nextBtn" style="position:absolute; right:10px; background:rgba(255,255,255,0.1); color:white; border:none; border-radius:50%; width:44px; height:44px; cursor:pointer; font-size:24px; z-index:110;">❯</button>
+<button id="close" style="position:absolute; top:15px; right:15px; background:#fff; color:#000; border:none; border-radius:50%; width:36px; height:36px; cursor:pointer; font-size:18px; font-weight:bold; z-index:120;">✕</button>
+</div>
+</dialog>
+</body>
+</html>

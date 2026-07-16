@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="hu-HU"><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="UnRN5d0p0XOyEiJKsekoTrLJ68TAEloRrvwIA4W1" name="csrf-token"/>
+<title>    Baja - MUNIPOLIS 📢</title>
+<meta content="Egyedülálló kommunikációs portál a városok és települések számára" name="description"/>
+<meta content="Kommunikációs portál, MUNIPOLIS" name="keywords"/>
+<meta content="hu_HU" name="domain-locale"/>
+<style>
+        /* === Custom Color Scheme CSS === */
+
+        /* CSS Custom Properties for dynamic color usage */
+        :root {
+            --app-color: #0d6efd;
+            --app-color-25: #0d6efd25;
+            --app-button-text-color: #ffffff;
+            --paragraph-marker-color: #0d6efd;
+        }
+
+        /* Menu items */
+        .nav-link.active, .sub-page-menu-link.active, .sub-page-menu-link-title.active, .tag, .job-offers-filters__active {
+            background-color: #0d6efd !important;
+            color: #ffffff !important;
+        }
+
+        /* Buttons */
+        .btn-info, .btn-success, .btn-danger, .btn-primary, .info-message {
+            background-color: #0d6efd !important;
+            border-color: #0d6efd !important;
+            color: #ffffff !important;
+        }
+
+        .btn-success-outline {
+            background-color: transparent !important;
+            border-color: #0d6efd !important;
+            color: #0d6efd !important;
+        }
+        .btn-success-outline:hover {
+            background-color: #0d6efd  !important;
+            border-color: #0d6efd  !important;
+            color: #ffffff  !important;
+        }
+
+        .filter-section--active .filter-section__header {
+            background-color: #0d6efd20 !important;
+        }
+
+        .filter-section__content::before, .filter-section__header::before {
+            background-color: #0d6efd !important;
+        }
+
+        .btn-info:hover, .btn-success:hover, .btn-danger:hover, .btn-primary:hover {
+            border-color: #0d6efd !important;
+            filter: brightness(115%);
+        }
+        .btn-info:focus, .btn-success:focus, .btn-danger:focus, .btn-primary:focus {
+            box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.2) !important;
+        }
+        .btn-bg-text-color {
+            background-color: #0d6efd !important;
+        }
+
+        .btn-bg-transparent {
+            background-color: #0d6efd07 !important;
+        }
+
+        .btn-bg-transparent:active, .btn-bg-transparent:focus, .btn-bg-transparent:hover {
+            background-color: #0d6efd17 !important;
+        }
+
+        /* List */
+        .list-item-selected-bar {
+            box-shadow: inset 2px 0 0 #0d6efd !important;
+        }
+
+        /* Cards */
+        .card-green {
+            border-top-color: #0d6efd !important;
+        }
+
+        /* Text color */
+        .color-scheme-text-color {
+            color: #0d6efd !important;
+        }
+
+        /* Background color */
+        .color-scheme-background-color, .alert-info {
+            background-color: #0d6efd !important;
+        }
+
+        .color-scheme-transparency-background-color {
+            background-color: #0d6efd15 !important;
+        }
+
+        /* Link color */
+        .rss-page-description a, .post-page-description a, .text-continue-reading {
+            color: #0d6efd !important;
+            text-decoration: none;
+        }
+
+        .rss-page-description a:hover, .post-page-description a:hover, .text-continue-reading:hover {
+            color: #0d6efd !important;
+            text-decoration: underline;
+        }
+
+        /* Color for search bar loading spinner in navbar and subscribe button text */
+        .spinner-border, .btn-subscribe-text, .btn-add-to-event-calendar-text {
+            color: #0d6efd !important;
+        }
+
+        /* Border color for menu buttons in navbar */
+        .color-scheme-border-color {
+            border-color: #0d6efd !important;
+        }
+
+        .dropdown .dropdown-item:hover, .user-menu .dropdown-item:hover, .static-menu .dropdown-item:hover, .image-nav-dropdown .dropdown-item:hover, .image-nav-dropdown .dropdown-item.hovered, .dropdown-item.focused-third-level-item {
+            background-color: #0d6efd17 !important;
+        }
+
+        .notification-item-unread {
+            background-color: #0d6efd09 !important;
+        }
+
+        .btn-login:hover, .btn-login:active, .btn-login:focus {
+            background-color: #0d6efd !important;
+            border: 1px solid #0d6efd !important;
+        }
+
+        #menu-more:focus, .focused-item:focus, .primary-page-menu .page-menu-link:focus-visible, .primary-page-menu .dropdown-menu.second-level:focus-visible, .primary-page-menu .dropdown-item.menu-second-level:focus-visible {
+            outline: 2px solid #0d6efd !important;
+        }
+
+        /*
+         * SVG icons:
+         * - Preferably apply 'color-scheme-icon' class for the SVG tag when it is possible
+         * - For complex icons apply 'color-scheme-icon-path' for selected paths in the SVG icon
+         */
+        svg.color-scheme-icon path, svg.color-scheme-icon g, .color-scheme-icon-path, svg.color-scheme-icon circle {
+            fill: #0d6efd !important;
+        }
+
+        svg.color-scheme-icon-stroke path, svg.color-scheme--stroke g, .color-scheme-icon-stroke-path {
+            stroke: #0d6efd !important;
+        }
+
+        /* Override Colors For Elements That Should Remain With Default Colors */
+        .default-colors .color-scheme-text-color {
+            color: #0136A6 !important;
+        }
+
+        .default-colors .btn-success, .default-colors .btn-primary {
+            background-color: #0136A6 !important;
+            border-color: #0136A6 !important;
+            color: #FFFFFF !important;
+        }
+
+        .default-colors .color-scheme-icon-path, .default-colors svg.color-scheme-icon path,
+        .default-colors svg.color-scheme-icon g {
+            fill: #0136A6 !important;
+        }
+
+        .default-colors .color-scheme-icon-stroke-path {
+            stroke: #0136A6 !important;
+        }
+
+        .default-colors .color-scheme-border-color {
+            border-color: #0136A6 !important;
+        }
+
+        .default-colors .spinner-border {
+            color: #0136A6 !important;
+        }
+
+        .default-colors .dropdown .dropdown-item:hover, .default-colors .user-menu .dropdown-item:hover,
+        .default-colors .static-menu .dropdown-item:hover {
+            background-color: #ebf8fe !important;
+        }
+    </style>
+
+
+
+
+
+
+
+
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjeytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjnytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjfytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjkytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjgytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjhytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjjytlvdlto.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvmojlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvk4jlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvm4jlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvlijlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvmijlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvmyjlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvl4jlazx3da.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkvesxf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkveqhf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkveshf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkverrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkvesrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkvesbf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkverhf6xl7glw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzesxf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzeqhf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzeshf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzerrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzesrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzesbf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzerhf6xl7glw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3esxf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3eqhf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3eshf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3errf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3esrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3esbf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3erhf6xl7glw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufvtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufltrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufrtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufxtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufntrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufjtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufbtrelwfx4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxouml0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumb0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumh0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumd0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumt0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoump0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumr0cjryhy8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19-7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19a7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1967dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19g7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1927dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19y7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19k7dqk6yvm.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19-7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19a7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1967dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19g7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1927dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19y7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19k7dqk6yvm.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19-7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19a7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1967dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19g7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1927dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19y7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19k7dqk6yvm.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+
+<noscript>
+
+</noscript>
+<div class="page-container" id="app">
+<the-header :hide-login-link="false" api-url="https://api.munipolis.com/api" link-admin="https://www.munipolis.hu/admin/login" link-home="https://www.munipolis.hu" link-info-page-about="https://info.munipolis.hu/a-munipolis-rol/" link-info-page-app="https://info.munipolis.hu/#download" link-info-page-enterprises="https://info.munipolis.hu/cegek/" link-info-page-groups="https://info.munipolis.hu/csoportok/" link-info-page-institutions="https://info.munipolis.hu/intezmeny/" link-info-page-landing="https://info.munipolis.hu" link-info-page-municipalities="https://info.munipolis.hu/onkormanyzatok/" link-login="https://www.munipolis.hu/bejelentkezes" link-logout="https://www.munipolis.hu/kijelentkezes" link-my-issues="https://www.munipolis.hu/bejelenteseim" link-my-timeline="https://www.munipolis.hu/az-en-hirfolyamom" link-no-result="https://www.munipolis.hu/rolunk#recommend-anchor" link-register="https://www.munipolis.hu/regisztracio" link-user-agreements="https://www.munipolis.hu/beallit" link-user-settings="https://www.munipolis.hu/profilbeallitasok" link-user-subscriptions="https://www.munipolis.hu/figyelt-becsulet" user="null">
+</the-header>
+<div class="main-content">
+<header role="banner">
+<div class="header header--keep header--overflowed">
+<img class="header__background" decoding="sync" fetchpriority="high" height="1080" loading="eager" style="content-visibility: auto; contain: paint;" width="1920"/>
+<div class="container d-none d-md-block">
+<div class="row align-items-end">
+<div class="col-md-4">
+<div class="vignette">
+<div class="vignette-head">
+<div class="vignette-image border-0" data-bs-html="true" data-bs-placement="top" data-bs-toggle="tooltip" title="A fiók még nem aktivált közvetlen kommunikációt a MUNIPOLIS-on keresztül">
+<a data-review-original-href="/" href="#" tabindex="-1">
+<img alt="commmon.account_logo"/>
+</a>
+<svg class="icon-svg vignette-badge" height="24px" version="1.1" viewbox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-484.000000, -177.000000)">
+<g transform="translate(320.000000, 131.000000)">
+<g transform="translate(164.000000, 46.000000)">
+<path d="M12,0 C5.37248437,0 0,5.37267187 0,12 C0,18.6277031 5.37248437,24 12,24 C18.6275156,24 24,18.6277031 24,12 C24,5.37267187 18.6275156,0 12,0 Z" fill="#1BB4EC"></path>
+<g fill="#FFFFFF" fill-rule="nonzero" transform="translate(1.000000, 1.000000)">
+<path d="M11,0 C17.0652969,0 22,4.93470312 22,11 C22,17.0652969 17.0652969,22 11,22 C4.93470312,22 0,17.0652969 0,11 C0,4.93470312 4.93470312,0 11,0 Z M3.90654687,5.20274219 C2.61215625,6.78364844 1.83334766,8.80210547 1.83334766,11 C1.83334766,16.0546289 5.94537109,20.1666523 11,20.1666523 C13.1978945,20.1666523 15.2163516,19.3878438 16.7972578,18.0934961 L16.7972578,18.0934961 L15.5833477,16.8795859 L15.5833477,16.9583477 C15.5833477,17.7165742 14.9665742,18.3333477 14.2083477,18.3333477 L14.2083477,18.3333477 L7.79169531,18.3333477 C7.03346875,18.3333477 6.41669531,17.7165742 6.41669531,16.9583477 L6.41669531,16.9583477 L6.41669531,7.71289063 Z M11.4583047,16.5 L10.5416523,16.5 C10.2883516,16.5 10.0833047,16.7050039 10.0833047,16.9583477 C10.0833047,17.2116914 10.2883086,17.4166953 10.5416523,17.4166953 L10.5416523,17.4166953 L11.4583047,17.4166953 C11.7116484,17.4166953 11.9166523,17.2116914 11.9166523,16.9583477 C11.9166523,16.7050039 11.7116914,16.5 11.4583047,16.5 L11.4583047,16.5 Z M11,1.83334766 C8.80210547,1.83334766 6.78364844,2.61215625 5.20274219,3.90650391 L5.20274219,3.90650391 L6.41665234,5.12041406 L6.41665234,5.04165234 C6.41665234,4.28342578 7.03342578,3.66665234 7.79165234,3.66665234 L7.79165234,3.66665234 L14.2083477,3.66665234 C14.9665742,3.66665234 15.5833477,4.28342578 15.5833477,5.04165234 L15.5833477,5.04165234 L15.5833477,14.2871094 L18.0934961,16.7972578 C19.3878438,15.2163516 20.1666523,13.1978945 20.1666523,11 C20.1666523,5.94537109 16.0546289,1.83334766 11,1.83334766 Z M8.25,9.54623828 L8.25,15.5833477 L13.75,15.5833477 L13.75,15.0462383 L8.25,9.54623828 Z M13.75,5.5 L8.25,5.5 L8.25,6.95376172 L13.75,12.4537617 L13.75,5.5 Z M12.8333477,5.95830469 C13.0864861,5.95830469 13.2916953,6.16351392 13.2916953,6.41665234 C13.2916953,6.66979076 13.0864861,6.875 12.8333477,6.875 C12.5802092,6.875 12.375,6.66979076 12.375,6.41665234 C12.375,6.16351392 12.5802092,5.95830469 12.8333477,5.95830469 Z M11.4583477,5.95834766 C11.7116914,5.95834766 11.9166523,6.16335156 11.9166953,6.41669531 C11.9166953,6.67003906 11.7116914,6.87504297 11.4583477,6.87504297 L11.4583477,6.87504297 L10.5416953,6.87504297 C10.2883516,6.87504297 10.0833477,6.67003906 10.0833477,6.41669531 C10.0833477,6.16335156 10.2883516,5.95834766 10.5416953,5.95834766 L10.5416953,5.95834766 Z"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </div>
+</div>
+<div class="vignette-body">
+<account-title title="Baja"></account-title>
+<div class="text-note">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-none mobile-dropdown-positioner">
+<mobile-dropdown :is-logged-in="false">
+<template #logo="">
+<img alt="" class="account-logo" data-bs-html="true" data-bs-placement="top" data-bs-toggle="tooltip" title="A fiók még nem aktivált közvetlen kommunikációt a MUNIPOLIS-on keresztül"/>
+<svg class="icon-svg account-badge" height="24px" version="1.1" viewbox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-484.000000, -177.000000)">
+<g transform="translate(320.000000, 131.000000)">
+<g transform="translate(164.000000, 46.000000)">
+<path d="M12,0 C5.37248437,0 0,5.37267187 0,12 C0,18.6277031 5.37248437,24 12,24 C18.6275156,24 24,18.6277031 24,12 C24,5.37267187 18.6275156,0 12,0 Z" fill="#1BB4EC"></path>
+<g fill="#FFFFFF" fill-rule="nonzero" transform="translate(1.000000, 1.000000)">
+<path d="M11,0 C17.0652969,0 22,4.93470312 22,11 C22,17.0652969 17.0652969,22 11,22 C4.93470312,22 0,17.0652969 0,11 C0,4.93470312 4.93470312,0 11,0 Z M3.90654687,5.20274219 C2.61215625,6.78364844 1.83334766,8.80210547 1.83334766,11 C1.83334766,16.0546289 5.94537109,20.1666523 11,20.1666523 C13.1978945,20.1666523 15.2163516,19.3878438 16.7972578,18.0934961 L16.7972578,18.0934961 L15.5833477,16.8795859 L15.5833477,16.9583477 C15.5833477,17.7165742 14.9665742,18.3333477 14.2083477,18.3333477 L14.2083477,18.3333477 L7.79169531,18.3333477 C7.03346875,18.3333477 6.41669531,17.7165742 6.41669531,16.9583477 L6.41669531,16.9583477 L6.41669531,7.71289063 Z M11.4583047,16.5 L10.5416523,16.5 C10.2883516,16.5 10.0833047,16.7050039 10.0833047,16.9583477 C10.0833047,17.2116914 10.2883086,17.4166953 10.5416523,17.4166953 L10.5416523,17.4166953 L11.4583047,17.4166953 C11.7116484,17.4166953 11.9166523,17.2116914 11.9166523,16.9583477 C11.9166523,16.7050039 11.7116914,16.5 11.4583047,16.5 L11.4583047,16.5 Z M11,1.83334766 C8.80210547,1.83334766 6.78364844,2.61215625 5.20274219,3.90650391 L5.20274219,3.90650391 L6.41665234,5.12041406 L6.41665234,5.04165234 C6.41665234,4.28342578 7.03342578,3.66665234 7.79165234,3.66665234 L7.79165234,3.66665234 L14.2083477,3.66665234 C14.9665742,3.66665234 15.5833477,4.28342578 15.5833477,5.04165234 L15.5833477,5.04165234 L15.5833477,14.2871094 L18.0934961,16.7972578 C19.3878438,15.2163516 20.1666523,13.1978945 20.1666523,11 C20.1666523,5.94537109 16.0546289,1.83334766 11,1.83334766 Z M8.25,9.54623828 L8.25,15.5833477 L13.75,15.5833477 L13.75,15.0462383 L8.25,9.54623828 Z M13.75,5.5 L8.25,5.5 L8.25,6.95376172 L13.75,12.4537617 L13.75,5.5 Z M12.8333477,5.95830469 C13.0864861,5.95830469 13.2916953,6.16351392 13.2916953,6.41665234 C13.2916953,6.66979076 13.0864861,6.875 12.8333477,6.875 C12.5802092,6.875 12.375,6.66979076 12.375,6.41665234 C12.375,6.16351392 12.5802092,5.95830469 12.8333477,5.95830469 Z M11.4583477,5.95834766 C11.7116914,5.95834766 11.9166523,6.16335156 11.9166953,6.41669531 C11.9166953,6.67003906 11.7116914,6.87504297 11.4583477,6.87504297 L11.4583477,6.87504297 L10.5416953,6.87504297 C10.2883516,6.87504297 10.0833477,6.67003906 10.0833477,6.41669531 C10.0833477,6.16335156 10.2883516,5.95834766 10.5416953,5.95834766 L10.5416953,5.95834766 Z"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </template>
+<template #primary-btn="">
+<span class="text-bold f-22">Baja</span>
+</template>
+<template #additional-btn="">
+<svg class="icon-svg color-scheme-icon" height="16px" version="1.1" viewbox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+<g id="MR_III_cela-cr-nastenka-102020-neprihlaseny" transform="translate(-538.000000, -310.000000)">
+<g id="Group-5" transform="translate(320.000000, 131.000000)">
+<g id="Group-15" transform="translate(20.000000, 169.000000)">
+<g id="Group-8" transform="translate(52.000000, 10.000000)">
+<g id="pridat-icon" transform="translate(154.000000, 8.000000) rotate(-360.000000) translate(-154.000000, -8.000000) translate(146.000000, 0.000000)">
+<path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M9,4 L7,4 L7,7 L4,7 L4,9 L6.999,9 L7,12 L9,12 L8.999,9 L12,9 L12,7 L9,7 L9,4 Z" id="Combined-Shape"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </template>
+<template #default="">
+<the-user-subscriptions :country-account='{"id":37440,"background":null,"name":"\u00dcdv\u00f6z\u00f6lj\u00fck","slug":"udvozoljuk","apiId":37758,"logo":"https:\/\/admin-storage.munipolis.com\/udvozoljuk\/logo.png?v=1770365262","cityType":"K\u00f6zs\u00e9g","conditionsForProcessingPersonalData":"","isNotActiveAccount":false,"isAccountTypeMunicipality":true,"gpsLatitude":"","gpsLongitude":""}' :country-timeline-link='"https:\/\/www.munipolis.hu\/teljes-hu"' :my-timeline-link='"https:\/\/www.munipolis.hu\/az-en-hirfolyamom"' :subscriptions="[]" class="p-3">
+</the-user-subscriptions>
+</template>
+</mobile-dropdown>
+</div>
+</header>
+<div class="container">
+<div class="row">
+<div class="col-md-4 d-none d-md-block">
+<div class="p-20 bg-white shadow-sm radius-sm mb-10">
+<h4 class="mb-3">Alapvető információk</h4>
+<dl>
+<div class="d-flex">
+<dt class="me-2">Népesség:</dt>
+<dd>34 455</dd>
+</div>
+<div class="d-flex">
+<dt class="me-2">Státusz:</dt>
+<dd>Város</dd>
+</div>
+<div class="d-flex">
+<dt class="me-2">Vármegye:</dt>
+<dd>Bács-Kiskun</dd>
+</div>
+<div class="d-flex">
+<dt class="me-2">Web:</dt>
+<dd>
+<a class="municipality-link" data-review-original-href="https://www.baja.hu" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank">
+                        www.baja.hu
+                    </a>
+<svg class="icon-svg icon-external icon-micro icon-gray ms-2" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path d="M15.01 0h-5.5a.987.987 0 0 0 0 1.972h3.12L7.425 7.176a.979.979 0 0 0-.289.697c0 .264.103.511.29.697a.979.979 0 0 0 .696.29.98.98 0 0 0 .698-.29l5.204-5.204v3.12a.987.987 0 0 0 1.972 0v-5.5A.987.987 0 0 0 15.01 0z"></path><path d="M11.332 14.305H1.69V4.664h7.251l1.69-1.69H.846A.845.845 0 0 0 0 3.819V15.15c0 .466.378.845.845.845h11.332a.845.845 0 0 0 .845-.845V5.364l-1.69 1.69v7.251z"></path></g></svg> </dd>
+</div>
+</dl>
+<div class="municipality-map">
+<img alt="Térkép" class="img-fluid"/>
+</div>
+</div>
+<div class="py-3 d-none d-md-block d-lg-block">
+<the-footer :account-name='"Baja"' :privacy-route="null"></the-footer>
+</div>
+</div>
+<div class="col-md-8">
+<main>
+<div class="image-navigation-placeholder">
+<the-image-nav :account-name='"Baja"' :menu-items='[{"id":35897,"hasActiveChildItem":false,"hasUserPostsAllowed":false,"icon":"&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n &lt;svg width=\"36px\" height=\"36px\" viewBox=\"0 0 36 36\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\"&gt;\n     &lt;title&gt;dashboard&lt;\/title&gt;\n     &lt;defs&gt;\n         &lt;rect x=\"0\" y=\"0\" width=\"36\" height=\"36\"&gt;&lt;\/rect&gt;\n     &lt;\/defs&gt;\n     &lt;g stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"&gt;\n         &lt;g transform=\"translate(-57.000000, -63.000000)\"&gt;\n             &lt;g transform=\"translate(57.000000, 63.000000)\"&gt;\n                 &lt;mask fill=\"white\"&gt;\n                     &lt;use xlink:href=\"#path-1\"&gt;&lt;\/use&gt;\n                 &lt;\/mask&gt;\n                 &lt;use fill-opacity=\"0\" fill=\"#FFFFFF\" xlink:href=\"#path-1\"&gt;&lt;\/use&gt;\n                 &lt;path d=\"M36,10.2666667 L36,31.9666667 C36,32.5378244 35.5282734,33 34.9453125,33 L1.0546875,33 C0.471726562,33 0,32.5378244 0,31.9666667 L0,10.2666667 L36,10.2666667 Z M15.890625,26.8 L7.453125,26.8 C6.87016406,26.8 6.3984375,27.2621756 6.3984375,27.8333333 C6.3984375,28.4044911 6.87016406,28.8666667 7.453125,28.8666667 L15.890625,28.8666667 C16.4735859,28.8666667 16.9453125,28.4044911 16.9453125,27.8333333 C16.9453125,27.2621756 16.4735859,26.8 15.890625,26.8 Z M28.6171875,14.4 L20.109375,14.4 C19.5264141,14.4 19.0546875,14.8621756 19.0546875,15.4333333 L19.0546875,27.8333333 C19.0546875,28.4044911 19.5264141,28.8666667 20.109375,28.8666667 L28.6171875,28.8666667 C29.2001484,28.8666667 29.671875,28.4044911 29.671875,27.8333333 L29.671875,15.4333333 C29.671875,14.8621756 29.2001484,14.4 28.6171875,14.4 Z M15.890625,22.6666667 L7.453125,22.6666667 C6.87016406,22.6666667 6.3984375,23.1288422 6.3984375,23.7 C6.3984375,24.2711578 6.87016406,24.7333333 7.453125,24.7333333 L15.890625,24.7333333 C16.4735859,24.7333333 16.9453125,24.2711578 16.9453125,23.7 C16.9453125,23.1288422 16.4735859,22.6666667 15.890625,22.6666667 Z M15.890625,14.4 L7.453125,14.4 C6.87016406,14.4 6.3984375,14.8621756 6.3984375,15.4333333 L6.3984375,19.5666667 C6.3984375,20.1378244 6.87016406,20.6 7.453125,20.6 L15.890625,20.6 C16.4735859,20.6 16.9453125,20.1378244 16.9453125,19.5666667 L16.9453125,15.4333333 C16.9453125,14.8621756 16.4735859,14.4 15.890625,14.4 Z\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                 &lt;path d=\"M34.9453125,2 L1.0546875,2 C0.471726562,2 0,2.46217556 0,3.03333333 L0,10.2666667 L36,10.2666667 L36,3.03333333 C36,2.46217556 35.5282734,2 34.9453125,2 Z M5.34375,7.16666667 C4.76128125,7.16666667 4.2890625,6.70400889 4.2890625,6.13333333 C4.2890625,5.56252 4.76128125,5.1 5.34375,5.1 C5.92621875,5.1 6.3984375,5.56252 6.3984375,6.13333333 C6.3984375,6.70400889 5.92621875,7.16666667 5.34375,7.16666667 Z M9.5625,7.16666667 C8.98003125,7.16666667 8.5078125,6.70400889 8.5078125,6.13333333 C8.5078125,5.56252 8.98003125,5.1 9.5625,5.1 C10.1449688,5.1 10.6171875,5.56252 10.6171875,6.13333333 C10.6171875,6.70400889 10.1449688,7.16666667 9.5625,7.16666667 Z M13.78125,7.16666667 C13.1987812,7.16666667 12.7265625,6.70400889 12.7265625,6.13333333 C12.7265625,5.56252 13.1987812,5.1 13.78125,5.1 C14.3637187,5.1 14.8359375,5.56252 14.8359375,6.13333333 C14.8359375,6.70400889 14.3637187,7.16666667 13.78125,7.16666667 Z M30.7265625,7.16666667 L22.21875,7.16666667 C21.6357891,7.16666667 21.1640625,6.70449111 21.1640625,6.13333333 C21.1640625,5.56217556 21.6357891,5.1 22.21875,5.1 L30.7265625,5.1 C31.3095234,5.1 31.78125,5.56217556 31.78125,6.13333333 C31.78125,6.70449111 31.3095234,7.16666667 30.7265625,7.16666667 Z\" fill-opacity=\"0.4\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n             &lt;\/g&gt;\n         &lt;\/g&gt;\n     &lt;\/g&gt;\n &lt;\/svg&gt;","isActive":false,"isCustom":false,"items":[],"link":"https:\/\/baja.munipolis.hu","orderBy":null,"title":"H\u00edrek","type":"dashboard","hiddenHeader":false,"hasArchive":false,"isMapVisible":true,"issueCategoryId":null,"groupIds":[],"postGroupIds":[]},{"id":38543,"hasActiveChildItem":false,"hasUserPostsAllowed":false,"icon":"&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;svg width=\"36px\" height=\"36px\" viewBox=\"0 0 36 36\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\"&gt;\n    &lt;title&gt;contacts&lt;\/title&gt;\n    &lt;defs&gt;\n        &lt;rect x=\"0\" y=\"0\" width=\"36\" height=\"36\"&gt;&lt;\/rect&gt;\n    &lt;\/defs&gt;\n    &lt;g stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"&gt;\n        &lt;g transform=\"translate(-247.000000, -63.000000)\"&gt;\n            &lt;g transform=\"translate(57.000000, 63.000000)\"&gt;\n                &lt;g transform=\"translate(190.000000, 0.000000)\"&gt;\n                    &lt;mask fill=\"white\"&gt;\n                        &lt;use xlink:href=\"#path-1\"&gt;&lt;\/use&gt;\n                    &lt;\/mask&gt;\n                    &lt;use fill-opacity=\"0\" fill=\"#FFFFFF\" xlink:href=\"#path-1\"&gt;&lt;\/use&gt;\n                    &lt;path d=\"M36,6.68747251 L36,20.0630478 C36,20.3163394 35.8988541,20.5592668 35.7189298,20.7383987 C35.5390055,20.9175305 35.2950033,21.0181609 35.0405912,21.0181609 L9.13113764,21.0181609 C8.60135266,21.0181609 8.17179917,20.5905694 8.17179917,20.0630478 L8.17179917,0.95511312 C8.17179917,0.427661546 8.60128232,0 9.13113764,0 L35.0406615,0 C35.5704465,0 36,0.427591518 36,0.95511312 L36,6.68747251 L36,6.68747251 Z\" fill-opacity=\"0.1\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                    &lt;path d=\"M35.7602885,0.329482164 L23.0116869,11.1680798 C22.4770486,11.6175201 21.6947506,11.6175201 21.1601123,11.1680798 L8.4115107,0.329482164 C8.59171637,0.120518343 8.85449872,0.00021008427 9.13113764,0 L35.0406615,0 C35.3173005,0.00028011236 35.5800125,0.120588371 35.7602885,0.329482164 Z\" fill-opacity=\"0.2\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                    &lt;path d=\"M35.6590723,20.7887489 C35.4866038,20.9371384 35.2660945,21.0185811 35.0381294,21.0180931 L9.13113764,21.0180931 C8.90324288,21.018371 8.68280393,20.9369984 8.51019476,20.7887489 L19.1396565,9.45323193 L21.1601123,11.1680798 C21.6947506,11.6175201 22.4770486,11.6175201 23.0116869,11.1680798 L25.0271487,9.45323193 L35.6590723,20.7887489 Z\" fill-opacity=\"0.4\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                    &lt;path d=\"M7.85640408,9.8537926 L9.63841449,12.5150701 C9.99348015,13.0452528 9.87728196,13.7583488 9.3720449,14.1495257 L7.1777138,15.8488974 C6.70173731,16.2142339 6.56507079,16.8708173 6.85605863,17.3943473 C7.49993166,18.545399 8.10905778,19.9054146 11.1323209,22.9159222 C14.155584,25.9264297 15.5228119,26.5316825 16.6789558,27.1727197 C17.2047315,27.4629861 17.8646416,27.3268515 18.2312426,26.8524812 L19.9374991,24.6684451 C20.3306176,24.1653633 21.0471497,24.0496769 21.5798185,24.4032488 L24.3372747,26.233643 L27.4418484,28.292819 C27.9854196,28.651993 28.1494476,29.3730723 27.8144282,29.9303558 L26.344085,32.3697143 C25.9541318,33.0294489 25.3239746,33.5142534 24.5844421,33.7234973 C22.1411148,34.3911452 16.7522478,34.5271397 8.11405177,25.9257995 C-0.524144309,17.3244593 -0.393667526,11.9605877 0.276933902,9.52802193 C0.486962837,8.79181662 0.973701025,8.16443496 1.63614326,7.7761292 L4.08502718,6.31226201 C4.64484644,5.97906835 5.36883432,6.14230383 5.72980836,6.6832008 L7.85640408,9.8537926 Z\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                &lt;\/g&gt;\n            &lt;\/g&gt;\n        &lt;\/g&gt;\n    &lt;\/g&gt;\n&lt;\/svg&gt;","isActive":false,"isCustom":false,"items":[],"link":"https:\/\/baja.munipolis.hu\/p\/elerhetoseg","orderBy":null,"title":"El\u00e9rhet\u0151s\u00e9g","type":"custom_page","hiddenHeader":false,"hasArchive":false,"isMapVisible":true,"issueCategoryId":null,"groupIds":[],"postGroupIds":[]},{"id":35900,"hasActiveChildItem":false,"hasUserPostsAllowed":false,"icon":"&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n &lt;svg width=\"36px\" height=\"36px\" viewBox=\"0 0 36 36\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\"&gt;\n     &lt;title&gt;mr&lt;\/title&gt;\n     &lt;defs&gt;\n         &lt;rect x=\"0\" y=\"0\" width=\"36\" height=\"36\"&gt;&lt;\/rect&gt;\n     &lt;\/defs&gt;\n     &lt;g stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"&gt;\n         &lt;g transform=\"translate(-722.000000, -63.000000)\"&gt;\n             &lt;g transform=\"translate(57.000000, 63.000000)\"&gt;\n                 &lt;g transform=\"translate(665.000000, 0.000000)\"&gt;\n                     &lt;mask fill=\"white\"&gt;\n                         &lt;use xlink:href=\"#path-1\"&gt;&lt;\/use&gt;\n                     &lt;\/mask&gt;\n                     &lt;use fill-opacity=\"0\" fill=\"#FFFFFF\" xlink:href=\"#path-1\"&gt;&lt;\/use&gt;\n                     &lt;path d=\"M18,0 C8.05714286,0 0,8.05906168 0,18.0042867 C0,25.8575851 5.02285714,32.5277447 12.0342857,34.996904 C12.7542857,35.2541081 13.5171429,34.705406 13.5085714,33.9337938 C13.5085714,33.9252203 13.5085714,33.9080734 13.5085714,33.8994999 C13.5085714,33.4365325 13.2085714,33.025006 12.7714286,32.8706835 C6.64285714,30.7101691 2.25428571,24.8716361 2.25428571,18.0128602 C2.25428571,9.23362705 9.42857143,2.134794 18.24,2.26339605 C26.6314286,2.38342462 33.54,9.20790664 33.7457143,17.6013337 C33.9257143,24.6401524 29.4857143,30.6758752 23.2371429,32.8706835 C22.8,33.025006 22.5,33.4365325 22.5,33.8994999 L22.5,33.9337938 C22.4914286,34.705406 23.2542857,35.2541081 23.9742857,34.996904 C30.9771429,32.5363182 36,25.8575851 36,18.0128602 C36,8.05906168 27.9428571,0 18,0 Z\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                     &lt;path d=\"M17.9057143,8.43629436 C23.0142857,8.38485354 27.3171429,12.4401048 27.5571429,17.5413194 C27.7285714,21.1678971 25.8771429,24.3743749 23.04,26.1319362 C22.7057143,26.3376995 22.5085714,26.6977852 22.5085714,27.0835913 C22.5085714,27.9666587 23.4771429,28.5067873 24.2314286,28.04382 C27.5914286,25.9604668 29.82,22.2395809 29.82,17.9957133 C29.82,11.4713027 24.5314286,6.18147178 18.0085714,6.18147178 C11.4857143,6.18147178 6.19714286,11.4713027 6.19714286,17.9957133 C6.19714286,22.2395809 8.43428571,25.9604668 11.7857143,28.04382 C12.54,28.5067873 13.5085714,27.9666587 13.5085714,27.0835913 C13.5085714,26.6977852 13.3114286,26.3376995 12.9771429,26.1319362 C10.26,24.4429626 8.44285714,21.4336747 8.44285714,17.9957133 C8.44285714,12.7487497 12.6685714,8.48773518 17.9057143,8.43629436 Z\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                     &lt;path d=\"M22.5,18.0042867 C22.5,15.5179805 20.4857143,13.5032151 18,13.5032151 C15.5142857,13.5032151 13.5,15.5179805 13.5,18.0042867 C13.5,20.1047869 14.9314286,21.8623482 16.8771429,22.3596094 L16.8771429,34.8768754 C16.8771429,35.4941653 17.3828571,36 18,36 C18.6171429,36 19.1228571,35.4941653 19.1228571,34.8768754 L19.1228571,22.3596094 C21.0685714,21.8623482 22.5,20.0962134 22.5,18.0042867 Z M18,19.6846868 C17.0657143,19.6846868 16.3114286,18.9302215 16.3114286,17.9957133 C16.3114286,17.061205 17.0657143,16.3067397 18,16.3067397 C18.9342857,16.3067397 19.6885714,17.061205 19.6885714,17.9957133 C19.6885714,18.9302215 18.9342857,19.6846868 18,19.6846868 Z\" fill=\"#0d6efd\" fill-rule=\"nonzero\" mask=\"url(#mask-2)\"&gt;&lt;\/path&gt;\n                 &lt;\/g&gt;\n             &lt;\/g&gt;\n         &lt;\/g&gt;\n     &lt;\/g&gt;\n &lt;\/svg&gt;","isActive":false,"isCustom":false,"items":[],"link":"https:\/\/www.munipolis.hu\/rolunk?account=baja","orderBy":null,"title":"Mi az a Munipolis","type":"about","hiddenHeader":false,"hasArchive":false,"isMapVisible":true,"issueCategoryId":null,"groupIds":[],"postGroupIds":[]}]' :privacy-route="null"></the-image-nav>
+<the-breadcrumb :breadcrumb-items="[]" account-name="Baja">
+<template #right-content="">
+<show-if-global-search-token>
+<fulltext-search-trigger class="d-flex">
+</fulltext-search-trigger></show-if-global-search-token>
+</template>
+</the-breadcrumb>
+<show-if-global-search-token>
+<fulltext-search-container-dropdown :account-id="31140" account-slug="baja">
+</fulltext-search-container-dropdown></show-if-global-search-token>
+</div>
+<div class="page-title mb-3">
+<h1 class="h3">Háziorvosok</h1>
+</div>
+<div class="text-gray">
+<custom-page-description description='&lt;div class="pb-row"
+     style="margin-top: 10px; margin-bottom: 10px; margin-left: 0px; margin-right: 0px;
+"
+&gt;
+    &lt;div class="pb-col-1 pb-col-top-decoration pb-col-bottom-decoration"&gt;
+            &lt;div
+    class="pb-heading-wrapper"
+    style="background-color:#FFFFFF; padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;
+"
+&gt;
+            &lt;h4 class="pb-heading" style="color:#222222;"&gt;Háziorvosok&lt;/h4&gt;
+    &lt;/div&gt;
+
+            &lt;div
+    class="pb-paragraph-wrapper"
+    style="background-color:#FFFFFF; padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;
+"
+&gt;
+    &lt;div
+        class="pb-paragraph"
+    &gt;
+        &lt;h2&gt;Dr. Völgyi Balázs&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Hadik u. 1.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/325-420 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-11.00&lt;br&gt;K: 13.00-17.00 &lt;br&gt;Sz: 8.00-11.00, 16.00-17.00&lt;br&gt;Cs: 8.00-11.00, 16.00-17.00&lt;br&gt;P: 8.00-11.00&lt;/p&gt;
+&lt;h2&gt;Dr. Szélinger Ágnes&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;2. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Illyés Gyula u. 6.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/423-224&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-13.00&lt;br&gt;K: 14.00-17.00&lt;br&gt;Sz: 8.00-12.30 &lt;br&gt;Cs: 13.00-16.00&lt;br&gt;P: 8.00-12.30&lt;/p&gt;
+&lt;h2&gt;Dr. Ábrahám György&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;3. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Vasvári Pál u. 16. &lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/323-881 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 13.00-17.00&lt;br&gt;K: 8.00-12.00 &lt;br&gt;Sz: 13.00-17.00&lt;br&gt;Cs: 8.00-12.00 &lt;br&gt;P: 13.00-17.00&lt;/p&gt;
+&lt;h2&gt;Dr. Hancsicsák József&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;4. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Szabadság út 42.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/324-203&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-12.00 &lt;br&gt;K: 11.30-15.30&lt;br&gt;Sz: 8.00-12.00 &lt;br&gt;Cs: 11.30-15.30 &lt;br&gt;P: 8.00-12.00&lt;/p&gt;
+&lt;h2&gt;Dr. Kacsala Norbert Gergely&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;5. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Szabadság út 77.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/324-363&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 13.00-14.30 &lt;br&gt;K: 8.00-9.30&lt;br&gt;Sz: 13.00-14.30 &lt;br&gt;Cs: 8.00-9.30 &lt;br&gt;P: 13.00-14.30&lt;/p&gt;
+&lt;h2&gt;Dr. Szlavikovics Ilona&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;6. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Kazinczy Ferenc u. 2/A&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/426-966 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-11.00, 16.00-17.00&lt;br&gt;K: 8.00-11.00, 16.00-17.00&lt;br&gt;Sz: 8.00-11.00, 16.00-17.00&lt;br&gt;Cs: 8.00-11.00, 16.00-17.00 &lt;br&gt;P: 8.00-12.00&lt;/p&gt;
+&lt;h2&gt;Dr. Pálmai Tamás&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;7. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Kazinczy Ferenc u. 2/A&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/426-965 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-11.00&lt;br&gt;K: 8.00-11.00, 16.00-17.00&lt;br&gt;Sz: 8.00-11.00&lt;br&gt;Cs: 8.00-11.00, 16.00-17.00 &lt;br&gt;P: 8.00-11.00&lt;/p&gt;
+&lt;h2&gt;Dr. Walter Ferenc&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;8. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Czirfusz u. 31.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/322-636&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-11.00 &lt;br&gt;K: 8.00-10.00, 13.00-16.00 &lt;br&gt;Sz: 8.00-11.00&lt;br&gt;Cs: 8.00-10.00, 13.00-16.00 &lt;br&gt;P: 8.00-12.00&lt;/p&gt;
+&lt;h2&gt;Dr. Barsi Attila&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;9. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Kölcsey Ferenc u. 42/A&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/320-736&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-11.00, 15.00-16.00&lt;br&gt;K: 8.00-12.00&lt;br&gt;Sz: 8.00-11.30&lt;br&gt;Cs: 8.00-11.00, 15.00-16.00 &lt;br&gt;P: 8.00-11.00&lt;/p&gt;
+&lt;h2&gt;Dr. Csötönyi Gábor&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;10. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Kölcsey Ferenc u. 49.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/325-546 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-12.00 &lt;br&gt;K: 8.00-11.00 &lt;br&gt;Sz: 13.00-16.00&lt;br&gt;Cs: 13.00-16.00&lt;br&gt;P: 8.00-10.00&lt;/p&gt;
+&lt;h2&gt;Dr. Maros Barna&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;11. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Czirfusz Ferenc u. 31.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/422-391 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-11.00 &lt;br&gt;K: 13.00-16.00&lt;br&gt;Sz: 8.00-11.00 &lt;br&gt;Cs: 13.00-16.00 &lt;br&gt;P: 8.00-12.00&lt;/p&gt;
+&lt;h2&gt;Dr. Csibi Krisztián&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;12. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Bajcsy-Zsilinszky Endre út 6.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/324-412&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 9.00-13.00 &lt;br&gt;K: 9.00-13.00&lt;br&gt;Sz: 12.00-16.00 &lt;br&gt;Cs: 12.00-16.00&lt;br&gt;P: 9.00-13.00&lt;/p&gt;
+&lt;h2&gt;Dr. Maros Zoltán&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;13. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Ybl Miklós stny. 1/A&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/324-202&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-12.00&lt;br&gt;K: 8.00-12.00&lt;br&gt;Sz: 13.00-17.00&lt;br&gt;Cs: 13.00-17.00&lt;br&gt;P: 8.00-12.00&lt;/p&gt;
+&lt;h2&gt;Dr. Czuck Antal&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;14. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Hadik u. 1. &lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/323-794 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-13.00&lt;br&gt;K: 14.00-17.00&lt;br&gt;Sz: 8.00-12.30&lt;br&gt;Cs: 14.00-17.00&lt;br&gt;P: 8.00-12.30&lt;/p&gt;
+&lt;h2&gt;Dr. Ferencsik Anna&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;15. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Ybl Miklós stny. 1/b &lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/326-433 &lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-10.00, 14.00-16.00&lt;br&gt;K: 8.00-12.00 &lt;br&gt;Sz: 8.00-10.00, 14.00-16.00&lt;br&gt;Cs: 8.00-10.00, 14.00-16.00 &lt;br&gt;P: 8.00-12.00&lt;/p&gt;
+&lt;h2&gt;Dr. Kacsaláné Dr. Mátrai Zsófia&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;16. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Szabadság út 77.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/324-363&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 14.30-16.00&lt;br&gt;K: 9.30-11.00 &lt;br&gt;Sz: 14.30-16.00&lt;br&gt;Cs: 9.30-11.00 &lt;br&gt;P: 14.30-16.00&lt;/p&gt;
+&lt;h2&gt;Dr. Hóman János&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;17. körzet&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cím:&lt;/strong&gt; &lt;em&gt;Csermák Mihály tér 12.&lt;/em&gt; &lt;br&gt;&lt;strong&gt;Tel.:&lt;/strong&gt; &lt;em&gt;79/427-602&lt;/em&gt;&lt;br&gt;&lt;strong&gt;Rendelési idő:&lt;/strong&gt;&lt;br&gt;H: 8.00-12.00&lt;br&gt;K: 7.30-11.00 &lt;br&gt;Sz: 8.00-12.00&lt;br&gt;Cs: 7.30-11.00&lt;br&gt;P: 8.00-12.00&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+        &lt;/div&gt;
+&lt;/div&gt;
+
+'>
+</custom-page-description>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-6 text-center mb-2 mb-md-0 text-md-start">
+                Létrehozta: MUNIPOLIS s.r.o. ©2026
+            </div>
+<div class="col-md-6 text-center text-md-end">
+                e-mail: <a data-review-original-href="mailto:info@munipolis.hu" href="#" tabindex="-1">info@munipolis.hu</a> | tel.: <a data-review-original-href="tel:+420533533355" href="#" tabindex="-1">+36 1 850 8375</a>
+</div>
+</div>
+</div>
+</footer>
+<info-modal></info-modal>
+<the-scroll-to-top-button></the-scroll-to-top-button>
+<the-inactivity-logout></the-inactivity-logout>
+</div>
+<div id="modal-target"></div>
+</body></html>

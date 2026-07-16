@@ -1,0 +1,181 @@
+Főoldal
+»
+Bük város
+Intézmények
+Egészségügyi ellátást biztosító intézmények
+Megosztás
+Telefon:
+0036 94/358-072
+Az Egészségházban találhatók a háziorvosok, gyermekorvos, fogorvos, mentőállomás, védőnői szolgálat. Székhely: 9737 Bük, Eötvös u. 2. Alapítás éve: 1985., és 1992. Mentőállomás telefon: 0036 94/358-072. Általános bemutatás: Az Egészségház Bük település  és a Répcementi Önkormányzati Társulás lakosainak egészségügyi ellátását biztosítja.
+Mentőállomás, védőnői szolgálat
+Székhely: 9737 Bük, Eötvös u. 2.
+Alapítás éve: 1985., és 1992.
+Mentőállomás telefon: 0036 94/358-072
+Háziorvosi Rendelés:
+I. számú körzet:
+Dr. Antal Zsuzsanna
+Telefonszám: 94-310-077
+Rendelés:
+Hétfő: 8.00-13.00
+Kedd: 15.00-18.00
+Szerda: 8.00-10.00
+Csütörtök: 13.00-15.00
+Péntek: 8.00-12.00
+I. Háziorvosi körzethez tartozó közterületek:
+Közterület neve                         jellege                    intervallum típusa
+1. Arany János                          utca                       teljes közterület
+2. Baross                                 utca                       teljes közterület
+3. Bem                                    sor                        teljes közterület
+4. Bercsényi                             utca                       teljes közterület
+5. Damjanich                            utca                       teljes közterület
+6. Darling                                út                          teljes közterület
+7. Dr. Horváth Tibor                   utca                       teljes közterület
+8. Gyár                                   utca                       teljes közterület
+9. Hunyadi                               utca                       teljes közterület
+10. Ipar                                   utca                       teljes közterület
+11. József Attila                         utca                       teljes közterület
+12. Kastély                              utca                       teljes közterület
+13. Májusfa                              utca                       teljes közterület
+14. Móricz Zsigmond                  utca                       teljes közterület
+15. Nagy Pál                             utca                       teljes közterület
+16. Petőfi                                utca 01-21              páratlan házszámok
+17. Petőfi                                utca 02-34              páros házszámok
+18. Rákóczi                              utca                       teljes közterület
+19. Szabadság                          utca                       teljes közterület
+20. Vog                                   út                          teljes közterület
+21. Zrínyi                                 utca                       teljes közterület.
+II. számú körzet:
+Dr. Kator Miklós
+Tel: 94/394-010
+mobil: 06-30/446-9988
+Hétfő: 13.00-16.00
+Kedd: 8.00-12.00
+Szerda: 15.00-18.00
+Csütörtök: 8.00-10.00
+II. Háziorvosi körzethez tartózó közterületek:
+Közterület neve                           jellege             intervallum típusa
+1.      Ady                                        utca                 teljes közterület
+2.      Akácfa                                               sor                   teljes közterület
+3.      Béke                                       utca                 teljes közterület
+4.      Bernáth Lajos                        sétány             teljes közterület
+5.      Búzavirág                               sor                   teljes közterület
+6.      Deák                                      utca                 teljes közterület
+7.      Diófa                                      sor                   teljes közterület
+8.      Dózsa                                     utca                 teljes közterület
+9.      Eötvös                                               utca                 teljes közterület
+10.  Európa                                               út                    teljes közterület
+11.  Fenyves                                  utca                 teljes közterület
+12.  Forrás                                     utca                 teljes közterület
+13.  Fűzfa                                      utca                 teljes közterület
+14.  Galagonya                              sor                   teljes közterület
+15.  Gárdonyi                                utca                 teljes közterület
+16.  Golf                                       út                    teljes közterület
+17.  Gyurácz                                 utca                 teljes közterület
+18.  Hévíz                                     utca                 teljes közterület
+19.  Honfoglalás                           utca                 teljes közterület
+20.  Ifjúság                                               útja                  teljes közterület
+21.  Jókai                                       utca                 teljes közterület
+22.  Juharfa                                   sor                   teljes közterület
+23.  Kossuth                                  utca                 teljes közterület
+24.  Kölcsey Ferenc                      utca                 teljes közterület
+25.  Kristály                                  utca                 teljes közterület
+26.  Marx                                      utca                 teljes közterület
+27.  Muskátli                                 sor                   teljes közterület
+28.  Napsugár                                utca                 teljes közterület
+29.  Nefelejcs                                utca                 teljes közterület
+30.  Nyárfa                                               utca                 teljes közterület
+31.  Pacsirta                                  utca                 teljes közterület
+32.  Petőfi                                     utca     23-63   páratlan házszámok
+33.  Petőfi                                     utca     36-84   páros házszámok
+34.  Pipacs                                                sor                   teljes közterület
+35.  Rózsa                                     út                    teljes közterület
+36.  Sajmeggyes                            utca                 teljes közterület
+37.  Szarkaláb                               sor                   teljes közterület
+38.  Széchenyi                               utca                 teljes közterület
+39.  Táncsics                                 utca                 teljes közterület
+40.  Tavasz                                    utca                 teljes közterület
+41.  Templom                                park                 teljes közterület
+42.  Termál                                    körút               teljes közterület
+43.  Torkos                                    sor                   teljes közterület
+44.  Tulipán                                   utca                 teljes közterület.
+Gyermekorvosi rendelés:
+dr. Szédelyi Nikoletta
+Rendelési idő a büki gyermekorvosi rendelőben:
+Hétfő:
+orvosi rendelés: 13.00-16.00
+időpontkérés: 08.00-12.00
+tanácsadás: 16.00-16.30 tanácsadás (csak időponttal)
+Kedd:
+orvosi rendelés: 09.00-12.00
+tanácsadás: 08.00-09.00 és 12.00-13.00 (csak időponttal)
+Szerda:
+orvosi rendelés: 11.00-14.00
+időpontkérés: 08.00-10.00
+tanácsadás: 14.00-15.30 (csak időponttal)
+Csütörtök:
+orvosi rendelés: 16.00-18.00
+időpontkérés: 08.00-10.00 és 13.00-15.00
+Péntek:
+orvosi rendelés: 14.00-17.00
+időpontkérés: 09.00-12.00
+tanácsadás: 12.00-14.00 (csak időponttal)
+Nagyon fontos, hogy a rendelési idő alatt csak
+akut és sürgős
+esetben hívják a megadott telefonszámokat. A rendelés rövidsége miatt csak így biztosítható a gyors és zavartalan ellátás.
+Adminisztratív kéréseket (beutaló, táppénzes papír, időpontfoglalás, igazolás) elsősorban a következő e-mail címen:
+gyermekorvos@buk.hu
+illetve a következő telefonszámokon lehet:
++3694/558-404
++3630/351-3940
+A messenger és a facebook nem hivatalos platform, az itt érkező üzenetekre az asszisztensnőnek továbbra sem áll módjában válaszolni.
+A további aktualitásokat, információkat a „Büki Gyermekorvosi Rendelő” facebook oldalán osztjuk meg.
+A gyermekek zavartalan ellátása érdekében kérjük türelmüket és együttműködésüket!
+Gyermekorvosi körzet: Bük közigazgatási területe.
+Fogorvosi ellátás:
+Dr. Börzsei Gergely
+Fogszakorvos
+Tel: 94/358-311
+Hétfő: 14.00-17.00
+Kedd: 8.00-17.00
+Szerda: 11.00-17.00
+Csütörtök: 8.00-14.00
+Péntek: 8.00-14.00
+Fogorvosi alapellátási körzet: Bő, Bük, Lócs és Iklanberény közigazgatási területe.
+LABOR szolgáltatás (2019.01.02-től)
+Nyitvatartás: hétfőn és csütörtökön 6.30-9.45, kedd 6.30-9.15
+A várandós kismamák soron kívüliséget élveznek!
+Védőnői tanácsadás:
+Tel: 94/358-310
+Bük I. körzet: Tamási Tímea
+védőnő 30/219-1554
+Csecsemőtanácsadás: hétfő: 15.00-16.00, csütörtök: 9.00-10.00
+Várandós tanácsadás: hétfő: 13.00-15.00
+I. körzet: a Felsőbüki Nagy Pál  Általános és Szakiskola szakiskolai tanulói és a Csodaország Óvoda, Egységes Óvoda-Bölcsőde és Közétkezetetést Ellátó Intézmény óvodásai iskola- egészségügyi ellátása.
+3.      Béke                                       utca                 teljes közterület
+4.      Baross                                    utca                 teljes közterület
+22.  Juharfa                                   sor                   teljes közterület
+28.  Nagy Pál                                utca                             43-44.
+29.  Napsugár                                utca                 teljes közterület
+30.  Nefelejcs                                utca                 teljes közterület
+31.  Nyárfa                                               utca                 teljes közterület
+32.  Pacsirta                                  utca                 teljes közterület
+33.  Petőfi                                     utca                 31-80.
+44.  Tulipán                                   utca                 teljes közterület
+Bük II. körzet: Nagyné Bödő Rita
+30/338-1320
+Csecsemőtanácsadás: kedd: 9.00-10.00, csütörtök: 10.00-11.00
+Várandós tanácsadás: kedd: 13.00-15.00
+II. körzet: a Felsőbüki Nagy Pál  Általános és Szakiskola általános iskolai tanulói iskola-egészségügyi ellátása.
+1.      Arany János                           utca                 teljes közterület
+2.      Bem                                       sor                   teljes közterület
+3.      Bercsényi                               utca                 teljes közterület
+5.      Damjanich                              utca                 teljes közterület
+6.      Darling                                   út                    teljes közterület
+7.      Dr. Horváth Tibor                  utca                 teljes közterület
+8.      Gyár                                       utca                 teljes közterület
+9.      Hunyadi                                 utca                 teljes közterület
+10.  Ipar                                        utca                 teljes közterület
+11.  József Attila                           utca                 teljes közterület
+12.  Kastély       &nbs
+Kapcsolódó galéria:
+Vissza

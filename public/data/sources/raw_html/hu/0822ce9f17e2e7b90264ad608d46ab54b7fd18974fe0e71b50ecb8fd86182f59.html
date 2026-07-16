@@ -1,0 +1,790 @@
+<!doctype html>
+
+<!DOCTYPE html>
+
+<html dir="ltr" lang="hu-hu" xml:lang="hu-hu" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>Intézmények</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+	
+		body {
+		font-size:0.75em;		
+		color : #666666;
+		font-family: 'Helvetica', sans-serif;
+		}
+		
+		.website-header {
+		background:#023685;
+		}
+		
+		/** 	COLOR 			**/
+		
+		#js_navigation > ul > li.active > a, #js_navigation > ul > li.active > span, #js_navigation span.title_menu a {
+		background:#006d98;
+		}
+		
+		#js_navigation li a:hover, #js_navigation ul ul li.current > a {
+		color:#006d98;
+		}
+		
+		a, div.vertical-menu li a:hover {
+		color: #7aa371;
+		}
+		.breadcrumb a:hover, a:hover, h1 a:hover, h2.contentheading a:hover,
+		.bottom_menu li.current a, .bottom_menu li a:hover {
+		color: #eb9063;
+		}
+		
+		.breadcrumb a, .breadcrumb a[href="#"]:hover, .bottom_menu li a {
+		color : #666666;
+		}
+		
+		div.vertical-menu li.current > a {
+		border-left-color: #7aa371;
+		color: #7aa371;
+		}
+		
+		div.horizontal-menu li[class*="current"] > a {
+		border-bottom-color: #7aa371;
+		color: #7aa371;
+		}
+		
+		.website-header a, .website-header a:hover, .text_social_icons, .social-links li a {
+		color:#ffffff;
+		}
+		
+		.users_footer, .users_footer .title-centered .module-title h3 {
+		background: #778899;
+		}
+		
+		.users_footer {
+		color: #dddddd;
+		}
+		
+		.users_footer .module-title h3 {
+		color: #ffffff;
+		}
+		
+		.users_footer a {
+		color: #a8c2a3;
+		}
+		
+		.users_footer a:hover, .users_footer div.vertical-menu li a:hover, .users_footer div.vertical-menu li[class*="current"] > a, .users_footer div.vertical-menu li[class*="current"] > a:hover,
+		.users_footer div.horizontal-menu li a:hover, .users_footer div.horizontal-menu li[class*="current"] > a, .users_footer div.horizontal-menu li[class*="current"] > a:hover {
+		color: #ffffff;
+		}
+		
+		/**		TITLE 		**/		
+		
+		h1, h1 a, .componentheading, h2.contentheading, h2.contentheading a {
+		color: #444444;
+		}		
+		
+		@media screen and (min-width: 768px) {
+		
+			[class*="title-"] h1, [class*="title-"] h1 a, [class*="title-"] .componentheading, [class*="title-"] .page-header > h2 {
+			color: #ffffff;
+			font-size : 320%;
+			margin : 0 0 25px 0;
+			padding : 0 0 4px 0;
+			border:none;
+			background:transparent;
+			}
+		
+		}
+		
+		h2 {
+		color: #028bc0;
+		}
+		
+		.module-title h3 {
+		color: #222222;
+		}
+		
+		/**		FONT	**/
+				
+		.drop-down {
+		font-family: 'Source Sans Pro', sans-serif;
+		}
+		.drop-down {
+		font-size : 105%;
+		}
+		h1, .componentheading, .blog > h1 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size : 210%;
+		}
+		h1 + h1, h2, h3, h4, h5,
+		.left_column h3, .right_column h3, .top-module-position h3, .bottom-module-position h3, .user1 h3, .user2 h3, .user3 h3, 
+		.user4 h3, .user5 h3, .user6 h3, .user7 h3, .user8 h3, .user9 h3 {
+		font-family: 'Source Sans Pro', sans-serif;
+		}
+		.left_column h3, .right_column h3, .top-module-position h3, .bottom-module-position h3, .user1 h3, .user2 h3, .user3 h3, 
+		.user4 h3, .user5 h3, .user6 h3, .user7 h3, .user8 h3, .user9 h3 {
+		font-size : 130%;
+		}
+		h1 + h1, h2 {
+		font-size : 150%;
+		}
+		h3 {
+		font-size : 115%;
+		}
+		h4 {
+		font-size : 110%;
+		}
+		h5 {
+		font-size : 100%;
+		}
+		
+		/**			Image position 		**/
+		
+		.module-image {
+		background-color:#006d98;
+				}
+		
+		.bg-breadcrumb {
+		background-color:#006d98;
+		}
+		
+		/**			Width 		**/
+		 
+		.wrapper-website, .isStuck > div {
+		width : 1080px;
+		}
+				
+		.main_content {
+		width: 100%;
+        }
+		
+		.right_column {
+		width:25%;
+		}
+		
+		/**  Responsive columns 	**/
+		@media screen and (min-width: 768px) and (max-width: 979px ) {
+			
+			.resp-side-right .left_column {
+			width:25%;
+			}
+						
+			.resp-side-right .main_content {
+			width: 100%;
+			}
+					
+		}
+		
+		@media screen and (max-width: 979px) {
+				
+			.drop-down li.active > a, .drop-down li.active > span, .drop-down li li.active > a, .drop-down li li.active > span {
+			color:;
+			}
+			
+			.drop-down li.current > a, .drop-down li li.current > a, .drop-down li li a:hover, .drop-down li li span:hover {
+			color:#006d98;
+			}
+						
+		}
+
+		/**  If website width in px and more of 980px, the width is adjust betwwen the setting and 980px 		**/
+				
+			@media screen and (min-width: 980px) and (max-width: 1140px ) {
+				
+				.wrapper-website {
+				width : 96%;
+				}		
+			
+			}
+		
+				
+	</style>
+<meta content="initial-scale=1" name="viewport"/>
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="standard-page with-shadow uppercase-menu-title h1-shadow-no h1-slide-shadow-dark resp-side-inline resp-users-768 no-js-border">
+<header class="website-header clearfix zindex20">
+<div class="wrapper-website">
+
+<div class="module-search yes">
+<div class="search">
+<div data-review-disabled-form="true">
+<input class="inputbox search-query" id="mod-search-searchword" maxlength="200" name="searchword" placeholder="Keresés ..." size="14" type="search"/>
+<span class="fa fa-search"></span>
+<input alt="Search" class="button" type="image"/>
+<input name="task" type="hidden" value="search"/><input name="option" type="hidden" value="com_search"/>
+</div>
+</div>
+</div>
+</div> 
+</header> 
+<div class="module-image zindex10">
+<div class="wrapper-website">
+<div class="moduletable">
+<style scoped="" type="text/css">
+	
+	#flexslider-87 {
+	background-color : transparent;
+	}
+	
+	#flexslider-87 .flex-control-paging li a.flex-active {
+	background-color: #98c138; 
+	}
+	
+	#flexslider-87 .slide-desc-box > div > div {
+	background : #000000;
+	background : transparent;
+	}
+	
+	#flexslider-87 .slide-desc {
+	font-family: 'Oswald', sans-serif;
+	}
+	
+	#flexslider-87 .slide-desc-box h3 {
+	font-family: 'Oswald', sans-serif;
+	}
+	
+		
+		
+	
+		
+		
+		@media screen and (min-width: 980px) {
+	
+		#flexslider-87 ul.slides {
+		margin:0;
+		}
+		
+	}
+		
+		
+		
+		@media screen and (max-width: 979px) and (min-width: 768px) {
+		
+		#flexslider-87 ul.slides {
+		margin:0;
+		}
+		
+	}
+		
+		
+		
+		@media screen and (max-width: 767px) {
+		
+		#flexslider-87 ul.slides {
+		margin:0;
+		}
+		
+	}
+		
+	/***************		Text and buttons in small screen 		***********************/
+	
+		@media screen and (max-width: 768px) {
+		
+		#flexslider-87, #flexslider-87 .slides li {
+		height: auto;
+		overflow:hidden !important;
+		}
+		
+		#flexslider-87 .slides, #flexslider-87 .slides li {
+		background: #eeeeee !important;
+		}
+		
+		#flexslider-87 .slide-desc-box {
+		position:relative;
+		top:inherit !important;
+		bottom:inherit !important;
+		transform:none !important;
+		}
+		
+		#flexslider-87 .slide-desc-box > div {
+		display:block;
+		transform: none !important;
+		text-shadow: none !important;
+		box-shadow: none !important;
+		opacity:1 !important;
+		}
+		
+		#flexslider-87 .slide-desc-box > div > div {
+		display:block;
+		max-width:none !important;
+		background: #eeeeee;
+		-webkit-animation : none !important;
+		animation : none !important;
+		padding: 12px 2 0px 22px;
+		text-align:center !important;
+		}
+		
+		.flex-active-slide .anim-js-rotate-letters h3 span {
+		-webkit-animation : none !important;
+		animation : none !important;
+		}
+		
+		#flexslider-87 .slide-desc-box h3 {
+		text-shadow: none !important;
+		color: #444444 !important;;
+		font-size: 16px !important;
+		-webkit-animation : anim-js-simple-fade 1s ease !important;
+		animation : anim-js-simple-fade 1s ease !important;
+		}
+		
+		#flexslider-87 .slide-desc-box h3 span {
+		color: #444444 !important;;
+		font-size: 16px !important;
+		min-width:0 !important;
+		}
+		
+		#flexslider-87 .slide-desc-box .slide-desc {
+		text-shadow: none !important;
+		color: #444444 !important;
+		font-size: 13px !important;
+		-webkit-animation : anim-js-simple-fade 1s ease !important;
+		animation : anim-js-simple-fade 1s ease !important;
+		}
+		
+		#flexslider-87 .slide-desc-box .slide-desc span {
+		color: #444444 !important;
+		font-size: 13px !important;
+		}
+				
+		#flexslider-87.position-nav-bottom .flex-control-nav {
+		top:9px;
+		bottom:inherit;
+		}
+		
+		/** 		Hide text box if under the slideshow when the slide isn't active 	**/
+		
+		#flexslider-87 .slide-desc-box {
+		display:none;
+		}
+		
+		.flex-active-slide .slide-desc-box {
+		display:block;
+		}
+		
+		/**		disable kenburns effect  	**/
+		
+		#flexslider-87 .slides.kenburns img {
+		-webkit-animation : none !important;
+		animation : none !important;
+		}
+				
+	}
+	
+		@media screen and (max-width: 500px) {
+	
+		#flexslider-87 .slide-desc-box {
+		display:none !important;
+		}
+		
+	}
+		
+		@media screen and (max-width: 500px) {
+	
+		#flexslider-87 .flex-control-nav, #flexslider-87 .flex-direction-nav {
+		display:none !important;
+		}
+		
+		#flexslider-87 .slide-desc-box {
+		padding:0 15px;
+		}
+		
+	}
+		
+	
+</style>
+
+
+<div class="flexslider theme-without-shadow theme-border-00 theme-border-radius-00 white-arrow color-nav-light fade-horizontal light_text_shadow" id="flexslider-87">
+<ul class="slides no-kenburns">
+<li class="light-text-shadow"><div class="jslider-image"><img alt="" title=""/><span class="image-height-fixed" style="background-image: url(http://www.kotaj.hu/images/slide/04.jpg);"></span></div></li><li class="light-text-shadow"><div class="jslider-image"><img alt="" title=""/><span class="image-height-fixed" style="background-image: url(http://www.kotaj.hu/images/slide/03.jpg);"></span></div></li><li class="light-text-shadow"><div class="jslider-image"><img alt="" title=""/><span class="image-height-fixed" style="background-image: url(http://www.kotaj.hu/images/slide/01.jpg);"></span></div></li><li class="light-text-shadow"><div class="jslider-image"><img alt="" title=""/><span class="image-height-fixed" style="background-image: url(http://www.kotaj.hu/images/slide/02.jpg);"></span></div></li><li class="light-text-shadow"><div class="jslider-image"><img alt="" title=""/><span class="image-height-fixed" style="background-image: url(http://www.kotaj.hu/images/slide/05.jpg);"></span></div></li>
+</ul>
+</div>
+
+
+
+</div>
+</div> 
+</div>
+<section class="website-content zindex20">
+<div class="wrapper-website clearfix">
+<aside class="left-part-website zindex20" id="column-fixed">
+<div class="logo-module zindex10">
+<a data-review-original-href="/" href="#" tabindex="-1"><img alt=""/></a>
+</div>
+<nav class="zindex30 accordion clearfix" id="js_navigation">
+<span class="title_menu">
+<a data-review-original-href="#js_navigation" href="#" tabindex="-1"><span class="icon-main-menu"></span><span class="text-icon-menu">menu</span></a>
+</span>
+<ul class="nav menu">
+<li class="item-101 default"><a data-review-original-href="/" href="#" tabindex="-1">Kezdőlap</a></li><li class="item-107"><a data-review-original-href="/telepulesunkrol" href="#" tabindex="-1">Településünk</a></li><li class="item-108 current active"><a data-review-original-href="/intezmenyek" href="#" tabindex="-1">Intézmények</a></li><li class="item-131"><a data-review-original-href="/e-onkormanyzat" href="#" tabindex="-1">E-önkormányzat</a></li><li class="item-102"><a data-review-original-href="/polgarmesteri-hivatal" href="#" tabindex="-1">Polgármesteri Hivatal</a></li><li class="item-103"><a data-review-original-href="/dokumentumtar" href="#" tabindex="-1">Dokumentumtár</a></li><li class="item-104"><a data-review-original-href="/rendeletek" href="#" tabindex="-1">Rendeletek</a></li><li class="item-105"><a data-review-original-href="/palyazatok" href="#" tabindex="-1">Pályázatok</a></li><li class="item-120"><a data-review-original-href="/teszt" href="#" tabindex="-1">Hirdetmények</a></li><li class="item-129"><a data-review-original-href="/ibranyi-frater-kuria" href="#" tabindex="-1" target="_blank">Ibrányi-Fráter Kúria</a></li><li class="item-132"><a data-review-original-href="/valasztasi-informaciok-2024" href="#" tabindex="-1">Önkormányzati választás 2024</a></li><li class="item-133"><a data-review-original-href="/kotaj-sportegyesulet" href="#" tabindex="-1">Kótaj Sportegyesület</a></li><li class="item-135"><a data-review-original-href="/kotaji-horgaszto" href="#" tabindex="-1">Kótaji horgásztó</a></li><li class="item-136"><a data-review-original-href="/valasztasi-informaciok-2026" href="#" tabindex="-1">Választási információk </a></li><li class="item-137"><a data-review-original-href="/birtokvedelem" href="#" tabindex="-1">Birtokvédelmi eljárás</a></li></ul>
+</nav>
+<div class="empty-space visible-desktop clearfix"></div> 
+<div class="left_column">
+<div class="moduletable">
+<div>
+<div class="content-module">
+<div class="custom">
+<p style="text-align: center;">
+<a data-review-original-href="/palyazatok/45-bolcsodei-epitese-kotaj-telepulesen-top-1-4-1-19-sb1-2019-00016" href="#" tabindex="-1" title="Bölcsődei építése Kótaj településen  TOP-1.4.1-19-SB1-2019-00016"><img alt="" class="pull-center" style="height: 175px; width: 250px;"/></a></p>
+</div>
+</div>
+</div>
+<div class="icon-module"></div>
+</div>
+<div class="moduletable">
+<div>
+<div class="content-module">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="http://www.magyarorszag.hu" href="#" tabindex="-1" target="_blank"><img alt=""/></a></p></div>
+</div>
+</div>
+<div class="icon-module"></div>
+</div>
+</div>
+</aside> 
+<aside class="right-part-website zindex10" id="right-part">
+<nav class="module-breadcrumb zindex10" role="navigation">
+<div class="moduletable">
+<h3>Breadcrumbs</h3>
+<ul class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+<li>
+			Ön itt van:  
+		</li>
+<li class="active" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<span itemprop="name">
+					Intézmények				</span>
+<meta content="1" itemprop="position"/>
+</li>
+</ul>
+</div>
+</nav>
+<div class="bg-breadcrumb"></div>
+<div class="main-columns clearfix">
+
+<div class="main_content">
+
+
+<div class="main_component clearfix" role="main">
+
+<div id="system-message-container">
+</div>
+<div class="item-page" itemscope="" itemtype="http://schema.org/Article">
+<meta content="hu-HU" itemprop="inLanguage"/>
+<div class="page-header">
+<h1 itemprop="name">
+<span>Intézmények</span>
+</h1>
+</div>
+<div itemprop="articleBody">
+<p>
+<strong>Kótaj Gondozási Központ és Konyha</strong></p>
+<p>
+	Telefonszám: <strong>06 42/208 957</strong></p>
+<p>
+	Székhely: Kótaj, Vasvári Pál utca 6.</p>
+<div>
+	Telephely: Kótaj, Petőfi utca 47. </div>
+<div>
+	 </div>
+<div>
+	Intézményvezető: Labbancz Beáta</div>
+<div>
+	 </div>
+<div>
+<strong>István Király Baptista Általános Iskola</strong></div>
+<div>
+	 </div>
+<div>
+	Kótaj, Szent István utca 5.</div>
+<div>
+	 </div>
+<div>
+	Telefonszám: 06 42/208 317</div>
+<div>
+	 </div>
+<div>
+	Intézményvezető: Deák Ágnes </div>
+<div>
+	 </div>
+<div>
+<p>
+<b>Gyöngyszem Óvoda</b></p>
+<p>
+		Cím: 4482 Kótaj, Szent István utca 22.</p>
+<p style="outline: none !important;">
+		Telefonszám: 06 42/208 345</p>
+<p style="outline: none !important;">
+		Intézményvezető: Paliczné Gégény Anikó</p>
+<p style="outline: none !important;">
+<strong>Mesekert Bölcsőde</strong></p>
+<p style="outline: none !important;">
+		Cím: Szent István utca 1/B.</p>
+<p style="outline: none !important;">
+		Telefonszám: 06 42/512 987</p>
+<p style="outline: none !important;">
+		Intézményvezető: Ignácz Judit</p>
+</div>
+<div>
+	 </div>
+<p>
+<strong>Faluház</strong></p>
+<p>
+	Nyitvatartás:        </p>
+<p>
+	Hétfő-csütörtök: 07:30-16:00                     </p>
+<p>
+	Péntek: 07:30-13:30</p>
+<p>
+	Telefonszám: 06 42/208 620</p>
+<p>
+	 E-mail: <span id="cloak69f9ad11ba0b28972bd463fd05e31537">Ez az e-mail-cím a szpemrobotok elleni védelem alatt áll. Megtekintéséhez engedélyeznie kell a JavaScript használatát.</span></p>
+<p>
+	 </p>
+<p>
+<strong>Könyvtár</strong></p>
+<p>
+	nyitvatartás:  </p>
+<p>
+	Hétfő-Csütörtök: 07:30-16:00</p>
+<p>
+	Péntek: 7:30-13:30</p>
+<p>
+	Telefonszám: 06 42/208 304</p>
+<p>
+	 </p>
+<p>
+<strong>Ibrányi-Fráter Kúria</strong></p>
+<p>
+	Horváthné Mészáros Éva: 06 30 160 8854</p>
+<p>
+	előzetes időpont egyeztetést követően látogatható!</p>
+<p>
+	 </p>
+<div>
+<strong>I. körzet - háziorvosi rendelő:</strong></div>
+<div>
+	 </div>
+<div>
+	Dr. Alshahshoh Akeef</div>
+<div>
+	 </div>
+<div>
+	4482 Kótaj, Árpád u. 6.</div>
+<div>
+	 </div>
+<div>
+	Telefonszám: 06 42/208 302</div>
+<div>
+	 </div>
+<div>
+	Rendelés:</div>
+<div>
+	hétfő, kedd:                 délután 14-17 óráig</div>
+<div>
+	szerda, csütörtök:        délelőtt 7-13 óráig</div>
+<div>
+	péntek:                         délelőtt 7-9 óráig</div>
+<div>
+	 </div>
+<div>
+	 </div>
+<div>
+<strong>II. körzet - háziorvosi rendelő:</strong></div>
+<p>
+	 </p>
+<p>
+	Dr. Kiss Csaba</p>
+<p>
+	4482 Kótaj, Szent István utca 1.</p>
+<p>
+	Telefonszám: 06 42/208 315</p>
+<p>
+	Rendelés: </p>
+<div>
+	hétfő, szerda és péntek:      délelőtt 8-12 óráig</div>
+<div>
+	kedd, csütörtök:                   délután 13-16 óráig</div>
+<div>
+	 </div>
+<div>
+<div>
+		A rendelő e-mail címe: <span id="cloakd434073038c41eb604d058935a0b8e3c">Ez az e-mail-cím a szpemrobotok elleni védelem alatt áll. Megtekintéséhez engedélyeznie kell a JavaScript használatát.</span></div>
+<div>
+		 </div>
+<div>
+		Ezen a címen lehet jelezni, ha elektronikus receptre van szükség, továbbá egyéb ügyintézés céljából is lehet üzenetet küldeni a háziorvosnak.</div>
+</div>
+<div>
+	 </div>
+<div>
+	 </div>
+<p>
+<strong>Kótaj fogorvosi rendelő</strong></p>
+<p>
+	Pallaginé Dr. Szentléleki Ágnes </p>
+<p>
+	Dr. Pallagi Brigitta</p>
+<p>
+	4482 Kótaj Árpád u. 9.</p>
+<p>
+	Telefonszám: 06 42/208 326</p>
+<p>
+	Betegfogadási idő:                         Rendelési idő:</p>
+<p>
+	Hétfő:          13.00-18.00                 13.00-19.00</p>
+<p>
+	Kedd:          07.30-12-30                 07.30-13.30</p>
+<p>
+	Szerda:      13.00-18.00                 13.00-19.00</p>
+<p>
+	Csütörtök:  07.30-12.30                 07.30-13.30</p>
+<p>
+	Péntek:     07.30-12.30                  07.30-13.30</p>
+<p>
+<strong>Gyermek és ifjúsági fogászat:</strong></p>
+<p>
+	Kedd: 09.00-12.00</p>
+<p>
+	Csütörtök: 09.00-12.00</p>
+<p>
+	 </p>
+<p>
+<strong>Kígyó Gyógyszertár</strong></p>
+<p>
+	4482 Kótaj, Kossuth Lajos utca 11.</p>
+<p>
+	Telefonszám: 06 42/208 303</p>
+<p>
+	 </p>
+<div>
+<strong>Posta</strong></div>
+<div>
+	 </div>
+<div>
+	Cím: 4482 Kótaj, Kossuth Lajos utca 15.</div>
+<div>
+	 </div>
+<div>
+	Telefonszám: 06 42/208 313 </div>
+<div>
+	 </div>
+<div>
+	Nyitva tartás:</div>
+<div>
+	 </div>
+<div>
+	Hétfő: 08.00-16.00 12.00-12.30-ig ebédidő</div>
+<div>
+	 </div>
+<div>
+	Kedd: 08.00-16.00 12.00-12.30-ig ebédidő</div>
+<div>
+	 </div>
+<div>
+	Szerda: 08.00-17.00 12.00-12.30-ig ebédidő</div>
+<div>
+	 </div>
+<div>
+	Csütörtök: 08.00-16.00 12.00-12.30-ig ebédidő</div>
+<div>
+	 </div>
+<div>
+	Péntek: 08.00-15.00 12.00-12.30-ig ebédidő</div>
+<div>
+	 </div>
+<div>
+	Szombat, vasárnap: zárva. </div>
+<div>
+	 </div>
+<div>
+	 </div>
+<div>
+	 </div>
+<div>
+<span style="font-size:12px;"><strong><span style="color:#000000;">Kótaji temető digitális térképe az alábbi linken érhető el:</span></strong></span></div>
+<div>
+<span style="font-size:14px;"><a data-review-original-href="http://87.97.60.9:8008/mapguide/fusion/templates/mapguide/slate/index.html?ApplicationDefinition=Library://Kotaj_temeto/Kotaj_temeto.ApplicationDefinition&amp;locale=en" href="#" tabindex="-1" target="_blank">kotaj.nyir-inzseller.hu</a></span></div>
+<div>
+	 </div>
+<p>
+	 </p>
+</div>
+</div>
+</div>
+
+
+<div class="clr"></div>
+</div> 
+</div> 
+</aside> 
+</div> 
+</section> 
+
+<footer class="website-footer zindex10" id="js-footer">
+<div class="wrapper-website">
+
+<div class="address animbox">
+<div class="moduletable">
+<div>
+<div class="content-module">
+<div class="custom">
+<p>Copyright 2016 | Powered by <a data-review-original-href="http://www.redinfo.hu/" href="#" tabindex="-1">RedInfo</a></p></div>
+</div>
+</div>
+<div class="icon-module"></div>
+</div>
+</div>
+</div> 
+</footer> 
+
+
+
+
+
+
+
+<div class="hidden-phone" id="toTop"><a data-review-original-href="" href="#" id="toTopLink" tabindex="-1"><span class="icon-up"></span><span id="toTopText"> Back to top</span></a></div>
+
+
+</body>
+</html>

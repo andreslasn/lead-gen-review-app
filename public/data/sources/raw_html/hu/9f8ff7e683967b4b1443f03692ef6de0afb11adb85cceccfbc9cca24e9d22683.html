@@ -1,0 +1,877 @@
+<!doctype html>
+<!DOCTYPE HTML>
+
+<html lang="hu-HU" xml:lang="hu-HU" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="Csolnok" name="keywords"/>
+<meta content="jozsi" name="author"/>
+<meta content="Csolnok" name="description"/>
+<meta content="Joomla! - Open Source Content Management" name="generator"/>
+<title>Háziorvos helyettesítés</title>
+
+
+
+<style type="text/css">
+
+    #sidebar .widget_facebook-like-box, #sidebar .fb_iframe_widget iframe {
+        width: 200px !important;
+    }
+  </style>
+
+
+
+
+
+
+<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport"/>
+
+
+
+<style type="text/css"> 
+
+
+
+
+/* MAX IMAGE WIDTH */
+
+img {
+height:auto !important;
+max-width:100% !important;
+-webkit-box-sizing: border-box !important; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box !important;    /* Firefox, other Gecko */
+box-sizing: border-box !important;         /* Opera/IE 8+ */
+}
+
+.full_width {
+width:100% !important;
+-webkit-box-sizing: border-box !important; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box !important;    /* Firefox, other Gecko */
+box-sizing: border-box !important;         /* Opera/IE 8+ */
+}
+
+
+
+
+.S5_submenu_itemTablet{
+background:none !important;
+}
+
+
+#s5_responsive_modile_drop_down_wrap input {
+width:96% !important;
+}
+#s5_responsive_mobile_drop_down_search input {
+width:100% !important;
+}
+
+
+
+@media screen and (max-width: 750px){
+	body {
+	height:100% !important;
+	position:relative !important;
+	padding-bottom:48px !important;
+	}
+}
+
+@media screen and (max-width: 970px){
+	#subMenusContainer .S5_subtext {
+	width:85%;
+	}
+}
+
+
+	#s5_responsive_mobile_bottom_bar, #s5_responsive_mobile_top_bar {
+	background:#0B0B0B;
+	background: -moz-linear-gradient(top, #272727 0%, #0B0B0B 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#272727), color-stop(100%,#0B0B0B)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #272727 0%,#0B0B0B 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #272727 0%,#0B0B0B 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #272727 0%,#0B0B0B 100%); /* IE10+ */
+	background: linear-gradient(top, #272727 0%,#0B0B0B 100%); /* W3C */
+			font-family: Oswald !important;
+	}
+	
+	.s5_responsive_mobile_drop_down_inner, .s5_responsive_mobile_drop_down_inner input, .s5_responsive_mobile_drop_down_inner button, .s5_responsive_mobile_drop_down_inner .button, #s5_responsive_mobile_drop_down_search .validate {
+	font-family: Oswald !important;
+	}
+	
+	.s5_responsive_mobile_drop_down_inner button:hover, .s5_responsive_mobile_drop_down_inner .button:hover {
+	background:#0B0B0B !important;
+	}
+	
+	#s5_responsive_mobile_drop_down_menu, #s5_responsive_mobile_drop_down_menu a, #s5_responsive_mobile_drop_down_login a {
+	font-family: Oswald !important;
+	color:#FFFFFF !important;
+	}
+	
+	#s5_responsive_mobile_bar_active, #s5_responsive_mobile_drop_down_menu .current a, .s5_responsive_mobile_drop_down_inner .s5_mod_h3, .s5_responsive_mobile_drop_down_inner .s5_h3_first {
+	color:#73A0CF !important;
+	}
+	
+	.s5_responsive_mobile_drop_down_inner button, .s5_responsive_mobile_drop_down_inner .button {
+	background:#73A0CF !important;
+	}
+	
+	#s5_responsive_mobile_drop_down_menu .active ul li, #s5_responsive_mobile_drop_down_menu .current ul li a, #s5_responsive_switch_mobile a, #s5_responsive_switch_desktop a, #s5_responsive_modile_drop_down_wrap {
+	color:#FFFFFF !important;
+	}
+	
+	#s5_responsive_mobile_toggle_click_menu span {
+	border-right:solid 1px #272727;
+	}
+
+	#s5_responsive_mobile_toggle_click_menu {
+	border-right:solid 1px #0B0B0B;
+	}
+
+	#s5_responsive_mobile_toggle_click_search span, #s5_responsive_mobile_toggle_click_register span, #s5_responsive_mobile_toggle_click_login span, #s5_responsive_mobile_scroll a {
+	border-left:solid 1px #272727;
+	}
+
+	#s5_responsive_mobile_toggle_click_search, #s5_responsive_mobile_toggle_click_register, #s5_responsive_mobile_toggle_click_login, #s5_responsive_mobile_scroll {
+	border-left:solid 1px #0B0B0B;
+	}
+
+	.s5_responsive_mobile_open, .s5_responsive_mobile_closed:hover, #s5_responsive_mobile_scroll:hover {
+	background:#272727;
+	}
+
+	#s5_responsive_mobile_drop_down_menu .s5_responsive_mobile_drop_down_inner, #s5_responsive_mobile_drop_down_register .s5_responsive_mobile_drop_down_inner, #s5_responsive_mobile_drop_down_login .s5_responsive_mobile_drop_down_inner, #s5_responsive_mobile_drop_down_search .s5_responsive_mobile_drop_down_inner {
+	background:#272727;
+	}
+
+
+
+
+	@media screen and (max-width: 579px){
+	
+		#s5_top_row1_area1 {
+			display:none;
+		}
+	
+	}
+	
+
+
+	.s5_wrap {
+	max-width:1300px !important;
+	}
+	
+
+
+
+
+	@media screen and (max-width: 970px){
+	
+		#s5_right_top_wrap {
+		width:238px !important;
+		}
+		#s5_right_inset_wrap {
+		width:238px !important;
+		}
+		#s5_right_wrap {
+		width:238px !important;
+		}
+		#s5_right_bottom_wrap {
+		width:238px !important;
+		}
+		#s5_left_top_wrap {
+		width:240px !important;
+		}
+		#s5_left_inset_wrap {
+		width:240px !important;
+		}
+		#s5_left_wrap {
+		width:240px !important;
+		}
+		#s5_left_bottom_wrap {
+		width:240px !important;
+		}
+		#s5_right_column_wrap {
+		width:238px !important;
+		margin-left:-478px !important;
+		}
+		#s5_left_column_wrap {
+		width:240px !important;
+		}
+		#s5_center_column_wrap_inner {
+		margin-left:240px !important;
+		margin-right:238px !important;
+		}
+	
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css"> 
+body {font-family: 'Arial',Helvetica,Arial,Sans-Serif ;
+background:#507850;
+} 
+
+#s5_search input, #s5_menu_wrap, .s5_mod_h3, #subMenusContainer, h2 {
+font-family: Tahoma;
+}
+
+#s5_menu_wrap, .s5_mod_h3 {
+text-transform:uppercase;
+}
+
+
+
+#s5_header_area_inner2, .module_round_box, .module_round_box-dark, #s5_component_wrap, #s5_footer_area_inner2 {
+-webkit-box-shadow: 0 0px 8px #000000;
+-moz-box-shadow: 0 0px 8px #000000;
+box-shadow: 0 0px 8px #000000; 
+}
+
+a, .module_round_box .s5_h3_first, .module_round_box-none .s5_h3_first, .module_round_box ul.menu .current a, h2, h4, #s5_md_outer_wrap h3 {
+color:#006b30;
+}
+
+#s5_nav li.active a, #s5_nav li.mainMenuParentBtnFocused a, #s5_nav li:hover a, .btn-link {
+color:#006b30;
+}
+
+.btn-primary, .button, li.pagenav-next, li.pagenav-prev, .validate, .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-list > .active > a, .nav-list > .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover, .btn-group.open .btn-primary.dropdown-toggle, .pager a {
+background:#006b30;
+}
+
+#subMenusContainer div.s5_sub_wrap ul, #subMenusContainer div.s5_sub_wrap_rtl ul, #subMenusContainer div.s5_sub_wrap_lower ul, #subMenusContainer div.s5_sub_wrap_lower_rtl ul {
+border-bottom:solid 3px #006b30;
+}
+
+
+
+
+/* k2 stuff */
+div.itemHeader h2.itemTitle, div.catItemHeader h3.catItemTitle, h3.userItemTitle a, #comments-form p, #comments-report-form p, #comments-form span, #comments-form .counter, #comments .comment-author, #comments .author-homepage,
+#comments-form p, #comments-form #comments-form-buttons, #comments-form #comments-form-error, #comments-form #comments-form-captcha-holder {font-family: 'Arial',Helvetica,Arial,Sans-Serif ;} 
+  
+.s5_wrap{width:1100px;}  
+</style>
+<meta content="" name="google-site-verification"/>
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body id="s5_body">
+<div id="s5_scrolltotop"></div>
+
+
+
+<div id="s5_responsive_mobile_top_bar_spacer"></div>
+
+<div id="s5_responsive_mobile_top_bar_wrap" style="margin-top:-50000px;position:absolute;z-index:20;top:0px">
+<div class="s5_responsive_mobile_bar_light" id="s5_responsive_mobile_top_bar">
+<div id="s5_responsive_mobile_toggle_click_menu" style="display:block;float:left">
+<span></span>
+</div>
+<div id="s5_responsive_mobile_bar_active">
+<span>
+
+						Főoldal
+					</span>
+</div>
+<div id="s5_responsive_mobile_toggle_click_login" style="display:none;float:right">
+<span></span>
+</div>
+<div id="s5_responsive_mobile_toggle_click_register" style="display:none;float:right">
+<span></span>
+</div>
+<div id="s5_responsive_mobile_toggle_click_search" style="display:block;float:right">
+<span></span>
+</div>
+<div style="clear:both;height:0px"></div>
+</div>
+<div class="s5_responsive_modile_drop_down_wrap_loading" id="s5_responsive_modile_drop_down_wrap">
+<div id="s5_responsive_mobile_drop_down_menu">
+<div class="s5_responsive_mobile_drop_down_inner" style="-webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);-moz-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);">
+<ul class="menu">
+<li class="item-111 current active"><a data-review-original-href="/" href="#" tabindex="-1">Főoldal</a></li><li class="item-101 deeper parent"><a data-review-original-href="/index.php/home" href="#" tabindex="-1">Önkormányzat</a><ul><li class="item-346"><a data-review-original-href="https://csolnok.hu/images/1kabeltv/kepujsag.pdf" href="#" tabindex="-1">Kábel TV</a></li><li class="item-125"><a data-review-original-href="/index.php/home/kepviselo-testuelet" href="#" tabindex="-1">Képviselő-testület</a></li><li class="item-126"><a data-review-original-href="/index.php/home/bizottsag" href="#" tabindex="-1">Bizottság</a></li><li class="item-127 deeper parent"><a data-review-original-href="#" href="#" tabindex="-1">Rendeletek</a><ul><li class="item-205"><a data-review-original-href="/index.php/home/rendeletek/helyi-rendeletek" href="#" tabindex="-1">Helyi rendeletek</a></li></ul></li><li class="item-128"><a data-review-original-href="/index.php/home/koezoes-hivatal" href="#" tabindex="-1">Közös Hivatal</a></li><li class="item-129 deeper parent"><a data-review-original-href="/index.php/home/letoeltesek" href="#" tabindex="-1">Letöltések</a><ul><li class="item-175"><a data-review-original-href="https://www.dropbox.com/s/joopbguvk80zzsz/img-714103713.pdf" href="#" tabindex="-1">Rendezvények Nyilvántartása</a></li><li class="item-207"><a data-review-original-href="/index.php/home/letoeltesek/egyebek" href="#" tabindex="-1">Egyebek</a></li><li class="item-208"><a data-review-original-href="/index.php/home/letoeltesek/nyilvantartasok" href="#" tabindex="-1">Nyilvántartások</a></li><li class="item-232"><a data-review-original-href="/index.php/home/letoeltesek/anyakoenyvi-uegyek" href="#" tabindex="-1">Anyakönyvi ügyek</a></li><li class="item-312"><a data-review-original-href="/index.php/home/letoeltesek/szocialis-tuezifa-igenyles" href="#" tabindex="-1">Szociális Tüzifa Igénylés</a></li></ul></li><li class="item-185"><a data-review-original-href="/index.php/home/polgarmester-koeszoentoje" href="#" tabindex="-1">Polgármester Köszöntője</a></li><li class="item-257 deeper parent"><a data-review-original-href="#" href="#" tabindex="-1">Szabályzatok</a><ul><li class="item-258"><a data-review-original-href="/index.php/home/2018-02-14-17-13-03/terfigyelo-rendszer" href="#" tabindex="-1">Térfigyelő rendszer</a></li><li class="item-311"><a data-review-original-href="/index.php/home/2018-02-14-17-13-03/helyi-eselyegyenlosegi-program" href="#" tabindex="-1"> Helyi Esélyegyenlőségi Program</a></li></ul></li><li class="item-290"><a data-review-original-href="/index.php/home/polgarmesteri-doentesek" href="#" tabindex="-1">Polgármesteri döntések</a></li><li class="item-314"><a data-review-original-href="/index.php/home/2023-02-28-07-53-05" href="#" tabindex="-1">Jegyzőkönyvek</a></li><li class="item-326"><a data-review-original-href="/index.php/home/hirdetmenyek" href="#" tabindex="-1">Hirdetmények</a></li></ul></li><li class="item-102 deeper parent"><a data-review-original-href="/index.php/intezmenyek" href="#" tabindex="-1">Intézmények</a><ul><li class="item-130"><a data-review-original-href="/index.php/intezmenyek/altalanos-iskola" href="#" tabindex="-1">Általános Iskola</a></li><li class="item-131"><a data-review-original-href="/index.php/intezmenyek/ovoda-boelcsode" href="#" tabindex="-1">Óvoda-Bölcsőde</a></li><li class="item-132 deeper parent"><a data-review-original-href="#" href="#" tabindex="-1">Művelődési Ház és Könyvtár</a><ul><li class="item-250"><a data-review-original-href="/index.php/intezmenyek/muvelodesi-haz-es-koenyvtar/muvelodesi-haz" href="#" tabindex="-1">Művelődési ház</a></li><li class="item-249"><a data-review-original-href="/index.php/intezmenyek/muvelodesi-haz-es-koenyvtar/koenyvtar" href="#" tabindex="-1">Könyvtár</a></li></ul></li><li class="item-133"><a data-review-original-href="/index.php/intezmenyek/szocialis-feladatellatas" href="#" tabindex="-1">Szociális feladatellátás</a></li><li class="item-134"><a data-review-original-href="/index.php/intezmenyek/zeneiskola" href="#" tabindex="-1">Zeneiskola</a></li><li class="item-135 deeper parent"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy" href="#" tabindex="-1">Egészségügy</a><ul><li class="item-173"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy/vedonoi-szolgalat" href="#" tabindex="-1">Védőnői szolgálat</a></li><li class="item-174"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy/fogaszati-rendeles" href="#" tabindex="-1">Fogászati rendelés</a></li><li class="item-196"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy/haziorvosi-szolgalat" href="#" tabindex="-1">Háziorvosi szolgálat</a></li></ul></li><li class="item-136"><a data-review-original-href="/index.php/intezmenyek/sportletesitmenyek" href="#" tabindex="-1">Sportlétesítmények</a></li><li class="item-294"><a data-review-original-href="/index.php/intezmenyek/adatkezelesi-tajekoztato" href="#" tabindex="-1">Adatkezelési tájékoztató</a></li></ul></li><li class="item-103 deeper parent"><a data-review-original-href="/index.php/civil-szervezetek" href="#" tabindex="-1">Civil szervezetek</a><ul><li class="item-138"><a data-review-original-href="/index.php/civil-szervezetek/wagenhoffer-korus" href="#" tabindex="-1">Wagenhoffer Kórus</a></li><li class="item-139"><a data-review-original-href="/index.php/civil-szervezetek/csolnoki-fuvoszenekar" href="#" tabindex="-1">Csolnoki Fúvószenekar</a></li><li class="item-140"><a data-review-original-href="/index.php/civil-szervezetek/krigli-band" href="#" tabindex="-1">Krigli Band</a></li><li class="item-268"><a data-review-original-href="/index.php/civil-szervezetek/alte-kameraden-zenekar" href="#" tabindex="-1">Alte Kameraden zenekar</a></li><li class="item-141"><a data-review-original-href="/index.php/civil-szervezetek/nyugdijas-klub" href="#" tabindex="-1">Nyugdíjas Klub</a></li><li class="item-143"><a data-review-original-href="http://www.csolnokse.hu/" href="#" tabindex="-1">Sportegyesület</a></li><li class="item-144"><a data-review-original-href="/index.php/civil-szervezetek/horgaszegyesuelet" href="#" tabindex="-1">Horgászegyesület</a></li><li class="item-145"><a data-review-original-href="/index.php/civil-szervezetek/a-het-krajcar-koezalapitvany" href="#" tabindex="-1">Hét krajcár Csolnokért Közalapítvány</a></li><li class="item-146"><a data-review-original-href="/index.php/civil-szervezetek/ovodas-koezalapitvany" href="#" tabindex="-1">Óvodás Közalapítvány</a></li><li class="item-147"><a data-review-original-href="/index.php/civil-szervezetek/egyhaz" href="#" tabindex="-1">Egyház</a></li><li class="item-148"><a data-review-original-href="/index.php/civil-szervezetek/banyasz-hagyomany" href="#" tabindex="-1">Bányász Hagyományőrző Egyesület</a></li><li class="item-149"><a data-review-original-href="/index.php/civil-szervezetek/polgarorseg" href="#" tabindex="-1">Polgárőrség</a></li><li class="item-150"><a data-review-original-href="https://www.facebook.com/soniaesabluesandroll/" href="#" tabindex="-1">Blues and Roll</a></li><li class="item-288"><a data-review-original-href="/index.php/civil-szervezetek/tanccsoport" href="#" tabindex="-1">Tánccsoport</a></li><li class="item-289"><a data-review-original-href="/index.php/civil-szervezetek/vegyes-korus" href="#" tabindex="-1">Vegyes kórus</a></li></ul></li><li class="item-104 deeper parent"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat" href="#" tabindex="-1">Nemzetiségi Önkormányzat</a><ul><li class="item-151"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat/bemutatkozas" href="#" tabindex="-1">Bemutatkozás</a></li><li class="item-153"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat/programjaink" href="#" tabindex="-1">Tájház</a></li><li class="item-231"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat/csolnoki-nemet-nemzetisegi-altalanos-iskola" href="#" tabindex="-1">Csolnoki Német Nemzetiségi Általános Iskola</a></li></ul></li><li class="item-105 deeper parent"><a data-review-original-href="/index.php/palyazatok" href="#" tabindex="-1">Pályázatok</a><ul><li class="item-154"><a data-review-original-href="/index.php/palyazatok/tiop-iskola" href="#" tabindex="-1">TIOP Iskola</a></li><li class="item-155"><a data-review-original-href="/index.php/palyazatok/tamop-muvelodesi-haz-regi" href="#" tabindex="-1">TÁMOP Művelődési Ház régi</a></li><li class="item-156"><a data-review-original-href="/index.php/palyazatok/tamop-muvelodesi-haz-uj" href="#" tabindex="-1">TÁMOP Művelődési Ház új</a></li><li class="item-157"><a data-review-original-href="/index.php/palyazatok/tamop-ovoda" href="#" tabindex="-1">TÁMOP Óvoda</a></li><li class="item-158"><a data-review-original-href="/index.php/palyazatok/tamop-iskola" href="#" tabindex="-1">TÁMOP Iskola</a></li><li class="item-213"><a data-review-original-href="/index.php/palyazatok/uszoda-palyazat" href="#" tabindex="-1">Uszoda pályázat</a></li><li class="item-230"><a data-review-original-href="/index.php/palyazatok/intezmenyvezetoi-palyazat" href="#" tabindex="-1">Intézményvezetői pályázat</a></li><li class="item-246"><a data-review-original-href="/index.php/palyazatok/egeszseguegyi-alapellatas-palyazat" href="#" tabindex="-1">Egészségügyi alapellátás pályázat</a></li><li class="item-248"><a data-review-original-href="/index.php/palyazatok/energetikai-korszerusites-palyazat" href="#" tabindex="-1">Energetikai korszerűsítés pályázat</a></li></ul></li><li class="item-106"><a data-review-original-href="/index.php/elerhetosegek" href="#" tabindex="-1">Kapcsolat</a></li><li class="item-107 deeper parent"><a data-review-original-href="/index.php/galeria" href="#" tabindex="-1">Galéria</a><ul><li class="item-177"><a data-review-original-href="/index.php/galeria/galeria-2014-es-fotok" href="#" tabindex="-1">2014-es Fotók</a></li><li class="item-184"><a data-review-original-href="/index.php/galeria/latnivalok" href="#" tabindex="-1">Látnivalók</a></li><li class="item-219"><a data-review-original-href="/index.php/galeria/2015-oes-fotok" href="#" tabindex="-1">2015-ös Fotók</a></li><li class="item-227"><a data-review-original-href="/index.php/galeria/2016-os-fotok" href="#" tabindex="-1">2016-os Fotók</a></li><li class="item-240"><a data-review-original-href="/index.php/galeria/2017-es-fotok" href="#" tabindex="-1">2017-es Fotók</a></li><li class="item-260"><a data-review-original-href="/index.php/galeria/2018-asfotok" href="#" tabindex="-1">2018-as Fotók</a></li><li class="item-295"><a data-review-original-href="/index.php/galeria/2019-es-fotok" href="#" tabindex="-1">2019-es Fotók</a></li><li class="item-296"><a data-review-original-href="/index.php/galeria/2020-as-fotok" href="#" tabindex="-1">2020-as Fotók</a></li></ul></li></ul>
+</div>
+</div>
+<div id="s5_responsive_mobile_drop_down_search">
+<div class="s5_responsive_mobile_drop_down_inner" style="-webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);-moz-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);">
+<div data-review-disabled-form="true">
+<input id="s5_responsive_mobile_search" name="searchword" type="text" value="Keresés..."/>
+<input name="task" type="hidden" value="search"/>
+<input name="option" type="hidden" value="com_search"/>
+<input name="Itemid" type="hidden" value="1"/>
+</div>
+</div>
+</div>
+<div id="s5_responsive_mobile_drop_down_login">
+<div class="s5_responsive_mobile_drop_down_inner" id="s5_responsive_mobile_drop_down_login_inner" style="-webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);-moz-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);">
+</div>
+</div>
+<div id="s5_responsive_mobile_drop_down_register">
+<div class="s5_responsive_mobile_drop_down_inner" id="s5_responsive_mobile_drop_down_register_inner" style="-webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);-moz-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);">
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="s5_body_padding">
+
+<div id="s5_header_area1">
+<div id="s5_header_area2">
+<div class="s5_wrap" id="s5_header_area_inner">
+<div id="s5_header_area_inner2">
+<div id="s5_header_wrap">
+<img alt="logo" id="s5_logo" style="height:50px;width:1100px"/>
+<div style="clear:both; height:0px"></div>
+</div>
+<div id="s5_menu_wrap">
+<ul class="menu" id="s5_nav"><li class="active"><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="https://www.csolnok.hu/" href="#" tabindex="-1"><span>Főoldal</span></a></span></span></li><li><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="/index.php/home" href="#" tabindex="-1"><span>Önkormányzat</span></a></span></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="https://csolnok.hu/images/1kabeltv/kepujsag.pdf" href="#" tabindex="-1"><span class="s5_sub_a_span">Kábel TV</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/kepviselo-testuelet" href="#" tabindex="-1"><span class="s5_sub_a_span">Képviselő-testület</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/bizottsag" href="#" tabindex="-1"><span class="s5_sub_a_span">Bizottság</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="#" href="#" tabindex="-1"><span class="s5_sub_a_span">Rendeletek</span></a></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/rendeletek/helyi-rendeletek" href="#" tabindex="-1"><span class="s5_sub_a_span">Helyi rendeletek</span></a></span></li></ul></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/koezoes-hivatal" href="#" tabindex="-1"><span class="s5_sub_a_span">Közös Hivatal</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/letoeltesek" href="#" tabindex="-1"><span class="s5_sub_a_span">Letöltések</span></a></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="https://www.dropbox.com/s/joopbguvk80zzsz/img-714103713.pdf" href="#" tabindex="-1"><span class="s5_sub_a_span">Rendezvények Nyilvántartása</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/letoeltesek/egyebek" href="#" tabindex="-1"><span class="s5_sub_a_span">Egyebek</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/letoeltesek/nyilvantartasok" href="#" tabindex="-1"><span class="s5_sub_a_span">Nyilvántartások</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/letoeltesek/anyakoenyvi-uegyek" href="#" tabindex="-1"><span class="s5_sub_a_span">Anyakönyvi ügyek</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/letoeltesek/szocialis-tuezifa-igenyles" href="#" tabindex="-1"><span class="s5_sub_a_span">Szociális Tüzifa Igénylés</span></a></span></li></ul></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/polgarmester-koeszoentoje" href="#" tabindex="-1"><span class="s5_sub_a_span">Polgármester Köszöntője</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="#" href="#" tabindex="-1"><span class="s5_sub_a_span">Szabályzatok</span></a></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/2018-02-14-17-13-03/terfigyelo-rendszer" href="#" tabindex="-1"><span class="s5_sub_a_span">Térfigyelő rendszer</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/2018-02-14-17-13-03/helyi-eselyegyenlosegi-program" href="#" tabindex="-1"><span class="s5_sub_a_span"> Helyi Esélyegyenlőségi Program</span></a></span></li></ul></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/polgarmesteri-doentesek" href="#" tabindex="-1"><span class="s5_sub_a_span">Polgármesteri döntések</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/2023-02-28-07-53-05" href="#" tabindex="-1"><span class="s5_sub_a_span">Jegyzőkönyvek</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/home/hirdetmenyek" href="#" tabindex="-1"><span class="s5_sub_a_span">Hirdetmények</span></a></span></li></ul></li><li><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="/index.php/intezmenyek" href="#" tabindex="-1"><span>Intézmények</span></a></span></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/altalanos-iskola" href="#" tabindex="-1"><span class="s5_sub_a_span">Általános Iskola</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/ovoda-boelcsode" href="#" tabindex="-1"><span class="s5_sub_a_span">Óvoda-Bölcsőde</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="#" href="#" tabindex="-1"><span class="s5_sub_a_span">Művelődési Ház és Könyvtár</span></a></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/muvelodesi-haz-es-koenyvtar/muvelodesi-haz" href="#" tabindex="-1"><span class="s5_sub_a_span">Művelődési ház</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/muvelodesi-haz-es-koenyvtar/koenyvtar" href="#" tabindex="-1"><span class="s5_sub_a_span">Könyvtár</span></a></span></li></ul></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/szocialis-feladatellatas" href="#" tabindex="-1"><span class="s5_sub_a_span">Szociális feladatellátás</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/zeneiskola" href="#" tabindex="-1"><span class="s5_sub_a_span">Zeneiskola</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy" href="#" tabindex="-1"><span class="s5_sub_a_span">Egészségügy</span></a></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy/vedonoi-szolgalat" href="#" tabindex="-1"><span class="s5_sub_a_span">Védőnői szolgálat</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy/fogaszati-rendeles" href="#" tabindex="-1"><span class="s5_sub_a_span">Fogászati rendelés</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/egeszseguegy/haziorvosi-szolgalat" href="#" tabindex="-1"><span class="s5_sub_a_span">Háziorvosi szolgálat</span></a></span></li></ul></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/sportletesitmenyek" href="#" tabindex="-1"><span class="s5_sub_a_span">Sportlétesítmények</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/intezmenyek/adatkezelesi-tajekoztato" href="#" tabindex="-1"><span class="s5_sub_a_span">Adatkezelési tájékoztató</span></a></span></li></ul></li><li><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="/index.php/civil-szervezetek" href="#" tabindex="-1"><span>Civil szervezetek</span></a></span></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/wagenhoffer-korus" href="#" tabindex="-1"><span class="s5_sub_a_span">Wagenhoffer Kórus</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/csolnoki-fuvoszenekar" href="#" tabindex="-1"><span class="s5_sub_a_span">Csolnoki Fúvószenekar</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/krigli-band" href="#" tabindex="-1"><span class="s5_sub_a_span">Krigli Band</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/alte-kameraden-zenekar" href="#" tabindex="-1"><span class="s5_sub_a_span">Alte Kameraden zenekar</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/nyugdijas-klub" href="#" tabindex="-1"><span class="s5_sub_a_span">Nyugdíjas Klub</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="http://www.csolnokse.hu/" href="#" tabindex="-1"><span class="s5_sub_a_span">Sportegyesület</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/horgaszegyesuelet" href="#" tabindex="-1"><span class="s5_sub_a_span">Horgászegyesület</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/a-het-krajcar-koezalapitvany" href="#" tabindex="-1"><span class="s5_sub_a_span">Hét krajcár Csolnokért Közalapítvány</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/ovodas-koezalapitvany" href="#" tabindex="-1"><span class="s5_sub_a_span">Óvodás Közalapítvány</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/egyhaz" href="#" tabindex="-1"><span class="s5_sub_a_span">Egyház</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/banyasz-hagyomany" href="#" tabindex="-1"><span class="s5_sub_a_span">Bányász Hagyományőrző Egyesület</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/polgarorseg" href="#" tabindex="-1"><span class="s5_sub_a_span">Polgárőrség</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="https://www.facebook.com/soniaesabluesandroll/" href="#" tabindex="-1"><span class="s5_sub_a_span">Blues and Roll</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/tanccsoport" href="#" tabindex="-1"><span class="s5_sub_a_span">Tánccsoport</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/civil-szervezetek/vegyes-korus" href="#" tabindex="-1"><span class="s5_sub_a_span">Vegyes kórus</span></a></span></li></ul></li><li><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat" href="#" tabindex="-1"><span>Nemzetiségi Önkormányzat</span></a></span></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat/bemutatkozas" href="#" tabindex="-1"><span class="s5_sub_a_span">Bemutatkozás</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat/programjaink" href="#" tabindex="-1"><span class="s5_sub_a_span">Tájház</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/nemzetisegi-oenkormanyzat/csolnoki-nemet-nemzetisegi-altalanos-iskola" href="#" tabindex="-1"><span class="s5_sub_a_span">Csolnoki Német Nemzetiségi Általános Iskola</span></a></span></li></ul></li><li><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="/index.php/palyazatok" href="#" tabindex="-1"><span>Pályázatok</span></a></span></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/tiop-iskola" href="#" tabindex="-1"><span class="s5_sub_a_span">TIOP Iskola</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/tamop-muvelodesi-haz-regi" href="#" tabindex="-1"><span class="s5_sub_a_span">TÁMOP Művelődési Ház régi</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/tamop-muvelodesi-haz-uj" href="#" tabindex="-1"><span class="s5_sub_a_span">TÁMOP Művelődési Ház új</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/tamop-ovoda" href="#" tabindex="-1"><span class="s5_sub_a_span">TÁMOP Óvoda</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/tamop-iskola" href="#" tabindex="-1"><span class="s5_sub_a_span">TÁMOP Iskola</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/uszoda-palyazat" href="#" tabindex="-1"><span class="s5_sub_a_span">Uszoda pályázat</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/intezmenyvezetoi-palyazat" href="#" tabindex="-1"><span class="s5_sub_a_span">Intézményvezetői pályázat</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/egeszseguegyi-alapellatas-palyazat" href="#" tabindex="-1"><span class="s5_sub_a_span">Egészségügyi alapellátás pályázat</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/palyazatok/energetikai-korszerusites-palyazat" href="#" tabindex="-1"><span class="s5_sub_a_span">Energetikai korszerűsítés pályázat</span></a></span></li></ul></li><li><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="/index.php/elerhetosegek" href="#" tabindex="-1"><span>Kapcsolat</span></a></span></span></li><li><span class="s5_level1_span1"><span class="s5_level1_span2"><a data-review-original-href="/index.php/galeria" href="#" tabindex="-1"><span>Galéria</span></a></span></span><ul style="float:left;"><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/galeria-2014-es-fotok" href="#" tabindex="-1"><span class="s5_sub_a_span">2014-es Fotók</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/latnivalok" href="#" tabindex="-1"><span class="s5_sub_a_span">Látnivalók</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/2015-oes-fotok" href="#" tabindex="-1"><span class="s5_sub_a_span">2015-ös Fotók</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/2016-os-fotok" href="#" tabindex="-1"><span class="s5_sub_a_span">2016-os Fotók</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/2017-es-fotok" href="#" tabindex="-1"><span class="s5_sub_a_span">2017-es Fotók</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/2018-asfotok" href="#" tabindex="-1"><span class="s5_sub_a_span">2018-as Fotók</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/2019-es-fotok" href="#" tabindex="-1"><span class="s5_sub_a_span">2019-es Fotók</span></a></span></li><li><span class="S5_submenu_item"><a data-review-original-href="/index.php/galeria/2020-as-fotok" href="#" tabindex="-1"><span class="s5_sub_a_span">2020-as Fotók</span></a></span></li></ul></li></ul> <div style="clear:both; height:0px"></div>
+</div>
+<div id="s5_breadcrumb_fonts_wrap">
+<div id="s5_breadcrumb_wrap">
+<div class="moduletable">
+<div data-review-disabled-form="true">
+<div class="search">
+<label for="mod-search-searchword"> </label><input class="inputbox" id="mod-search-searchword" maxlength="20" name="searchword" size="20" type="text" value="Keresés..."/> <input name="task" type="hidden" value="search"/>
+<input name="option" type="hidden" value="com_search"/>
+<input name="Itemid" type="hidden" value="111"/>
+</div>
+</div>
+</div>
+</div>
+<div id="s5_social_wrap1">
+<div id="s5_social_wrap_inner">
+<div id="s5_facebook"></div>
+<div id="s5_google"></div>
+<div id="s5_twitter"></div>
+<div id="s5_linked_in"></div>
+<div id="s5_rss"></div>
+<div id="fontControls"></div>
+</div>
+</div>
+<div style="clear:both;height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="s5_center_area1">
+<div id="s5_center_area2">
+<div class="s5_wrap" id="s5_center_area_inner">
+
+
+
+<div id="s5_columns_wrap">
+<div id="s5_columns_wrap_inner">
+<div id="s5_center_column_wrap">
+<div id="s5_center_column_wrap_inner" style="margin-left:240px; margin-right:238px;">
+<div id="s5_component_wrap">
+<div id="s5_component_wrap_inner">
+<div id="s5_above_body_wrap">
+<div id="s5_above_body">
+<div id="s5_above_body_inner">
+<div class="s5_float_left" id="s5_pos_above_body_1" style="width:100%">
+<div class="s5_fourdivs_1">
+<div class="s5_fourdivs_2">
+<div class="s5_fourdivs_3">
+<div class="s5_fourdivs_4">
+<div class="custom">
+<p><a data-review-original-href="/index.php/csolnok-palyazat-2025" href="#" tabindex="-1" target="_blank"><img alt="szlogo page-0001" height="138" style="display: block; margin-left: auto; margin-right: auto;" width="484"/></a></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+<div id="system-message-container">
+</div>
+<div class="item-page">
+<h5>
+			Háziorvos helyettesítés		</h5>
+<p>Háziorvos helyettesítés július 9-13. Részletek...</p>
+<p style="text-align: justify;">Értesítem Tisztelt Betegeimet, hogy 2018. Július 9 – 13-ig szabadságon leszek. Helyettesít Dr. Gécseg Erika a saját rendelőjében és rendelési idejében.</p>
+<p>Megértésüket köszönöm<br/>Dr. Pintér Miklós <br/>háziorvos</p>
+</div>
+<div style="clear:both;height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="s5_float_left" id="s5_left_column_wrap" style="width:240px">
+<div id="s5_left_column_wrap_inner">
+<div class="s5_float_left" id="s5_left_wrap" style="width:240px">
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<ul class="menu">
+<li class="item-186"><a data-review-original-href="/index.php/polgarmester-koeszoentoje" href="#" tabindex="-1">Polgármester Köszöntője</a></li><li class="item-108"><a data-review-original-href="http://csolnok.hu/" href="#" tabindex="-1">Főoldal</a></li><li class="item-110"><a data-review-original-href="/index.php/csolnokrol" href="#" tabindex="-1">Csolnokról</a></li><li class="item-112"><a data-review-original-href="https://ugyfelkapu.magyarorszag.hu/" href="#" tabindex="-1">Ügyfélkapu</a></li><li class="item-114 parent"><a data-review-original-href="/index.php/hasznos-informaciok" href="#" tabindex="-1">Hasznos információk</a></li><li class="item-178"><a data-review-original-href="https://csolnok.hu/images/2026naptar.pdf" href="#" tabindex="-1">Rendezvénynaptár</a></li><li class="item-116 parent"><a data-review-original-href="/index.php/koezerdeku-adatok" href="#" tabindex="-1">Közérdekű adatok</a></li><li class="item-303"><a data-review-original-href="/index.php/telepueleskepi-bejelentes" href="#" tabindex="-1">Településképi bejelentés</a></li><li class="item-345"><a data-review-original-href="https://csolnok.hu/images/1kabeltv/kepujsag.pdf" href="#" tabindex="-1" target="_blank">Kábel TV</a></li><li class="item-255"><a data-review-original-href="/index.php/2018-01-19-10-45-49" href="#" tabindex="-1">Településterv - településfejlesztés, településrendezés </a></li><li class="item-353"><a data-review-original-href="/index.php/2026-07-09-08-07-37" href="#" tabindex="-1">Településképi védelem</a></li><li class="item-117"><a data-review-original-href="/index.php/partnerkapcsolatok" href="#" tabindex="-1">Partnerkapcsolatok</a></li><li class="item-118"><a data-review-original-href="/index.php/kiadvanyok-csolnokrol" href="#" tabindex="-1">Kiadványok Csolnokról</a></li><li class="item-119"><a data-review-original-href="/index.php/ujsag" href="#" tabindex="-1">Újság</a></li><li class="item-304"><a data-review-original-href="/index.php/hivatali-szamlaszamok" href="#" tabindex="-1">Hivatali számlaszámok</a></li></ul>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="custom">
+<div id="kozadat_kereso">
+<h1><span style="font-size: 14pt;">KÖZADATKERESŐ</span></h1>
+<div data-review-disabled-form="true"><input class="inputfield" id="szoveg" name="szoveg" type="text"/> <input checked="checked" class="custom-checkbox" id="sema2" name="sema" style="display: none;" type="checkbox" value="2"/> <input checked="checked" class="custom-checkbox" id="sema3" name="sema" style="display: none;" type="checkbox" value="3"/> <input checked="checked" class="custom-checkbox" id="sema4" name="sema" style="display: none;" type="checkbox" value="4"/> <input checked="checked" class="custom-checkbox" id="sema5" name="sema" style="display: none;" type="checkbox" value="5"/>
+<ul>
+<li><input alt="Keresés indítása" class="button" type="submit" value="OK"/></li>
+<li><a data-review-original-href="http://kozadat.hu/kereso/osszetett-kereso" href="#" tabindex="-1">Összetett kereső »</a></li>
+</ul>
+</div></div>
+<p> </p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="custom" style="background-image: url('/images/modulbckgr.jpg')">
+<p><a data-review-original-href="/index.php/palyazatok/egeszseguegyi-alapellatas-palyazat" href="#" tabindex="-1" target="_blank"><img alt="" height="139" style="display: block; margin-left: auto; margin-right: auto;" width="198"/></a></p>
+<p> </p>
+<p><a data-review-original-href="/index.php/palyazatok/energetikai-korszerusites-palyazat" href="#" tabindex="-1" target="_blank"><img alt="" height="138" style="display: block; margin-left: auto; margin-right: auto;" width="196"/></a></p>
+<p><a data-review-original-href="http://www.nfu.hu/uj_magyarorszag_fejlesztesi_terv_2" href="#" tabindex="-1" target="_blank"><img alt="magyarorszag" height="86" style="display: block; margin-left: auto; margin-right: auto;" width="202"/></a></p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="s5_mod_h3_outer">
+<h3 class="s5_mod_h3"><span class="s5_h3_first">Kövess </span> minket!</h3>
+</div>
+<div id="fb-root"></div>
+
+<div class="fb-like-box" data-colorscheme="light" data-force-wall="false" data-header="1" data-height="50" data-href="https://www.facebook.com/pages/Csolnok-K%C3%B6zs%C3%A9g-hivatalos-oldala/535765289852060?fref=ts" data-show-border="1" data-show-faces="0" data-stream="0" data-width="200"></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="custom">
+<p>Tájékoztató videó a helyes csatornahasználatról</p>
+<p><a data-review-original-href="https://www.facebook.com/tokodaltaro/videos/681396312008594/" href="#" tabindex="-1" target="_blank"><img alt="" height="171" width="197"/></a></p>
+<p><span style="color: #da251e; font-family: Arial, Helvetica, sans-serif;"><span style="outline-color: initial; outline-width: initial; font-size: 13px;">Képre kattintva megtekinthető a videó!</span></span></p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="s5_float_left" id="s5_right_column_wrap" style="width:238px; margin-left:-478px">
+<div id="s5_right_column_wrap_inner">
+<div class="s5_float_left" id="s5_right_top_wrap" style="width:238px">
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="custom">
+<p> </p>
+<p><a data-review-original-href="/index.php/palyazati-tajekoztato" href="#" tabindex="-1" target="_blank"><img alt="" height="167" width="251"/></a></p>
+<p><a data-review-original-href="/index.php/iden-3" href="#" tabindex="-1" target="_blank"><img alt=""/></a></p>
+<p> <a data-review-original-href="/index.php/versenykepes-jarasok-program" href="#" tabindex="-1" target="_blank"><img alt="bann12" style="font-size: 12.8px;"/></a></p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="s5_mod_h3_outer">
+<h3 class="s5_mod_h3"><span class="s5_h3_first">Elektronikus </span> ügyintézés</h3>
+</div>
+<div class="custom">
+<p><a data-review-original-href="https://ohp-20.asp.lgov.hu/kereses?sourceUrl=&amp;searchType=T&amp;url=ugyinditas&amp;searchCity=Csolnok" href="#" tabindex="-1" target="_blank"><img alt="" height="205" width="205"/></a></p>
+<p> </p>
+<p><a data-review-original-href="/index.php/intezze-oenkormanyzati-uegyeit-elektronikusan" href="#" tabindex="-1" target="_blank">Intézze önkormányzati ügyeit elektronikusan</a>!</p>
+<p><a data-review-original-href="/images/adok/eugyintezes_cikk_2__resz_FINAL_21.pdf" href="#" tabindex="-1" target="_blank">Önkormányzati ügyek. Mindenkinek. Bárhonnan.</a></p>
+<p><a data-review-original-href="/images/adok/elektronikus_ugyintezes_az_onkormanyzati_hivatali_portalon_201905241_compressed.pdf" href="#" tabindex="-1" target="_blank">Elektronikus ügyintézés a hivatali portálon általános tájékoztató</a></p>
+<p> </p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="custom">
+<p class="p1" style="font-size: 12px; line-height: normal; font-family: 'Helvetica Neue'; color: #000000; text-align: justify;">Tisztelt Ügyfeleink!</p>
+<p class="p1" style="font-size: 12px; line-height: normal; font-family: 'Helvetica Neue'; color: #000000; text-align: justify;">A 191/2020. (V. 8.) sz. Korm. rendelet szerinti ellenőrzött bejelentésüket (veszélyhelyzet alatti engedély-kötelezettség tárgyában) a <span id="cloak37180">This e-mail address is being protected from spambots. You need JavaScript enabled to view it.</span> címen tehetik meg.</p>
+<p class="p1" style="font-size: 12px; line-height: normal; font-family: 'Helvetica Neue'; color: #000000; text-align: justify;">Pőczéné dr. Csorba Erika <br/>jegyző</p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="custom">
+<p><img alt="" height="250" width="250"/></p>
+<p><strong>Mini bölcsöde kialakítása Csolnokon!</strong></p>
+<p>Kattintson az alábbi képre a nagyításért.</p>
+<p><a data-review-original-href="/images/Kepernyofoto%202021-10-08%20-%207.06.31.png" href="#" tabindex="-1" target="_blank"><img alt=""/></a></p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div style="margin:0px;padding:0px;border-width:0px;"><span id="testspan107" style="display:none"></span>
+<div id="flatcal_minical">
+<table align="center" border="0" cellpadding="0" cellspacing="1" class="flatcal_main_t" width="165px">
+<tr>
+<td style="vertical-align: top;">
+<table border="0" cellpadding="2" cellspacing="0" class="flatcal_navbar" style="width:100%;">
+<tr>
+<td class="link_prev">
+<img alt="Előző hónap" border="0" class="mod_events_link" title="Előző hónap"/>
+</td>
+<td class="flatcal_month_label">
+<a data-review-original-href="/index.php/component/jevents/month.calendar/2026/07/16/-?Itemid=1" href="#" style="text-decoration:none;color:inherit;" tabindex="-1">Július 2026</a>
+</td>
+<td class="link_next">
+<img alt="Következő hónap" border="0" class="mod_events_link" title="Következő hónap"/>
+</td>
+</tr>
+</table><table class="flatcal_weekdays" style="width:100%; "><tr>
+<td class="flatcal_weekdays">H</td>
+<td class="flatcal_weekdays">K</td>
+<td class="flatcal_weekdays">Sz</td>
+<td class="flatcal_weekdays">Cs</td>
+<td class="flatcal_weekdays">P</td>
+<td class="flatcal_weekdays"><span class="saturday">Szo</span></td>
+<td class="flatcal_weekdays"><span class="sunday">V</span></td>
+</tr>
+<tr style="height:auto;">
+<td class="flatcal_othermonth"></td>
+<td class="flatcal_othermonth"></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/01/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">1</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/02/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">2</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/03/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">3</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/04/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">4</a></td>
+<td class="flatcal_sundaycell">
+<a class="flatcal_sundaylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/05/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">5</a></td>
+</tr>
+<tr style="height:auto;">
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/06/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">6</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/07/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">7</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/08/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">8</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/09/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">9</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/10/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">10</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/11/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">11</a></td>
+<td class="flatcal_sundaycell">
+<a class="flatcal_sundaylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/12/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">12</a></td>
+</tr>
+<tr style="height:auto;">
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/13/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">13</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/14/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">14</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/15/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">15</a></td>
+<td class="flatcal_todaycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/16/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">16</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/17/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">17</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/18/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">18</a></td>
+<td class="flatcal_sundaycell">
+<a class="flatcal_sundaylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/19/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">19</a></td>
+</tr>
+<tr style="height:auto;">
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/20/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">20</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/21/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">21</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/22/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">22</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/23/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">23</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/24/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">24</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/25/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">25</a></td>
+<td class="flatcal_sundaycell">
+<a class="flatcal_sundaylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/26/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">26</a></td>
+</tr>
+<tr style="height:auto;">
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/27/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">27</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/28/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">28</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/29/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">29</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/30/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">30</a></td>
+<td class="flatcal_daycell">
+<a class="flatcal_daylink" data-review-original-href="/index.php/component/jevents/day.listevents/2026/07/31/-?Itemid=1" href="#" tabindex="-1" title="Ugrás a naptárhoz - aktuális nap">31</a></td>
+<td class="flatcal_othermonth"></td>
+<td class="flatcal_othermonth"></td>
+</tr>
+</table>
+</td></tr><tr class="full_cal_link"><td> </td></tr></table></div>
+</div> <div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="s5_mod_h3_outer">
+<h3 class="s5_mod_h3"><span class="s5_h3_first">ASP </span> pályázat</h3>
+</div>
+<div class="custom">
+<p><a data-review-original-href="/index.php/asp-palyazat" href="#" tabindex="-1" target="_blank"><img alt="" height="173" width="254"/></a></p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="s5_float_left" id="s5_right_wrap" style="width:238px">
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="s5_mod_h3_outer">
+<h3 class="s5_mod_h3"><span class="s5_h3_first">Emberi </span> erőforrásokkal emberi erőforrásokért</h3>
+</div>
+<div class="custom">
+<p><a data-review-original-href="/index.php/emberi-eroforrasokkal-emberi-eroforrasokert" href="#" tabindex="-1" target="_blank"><img alt="atop"/></a></p></div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_round_box_outer">
+<div class="module_round_box">
+<div class="s5_module_box_1">
+<div class="s5_module_box_2">
+<div class="custom">
+<div style="font: 10px Tahoma;padding:3px;"><a data-review-original-href="http://freemeteo.com" href="#" style="color:#000000;text-decoration:none" tabindex="-1">Weather by Freemeteo.com</a></div>
+
+</div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="s5_footer_area1">
+<div id="s5_footer_area2">
+<div class="s5_wrap" id="s5_footer_area_inner">
+<div id="s5_footer_area_inner2">
+<div id="s5_footer">
+<span class="footerc">
+Copyright © 2026.  www.csolnok.hu.
+Fjood Kreatív Csoport <a class="footerc" data-review-original-href="http://www.fjood.hu/weboldal-arak.html" href="#" tabindex="-1" target="blank" title="Weboldal készítés árak"> | Weboldal készítés árak </a><a data-review-original-href="" href="#" tabindex="-1">|  seokapu@gmail.com</a>
+</span>
+</div>
+<div id="s5_bottom_menu_wrap">
+</div>
+<div style="clear:both; height:0px"></div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="s5_wrap" id="s5_scroll_wrap">
+
+<div id="s5_scrolltopvar">
+<a class="s5_scrolltotop" data-review-original-href="#s5_scrolltotop" href="#" tabindex="-1"></a>
+</div> </div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="s5_responsive_mobile_bottom_bar_outer" style="display:none">
+<div class="s5_responsive_mobile_bar_light" id="s5_responsive_mobile_bottom_bar">
+
+<div id="s5_responsive_switch_mobile">
+<a data-review-original-href="/?s5_responsive_switch_swwwcsolnokhu=0" href="#" id="s5_responsive_switch" tabindex="-1">Desktop Version</a>
+</div>
+<div id="s5_responsive_mobile_scroll">
+<a class="s5_scrolltotop" data-review-original-href="#s5_scrolltotop" href="#" tabindex="-1"></a>
+</div>
+<div style="clear:both;height:0px"></div>
+</div>
+</div>
+
+<a data-review-original-href="http://www.shape5.com" href="#" id="s5_shape5_logo" tabindex="-1" target="blank" title="shape5.com"></a>
+<div class="Element">
+<a data-review-original-href="https://csolnok.hu/index.php/energetikai-korszerusites-a-csolnoki-sportcsarnokban-projekt" href="#" tabindex="-1">
+<img/>
+</a>
+</div>
+<input id="title1" type="checkbox"/>
+<label for="title1">.</label>
+<div class="content">
+<p style="text-align: center;">Partnereink:</p>
+<p style="text-align: center;"><a data-review-original-href="http://vw-audi-alkatresz.hu/" href="#" tabindex="-1" title="AUDI bontó">AUDI bontó</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://perfectchaos.hu/lezeres-tetovalas-eltavolitas/" href="#" tabindex="-1" title="Tetoválás eltávolítás">Tetoválás eltávolítás</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://tuzifaudvar.hu/index.php/arak" href="#" tabindex="-1" title="Tüzifa árak">Tüzifa árak</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://www.novamalta.hu/malta-nyaralas/" href="#" tabindex="-1" title="Máltai nyaralás">Máltai nyaralás </a></p>
+<p style="text-align: center;"><a data-review-original-href="https://www.allvanyasz.hu/index.php/allvany-berles-arak-budapest" href="#" tabindex="-1" title="Állvány bérlés árak">Állvány bérlés árak</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://aurart.hu/" href="#" tabindex="-1" title="Ékszerész">Ékszerész</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://fjood.hu/keresooptimalizalas-arak-2025-ben/" href="#" tabindex="-1" title="Keresőoptimalizálás árak">Keresőoptimalizálás árak</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://www.mindenitt.hu/ultrahangos-kutyariaszto-kutyaugatas-ellen-80m2-2x128db-piezo-hangszoroval-1ev-garancia-806?srsltid=AfmBOor3Teme2enlp686HpeZzRD6RR8MOu9Zd_tgvn5tz0dMaS2pq0Fu" href="#" tabindex="-1" title="Kutyaugatás ellen">Kutyaugatás ellen</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://novaauris.hu/hallokeszulek-arak/" href="#" tabindex="-1" title="Hallókészülék árak">Hallókészülék árak</a></p>
+<p style="text-align: center;"><a data-review-original-href="https://www.satratkeresek.hu/" href="#" tabindex="-1" title="Rendezvénysátor bérlés">Rendezvénysátor bérlés</a></p>
+</div>
+
+</div>
+</body>
+</html>

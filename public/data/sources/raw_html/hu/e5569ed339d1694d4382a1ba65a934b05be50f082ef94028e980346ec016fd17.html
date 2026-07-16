@@ -1,0 +1,832 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+
+<title>Orvosi Rendelő – InfoFlow</title>
+<meta content="max-image-preview:large" name="robots"/>
+
+
+
+
+
+
+
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-search-inline-css">
+.wp-block-search__button{margin-left:10px;word-break:normal}.wp-block-search__button.has-icon{line-height:0}.wp-block-search__button svg{fill:currentColor;height:1.25em;min-height:24px;min-width:24px;vertical-align:text-bottom;width:1.25em}:where(.wp-block-search__button){border:1px solid #ccc;padding:6px 10px}.wp-block-search__inside-wrapper{display:flex;flex:auto;flex-wrap:nowrap;max-width:100%}.wp-block-search__label{width:100%}.wp-block-search.wp-block-search__button-only .wp-block-search__button{box-sizing:border-box;display:flex;flex-shrink:0;justify-content:center;margin-left:0;max-width:100%}.wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper{min-width:0!important;transition-property:width}.wp-block-search.wp-block-search__button-only .wp-block-search__input{flex-basis:100%;transition-duration:.3s}.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden,.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__inside-wrapper{overflow:hidden}.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__input{border-left-width:0!important;border-right-width:0!important;flex-basis:0;flex-grow:0;margin:0;min-width:0!important;padding-left:0!important;padding-right:0!important;width:0!important}:where(.wp-block-search__input){appearance:none;border:1px solid #949494;flex-grow:1;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin-left:0;margin-right:0;min-width:3rem;padding:8px;text-decoration:unset!important;text-transform:inherit}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper){background-color:#fff;border:1px solid #949494;box-sizing:border-box;padding:4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input{border:none;border-radius:0;padding:0 4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input:focus{outline:none}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) :where(.wp-block-search__button){padding:4px 8px}.wp-block-search.aligncenter .wp-block-search__inside-wrapper{margin:auto}.wp-block[data-align=right] .wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper{float:right}
+/*# sourceURL=https://info-flow.hu/wp-includes/blocks/search/style.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+
+
+
+
+
+
+
+
+
+<style id="color-magazine-style-inline-css">
+.category-button.cb-cat-40 a{background:#3b2d1b}
+.category-button.cb-cat-40 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-40 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-40 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-7 a{background:#f2806d}
+.category-button.cb-cat-7 a:hover{background:#c04e3b}
+#site-navigation ul li.cb-cat-7 .menu-item-description{background:#f2806d}
+#site-navigation ul li.cb-cat-7 .menu-item-description:after{border-top-color:#f2806d}
+.category-button.cb-cat-9 a{background:#406d31}
+.category-button.cb-cat-9 a:hover{background:#0e3b00}
+#site-navigation ul li.cb-cat-9 .menu-item-description{background:#406d31}
+#site-navigation ul li.cb-cat-9 .menu-item-description:after{border-top-color:#406d31}
+.category-button.cb-cat-83 a{background:#3b2d1b}
+.category-button.cb-cat-83 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-83 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-83 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-24 a{background:#2a5e36}
+.category-button.cb-cat-24 a:hover{background:#002c04}
+#site-navigation ul li.cb-cat-24 .menu-item-description{background:#2a5e36}
+#site-navigation ul li.cb-cat-24 .menu-item-description:after{border-top-color:#2a5e36}
+.category-button.cb-cat-53 a{background:#3b2d1b}
+.category-button.cb-cat-53 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-53 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-53 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-1 a{background:#63dd74}
+.category-button.cb-cat-1 a:hover{background:#31ab42}
+#site-navigation ul li.cb-cat-1 .menu-item-description{background:#63dd74}
+#site-navigation ul li.cb-cat-1 .menu-item-description:after{border-top-color:#63dd74}
+.category-button.cb-cat-12 a{background:#1e2844}
+.category-button.cb-cat-12 a:hover{background:#000012}
+#site-navigation ul li.cb-cat-12 .menu-item-description{background:#1e2844}
+#site-navigation ul li.cb-cat-12 .menu-item-description:after{border-top-color:#1e2844}
+.category-button.cb-cat-31 a{background:#3b2d1b}
+.category-button.cb-cat-31 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-31 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-31 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-6 a{background:#c2cc5b}
+.category-button.cb-cat-6 a:hover{background:#909a29}
+#site-navigation ul li.cb-cat-6 .menu-item-description{background:#c2cc5b}
+#site-navigation ul li.cb-cat-6 .menu-item-description:after{border-top-color:#c2cc5b}
+.category-button.cb-cat-13 a{background:#7a374a}
+.category-button.cb-cat-13 a:hover{background:#480518}
+#site-navigation ul li.cb-cat-13 .menu-item-description{background:#7a374a}
+#site-navigation ul li.cb-cat-13 .menu-item-description:after{border-top-color:#7a374a}
+.category-button.cb-cat-33 a{background:#3b2d1b}
+.category-button.cb-cat-33 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-33 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-33 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-42 a{background:#89483d}
+.category-button.cb-cat-42 a:hover{background:#57160b}
+#site-navigation ul li.cb-cat-42 .menu-item-description{background:#89483d}
+#site-navigation ul li.cb-cat-42 .menu-item-description:after{border-top-color:#89483d}
+.category-button.cb-cat-43 a{background:#3b2d1b}
+.category-button.cb-cat-43 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-43 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-43 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-27 a{background:#3b2d1b}
+.category-button.cb-cat-27 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-27 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-27 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-25 a{background:#3b2d1b}
+.category-button.cb-cat-25 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-25 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-25 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-107 a{background:#3a3577}
+.category-button.cb-cat-107 a:hover{background:#080345}
+#site-navigation ul li.cb-cat-107 .menu-item-description{background:#3a3577}
+#site-navigation ul li.cb-cat-107 .menu-item-description:after{border-top-color:#3a3577}
+.category-button.cb-cat-11 a{background:#2c6344}
+.category-button.cb-cat-11 a:hover{background:#003112}
+#site-navigation ul li.cb-cat-11 .menu-item-description{background:#2c6344}
+#site-navigation ul li.cb-cat-11 .menu-item-description:after{border-top-color:#2c6344}
+.category-button.cb-cat-29 a{background:#3b2d1b}
+.category-button.cb-cat-29 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-29 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-29 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-26 a{background:#3b2d1b}
+.category-button.cb-cat-26 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-26 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-26 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-3 a{background:#6df27a}
+.category-button.cb-cat-3 a:hover{background:#3bc048}
+#site-navigation ul li.cb-cat-3 .menu-item-description{background:#6df27a}
+#site-navigation ul li.cb-cat-3 .menu-item-description:after{border-top-color:#6df27a}
+.category-button.cb-cat-10 a{background:#3c8487}
+.category-button.cb-cat-10 a:hover{background:#0a5255}
+#site-navigation ul li.cb-cat-10 .menu-item-description{background:#3c8487}
+#site-navigation ul li.cb-cat-10 .menu-item-description:after{border-top-color:#3c8487}
+.category-button.cb-cat-30 a{background:#3b2d1b}
+.category-button.cb-cat-30 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-30 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-30 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-36 a{background:#3b2d1b}
+.category-button.cb-cat-36 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-36 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-36 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-5 a{background:#ffaa72}
+.category-button.cb-cat-5 a:hover{background:#cd7840}
+#site-navigation ul li.cb-cat-5 .menu-item-description{background:#ffaa72}
+#site-navigation ul li.cb-cat-5 .menu-item-description:after{border-top-color:#ffaa72}
+.category-button.cb-cat-4 a{background:#64e0d4}
+.category-button.cb-cat-4 a:hover{background:#32aea2}
+#site-navigation ul li.cb-cat-4 .menu-item-description{background:#64e0d4}
+#site-navigation ul li.cb-cat-4 .menu-item-description:after{border-top-color:#64e0d4}
+.category-button.cb-cat-2 a{background:#e0647f}
+.category-button.cb-cat-2 a:hover{background:#ae324d}
+#site-navigation ul li.cb-cat-2 .menu-item-description{background:#e0647f}
+#site-navigation ul li.cb-cat-2 .menu-item-description:after{border-top-color:#e0647f}
+.category-button.cb-cat-37 a{background:#3b2d1b}
+.category-button.cb-cat-37 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-37 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-37 .menu-item-description:after{border-top-color:#3b2d1b}
+.category-button.cb-cat-28 a{background:#3b2d1b}
+.category-button.cb-cat-28 a:hover{background:#090000}
+#site-navigation ul li.cb-cat-28 .menu-item-description{background:#3b2d1b}
+#site-navigation ul li.cb-cat-28 .menu-item-description:after{border-top-color:#3b2d1b}
+a,a:hover,a:focus,a:active,.entry-cat .cat-links a:hover,.entry-cat a:hover,.byline a:hover,.posted-on a:hover,.entry-footer a:hover,.comment-author .fn .url:hover,.commentmetadata .comment-edit-link,#cancel-comment-reply-link,#cancel-comment-reply-link:before,.logged-in-as a,.widget a:hover,.widget a:hover::before,.widget li:hover::before,#top-navigation ul li a:hover,.mt-social-icon-wrap li a:hover,.mt-search-icon:hover,.mt-form-close a:hover,.menu-toggle:hover,#site-navigation ul li:hover>a,#site-navigation ul li.current-menu-item>a,#site-navigation ul li.current_page_ancestor>a,#site-navigation ul li.current-menu-ancestor>a,#site-navigation ul li.current_page_item>a,#site-navigation ul li.focus>a,.entry-title a:hover,.cat-links a:hover,.entry-meta a:hover,.entry-footer .mt-readmore-btn:hover,.btn-wrapper a:hover,.mt-readmore-btn:hover,.navigation.pagination .nav-links .page-numbers.current,.navigation.pagination .nav-links a.page-numbers:hover,.breadcrumbs a:hover,#footer-menu li a:hover,#top-footer a:hover,.color_magazine_latest_posts .mt-post-title a:hover,#mt-scrollup:hover,.mt-site-mode-wrap .mt-mode-toggle:hover,.mt-site-mode-wrap .mt-mode-toggle:checked:hover,.has-thumbnail .post-info-wrap .entry-title a:hover,.front-slider-block .post-info-wrap .entry-title a:hover{color:#0065C1}
+.widget_search .search-submit,.widget_search .search-submit:hover,.widget_tag_cloud .tagcloud a:hover,.widget.widget_tag_cloud a:hover,.navigation.pagination .nav-links .page-numbers.current,.navigation.pagination .nav-links a.page-numbers:hover,.error-404.not-found,.color-magazine_social_media a:hover{border-color:#0065C1}
+.edit-link .post-edit-link,.reply .comment-reply-link,.widget_search .search-submit,.widget_search .search-submit:hover,.widget_tag_cloud .tagcloud a:hover,.widget.widget_tag_cloud a:hover,#top-header,.mt-menu-search .mt-form-wrap .search-form .search-submit,.mt-menu-search .mt-form-wrap .search-form .search-submit:hover,#site-navigation .menu-item-description,.mt-ticker-label,.post-cats-list a,.front-slider-block .lSAction>a:hover,.top-featured-post-wrap .post-thumbnail .post-number,article.sticky::before,#secondary .widget .widget-title::before,.mt-related-post-title:before,#colophon .widget .widget-title:before,.features-post-title:before,.cvmm-block-title.layout--default:before,.color-magazine_social_media a:hover,.search-no-results #primary .search-submit{background:#0065C1}
+.mt-site-dark-mode .widget_archive a:hover,.mt-site-dark-mode .widget_categories a:hover,.mt-site-dark-mode .widget_recent_entries a:hover,.mt-site-dark-mode .widget_meta a,.mt-site-dark-mode .widget_recent_comments li:hover,.mt-site-dark-mode .widget_rss li,.mt-site-dark-mode .widget_pages li a:hover,.mt-site-dark-mode .widget_nav_menu li a:hover,.mt-site-dark-mode .wp-block-latest-posts li a:hover,.mt-site-dark-mode .wp-block-archives li a:hover,.mt-site-dark-mode .wp-block-categories li a:hover,.mt-site-dark-mode .wp-block-page-list li a:hover,.mt-site-dark-mode .wp-block-latest-comments li:hover,.mt-site-dark-mode #site-navigation ul li a:hover,.mt-site-dark-mode .site-title a:hover,.mt-site-dark-mode .entry-title a:hover,.mt-site-dark-mode .cvmm-post-title a:hover,.mt-site-dark-mode .mt-social-icon-wrap li a:hover,.mt-site-dark-mode .mt-search-icon a:hover,.mt-site-dark-mode .ticker-post-title a:hover,.single.mt-site-dark-mode .mt-author-box .mt-author-info .mt-author-name a:hover,.mt-site-dark-mode .mt-site-mode-wrap .mt-mode-toggle:hover,.mt-site-dark-mode .mt-site-mode-wrap .mt-mode-toggle:checked:hover{color:#0065C1 !important}
+#site-navigation .menu-item-description::after,.mt-custom-page-header{border-top-color:#0065C1}
+.mt-container{width:1300px}.site-layout--boxed #page{width:1200px}#primary,.home.blog #primary{width:70%}#secondary,.home.blog #secondary{width:27%}
+/*# sourceURL=color-magazine-style-inline-css */
+</style>
+
+
+
+
+
+
+
+
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style> <style type="text/css">
+					.site-title,
+			.site-description {
+				position: absolute;
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+				</style>
+<style id="custom-background-css">
+body.custom-background { background-color: #e5e5e5; }
+</style>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="wp-singular page-template-default page page-id-529 page-child parent-pageid-358 custom-background wp-custom-logo wp-theme-color-magazine site-layout--wide left-sidebar">
+<div id="preloader-background">
+<div class="preloader-wrapper">
+<div class="mt-wave">
+<div class="mt-rect mt-rect1"></div>
+<div class="mt-rect mt-rect2"></div>
+<div class="mt-rect mt-rect3"></div>
+<div class="mt-rect mt-rect4"></div>
+<div class="mt-rect mt-rect5"></div>
+</div>
+</div>
+</div>
+<div class="site" id="page">
+<a class="skip-link screen-reader-text" data-review-original-href="#content" href="#" tabindex="-1">Skip To Content</a>
+<div class="top-header-wrap mt-clearfix" id="top-header">
+<div class="mt-container">
+<div class="trending-wrapper tag-before-icon">
+<span class="wrap-label"><i aria-hidden="true" class="bx bxs-bolt"></i>Trending Now</span>
+<div class="tags-wrapper">
+<span class="head-tags-links"><a data-review-original-href="https://info-flow.hu/tag/zoldhulladek/" href="#" rel="tag" tabindex="-1">Zöldhulladék</a><a data-review-original-href="https://info-flow.hu/tag/veszettseg/" href="#" rel="tag" tabindex="-1">veszettség</a><a data-review-original-href="https://info-flow.hu/tag/utzar/" href="#" rel="tag" tabindex="-1">útzár</a><a data-review-original-href="https://info-flow.hu/tag/utlezaras/" href="#" rel="tag" tabindex="-1">útlezárás</a><a data-review-original-href="https://info-flow.hu/tag/ursula-kovalyk/" href="#" rel="tag" tabindex="-1">Uršuľa Kovalyk</a></span> </div>
+</div>
+<nav class="top-header-nav mt-clearfix" id="top-navigation">
+<div class="menu-kategoriak-container"><ul class="menu" id="top-header-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3016 cb-cat-40" id="menu-item-3016"><a data-review-original-href="https://info-flow.hu/category/cestovny-ruch/" href="#" tabindex="-1">Cestovný ruch</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3017 cb-cat-7" id="menu-item-3017"><a data-review-original-href="https://info-flow.hu/category/civil-elet/" href="#" tabindex="-1">Civil élet</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3018 cb-cat-1" id="menu-item-3018"><a data-review-original-href="https://info-flow.hu/category/egyeb/" href="#" tabindex="-1">Egyéb</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3019 cb-cat-6" id="menu-item-3019"><a data-review-original-href="https://info-flow.hu/category/gazdasag/" href="#" tabindex="-1">Gazdaság</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3020 cb-cat-27" id="menu-item-3020"><a data-review-original-href="https://info-flow.hu/category/hospodarstvo/" href="#" tabindex="-1">Hospodárstvo</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3021 cb-cat-25" id="menu-item-3021"><a data-review-original-href="https://info-flow.hu/category/ine-sk/" href="#" tabindex="-1">Iné @sk</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3022 cb-cat-26" id="menu-item-3022"><a data-review-original-href="https://info-flow.hu/category/obciansky-zivot/" href="#" tabindex="-1">Občiansky život</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3023 cb-cat-3" id="menu-item-3023"><a data-review-original-href="https://info-flow.hu/category/oktatas/" href="#" tabindex="-1">Oktatás</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3024 cb-cat-36" id="menu-item-3024"><a data-review-original-href="https://info-flow.hu/category/skolstvo/" href="#" tabindex="-1">Školstvo</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3025 cb-cat-5" id="menu-item-3025"><a data-review-original-href="https://info-flow.hu/category/szabadido/" href="#" tabindex="-1">Szabadidő</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3026 cb-cat-4" id="menu-item-3026"><a data-review-original-href="https://info-flow.hu/category/turizmus/" href="#" tabindex="-1">Turizmus</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3027 cb-cat-2" id="menu-item-3027"><a data-review-original-href="https://info-flow.hu/category/ugyintezes/" href="#" tabindex="-1">Ügyintézés</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3028 cb-cat-37" id="menu-item-3028"><a data-review-original-href="https://info-flow.hu/category/urady/" href="#" tabindex="-1">Úrady</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3029 cb-cat-28" id="menu-item-3029"><a data-review-original-href="https://info-flow.hu/category/volny-cas/" href="#" tabindex="-1">Voľný čas</a></li>
+</ul></div></nav> </div>
+</div>
+<header class="site-header" id="masthead">
+<div class="mt-logo-row-wrapper mt-clearfix">
+<div class="logo-ads-wrap">
+<div class="mt-container">
+<div class="site-branding">
+<a class="custom-logo-link" data-review-original-href="https://info-flow.hu/" href="#" rel="home" tabindex="-1"><img alt="InfoFlow" class="custom-logo" decoding="async" height="100" width="354"/></a> <p class="site-title"><a data-review-original-href="https://info-flow.hu/" href="#" rel="home" tabindex="-1">InfoFlow</a></p>
+<p class="site-description">Cross border Digital information Flow for Citizens in the Bratislava Region</p>
+</div>
+<div class="header-widget-wrapper">
+</div>
+</div> 
+</div>
+<div class="mt-social-menu-wrapper">
+<div class="mt-container">
+<div class="mt-main-menu-wrapper">
+<div class="menu-toggle"><a data-review-original-href="javascript:void(0)" href="#" tabindex="-1"><i class="bx bx-menu"></i>Menu</a></div>
+<nav class="main-navigation" id="site-navigation" itemscope="">
+<div class="menu-honlapok-container"><ul class="menu" id="primary-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-100" id="menu-item-100"><a data-review-original-href="http://www.dunakiliti.hu" href="#" tabindex="-1">Dunakiliti</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244" id="menu-item-244"><a data-review-original-href="http://www.dunasziget.hu/" href="#" tabindex="-1">Dunasziget</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-245" id="menu-item-245"><a data-review-original-href="http://www.feketeerdo.hu/hu/" href="#" tabindex="-1">Feketeerdő</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-101" id="menu-item-101"><a data-review-original-href="http://www.halaszi.hu/" href="#" tabindex="-1">Halászi</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-571" id="menu-item-571"><a data-review-original-href="http://www.hegyeshalom.hu/" href="#" tabindex="-1">Hegyeshalom</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-103" id="menu-item-103"><a data-review-original-href="http://mosonmagyarovar.hu/" href="#" tabindex="-1">Mosonmagyaróvár</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-104" id="menu-item-104"><a data-review-original-href="http://rajka.hu/" href="#" tabindex="-1">Rajka</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-441" id="menu-item-441"><a data-review-original-href="https://www.nyugdijban.sk" href="#" tabindex="-1">Nyugdíjban</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1252" id="menu-item-1252"><a data-review-original-href="https://televizio.sk" href="#" tabindex="-1">Televizio.sk</a></li>
+</ul></div> </nav>
+</div>
+<div class="mt-social-search-wrapper">
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="mt-header-ticker-wrapper">
+<div class="mt-container">
+<div class="mt-ticker-label"><div class="ticker-spinner"><div class="ticker-bounce1"></div><div class="ticker-bounce2"></div></div>Headline</div> <div class="ticker-posts-wrap">
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+<img alt="" class="attachment-thumbnail size-thumbnail wp-post-image" decoding="async" height="150" sizes="(max-width: 150px) 100vw, 150px" width="150"/> </div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2019/10/lakossagi-valasztasi-forum-feketeerdon/" href="#" tabindex="-1">Lakossági választási fórum Feketeerdőn</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+<img alt="" class="attachment-thumbnail size-thumbnail wp-post-image" decoding="async" height="150" width="150"/> </div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/07/dni-obce-rajka-2026-dva-dni-plne-festivalovej-atmosfery/" href="#" tabindex="-1">Dni obce Rajka 2026 – Dva dni plné festivalovej atmosféry</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+<img alt="" class="attachment-thumbnail size-thumbnail wp-post-image" decoding="async" height="150" width="150"/> </div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/07/falunap-2026-ketnapos-fesztivalhangulat-rajkan/" href="#" tabindex="-1">Falunap 2026 – Kétnapos fesztiválhangulat Rajkán</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+</div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/06/versenykepes-jarasok-program/" href="#" tabindex="-1">VERSENYKÉPES JÁRÁSOK PROGRAM</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+<img alt="" class="attachment-thumbnail size-thumbnail wp-post-image" decoding="async" height="150" width="150"/> </div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/05/den-ludovych-tradicii-folklorny-festival-v-tomasikove/" href="#" tabindex="-1">Deň ľudových tradícií – Folklórny festival v Tomášikove</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+</div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/05/meghivo-2026-majus-27-kepviselo-testuleti-nyilt-ules/" href="#" tabindex="-1">Meghívó – 2026. május 27. – Képviselő-testületi nyílt ülés</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+</div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/05/hirdetmeny-eves-statisztikai-osszegzes/" href="#" tabindex="-1">Hirdetmény – Éves statisztikai összegzés</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+</div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/04/meghivo-2026-aprilis-28-kepviselo-testuleti-nyilt-ules/" href="#" tabindex="-1">Meghívó – 2026. április 28. – Képviselő-testületi nyílt ülés</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+</div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/04/bolcsodei-beiratkozas-2026/" href="#" tabindex="-1">Bölcsődei Beiratkozás 2026</a>
+</div>
+</div>
+</div>
+<div class="ticker-post-thumb-wrap">
+<div class="ticker-post-thumb">
+</div>
+<div class="ticker-post-title-wrap">
+<div class="ticker-post-title">
+<a data-review-original-href="https://info-flow.hu/2026/04/adas-veteli-szerzodesek/" href="#" tabindex="-1">Adás-vételi szerződések</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-custom-page-header">
+<div class="mt-container inner-page-header mt-clearfix">
+<h1 class="page-title">Orvosi Rendelő</h1>
+<nav class="mt-breadcrumb" id="breadcrumb">
+<div aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb" role="navigation"><div class="mt-container"><ul class="trail-items" itemscope="" itemtype="http://schema.org/BreadcrumbList"><meta content="5" name="numberOfItems"/><meta content="Ascending" name="itemListOrder"/><li class="trail-item trail-begin" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a data-review-original-href="https://info-flow.hu/" href="#" itemprop="item" rel="home" tabindex="-1"><span itemprop="name">Home</span></a><meta content="1" itemprop="position"/></li><li class="trail-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a data-review-original-href="https://info-flow.hu/intezmenyek/" href="#" itemprop="item" tabindex="-1"><span itemprop="name">Intézmények</span></a><meta content="2" itemprop="position"/></li><li class="trail-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a data-review-original-href="https://info-flow.hu/intezmenyek/egeszsegugy/" href="#" itemprop="item" tabindex="-1"><span itemprop="name">Egészségügy</span></a><meta content="3" itemprop="position"/></li><li class="trail-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a data-review-original-href="https://info-flow.hu/intezmenyek/egeszsegugy/bezenye/" href="#" itemprop="item" tabindex="-1"><span itemprop="name">Hegyeshalom</span></a><meta content="4" itemprop="position"/></li><li class="trail-item trail-end" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name"><span itemprop="name">Orvosi Rendelő</span></span><meta content="5" itemprop="position"/></li></ul></div></div> </nav>
+</div>
+</div>
+<div class="site-content" id="content">
+<div class="mt-container">
+<div class="mt-page-content-wrapper">
+<div class="content-area" id="primary">
+<main class="site-main" id="main">
+<article class="post-529 page type-page status-publish hentry" id="post-529">
+<div class="entry-content">
+<h3><strong>I. Körzet házorvosi szolgálat:</strong></h3>
+<p><strong>Dr. Cseh Sándor</strong>, Hegyeshalom Fő utca 168.<br/>Telefon: 220-050 vagy 20/319-11-51</p>
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 200px;"><strong>Hétfő:</strong></td>
+<td style="width: 380px;"><strong>7:30-10:30</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Kedd:</strong></td>
+<td style="width: 380px;"><strong>12:30-16:00</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Szerda:</strong></td>
+<td style="width: 380px;"><strong>7:30-10:30</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Hétfőn-kedd-szerda-csütörtök: 7-16 óráig és pénteken 7-13 óráig Dr. Cseh Sándor is hívható.</p>
+<p>A fenti időn kívül Központi Ügyelet: 96/217-712</p>
+<h3><strong>II. Körzet házorvosi szolgálat:</strong></h3>
+<p><strong>Dr. Sándor Andrea</strong>, Hegyeshalom Pozsonyi utca 2.</p>
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 200px;"><strong>Hétfő:</strong></td>
+<td style="width: 380px;"><strong>12:30-16:00</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Kedd:</strong></td>
+<td style="width: 380px;"><strong>8:00-11:30</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Szerda:</strong></td>
+<td style="width: 380px;"><strong>12:30-16:00</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Csütörtök:</strong></td>
+<td style="width: 380px;"><strong>7:30-11:00 (vércukor vizsg.: 7:30 – 9:00)</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Péntek:</strong></td>
+<td style="width: 380px;"><strong>8:00-11:00</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Telefon: 220-091 vagy 30/9838-116<br/>Központi Ügyelet: 96/217-712</p>
+<h3><strong>Gyermekorvosi rendelés:</strong></h3>
+<p>Dr. Smodics Katalin, Házi Gyermekorvosi Szolgálat, Hegyeshalom Fő utca 168.</p>
+<table border="0">
+<tbody>
+<tr>
+<td style="width: 200px;"><strong>Hétfő:</strong></td>
+<td style="width: 380px;"><strong>9-12 óráig</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Kedd:</strong></td>
+<td style="width: 380px;"><strong>14-17 óráig</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Szerda:</strong></td>
+<td style="width: 380px;"><strong>10-12 óráig</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Csütörtök:</strong></td>
+<td style="width: 380px;"><strong>9-12 óráig</strong></td>
+</tr>
+<tr>
+<td style="width: 200px;"><strong>Péntek:</strong></td>
+<td style="width: 380px;"><strong>10-12 óráig</strong></td>
+</tr>
+</tbody>
+</table>
+<p>ÜGYELET:  96/217-712</p>
+<h3><strong>I. körzet Védőnői Szolgálat</strong></h3>
+<p>Samu Józsefné, Hegyeshalom Pozsonyi u. 2.</p>
+<h3><strong>II. körzet Védőnői Szolgálat</strong></h3>
+<p>Magyarné Pócza Mária, Hegyeshalom Pozsonyi u. 2.</p>
+<h3><strong>Orvosi ügyelet:</strong></h3>
+<p>Mentőállomással szemben, Mosonmagyaróvár Csaba utca</p>
+<div></div>
+<mappress-map center="47.9151333463,17.158026122" class="mapp-layout aligndefault mapp-align-default" height="400px" id="mapp0" layout="left" mapid="30" maptypeid="roadmap" name="mapp0" oid="529" otype="post" style="width: 580px;height: 400px;" width="580px" zoom="16">
+<poi address="9222 Hegyeshalom, Pozsonyi utca 2, Magyarország" point="47.9157867,17.1550199" props="[]" title="Dr. Sándor Andrea" viewport="47.9144377197,17.1536709197,47.9171356803,17.1563688803">
+<p>Pozsonyi utca 2,</p><p>9222 Hegyeshalom</p><p>Magyarország</p>
+</poi>
+<poi address="9222 Hegyeshalom, Fő utca 168, Magyarország" point="47.9148565,17.1548182" props="[]" title="Dr. Cseh Sándor" viewport="47.9135075197,17.1534692197,47.9162054803,17.1561671803">
+<p>Fő utca 168,</p><p>9222 Hegyeshalom</p><p>Magyarország</p>
+</poi>
+</mappress-map>
+<p> </p>
+</div>
+</article>
+<div class="comments-area" id="comments">
+<div class="comment-respond" id="respond">
+<h3 class="comment-reply-title" id="reply-title">Vélemény, hozzászólás? <small><a data-review-original-href="/intezmenyek/egeszsegugy/bezenye/orvosi-rendelo/#respond" href="#" id="cancel-comment-reply-link" rel="nofollow" style="display:none;" tabindex="-1">Válasz megszakítása</a></small></h3><div data-review-disabled-form="true"><p class="comment-notes"><span id="email-notes">Az e-mail címet nem tesszük közzé.</span> <span class="required-field-message">A kötelező mezőket <span class="required">*</span> karakterrel jelöltük</span></p><p class="comment-form-comment"><label for="comment">Hozzászólás <span class="required">*</span></label> <textarea cols="45" id="comment" maxlength="65525" name="comment" required="" rows="8"></textarea></p><p class="comment-form-author"><label for="author">Név <span class="required">*</span></label> <input autocomplete="name" id="author" maxlength="245" name="author" required="" size="30" type="text" value=""/></p>
+<p class="comment-form-email"><label for="email">E-mail cím <span class="required">*</span></label> <input aria-describedby="email-notes" autocomplete="email" id="email" maxlength="100" name="email" required="" size="30" type="email" value=""/></p>
+<p class="comment-form-url"><label for="url">Honlap</label> <input autocomplete="url" id="url" maxlength="200" name="url" size="30" type="url" value=""/></p>
+<p class="form-submit"><input class="submit" id="submit" name="submit" type="submit" value="Hozzászólás küldése"/> <input id="comment_post_ID" name="comment_post_ID" type="hidden" value="529"/>
+<input id="comment_parent" name="comment_parent" type="hidden" value="0"/>
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" type="hidden" value="1dd6632ea5"/></p><p class="akismet-fields-container" data-prefix="ak_" style="display: none !important;"><label>Δ<textarea cols="45" maxlength="100" name="ak_hp_textarea" rows="8"></textarea></label><input id="ak_js_1" name="ak_js" type="hidden" value="11"/>
+</p></div> </div>
+<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a data-review-original-href="https://akismet.com/privacy/" href="#" rel="nofollow noopener" tabindex="-1" target="_blank">Learn how your comment data is processed.</a></p>
+</div> </main>
+</div>
+<aside class="widget-area" id="secondary">
+<section class="widget widget_block widget_search" id="block-3"><div data-review-disabled-form="true"><label class="wp-block-search__label" for="wp-block-search__input-1">Keresés</label><div class="wp-block-search__inside-wrapper"><input class="wp-block-search__input" id="wp-block-search__input-1" name="s" placeholder="" required="" type="search" value=""/><button aria-label="Keresés" class="wp-block-search__button wp-element-button" type="submit">Keresés</button></div></div></section><section class="widget widget_recent_comments" id="recent-comments-2"><h4 class="widget-title">Hozzászólások</h4><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Petra Reindl</span> - <a data-review-original-href="https://info-flow.hu/intezmenyek/samosprava/rajka/#comment-137" href="#" tabindex="-1">Rajka</a></li><li class="recentcomments"><span class="comment-author-link">Petra Reindl</span> - <a data-review-original-href="https://info-flow.hu/intezmenyek/samosprava/rajka/#comment-138" href="#" tabindex="-1">Rajka</a></li><li class="recentcomments"><span class="comment-author-link">Sonja</span> - <a data-review-original-href="https://info-flow.hu/2013/05/la-grande-pizzeria-es-etterem/#comment-5" href="#" tabindex="-1">La Grande Pizzeria és Étterem</a></li><li class="recentcomments"><span class="comment-author-link">Papp</span> - <a data-review-original-href="https://info-flow.hu/2013/11/ellenorzik-a-parkolast-rajkan/#comment-4" href="#" tabindex="-1">Ellenőrzik a parkolást Rajkán</a></li><li class="recentcomments"><span class="comment-author-link"><a class="url" data-review-original-href="http://microgramma.eu" href="#" rel="ugc external nofollow" tabindex="-1">BuMó</a></span> - <a data-review-original-href="https://info-flow.hu/2013/05/hello-vilag/#comment-1" href="#" tabindex="-1">Indul az oldal!</a></li></ul></section><section class="widget widget_archive" id="archives-2"><h4 class="widget-title">Archives</h4>
+<ul>
+<li><a data-review-original-href="https://info-flow.hu/2026/07/" href="#" tabindex="-1">2026. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2026/06/" href="#" tabindex="-1">2026. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2026/05/" href="#" tabindex="-1">2026. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2026/04/" href="#" tabindex="-1">2026. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2026/02/" href="#" tabindex="-1">2026. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2026/01/" href="#" tabindex="-1">2026. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/12/" href="#" tabindex="-1">2025. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/11/" href="#" tabindex="-1">2025. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/09/" href="#" tabindex="-1">2025. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/07/" href="#" tabindex="-1">2025. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/06/" href="#" tabindex="-1">2025. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/05/" href="#" tabindex="-1">2025. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/04/" href="#" tabindex="-1">2025. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/03/" href="#" tabindex="-1">2025. március</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/02/" href="#" tabindex="-1">2025. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2025/01/" href="#" tabindex="-1">2025. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/11/" href="#" tabindex="-1">2024. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/10/" href="#" tabindex="-1">2024. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/09/" href="#" tabindex="-1">2024. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/06/" href="#" tabindex="-1">2024. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/05/" href="#" tabindex="-1">2024. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/04/" href="#" tabindex="-1">2024. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/03/" href="#" tabindex="-1">2024. március</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2024/01/" href="#" tabindex="-1">2024. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/12/" href="#" tabindex="-1">2023. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/11/" href="#" tabindex="-1">2023. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/10/" href="#" tabindex="-1">2023. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/09/" href="#" tabindex="-1">2023. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/07/" href="#" tabindex="-1">2023. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/06/" href="#" tabindex="-1">2023. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/05/" href="#" tabindex="-1">2023. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/04/" href="#" tabindex="-1">2023. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/03/" href="#" tabindex="-1">2023. március</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/02/" href="#" tabindex="-1">2023. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2023/01/" href="#" tabindex="-1">2023. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/12/" href="#" tabindex="-1">2022. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/11/" href="#" tabindex="-1">2022. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/10/" href="#" tabindex="-1">2022. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/09/" href="#" tabindex="-1">2022. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/08/" href="#" tabindex="-1">2022. augusztus</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/07/" href="#" tabindex="-1">2022. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/06/" href="#" tabindex="-1">2022. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/05/" href="#" tabindex="-1">2022. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/04/" href="#" tabindex="-1">2022. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/03/" href="#" tabindex="-1">2022. március</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/02/" href="#" tabindex="-1">2022. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2022/01/" href="#" tabindex="-1">2022. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/12/" href="#" tabindex="-1">2021. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/11/" href="#" tabindex="-1">2021. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/10/" href="#" tabindex="-1">2021. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/09/" href="#" tabindex="-1">2021. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/08/" href="#" tabindex="-1">2021. augusztus</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/07/" href="#" tabindex="-1">2021. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/06/" href="#" tabindex="-1">2021. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/05/" href="#" tabindex="-1">2021. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/04/" href="#" tabindex="-1">2021. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/03/" href="#" tabindex="-1">2021. március</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/02/" href="#" tabindex="-1">2021. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2021/01/" href="#" tabindex="-1">2021. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2020/12/" href="#" tabindex="-1">2020. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2020/11/" href="#" tabindex="-1">2020. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2020/10/" href="#" tabindex="-1">2020. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2020/09/" href="#" tabindex="-1">2020. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2020/07/" href="#" tabindex="-1">2020. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2020/05/" href="#" tabindex="-1">2020. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2020/04/" href="#" tabindex="-1">2020. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2019/12/" href="#" tabindex="-1">2019. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2019/10/" href="#" tabindex="-1">2019. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2018/12/" href="#" tabindex="-1">2018. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2018/10/" href="#" tabindex="-1">2018. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2018/09/" href="#" tabindex="-1">2018. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2017/02/" href="#" tabindex="-1">2017. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/09/" href="#" tabindex="-1">2016. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/08/" href="#" tabindex="-1">2016. augusztus</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/07/" href="#" tabindex="-1">2016. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/06/" href="#" tabindex="-1">2016. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/05/" href="#" tabindex="-1">2016. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/04/" href="#" tabindex="-1">2016. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/03/" href="#" tabindex="-1">2016. március</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/02/" href="#" tabindex="-1">2016. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2016/01/" href="#" tabindex="-1">2016. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2015/12/" href="#" tabindex="-1">2015. december</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2015/11/" href="#" tabindex="-1">2015. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2015/10/" href="#" tabindex="-1">2015. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2015/09/" href="#" tabindex="-1">2015. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2015/08/" href="#" tabindex="-1">2015. augusztus</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/09/" href="#" tabindex="-1">2014. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/08/" href="#" tabindex="-1">2014. augusztus</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/07/" href="#" tabindex="-1">2014. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/06/" href="#" tabindex="-1">2014. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/05/" href="#" tabindex="-1">2014. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/04/" href="#" tabindex="-1">2014. április</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/03/" href="#" tabindex="-1">2014. március</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/02/" href="#" tabindex="-1">2014. február</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2014/01/" href="#" tabindex="-1">2014. január</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/11/" href="#" tabindex="-1">2013. november</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/10/" href="#" tabindex="-1">2013. október</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/09/" href="#" tabindex="-1">2013. szeptember</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/08/" href="#" tabindex="-1">2013. augusztus</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/07/" href="#" tabindex="-1">2013. július</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/06/" href="#" tabindex="-1">2013. június</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/05/" href="#" tabindex="-1">2013. május</a></li>
+<li><a data-review-original-href="https://info-flow.hu/2013/01/" href="#" tabindex="-1">2013. január</a></li>
+</ul>
+</section><section class="widget widget_media_image" id="media_image-2"><a data-review-original-href="https://www.nyugdijban.sk" href="#" tabindex="-1"><img alt="" class="image" decoding="async" height="90" loading="lazy" width="728"/></a></section>
+<section class="widget widget_recent_entries" id="recent-posts-2">
+<h4 class="widget-title">Bejegyzések</h4>
+<ul>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/07/dni-obce-rajka-2026-dva-dni-plne-festivalovej-atmosfery/" href="#" tabindex="-1">Dni obce Rajka 2026 – Dva dni plné festivalovej atmosféry</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/07/falunap-2026-ketnapos-fesztivalhangulat-rajkan/" href="#" tabindex="-1">Falunap 2026 – Kétnapos fesztiválhangulat Rajkán</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/06/versenykepes-jarasok-program/" href="#" tabindex="-1">VERSENYKÉPES JÁRÁSOK PROGRAM</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/05/den-ludovych-tradicii-folklorny-festival-v-tomasikove/" href="#" tabindex="-1">Deň ľudových tradícií – Folklórny festival v Tomášikove</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/05/meghivo-2026-majus-27-kepviselo-testuleti-nyilt-ules/" href="#" tabindex="-1">Meghívó – 2026. május 27. – Képviselő-testületi nyílt ülés</a>
+</li>
+</ul>
+</section></aside>
+</div>
+</div> 
+</div>
+<footer class="site-footer" id="colophon">
+<div class="footer-widgets-wrapper footer-column-four mt-clearfix" id="top-footer">
+<div class="mt-container">
+<div class="footer-widgets-area mt-clearfix">
+<div class="mt-footer-widget-wrapper mt-column-wrapper mt-clearfix">
+<div class="mt-footer-widget">
+<section class="widget widget_super_rss_reader" id="super_rss_reader-3"><h4 class="widget-title">Magyar Interaktív Televízió</h4>
+<div class="super-rss-reader-widget"><div class="srr-main"><div class="srr-wrap srr-style-smodern srr-vticker" data-id="srr-tab-331" data-speed="4000" data-visible="5"><div class="srr-inner"><div class="srr-item"><div class="srr-item-in srr-clearfix"><div class="srr-title"><a data-review-original-href="https://www.televizio.sk/2026/07/a-felejthetetlen-ginger-rogers/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=a-felejthetetlen-ginger-rogers" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="A felejthetetlen Ginger Rogers">A felejthetetlen Ginger Rogers</a></div><div class="srr-meta"><time class="srr-date" title="16 July 2026, 10:00 am UTC">16 július 2026</time></div><a class="srr-thumb srr-thumb-align_left" data-review-original-href="https://www.televizio.sk/2026/07/a-felejthetetlen-ginger-rogers/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=a-felejthetetlen-ginger-rogers" href="#" rel="nofollow noopener noreferrer" style="width:256px;height:256px;" tabindex="-1" target="_blank"><img align="left" alt="A felejthetetlen Ginger Rogers" loading="lazy"/></a><div class="srr-summary srr-clearfix"><p>Ginger Rogers Oscar-díjas amerikai színésznő, táncosnő és énekesnő, Fred Astaire legendás táncpartnere 115 éve született. <a class="srr-read-more" data-review-original-href="https://www.televizio.sk/2026/07/a-felejthetetlen-ginger-rogers/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=a-felejthetetlen-ginger-rogers" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Read more">[...]</a></p></div></div></div><div class="srr-item srr-stripe"><div class="srr-item-in srr-clearfix"><div class="srr-title"><a data-review-original-href="https://www.televizio.sk/2026/07/simor-otto-emlekere-kiallitas-nyilott/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=simor-otto-emlekere-kiallitas-nyilott" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Simor Ottó emlékére kiállítás nyílott">Simor Ottó emlékére kiállítás nyílott</a></div><div class="srr-meta"><time class="srr-date" title="16 July 2026, 6:00 am UTC">16 július 2026</time></div><a class="srr-thumb srr-thumb-align_left" data-review-original-href="https://www.televizio.sk/2026/07/simor-otto-emlekere-kiallitas-nyilott/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=simor-otto-emlekere-kiallitas-nyilott" href="#" rel="nofollow noopener noreferrer" style="width:256px;height:256px;" tabindex="-1" target="_blank"><img align="left" alt="Simor Ottó emlékére kiállítás nyílott" loading="lazy"/></a><div class="srr-summary srr-clearfix"><p>100 éve született Simor Ottó Jászai Mari-díjas magyar színész, érdemes művész, a debreceni Csokonai Színház és <a class="srr-read-more" data-review-original-href="https://www.televizio.sk/2026/07/simor-otto-emlekere-kiallitas-nyilott/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=simor-otto-emlekere-kiallitas-nyilott" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Read more">[...]</a></p></div></div></div><div class="srr-item"><div class="srr-item-in srr-clearfix"><div class="srr-title"><a data-review-original-href="https://www.televizio.sk/2026/07/rembrandt-es-kora/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=rembrandt-es-kora" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Rembrandt és kora">Rembrandt és kora</a></div><div class="srr-meta"><time class="srr-date" title="15 July 2026, 10:00 am UTC">15 július 2026</time></div><a class="srr-thumb srr-thumb-align_left" data-review-original-href="https://www.televizio.sk/2026/07/rembrandt-es-kora/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=rembrandt-es-kora" href="#" rel="nofollow noopener noreferrer" style="width:256px;height:256px;" tabindex="-1" target="_blank"><img align="left" alt="Rembrandt és kora" loading="lazy"/></a><div class="srr-summary srr-clearfix"><p>420 éve született Rembrandt (eredeti nevén Rembrandt Harmenszoon van Rijn) (Leiden, 1606. július 15. – Amszterdam, <a class="srr-read-more" data-review-original-href="https://www.televizio.sk/2026/07/rembrandt-es-kora/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=rembrandt-es-kora" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Read more">[...]</a></p></div></div></div><div class="srr-item srr-stripe"><div class="srr-item-in srr-clearfix"><div class="srr-title"><a data-review-original-href="https://www.televizio.sk/2026/07/kincskeresok-xx-palenik-lilien-stano-leila-a-kappel-haztol-a-tetves-dombig-ersekujvariak-sasvaron/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=kincskeresok-xx-palenik-lilien-stano-leila-a-kappel-haztol-a-tetves-dombig-ersekujvariak-sasvaron" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Kincskeresők XX. – Páleník Lilien, Staňo Leila – A Kappel-háztól a Tetves-dombig (Érsekújváriak Sasváron)">Kincskeresők XX. – Páleník Lilien, Staňo Leila – A Kappel-háztól a Tetves-dombig (Érsekújváriak Sasváron)</a></div><div class="srr-meta"><time class="srr-date" title="15 July 2026, 6:00 am UTC">15 július 2026</time></div><a class="srr-thumb srr-thumb-align_left" data-review-original-href="https://www.televizio.sk/2026/07/kincskeresok-xx-palenik-lilien-stano-leila-a-kappel-haztol-a-tetves-dombig-ersekujvariak-sasvaron/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=kincskeresok-xx-palenik-lilien-stano-leila-a-kappel-haztol-a-tetves-dombig-ersekujvariak-sasvaron" href="#" rel="nofollow noopener noreferrer" style="width:256px;height:256px;" tabindex="-1" target="_blank"><img align="left" alt="Kincskeresők XX. – Páleník Lilien, Staňo Leila – A Kappel-háztól a Tetves-dombig (Érsekújváriak Sasváron)" loading="lazy"/></a><div class="srr-summary srr-clearfix"><p>Páleník Lilien és Staňo Leila, a érsekújvári Czuczor Gergely Alapiskola kilencedikes diákjai, A Kappel-háztól a <a class="srr-read-more" data-review-original-href="https://www.televizio.sk/2026/07/kincskeresok-xx-palenik-lilien-stano-leila-a-kappel-haztol-a-tetves-dombig-ersekujvariak-sasvaron/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=kincskeresok-xx-palenik-lilien-stano-leila-a-kappel-haztol-a-tetves-dombig-ersekujvariak-sasvaron" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Read more">[...]</a></p></div></div></div></div></div></div></div></section><section class="widget widget_nav_menu" id="nav_menu-5"><h4 class="widget-title">Támogatók</h4><div class="menu-tamogatok-container"><ul class="menu" id="menu-tamogatok"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1236" id="menu-item-1236"><a data-review-original-href="http://husk-cbc.eu/" href="#" tabindex="-1">www.husk-cbc.eu</a></li>
+</ul></div></section> </div>
+<div class="mt-footer-widget">
+<section class="widget widget_recent_entries" id="recent-posts-3">
+<h4 class="widget-title">Recent Posts</h4>
+<ul>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/07/dni-obce-rajka-2026-dva-dni-plne-festivalovej-atmosfery/" href="#" tabindex="-1">Dni obce Rajka 2026 – Dva dni plné festivalovej atmosféry</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/07/falunap-2026-ketnapos-fesztivalhangulat-rajkan/" href="#" tabindex="-1">Falunap 2026 – Kétnapos fesztiválhangulat Rajkán</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/06/versenykepes-jarasok-program/" href="#" tabindex="-1">VERSENYKÉPES JÁRÁSOK PROGRAM</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/05/den-ludovych-tradicii-folklorny-festival-v-tomasikove/" href="#" tabindex="-1">Deň ľudových tradícií – Folklórny festival v Tomášikove</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/05/meghivo-2026-majus-27-kepviselo-testuleti-nyilt-ules/" href="#" tabindex="-1">Meghívó – 2026. május 27. – Képviselő-testületi nyílt ülés</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/05/hirdetmeny-eves-statisztikai-osszegzes/" href="#" tabindex="-1">Hirdetmény – Éves statisztikai összegzés</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/04/meghivo-2026-aprilis-28-kepviselo-testuleti-nyilt-ules/" href="#" tabindex="-1">Meghívó – 2026. április 28. – Képviselő-testületi nyílt ülés</a>
+</li>
+<li>
+<a data-review-original-href="https://info-flow.hu/2026/04/bolcsodei-beiratkozas-2026/" href="#" tabindex="-1">Bölcsődei Beiratkozás 2026</a>
+</li>
+</ul>
+</section> </div>
+<div class="mt-footer-widget">
+<section class="widget widget_categories" id="categories-3"><h4 class="widget-title">Categories</h4>
+<ul>
+<li class="cat-item cat-item-40"><a data-review-original-href="https://info-flow.hu/category/cestovny-ruch/" href="#" tabindex="-1">Cestovný ruch</a>
+</li>
+<li class="cat-item cat-item-7"><a data-review-original-href="https://info-flow.hu/category/civil-elet/" href="#" tabindex="-1">Civil élet</a>
+</li>
+<li class="cat-item cat-item-9"><a data-review-original-href="https://info-flow.hu/category/dunakiliti/" href="#" tabindex="-1">Dunakiliti</a>
+</li>
+<li class="cat-item cat-item-83"><a data-review-original-href="https://info-flow.hu/category/dunakiliti-sk/" href="#" tabindex="-1">Dunakiliti @sk</a>
+</li>
+<li class="cat-item cat-item-24"><a data-review-original-href="https://info-flow.hu/category/dunasziget/" href="#" tabindex="-1">Dunasziget</a>
+</li>
+<li class="cat-item cat-item-53"><a data-review-original-href="https://info-flow.hu/category/dunasziget-2/" href="#" tabindex="-1">Dunasziget @sk</a>
+</li>
+<li class="cat-item cat-item-1"><a data-review-original-href="https://info-flow.hu/category/egyeb/" href="#" tabindex="-1">Egyéb</a>
+</li>
+<li class="cat-item cat-item-12"><a data-review-original-href="https://info-flow.hu/category/feketeerdo/" href="#" tabindex="-1">Feketeerdő</a>
+</li>
+<li class="cat-item cat-item-31"><a data-review-original-href="https://info-flow.hu/category/feketeerdo-sk/" href="#" tabindex="-1">Feketeerdő @sk</a>
+</li>
+<li class="cat-item cat-item-6"><a data-review-original-href="https://info-flow.hu/category/gazdasag/" href="#" tabindex="-1">Gazdaság</a>
+</li>
+<li class="cat-item cat-item-13"><a data-review-original-href="https://info-flow.hu/category/halaszi/" href="#" tabindex="-1">Halászi</a>
+</li>
+<li class="cat-item cat-item-33"><a data-review-original-href="https://info-flow.hu/category/halaszi-sk/" href="#" tabindex="-1">Halászi @sk</a>
+</li>
+<li class="cat-item cat-item-42"><a data-review-original-href="https://info-flow.hu/category/hegyeshalom/" href="#" tabindex="-1">Hegyeshalom</a>
+</li>
+<li class="cat-item cat-item-43"><a data-review-original-href="https://info-flow.hu/category/hegyeshalom-sk/" href="#" tabindex="-1">Hegyeshalom @sk</a>
+</li>
+<li class="cat-item cat-item-27"><a data-review-original-href="https://info-flow.hu/category/hospodarstvo/" href="#" tabindex="-1">Hospodárstvo</a>
+</li>
+<li class="cat-item cat-item-25"><a data-review-original-href="https://info-flow.hu/category/ine-sk/" href="#" tabindex="-1">Iné @sk</a>
+</li>
+<li class="cat-item cat-item-107"><a data-review-original-href="https://info-flow.hu/category/kozelet/" href="#" tabindex="-1">Közélet</a>
+</li>
+<li class="cat-item cat-item-11"><a data-review-original-href="https://info-flow.hu/category/mosonmagyarovar/" href="#" tabindex="-1">Mosonmagyaróvár</a>
+</li>
+<li class="cat-item cat-item-29"><a data-review-original-href="https://info-flow.hu/category/mosonmagyarovar-sk/" href="#" tabindex="-1">Mosonmagyaróvár @sk</a>
+</li>
+<li class="cat-item cat-item-26"><a data-review-original-href="https://info-flow.hu/category/obciansky-zivot/" href="#" tabindex="-1">Občiansky život</a>
+</li>
+<li class="cat-item cat-item-3"><a data-review-original-href="https://info-flow.hu/category/oktatas/" href="#" tabindex="-1">Oktatás</a>
+</li>
+<li class="cat-item cat-item-10"><a data-review-original-href="https://info-flow.hu/category/rajka/" href="#" tabindex="-1">Rajka</a>
+</li>
+<li class="cat-item cat-item-30"><a data-review-original-href="https://info-flow.hu/category/rajka-sk/" href="#" tabindex="-1">Rajka @sk</a>
+</li>
+<li class="cat-item cat-item-36"><a data-review-original-href="https://info-flow.hu/category/skolstvo/" href="#" tabindex="-1">Školstvo</a>
+</li>
+<li class="cat-item cat-item-5"><a data-review-original-href="https://info-flow.hu/category/szabadido/" href="#" tabindex="-1">Szabadidő</a>
+</li>
+<li class="cat-item cat-item-4"><a data-review-original-href="https://info-flow.hu/category/turizmus/" href="#" tabindex="-1">Turizmus</a>
+</li>
+<li class="cat-item cat-item-2"><a data-review-original-href="https://info-flow.hu/category/ugyintezes/" href="#" tabindex="-1">Ügyintézés</a>
+</li>
+<li class="cat-item cat-item-37"><a data-review-original-href="https://info-flow.hu/category/urady/" href="#" tabindex="-1">Úrady</a>
+</li>
+<li class="cat-item cat-item-28"><a data-review-original-href="https://info-flow.hu/category/volny-cas/" href="#" tabindex="-1">Voľný čas</a>
+</li>
+</ul>
+</section> </div>
+<div class="mt-footer-widget">
+<section class="widget widget_tag_cloud" id="tag_cloud-3"><h4 class="widget-title">Címkék</h4><div class="tagcloud"><a aria-label="1965. évfolyam (1 elem)" class="tag-cloud-link tag-link-135 tag-link-position-1" data-review-original-href="https://info-flow.hu/tag/1965-evfolyam/" href="#" style="font-size: 8pt;" tabindex="-1">1965. évfolyam</a>
+<a aria-label="A műlovarnő (1 elem)" class="tag-cloud-link tag-link-130 tag-link-position-2" data-review-original-href="https://info-flow.hu/tag/a-mulovarno/" href="#" style="font-size: 8pt;" tabindex="-1">A műlovarnő</a>
+<a aria-label="ANIMA Társaság (1 elem)" class="tag-cloud-link tag-link-132 tag-link-position-3" data-review-original-href="https://info-flow.hu/tag/anima-tarsasag/" href="#" style="font-size: 8pt;" tabindex="-1">ANIMA Társaság</a>
+<a aria-label="ARDAMICA ZORÁN (1 elem)" class="tag-cloud-link tag-link-143 tag-link-position-4" data-review-original-href="https://info-flow.hu/tag/ardamica-zoran/" href="#" style="font-size: 8pt;" tabindex="-1">ARDAMICA ZORÁN</a>
+<a aria-label="BARÁTNŐ (1 elem)" class="tag-cloud-link tag-link-145 tag-link-position-5" data-review-original-href="https://info-flow.hu/tag/baratno/" href="#" style="font-size: 8pt;" tabindex="-1">BARÁTNŐ</a>
+<a aria-label="beosztás (1 elem)" class="tag-cloud-link tag-link-121 tag-link-position-6" data-review-original-href="https://info-flow.hu/tag/beosztas/" href="#" style="font-size: 8pt;" tabindex="-1">beosztás</a>
+<a aria-label="Bezenye (2 elem)" class="tag-cloud-link tag-link-14 tag-link-position-7" data-review-original-href="https://info-flow.hu/tag/bezenye/" href="#" style="font-size: 9.92366412214pt;" tabindex="-1">Bezenye</a>
+<a aria-label="Dolgozó Nő (2 elem)" class="tag-cloud-link tag-link-136 tag-link-position-8" data-review-original-href="https://info-flow.hu/tag/dolgozo-no/" href="#" style="font-size: 9.92366412214pt;" tabindex="-1">Dolgozó Nő</a>
+<a aria-label="Dunakiliti (8 elem)" class="tag-cloud-link tag-link-84 tag-link-position-9" data-review-original-href="https://info-flow.hu/tag/dunakiliti/" href="#" style="font-size: 14.9465648855pt;" tabindex="-1">Dunakiliti</a>
+<a aria-label="Dunakiliti @sk (2 elem)" class="tag-cloud-link tag-link-35 tag-link-position-10" data-review-original-href="https://info-flow.hu/tag/dunakiliti-sk/" href="#" style="font-size: 9.92366412214pt;" tabindex="-1">Dunakiliti @sk</a>
+<a aria-label="Dunasziget (4 elem)" class="tag-cloud-link tag-link-98 tag-link-position-11" data-review-original-href="https://info-flow.hu/tag/dunasziget/" href="#" style="font-size: 12.2748091603pt;" tabindex="-1">Dunasziget</a>
+<a aria-label="e-book (1 elem)" class="tag-cloud-link tag-link-131 tag-link-position-12" data-review-original-href="https://info-flow.hu/tag/e-book/" href="#" style="font-size: 8pt;" tabindex="-1">e-book</a>
+<a aria-label="eon-aramszunet (1 elem)" class="tag-cloud-link tag-link-129 tag-link-position-13" data-review-original-href="https://info-flow.hu/tag/eon-aramszunet/" href="#" style="font-size: 8pt;" tabindex="-1">eon-aramszunet</a>
+<a aria-label="falunap (1 elem)" class="tag-cloud-link tag-link-148 tag-link-position-14" data-review-original-href="https://info-flow.hu/tag/falunap/" href="#" style="font-size: 8pt;" tabindex="-1">falunap</a>
+<a aria-label="Feketeerdő (3 elem)" class="tag-cloud-link tag-link-103 tag-link-position-15" data-review-original-href="https://info-flow.hu/tag/feketeerdo/" href="#" style="font-size: 11.2061068702pt;" tabindex="-1">Feketeerdő</a>
+<a aria-label="https://microgramma.eu/ (1 elem)" class="tag-cloud-link tag-link-137 tag-link-position-16" data-review-original-href="https://info-flow.hu/tag/https-microgramma-eu/" href="#" style="font-size: 8pt;" tabindex="-1">https://microgramma.eu/</a>
+<a aria-label="hírek (23 elem)" class="tag-cloud-link tag-link-15 tag-link-position-17" data-review-original-href="https://info-flow.hu/tag/hirek/" href="#" style="font-size: 19.5419847328pt;" tabindex="-1">hírek</a>
+<a aria-label="ilegálny odpad (1 elem)" class="tag-cloud-link tag-link-139 tag-link-position-18" data-review-original-href="https://info-flow.hu/tag/ilegalny-odpad/" href="#" style="font-size: 8pt;" tabindex="-1">ilegálny odpad</a>
+<a aria-label="kiemelt (40 elem)" class="tag-cloud-link tag-link-16 tag-link-position-19" data-review-original-href="https://info-flow.hu/tag/kiemelt/" href="#" style="font-size: 22pt;" tabindex="-1">kiemelt</a>
+<a aria-label="Kisalföldi Hulladékgazdálkodási Nonprofit Kft. (1 elem)" class="tag-cloud-link tag-link-125 tag-link-position-20" data-review-original-href="https://info-flow.hu/tag/kisalfoldi-hulladekgazdalkodasi-nonprofit-kft/" href="#" style="font-size: 8pt;" tabindex="-1">Kisalföldi Hulladékgazdálkodási Nonprofit Kft.</a>
+<a aria-label="Kistérségi Egyesített Szociális Intézmény (1 elem)" class="tag-cloud-link tag-link-123 tag-link-position-21" data-review-original-href="https://info-flow.hu/tag/kistersegi-egyesitett-szocialis-intezmeny/" href="#" style="font-size: 8pt;" tabindex="-1">Kistérségi Egyesített Szociális Intézmény</a>
+<a aria-label="kutyasétáltatás (1 elem)" class="tag-cloud-link tag-link-141 tag-link-position-22" data-review-original-href="https://info-flow.hu/tag/kutyasetaltatas/" href="#" style="font-size: 8pt;" tabindex="-1">kutyasétáltatás</a>
+<a aria-label="közalkalmazott (1 elem)" class="tag-cloud-link tag-link-122 tag-link-position-23" data-review-original-href="https://info-flow.hu/tag/kozalkalmazott/" href="#" style="font-size: 8pt;" tabindex="-1">közalkalmazott</a>
+<a aria-label="lakossági fórum (1 elem)" class="tag-cloud-link tag-link-104 tag-link-position-24" data-review-original-href="https://info-flow.hu/tag/lakossagi-forum/" href="#" style="font-size: 8pt;" tabindex="-1">lakossági fórum</a>
+<a aria-label="lerakó (1 elem)" class="tag-cloud-link tag-link-127 tag-link-position-25" data-review-original-href="https://info-flow.hu/tag/lerako/" href="#" style="font-size: 8pt;" tabindex="-1">lerakó</a>
+<a aria-label="LÉTFENE (1 elem)" class="tag-cloud-link tag-link-144 tag-link-position-26" data-review-original-href="https://info-flow.hu/tag/letfene/" href="#" style="font-size: 8pt;" tabindex="-1">LÉTFENE</a>
+<a aria-label="Mosonmagyaróvár (6 elem)" class="tag-cloud-link tag-link-88 tag-link-position-27" data-review-original-href="https://info-flow.hu/tag/mosonmagyarovar/" href="#" style="font-size: 13.8778625954pt;" tabindex="-1">Mosonmagyaróvár</a>
+<a aria-label="Máriakálnok (1 elem)" class="tag-cloud-link tag-link-140 tag-link-position-28" data-review-original-href="https://info-flow.hu/tag/mariakalnok/" href="#" style="font-size: 8pt;" tabindex="-1">Máriakálnok</a>
+<a aria-label="nyitvatartása (1 elem)" class="tag-cloud-link tag-link-128 tag-link-position-29" data-review-original-href="https://info-flow.hu/tag/nyitvatartasa/" href="#" style="font-size: 8pt;" tabindex="-1">nyitvatartása</a>
+<a aria-label="oktatas (1 elem)" class="tag-cloud-link tag-link-118 tag-link-position-30" data-review-original-href="https://info-flow.hu/tag/oktatas/" href="#" style="font-size: 8pt;" tabindex="-1">oktatas</a>
+<a aria-label="program (1 elem)" class="tag-cloud-link tag-link-147 tag-link-position-31" data-review-original-href="https://info-flow.hu/tag/program/" href="#" style="font-size: 8pt;" tabindex="-1">program</a>
+<a aria-label="Püspöki Nagy Péter (1 elem)" class="tag-cloud-link tag-link-134 tag-link-position-32" data-review-original-href="https://info-flow.hu/tag/puspoki-nagy-peter/" href="#" style="font-size: 8pt;" tabindex="-1">Püspöki Nagy Péter</a>
+<a aria-label="rajk (1 elem)" class="tag-cloud-link tag-link-124 tag-link-position-33" data-review-original-href="https://info-flow.hu/tag/rajk/" href="#" style="font-size: 8pt;" tabindex="-1">rajk</a>
+<a aria-label="Rajka (13 elem)" class="tag-cloud-link tag-link-87 tag-link-position-34" data-review-original-href="https://info-flow.hu/tag/rajka/" href="#" style="font-size: 17.0839694656pt;" tabindex="-1">Rajka</a>
+<a aria-label="Rajka @sk (3 elem)" class="tag-cloud-link tag-link-86 tag-link-position-35" data-review-original-href="https://info-flow.hu/tag/rajka-sk/" href="#" style="font-size: 11.2061068702pt;" tabindex="-1">Rajka @sk</a>
+<a aria-label="slider (10 elem)" class="tag-cloud-link tag-link-51 tag-link-position-36" data-review-original-href="https://info-flow.hu/tag/slider/" href="#" style="font-size: 15.9083969466pt;" tabindex="-1">slider</a>
+<a aria-label="spravy (4 elem)" class="tag-cloud-link tag-link-52 tag-link-position-37" data-review-original-href="https://info-flow.hu/tag/spravy/" href="#" style="font-size: 12.2748091603pt;" tabindex="-1">spravy</a>
+<a aria-label="szabályok (1 elem)" class="tag-cloud-link tag-link-142 tag-link-position-38" data-review-original-href="https://info-flow.hu/tag/szabalyok/" href="#" style="font-size: 8pt;" tabindex="-1">szabályok</a>
+<a aria-label="Tomášikovo (1 elem)" class="tag-cloud-link tag-link-146 tag-link-position-39" data-review-original-href="https://info-flow.hu/tag/tomasikovo/" href="#" style="font-size: 8pt;" tabindex="-1">Tomášikovo</a>
+<a aria-label="Uršuľa Kovalyk (1 elem)" class="tag-cloud-link tag-link-133 tag-link-position-40" data-review-original-href="https://info-flow.hu/tag/ursula-kovalyk/" href="#" style="font-size: 8pt;" tabindex="-1">Uršuľa Kovalyk</a>
+<a aria-label="Zöldhulladék (1 elem)" class="tag-cloud-link tag-link-126 tag-link-position-41" data-review-original-href="https://info-flow.hu/tag/zoldhulladek/" href="#" style="font-size: 8pt;" tabindex="-1">Zöldhulladék</a>
+<a aria-label="útlezárás (2 elem)" class="tag-cloud-link tag-link-74 tag-link-position-42" data-review-original-href="https://info-flow.hu/tag/utlezaras/" href="#" style="font-size: 9.92366412214pt;" tabindex="-1">útlezárás</a>
+<a aria-label="útzár (2 elem)" class="tag-cloud-link tag-link-113 tag-link-position-43" data-review-original-href="https://info-flow.hu/tag/utzar/" href="#" style="font-size: 9.92366412214pt;" tabindex="-1">útzár</a>
+<a aria-label="ügyfélfogadási (1 elem)" class="tag-cloud-link tag-link-120 tag-link-position-44" data-review-original-href="https://info-flow.hu/tag/ugyfelfogadasi/" href="#" style="font-size: 8pt;" tabindex="-1">ügyfélfogadási</a>
+<a aria-label="ügyintézés (1 elem)" class="tag-cloud-link tag-link-119 tag-link-position-45" data-review-original-href="https://info-flow.hu/tag/ugyintezes/" href="#" style="font-size: 8pt;" tabindex="-1">ügyintézés</a></div>
+</section> </div>
+</div>
+</div>
+</div>
+</div> <div id="bottom-footer">
+<div class="mt-container">
+<nav class="footer-navigation" id="footer-navigation">
+<div class="menu-tamogatok-container"><ul class="menu" id="footer-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1236"><a data-review-original-href="http://husk-cbc.eu/" href="#" tabindex="-1">www.husk-cbc.eu</a></li>
+</ul></div> </nav>
+<div class="site-info">
+<span class="mt-copyright-text">
+	        				MICROGRAMMA	        			</span>
+<span class="sep"> | </span>
+	        				Theme: Color Magazine by <a data-review-original-href="https://mysterythemes.com" href="#" tabindex="-1">Mystery Themes</a>.	        		</div>
+</div>
+</div>
+</footer>
+<div class="animated arrow-hide" id="mt-scrollup">
+<span>Back To Top</span>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

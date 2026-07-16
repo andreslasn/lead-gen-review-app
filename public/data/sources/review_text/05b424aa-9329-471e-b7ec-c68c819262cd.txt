@@ -1,0 +1,316 @@
+Neptun/EHA kód
+Mező kitöltése kötelező!
+Jelszó
+Belépés
+Neptun
+Office 365 webmail
+ÁOK webmail
+PotePedia
+Microsoft Teams
+Moodle
+Tanulmányi Hivatal
+Klinikai Központ
+Hivatalok és egyéb egységek
+Hallgatói Önkormányzat
+Telefonkönyv
+Koronavírus
+Órarendek
+Tanulmányi naptár
+Tantárgykereső
+Campus térkép
+HU
+EN
+DE
+Felvételizőknek
+Hallgatóknak
+Munkatársaknak
+Alumni
+Felvételi
+PTE
+Hírek és események
+Hírek
+Események
+Pályázatok
+Fotók
+Videók
+Egységek
+Intézetek
+Klinikák
+Hallgatói szervezetek
+Oktatókórházak
+Klinikai Központ egységei
+Gyógyszerésztudományi Kar intézetei
+Könyvtár
+Rólunk
+Bemutatkozik a pécsi orvoskar
+A Kar küldetésnyilatkozata
+Az Általános Orvostudományi Kar stratégiája
+PotePillars
+Karunk új, ultramodern elméleti tömbje
+A Grastyán Endre Elméleti Tömb névadójának emlékműve
+Kari vezetőink
+Történetünk
+Arcképcsarnok
+Pécs és a régió
+Elismeréseink
+Pécsi kutatások a Nemzetközi Űrállomáson
+Tények és adatok
+Kari kutatóink publikációi
+Portrébeszélgetések professzorainkkal
+Képzéseink
+Képzéseinkről
+Előkészítő képzések
+Általános orvos
+Fogorvos
+Gyógyszerész
+Biotechnológia BSc
+Biotechnológia MSc
+Egészségügyi mérnök MSc
+PhD képzés és habilitáció
+Szakirányú továbbképzés
+Kapcsolat
+Nyitólap
+Név vagy mellék
+Keresés
+Egység
+Összes
+3D Nyomtatási és Vizualizációs Központ
+Adatvédelmi és Betegjogi Osztály
+Alapellátási Intézet
+Alumni Iroda
+Analitikai Biokémia Tanszék
+Anatómiai Intézet
+Aneszteziológiai és Intenzív Terápiás Intézet
+Angol Felvételi és Hallgatói Szolgáltató Iroda
+Angol Program Bizottság
+Angol-Német Hallgatói Bizottság (EGSC)
+ÁOK Elméleti Tömb Gondnoksága
+Ápolásszakmai Igazgatóság
+Arc-, Állcsont-és Szájsebészeti Tanszék
+Balassa (B) Kollégium
+Bioanalitikai Intézet
+Biofizikai Intézet
+Biokémiai és Orvosi Kémiai Intézet
+Bölcsőde
+Bőr-, Nemikórtani és Onkodermatológiai Klinika
+Cholnoky László Szakkollégium
+Cochrane Magyarország Tanszék
+Confabula Szerkesztőség
+COVID oltás tájékoztatók
+Csolnoky Ferenc Kórház, Veszprém
+Dékáni Hivatal
+Dékáni Titkárság
+Dél-budai Centrumkórház Szent Imre Egyetemi Oktatókórház
+Dél-pesti Centrumkórház - Országos Hematológiai és Infektológiai Intézet
+Demonstrátori Diákkör (DDK)
+Digitális Marketing Iroda
+Doktori (PhD) és Habilitációs Iroda
+Egészségügyi Beszerzési Igazgatóság
+Egészségügyi Gazdálkodási Főigazgatóság
+Egészségügyi Gazdálkodási Igazgatóság
+Egészségügyi Humánpolitikai Igazgatóság
+Egészségügyi Nyelvi és Kommunikációs Intézet
+Egészségügyi Szolgáltatási Főosztály
+Egészségügyi Technológiaértékelési és Farmakoökonómiai Kutatóközpont
+Élettani Intézet
+Elnöki Hivatal
+Érsebészeti Klinika
+Farmakognóziai Intézet
+Farmakoinformatikai Tanszék
+Farmakológiai és Farmakoterápiai Intézet
+Fejér Megyei Szent György Egyetemi Oktató Kórház, Székesfehérvár
+Fenntarthatósági Munkacsoport
+Fogászati és Szájsebészeti Klinika
+Foglalkozás-egészségügyi és Munkahigiénés Központ
+Fogpótlástani Tanszék
+FOI
+Fül-Orr-Gégészeti és Fej-Nyaksebészeti Klinika
+Gazdasági Referatúra
+Gyaloglókör
+Gyermek- és Ifjúsági Fogászati Tanszék
+Gyermekgyógyászati Klinika
+Gyógyszeres Terápia Tanszék
+Gyógyszerészeti Intézet
+Gyógyszerészi Biológiai Tanszék
+Gyógyszerészi Biotechnológia Intézet
+Gyógyszerészi Kémiai Intézet
+Gyógyszerhatástani Tanszék
+Gyógyszertechnológiai és Biofarmáciai Intézet
+Győr-Moson-Sopron Vármegyei Petz Aladár Egyetemi Oktató Kórház
+GYTK Doktori és Habilitációs Bizottság
+GYTK Oktatói Munka Hallgatói Véleményezése Bizottság
+Hallgatói Önkormányzat (HÖK)
+Hallgatói Szolgáltató Osztály
+HR
+I. sz. Belgyógyászati Klinika
+Idegsebészeti Klinika
+Igazságügyi Genetikai Tanszék
+Igazságügyi Orvostani Intézet
+II.sz. Belgyógyászati Klinika és Nephrológiai, Diabetológiai Centrum
+Immunológiai és Biotechnológiai Intézet
+Informatikai Bizottság
+Innovációs Platform
+Kari Informatikai Csoport
+Kari Tanács
+KFDI
+Klinikai Gyógyszerészeti Intézet
+Klinikai Vizsgálatok Koordinációs Központja
+Konzerváló fogászati és Parodontológiai Tanszék
+Kórházhigiénés Szolgálat
+Koronavírus információk
+Központi Dietetikai Szolgálat
+Központi egység
+Központi Elektronmikroszkópos Laboratórium
+Kreditátviteli Bizottság
+Kurrikulum Bizottság
+Külső szolgáltatók
+Laboratóriumi Medicina Intézet
+Lárencz László Gyógyszerésztörténeti Csoport
+Magatartástudományi Intézet
+Magatartástudományi Konferencia
+Magyar Felvételi és Hallgatói Szolgáltató Iroda
+Magyar Gyógyszerészhallgatók Egyesülete (HuPSA)
+Marketing és Kommunikációs Osztály
+Medicina Könyvesbolt
+Medikus Kupa
+Migráció-egészségügyi Tanszék
+Minőségfejlesztési Bizottság
+Minőségirányítási Osztály
+MIRIFO
+Nano-Bioimaging Központ
+Német Felvételi és Hallgatói Szolgáltató Iroda
+Német Program Bizottság
+Nemzetközi Kapcsolatok Bizottsága
+Nemzetközi Kapcsolatok Irodája, Erasmus Iroda
+Nemzetközi Kapcsolatok Irodája, Erasmus Iroda - GYTK
+Nemzetközi Oktatási Központ (NOK)
+Neurológiai Klinika
+Nővérotthon
+Nukleáris Medicina Intézet
+Oktatás - Gyakorlati Oktatás Koordináló Csoport
+Oktatástámogatási, Fejlesztési és Habilitációs Osztály
+Oktatástechnikai és Szolgáltatási Osztály
+OMHV (Feedback) Bizottság
+Onkoterápiás Intézet
+Orális Diagnosztikai Tanszék
+Orientációs kisokos
+Orientációs kisokos - teszt
+Országos Vérellátó Szolgálat Pécsi Regionális Vérellátó Központ
+Ortopédiai Klinika
+Orvosi Biokémiai Tanszék
+Orvosi Biológiai Intézet
+Orvosi Genetikai Intézet
+Orvosi Kémiai Tanszék
+Orvosi Képalkotó Klinika
+Orvosi Készségfejlesztő és Innovációs Központ - OKIK
+Orvosi Mikrobiológiai Intézet
+Orvosi Népegészségtani Intézet
+Orvosi Rehabilitáció és Fizikális Medicina önálló Tanszék
+Orvoskari Hírmondó
+Orvoskari Múzeum
+Orvosszakmai Igazgatóság
+Orvostudományi és Gyógyszerésztudományi Doktori és Habilitációs Tanács
+Pályázati és Innovációs Iroda
+Pályázati és Ösztöndíj Bizottság
+Pathobiokémia Tanszék
+Patológiai Intézet
+Pécsi Orvostanhallgatók Egyesülete - POE Iroda
+Peer Mentorprogram
+Peer Program
+PR és Kommunikációs Iroda
+Preklinikai Kutatási Központ
+PROFEX Nyelvvizsga Központ
+Pszichiátriai és Pszichoterápiás Klinika
+Pszichiátriai Szakdolgozók Országos Konferenciája
+PTE ÁOK Mentorklub
+PTE GYTK HÖK Iroda
+PTE Surgical Society
+Reumatológiai és Immunológiai Klinika
+Romhányi György Szakkollégium
+Sajtóbizottság
+Sebészeti Klinika
+Sebészeti Oktató és Kutató Intézet
+Somogy Vármegyei Kaposi Mór Oktató Kórház, Kaposvár
+Sportmedicina Tanszék
+SPP
+Stratégiai Igazgatóság
+Stratégiai Marketing és Toborzó Iroda
+Sürgősségi Klinika
+Szak- és Továbbképzési Bizottság
+Szak- és Továbbképző Központ
+Szakmai Előmeneteli Bizottság
+Szakszervezet
+Szemészeti Klinika
+Szerves és Gyógyszerkémiai Intézet
+Szívgyógyászati Klinika
+Szociális Szolgálat
+Szülészeti és Nőgyógyászati Klinika
+Tanulmányi Bizottság
+Tanulmányi Csoport
+Társasjáték délután
+Testnevelés- és Mozgásközpont
+Tolna Vármegyei Balassa János Kórház
+Transzdiszciplináris Kutatások Intézete
+Transzlációs Medicina Intézet
+Traumatológiai és Kézsebészeti Klinika
+Traumatológiai Interdiszciplináris Kutatócsoport
+Tudományos Bizottság
+Tudományos Diákkör
+Tudományos Diákköri Tanács
+Tudományos Szakosztály
+Urológiai Klinika
+Van egy jó történeted?
+Vas Vármegyei Markusovszky Egyetemi Oktatókórház
+Védelmi Kutatások Központ
+WELL-BEING koncepció
+Zala Vármegyei Szent Rafael Kórház, Zalaegerszeg
+Intézetek, klinikák, hivatalok vagy
+tantermek helye a Campus-on.
+Campus térkép megnyitása
+Adminisztráció
+Minőségirányítási és Intézményfejlesztési Osztály (MIRIFO)
+PTE Kancellária/ÁOK Gazdasági Referatúra
+Oktatástámogatás és habilitáció
+Hallgatói szolgáltató irodák
+Marketing és kommunikáció
+Egyéb funkcionális szervezeti egységek
+Orvosi Készségfejlesztő és Innovációs Központ
+Ábrahám István Nano-Bioimaging Központ
+Pekár Mihály Orvosi és Élettudományi Szakkönyvtár
+Egyéb
+PTE Integrált Egészségügyi Szakszervezet
+Bizottságok
+Központi cím és elérhetőségek
+Cím:
+7624 Pécs, Szigeti út 12.
+Postai cím:
+7601 Pécs, pf. 99.
+Központi telefonszám:
++36 72 536 000
++36 72 536 001 (automata)
+Központi email cím:
+info@aok.pte.hu
+Hova fordulhatok?
+Tanulmányi ügyekben a
+Tanulmányi Hivatalhoz.
+Adminisztratív ügyekben a
+Dékáni Hivatalhoz.
+Honlappal kapcsolatos ügyekben az
+Üzenet űrlapon
+küldhet üzenetet
+Ha a honlapon szeretne hírt vagy más tartalmat megjeleníteni, módosítani, kérjük írjon az alábbi címre:
+webtartalom@aok.pte.hu
+Cookie tájékoztató
+Oldalunk cookie-kat (sütiket) használ azért, hogy weboldalunk használata során a lehető legjobb élményt tudjuk biztosítani. A weboldalunkon történő további böngészéssel hozzájárul a cookie-k használatához.
+Elfogadom
+Tudjon meg többet...
+Saját menü
+Figyelem! Megváltozott az alapértelmezett főoldal!
+Figyelem! Újra az alapértelmezett főoldal a kezdőlap!
+Új menüpont hozzáadása
+Mégsem
+Mentés
+Az elem már a listában van!
+Nem tehet be a listába 5-nél több elemet!
+Sikeresen mentve
+Hiba a mentés során!

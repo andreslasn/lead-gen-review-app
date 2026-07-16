@@ -1,0 +1,1299 @@
+<!doctype html>
+<html class="js" lang="hu" xmlns:fb="http://www.facebook.com/2008/fbml"><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button[not:disabled]:hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel[not:disabled]:hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger[not:disabled]:hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style data-tippy-stylesheet="">.tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}</style>
+
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+
+
+<title>Helyettesítések a háziorvosi rendelőkben a klímaszerelési munkálatok ideje alatt - Ajkai Szó</title>
+
+<meta content="Szerző:" name="twitter:label1"/>
+<meta content="Futó Zoltán" name="twitter:data1"/>
+<meta content="Becsült olvasási idő" name="twitter:label2"/>
+<meta content="1 perc" name="twitter:data2"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-library-inline-css-extra">
+.has-text-align-justify{text-align:justify;}
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+
+
+
+
+
+
+
+
+
+<style id="jetpack_facebook_likebox-inline-css">
+.widget_facebook_likebox {
+	overflow: hidden;
+}
+
+/*# sourceURL=https://ajkaiszo.hu/wp-content/plugins/jetpack/modules/widgets/facebook-likebox/style.css */
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="1561403240790871" property="fb:app_id"/>
+<meta content="" property="fb:admins"/>
+<meta content="hu_HU" property="og:locale"/>
+<meta content="hu_HU" property="og:locale:alternate"/>
+<style>img#wpstats{display:none}</style>
+
+ <meta content="wordpress-plugin" name="onesignal"/>
+
+<style id="custom-background-css">
+body.custom-background { background-color: #769dbf; background-image: url("https://ajkaiszo.hu/wp-content/uploads/2017/11/ajkaiszóháttér2.jpg"); background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+</style>
+
+<meta content="article" property="og:type"/>
+<meta content="Helyettesítések a háziorvosi rendelőkben a klímaszerelési munkálatok ideje alatt" property="og:title"/>
+<meta content="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/" property="og:url"/>
+<meta content="Mint arról már korábban beszámoltunk, a klímaszerelési munkálatok miatt helyettesítések lesznek a háziorvosi rendelőkben Az első ütemben az alábbi időpontokban történnek a változások: 📅 202…" property="og:description"/>
+<meta content="2024-09-23T07:06:53+00:00" property="article:published_time"/>
+<meta content="2024-09-23T07:06:53+00:00" property="article:modified_time"/>
+<meta content="Ajkai Szó" property="og:site_name"/>
+<meta content="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/edd8690a-2eae-4d30-8f11-cb25bf28dc68.jpg?fit=1024%2C1024&amp;ssl=1" property="og:image"/>
+<meta content="1024" property="og:image:width"/>
+<meta content="1024" property="og:image:height"/>
+<meta content="" property="og:image:alt"/>
+<meta content="hu_HU" property="og:locale"/>
+<meta content="@Ajkai Szó" name="twitter:site"/>
+<meta content="Helyettesítések a háziorvosi rendelőkben a klímaszerelési munkálatok ideje alatt" name="twitter:text:title"/>
+<meta content="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/edd8690a-2eae-4d30-8f11-cb25bf28dc68.jpg?fit=1024%2C1024&amp;ssl=1&amp;w=640" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+
+
+
+<meta content="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=270%2C270&amp;ssl=1" name="msapplication-TileImage"/>
+<meta content="wordpress-plugin" name="pwaforwp"/>
+<meta content="#D5E0EB" name="theme-color"/>
+<meta content="Ajkai Szó" name="apple-mobile-web-app-title"/>
+<meta content="Ajkai Szó" name="application-name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-touch-fullscreen"/>
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="wp-singular post-template-default single single-post postid-93195 single-format-standard custom-background wp-theme-mh-magazine-lite mh-right-sb" data-rsssl="1" id="mh-mobile" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<div class="mh-container mh-container-outer">
+<div class="mh-header-mobile-nav mh-clearfix"></div>
+<header class="mh-header" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+<div class="mh-container mh-container-inner mh-row mh-clearfix">
+<div class="mh-custom-header mh-clearfix">
+<a class="mh-header-image-link" data-review-original-href="https://ajkaiszo.hu/" href="#" rel="home" tabindex="-1" title="Ajkai Szó">
+<img alt="Ajkai Szó" class="mh-header-image" height="347" width="1500"/>
+</a>
+</div>
+</div>
+<div class="mh-main-nav-wrap">
+<nav class="mh-navigation mh-main-nav mh-container mh-container-inner mh-clearfix" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+<div class="menu-1-menu-container"><ul class="menu" id="menu-1-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100692" id="menu-item-100692"><a data-review-original-href="https://ajkaiszo.hu/ajkai-szo-videok/" href="#" tabindex="-1">Ajkai Szó videók</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-83086" id="menu-item-83086"><a data-review-original-href="https://ajkaiszo.hu/category/hirek/" href="#" tabindex="-1">Hírek</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41" id="menu-item-41"><a data-review-original-href="https://ajkaiszo.hu/category/ujsagok/" href="#" tabindex="-1">Újságok</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34" id="menu-item-34"><a data-review-original-href="https://ajkaiszo.hu/category/kek-feny/" href="#" tabindex="-1">Kék fény</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32783" id="menu-item-32783"><a data-review-original-href="https://ajkaiszo.hu/category/mosterdekes/" href="#" tabindex="-1">Most-Érdekes</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36" id="menu-item-36"><a data-review-original-href="https://ajkaiszo.hu/category/kozelet/" href="#" tabindex="-1">Közélet</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-37" id="menu-item-37"><a data-review-original-href="https://ajkaiszo.hu/category/kultura/" href="#" tabindex="-1">Kultúra</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9935" id="menu-item-9935"><a data-review-original-href="https://ajkaiszo.hu/category/kultura/pannon-varszinhaz/" href="#" tabindex="-1">Pannon Várszínház</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82869" id="menu-item-82869"><a data-review-original-href="https://ajkaiszo.hu/category/gyermekvilag/" href="#" tabindex="-1">Gyermekvilág</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39" id="menu-item-39"><a data-review-original-href="https://ajkaiszo.hu/category/sport/" href="#" tabindex="-1">Sport</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-38" id="menu-item-38"><a data-review-original-href="https://ajkaiszo.hu/category/programajanlo/" href="#" tabindex="-1">Programajánló</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-33" id="menu-item-33"><a data-review-original-href="https://ajkaiszo.hu/category/jo-tudni/" href="#" tabindex="-1">Jó tudni</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82870" id="menu-item-82870"><a data-review-original-href="https://ajkaiszo.hu/category/tudomany/" href="#" tabindex="-1">Tudomány</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-82868" id="menu-item-82868"><a data-review-original-href="https://ajkaiszo.hu/category/gazdasag/" href="#" tabindex="-1">Gazdaság</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-31987" id="menu-item-31987"><a data-review-original-href="https://ajkaiszo.hu/category/egeszsegugy/" href="#" tabindex="-1">Egészségügy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32035" id="menu-item-32035"><a data-review-original-href="https://ajkaiszo.hu/category/allatvilagtermeszet/" href="#" tabindex="-1">Állatvilág/Természet</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-31993" id="menu-item-31993"><a data-review-original-href="https://ajkaiszo.hu/category/interju/" href="#" tabindex="-1">Interjú</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-83427" id="menu-item-83427"><a data-review-original-href="https://ajkaiszo.hu/category/europa/" href="#" tabindex="-1">#Európa</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-83428" id="menu-item-83428"><a data-review-original-href="https://ajkaiszo.hu/category/velemeny/" href="#" tabindex="-1">Szubjektív</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-93985" id="menu-item-93985"><a data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/" href="#" tabindex="-1">Hirdetések</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-93517" id="menu-item-93517"><a data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/pr-cikk/" href="#" tabindex="-1">PR cikk</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-94202" id="menu-item-94202"><a data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/hirdetmenyek/" href="#" tabindex="-1">hirdetmények</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-94463" id="menu-item-94463"><a data-review-original-href="https://ajkaiszo.hu/probelma-bejelentese-ajka/" href="#" tabindex="-1">Probléma bejelentése</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93984" id="menu-item-93984"><a data-review-original-href="https://ajkaiszo.hu/terjesztesi-problema-bejelentese/" href="#" tabindex="-1">Nem kapja meg az Ajkai Szó hetilapját? Segítünk</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94466" id="menu-item-94466"><a data-review-original-href="https://ajkaiszo.hu/ajkai-kozvilagitasi-hiba/" href="#" tabindex="-1">Közvilágítási hibabejelentő</a></li>
+</ul>
+</li>
+</ul></div> </nav>
+</div>
+</header><div class="mh-wrapper mh-clearfix">
+<div class="mh-content" id="main-content" itemprop="mainContentOfPage" role="main"><article class="post-93195 post type-post status-publish format-standard has-post-thumbnail hentry category-egeszsegugy category-jo-tudni category-kiemelthir category-kiemelt-kiemelt tag-ajka tag-asszisztensek tag-egeszsegugyi-ellatas tag-gyogyszerfeliras tag-haziorvosi-rendelok tag-helyettesites tag-idopontfoglalas tag-klimaszereles" id="post-93195">
+<header class="entry-header mh-clearfix"><h1 class="entry-title">Helyettesítések a háziorvosi rendelőkben a klímaszerelési munkálatok ideje alatt</h1><p class="mh-meta entry-meta">
+<span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a data-review-original-href="https://ajkaiszo.hu/2024/09/" href="#" tabindex="-1">2024-09-23</a></span>
+<span class="entry-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" data-review-original-href="https://ajkaiszo.hu/author/mcgoat/" href="#" tabindex="-1">Futó Zoltán</a></span>
+<span class="entry-meta-categories"><i class="fa fa-folder-open-o"></i><a data-review-original-href="https://ajkaiszo.hu/category/egeszsegugy/" href="#" rel="category tag" tabindex="-1">Egészségügy</a>, <a data-review-original-href="https://ajkaiszo.hu/category/jo-tudni/" href="#" rel="category tag" tabindex="-1">Jó tudni</a>, <a data-review-original-href="https://ajkaiszo.hu/category/kiemelthir/" href="#" rel="category tag" tabindex="-1">Kiemelt hír</a>, <a data-review-original-href="https://ajkaiszo.hu/category/kiemelt-kiemelt/" href="#" rel="category tag" tabindex="-1">kiemelt kiemelt</a></span>
+<span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-scroll" data-review-original-href="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/#mh-comments" href="#" tabindex="-1">0</a></span>
+</p>
+</header>
+<div class="mh-widget mh-posts-1 widget_wpcom_social_media_icons_widget" id="wpcom_social_media_icons_widget-2"><ul><li><a class="genericon genericon-facebook" data-review-original-href="https://www.facebook.com/Ajkaiszo/" href="#" tabindex="-1" target="_blank"><span class="screen-reader-text">View Ajkaiszo’s profile on Facebook</span></a></li><li><a class="genericon genericon-twitter" data-review-original-href="https://twitter.com/AjkaiSzo/" href="#" tabindex="-1" target="_blank"><span class="screen-reader-text">View AjkaiSzo’s profile on Twitter</span></a></li></ul></div> <div class="entry-content mh-clearfix">
+<figure class="entry-thumbnail">
+<img alt="" title="Háziorvosi Rendelők Helyettesítési"/>
+</figure>
+<p><strong>Mint arról már korábban beszámoltunk, a klímaszerelési munkálatok miatt helyettesítések lesznek a háziorvosi rendelőkben</strong></p>
+<p>Az <strong>első ütemben</strong> az alábbi időpontokban történnek a változások:</p>
+<p>📅 <strong>2024. szeptember 26., 27. és 30.</strong></p>
+<p>Az orvosokat az alábbi helyettesítők látják el:</p>
+<ul>
+<li><strong>Dr. Csonka Csaba</strong> helyett <strong>Dr. Prikkel Jolán</strong></li>
+<li><strong>Dr. Erdő Ferenc</strong> helyett <strong>Dr. Győri Andrea</strong></li>
+<li><strong>Dr. Szabó István</strong> helyett <strong>Dr. Toró Ildikó</strong></li>
+</ul>
+<p>Azonban a gyógyszerfelírást és időpontfoglalást <strong>a helyettesített háziorvosok asszisztensei</strong> végzik az alábbi telefonszámokon:</p>
+<ul>
+<li><strong>Dr. Csonka Csaba</strong> – +36-30-906-1180</li>
+<li><strong>Dr. Erdő Ferenc</strong> – +36-70-607-6817</li>
+<li><strong>Dr. Szabó István</strong> – +36-20-494-5525</li>
+</ul>
+<p>Kérjük, figyeljék hírportálunkat a további részletekért és friss információkért! Köszönjük türelmüket!</p>
+<h3 class="coments-title">Comments</h3><p class="commentcount"><fb:comments-count href="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/"></fb:comments-count> comments</p><div class="fb-comments" data-colorscheme="light" data-href="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/" data-numposts="6" data-width="500"></div><p></p><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/" data-layout="button_count"></div></li><li class="share-email"><a class="share-email sd-button" data-email-share-error-text="If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-error-title="Do you have email set up?" data-email-share-nonce="740075f83b" data-email-share-track-url="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/?share=email" data-review-original-href="mailto:?subject=%5BShared%20Post%5D%20Helyettes%C3%ADt%C3%A9sek%20a%20h%C3%A1ziorvosi%20rendel%C5%91kben%20a%20kl%C3%ADmaszerel%C3%A9si%20munk%C3%A1latok%20ideje%20alatt&amp;body=https%3A%2F%2Fajkaiszo.hu%2Fhelyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt%2F&amp;share=email" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to email a link to a friend"><span>Email</span></a></li><li class="share-twitter"><a class="twitter-share-button" data-review-original-href="https://twitter.com/share" data-text="Helyettesítések a háziorvosi rendelőkben a klímaszerelési munkálatok ideje alatt" data-url="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/" data-via="AjkaiSz" href="#" tabindex="-1">Tweet</a></li><li class="share-print"><a class="share-print sd-button" data-review-original-href="https://ajkaiszo.hu/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/#print" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-93528836-93195-6a589d16ca853" data-src="https://widgets.wp.com/likes/?ver=13.2.2#blog_id=93528836&amp;post_id=93195&amp;origin=ajkaiszo.hu&amp;obj_id=93528836-93195-6a589d16ca853&amp;n=1" data-title="Like or Reblog" id="like-post-wrapper-93528836-93195-6a589d16ca853"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> </div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div>
+<div class="jp-relatedposts" id="jp-relatedposts">
+<h3 class="jp-relatedposts-headline"><em>Kapcsolódó bejegyzések</em></h3>
+</div> </div><div class="entry-tags mh-clearfix"><i class="fa fa-tag"></i><ul><li><a data-review-original-href="https://ajkaiszo.hu/tag/ajka/" href="#" rel="tag" tabindex="-1">ajka</a></li><li><a data-review-original-href="https://ajkaiszo.hu/tag/asszisztensek/" href="#" rel="tag" tabindex="-1">asszisztensek</a></li><li><a data-review-original-href="https://ajkaiszo.hu/tag/egeszsegugyi-ellatas/" href="#" rel="tag" tabindex="-1">egészségügyi ellátás</a></li><li><a data-review-original-href="https://ajkaiszo.hu/tag/gyogyszerfeliras/" href="#" rel="tag" tabindex="-1">gyógyszerfelírás</a></li><li><a data-review-original-href="https://ajkaiszo.hu/tag/haziorvosi-rendelok/" href="#" rel="tag" tabindex="-1">háziorvosi rendelők</a></li><li><a data-review-original-href="https://ajkaiszo.hu/tag/helyettesites/" href="#" rel="tag" tabindex="-1">Helyettesítés</a></li><li><a data-review-original-href="https://ajkaiszo.hu/tag/idopontfoglalas/" href="#" rel="tag" tabindex="-1">időpontfoglalás</a></li><li><a data-review-original-href="https://ajkaiszo.hu/tag/klimaszereles/" href="#" rel="tag" tabindex="-1">klímaszerelés</a></li></ul></div><div class="mh-widget mh-posts-2 widget_facebook_likebox" id="facebook-likebox-2"> <div id="fb-root"></div>
+<div class="fb-page" data-height="130" data-hide-cover="true" data-hide-cta="false" data-href="https://www.facebook.com/ajkaiszo/" data-show-facepile="false" data-small-header="false" data-tabs="false" data-width="340">
+<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ajkaiszo/"><a data-review-original-href="https://www.facebook.com/ajkaiszo/" href="#" tabindex="-1"></a></blockquote></div>
+</div>
+</div><div class="mh-widget mh-posts-2 jetpack_widget_social_icons" id="jetpack_widget_social_icons-2"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Follow Us</span></h4></div></article><nav class="mh-post-nav mh-row mh-clearfix" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-prev">
+<a data-review-original-href="https://ajkaiszo.hu/tv-ajanlo-egy-hid-ami-vonzza-az-ongyilkosokat/" href="#" rel="prev" tabindex="-1"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="93160" data-comments-opened="1" data-image-caption="" data-image-description="&lt;p&gt;Az öngyilkos jelölteket vonzó viadukt egy részlete&lt;/p&gt;
+" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="viadukt" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/ongyilkos.jpg?fit=800%2C534&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/ongyilkos.jpg?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/ongyilkos.jpg?fit=1920%2C1281&amp;ssl=1" data-orig-size="1920,1281" data-permalink="https://ajkaiszo.hu/tv-ajanlo-egy-hid-ami-vonzza-az-ongyilkosokat/ongyilkos/" decoding="async" height="60" sizes="(max-width: 80px) 100vw, 80px" width="80"/><span>Previous</span><p>TV ajánló – Egy híd, ami vonzza az öngyilkosokat</p></a></div>
+<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-next">
+<a data-review-original-href="https://ajkaiszo.hu/ajka-negyvenkettedik-vidam-rajtja/" href="#" rel="next" tabindex="-1"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="93190" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="ajka rajtja" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/ajka-rajtja.jpg?fit=800%2C533&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/ajka-rajtja.jpg?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/09/ajka-rajtja.jpg?fit=800%2C533&amp;ssl=1" data-orig-size="800,533" data-permalink="https://ajkaiszo.hu/ajka-negyvenkettedik-vidam-rajtja/ajka-rajtja/" decoding="async" height="60" sizes="(max-width: 80px) 100vw, 80px" width="80"/><span>Next</span><p>Ajka negyvenkettedik vidám rajtja</p></a></div>
+</nav>
+<h4 class="mh-widget-title mh-comment-form-title" id="mh-comments">
+<span class="mh-widget-title-inner">
+				Be the first to comment			</span>
+</h4>
+<div class="comment-respond" id="respond">
+<h3 class="comment-reply-title" id="reply-title">Leave a Reply<small><a data-review-original-href="/helyettesitesek-a-haziorvosi-rendelokben-a-klimaszerelesi-munkalatok-ideje-alatt/#respond" href="#" id="cancel-comment-reply-link" rel="nofollow" style="display:none;" tabindex="-1">Cancel reply</a></small></h3> <div data-review-disabled-form="true">
+
+
+
+
+</div>
+</div>
+<input id="comment_parent" name="comment_parent" type="hidden" value=""/>
+</div>
+<aside class="mh-widget-col-1 mh-sidebar" itemscope="itemscope" itemtype="https://schema.org/WPSideBar"><div class="mh-widget mh_custom_posts" id="mh_custom_posts-12"><h4 class="mh-widget-title"><span class="mh-widget-title-inner"><a class="mh-widget-title-link" data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/" href="#" tabindex="-1">Hirdetések</a></span></h4> <ul class="mh-custom-posts-widget mh-clearfix"> <li class="post-101330 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="19752" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="jogseg" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=300%2C197&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-orig-size="800,524" data-permalink="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-8/jogseg/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK">
+									JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-15</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101204 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-lesz-padragkuton-julius-13-an/" href="#" tabindex="-1" title="Tervezett áramszünet lesz Padragkúton július 13-án"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="22280" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"Photo may be used to accompany news-related reports about Nord Stream provided the source (Nord Stream AG) is mentioned.","focal_length":"0","iso":"0","shutter_speed":"0","title":"E.ON SE Logo","orientation":"0"}' data-image-title="E.ON SE Logo" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/10/eon.jpg?fit=800%2C334&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/10/eon.jpg?fit=300%2C125&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/10/eon.jpg?fit=1417%2C592&amp;ssl=1" data-orig-size="1417,592" data-permalink="https://ajkaiszo.hu/e-beruhazasok-ajkan/e-on-se-logo/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-lesz-padragkuton-julius-13-an/" href="#" tabindex="-1" title="Tervezett áramszünet lesz Padragkúton július 13-án">
+									Tervezett áramszünet lesz Padragkúton július 13-án								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-06</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-lesz-padragkuton-julius-13-an/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101173 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/" href="#" tabindex="-1" title="Ajka nyerte a WWF 2026-os One Planet City Challenge nemzeti díját"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="101174" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="260630_NJHSC_019-compressed" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/260630_NJHSC_019-compressed.webp?fit=800%2C534&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/260630_NJHSC_019-compressed.webp?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/260630_NJHSC_019-compressed.webp?fit=1000%2C667&amp;ssl=1" data-orig-size="1000,667" data-permalink="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/260630_njhsc_019-compressed/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/" href="#" tabindex="-1" title="Ajka nyerte a WWF 2026-os One Planet City Challenge nemzeti díját">
+									Ajka nyerte a WWF 2026-os One Planet City Challenge nemzeti díját								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-04</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101165 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-42/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="19752" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="jogseg" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=300%2C197&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-orig-size="800,524" data-permalink="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-8/jogseg/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-42/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK">
+									JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-03</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-42/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101055 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/nyari-zarvatartas-a-varosi-konyvtarban-es-a-bogancs-gyermekkonyvtarban/" href="#" tabindex="-1" title="Nyári zárvatartás a Városi Könyvtárban és a Bogáncs Gyermekkönyvtárban"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="94309" data-comments-opened="1" data-image-caption="" data-image-description="&lt;p&gt;https://ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg&lt;/p&gt;
+" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="favicon_logo" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=512%2C512&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=300%2C300&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=512%2C512&amp;ssl=1" data-orig-size="512,512" data-permalink="https://ajkaiszo.hu/cropped-logo-jpg-2/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/nyari-zarvatartas-a-varosi-konyvtarban-es-a-bogancs-gyermekkonyvtarban/" href="#" tabindex="-1" title="Nyári zárvatartás a Városi Könyvtárban és a Bogáncs Gyermekkönyvtárban">
+									Nyári zárvatartás a Városi Könyvtárban és a Bogáncs Gyermekkönyvtárban								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-06-28</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/nyari-zarvatartas-a-varosi-konyvtarban-es-a-bogancs-gyermekkonyvtarban/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> </ul></div><div class="mh-widget widget_facebook_likebox" id="facebook-likebox-4"> <div id="fb-root"></div>
+<div class="fb-page" data-height="580" data-hide-cover="false" data-hide-cta="false" data-href="https://www.facebook.com/ajkaiszo/" data-show-facepile="true" data-small-header="true" data-tabs="timeline" data-width="340">
+<div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ajkaiszo/"><a data-review-original-href="https://www.facebook.com/ajkaiszo/" href="#" tabindex="-1"></a></blockquote></div>
+</div>
+</div><div class="mh-widget widget_text" id="text-13"> <div class="textwidget"><p><a data-review-original-href="https://www.veolia.hu/hu" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"><img alt="VEOLIA" data-recalc-dims="1" decoding="async" height="" title=" "/></a></p>
+<p><a data-review-original-href="https://www.veolia.hu/hu" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"> <img/></a></p>
+</div>
+</div><div class="mh-widget widget_search" id="search-5"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Keresés</span></h4><div data-review-disabled-form="true">
+<label>
+<span class="screen-reader-text">Keresés:</span>
+<input class="search-field" name="s" placeholder="Keresés…" type="search" value=""/>
+</label>
+<input class="search-submit" type="submit" value="Keresés"/>
+</div></div><div class="mh-widget widget_em_widget" id="em_widget-2"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Közelgő események</span></h4><div class="em pixelbones em-list-widget em-events-widget"><div class="em-item em-event" style="--default-border:#a8d144;">
+<div class="em-item-image has-placeholder" style="max-width:120px">
+<div class="em-item-image-placeholder">
+<div class="date">
+<span class="day">08</span>
+<span class="month">júl</span>
+</div>
+</div>
+</div>
+<div class="em-item-info">
+<div class="em-item-name"><a data-review-original-href="https://ajkaiszo.hu/programok/orszagos-korosztalyos-uszo-bajnoksag-raja-94-uszoklub-ajka-2/" href="#" tabindex="-1">Országos korosztályos úszó bajnokság – Rája 94 Úszóklub Ajka</a></div>
+<div class="em-item-meta">
+<div class="em-item-meta-line em-event-date em-event-meta-datetime">
+<span class="em-icon em-icon-calendar"></span>
+<span>8 júl 26</span>
+</div>
+<div class="em-item-meta-line em-event-location em-event-meta-location">
+<span class="em-icon em-icon-location"></span>
+<span></span>
+</div>
+</div>
+</div>
+</div><div class="em-item em-event" style="--default-border:#a8d144;">
+<div class="em-item-image has-placeholder" style="max-width:120px">
+<div class="em-item-image-placeholder">
+<div class="date">
+<span class="day">29</span>
+<span class="month">júl</span>
+</div>
+</div>
+</div>
+<div class="em-item-info">
+<div class="em-item-name"><a data-review-original-href="https://ajkaiszo.hu/programok/orszagos-korosztalyos-uszo-bajnoksag-raja-94-uszoklub-ajka-3/" href="#" tabindex="-1">Országos korosztályos úszó bajnokság – Rája 94 Úszóklub Ajka</a></div>
+<div class="em-item-meta">
+<div class="em-item-meta-line em-event-date em-event-meta-datetime">
+<span class="em-icon em-icon-calendar"></span>
+<span>29 júl 26</span>
+</div>
+<div class="em-item-meta-line em-event-location em-event-meta-location">
+<span class="em-icon em-icon-location"></span>
+<span></span>
+</div>
+</div>
+</div>
+</div><div class="em-item em-event" style="--default-border:#a8d144;">
+<div class="em-item-image has-placeholder" style="max-width:120px">
+<div class="em-item-image-placeholder">
+<div class="date">
+<span class="day">03</span>
+<span class="month">aug</span>
+</div>
+</div>
+</div>
+<div class="em-item-info">
+<div class="em-item-name"><a data-review-original-href="https://ajkaiszo.hu/programok/jogi-segitsegnyujtas-raszoruloknak-2/" href="#" tabindex="-1">JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK</a></div>
+<div class="em-item-meta">
+<div class="em-item-meta-line em-event-date em-event-meta-datetime">
+<span class="em-icon em-icon-calendar"></span>
+<span>3 aug 26</span>
+</div>
+<div class="em-item-meta-line em-event-location em-event-meta-location">
+<span class="em-icon em-icon-location"></span>
+<span></span>
+</div>
+</div>
+</div>
+</div><div class="em-item em-event" style="--default-border:#a8d144;">
+<div class="em-item-image has-placeholder" style="max-width:120px">
+<div class="em-item-image-placeholder">
+<div class="date">
+<span class="day">12</span>
+<span class="month">aug</span>
+</div>
+</div>
+</div>
+<div class="em-item-info">
+<div class="em-item-name"><a data-review-original-href="https://ajkaiszo.hu/programok/a-pal-utcai-fiuk/" href="#" tabindex="-1">A PÁL UTCAI FIÚK</a></div>
+<div class="em-item-meta">
+<div class="em-item-meta-line em-event-date em-event-meta-datetime">
+<span class="em-icon em-icon-calendar"></span>
+<span>12 aug 26</span>
+</div>
+<div class="em-item-meta-line em-event-location em-event-meta-location">
+<span class="em-icon em-icon-location"></span>
+<span></span>
+</div>
+</div>
+</div>
+</div><div class="em-item em-event" style="--default-border:#a8d144;">
+<div class="em-item-image has-placeholder" style="max-width:120px">
+<div class="em-item-image-placeholder">
+<div class="date">
+<span class="day">15</span>
+<span class="month">aug</span>
+</div>
+</div>
+</div>
+<div class="em-item-info">
+<div class="em-item-name"><a data-review-original-href="https://ajkaiszo.hu/programok/ajkai-rock-randevu/" href="#" tabindex="-1">Ajkai Rock Randevú</a></div>
+<div class="em-item-meta">
+<div class="em-item-meta-line em-event-date em-event-meta-datetime">
+<span class="em-icon em-icon-calendar"></span>
+<span>15 aug 26</span>
+</div>
+<div class="em-item-meta-line em-event-location em-event-meta-location">
+<span class="em-icon em-icon-location"></span>
+<span></span>
+</div>
+</div>
+</div>
+</div></div></div><div class="mh-widget mh_magazine_lite_posts_stacked" id="mh_magazine_lite_posts_stacked-5"><div class="mh-posts-stacked-widget mh-clearfix">
+<div class="mh-posts-stacked-wrap mh-posts-stacked-large">
+<div class="post-101337 mh-posts-stacked-content">
+<div class="mh-posts-stacked-thumb mh-posts-stacked-thumb-large">
+<a class="mh-posts-stacked-overlay mh-posts-stacked-overlay-large" data-review-original-href="https://ajkaiszo.hu/segitseget-kerni-nem-gyengeseg-uj-esely-kozpont-nyilt-napja/" href="#" tabindex="-1"></a><img alt="" class="attachment-mh-magazine-lite-large size-mh-magazine-lite-large wp-post-image" data-attachment-id="101341" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="20260714_115326-compressed" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/20260714_115326-compressed.webp?fit=800%2C450&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/20260714_115326-compressed.webp?fit=300%2C169&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/20260714_115326-compressed.webp?fit=1000%2C563&amp;ssl=1" data-orig-size="1000,563" data-permalink="https://ajkaiszo.hu/segitseget-kerni-nem-gyengeseg-uj-esely-kozpont-nyilt-napja/20260714_115326-compressed/" decoding="async" height="509" loading="lazy" sizes="auto, (max-width: 678px) 100vw, 678px" width="678"/> <article class="mh-posts-stacked-item">
+<h3 class="mh-posts-stacked-title mh-posts-stacked-title-large">
+<a data-review-original-href="https://ajkaiszo.hu/segitseget-kerni-nem-gyengeseg-uj-esely-kozpont-nyilt-napja/" href="#" rel="bookmark" tabindex="-1" title="Segítséget kérni nem gyengeség – Új Esély Központ nyílt napja">
+													Segítséget kérni nem gyengeség – Új Esély Központ nyílt napja												</a>
+</h3>
+<div class="mh-posts-stacked-meta mh-posts-stacked-meta-large">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-16</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/segitseget-kerni-nem-gyengeseg-uj-esely-kozpont-nyilt-napja/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</article>
+</div>
+</div>
+</div><div class="mh-posts-stacked-wrap mh-posts-stacked-columns mh-clearfix">
+<div class="mh-posts-stacked-wrap mh-posts-stacked-small">
+<div class="post-101335 mh-posts-stacked-content">
+<div class="mh-posts-stacked-thumb mh-posts-stacked-thumb-small">
+<a class="mh-posts-stacked-overlay mh-posts-stacked-overlay-small" data-review-original-href="https://ajkaiszo.hu/kettos-strategiai-partnerseggel-erositi-a-regio-szakember-utanpotlasat-a-pannon-egyetem/" href="#" tabindex="-1"></a><img alt="" class="attachment-mh-magazine-lite-medium size-mh-magazine-lite-medium wp-post-image" data-attachment-id="92361" data-comments-opened="1" data-image-caption="&lt;p&gt;Fotó: Futó&lt;/p&gt;
+" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="pannon egyetem ajkai kampusz_2" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/08/pannon-egyetem-ajkai-kampusz_2.jpg?fit=800%2C600&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/08/pannon-egyetem-ajkai-kampusz_2.jpg?fit=300%2C225&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/08/pannon-egyetem-ajkai-kampusz_2.jpg?fit=800%2C600&amp;ssl=1" data-orig-size="800,600" data-permalink="https://ajkaiszo.hu/ajkan-szeptembertol-indul-az-egyetemi-informatikus-kepzes/pannon-egyetem-ajkai-kampusz_2/" decoding="async" height="245" loading="lazy" sizes="auto, (max-width: 326px) 100vw, 326px" width="326"/> <article class="mh-posts-stacked-item">
+<h3 class="mh-posts-stacked-title mh-posts-stacked-title-small">
+<a data-review-original-href="https://ajkaiszo.hu/kettos-strategiai-partnerseggel-erositi-a-regio-szakember-utanpotlasat-a-pannon-egyetem/" href="#" rel="bookmark" tabindex="-1" title="Kettős stratégiai partnerséggel erősíti a régió szakember-utánpótlását a Pannon Egyetem">
+													Kettős stratégiai partnerséggel erősíti a régió szakember-utánpótlását a Pannon Egyetem												</a>
+</h3>
+<div class="mh-posts-stacked-meta mh-posts-stacked-meta-small">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-15</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/kettos-strategiai-partnerseggel-erositi-a-regio-szakember-utanpotlasat-a-pannon-egyetem/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</article>
+</div>
+</div>
+</div> <div class="mh-posts-stacked-wrap mh-posts-stacked-small">
+<div class="post-101333 mh-posts-stacked-content">
+<div class="mh-posts-stacked-thumb mh-posts-stacked-thumb-small">
+<a class="mh-posts-stacked-overlay mh-posts-stacked-overlay-small" data-review-original-href="https://ajkaiszo.hu/varatlan-karriervaltas-szijjarto-peter-a-kinai-byd-csucsvezeteseben-folytatja-torlesztes-vagy-a-kapcsolatok-felvasarlasa/" href="#" tabindex="-1"></a><img alt="" class="attachment-mh-magazine-lite-medium size-mh-magazine-lite-medium wp-post-image" data-attachment-id="92790" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="szijjártó elindult" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/08/szijjarto-elindult.jpg?fit=800%2C533&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/08/szijjarto-elindult.jpg?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/08/szijjarto-elindult.jpg?fit=810%2C540&amp;ssl=1" data-orig-size="810,540" data-permalink="https://ajkaiszo.hu/panik-a-magyar-tozsden-leallhat-a-baratsag-ii-koolajvezetek-a-mol-reszvenyei-hatalmasat-estek/szijjarto-elindult/" decoding="async" height="245" loading="lazy" sizes="auto, (max-width: 326px) 100vw, 326px" width="326"/> <article class="mh-posts-stacked-item">
+<h3 class="mh-posts-stacked-title mh-posts-stacked-title-small">
+<a data-review-original-href="https://ajkaiszo.hu/varatlan-karriervaltas-szijjarto-peter-a-kinai-byd-csucsvezeteseben-folytatja-torlesztes-vagy-a-kapcsolatok-felvasarlasa/" href="#" rel="bookmark" tabindex="-1" title="Váratlan karrierváltás: Szijjártó Péter a kínai BYD csúcsvezetésében folytatja – Törlesztés vagy a kapcsolatok felvásárlása?">
+													Váratlan karrierváltás: Szijjártó Péter a kínai BYD csúcsvezetésében folytatja – Törlesztés vagy a kapcsolatok felvásárlása?												</a>
+</h3>
+<div class="mh-posts-stacked-meta mh-posts-stacked-meta-small">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-15</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/varatlan-karriervaltas-szijjarto-peter-a-kinai-byd-csucsvezeteseben-folytatja-torlesztes-vagy-a-kapcsolatok-felvasarlasa/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</article>
+</div>
+</div>
+</div> <div class="mh-posts-stacked-wrap mh-posts-stacked-small">
+<div class="post-101330 mh-posts-stacked-content">
+<div class="mh-posts-stacked-thumb mh-posts-stacked-thumb-small">
+<a class="mh-posts-stacked-overlay mh-posts-stacked-overlay-small mh-posts-stacked-overlay-last" data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/" href="#" tabindex="-1"></a><img alt="" class="attachment-mh-magazine-lite-medium size-mh-magazine-lite-medium wp-post-image" data-attachment-id="19752" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="jogseg" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=300%2C197&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-orig-size="800,524" data-permalink="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-8/jogseg/" decoding="async" height="245" loading="lazy" width="326"/> <article class="mh-posts-stacked-item">
+<h3 class="mh-posts-stacked-title mh-posts-stacked-title-small">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/" href="#" rel="bookmark" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK">
+													JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK												</a>
+</h3>
+<div class="mh-posts-stacked-meta mh-posts-stacked-meta-small">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-15</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</article>
+</div>
+</div>
+</div> <div class="mh-posts-stacked-wrap mh-posts-stacked-small">
+<div class="post-101315 mh-posts-stacked-content">
+<div class="mh-posts-stacked-thumb mh-posts-stacked-thumb-small">
+<a class="mh-posts-stacked-overlay mh-posts-stacked-overlay-small mh-posts-stacked-overlay-last" data-review-original-href="https://ajkaiszo.hu/husz-eve-szenteltek-fel-a-csingeri-boldog-iv-karoly-kiraly-kapolnat/" href="#" tabindex="-1"></a><img alt="" class="attachment-mh-magazine-lite-medium size-mh-magazine-lite-medium wp-post-image" data-attachment-id="101327" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="ta-csingdrkapolna20-compressed" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/ta-csingdrkapolna20-compressed.webp?fit=800%2C466&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/ta-csingdrkapolna20-compressed.webp?fit=300%2C175&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/ta-csingdrkapolna20-compressed.webp?fit=1000%2C583&amp;ssl=1" data-orig-size="1000,583" data-permalink="https://ajkaiszo.hu/husz-eve-szenteltek-fel-a-csingeri-boldog-iv-karoly-kiraly-kapolnat/ta-csingdrkapolna20-compressed/" decoding="async" height="245" loading="lazy" sizes="auto, (max-width: 326px) 100vw, 326px" width="326"/> <article class="mh-posts-stacked-item">
+<h3 class="mh-posts-stacked-title mh-posts-stacked-title-small">
+<a data-review-original-href="https://ajkaiszo.hu/husz-eve-szenteltek-fel-a-csingeri-boldog-iv-karoly-kiraly-kapolnat/" href="#" rel="bookmark" tabindex="-1" title="Húsz éve szentelték fel a csingeri Boldog IV. Károly Király Kápolnát">
+													Húsz éve szentelték fel a csingeri Boldog IV. Károly Király Kápolnát												</a>
+</h3>
+<div class="mh-posts-stacked-meta mh-posts-stacked-meta-small">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-15</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/husz-eve-szenteltek-fel-a-csingeri-boldog-iv-karoly-kiraly-kapolnat/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</article>
+</div>
+</div>
+</div></div>
+</div>
+</div><div class="mh-widget widget_text" id="text-5"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Hirdessen az Ajkai Szóban!</span></h4> <div class="textwidget">Hirdetésfelvétel  az Ajkai Média Nonprofit Kft-nél. Rákóczi F. utca 8. fsz. 1. 
+
+Telefon: 06-88/750-550<br/><br/>
+Hirdetési e-mail cím: ajkaimediakft@gmail.com
+
+Hirdetési lapzárta: minden hétfőn 12 órakor</div>
+</div><div class="mh-widget widget_nav_menu" id="nav_menu-5"><div class="menu-widget-menu-container"><ul class="menu" id="menu-widget-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178" id="menu-item-178"><a data-review-original-href="https://ajkaiszo.hu/impresszum/" href="#" tabindex="-1">Az Ajkai Szó online impresszuma</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-74875" id="menu-item-74875"><a data-review-original-href="https://ajkaiszo.hu/adatvedelmi-iranyelvek/" href="#" rel="privacy-policy" tabindex="-1">Adatvédelmi irányelvek</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96190" id="menu-item-96190"><a data-review-original-href="https://ajkaiszo.hu/impresszum/az-ajkai-szo-moderalasi-szabalyzata/" href="#" tabindex="-1">Az Ajkai Szó moderálási szabályzata</a></li>
+</ul></div></div><div class="mh-widget widget_jetpack_display_posts_widget" id="jetpack_display_posts_widget-2"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Legutóbbi bejegyzések: Ajkai Szó</span></h4><div class="jetpack-display-remote-posts"><h4><a data-review-original-href="https://ajkaiszo.hu/nem-jol-sikerult-a-bemutatkozas/" href="#" tabindex="-1">Nem jól sikerült a bemutatkozás</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/nem-jol-sikerult-a-bemutatkozas/" href="#" tabindex="-1" title="Nem jól sikerült a bemutatkozás"><img alt="Nem jól sikerült a bemutatkozás"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/ket-arany-egy-kulondij-ajkai-sikerek-a-komloi-szendrei-ferenc-emlekversenyen/" href="#" tabindex="-1">Két arany, egy különdíj – Ajkai sikerek a Komlói Szendrei Ferenc Emlékversenyen</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/ket-arany-egy-kulondij-ajkai-sikerek-a-komloi-szendrei-ferenc-emlekversenyen/" href="#" tabindex="-1" title="Két arany, egy különdíj – Ajkai sikerek a Komlói Szendrei Ferenc Emlékversenyen"><img alt="Két arany, egy különdíj – Ajkai sikerek a Komlói Szendrei Ferenc Emlékversenyen"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/oriasi-erdeklodes-mellett-zajlott-az-ingyenes-emlorakszures-a-muveszetek-volgyeben/" href="#" tabindex="-1">Óriási érdeklődés mellett zajlott az ingyenes emlőrákszűrés a Művészetek Völgyében</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/oriasi-erdeklodes-mellett-zajlott-az-ingyenes-emlorakszures-a-muveszetek-volgyeben/" href="#" tabindex="-1" title="Óriási érdeklődés mellett zajlott az ingyenes emlőrákszűrés a Művészetek Völgyében"><img alt="Óriási érdeklődés mellett zajlott az ingyenes emlőrákszűrés a Művészetek Völgyében"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/ket-baleset-is-tortent-penteken-ajkan-ket-serultet-szallitottak-korhazba/" href="#" tabindex="-1">Két baleset is történt pénteken Ajkán – két sérültet szállítottak kórházba</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/ket-baleset-is-tortent-penteken-ajkan-ket-serultet-szallitottak-korhazba/" href="#" tabindex="-1" title="Két baleset is történt pénteken Ajkán – két sérültet szállítottak kórházba"><img alt="Két baleset is történt pénteken Ajkán – két sérültet szállítottak kórházba"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/kertapolo-jakab-napja-jelzi-ideje-felszedni-a-fokhagymat/" href="#" tabindex="-1">Kertápoló- Jakab napja jelzi: ideje felszedni a fokhagymát</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/kertapolo-jakab-napja-jelzi-ideje-felszedni-a-fokhagymat/" href="#" tabindex="-1" title="Kertápoló- Jakab napja jelzi: ideje felszedni a fokhagymát"><img alt="Kertápoló- Jakab napja jelzi: ideje felszedni a fokhagymát"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/lezajlott-a-24-arok-party/" href="#" tabindex="-1">Lezajlott a 24. Árok Party</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/lezajlott-a-24-arok-party/" href="#" tabindex="-1" title="Lezajlott a 24. Árok Party"><img alt="Lezajlott a 24. Árok Party"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-ajkan-es-bakonygyepesen-2025-augusztus-4-en/" href="#" tabindex="-1">Tervezett áramszünet Ajkán és Bakonygyepesen – 2025. augusztus 4-én</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-ajkan-es-bakonygyepesen-2025-augusztus-4-en/" href="#" tabindex="-1" title="Tervezett áramszünet Ajkán és Bakonygyepesen – 2025. augusztus 4-én"><img alt="Tervezett áramszünet Ajkán és Bakonygyepesen – 2025. augusztus 4-én"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/husz-eve-nepszeru-banyasz-hagyomanyorzo-tabor/" href="#" tabindex="-1">Húsz éve népszerű – Bányász hagyományőrző tábor</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/husz-eve-nepszeru-banyasz-hagyomanyorzo-tabor/" href="#" tabindex="-1" title="Húsz éve népszerű – Bányász hagyományőrző tábor"><img alt="Húsz éve népszerű – Bányász hagyományőrző tábor"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/elozene-a-piknik-teraszon/" href="#" tabindex="-1">Élőzene a Piknik Teraszon</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/elozene-a-piknik-teraszon/" href="#" tabindex="-1" title="Élőzene a Piknik Teraszon"><img alt="Élőzene a Piknik Teraszon"/></a><h4><a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-varhato-ajkan-augusztus-8-an/" href="#" tabindex="-1">Tervezett áramszünet várható Ajkán augusztus 8-án</a></h4>
+<a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-varhato-ajkan-augusztus-8-an/" href="#" tabindex="-1" title="Tervezett áramszünet várható Ajkán augusztus 8-án"><img alt="Tervezett áramszünet várható Ajkán augusztus 8-án"/></a></div></div><div class="mh-widget widget_tag_cloud" id="tag_cloud-4"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Kategóriák</span></h4><div class="tagcloud"><a class="tag-cloud-link tag-link-4844 tag-link-position-1" data-review-original-href="https://ajkaiszo.hu/category/csak-ugy/" href="#" style="font-size: 12px;" tabindex="-1">"csak úgy"</a>
+<a class="tag-cloud-link tag-link-1488 tag-link-position-2" data-review-original-href="https://ajkaiszo.hu/category/europa/" href="#" style="font-size: 12px;" tabindex="-1">#Európa</a>
+<a class="tag-cloud-link tag-link-1036 tag-link-position-3" data-review-original-href="https://ajkaiszo.hu/category/mosterdekes/" href="#" style="font-size: 12px;" tabindex="-1">#mostérdekes</a>
+<a class="tag-cloud-link tag-link-5115 tag-link-position-4" data-review-original-href="https://ajkaiszo.hu/category/anyakonyvi-hirek/" href="#" style="font-size: 12px;" tabindex="-1">Anyakönyvi hírek</a>
+<a class="tag-cloud-link tag-link-66 tag-link-position-5" data-review-original-href="https://ajkaiszo.hu/category/egeszsegugy/" href="#" style="font-size: 12px;" tabindex="-1">Egészségügy</a>
+<a class="tag-cloud-link tag-link-1489 tag-link-position-6" data-review-original-href="https://ajkaiszo.hu/category/europa/ep-kepviseloi-nyiltlevel-sorozat-magyarorszag-polgaraihoz-230/" href="#" style="font-size: 12px;" tabindex="-1">EP-KÉPVISELŐI NYÍLTLEVÉL-SOROZAT MAGYARORSZÁG POLGÁRAIHOZ (230.)</a>
+<a class="tag-cloud-link tag-link-1492 tag-link-position-7" data-review-original-href="https://ajkaiszo.hu/category/europa/ep-valasztas/" href="#" style="font-size: 12px;" tabindex="-1">EP-választás</a>
+<a class="tag-cloud-link tag-link-3 tag-link-position-8" data-review-original-href="https://ajkaiszo.hu/category/gazdasag/" href="#" style="font-size: 12px;" tabindex="-1">Gazdaság</a>
+<a class="tag-cloud-link tag-link-78 tag-link-position-9" data-review-original-href="https://ajkaiszo.hu/category/gyermekvilag/" href="#" style="font-size: 12px;" tabindex="-1">Gyermekvilág</a>
+<a class="tag-cloud-link tag-link-5098 tag-link-position-10" data-review-original-href="https://ajkaiszo.hu/category/gyermekvilag/golyahir/" href="#" style="font-size: 12px;" tabindex="-1">Gólyahír</a>
+<a class="tag-cloud-link tag-link-3009 tag-link-position-11" data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/hirdetmenyek/" href="#" style="font-size: 12px;" tabindex="-1">hirdetmények</a>
+<a class="tag-cloud-link tag-link-3161 tag-link-position-12" data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/hirdetesek-hirdetesek/" href="#" style="font-size: 12px;" tabindex="-1">hirdetések</a>
+<a class="tag-cloud-link tag-link-2990 tag-link-position-13" data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/" href="#" style="font-size: 12px;" tabindex="-1">Hirdetések</a>
+<a class="tag-cloud-link tag-link-823 tag-link-position-14" data-review-original-href="https://ajkaiszo.hu/category/hitvilag/" href="#" style="font-size: 12px;" tabindex="-1">Hitvilág</a>
+<a class="tag-cloud-link tag-link-16 tag-link-position-15" data-review-original-href="https://ajkaiszo.hu/category/hirek/" href="#" style="font-size: 12px;" tabindex="-1">Hírek</a>
+<a class="tag-cloud-link tag-link-3134 tag-link-position-16" data-review-original-href="https://ajkaiszo.hu/category/hir-ozon/" href="#" style="font-size: 12px;" tabindex="-1">Hír özön</a>
+<a class="tag-cloud-link tag-link-937 tag-link-position-17" data-review-original-href="https://ajkaiszo.hu/category/interju/" href="#" style="font-size: 12px;" tabindex="-1">Interjú</a>
+<a class="tag-cloud-link tag-link-7 tag-link-position-18" data-review-original-href="https://ajkaiszo.hu/category/jo-tudni/" href="#" style="font-size: 12px;" tabindex="-1">Jó tudni</a>
+<a class="tag-cloud-link tag-link-18 tag-link-position-19" data-review-original-href="https://ajkaiszo.hu/category/kiemelthir/" href="#" style="font-size: 12px;" tabindex="-1">Kiemelt hír</a>
+<a class="tag-cloud-link tag-link-61 tag-link-position-20" data-review-original-href="https://ajkaiszo.hu/category/kiemelt-kiemelt/" href="#" style="font-size: 12px;" tabindex="-1">kiemelt kiemelt</a>
+<a class="tag-cloud-link tag-link-4 tag-link-position-21" data-review-original-href="https://ajkaiszo.hu/category/kultura/" href="#" style="font-size: 12px;" tabindex="-1">Kultúra</a>
+<a class="tag-cloud-link tag-link-5 tag-link-position-22" data-review-original-href="https://ajkaiszo.hu/category/kek-feny/" href="#" style="font-size: 12px;" tabindex="-1">Kék fény</a>
+<a class="tag-cloud-link tag-link-2 tag-link-position-23" data-review-original-href="https://ajkaiszo.hu/category/kozelet/" href="#" style="font-size: 12px;" tabindex="-1">Közélet</a>
+<a class="tag-cloud-link tag-link-2697 tag-link-position-24" data-review-original-href="https://ajkaiszo.hu/category/menyegzo/" href="#" style="font-size: 12px;" tabindex="-1">Menyegző</a>
+<a class="tag-cloud-link tag-link-214 tag-link-position-25" data-review-original-href="https://ajkaiszo.hu/category/olvasoink-irjak/" href="#" style="font-size: 12px;" tabindex="-1">Olvasóink írják</a>
+<a class="tag-cloud-link tag-link-271 tag-link-position-26" data-review-original-href="https://ajkaiszo.hu/category/kultura/pannon-varszinhaz/" href="#" style="font-size: 12px;" tabindex="-1">Pannon Várszínház</a>
+<a class="tag-cloud-link tag-link-2063 tag-link-position-27" data-review-original-href="https://ajkaiszo.hu/category/hirek/podcastok/" href="#" style="font-size: 12px;" tabindex="-1">Podcastok</a>
+<a class="tag-cloud-link tag-link-2327 tag-link-position-28" data-review-original-href="https://ajkaiszo.hu/category/hirdetesek/pr-cikk/" href="#" style="font-size: 12px;" tabindex="-1">PR cikk</a>
+<a class="tag-cloud-link tag-link-8 tag-link-position-29" data-review-original-href="https://ajkaiszo.hu/category/programajanlo/" href="#" style="font-size: 12px;" tabindex="-1">Programajánló</a>
+<a class="tag-cloud-link tag-link-774 tag-link-position-30" data-review-original-href="https://ajkaiszo.hu/category/riport/" href="#" style="font-size: 12px;" tabindex="-1">Riport</a>
+<a class="tag-cloud-link tag-link-1056 tag-link-position-31" data-review-original-href="https://ajkaiszo.hu/category/sajtoanyagok/" href="#" style="font-size: 12px;" tabindex="-1">sajtóanyagok</a>
+<a class="tag-cloud-link tag-link-6 tag-link-position-32" data-review-original-href="https://ajkaiszo.hu/category/sport/" href="#" style="font-size: 12px;" tabindex="-1">Sport</a>
+<a class="tag-cloud-link tag-link-762 tag-link-position-33" data-review-original-href="https://ajkaiszo.hu/category/tudomany/" href="#" style="font-size: 12px;" tabindex="-1">Tudomány</a>
+<a class="tag-cloud-link tag-link-11 tag-link-position-34" data-review-original-href="https://ajkaiszo.hu/category/tv-ajka/" href="#" style="font-size: 12px;" tabindex="-1">TV Ajka</a>
+<a class="tag-cloud-link tag-link-71 tag-link-position-35" data-review-original-href="https://ajkaiszo.hu/category/programajanlo/tv_musor/" href="#" style="font-size: 12px;" tabindex="-1">Tv Ajka műsora</a>
+<a class="tag-cloud-link tag-link-80 tag-link-position-36" data-review-original-href="https://ajkaiszo.hu/category/tv-ajka-videofala/" href="#" style="font-size: 12px;" tabindex="-1">Tv Ajka videófala</a>
+<a class="tag-cloud-link tag-link-69 tag-link-position-37" data-review-original-href="https://ajkaiszo.hu/category/tersegi-kilato/" href="#" style="font-size: 12px;" tabindex="-1">Térségi kilátó</a>
+<a class="tag-cloud-link tag-link-1491 tag-link-position-38" data-review-original-href="https://ajkaiszo.hu/category/europa/valasztasi-kisokos/" href="#" style="font-size: 12px;" tabindex="-1">VÁLASZTÁSI KISOKOS</a>
+<a class="tag-cloud-link tag-link-65 tag-link-position-39" data-review-original-href="https://ajkaiszo.hu/category/valasztas-2015/" href="#" style="font-size: 12px;" tabindex="-1">Választás 2015</a>
+<a class="tag-cloud-link tag-link-2136 tag-link-position-40" data-review-original-href="https://ajkaiszo.hu/category/europa/valasztasi-kisokos/valasztas-2022/" href="#" style="font-size: 12px;" tabindex="-1">Választás 2022</a>
+<a class="tag-cloud-link tag-link-4843 tag-link-position-41" data-review-original-href="https://ajkaiszo.hu/category/europa/valasztasi-kisokos/valasztas-2026/" href="#" style="font-size: 12px;" tabindex="-1">Választás 2026</a>
+<a class="tag-cloud-link tag-link-79 tag-link-position-42" data-review-original-href="https://ajkaiszo.hu/category/velemeny/" href="#" style="font-size: 12px;" tabindex="-1">Vélemény</a>
+<a class="tag-cloud-link tag-link-1015 tag-link-position-43" data-review-original-href="https://ajkaiszo.hu/category/allatvilagtermeszet/" href="#" style="font-size: 12px;" tabindex="-1">Állatvilág/Természet</a>
+<a class="tag-cloud-link tag-link-10 tag-link-position-44" data-review-original-href="https://ajkaiszo.hu/category/ujsagok/" href="#" style="font-size: 12px;" tabindex="-1">Újságok</a></div>
+</div><div class="mh-widget widget_nav_menu" id="nav_menu-2"><div class="menu-widget-menu-container"><ul class="menu" id="menu-widget-menu-1"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178"><a data-review-original-href="https://ajkaiszo.hu/impresszum/" href="#" tabindex="-1">Az Ajkai Szó online impresszuma</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-74875"><a data-review-original-href="https://ajkaiszo.hu/adatvedelmi-iranyelvek/" href="#" rel="privacy-policy" tabindex="-1">Adatvédelmi irányelvek</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96190"><a data-review-original-href="https://ajkaiszo.hu/impresszum/az-ajkai-szo-moderalasi-szabalyzata/" href="#" tabindex="-1">Az Ajkai Szó moderálási szabályzata</a></li>
+</ul></div></div><div class="mh-widget mh_slider_hp" id="mh_slider_hp-5"> <div class="flexslider mh-slider-widget mh-slider-normal" id="mh-slider-2966">
+<ul class="slides"> <li class="mh-slider-item">
+<article class="post-100841">
+<a data-review-original-href="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/" href="#" tabindex="-1" title="Pedagógusnak lenni nem munka, hanem hivatás – elismeréseket adtak át a Városi Pedagógusnapon"><img alt="Ünnepélyesen öltözött kitüntetett pedagógusok és elöljárók ülnek székeken a Városi Pedagógusnap alkalmából rendezett ünnepségen, az Ajkai Polgármesteri Hivatal dísztermében. A háttérben a magyar és az Európai Uniós zászló, valamint a magyar címer látható." class="attachment-mh-magazine-lite-content size-mh-magazine-lite-content wp-post-image" data-attachment-id="100843" data-comments-opened="1" data-image-caption="&lt;p&gt;A kitüntetett pedagógusok a Polgármesteri Hivatal dísztermében.&lt;/p&gt;
+" data-image-description="&lt;p&gt;A felvétel az ajkai Városi Pedagógusnap alkalmából készült a Polgármesteri Hivatal hatodik emeleti tanácstermében. A képen a Városi Önkormányzat által kitüntetésben részesült pedagógusok (óvodapedagógusok, tanítók, tanárok) és a város elöljárói láthatók ünnepélyes öltözetben, székeken ülve. A sor közepén dr. Horváth József alpolgármester foglal helyet. A faborítású falon a magyar és az EU-s zászló, illetve a magyar címer díszeleg. A terem padlója fa, a mennyezet modern világítással ellátott.&lt;/p&gt;
+" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="Kitüntetett pedagógusok az ajkai Városi Pedagógusnapon" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/pedagogusnap.webp?fit=800%2C451&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/pedagogusnap.webp?fit=300%2C169&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/pedagogusnap.webp?fit=1243%2C700&amp;ssl=1" data-orig-size="1243,700" data-permalink="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/pedagogusnap-2/" decoding="async" height="381" loading="lazy" sizes="auto, (max-width: 678px) 100vw, 678px" width="678"/> </a>
+<div class="mh-slider-caption">
+<div class="mh-slider-content">
+<a data-review-original-href="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/" href="#" tabindex="-1" title="Pedagógusnak lenni nem munka, hanem hivatás – elismeréseket adtak át a Városi Pedagógusnapon">
+<h2 class="mh-slider-title">
+												Pedagógusnak lenni nem munka, hanem hivatás – elismeréseket adtak át a Városi Pedagógusnapon											</h2>
+</a>
+<div class="mh-slider-excerpt">
+<div class="mh-excerpt"><p>Ajka városa június 10-én a Városi Pedagógusnapon köszöntötte az óvodapedagógusokat, tanítókat és tanárokat, amelynek a <a class="mh-excerpt-more" data-review-original-href="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/" href="#" tabindex="-1" title="Pedagógusnak lenni nem munka, hanem hivatás – elismeréseket adtak át a Városi Pedagógusnapon">[…]</a></p>
+</div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/" data-layout="button_count"></div></li><li class="share-email"><a class="share-email sd-button" data-email-share-error-text="If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-error-title="Do you have email set up?" data-email-share-nonce="4ebc0e3735" data-email-share-track-url="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/?share=email" data-review-original-href="mailto:?subject=%5BShared%20Post%5D%20Pedag%C3%B3gusnak%20lenni%20nem%20munka%2C%20hanem%20hivat%C3%A1s%20%E2%80%93%20elismer%C3%A9seket%20adtak%20%C3%A1t%20a%20V%C3%A1rosi%20Pedag%C3%B3gusnapon&amp;body=https%3A%2F%2Fajkaiszo.hu%2Fpedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon%2F&amp;share=email" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to email a link to a friend"><span>Email</span></a></li><li class="share-twitter"><a class="twitter-share-button" data-review-original-href="https://twitter.com/share" data-text="Pedagógusnak lenni nem munka, hanem hivatás – elismeréseket adtak át a Városi Pedagógusnapon" data-url="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/" data-via="AjkaiSz" href="#" tabindex="-1">Tweet</a></li><li class="share-print"><a class="share-print sd-button" data-review-original-href="https://ajkaiszo.hu/pedagogusnak-lenni-nem-munka-hanem-hivatas-elismereseket-adtak-at-a-varosi-pedagogusnapon/#print" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-93528836-100841-6a589d16d7032" data-src="https://widgets.wp.com/likes/?ver=13.2.2#blog_id=93528836&amp;post_id=100841&amp;origin=ajkaiszo.hu&amp;obj_id=93528836-100841-6a589d16d7032&amp;n=1" data-title="Like or Reblog" id="like-post-wrapper-93528836-100841-6a589d16d7032"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> </div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div> </div>
+</div>
+</div>
+</article>
+</li> <li class="mh-slider-item">
+<article class="post-100705">
+<a data-review-original-href="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/" href="#" tabindex="-1" title="Újraindult a vonatforgalom Veszprém és Ajka között: Hegyi Zsolt levonta a másfél éves kálvária súlyos tanulságait"><img alt="" class="attachment-mh-magazine-lite-content size-mh-magazine-lite-content wp-post-image" data-attachment-id="100706" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="vonat Ajka" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/05/vonat-Ajka.webp?fit=800%2C533&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/05/vonat-Ajka.webp?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/05/vonat-Ajka.webp?fit=800%2C533&amp;ssl=1" data-orig-size="800,533" data-permalink="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/vonat-ajka/" decoding="async" height="381" loading="lazy" width="678"/> </a>
+<div class="mh-slider-caption">
+<div class="mh-slider-content">
+<a data-review-original-href="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/" href="#" tabindex="-1" title="Újraindult a vonatforgalom Veszprém és Ajka között: Hegyi Zsolt levonta a másfél éves kálvária súlyos tanulságait">
+<h2 class="mh-slider-title">
+												Újraindult a vonatforgalom Veszprém és Ajka között: Hegyi Zsolt levonta a másfél éves kálvária súlyos tanulságait											</h2>
+</a>
+<div class="mh-slider-excerpt">
+<div class="mh-excerpt"><p>Ma hajnaltól ismét teljes értékű vasúti kapcsolat jött létre a 20-as vonalon, miután a Veszprém <a class="mh-excerpt-more" data-review-original-href="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/" href="#" tabindex="-1" title="Újraindult a vonatforgalom Veszprém és Ajka között: Hegyi Zsolt levonta a másfél éves kálvária súlyos tanulságait">[…]</a></p>
+</div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/" data-layout="button_count"></div></li><li class="share-email"><a class="share-email sd-button" data-email-share-error-text="If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-error-title="Do you have email set up?" data-email-share-nonce="95b4cc60b9" data-email-share-track-url="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/?share=email" data-review-original-href="mailto:?subject=%5BShared%20Post%5D%20%C3%9Ajraindult%20a%20vonatforgalom%20Veszpr%C3%A9m%20%C3%A9s%20Ajka%20k%C3%B6z%C3%B6tt%3A%20Hegyi%20Zsolt%20levonta%20a%20m%C3%A1sf%C3%A9l%20%C3%A9ves%20k%C3%A1lv%C3%A1ria%20s%C3%BAlyos%20tanuls%C3%A1gait&amp;body=https%3A%2F%2Fajkaiszo.hu%2Fujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait%2F&amp;share=email" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to email a link to a friend"><span>Email</span></a></li><li class="share-twitter"><a class="twitter-share-button" data-review-original-href="https://twitter.com/share" data-text="Újraindult a vonatforgalom Veszprém és Ajka között: Hegyi Zsolt levonta a másfél éves kálvária súlyos tanulságait" data-url="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/" data-via="AjkaiSz" href="#" tabindex="-1">Tweet</a></li><li class="share-print"><a class="share-print sd-button" data-review-original-href="https://ajkaiszo.hu/ujraindult-a-vonatforgalom-veszprem-es-ajka-kozott-hegyi-zsolt-levonta-a-masfel-eves-kalvaria-sulyos-tanulsagait/#print" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-93528836-100705-6a589d16d7de9" data-src="https://widgets.wp.com/likes/?ver=13.2.2#blog_id=93528836&amp;post_id=100705&amp;origin=ajkaiszo.hu&amp;obj_id=93528836-100705-6a589d16d7de9&amp;n=1" data-title="Like or Reblog" id="like-post-wrapper-93528836-100705-6a589d16d7de9"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> </div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div> </div>
+</div>
+</div>
+</article>
+</li> <li class="mh-slider-item">
+<article class="post-98755">
+<a data-review-original-href="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/" href="#" tabindex="-1" title="Zenekaros karácsonyi koncert Hidasi Rékával és Nagy Feróval"><img alt="" class="attachment-mh-magazine-lite-content size-mh-magazine-lite-content wp-post-image" data-attachment-id="98757" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="hidasi reka koncert" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2025/12/hidasi-reka-koncert.webp?fit=800%2C450&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2025/12/hidasi-reka-koncert.webp?fit=300%2C169&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2025/12/hidasi-reka-koncert.webp?fit=800%2C450&amp;ssl=1" data-orig-size="800,450" data-permalink="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/hidasi-reka-koncert/" decoding="async" height="381" loading="lazy" sizes="auto, (max-width: 678px) 100vw, 678px" width="678"/> </a>
+<div class="mh-slider-caption">
+<div class="mh-slider-content">
+<a data-review-original-href="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/" href="#" tabindex="-1" title="Zenekaros karácsonyi koncert Hidasi Rékával és Nagy Feróval">
+<h2 class="mh-slider-title">
+												Zenekaros karácsonyi koncert Hidasi Rékával és Nagy Feróval											</h2>
+</a>
+<div class="mh-slider-excerpt">
+<div class="mh-excerpt"><p>Sokaknak a 13-a baljós dátumot jelent, ám Ajkán, a Nagy László Városi Művelődési Központ színháztermében <a class="mh-excerpt-more" data-review-original-href="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/" href="#" tabindex="-1" title="Zenekaros karácsonyi koncert Hidasi Rékával és Nagy Feróval">[…]</a></p>
+</div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/" data-layout="button_count"></div></li><li class="share-email"><a class="share-email sd-button" data-email-share-error-text="If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-error-title="Do you have email set up?" data-email-share-nonce="056f1101e5" data-email-share-track-url="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/?share=email" data-review-original-href="mailto:?subject=%5BShared%20Post%5D%20Zenekaros%20kar%C3%A1csonyi%20koncert%20Hidasi%20R%C3%A9k%C3%A1val%20%C3%A9s%20Nagy%20Fer%C3%B3val&amp;body=https%3A%2F%2Fajkaiszo.hu%2Fzenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval%2F&amp;share=email" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to email a link to a friend"><span>Email</span></a></li><li class="share-twitter"><a class="twitter-share-button" data-review-original-href="https://twitter.com/share" data-text="Zenekaros karácsonyi koncert Hidasi Rékával és Nagy Feróval" data-url="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/" data-via="AjkaiSz" href="#" tabindex="-1">Tweet</a></li><li class="share-print"><a class="share-print sd-button" data-review-original-href="https://ajkaiszo.hu/zenekaros-karacsonyi-koncert-hidasi-rekaval-es-nagy-feroval/#print" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-93528836-98755-6a589d16d8d91" data-src="https://widgets.wp.com/likes/?ver=13.2.2#blog_id=93528836&amp;post_id=98755&amp;origin=ajkaiszo.hu&amp;obj_id=93528836-98755-6a589d16d8d91&amp;n=1" data-title="Like or Reblog" id="like-post-wrapper-93528836-98755-6a589d16d8d91"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> </div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div> </div>
+</div>
+</div>
+</article>
+</li> <li class="mh-slider-item">
+<article class="post-98307">
+<a data-review-original-href="https://ajkaiszo.hu/osszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol/" href="#" tabindex="-1" title="Összefoglaló Ajka Város Önkormányzatának 2025.11.05-i testületi üléséről"><img alt="" class="attachment-mh-magazine-lite-content size-mh-magazine-lite-content wp-post-image" data-attachment-id="89433" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"2.8","credit":"Gyarmati Laszlo","camera":"NIKON Z 5","caption":"","created_timestamp":"1695715410","copyright":"Gyarmati Laszlo","focal_length":"200","iso":"4500","shutter_speed":"0.0015625","title":"","orientation":"0"}' data-image-title="gyl0926testületi (7)" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2023/10/gyl0926testuleti-7-e1697265348950.jpg?fit=800%2C534&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2023/10/gyl0926testuleti-7-e1697265348950.jpg?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2023/10/gyl0926testuleti-7-e1697265348950.jpg?fit=1000%2C668&amp;ssl=1" data-orig-size="1000,668" data-permalink="https://ajkaiszo.hu/praxistamogatas-atszervezes/gyl0926testuleti-7/" decoding="async" height="381" loading="lazy" width="678"/> </a>
+<div class="mh-slider-caption">
+<div class="mh-slider-content">
+<a data-review-original-href="https://ajkaiszo.hu/osszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol/" href="#" tabindex="-1" title="Összefoglaló Ajka Város Önkormányzatának 2025.11.05-i testületi üléséről">
+<h2 class="mh-slider-title">
+												Összefoglaló Ajka Város Önkormányzatának 2025.11.05-i testületi üléséről											</h2>
+</a>
+<div class="mh-slider-excerpt">
+<div class="mh-excerpt"><p>Ajka város képviselőtestülete november 5-én, szerdán rendkívüli testületi ülést tartott. A testület valamennyi beterjesztést megszavazott, <a class="mh-excerpt-more" data-review-original-href="https://ajkaiszo.hu/osszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol/" href="#" tabindex="-1" title="Összefoglaló Ajka Város Önkormányzatának 2025.11.05-i testületi üléséről">[…]</a></p>
+</div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://ajkaiszo.hu/osszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol/" data-layout="button_count"></div></li><li class="share-email"><a class="share-email sd-button" data-email-share-error-text="If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-error-title="Do you have email set up?" data-email-share-nonce="0cdc447e95" data-email-share-track-url="https://ajkaiszo.hu/osszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol/?share=email" data-review-original-href="mailto:?subject=%5BShared%20Post%5D%20%C3%96sszefoglal%C3%B3%20Ajka%20V%C3%A1ros%20%C3%96nkorm%C3%A1nyzat%C3%A1nak%202025.11.05-i%20test%C3%BCleti%20%C3%BCl%C3%A9s%C3%A9r%C5%91l&amp;body=https%3A%2F%2Fajkaiszo.hu%2Fosszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol%2F&amp;share=email" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to email a link to a friend"><span>Email</span></a></li><li class="share-twitter"><a class="twitter-share-button" data-review-original-href="https://twitter.com/share" data-text="Összefoglaló Ajka Város Önkormányzatának 2025.11.05-i testületi üléséről" data-url="https://ajkaiszo.hu/osszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol/" data-via="AjkaiSz" href="#" tabindex="-1">Tweet</a></li><li class="share-print"><a class="share-print sd-button" data-review-original-href="https://ajkaiszo.hu/osszefoglalo-ajka-varos-onkormanyzatanak-2025-11-05-i-testuleti-uleserol/#print" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-93528836-98307-6a589d16d9bf7" data-src="https://widgets.wp.com/likes/?ver=13.2.2#blog_id=93528836&amp;post_id=98307&amp;origin=ajkaiszo.hu&amp;obj_id=93528836-98307-6a589d16d9bf7&amp;n=1" data-title="Like or Reblog" id="like-post-wrapper-93528836-98307-6a589d16d9bf7"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> </div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div> </div>
+</div>
+</div>
+</article>
+</li> <li class="mh-slider-item">
+<article class="post-97732">
+<a data-review-original-href="https://ajkaiszo.hu/negy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt/" href="#" tabindex="-1" title="Négy új híd és megújult utak a belvárosban – lezárult az „Ajka, belterületi utak fejlesztése” projekt"><img alt="No Image" class="mh-image-placeholder"/> </a>
+<div class="mh-slider-caption">
+<div class="mh-slider-content">
+<a data-review-original-href="https://ajkaiszo.hu/negy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt/" href="#" tabindex="-1" title="Négy új híd és megújult utak a belvárosban – lezárult az „Ajka, belterületi utak fejlesztése” projekt">
+<h2 class="mh-slider-title">
+												Négy új híd és megújult utak a belvárosban – lezárult az „Ajka, belterületi utak fejlesztése” projekt											</h2>
+</a>
+<div class="mh-slider-excerpt">
+<div class="mh-excerpt"><p>Ünnepélyes keretek között adták át szeptember 19-én Ajka legújabb közlekedési fejlesztéseit, az Európai Mobilitási Hét <a class="mh-excerpt-more" data-review-original-href="https://ajkaiszo.hu/negy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt/" href="#" tabindex="-1" title="Négy új híd és megújult utak a belvárosban – lezárult az „Ajka, belterületi utak fejlesztése” projekt">[…]</a></p>
+</div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://ajkaiszo.hu/negy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt/" data-layout="button_count"></div></li><li class="share-email"><a class="share-email sd-button" data-email-share-error-text="If you're having problems sharing via email, you might not have email set up for your browser. You may need to create a new email yourself." data-email-share-error-title="Do you have email set up?" data-email-share-nonce="35604b5ec0" data-email-share-track-url="https://ajkaiszo.hu/negy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt/?share=email" data-review-original-href="mailto:?subject=%5BShared%20Post%5D%20N%C3%A9gy%20%C3%BAj%20h%C3%ADd%20%C3%A9s%20meg%C3%BAjult%20utak%20a%20belv%C3%A1rosban%20%E2%80%93%20lez%C3%A1rult%20az%20%E2%80%9EAjka%2C%20belter%C3%BCleti%20utak%20fejleszt%C3%A9se%E2%80%9D%20projekt&amp;body=https%3A%2F%2Fajkaiszo.hu%2Fnegy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt%2F&amp;share=email" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to email a link to a friend"><span>Email</span></a></li><li class="share-twitter"><a class="twitter-share-button" data-review-original-href="https://twitter.com/share" data-text="Négy új híd és megújult utak a belvárosban – lezárult az „Ajka, belterületi utak fejlesztése” projekt" data-url="https://ajkaiszo.hu/negy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt/" data-via="AjkaiSz" href="#" tabindex="-1">Tweet</a></li><li class="share-print"><a class="share-print sd-button" data-review-original-href="https://ajkaiszo.hu/negy-uj-hid-es-megujult-utak-a-belvarosban-lezarult-az-ajka-belteruleti-utak-fejlesztese-projekt/#print" data-shared="" href="#" rel="nofollow noopener noreferrer" tabindex="-1" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" data-name="like-post-frame-93528836-97732-6a589d16dafb1" data-src="https://widgets.wp.com/likes/?ver=13.2.2#blog_id=93528836&amp;post_id=97732&amp;origin=ajkaiszo.hu&amp;obj_id=93528836-97732-6a589d16dafb1&amp;n=1" data-title="Like or Reblog" id="like-post-wrapper-93528836-97732-6a589d16dafb1"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px;"><span class="button"><span>Like</span></span> </div><span class="sd-text-color"></span><a class="sd-link-color" data-review-original-href="" href="#" tabindex="-1"></a></div> </div>
+</div>
+</div>
+</article>
+</li> </ul>
+</div></div></aside></div>
+<footer class="mh-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
+<div class="mh-container mh-container-inner mh-footer-widgets mh-row mh-clearfix">
+<div class="mh-col-1-4 mh-widget-col-1 mh-footer-4-cols mh-footer-area mh-footer-1">
+<div class="mh-footer-widget mh_custom_posts" id="mh_custom_posts-9"> <ul class="mh-custom-posts-widget mh-clearfix"> <li class="post-101330 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="19752" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="jogseg" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=300%2C197&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-orig-size="800,524" data-permalink="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-8/jogseg/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK">
+									JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-15</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-43/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101204 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-lesz-padragkuton-julius-13-an/" href="#" tabindex="-1" title="Tervezett áramszünet lesz Padragkúton július 13-án"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="22280" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"Photo may be used to accompany news-related reports about Nord Stream provided the source (Nord Stream AG) is mentioned.","focal_length":"0","iso":"0","shutter_speed":"0","title":"E.ON SE Logo","orientation":"0"}' data-image-title="E.ON SE Logo" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/10/eon.jpg?fit=800%2C334&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/10/eon.jpg?fit=300%2C125&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/10/eon.jpg?fit=1417%2C592&amp;ssl=1" data-orig-size="1417,592" data-permalink="https://ajkaiszo.hu/e-beruhazasok-ajkan/e-on-se-logo/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-lesz-padragkuton-julius-13-an/" href="#" tabindex="-1" title="Tervezett áramszünet lesz Padragkúton július 13-án">
+									Tervezett áramszünet lesz Padragkúton július 13-án								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-06</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/tervezett-aramszunet-lesz-padragkuton-julius-13-an/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101173 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/" href="#" tabindex="-1" title="Ajka nyerte a WWF 2026-os One Planet City Challenge nemzeti díját"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="101174" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="260630_NJHSC_019-compressed" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/260630_NJHSC_019-compressed.webp?fit=800%2C534&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/260630_NJHSC_019-compressed.webp?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/07/260630_NJHSC_019-compressed.webp?fit=1000%2C667&amp;ssl=1" data-orig-size="1000,667" data-permalink="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/260630_njhsc_019-compressed/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/" href="#" tabindex="-1" title="Ajka nyerte a WWF 2026-os One Planet City Challenge nemzeti díját">
+									Ajka nyerte a WWF 2026-os One Planet City Challenge nemzeti díját								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-04</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/ajka-nyerte-a-wwf-2026-os-one-planet-city-challenge-nemzeti-dijat/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101165 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-42/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="19752" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="jogseg" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=300%2C197&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2016/07/jogseg.jpg?fit=800%2C524&amp;ssl=1" data-orig-size="800,524" data-permalink="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-8/jogseg/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-42/" href="#" tabindex="-1" title="JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK">
+									JOGI SEGÍTSÉGNYÚJTÁS RÁSZORULÓKNAK								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-07-03</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/jogi-segitsegnyujtas-raszoruloknak-42/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101055 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/nyari-zarvatartas-a-varosi-konyvtarban-es-a-bogancs-gyermekkonyvtarban/" href="#" tabindex="-1" title="Nyári zárvatartás a Városi Könyvtárban és a Bogáncs Gyermekkönyvtárban"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="94309" data-comments-opened="1" data-image-caption="" data-image-description="&lt;p&gt;https://ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg&lt;/p&gt;
+" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="favicon_logo" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=512%2C512&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=300%2C300&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=512%2C512&amp;ssl=1" data-orig-size="512,512" data-permalink="https://ajkaiszo.hu/cropped-logo-jpg-2/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/nyari-zarvatartas-a-varosi-konyvtarban-es-a-bogancs-gyermekkonyvtarban/" href="#" tabindex="-1" title="Nyári zárvatartás a Városi Könyvtárban és a Bogáncs Gyermekkönyvtárban">
+									Nyári zárvatartás a Városi Könyvtárban és a Bogáncs Gyermekkönyvtárban								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-06-28</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/nyari-zarvatartas-a-varosi-konyvtarban-es-a-bogancs-gyermekkonyvtarban/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> </ul></div></div>
+<div class="mh-col-1-4 mh-widget-col-1 mh-footer-4-cols mh-footer-area mh-footer-2">
+<div class="mh-footer-widget mh_custom_posts" id="mh_custom_posts-8"> <ul class="mh-custom-posts-widget mh-clearfix"> <li class="post-98796 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/megujult-a-moonlight-torture-chamber/" href="#" tabindex="-1" title="Megújult a Moonlight Torture Chamber"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="98799" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="MLT1" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2025/12/MLT1.webp?fit=800%2C467&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2025/12/MLT1.webp?fit=300%2C175&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2025/12/MLT1.webp?fit=1200%2C700&amp;ssl=1" data-orig-size="1200,700" data-permalink="https://ajkaiszo.hu/megujult-a-moonlight-torture-chamber/mlt1/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/megujult-a-moonlight-torture-chamber/" href="#" tabindex="-1" title="Megújult a Moonlight Torture Chamber">
+									Megújult a Moonlight Torture Chamber								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2025-12-17</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/megujult-a-moonlight-torture-chamber/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-94435 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/moonlight-torture-chamber-ajka-legnepszerubb-piercing-szalonja-vendegvelemenyekkel/" href="#" tabindex="-1" title="Moonlight Torture Chamber – Ajka legnépszerűbb piercing szalonja vendégvéleményekkel"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="94444" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="moonlight-torture-chamber-ajka-piercing-szalon" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/moonlight-torture-chamber-ajka-piercing-szalon.gif?fit=376%2C314&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/moonlight-torture-chamber-ajka-piercing-szalon.gif?fit=300%2C251&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/moonlight-torture-chamber-ajka-piercing-szalon.gif?fit=376%2C314&amp;ssl=1" data-orig-size="376,314" data-permalink="https://ajkaiszo.hu/moonlight-torture-chamber-ajka-legnepszerubb-piercing-szalonja-vendegvelemenyekkel/moonlight-torture-chamber-ajka-piercing-szalon/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/moonlight-torture-chamber-ajka-legnepszerubb-piercing-szalonja-vendegvelemenyekkel/" href="#" tabindex="-1" title="Moonlight Torture Chamber – Ajka legnépszerűbb piercing szalonja vendégvéleményekkel">
+									Moonlight Torture Chamber – Ajka legnépszerűbb piercing szalonja vendégvéleményekkel								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2024-11-28</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/moonlight-torture-chamber-ajka-legnepszerubb-piercing-szalonja-vendegvelemenyekkel/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-93986 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/pr-cikkek-megjelenese-az-ajkai-szo-online-hirportalon/" href="#" tabindex="-1" title="PR cikkek megjelenése az Ajkai Szó Online hírportálon"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="42280" data-comments-opened="1" data-image-caption="&lt;p&gt;Illusztráció&lt;/p&gt;
+" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="álláshirdetés" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2018/03/álláshirdetés.png?fit=550%2C297&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2018/03/álláshirdetés.png?fit=300%2C162&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2018/03/álláshirdetés.png?fit=550%2C297&amp;ssl=1" data-orig-size="550,297" data-permalink="https://ajkaiszo.hu/nem-letezo-allast-kinalt-egy-ajkai-is-bedolt-neki/allashirdetes/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/pr-cikkek-megjelenese-az-ajkai-szo-online-hirportalon/" href="#" tabindex="-1" title="PR cikkek megjelenése az Ajkai Szó Online hírportálon">
+									PR cikkek megjelenése az Ajkai Szó Online hírportálon								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2024-11-09</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/pr-cikkek-megjelenese-az-ajkai-szo-online-hirportalon/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-90409 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/a-parkapcsolati-kudarc-ellenszere-avagy-a-hatekony-konfliktuskezeles-modszerei/" href="#" tabindex="-1" title="A párkapcsolati kudarc ellenszere, avagy a hatékony konfliktuskezelés módszerei"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="90411" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="veszekedo-par" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/01/veszekedo-par.jpg?fit=800%2C533&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/01/veszekedo-par.jpg?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/01/veszekedo-par.jpg?fit=800%2C533&amp;ssl=1" data-orig-size="800,533" data-permalink="https://ajkaiszo.hu/a-parkapcsolati-kudarc-ellenszere-avagy-a-hatekony-konfliktuskezeles-modszerei/veszekedo-par/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/a-parkapcsolati-kudarc-ellenszere-avagy-a-hatekony-konfliktuskezeles-modszerei/" href="#" tabindex="-1" title="A párkapcsolati kudarc ellenszere, avagy a hatékony konfliktuskezelés módszerei">
+									A párkapcsolati kudarc ellenszere, avagy a hatékony konfliktuskezelés módszerei								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2024-01-20</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/a-parkapcsolati-kudarc-ellenszere-avagy-a-hatekony-konfliktuskezeles-modszerei/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-90171 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/80-eve-reszese-a-magyarorszagi-energiatermelesnek-az-ajkai-eromu/" href="#" tabindex="-1" title="80 éve részese a magyarországi energiatermelésnek az ajkai erőmű"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="90172" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"11","credit":"","camera":"Canon EOS 600D","caption":"","created_timestamp":"1700661222","copyright":"","focal_length":"18","iso":"400","shutter_speed":"0.005","title":"","orientation":"1"}' data-image-title="80 éves az erőmű" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2023/12/80-eves-az-eromu-scaled-e1702541057306.jpg?fit=800%2C533&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2023/12/80-eves-az-eromu-scaled-e1702541057306.jpg?fit=300%2C200&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2023/12/80-eves-az-eromu-scaled-e1702541057306.jpg?fit=1000%2C667&amp;ssl=1" data-orig-size="1000,667" data-permalink="https://ajkaiszo.hu/80-eve-reszese-a-magyarorszagi-energiatermelesnek-az-ajkai-eromu/80-eves-az-eromu/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/80-eve-reszese-a-magyarorszagi-energiatermelesnek-az-ajkai-eromu/" href="#" tabindex="-1" title="80 éve részese a magyarországi energiatermelésnek az ajkai erőmű">
+									80 éve részese a magyarországi energiatermelésnek az ajkai erőmű								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2023-12-14</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/80-eve-reszese-a-magyarorszagi-energiatermelesnek-az-ajkai-eromu/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> </ul></div></div>
+<div class="mh-col-1-4 mh-widget-col-1 mh-footer-4-cols mh-footer-area mh-footer-3">
+<div class="mh-footer-widget mh_custom_posts" id="mh_custom_posts-10"> <ul class="mh-custom-posts-widget mh-clearfix"> <li class="post-100495 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/sajtokozlemeny-mozgas-sport-kozosseg-europa-nap-x-to-piknik-2/" href="#" tabindex="-1" title="Sajtóközlemény: MOZGÁS, SPORT, KÖZÖSSÉG -Európa-nap x Tó-Piknik"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="100496" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="sajtáj" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/05/sajtaj.webp?fit=800%2C467&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/05/sajtaj.webp?fit=300%2C175&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/05/sajtaj.webp?fit=1200%2C700&amp;ssl=1" data-orig-size="1200,700" data-permalink="https://ajkaiszo.hu/sajtokozlemeny-mozgas-sport-kozosseg-europa-nap-x-to-piknik-2/sajtaj-3/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/sajtokozlemeny-mozgas-sport-kozosseg-europa-nap-x-to-piknik-2/" href="#" tabindex="-1" title="Sajtóközlemény: MOZGÁS, SPORT, KÖZÖSSÉG -Európa-nap x Tó-Piknik">
+									Sajtóközlemény: MOZGÁS, SPORT, KÖZÖSSÉG -Európa-nap x Tó-Piknik								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-05-13</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/sajtokozlemeny-mozgas-sport-kozosseg-europa-nap-x-to-piknik-2/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-100456 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/sport-mozgas-kozosseg-europa-nap-x-to-piknik/" href="#" tabindex="-1" title="Sport, mozgás, közösség – EURÓPA-NAP X TÓ-PIKNIK"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="26290" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="program ajánló" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-size="220,210" data-permalink="https://ajkaiszo.hu/programajanlo-27/programajanlo-27-2/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/sport-mozgas-kozosseg-europa-nap-x-to-piknik/" href="#" tabindex="-1" title="Sport, mozgás, közösség – EURÓPA-NAP X TÓ-PIKNIK">
+									Sport, mozgás, közösség – EURÓPA-NAP X TÓ-PIKNIK								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-05-08</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/sport-mozgas-kozosseg-europa-nap-x-to-piknik/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-100454 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/szereted-a-kihivasokat-akkor-ezt-ne-hagyd-ki/" href="#" tabindex="-1" title="Szereted a kihívásokat? Akkor ezt ne hagyd ki!"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="26290" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="program ajánló" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-size="220,210" data-permalink="https://ajkaiszo.hu/programajanlo-27/programajanlo-27-2/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/szereted-a-kihivasokat-akkor-ezt-ne-hagyd-ki/" href="#" tabindex="-1" title="Szereted a kihívásokat? Akkor ezt ne hagyd ki!">
+									Szereted a kihívásokat? Akkor ezt ne hagyd ki!								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-05-08</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/szereted-a-kihivasokat-akkor-ezt-ne-hagyd-ki/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-100452 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/tudtad-hogy-mennyi-minden-var-rad-ezen-a-napon/" href="#" tabindex="-1" title="Tudtad, hogy mennyi minden vár rád ezen a napon?"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="26290" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="program ajánló" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-size="220,210" data-permalink="https://ajkaiszo.hu/programajanlo-27/programajanlo-27-2/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/tudtad-hogy-mennyi-minden-var-rad-ezen-a-napon/" href="#" tabindex="-1" title="Tudtad, hogy mennyi minden vár rád ezen a napon?">
+									Tudtad, hogy mennyi minden vár rád ezen a napon?								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-05-08</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/tudtad-hogy-mennyi-minden-var-rad-ezen-a-napon/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-100440 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/ez-nem-csak-egy-esemeny-ez-egy-kozossegi-elmeny/" href="#" tabindex="-1" title="Ez nem csak egy esemény. Ez egy közösségi élmény."><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="26290" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"1"}' data-image-title="program ajánló" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2017/01/programajanlo.jpg?fit=220%2C210&amp;ssl=1" data-orig-size="220,210" data-permalink="https://ajkaiszo.hu/programajanlo-27/programajanlo-27-2/" decoding="async" height="60" loading="lazy" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/ez-nem-csak-egy-esemeny-ez-egy-kozossegi-elmeny/" href="#" tabindex="-1" title="Ez nem csak egy esemény. Ez egy közösségi élmény.">
+									Ez nem csak egy esemény. Ez egy közösségi élmény.								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-05-07</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/ez-nem-csak-egy-esemeny-ez-egy-kozossegi-elmeny/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> </ul></div></div>
+<div class="mh-col-1-4 mh-widget-col-1 mh-footer-4-cols mh-footer-area mh-footer-4">
+<div class="mh-footer-widget mh_custom_posts" id="mh_custom_posts-11"> <ul class="mh-custom-posts-widget mh-clearfix"> <li class="post-101026 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/ukran-konyvespolc-nyilt-ajkan-hetven-kotettel-gazdagodott-a-varosi-konyvtar/" href="#" tabindex="-1" title="Ukrán könyvespolc nyílt Ajkán, hetven kötettel gazdagodott a városi könyvtár"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="101028" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="ukrán könyvespolc" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/20260623_131839-compressed.webp?fit=800%2C450&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/20260623_131839-compressed.webp?fit=300%2C169&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/20260623_131839-compressed.webp?fit=1000%2C563&amp;ssl=1" data-orig-size="1000,563" data-permalink="https://ajkaiszo.hu/ukran-konyvespolc-nyilt-ajkan-hetven-kotettel-gazdagodott-a-varosi-konyvtar/20260623_131839-compressed/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/ukran-konyvespolc-nyilt-ajkan-hetven-kotettel-gazdagodott-a-varosi-konyvtar/" href="#" tabindex="-1" title="Ukrán könyvespolc nyílt Ajkán, hetven kötettel gazdagodott a városi könyvtár">
+									Ukrán könyvespolc nyílt Ajkán, hetven kötettel gazdagodott a városi könyvtár								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-06-27</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/ukran-konyvespolc-nyilt-ajkan-hetven-kotettel-gazdagodott-a-varosi-konyvtar/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-101017 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/negyven-ev-harmoniaban-jubileumat-unnepelte-az-ajkai-pedagogus-noi-kar/" href="#" tabindex="-1" title="Negyven év harmóniában – jubileumát ünnepelte az Ajkai Pedagógus Női Kar"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="101019" data-comments-opened="1" data-image-caption="&lt;p&gt;Ajka Város Önkormányzata Életműdíjat adományozott Petheő Balázsnénak&lt;/p&gt;
+" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","alt":""}' data-image-title="Ajka Város Önkormányzata Életműdíjat adományozott Petheő Balázsnénak" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/Ajka-Varos-Onkormanyzata-Eletmudijat-adomanyozott-Petheo-Balazsnenak.webp?fit=800%2C510&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/Ajka-Varos-Onkormanyzata-Eletmudijat-adomanyozott-Petheo-Balazsnenak.webp?fit=300%2C191&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/06/Ajka-Varos-Onkormanyzata-Eletmudijat-adomanyozott-Petheo-Balazsnenak.webp?fit=1000%2C638&amp;ssl=1" data-orig-size="1000,638" data-permalink="https://ajkaiszo.hu/negyven-ev-harmoniaban-jubileumat-unnepelte-az-ajkai-pedagogus-noi-kar/ajka-varos-onkormanyzata-eletmudijat-adomanyozott-petheo-balazsnenak/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/negyven-ev-harmoniaban-jubileumat-unnepelte-az-ajkai-pedagogus-noi-kar/" href="#" tabindex="-1" title="Negyven év harmóniában – jubileumát ünnepelte az Ajkai Pedagógus Női Kar">
+									Negyven év harmóniában – jubileumát ünnepelte az Ajkai Pedagógus Női Kar								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-06-25</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/negyven-ev-harmoniaban-jubileumat-unnepelte-az-ajkai-pedagogus-noi-kar/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-100538 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/nyugdijasok-irodalmi-vetelkedoje-2/" href="#" tabindex="-1" title="Nyugdíjasok irodalmi vetélkedője"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="94309" data-comments-opened="1" data-image-caption="" data-image-description="&lt;p&gt;https://ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg&lt;/p&gt;
+" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="favicon_logo" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=512%2C512&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=300%2C300&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2024/11/cropped-logo.jpg?fit=512%2C512&amp;ssl=1" data-orig-size="512,512" data-permalink="https://ajkaiszo.hu/cropped-logo-jpg-2/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/nyugdijasok-irodalmi-vetelkedoje-2/" href="#" tabindex="-1" title="Nyugdíjasok irodalmi vetélkedője">
+									Nyugdíjasok irodalmi vetélkedője								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-05-15</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/nyugdijasok-irodalmi-vetelkedoje-2/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-100369 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/100369-2/" href="#" tabindex="-1" title="Táncra perdültek a szépkorúak Ajkán a Tánc Világnapja alkalmából"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="100372" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="a mozgás öröm" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/04/a-mozgas-orom.webp?fit=800%2C450&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/04/a-mozgas-orom.webp?fit=300%2C169&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/04/a-mozgas-orom.webp?fit=800%2C450&amp;ssl=1" data-orig-size="800,450" data-permalink="https://ajkaiszo.hu/100369-2/a-mozgas-orom/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/100369-2/" href="#" tabindex="-1" title="Táncra perdültek a szépkorúak Ajkán a Tánc Világnapja alkalmából">
+									Táncra perdültek a szépkorúak Ajkán a Tánc Világnapja alkalmából								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-04-30</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/100369-2/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> <li class="post-100250 mh-custom-posts-item mh-custom-posts-small mh-clearfix">
+<figure class="mh-custom-posts-thumb">
+<a data-review-original-href="https://ajkaiszo.hu/rekordletszam-zsiros-kenyer-es-telitalalatok-tosokon/" href="#" tabindex="-1" title="Rekordlétszám, zsíros kenyér és telitalálatok Tósokon"><img alt="" class="attachment-mh-magazine-lite-small size-mh-magazine-lite-small wp-post-image" data-attachment-id="100252" data-comments-opened="1" data-image-caption="" data-image-description="" data-image-meta='{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}' data-image-title="ra-teke23dorner" data-large-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/04/ra-teke23dorner.webp?fit=800%2C600&amp;ssl=1" data-medium-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/04/ra-teke23dorner.webp?fit=300%2C225&amp;ssl=1" data-orig-file="https://i0.wp.com/ajkaiszo.hu/wp-content/uploads/2026/04/ra-teke23dorner.webp?fit=800%2C600&amp;ssl=1" data-orig-size="800,600" data-permalink="https://ajkaiszo.hu/rekordletszam-zsiros-kenyer-es-telitalalatok-tosokon/ra-teke23dorner/" decoding="async" height="60" loading="lazy" sizes="auto, (max-width: 80px) 100vw, 80px" width="80"/> </a>
+</figure>
+<div class="mh-custom-posts-header">
+<p class="mh-custom-posts-small-title">
+<a data-review-original-href="https://ajkaiszo.hu/rekordletszam-zsiros-kenyer-es-telitalalatok-tosokon/" href="#" tabindex="-1" title="Rekordlétszám, zsíros kenyér és telitalálatok Tósokon">
+									Rekordlétszám, zsíros kenyér és telitalálatok Tósokon								</a>
+</p>
+<div class="mh-meta mh-custom-posts-meta">
+<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>2026-04-19</span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" data-review-original-href="https://ajkaiszo.hu/rekordletszam-zsiros-kenyer-es-telitalalatok-tosokon/#mh-comments" href="#" tabindex="-1">0</a></span>
+</div>
+</div>
+</li> </ul></div></div>
+</div>
+</footer>
+<div class="mh-copyright-wrap">
+<div class="mh-container mh-container-inner mh-clearfix">
+<p class="mh-copyright">Copyright © 2026 | WordPress Theme by <a data-review-original-href="https://mhthemes.com/themes/mh-magazine/?utm_source=customer&amp;utm_medium=link&amp;utm_campaign=MH+Magazine+Lite" href="#" rel="nofollow" tabindex="-1">MH Themes</a></p>
+</div>
+</div>
+</div><img alt="#" style="display: none;"/>
+
+<div data-nosnippet="true" id="cookie-law-info-bar"><span><div class="cli-bar-container cli-style-v2"><div class="cli-bar-message">Weboldalunkon cookie-kat használunk, hogy a legrelevánsabb élményt nyújtsuk. Az „Összes elfogadása” gombra kattintva hozzájárul az ÖSSZES süti használatához. Azonban felkeresheti a "Cookie-beállítások" menüpontot, és ellenőrzött hozzájárulást adhat. </div><div class="cli-bar-btn_container"><a class="medium cli-plugin-button cli-plugin-main-button cli_settings_button" data-review-original-href="" href="#" role="button" style="margin:0px 5px 0px 0px" tabindex="-1">Cookie-beállítások</a><a class="wt-cli-element medium cli-plugin-button wt-cli-accept-all-btn cookie_action_close_header cli_action_button" data-cli_action="accept_all" data-review-original-href="" href="#" id="wt-cli-accept-all-btn" role="button" tabindex="-1">Összes elfogadása</a> <a class="cli-plugin-main-link" data-review-original-href="https://ajkaiszo.hu/cookie-szabalyzat/" href="#" id="CONSTANT_OPEN_URL" style="display:inline-block" tabindex="-1" target="_blank">További információk</a></div></div></span></div><div data-nosnippet="true" id="cookie-law-info-again" style="display:none"><span id="cookie_hdr_showagain">Sütik kezelése</span></div><div aria-hidden="true" aria-labelledby="cliSettingsPopup" class="cli-modal" data-nosnippet="true" id="cliSettingsPopup" role="dialog" tabindex="-1">
+<div class="cli-modal-dialog" role="document">
+<div class="cli-modal-content cli-bar-popup">
+<button class="cli-modal-close" id="cliModalClose" type="button">
+<svg viewbox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+<span class="wt-cli-sr-only">Close</span>
+</button>
+<div class="cli-modal-body">
+<div class="cli-container-fluid cli-tab-container">
+<div class="cli-row">
+<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+<div class="cli-privacy-overview">
+<h4>Privacy Overview</h4> <div class="cli-privacy-content">
+<div class="cli-privacy-content-text">This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.</div>
+</div>
+<a aria-label="Show more" class="cli-privacy-readmore" data-readless-text="Show less" data-readmore-text="Show more" data-review-original-href="" href="#" role="button" tabindex="-1"></a> </div>
+</div>
+<div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
+<div class="cli-tab-section">
+<div class="cli-tab-header">
+<a class="cli-nav-link cli-settings-mobile" data-review-original-href="" data-target="functional" data-toggle="cli-toggle-tab" href="#" role="button" tabindex="-1">
+								Functional							</a>
+<div class="cli-switch">
+<input class="cli-user-preference-checkbox" data-id="checkbox-functional" id="wt-cli-checkbox-functional" type="checkbox"/>
+<label class="cli-slider" data-cli-disable="Disabled" data-cli-enable="Enabled" for="wt-cli-checkbox-functional"><span class="wt-cli-sr-only">Functional</span></label>
+</div>
+</div>
+<div class="cli-tab-content">
+<div class="cli-tab-pane cli-fade" data-id="functional">
+<div class="wt-cli-cookie-description">
+									Functional cookies help to perform certain functionalities like sharing the content of the website on social media platforms, collect feedbacks, and other third-party features.
+								</div>
+</div>
+</div>
+</div>
+<div class="cli-tab-section">
+<div class="cli-tab-header">
+<a class="cli-nav-link cli-settings-mobile" data-review-original-href="" data-target="performance" data-toggle="cli-toggle-tab" href="#" role="button" tabindex="-1">
+								Performance							</a>
+<div class="cli-switch">
+<input class="cli-user-preference-checkbox" data-id="checkbox-performance" id="wt-cli-checkbox-performance" type="checkbox"/>
+<label class="cli-slider" data-cli-disable="Disabled" data-cli-enable="Enabled" for="wt-cli-checkbox-performance"><span class="wt-cli-sr-only">Performance</span></label>
+</div>
+</div>
+<div class="cli-tab-content">
+<div class="cli-tab-pane cli-fade" data-id="performance">
+<div class="wt-cli-cookie-description">
+									Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+<table class="cookielawinfo-row-cat-table cookielawinfo-winter"><thead><tr><th class="cookielawinfo-column-1">Cookie</th><th class="cookielawinfo-column-3">Duration</th><th class="cookielawinfo-column-4">Description</th></tr></thead><tbody><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">_gat</td><td class="cookielawinfo-column-3">1 minute</td><td class="cookielawinfo-column-4">This cookie is installed by Google Universal Analytics to restrain request rate and thus limit the collection of data on high traffic sites.</td></tr></tbody></table> </div>
+</div>
+</div>
+</div>
+<div class="cli-tab-section">
+<div class="cli-tab-header">
+<a class="cli-nav-link cli-settings-mobile" data-review-original-href="" data-target="statisztikai" data-toggle="cli-toggle-tab" href="#" role="button" tabindex="-1">
+								Statisztikai							</a>
+<div class="cli-switch">
+<input class="cli-user-preference-checkbox" data-id="checkbox-statisztikai" id="wt-cli-checkbox-statisztikai" type="checkbox"/>
+<label class="cli-slider" data-cli-disable="Disabled" data-cli-enable="Enabled" for="wt-cli-checkbox-statisztikai"><span class="wt-cli-sr-only">Statisztikai</span></label>
+</div>
+</div>
+<div class="cli-tab-content">
+<div class="cli-tab-pane cli-fade" data-id="statisztikai">
+<div class="wt-cli-cookie-description">
+									Az adatok névtelen formában való gyűjtésén és jelentésén keresztül a statisztikai sütik segítenek a weboldal tulajdonosának abban, hogy megértse, hogyan lépnek interakcióba a látogatók a weboldallal.
+								</div>
+</div>
+</div>
+</div>
+<div class="cli-tab-section">
+<div class="cli-tab-header">
+<a class="cli-nav-link cli-settings-mobile" data-review-original-href="" data-target="advertisement" data-toggle="cli-toggle-tab" href="#" role="button" tabindex="-1">
+								Advertisement							</a>
+<div class="cli-switch">
+<input class="cli-user-preference-checkbox" data-id="checkbox-advertisement" id="wt-cli-checkbox-advertisement" type="checkbox"/>
+<label class="cli-slider" data-cli-disable="Disabled" data-cli-enable="Enabled" for="wt-cli-checkbox-advertisement"><span class="wt-cli-sr-only">Advertisement</span></label>
+</div>
+</div>
+<div class="cli-tab-content">
+<div class="cli-tab-pane cli-fade" data-id="advertisement">
+<div class="wt-cli-cookie-description">
+									Advertisement cookies are used to provide visitors with relevant ads and marketing campaigns. These cookies track visitors across websites and collect information to provide customized ads.
+<table class="cookielawinfo-row-cat-table cookielawinfo-winter"><thead><tr><th class="cookielawinfo-column-1">Cookie</th><th class="cookielawinfo-column-3">Duration</th><th class="cookielawinfo-column-4">Description</th></tr></thead><tbody><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">IDE</td><td class="cookielawinfo-column-3">1 year 24 days</td><td class="cookielawinfo-column-4">Google DoubleClick IDE cookies are used to store information about how the user uses the website to present them with relevant ads and according to the user profile.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">test_cookie</td><td class="cookielawinfo-column-3">15 minutes</td><td class="cookielawinfo-column-4">The test_cookie is set by doubleclick.net and is used to determine if the user's browser supports cookies.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">VISITOR_INFO1_LIVE</td><td class="cookielawinfo-column-3">5 months 27 days</td><td class="cookielawinfo-column-4">A cookie set by YouTube to measure bandwidth that determines whether the user gets the new or old player interface.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">YSC</td><td class="cookielawinfo-column-3">session</td><td class="cookielawinfo-column-4">YSC cookie is set by Youtube and is used to track the views of embedded videos on Youtube pages.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">yt-remote-connected-devices</td><td class="cookielawinfo-column-3">never</td><td class="cookielawinfo-column-4">YouTube sets this cookie to store the video preferences of the user using embedded YouTube video.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">yt-remote-device-id</td><td class="cookielawinfo-column-3">never</td><td class="cookielawinfo-column-4">YouTube sets this cookie to store the video preferences of the user using embedded YouTube video.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">yt.innertube::nextId</td><td class="cookielawinfo-column-3">never</td><td class="cookielawinfo-column-4">This cookie, set by YouTube, registers a unique ID to store data on what videos from YouTube the user has seen.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">yt.innertube::requests</td><td class="cookielawinfo-column-3">never</td><td class="cookielawinfo-column-4">This cookie, set by YouTube, registers a unique ID to store data on what videos from YouTube the user has seen.</td></tr></tbody></table> </div>
+</div>
+</div>
+</div>
+<div class="cli-tab-section">
+<div class="cli-tab-header">
+<a class="cli-nav-link cli-settings-mobile" data-review-original-href="" data-target="others" data-toggle="cli-toggle-tab" href="#" role="button" tabindex="-1">
+								Others							</a>
+<div class="cli-switch">
+<input class="cli-user-preference-checkbox" data-id="checkbox-others" id="wt-cli-checkbox-others" type="checkbox"/>
+<label class="cli-slider" data-cli-disable="Disabled" data-cli-enable="Enabled" for="wt-cli-checkbox-others"><span class="wt-cli-sr-only">Others</span></label>
+</div>
+</div>
+<div class="cli-tab-content">
+<div class="cli-tab-pane cli-fade" data-id="others">
+<div class="wt-cli-cookie-description">
+									Other uncategorized cookies are those that are being analyzed and have not been classified into a category as yet.
+<table class="cookielawinfo-row-cat-table cookielawinfo-winter"><thead><tr><th class="cookielawinfo-column-1">Cookie</th><th class="cookielawinfo-column-3">Duration</th><th class="cookielawinfo-column-4">Description</th></tr></thead><tbody><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">wp-ps-session</td><td class="cookielawinfo-column-3">session</td><td class="cookielawinfo-column-4">No description available.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">wpcom_highlander_3pc_check</td><td class="cookielawinfo-column-3">session</td><td class="cookielawinfo-column-4">No description</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">wp_api</td><td class="cookielawinfo-column-3">past</td><td class="cookielawinfo-column-4">No description</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">wp_api_sec</td><td class="cookielawinfo-column-3">past</td><td class="cookielawinfo-column-4">No description</td></tr></tbody></table> </div>
+</div>
+</div>
+</div>
+<div class="cli-tab-section">
+<div class="cli-tab-header">
+<a class="cli-nav-link cli-settings-mobile" data-review-original-href="" data-target="elengedhetetlen" data-toggle="cli-toggle-tab" href="#" role="button" tabindex="-1">
+								Elengedhetetlen							</a>
+<div class="cli-switch">
+<input class="cli-user-preference-checkbox" data-id="checkbox-elengedhetetlen" id="wt-cli-checkbox-elengedhetetlen" type="checkbox"/>
+<label class="cli-slider" data-cli-disable="Disabled" data-cli-enable="Enabled" for="wt-cli-checkbox-elengedhetetlen"><span class="wt-cli-sr-only">Elengedhetetlen</span></label>
+</div>
+</div>
+<div class="cli-tab-content">
+<div class="cli-tab-pane cli-fade" data-id="elengedhetetlen">
+<div class="wt-cli-cookie-description">
+									Az elengedhetetlen sütik segítenek használhatóvá tenni a weboldalunkat azáltal, hogy engedélyeznek olyan alapvető funkciókat, mint az oldalon való navigáció és a weboldal biztonságos területeihez való hozzáférés. A weboldal ezen sütik nélkül nem tud megfelelően működni.
+								</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cli-modal-footer">
+<div class="wt-cli-element cli-container-fluid cli-tab-container">
+<div class="cli-row">
+<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+<div class="cli-tab-footer wt-cli-privacy-overview-actions">
+<a class="wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn" data-cli-action="accept" data-review-original-href="" href="#" id="wt-cli-privacy-save-btn" role="button" tabindex="-1">SAVE &amp; ACCEPT</a>
+</div>
+<div class="wt-cli-ckyes-footer-section">
+<div class="wt-cli-ckyes-brand-logo">Powered by <a data-review-original-href="https://www.cookieyes.com/" href="#" tabindex="-1"><img alt="CookieYes Logo"/></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+ 
+<div id="fb-root"></div>
+
+
+
+<div id="fb-root"></div>
+
+
+
+<div id="jp-carousel-loading-overlay">
+<div id="jp-carousel-loading-wrapper">
+<span id="jp-carousel-library-loading"> </span>
+</div>
+</div>
+<div class="jp-carousel-overlay" style="display: none;">
+<div class="jp-carousel-container">
+
+<div class="jp-carousel-wrap swiper-container jp-carousel-swiper-container jp-carousel-transitions" itemscope="" itemtype="https://schema.org/ImageGallery">
+<div class="jp-carousel swiper-wrapper"></div>
+<div class="jp-swiper-button-prev swiper-button-prev">
+<svg fill="none" height="24" viewbox="0 0 25 24" width="25" xmlns="http://www.w3.org/2000/svg">
+<mask height="12" id="maskPrev" mask-type="alpha" maskunits="userSpaceOnUse" width="9" x="8" y="6">
+<path d="M16.2072 16.59L11.6496 12L16.2072 7.41L14.8041 6L8.8335 12L14.8041 18L16.2072 16.59Z" fill="white"></path>
+</mask>
+<g mask="url(#maskPrev)">
+<rect fill="#FFFFFF" height="24" width="23.8823" x="0.579102"></rect>
+</g>
+</svg>
+</div>
+<div class="jp-swiper-button-next swiper-button-next">
+<svg fill="none" height="24" viewbox="0 0 25 24" width="25" xmlns="http://www.w3.org/2000/svg">
+<mask height="12" id="maskNext" mask-type="alpha" maskunits="userSpaceOnUse" width="8" x="8" y="6">
+<path d="M8.59814 16.59L13.1557 12L8.59814 7.41L10.0012 6L15.9718 12L10.0012 18L8.59814 16.59Z" fill="white"></path>
+</mask>
+<g mask="url(#maskNext)">
+<rect fill="#FFFFFF" height="24" width="23.8822" x="0.34375"></rect>
+</g>
+</svg>
+</div>
+</div>
+
+<div class="jp-carousel-close-hint">
+<svg fill="none" height="24" viewbox="0 0 25 24" width="25" xmlns="http://www.w3.org/2000/svg">
+<mask height="14" id="maskClose" mask-type="alpha" maskunits="userSpaceOnUse" width="15" x="5" y="5">
+<path d="M19.3166 6.41L17.9135 5L12.3509 10.59L6.78834 5L5.38525 6.41L10.9478 12L5.38525 17.59L6.78834 19L12.3509 13.41L17.9135 19L19.3166 17.59L13.754 12L19.3166 6.41Z" fill="white"></path>
+</mask>
+<g mask="url(#maskClose)">
+<rect fill="#FFFFFF" height="24" width="23.8823" x="0.409668"></rect>
+</g>
+</svg>
+</div>
+
+<div class="jp-carousel-info">
+<div class="jp-carousel-info-footer">
+<div class="jp-carousel-pagination-container">
+<div class="jp-swiper-pagination swiper-pagination"></div>
+<div class="jp-carousel-pagination"></div>
+</div>
+<div class="jp-carousel-photo-title-container">
+<h2 class="jp-carousel-photo-caption"></h2>
+</div>
+<div class="jp-carousel-photo-icons-container">
+<a aria-label="Toggle photo metadata visibility" class="jp-carousel-icon-btn jp-carousel-icon-info" data-review-original-href="#" href="#" tabindex="-1">
+<span class="jp-carousel-icon">
+<svg fill="none" height="24" viewbox="0 0 25 24" width="25" xmlns="http://www.w3.org/2000/svg">
+<mask height="20" id="maskInfo" mask-type="alpha" maskunits="userSpaceOnUse" width="21" x="2" y="2">
+<path clip-rule="evenodd" d="M12.7537 2C7.26076 2 2.80273 6.48 2.80273 12C2.80273 17.52 7.26076 22 12.7537 22C18.2466 22 22.7046 17.52 22.7046 12C22.7046 6.48 18.2466 2 12.7537 2ZM11.7586 7V9H13.7488V7H11.7586ZM11.7586 11V17H13.7488V11H11.7586ZM4.79292 12C4.79292 16.41 8.36531 20 12.7537 20C17.142 20 20.7144 16.41 20.7144 12C20.7144 7.59 17.142 4 12.7537 4C8.36531 4 4.79292 7.59 4.79292 12Z" fill="white" fill-rule="evenodd"></path>
+</mask>
+<g mask="url(#maskInfo)">
+<rect fill="#FFFFFF" height="24" width="23.8823" x="0.8125"></rect>
+</g>
+</svg>
+</span>
+</a>
+<a aria-label="Toggle photo comments visibility" class="jp-carousel-icon-btn jp-carousel-icon-comments" data-review-original-href="#" href="#" tabindex="-1">
+<span class="jp-carousel-icon">
+<svg fill="none" height="24" viewbox="0 0 25 24" width="25" xmlns="http://www.w3.org/2000/svg">
+<mask height="20" id="maskComments" mask-type="alpha" maskunits="userSpaceOnUse" width="21" x="2" y="2">
+<path clip-rule="evenodd" d="M4.3271 2H20.2486C21.3432 2 22.2388 2.9 22.2388 4V16C22.2388 17.1 21.3432 18 20.2486 18H6.31729L2.33691 22V4C2.33691 2.9 3.2325 2 4.3271 2ZM6.31729 16H20.2486V4H4.3271V18L6.31729 16Z" fill="white" fill-rule="evenodd"></path>
+</mask>
+<g mask="url(#maskComments)">
+<rect fill="#FFFFFF" height="24" width="23.8823" x="0.34668"></rect>
+</g>
+</svg>
+<span aria-label="This image has comments." class="jp-carousel-has-comments-indicator"></span>
+</span>
+</a>
+</div>
+</div>
+<div class="jp-carousel-info-extra">
+<div class="jp-carousel-info-content-wrapper">
+<div class="jp-carousel-photo-title-container">
+<h2 class="jp-carousel-photo-title"></h2>
+</div>
+<div class="jp-carousel-comments-wrapper">
+<div id="jp-carousel-comments-loading">
+<span>Loading Comments...</span>
+</div>
+<div class="jp-carousel-comments"></div>
+<div id="jp-carousel-comment-form-container">
+<span id="jp-carousel-comment-form-spinner"> </span>
+<div id="jp-carousel-comment-post-results"></div>
+<div data-review-disabled-form="true">
+<label class="screen-reader-text" for="jp-carousel-comment-form-comment-field">Write a Comment...</label>
+<textarea class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea" id="jp-carousel-comment-form-comment-field" name="comment" placeholder="Write a Comment..."></textarea>
+<div id="jp-carousel-comment-form-submit-and-info-wrapper">
+<div id="jp-carousel-comment-form-commenting-as">
+<fieldset>
+<label for="jp-carousel-comment-form-email-field">Email (Required)</label>
+<input class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-email-field" name="email" type="text"/>
+</fieldset>
+<fieldset>
+<label for="jp-carousel-comment-form-author-field">Name (Required)</label>
+<input class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-author-field" name="author" type="text"/>
+</fieldset>
+<fieldset>
+<label for="jp-carousel-comment-form-url-field">Website</label>
+<input class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-url-field" name="url" type="text"/>
+</fieldset>
+</div>
+<input class="jp-carousel-comment-form-button" id="jp-carousel-comment-form-button-submit" name="submit" type="submit" value="Post Comment"/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-carousel-image-meta">
+<div class="jp-carousel-title-and-caption">
+<div class="jp-carousel-photo-info">
+<h3 class="jp-carousel-caption" itemprop="caption description"></h3>
+</div>
+<div class="jp-carousel-photo-description"></div>
+</div>
+<ul class="jp-carousel-image-exif" style="display: none;"></ul>
+<a class="jp-carousel-image-download" data-review-original-href="#" href="#" style="display: none;" tabindex="-1" target="_blank">
+<svg fill="none" height="24" viewbox="0 0 25 24" width="25" xmlns="http://www.w3.org/2000/svg">
+<mask height="18" id="mask0" mask-type="alpha" maskunits="userSpaceOnUse" width="19" x="3" y="3">
+<path clip-rule="evenodd" d="M5.84615 5V19H19.7775V12H21.7677V19C21.7677 20.1 20.8721 21 19.7775 21H5.84615C4.74159 21 3.85596 20.1 3.85596 19V5C3.85596 3.9 4.74159 3 5.84615 3H12.8118V5H5.84615ZM14.802 5V3H21.7677V10H19.7775V6.41L9.99569 16.24L8.59261 14.83L18.3744 5H14.802Z" fill="white" fill-rule="evenodd"></path>
+</mask>
+<g mask="url(#mask0)">
+<rect fill="#FFFFFF" height="24" width="23.8823" x="0.870605"></rect>
+</g>
+</svg>
+<span class="jp-carousel-download-text"></span>
+</a>
+<div class="jp-carousel-image-map" style="display: none;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+
+
+</body></html>

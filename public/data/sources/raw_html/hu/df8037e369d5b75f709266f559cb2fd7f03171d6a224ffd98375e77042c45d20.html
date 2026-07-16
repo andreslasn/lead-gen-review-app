@@ -1,0 +1,851 @@
+<!doctype html>
+
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width" name="viewport"/>
+
+
+<title>Orvosi rendelő</title>
+<meta content="max-image-preview:large" name="robots"/>
+<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+
+
+
+
+
+
+
+
+
+
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+
+
+
+
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="WordPress 6.7.5" name="generator"/>
+
+
+
+
+
+
+<meta content="v1" name="tec-api-version"/><meta content="https://tarcal.hu" name="tec-api-origin"/><style type="text/css">
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a{ background-color: #4054b2;	color: #ffffff;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay, #pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items.pojo-a11y-links{ border-color: #4054b2;}
+body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width: 1px !important;	outline-color: #FF0000 !important;}
+#pojo-a11y-toolbar{ top: 100px !important;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay{ background-color: #ffffff;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items li.pojo-a11y-toolbar-item a, #pojo-a11y-toolbar .pojo-a11y-toolbar-overlay p.pojo-a11y-toolbar-title{ color: #333333;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items li.pojo-a11y-toolbar-item a.active{ background-color: #4054b2;	color: #ffffff;}
+@media (max-width: 767px) { #pojo-a11y-toolbar { top: 50px !important; } }</style><style type="text/css">
+body {font-family: "Open Sans", Helvetica, sans-serif; font-size: 14pxpx; line-height: 1.8; color: #575757;}h1,h2,h3,h4,h5,h6,.comment-reply-title,.widget .widget-title, .entry-header h1.entry-title {font-family: Roboto, Georgia, serif; font-weight: 500;}.themecolor {color: #00969b;}.themebgcolor {background-color: #00969b;}.themebordercolor {border-color: #00969b;}.tx-slider .owl-pagination .owl-page > span { border-color: #00969b;  }.tx-slider .owl-pagination .owl-page.active > span { background-color: #00969b; }.tx-slider .owl-controls .owl-buttons .owl-next, .tx-slider .owl-controls .owl-buttons .owl-prev { background-color: #00969b; }a,a:visited,.blog-columns .comments-link a:hover, .utilitybar.colored-bg .socialicons ul.social li a:hover .socico  {color: #00969b;}input:focus,textarea:focus,.site-footer .widget-area .widget .wpcf7 .wpcf7-submit {border: 1px solid #00969b;}button,input[type="submit"],input[type="button"],input[type="reset"],.tx-service.curved .tx-service-icon span,.tx-service.square .tx-service-icon span {background-color: #00969b;}.nav-container .sub-menu,.nav-container .children {border-top: 2px solid #00969b;}.ibanner,.da-dots span.da-dots-current,.tx-cta a.cta-button, .utilitybar.colored-bg {background-color: #00969b;}#ft-post .entry-thumbnail:hover > .comments-link,.tx-folio-img .folio-links .folio-linkico,.tx-folio-img .folio-links .folio-zoomico {background-color: #00969b;}.entry-header h1.entry-title a:hover,.entry-header > .entry-meta a:hover {color: #00969b;}.featured-area div.entry-summary > p > a.moretag:hover {background-color: #00969b;}.site-content div.entry-thumbnail .stickyonimg,.site-content div.entry-thumbnail .dateonimg,.site-content div.entry-nothumb .stickyonimg,.site-content div.entry-nothumb .dateonimg {background-color: #00969b;}.entry-meta a,.entry-content a,.comment-content a,.entry-content a:visited {color: #00969b;}.format-status .entry-content .page-links a,.format-gallery .entry-content .page-links a,.format-chat .entry-content .page-links a,.format-quote .entry-content .page-links a,.page-links a {background: #00969b;border: 1px solid #00969b;color: #ffffff;}.format-gallery .entry-content .page-links a:hover,.format-audio .entry-content .page-links a:hover,.format-status .entry-content .page-links a:hover,.format-video .entry-content .page-links a:hover,.format-chat .entry-content .page-links a:hover,.format-quote .entry-content .page-links a:hover,.page-links a:hover {color: #00969b;}.iheader.front, .vslider_button {background-color: #00969b;}.navigation a,.tx-post-row .tx-folio-title a:hover,.tx-blog .tx-blog-item h3.tx-post-title a:hover {color: #00969b;}.paging-navigation div.navigation > ul > li a:hover,.paging-navigation div.navigation > ul > li.active > a {color: #00969b;	border-color: #00969b;}.comment-author .fn,.comment-author .url,.comment-reply-link,.comment-reply-login,.comment-body .reply a,.widget a:hover {color: #00969b;}.widget_calendar a:hover {background-color: #00969b;	color: #ffffff;	}.widget_calendar td#next a:hover,.widget_calendar td#prev a:hover {background-color: #00969b;color: #ffffff;}.site-footer div.widget-area .widget a:hover {color: #00969b;}.site-main div.widget-area .widget_calendar a:hover,.site-footer div.widget-area .widget_calendar a:hover {background-color: #00969b;color: #ffffff;}.widget a:visited { color: #373737;}.widget a:hover,.entry-header h1.entry-title a:hover,.error404 .page-title:before,.tx-service-icon span i,.tx-post-comm:after {color: #00969b;}.da-dots > span > span,.site-footer .widget-area .widget .wpcf7 .wpcf7-submit, .nx-preloader .nx-ispload {background-color: #00969b;}.iheader,.format-status,.tx-service:hover .tx-service-icon span,.ibanner .da-slider .owl-item .da-link:hover {background-color: #00969b;}.tx-cta {border-left: 6px solid #00969b;}.paging-navigation #posts-nav > span:hover, .paging-navigation #posts-nav > a:hover, .paging-navigation #posts-nav > span.current, .paging-navigation #posts-nav > a.current, .paging-navigation div.navigation > ul > li a:hover, .paging-navigation div.navigation > ul > li > span.current, .paging-navigation div.navigation > ul > li.active > a {border: 1px solid #00969b;color: #00969b;}.entry-title a { color: #141412;}.tx-service-icon span { border: 2px solid #00969b;}.utilitybar.colored-bg { border-bottom-color: #00969b;}.nav-container .current_page_item > a,.nav-container .current_page_ancestor > a,.nav-container .current-menu-item > a,.nav-container .current-menu-ancestor > a,.nav-container li a:hover,.nav-container li:hover > a,.nav-container li a:hover,ul.nav-container ul a:hover,.nav-container ul ul a:hover {background-color: #00969b; }.tx-service.curved .tx-service-icon span,.tx-service.square .tx-service-icon span {border: 6px solid #e7e7e7; width: 100px; height: 100px;}.tx-service.curved .tx-service-icon span i,.tx-service.square .tx-service-icon span i {color: #FFFFFF;}.tx-service.curved:hover .tx-service-icon span,.tx-service.square:hover .tx-service-icon span {background-color: #e7e7e7;}.tx-service.curved:hover .tx-service-icon span i,.tx-service.square:hover .tx-service-icon span i,.folio-style-gallery.tx-post-row .tx-portfolio-item .tx-folio-title a:hover {color: #00969b;}.site .tx-slider .tx-slide-button a,.ibanner .da-slider .owl-item.active .da-link  { background-color: #00969b; color: #FFF; }.site .tx-slider .tx-slide-button a:hover  { background-color: #373737; color: #FFF; }.ibanner .da-slider .owl-controls .owl-page span { border-color:#00969b; }.ibanner .da-slider .owl-controls .owl-page.active span, .ibanner .da-slider .owl-controls.clickable .owl-page:hover span {  background-color: #00969b; }.vslider_button, .vslider_button:visited, .ibanner.nxs-max18 .owl-item .nx-slider .da-img:before { background-color:#00969b;}.ibanner .sldprev, .ibanner .da-slider .owl-prev, .ibanner .sldnext, .ibanner .da-slider .owl-next { 	background-color: #00969b; }.colored-drop .nav-container ul ul a, .colored-drop ul.nav-container ul a, .colored-drop ul.nav-container ul, .colored-drop .nav-container ul ul {background-color: #00969b;}.header-iconwrap .header-icons.woocart > a .cart-counts, .woocommerce ul.products li.product .button {background-color:#00969b;}.header-icons.woocart .cartdrop.widget_shopping_cart.nx-animate { border-top-color:#00969b;}.woocommerce ul.products li.product .onsale, .woocommerce span.onsale { background-color: #00969b; color: #FFF; }.nx-nav-boxedicons .site-header .header-icons > a > span.genericon:before, ul.nav-menu > li.tx-heighlight:before, .woocommerce .nxowoo-box:hover a.button.add_to_cart_button {background-color: #00969b}</style>
+<style id="wprmenu_css" type="text/css">
+			/* apply appearance settings */
+			.menu-toggle {
+				display: none!important;
+			}
+			@media (max-width: 1069px) {
+				.menu-toggle,
+				#navbar  {
+					display: none!important;
+				}				
+			}
+			#wprmenu_bar {
+				background: #2e2e2e;
+			}
+			#wprmenu_bar .menu_title, #wprmenu_bar .wprmenu_icon_menu {
+				color: #F2F2F2;
+			}
+			#wprmenu_menu {
+				background: #2E2E2E!important;
+			}
+			#wprmenu_menu.wprmenu_levels ul li {
+				border-bottom:1px solid #131212;
+				border-top:1px solid #0D0D0D;
+			}
+			#wprmenu_menu ul li a {
+				color: #CFCFCF;
+			}
+			#wprmenu_menu ul li a:hover {
+				color: #606060;
+			}
+			#wprmenu_menu.wprmenu_levels a.wprmenu_parent_item {
+				border-left:1px solid #0D0D0D;
+			}
+			#wprmenu_menu .wprmenu_icon_par {
+				color: #CFCFCF;
+			}
+			#wprmenu_menu .wprmenu_icon_par:hover {
+				color: #606060;
+			}
+			#wprmenu_menu.wprmenu_levels ul li ul {
+				border-top:1px solid #131212;
+			}
+			#wprmenu_bar .wprmenu_icon span {
+				background: #FFFFFF;
+			}
+			
+			#wprmenu_menu.left {
+				width:80%;
+				left: -80%;
+			    right: auto;
+			}
+			#wprmenu_menu.right {
+				width:80%;
+			    right: -80%;
+			    left: auto;
+			}
+
+
+			
+						/* show the bar and hide othere navigation elements */
+			@media only screen and (max-width: 1069px) {
+				html { padding-top: 42px!important; }
+				#wprmenu_bar { display: block!important; }
+				div#wpadminbar { position: fixed; }
+							}
+		</style>
+<meta content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." name="generator"/>
+
+
+
+<meta content="https://tarcal.hu/wp-content/uploads/2020/04/cropped-tarcal3-270x270.jpg" name="msapplication-TileImage"/>
+<style id="kirki-inline-styles">.nav-container li a{font-size:13px;font-weight:200;}.footer-bg, .site-footer .sidebar-container{background-color:#383838;}.site-footer .widget-area .widget .widget-title{color:#FFFFFF;}.site-footer .widget-area .widget, .site-footer .widget-area .widget li{color:#bbbbbb;}.site-footer .widget-area .widget a{color:#dddddd;}.site-footer{background-color:#272727;}.site-footer .site-info, .site-footer .site-info a{color:#777777;}/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4taVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4kaVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4saVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4jaVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4iaVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* math */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B5caVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B5OaVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4vaVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVQUwaEQXjN_mQ.woff) format('woff');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/open-sans/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVQUwaEQXjM.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmZiAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmQiAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmYiAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmXiAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* math */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVnoiAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVn6iAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmbiAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmaiAz0klQm_20O0g.woff) format('woff');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://tarcal.hu/wp-content/fonts/roboto/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmUiAz0klQm_20.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="page-template page-template-page-sidebar page-template-page-sidebar-php page page-id-8439 wp-embed-responsive tribe-no-js ally-default nx-wide twocol-blog single-author sidebar nx-show-search wpb-js-composer js-comp-ver-6.4.2 vc_responsive" style="  ">
+<div class="hfeed site" id="page">
+<div class="utilitybar colored-bg" id="utilitybar">
+<div class="ubarinnerwrap">
+<div class="socialicons">
+</div>
+<div class="topphone tx-topphone">
+<i class="topbarico genericon genericon-phone"></i>
+                    Tel. :  47/580-445                </div>
+<div class="topphone tx-topmail">
+<i class="topbarico genericon genericon-mail"></i>
+                    E-mail :  polgmest@tarcal.hu                </div>
+</div>
+</div>
+<div class="headerwrap">
+<header class="site-header" id="masthead" role="banner">
+<div class="headerinnerwrap">
+<span id="site-titlendesc">
+<a class="home-link" data-review-original-href="https://tarcal.hu/" href="#" rel="home" tabindex="-1" title="">
+<h1 class="site-title"></h1>
+<h2 class="site-description"></h2>
+</a>
+</span>
+<a data-review-original-href="https://tarcal.hu" href="#" tabindex="-1"><img height="170" width="170"/></a>
+<a data-review-original-href="https://tarcal.hu/wp-content/uploads/2021/01/MAGYAR-FALU-PROGRAM-KERETÉBEN-BEADOTT-NYERTES-PÁLYÁZATOK.pdf" href="#" tabindex="-1" target="_blank"><img height="120" width="120"/></a>
+<a data-review-original-href="https://ohp-20.asp.lgov.hu/nyitolap" href="#" tabindex="-1" target="_blank"><img height="120" width="120"/></a>
+<a data-review-original-href="https://tarcal.hu/adatkezelesi-tajekoztato" href="#" tabindex="-1"><img height="100" width="100"/></a>
+<a data-review-original-href="http://sarospatak.hu/efop-3-9-2-16-2017-00030-szamu-human-kapacitasok-fejlesztese-a-sarospatak-tokaj-tersegben-cimu-projekt/" href="#" tabindex="-1" target="_blank"><img height="180" width="120"/></a>
+<a data-review-original-href="https://tarcal.hu/efop-human-szolgaltatasok-fejlesztese/" href="#" tabindex="-1"><img height="180" width="120"/></a>
+<a data-review-original-href="https://www.youtube.com/channel/UCwZM-csxDYeExT6purFepvw" href="#" tabindex="-1" target="_blank"><img height="180" width="120"/></a>
+<a data-review-original-href="https://www.facebook.com/6PuttonyosBorfalu" href="#" tabindex="-1" target="_blank"><img height="50" width="50"/></a>
+<br/><a data-review-original-href="https://tarcal.hu/palyazatok-3/" href="#" tabindex="-1"><img height="122" width="411"/></a>
+<div class="navbar colored-drop" id="navbar">
+<nav class="navigation main-navigation" id="site-navigation" role="navigation">
+<h3 class="menu-toggle">Menu</h3>
+<a class="screen-reader-text skip-link" data-review-original-href="#content" href="#" tabindex="-1" title="Skip to content">Skip to content</a>
+<div class="nav-container"><ul class="nav-menu" id="menu-fomenu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-33" id="menu-item-33"><a data-review-original-href="https://tarcal.hu" href="#" tabindex="-1">KEZDŐLAP</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-84" id="menu-item-84"><a data-review-original-href="https://tarcal.hu/hirek" href="#" tabindex="-1">HÍREK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7847" id="menu-item-7847"><a data-review-original-href="https://tarcal.hu/nyilvanos-kiadvanyok/" href="#" tabindex="-1">TARCALI HÍREK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-1388" id="menu-item-1388"><a data-review-original-href="#" href="#" tabindex="-1">KÖZÉRDEKŰ</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7484" id="menu-item-7484"><a data-review-original-href="https://tarcal.hu/onkormanyzati-valasztas-2019/" href="#" tabindex="-1">ÖNKORMÁNYZATI VÁLASZTÁS 2019 ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7490" id="menu-item-7490"><a data-review-original-href="https://tarcal.hu/tarcali-kozos-helyi-valasztasi-iroda-vezetojenek-dontesei/" href="#" tabindex="-1">TARCALI KÖZÖS HELYI VÁLASZTÁSI IRODA VEZETŐJÉNEK DÖNTÉSEI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7489" id="menu-item-7489"><a data-review-original-href="https://tarcal.hu/hvb-hatarozatok/" href="#" tabindex="-1">HVB HATÁROZATOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7750" id="menu-item-7750"><a data-review-original-href="https://tarcal.hu/valasztasi-bizottsagok/" href="#" tabindex="-1">VÁLASZTÁSI BIZOTTSÁGOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1466" id="menu-item-1466"><a data-review-original-href="https://tarcal.hu/fontos-informaciok/" href="#" tabindex="-1">FONTOS INFORMÁCIÓK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10621" id="menu-item-10621"><a data-review-original-href="https://ohp-20.asp.lgov.hu/nyitolap" href="#" tabindex="-1" target="_blank">LETÖLTHETŐ NYOMTATVÁNYOK / E-ÜGYINTÉZÉS</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10920" id="menu-item-10920"><a data-review-original-href="https://tarcal.hu/letoltheto-nyomtatvanyok-onkormanyzat/" href="#" tabindex="-1">LETÖLTHETŐ NYOMTATVÁNYOK / ÖNKORMÁNYZAT</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2472" id="menu-item-2472"><a data-review-original-href="#" href="#" tabindex="-1">1.1 KAPCSOLAT, SZERVEZETI VEZETŐK ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2508" id="menu-item-2508"><a data-review-original-href="https://tarcal.hu/hivatal-elerhetoseg/" href="#" tabindex="-1">HIVATAL ELÉRHETŐSÉG</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2507" id="menu-item-2507"><a data-review-original-href="https://tarcal.hu/onkormanyzat-elerhetosege/" href="#" tabindex="-1">ÖNKORMÁNYZAT ELÉRHETŐSÉGE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2506" id="menu-item-2506"><a data-review-original-href="https://tarcal.hu/polgarmester/" href="#" tabindex="-1">POLGÁRMESTER</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2505" id="menu-item-2505"><a data-review-original-href="https://tarcal.hu/alpolgarmester/" href="#" tabindex="-1">ALPOLGÁRMESTER</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2504" id="menu-item-2504"><a data-review-original-href="https://tarcal.hu/jegyzo/" href="#" tabindex="-1">JEGYZŐ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175" id="menu-item-175"><a data-review-original-href="https://tarcal.hu/bizottsagok/" href="#" tabindex="-1">BIZOTTSÁGOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174" id="menu-item-174"><a data-review-original-href="https://tarcal.hu/kepviselo-testulet/" href="#" tabindex="-1">KÉPVISELŐ-TESTÜLET</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2514" id="menu-item-2514"><a data-review-original-href="https://tarcal.hu/a-felugyelt-koltsegvetesi-szervek/" href="#" tabindex="-1">1.2 FELÜGYELT KÖLTSÉGVETÉSI SZERVEK – ÖNKORMÁNYZATI INTÉZMÉNYEK ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3669" id="menu-item-3669"><a data-review-original-href="https://tarcal.hu/idosek-klubja/" href="#" tabindex="-1">IDŐSEK KLUBJA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3670" id="menu-item-3670"><a data-review-original-href="https://tarcal.hu/ovodak/" href="#" tabindex="-1">ÓVODÁK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8430" id="menu-item-8430"><a data-review-original-href="https://tarcal.hu/tarcali-kozos-onkormanyzati-hivatal/" href="#" tabindex="-1">Tarcali Közös Önkormányzati Hivatal</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-2515" id="menu-item-2515"><a data-review-original-href="#" href="#" tabindex="-1">1.3 GAZDÁLKODÓ SZERVEZETEK, EGYÉB INTÉZMÉNYEK►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2533" id="menu-item-2533"><a data-review-original-href="https://tarcal.hu/iskolak/" href="#" tabindex="-1">ISKOLA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8438" id="menu-item-8438"><a data-review-original-href="https://tarcal.hu/tarcali-posta/" href="#" tabindex="-1">TARCALI POSTA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8439 current_page_item menu-item-8441" id="menu-item-8441"><a aria-current="page" data-review-original-href="https://tarcal.hu/orvosi-rendelo/" href="#" tabindex="-1">ORVOSI RENDELŐ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3657" id="menu-item-3657"><a data-review-original-href="https://tarcal.hu/fogorvosi-rendelo/" href="#" tabindex="-1">FOGORVOSI RENDELŐ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8445" id="menu-item-8445"><a data-review-original-href="https://tarcal.hu/gyogyszertar/" href="#" tabindex="-1">GYÓGYSZERTÁR</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3635" id="menu-item-3635"><a data-review-original-href="https://tarcal.hu/gyermekjoleti-szolgaltatas/" href="#" tabindex="-1">CSALÁD ÉS GYERMEKJÓLÉTI SZOLGÁLTATÁS</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2564" id="menu-item-2564"><a data-review-original-href="https://tarcal.hu/kozszolgaltatasok/" href="#" tabindex="-1">2.3 KÖZSZOLGÁLTATÁSOK ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3628" id="menu-item-3628"><a data-review-original-href="https://tarcal.hu/konyha-es-etkezde/" href="#" tabindex="-1">KONYHA ÉS ÉTKEZDE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2530" id="menu-item-2530"><a data-review-original-href="https://tarcal.hu/vedonoi-szolgalat/" href="#" tabindex="-1">VÉDŐNŐI SZOLGÁLAT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7479" id="menu-item-7479"><a data-review-original-href="https://tarcal.hu/kozmuvelodes-6-puttonyos-borfalu/" href="#" tabindex="-1">KÖZMŰVELŐDÉS – 6 Puttonyos Borfalu</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4060" id="menu-item-4060"><a data-review-original-href="https://tarcal.hu/a-szerv-nyilvantartasai/" href="#" tabindex="-1">A SZERV NYILVÁNTARTÁSAI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2562" id="menu-item-2562"><a data-review-original-href="https://tarcal.hu/nyilvanos-kiadvanyok/" href="#" tabindex="-1">2.5 NYILVÁNOS KIADVÁNYOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2561" id="menu-item-2561"><a data-review-original-href="https://tarcal.hu/donteshozatal-ulesek/" href="#" tabindex="-1">2.6 TESTÜLETI ÜLÉSEK JEGYZŐKÖNYVEI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10303" id="menu-item-10303"><a data-review-original-href="https://tarcal.hu/roma-nemzetisegi-onkormanyzat-uleseinek-jegyzokonyvei/" href="#" tabindex="-1">ROMA NEMZETISÉGI ÖNKORMÁNYZAT ÜLÉSEINEK JEGYZŐKÖNYVEI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8850" id="menu-item-8850"><a data-review-original-href="https://tarcal.hu/2-7-veszelyhelyzetben-hozott-polgarmesteri-dontesek/" href="#" tabindex="-1">2.7.VESZÉLYHELYZETBEN HOZOTT POLGÁRMESTERI DÖNTÉSEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32" id="menu-item-32"><a data-review-original-href="https://tarcal.hu/palyazatok/" href="#" tabindex="-1">2.8 PÁLYÁZATOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2571" id="menu-item-2571"><a data-review-original-href="https://tarcal.hu/hirdetmenyek/" href="#" tabindex="-1">2.9 HIRDETMÉNYEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2579" id="menu-item-2579"><a data-review-original-href="https://tarcal.hu/kozerdeku-adatok-igenylese/" href="#" tabindex="-1">2.10 KÖZÉRDEKŰ ADATOK IGÉNYLÉSE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2578" id="menu-item-2578"><a data-review-original-href="https://tarcal.hu/kozzeteteli-listak/" href="#" tabindex="-1">2. 11 KÖZZÉTÉTELI LISTÁK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9489" id="menu-item-9489"><a data-review-original-href="https://or.njt.hu/onkorm/-:5:980:-:-:1:-:1:-/1/10" href="#" tabindex="-1" target="_blank">HATÁLYOS RENDELETEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9195" id="menu-item-9195"><a data-review-original-href="https://tarcal.hu/helyi-epitesi-szabalyzat-es-modositasai/" href="#" tabindex="-1">HELYI ÉPÍTÉSI SZABÁLYZAT ÉS MÓDOSÍTÁSAI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5038" id="menu-item-5038"><a data-review-original-href="https://tarcal.hu/kozbeszerzesi-terv/" href="#" tabindex="-1">KÖZBESZERZÉSI TERV</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1390" id="menu-item-1390"><a data-review-original-href="https://tarcal.hu/vasuti-menetrend/" href="#" tabindex="-1">VASÚTI MENETREND</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44" id="menu-item-44"><a data-review-original-href="https://tarcal.hu/egyhazak/" href="#" tabindex="-1">EGYHÁZAK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1413" id="menu-item-1413"><a data-review-original-href="https://tarcal.hu/boraszatok/" href="#" tabindex="-1">BORÁSZATOK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4734" id="menu-item-4734"><a data-review-original-href="https://tarcal.hu/boraszatok/boraszatok-fejlesztesei/" href="#" tabindex="-1">BORÁSZATOK FEJLESZTÉSEI</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9775" id="menu-item-9775"><a data-review-original-href="#" href="#" tabindex="-1">KÖZMŰVELŐDÉS</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9791" id="menu-item-9791"><a data-review-original-href="#" href="#" tabindex="-1">6 PUTTONYOS BORFALU – KULTÚRKÖZPONT</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9781" id="menu-item-9781"><a data-review-original-href="https://tarcal.hu/6puttonyosborfalu_bemutatkozo/" href="#" tabindex="-1">BEMUTATKOZÓ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10014" id="menu-item-10014"><a data-review-original-href="https://tarcal.hu/szolgaltatasaink/" href="#" tabindex="-1">SZOLGÁLTATÁSAINK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9784" id="menu-item-9784"><a data-review-original-href="https://tarcal.hu/galeria-kiallitoterem/" href="#" tabindex="-1">GALÉRIA – KIÁLLÍTÓTEREM</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11743" id="menu-item-11743"><a data-review-original-href="https://tarcal.hu/muvelodesi-haz-es-konyvtar/" href="#" tabindex="-1">KÖNYVES KÁLMÁN MŰVELŐDÉSI HÁZ ÉS KÖNYVTÁR</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11749" id="menu-item-11749"><a data-review-original-href="https://tarcal.hu/szolgaltatasok-2/" href="#" tabindex="-1">DÍJKÖTELES SZOLGÁLTATÁSOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9787" id="menu-item-9787"><a data-review-original-href="https://tarcal.hu/tarcal-muzeum/" href="#" tabindex="-1">TARCAL MÚZEUM</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9790" id="menu-item-9790"><a data-review-original-href="https://tarcal.hu/konyvtar/" href="#" tabindex="-1">KÖNYVTÁR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5997" id="menu-item-5997"><a data-review-original-href="https://tarcal.hu/events/" href="#" tabindex="-1">PROGRAMOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176" id="menu-item-176"><a data-review-original-href="https://tarcal.hu/szallashelyek/" href="#" tabindex="-1">SZÁLLÁSHELYEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3757" id="menu-item-3757"><a data-review-original-href="https://tarcal.hu/videok/" href="#" tabindex="-1">VIDEÓK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8469" id="menu-item-8469"><a data-review-original-href="https://tarcal.hu/palyazatok-3/" href="#" tabindex="-1">PÁLYÁZATOK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11890" id="menu-item-11890"><a data-review-original-href="https://tarcal.hu/versenykepes-jarasok-program/" href="#" tabindex="-1">VERSENYKÉPES JÁRÁSOK PROGRAM</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11886" id="menu-item-11886"><a data-review-original-href="https://tarcal.hu/tokaj-tarcal-hegykozseg-teruleten-onkormanyzati-kulteruleti-duloutfejlesztes-pm_szerz-354-2021/" href="#" tabindex="-1">Tokaj-Tarcal hegyközség területén -önkormányzati külterületi dűlőútfejlesztés PM_SZERZ/354/2021</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11534" id="menu-item-11534"><a data-review-original-href="https://tarcal.hu/telepulesi-kekinfrastruktura-fejlesztese-vizgazdalkodasi-beavatkozasok/" href="#" tabindex="-1">TELEPÜLÉSI KÉKINFRASTRUKTÚRA FEJLESZTÉSE (VÍZGAZDÁLKODÁSI BEAVATKOZÁSOK)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11163" id="menu-item-11163"><a data-review-original-href="https://tarcal.hu/arvizvedelmi-intezkedes-csapadekvizelvezeto-rendszer-fejlesztesevel-tarcalon/" href="#" tabindex="-1">ÁRVÍZVÉDELMI INTÉZKEDÉS CSAPADÉKVÍZELVEZETŐ-RENDSZER FEJLESZTÉSÉVEL TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11162" id="menu-item-11162"><a data-review-original-href="https://tarcal.hu/onkormanyzati-konyha-fejlesztese-tarcalon/" href="#" tabindex="-1">ÖNKORMÁNYZATI KONYHA FEJLESZTÉSE TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11161" id="menu-item-11161"><a data-review-original-href="https://tarcal.hu/belteruleti-zoldinfrastruktura-fejlesztese-mezozomboron-es-tarcalon/" href="#" tabindex="-1">BELTERÜLETI ZÖLDINFRASTRUKTÚRA FEJLESZTÉSE MEZŐZOMBORON ÉS TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8280" id="menu-item-8280"><a data-review-original-href="https://tarcal.hu/efop-human-szolgaltatasok-fejlesztese/" href="#" tabindex="-1">EFOP-HUMÁN SZOLGÁLTATÁSOK FEJLESZTÉSE</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8424" id="menu-item-8424"><a data-review-original-href="https://tarcal.hu/top-3-1-1-15-b01-201-00005/" href="#" tabindex="-1">FORGALOMCSILLAPÍTÓ ÉS KERÉKPÁROS LÉTESÍTMÉNYEK MEGVALÓSÍTÁSA TARCAL KÖZSÉG KÖZLEKEDÉSFEJLESZTÉSE ÉRDEKÉBEN</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8650" id="menu-item-8650"><a data-review-original-href="https://tarcal.hu/onkormanyzati-tulajdonu-epuletek-energetikai-fejlesztese-tarcalon/" href="#" tabindex="-1">ÖNKORMÁNYZATI TULAJDONÚ ÉPÜLETEK ENERGETIKAI FEJLESZTÉSE TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8706" id="menu-item-8706"><a data-review-original-href="https://tarcal.hu/tarcal-kozseg-telepulesfejlesztese/" href="#" tabindex="-1">TARCAL KÖZSÉG TELEPÜLÉSFEJLESZTÉSE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8957" id="menu-item-8957"><a data-review-original-href="https://tarcal.hu/kerekparut-halozat-kialakitas-hegyaljan/" href="#" tabindex="-1">KERÉKPÁRÚT HÁLÓZAT KIALAKÍTÁS HEGYALJÁN</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9468" id="menu-item-9468"><a data-review-original-href="https://tarcal.hu/bel-es-csapadekviz-elvezeto-rendszer-felujitasa-kialakitasa-tarcal-kozsegben/" href="#" tabindex="-1">Bel- és csapadékvíz-elvezető rendszer felújítása, kialakítása Tarcal községben</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9467" id="menu-item-9467"><a data-review-original-href="https://tarcal.hu/vedonoi-szolgalat-epuletenek-bovitese-es-felujitasa-tarcal-kozsegben/" href="#" tabindex="-1">VÉDŐNŐI SZOLGÁLAT ÉPÜLETÉNEK BŐVÍTÉSE ÉS FELÚJÍTÁSA TARCAL KÖZSÉGBEN</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9466" id="menu-item-9466"><a data-review-original-href="https://tarcal.hu/tarcal-kozseg-onkormanyzata-altal-fenntartott-idosek-klubja-szocialis-intezmeny-fejlesztese-uj-epuletben-valo-elhelyezessel/" href="#" tabindex="-1">TARCAL KÖZSÉG ÖNKORMÁNYZATA ÁLTAL FENNTARTOTT IDŐSEK KLUBJA SZOCIÁLIS INTÉZMÉNY FEJLESZTÉSE ÚJ ÉPÜLETBEN VALÓ ELHELYEZÉSSEL</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6273" id="menu-item-6273"><a data-review-original-href="https://tarcal.hu/galeriak/" href="#" tabindex="-1">GALÉRIÁK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11266" id="menu-item-11266"><a data-review-original-href="#" href="#" tabindex="-1">VÁLASZTÁSI INFORMÁCIÓK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11272" id="menu-item-11272"><a data-review-original-href="https://tarcal.hu/valasztasi-szervek/" href="#" tabindex="-1">VÁLASZTÁSI SZERVEK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11271" id="menu-item-11271"><a data-review-original-href="http://www.valasztas.hu/ugyentezes" href="#" tabindex="-1" target="_blank">VÁLASZTÁSI ÜGYINTÉZÉS</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11273" id="menu-item-11273"><a data-review-original-href="#" href="#" tabindex="-1">2024. ÉVI ÁLTALÁNOS VÁLASZTÁSOK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11282" id="menu-item-11282"><a data-review-original-href="https://tarcal.hu/valasztopolgaroknak/" href="#" tabindex="-1">VÁLASZTÓPOLGÁROKNAK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11281" id="menu-item-11281"><a data-review-original-href="https://tarcal.hu/jelolteknek/" href="#" tabindex="-1">JELÖLTEKNEK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11280" id="menu-item-11280"><a data-review-original-href="https://tarcal.hu/korabbi-valasztasok/" href="#" tabindex="-1">KORÁBBI VÁLASZTÁSOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8277" id="menu-item-8277"><a data-review-original-href="https://tarcal.hu/e-onkormanyzat/" href="#" tabindex="-1">E-ÖNKORMÁNYZAT</a></li>
+</ul></div>
+</nav>
+<div class="topsearch">
+<div data-review-disabled-form="true">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input class="search-field" name="s" placeholder="Search..." title="Search for:" type="search" value=""/>
+</label>
+<input class="search-submit" type="submit" value="Search"/>
+</div> </div>
+</div>
+<div class="clear"></div>
+</div>
+</header>
+</div>
+
+<div class="iheader nx-titlebar" style="">
+<div class="titlebar">
+<h1 class="entry-title">Orvosi rendelő</h1>
+</div>
+</div>
+<div class="site-main" id="main">
+<div class="content-area nosidebar" id="primary">
+<div class="site-content" id="content" role="main">
+<article class="post-8439 page type-page status-publish hentry" id="post-8439">
+<header class="entry-header">
+</header>
+<div class="entry-content">
+<h3 class="vc_custom_heading" style="text-align: center;">ORVOSI<br/>
+RENDELŐ</h3>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p align="center" style="text-align: center;">I. sz. körzet<br/>
+Dr. Szőke Péter<br/>
+Tel.:47/580-039</p>
+<p align="center">Rendelési idő:<br/>
+Hétfő: 8:00-12:00<br/>
+Kedd: 13:00-17:00<br/>
+Szerda: 8:00-12:00<br/>
+Csütörtök: 13:00-17:00<br/>
+Péntek: 8:00-12:00</p>
+<p align="center"> </p>
+<p align="center">II. sz. körzet<br/>
+Dr. Antal Klára Ibolya<br/>
+Tel.: 47/ 380-047</p>
+<p align="center">Rendelési idő:<br/>
+Hétfő:12.00-16.00<br/>
+Kedd:08.00-12.00<br/>
+Szerda:13.00-17.00<br/>
+Csütörtök:08.00-12.00<br/>
+Péntek: 08.00-12.00</p>
+</div>
+</div>
+</div>
+<footer class="entry-meta">
+</footer>
+</article>
+<div class="comments-area" id="comments">
+</div>
+</div>
+</div>
+</div>
+<footer class="site-footer" id="colophon" role="contentinfo">
+<div class="footer-bg clearfix">
+<div class="widget-wrap">
+<div class="sidebar-container" id="secondary" role="complementary">
+<div class="widget-area" id="footer-widgets">
+<aside class="widget widget_text" id="text-4"><h3 class="widget-title">Elérhetőségek:</h3> <div class="textwidget"><p><strong>Polgármester: </strong>Butta László<br/>
+Tel.: 47/580-445<br/>
+E-mail: polgmest(kukac)tarcal.hu</p>
+<p>Ügyfélfogadás:<br/>
+szerda: 08.00-12.00, 12.30-16.00</p>
+<p><strong>Jegyző: </strong>Bajzáthné Bekényi Zsuzsanna</p>
+<p>Tel.: 47/ 580-440<br/>
+E-mail: jegyzo(kukac)tarcal.hu</p>
+<p>Ügyfélfogadás:<br/>
+hétfő: 8.00-12.00<br/>
+szerda: 8.00- 12.00 12.30-16.00</p>
+</div>
+</aside><aside class="widget widget_text" id="text-2"><h3 class="widget-title">Ügyfélfogadási idő:  </h3> <div class="textwidget"><p>Hétfő:          8.00- 12.00<br/>
+                     12.30-16.00<br/>
+Kedd:          nincs ügyfélfogadás<br/>
+Szerda:       8.00-12.00<br/>
+                   12.30-17.00<br/>
+Csütörtök:   nincs ügyfélfogadás<br/>
+Péntek:       8.00-12.30</p>
+</div>
+</aside> </div>
+</div>
+</div>
+</div>
+<div class="site-info">
+<div class="copyright">
+                	                      Copyright ©                 </div>
+</div>
+</footer>
+</div>
+
+<small>Copy Protected by <a data-review-original-href="http://chetangole.com/" href="#" tabindex="-1" target="_blank">Chetan</a>'s <a data-review-original-href="http://chetangole.com/blog/wp-copyprotect/" href="#" tabindex="-1" target="_blank">WP-Copyprotect</a>.</small>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a accesskey="s" class="pojo-skip-link pojo-skip-content" data-review-original-href="#content" href="#" id="pojo-a11y-skip-content" tabindex="-1">Megszakítás</a>
+<nav aria-label="Akadálymentesítés eszköztár" class="pojo-a11y-toolbar-left" id="pojo-a11y-toolbar">
+<div class="pojo-a11y-toolbar-toggle">
+<a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" data-review-original-href="javascript:void(0);" href="#" role="button" tabindex="-1" title="Akadálymentesítés">
+<span class="pojo-sr-only sr-only">Eszköztár megnyitása</span>
+<svg fill="currentColor" viewbox="0 0 100 100" width="1em" xmlns="http://www.w3.org/2000/svg">
+<title>Akadálymentesítés</title>
+<g><path d="M60.4,78.9c-2.2,4.1-5.3,7.4-9.2,9.8c-4,2.4-8.3,3.6-13,3.6c-6.9,0-12.8-2.4-17.7-7.3c-4.9-4.9-7.3-10.8-7.3-17.7c0-5,1.4-9.5,4.1-13.7c2.7-4.2,6.4-7.2,10.9-9.2l-0.9-7.3c-6.3,2.3-11.4,6.2-15.3,11.8C7.9,54.4,6,60.6,6,67.3c0,5.8,1.4,11.2,4.3,16.1s6.8,8.8,11.7,11.7c4.9,2.9,10.3,4.3,16.1,4.3c7,0,13.3-2.1,18.9-6.2c5.7-4.1,9.6-9.5,11.7-16.2l-5.7-11.4C63.5,70.4,62.5,74.8,60.4,78.9z"></path><path d="M93.8,71.3l-11.1,5.5L70,51.4c-0.6-1.3-1.7-2-3.2-2H41.3l-0.9-7.2h22.7v-7.2H39.6L37.5,19c2.5,0.3,4.8-0.5,6.7-2.3c1.9-1.8,2.9-4,2.9-6.6c0-2.5-0.9-4.6-2.6-6.3c-1.8-1.8-3.9-2.6-6.3-2.6c-2,0-3.8,0.6-5.4,1.8c-1.6,1.2-2.7,2.7-3.2,4.6c-0.3,1-0.4,1.8-0.3,2.3l5.4,43.5c0.1,0.9,0.5,1.6,1.2,2.3c0.7,0.6,1.5,0.9,2.4,0.9h26.4l13.4,26.7c0.6,1.3,1.7,2,3.2,2c0.6,0,1.1-0.1,1.6-0.4L97,77.7L93.8,71.3z"></path></g> </svg>
+</a>
+</div>
+<div class="pojo-a11y-toolbar-overlay">
+<div class="pojo-a11y-toolbar-inner">
+<p class="pojo-a11y-toolbar-title">Akadálymentesítés</p>
+<ul class="pojo-a11y-toolbar-items pojo-a11y-tools">
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus" data-action="resize-plus" data-action-group="resize" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Nagyítás</title><path d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z" fill="currentColor"></path></svg></span><span class="pojo-a11y-toolbar-text">Nagyítás</span> </a>
+</li>
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus" data-action="resize-minus" data-action-group="resize" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Kicsinyítés</title><path d="M256 200v16c0 4.25-3.75 8-8 8h-144c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h144c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z" fill="currentColor"></path></svg></span><span class="pojo-a11y-toolbar-text">Kicsinyítés</span> </a>
+</li>
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-grayscale" data-action="grayscale" data-action-group="schema" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Fekete - Fehér</title><path d="M15.75 384h-15.75v-352h15.75v352zM31.5 383.75h-8v-351.75h8v351.75zM55 383.75h-7.75v-351.75h7.75v351.75zM94.25 383.75h-7.75v-351.75h7.75v351.75zM133.5 383.75h-15.5v-351.75h15.5v351.75zM165 383.75h-7.75v-351.75h7.75v351.75zM180.75 383.75h-7.75v-351.75h7.75v351.75zM196.5 383.75h-7.75v-351.75h7.75v351.75zM235.75 383.75h-15.75v-351.75h15.75v351.75zM275 383.75h-15.75v-351.75h15.75v351.75zM306.5 383.75h-15.75v-351.75h15.75v351.75zM338 383.75h-15.75v-351.75h15.75v351.75zM361.5 383.75h-15.75v-351.75h15.75v351.75zM408.75 383.75h-23.5v-351.75h23.5v351.75zM424.5 383.75h-8v-351.75h8v351.75zM448 384h-15.75v-352h15.75v352z" fill="currentColor"></path></svg></span><span class="pojo-a11y-toolbar-text">Fekete - Fehér</span> </a>
+</li>
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-high-contrast" data-action="high-contrast" data-action-group="schema" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Kontraszt</title><path d="M192 360v-272c-75 0-136 61-136 136s61 136 136 136zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z" fill="currentColor"></path></svg></span><span class="pojo-a11y-toolbar-text">Kontraszt</span> </a>
+</li>
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-negative-contrast" data-action="negative-contrast" data-action-group="schema" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Negatív kontraszt</title><path d="M416 240c-23.75-36.75-56.25-68.25-95.25-88.25 10 17 15.25 36.5 15.25 56.25 0 61.75-50.25 112-112 112s-112-50.25-112-112c0-19.75 5.25-39.25 15.25-56.25-39 20-71.5 51.5-95.25 88.25 42.75 66 111.75 112 192 112s149.25-46 192-112zM236 144c0-6.5-5.5-12-12-12-41.75 0-76 34.25-76 76 0 6.5 5.5 12 12 12s12-5.5 12-12c0-28.5 23.5-52 52-52 6.5 0 12-5.5 12-12zM448 240c0 6.25-2 12-5 17.25-46 75.75-130.25 126.75-219 126.75s-173-51.25-219-126.75c-3-5.25-5-11-5-17.25s2-12 5-17.25c46-75.5 130.25-126.75 219-126.75s173 51.25 219 126.75c3 5.25 5 11 5 17.25z" fill="currentColor"></path></svg></span><span class="pojo-a11y-toolbar-text">Negatív kontraszt</span> </a>
+</li>
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-light-background" data-action="light-background" data-action-group="schema" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Fehér háttét</title><path d="M184 144c0 4.25-3.75 8-8 8s-8-3.75-8-8c0-17.25-26.75-24-40-24-4.25 0-8-3.75-8-8s3.75-8 8-8c23.25 0 56 12.25 56 40zM224 144c0-50-50.75-80-96-80s-96 30-96 80c0 16 6.5 32.75 17 45 4.75 5.5 10.25 10.75 15.25 16.5 17.75 21.25 32.75 46.25 35.25 74.5h57c2.5-28.25 17.5-53.25 35.25-74.5 5-5.75 10.5-11 15.25-16.5 10.5-12.25 17-29 17-45zM256 144c0 25.75-8.5 48-25.75 67s-40 45.75-42 72.5c7.25 4.25 11.75 12.25 11.75 20.5 0 6-2.25 11.75-6.25 16 4 4.25 6.25 10 6.25 16 0 8.25-4.25 15.75-11.25 20.25 2 3.5 3.25 7.75 3.25 11.75 0 16.25-12.75 24-27.25 24-6.5 14.5-21 24-36.75 24s-30.25-9.5-36.75-24c-14.5 0-27.25-7.75-27.25-24 0-4 1.25-8.25 3.25-11.75-7-4.5-11.25-12-11.25-20.25 0-6 2.25-11.75 6.25-16-4-4.25-6.25-10-6.25-16 0-8.25 4.5-16.25 11.75-20.5-2-26.75-24.75-53.5-42-72.5s-25.75-41.25-25.75-67c0-68 64.75-112 128-112s128 44 128 112z" fill="currentColor"></path></svg></span><span class="pojo-a11y-toolbar-text">Fehér háttét</span> </a>
+</li>
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-links-underline" data-action="links-underline" data-action-group="toggle" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Link aláhúzása</title><path d="M364 304c0-6.5-2.5-12.5-7-17l-52-52c-4.5-4.5-10.75-7-17-7-7.25 0-13 2.75-18 8 8.25 8.25 18 15.25 18 28 0 13.25-10.75 24-24 24-12.75 0-19.75-9.75-28-18-5.25 5-8.25 10.75-8.25 18.25 0 6.25 2.5 12.5 7 17l51.5 51.75c4.5 4.5 10.75 6.75 17 6.75s12.5-2.25 17-6.5l36.75-36.5c4.5-4.5 7-10.5 7-16.75zM188.25 127.75c0-6.25-2.5-12.5-7-17l-51.5-51.75c-4.5-4.5-10.75-7-17-7s-12.5 2.5-17 6.75l-36.75 36.5c-4.5 4.5-7 10.5-7 16.75 0 6.5 2.5 12.5 7 17l52 52c4.5 4.5 10.75 6.75 17 6.75 7.25 0 13-2.5 18-7.75-8.25-8.25-18-15.25-18-28 0-13.25 10.75-24 24-24 12.75 0 19.75 9.75 28 18 5.25-5 8.25-10.75 8.25-18.25zM412 304c0 19-7.75 37.5-21.25 50.75l-36.75 36.5c-13.5 13.5-31.75 20.75-50.75 20.75-19.25 0-37.5-7.5-51-21.25l-51.5-51.75c-13.5-13.5-20.75-31.75-20.75-50.75 0-19.75 8-38.5 22-52.25l-22-22c-13.75 14-32.25 22-52 22-19 0-37.5-7.5-51-21l-52-52c-13.75-13.75-21-31.75-21-51 0-19 7.75-37.5 21.25-50.75l36.75-36.5c13.5-13.5 31.75-20.75 50.75-20.75 19.25 0 37.5 7.5 51 21.25l51.5 51.75c13.5 13.5 20.75 31.75 20.75 50.75 0 19.75-8 38.5-22 52.25l22 22c13.75-14 32.25-22 52-22 19 0 37.5 7.5 51 21l52 52c13.75 13.75 21 31.75 21 51z" fill="currentColor"></path></svg></span><span class="pojo-a11y-toolbar-text">Link aláhúzása</span> </a>
+</li>
+<li class="pojo-a11y-toolbar-item">
+<a class="pojo-a11y-toolbar-link pojo-a11y-btn-reset" data-action="reset" data-review-original-href="#" href="#" role="button" tabindex="-1">
+<span class="pojo-a11y-toolbar-icon"><svg version="1.1" viewbox="0 0 448 448" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Alaphelyzetbe állítás</title><path d="M384 224c0 105.75-86.25 192-192 192-57.25 0-111.25-25.25-147.75-69.25-2.5-3.25-2.25-8 0.5-10.75l34.25-34.5c1.75-1.5 4-2.25 6.25-2.25 2.25 0.25 4.5 1.25 5.75 3 24.5 31.75 61.25 49.75 101 49.75 70.5 0 128-57.5 128-128s-57.5-128-128-128c-32.75 0-63.75 12.5-87 34.25l34.25 34.5c4.75 4.5 6 11.5 3.5 17.25-2.5 6-8.25 10-14.75 10h-112c-8.75 0-16-7.25-16-16v-112c0-6.5 4-12.25 10-14.75 5.75-2.5 12.75-1.25 17.25 3.5l32.5 32.25c35.25-33.25 83-53 132.25-53 105.75 0 192 86.25 192 192z" fill="currentColor"></path></svg></span>
+<span class="pojo-a11y-toolbar-text">Alaphelyzetbe állítás</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="wprmenu_bar" id="wprmenu_bar">
+<div class="wprmenu-inner">
+<div class="wprmenu_icon">
+<span class="wprmenu_ic_1"></span>
+<span class="wprmenu_ic_2"></span>
+<span class="wprmenu_ic_3"></span>
+</div>
+<div class="menu_title">
+                    MENU                </div>
+</div>
+</div>
+<div class="wprmenu_levels top wprmenu_custom_icons" id="wprmenu_menu">
+<ul id="wprmenu_menu_ul">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-33"><a data-review-original-href="https://tarcal.hu" href="#" tabindex="-1">KEZDŐLAP</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-84"><a data-review-original-href="https://tarcal.hu/hirek" href="#" tabindex="-1">HÍREK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7847"><a data-review-original-href="https://tarcal.hu/nyilvanos-kiadvanyok/" href="#" tabindex="-1">TARCALI HÍREK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-1388"><a data-review-original-href="#" href="#" tabindex="-1">KÖZÉRDEKŰ</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7484"><a data-review-original-href="https://tarcal.hu/onkormanyzati-valasztas-2019/" href="#" tabindex="-1">ÖNKORMÁNYZATI VÁLASZTÁS 2019 ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7490"><a data-review-original-href="https://tarcal.hu/tarcali-kozos-helyi-valasztasi-iroda-vezetojenek-dontesei/" href="#" tabindex="-1">TARCALI KÖZÖS HELYI VÁLASZTÁSI IRODA VEZETŐJÉNEK DÖNTÉSEI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7489"><a data-review-original-href="https://tarcal.hu/hvb-hatarozatok/" href="#" tabindex="-1">HVB HATÁROZATOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7750"><a data-review-original-href="https://tarcal.hu/valasztasi-bizottsagok/" href="#" tabindex="-1">VÁLASZTÁSI BIZOTTSÁGOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1466"><a data-review-original-href="https://tarcal.hu/fontos-informaciok/" href="#" tabindex="-1">FONTOS INFORMÁCIÓK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10621"><a data-review-original-href="https://ohp-20.asp.lgov.hu/nyitolap" href="#" tabindex="-1" target="_blank">LETÖLTHETŐ NYOMTATVÁNYOK / E-ÜGYINTÉZÉS</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10920"><a data-review-original-href="https://tarcal.hu/letoltheto-nyomtatvanyok-onkormanyzat/" href="#" tabindex="-1">LETÖLTHETŐ NYOMTATVÁNYOK / ÖNKORMÁNYZAT</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2472"><a data-review-original-href="#" href="#" tabindex="-1">1.1 KAPCSOLAT, SZERVEZETI VEZETŐK ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2508"><a data-review-original-href="https://tarcal.hu/hivatal-elerhetoseg/" href="#" tabindex="-1">HIVATAL ELÉRHETŐSÉG</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2507"><a data-review-original-href="https://tarcal.hu/onkormanyzat-elerhetosege/" href="#" tabindex="-1">ÖNKORMÁNYZAT ELÉRHETŐSÉGE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2506"><a data-review-original-href="https://tarcal.hu/polgarmester/" href="#" tabindex="-1">POLGÁRMESTER</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2505"><a data-review-original-href="https://tarcal.hu/alpolgarmester/" href="#" tabindex="-1">ALPOLGÁRMESTER</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2504"><a data-review-original-href="https://tarcal.hu/jegyzo/" href="#" tabindex="-1">JEGYZŐ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175"><a data-review-original-href="https://tarcal.hu/bizottsagok/" href="#" tabindex="-1">BIZOTTSÁGOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174"><a data-review-original-href="https://tarcal.hu/kepviselo-testulet/" href="#" tabindex="-1">KÉPVISELŐ-TESTÜLET</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2514"><a data-review-original-href="https://tarcal.hu/a-felugyelt-koltsegvetesi-szervek/" href="#" tabindex="-1">1.2 FELÜGYELT KÖLTSÉGVETÉSI SZERVEK – ÖNKORMÁNYZATI INTÉZMÉNYEK ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3669"><a data-review-original-href="https://tarcal.hu/idosek-klubja/" href="#" tabindex="-1">IDŐSEK KLUBJA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3670"><a data-review-original-href="https://tarcal.hu/ovodak/" href="#" tabindex="-1">ÓVODÁK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8430"><a data-review-original-href="https://tarcal.hu/tarcali-kozos-onkormanyzati-hivatal/" href="#" tabindex="-1">Tarcali Közös Önkormányzati Hivatal</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-2515"><a data-review-original-href="#" href="#" tabindex="-1">1.3 GAZDÁLKODÓ SZERVEZETEK, EGYÉB INTÉZMÉNYEK►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2533"><a data-review-original-href="https://tarcal.hu/iskolak/" href="#" tabindex="-1">ISKOLA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8438"><a data-review-original-href="https://tarcal.hu/tarcali-posta/" href="#" tabindex="-1">TARCALI POSTA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-8439 current_page_item menu-item-8441"><a aria-current="page" data-review-original-href="https://tarcal.hu/orvosi-rendelo/" href="#" tabindex="-1">ORVOSI RENDELŐ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3657"><a data-review-original-href="https://tarcal.hu/fogorvosi-rendelo/" href="#" tabindex="-1">FOGORVOSI RENDELŐ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8445"><a data-review-original-href="https://tarcal.hu/gyogyszertar/" href="#" tabindex="-1">GYÓGYSZERTÁR</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3635"><a data-review-original-href="https://tarcal.hu/gyermekjoleti-szolgaltatas/" href="#" tabindex="-1">CSALÁD ÉS GYERMEKJÓLÉTI SZOLGÁLTATÁS</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2564"><a data-review-original-href="https://tarcal.hu/kozszolgaltatasok/" href="#" tabindex="-1">2.3 KÖZSZOLGÁLTATÁSOK ►</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3628"><a data-review-original-href="https://tarcal.hu/konyha-es-etkezde/" href="#" tabindex="-1">KONYHA ÉS ÉTKEZDE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2530"><a data-review-original-href="https://tarcal.hu/vedonoi-szolgalat/" href="#" tabindex="-1">VÉDŐNŐI SZOLGÁLAT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7479"><a data-review-original-href="https://tarcal.hu/kozmuvelodes-6-puttonyos-borfalu/" href="#" tabindex="-1">KÖZMŰVELŐDÉS – 6 Puttonyos Borfalu</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4060"><a data-review-original-href="https://tarcal.hu/a-szerv-nyilvantartasai/" href="#" tabindex="-1">A SZERV NYILVÁNTARTÁSAI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2562"><a data-review-original-href="https://tarcal.hu/nyilvanos-kiadvanyok/" href="#" tabindex="-1">2.5 NYILVÁNOS KIADVÁNYOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2561"><a data-review-original-href="https://tarcal.hu/donteshozatal-ulesek/" href="#" tabindex="-1">2.6 TESTÜLETI ÜLÉSEK JEGYZŐKÖNYVEI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10303"><a data-review-original-href="https://tarcal.hu/roma-nemzetisegi-onkormanyzat-uleseinek-jegyzokonyvei/" href="#" tabindex="-1">ROMA NEMZETISÉGI ÖNKORMÁNYZAT ÜLÉSEINEK JEGYZŐKÖNYVEI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8850"><a data-review-original-href="https://tarcal.hu/2-7-veszelyhelyzetben-hozott-polgarmesteri-dontesek/" href="#" tabindex="-1">2.7.VESZÉLYHELYZETBEN HOZOTT POLGÁRMESTERI DÖNTÉSEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a data-review-original-href="https://tarcal.hu/palyazatok/" href="#" tabindex="-1">2.8 PÁLYÁZATOK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2571"><a data-review-original-href="https://tarcal.hu/hirdetmenyek/" href="#" tabindex="-1">2.9 HIRDETMÉNYEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2579"><a data-review-original-href="https://tarcal.hu/kozerdeku-adatok-igenylese/" href="#" tabindex="-1">2.10 KÖZÉRDEKŰ ADATOK IGÉNYLÉSE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2578"><a data-review-original-href="https://tarcal.hu/kozzeteteli-listak/" href="#" tabindex="-1">2. 11 KÖZZÉTÉTELI LISTÁK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9489"><a data-review-original-href="https://or.njt.hu/onkorm/-:5:980:-:-:1:-:1:-/1/10" href="#" tabindex="-1" target="_blank">HATÁLYOS RENDELETEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9195"><a data-review-original-href="https://tarcal.hu/helyi-epitesi-szabalyzat-es-modositasai/" href="#" tabindex="-1">HELYI ÉPÍTÉSI SZABÁLYZAT ÉS MÓDOSÍTÁSAI</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5038"><a data-review-original-href="https://tarcal.hu/kozbeszerzesi-terv/" href="#" tabindex="-1">KÖZBESZERZÉSI TERV</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1390"><a data-review-original-href="https://tarcal.hu/vasuti-menetrend/" href="#" tabindex="-1">VASÚTI MENETREND</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a data-review-original-href="https://tarcal.hu/egyhazak/" href="#" tabindex="-1">EGYHÁZAK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1413"><a data-review-original-href="https://tarcal.hu/boraszatok/" href="#" tabindex="-1">BORÁSZATOK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4734"><a data-review-original-href="https://tarcal.hu/boraszatok/boraszatok-fejlesztesei/" href="#" tabindex="-1">BORÁSZATOK FEJLESZTÉSEI</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9775"><a data-review-original-href="#" href="#" tabindex="-1">KÖZMŰVELŐDÉS</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9791"><a data-review-original-href="#" href="#" tabindex="-1">6 PUTTONYOS BORFALU – KULTÚRKÖZPONT</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9781"><a data-review-original-href="https://tarcal.hu/6puttonyosborfalu_bemutatkozo/" href="#" tabindex="-1">BEMUTATKOZÓ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10014"><a data-review-original-href="https://tarcal.hu/szolgaltatasaink/" href="#" tabindex="-1">SZOLGÁLTATÁSAINK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9784"><a data-review-original-href="https://tarcal.hu/galeria-kiallitoterem/" href="#" tabindex="-1">GALÉRIA – KIÁLLÍTÓTEREM</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11743"><a data-review-original-href="https://tarcal.hu/muvelodesi-haz-es-konyvtar/" href="#" tabindex="-1">KÖNYVES KÁLMÁN MŰVELŐDÉSI HÁZ ÉS KÖNYVTÁR</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11749"><a data-review-original-href="https://tarcal.hu/szolgaltatasok-2/" href="#" tabindex="-1">DÍJKÖTELES SZOLGÁLTATÁSOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9787"><a data-review-original-href="https://tarcal.hu/tarcal-muzeum/" href="#" tabindex="-1">TARCAL MÚZEUM</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9790"><a data-review-original-href="https://tarcal.hu/konyvtar/" href="#" tabindex="-1">KÖNYVTÁR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5997"><a data-review-original-href="https://tarcal.hu/events/" href="#" tabindex="-1">PROGRAMOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a data-review-original-href="https://tarcal.hu/szallashelyek/" href="#" tabindex="-1">SZÁLLÁSHELYEK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3757"><a data-review-original-href="https://tarcal.hu/videok/" href="#" tabindex="-1">VIDEÓK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8469"><a data-review-original-href="https://tarcal.hu/palyazatok-3/" href="#" tabindex="-1">PÁLYÁZATOK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11890"><a data-review-original-href="https://tarcal.hu/versenykepes-jarasok-program/" href="#" tabindex="-1">VERSENYKÉPES JÁRÁSOK PROGRAM</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11886"><a data-review-original-href="https://tarcal.hu/tokaj-tarcal-hegykozseg-teruleten-onkormanyzati-kulteruleti-duloutfejlesztes-pm_szerz-354-2021/" href="#" tabindex="-1">Tokaj-Tarcal hegyközség területén -önkormányzati külterületi dűlőútfejlesztés PM_SZERZ/354/2021</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11534"><a data-review-original-href="https://tarcal.hu/telepulesi-kekinfrastruktura-fejlesztese-vizgazdalkodasi-beavatkozasok/" href="#" tabindex="-1">TELEPÜLÉSI KÉKINFRASTRUKTÚRA FEJLESZTÉSE (VÍZGAZDÁLKODÁSI BEAVATKOZÁSOK)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11163"><a data-review-original-href="https://tarcal.hu/arvizvedelmi-intezkedes-csapadekvizelvezeto-rendszer-fejlesztesevel-tarcalon/" href="#" tabindex="-1">ÁRVÍZVÉDELMI INTÉZKEDÉS CSAPADÉKVÍZELVEZETŐ-RENDSZER FEJLESZTÉSÉVEL TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11162"><a data-review-original-href="https://tarcal.hu/onkormanyzati-konyha-fejlesztese-tarcalon/" href="#" tabindex="-1">ÖNKORMÁNYZATI KONYHA FEJLESZTÉSE TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11161"><a data-review-original-href="https://tarcal.hu/belteruleti-zoldinfrastruktura-fejlesztese-mezozomboron-es-tarcalon/" href="#" tabindex="-1">BELTERÜLETI ZÖLDINFRASTRUKTÚRA FEJLESZTÉSE MEZŐZOMBORON ÉS TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8280"><a data-review-original-href="https://tarcal.hu/efop-human-szolgaltatasok-fejlesztese/" href="#" tabindex="-1">EFOP-HUMÁN SZOLGÁLTATÁSOK FEJLESZTÉSE</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8424"><a data-review-original-href="https://tarcal.hu/top-3-1-1-15-b01-201-00005/" href="#" tabindex="-1">FORGALOMCSILLAPÍTÓ ÉS KERÉKPÁROS LÉTESÍTMÉNYEK MEGVALÓSÍTÁSA TARCAL KÖZSÉG KÖZLEKEDÉSFEJLESZTÉSE ÉRDEKÉBEN</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8650"><a data-review-original-href="https://tarcal.hu/onkormanyzati-tulajdonu-epuletek-energetikai-fejlesztese-tarcalon/" href="#" tabindex="-1">ÖNKORMÁNYZATI TULAJDONÚ ÉPÜLETEK ENERGETIKAI FEJLESZTÉSE TARCALON</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8706"><a data-review-original-href="https://tarcal.hu/tarcal-kozseg-telepulesfejlesztese/" href="#" tabindex="-1">TARCAL KÖZSÉG TELEPÜLÉSFEJLESZTÉSE</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8957"><a data-review-original-href="https://tarcal.hu/kerekparut-halozat-kialakitas-hegyaljan/" href="#" tabindex="-1">KERÉKPÁRÚT HÁLÓZAT KIALAKÍTÁS HEGYALJÁN</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9468"><a data-review-original-href="https://tarcal.hu/bel-es-csapadekviz-elvezeto-rendszer-felujitasa-kialakitasa-tarcal-kozsegben/" href="#" tabindex="-1">Bel- és csapadékvíz-elvezető rendszer felújítása, kialakítása Tarcal községben</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9467"><a data-review-original-href="https://tarcal.hu/vedonoi-szolgalat-epuletenek-bovitese-es-felujitasa-tarcal-kozsegben/" href="#" tabindex="-1">VÉDŐNŐI SZOLGÁLAT ÉPÜLETÉNEK BŐVÍTÉSE ÉS FELÚJÍTÁSA TARCAL KÖZSÉGBEN</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9466"><a data-review-original-href="https://tarcal.hu/tarcal-kozseg-onkormanyzata-altal-fenntartott-idosek-klubja-szocialis-intezmeny-fejlesztese-uj-epuletben-valo-elhelyezessel/" href="#" tabindex="-1">TARCAL KÖZSÉG ÖNKORMÁNYZATA ÁLTAL FENNTARTOTT IDŐSEK KLUBJA SZOCIÁLIS INTÉZMÉNY FEJLESZTÉSE ÚJ ÉPÜLETBEN VALÓ ELHELYEZÉSSEL</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6273"><a data-review-original-href="https://tarcal.hu/galeriak/" href="#" tabindex="-1">GALÉRIÁK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11266"><a data-review-original-href="#" href="#" tabindex="-1">VÁLASZTÁSI INFORMÁCIÓK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11272"><a data-review-original-href="https://tarcal.hu/valasztasi-szervek/" href="#" tabindex="-1">VÁLASZTÁSI SZERVEK</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11271"><a data-review-original-href="http://www.valasztas.hu/ugyentezes" href="#" tabindex="-1" target="_blank">VÁLASZTÁSI ÜGYINTÉZÉS</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11273"><a data-review-original-href="#" href="#" tabindex="-1">2024. ÉVI ÁLTALÁNOS VÁLASZTÁSOK</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11282"><a data-review-original-href="https://tarcal.hu/valasztopolgaroknak/" href="#" tabindex="-1">VÁLASZTÓPOLGÁROKNAK</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11281"><a data-review-original-href="https://tarcal.hu/jelolteknek/" href="#" tabindex="-1">JELÖLTEKNEK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11280"><a data-review-original-href="https://tarcal.hu/korabbi-valasztasok/" href="#" tabindex="-1">KORÁBBI VÁLASZTÁSOK</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8277"><a data-review-original-href="https://tarcal.hu/e-onkormanyzat/" href="#" tabindex="-1">E-ÖNKORMÁNYZAT</a></li>
+</ul>
+<div class="wpr_search">
+<div data-review-disabled-form="true"><label><input class="wpr-search-field" name="s" placeholder=" Search..." title="Search for:" type="search" value=""/></label></div> </div>
+</div>
+</body>
+</html>

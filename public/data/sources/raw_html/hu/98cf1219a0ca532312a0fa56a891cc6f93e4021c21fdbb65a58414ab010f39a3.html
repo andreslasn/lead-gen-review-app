@@ -1,0 +1,647 @@
+<!doctype html>
+
+<!DOCTYPE html>
+
+<html lang="hu-hu" xml:lang="hu-hu" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="Adminisztrátor" name="author"/>
+<meta content="mezőnagymihály, önkormányzat, hivatal" name="description"/>
+<meta content="Joomla! - Open Source Content Management" name="generator"/>
+<title>Orvosi Rendelő</title>
+
+
+
+
+
+
+
+
+<style type="text/css">
+
+	/* Set slideshow height/width */
+		.slideshowcontainer {
+			max-width:1100px;
+			max-height:300px;
+		}
+
+	/* Set slideshow border-radius*/
+		.slideshowcontainer, .slidesjs-container, .slidesjs-container img {
+			border: 0px solid #ffffff;
+			border-radius: 0px;
+		}
+
+	/* Navigation Position */
+	.slidesjs-pagination {
+		float: right;
+	}
+
+
+	/* Set slideshow height/width */
+		.slideshowcontainer {
+			max-width:1100px;
+			max-height:300px;
+		}
+
+	/* Set slideshow border-radius*/
+		.slideshowcontainer, .slidesjs-container, .slidesjs-container img {
+			border: 0px solid #ffffff;
+			border-radius: 0px;
+		}
+
+	/* Navigation Position */
+	.slidesjs-pagination {
+		float: right;
+	}
+
+
+	/* Set slideshow height/width */
+		.slideshowcontainer {
+			max-width:1100px;
+			max-height:300px;
+		}
+
+	/* Set slideshow border-radius*/
+		.slideshowcontainer, .slidesjs-container, .slidesjs-container img {
+			border: 0px solid #ffffff;
+			border-radius: 0px;
+		}
+
+	/* Navigation Position */
+	.slidesjs-pagination {
+		float: right;
+	}
+
+
+		.slideshowcontainer {
+			max-height: 300px;
+		}
+		.slidesjs-pagination {
+			display:none;
+		}
+	
+	</style>
+
+
+
+
+
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+
+<style type="text/css">
+@media only screen and (min-width: 960px) and (max-width: 1100px) {
+}
+
+/* Responsive - Center crop logo image */
+@media only screen and (max-width: 1100px) {
+
+}
+</style>
+ 
+<style type="text/css">
+body, input, button, select, textarea {font-family:Open Sans }
+h2{font-family:Oswald }
+.module h3, .module_menu h3{font-family:Oswald; }
+#hornav{font-family:Open Sans }
+h1.logo-text a{font-family:Oswald }
+/*--Set Logo Image position and locate logo image file--*/ 
+.logo a {left:1px}
+.logo a {top:18px}
+/*--End Set Logo Image position and locate logo image file--*/  
+
+/*--Body font size--*/
+body {font-size: 13px}
+
+/*--Text Colors for Module Heads and Article titles--*/ 
+body {color:#707070;}
+h2, h2 a:link, h2 a:visited {color: #707070 ; }
+.module h3, .module_menu h3, h3 {color: #5c5c5c }
+a {color: #556a8d }
+
+/*--Text Colors for Logo and Slogan--*/ 
+h1.logo-text a {
+	color: #516687;
+}
+p.site-slogan {color: #9e9e9e }
+
+/*--Hornav Ul text color and dropdown background color--*/
+#hornav ul li a  {color: #707070 }
+#subMenusContainer ul, #subMenusContainer ol, #hornav ul ul {background-color: #ffffff }
+
+/*--Start Style Side Column and Content Layout Divs--*/
+/*--Get Side Column widths from Parameters--*/
+#sidecol_a {width: 35% }
+#sidecol_b {width: 35% }
+
+.maincontent {padding: 40px 40px 30px;}
+
+/*--Check and see what modules are toggled on/off then take away columns width, margin and border values from overall width*/
+#content_remainder {width:65% }
+
+
+/*Style SSC layout*/
+  
+	#sidecol_a {float:left; }
+	#sidecol_b {float:right; }
+	#content_remainder {float:left;}
+
+/* Sidecolumn background color */
+.backgrounds #sidecol_a , .backgrounds #sidecol_b {
+	background-color: #fafafa;
+}
+
+/*--End Style Side Column and Content Layout Divs--*/
+
+/* Social Icons */
+
+#socialmedia ul li a [class^="fa-"]::before, #socialmedia ul li a [class*=" fa-"]::before {color: #ffffff}
+
+/* Wrapper Width */
+.wrapper960, .backgrounds .content_background {width: 1100px ;}
+
+/* Background Color */
+body, #body_bg {
+background-color: #ffffff;
+}
+
+/*-- Background Image --*/ 
+
+/* Button Colour */
+.readmore a, input.button, button, .j51-button a, .module .j51imagelinkhover .j51button a, .label-info, .badge-info,
+.module_style-box .j51imagelinkhover .j51button a, .search .icon-search, .search .button, .slicknav_btn, .slidesjs-previous.slidesjs-navigation, .slidesjs-next.slidesjs-navigation {
+	background-color: #556a8d;
+}
+.btn, .btn-group.open .btn.dropdown-toggle, .input-append .add-on, .input-prepend .add-on, .pager.pagenav a, .btn-primary:active, 
+.btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+	background-color: #556a8d;
+}
+
+/* Top Menu Active Color */
+/*#hornav > ul > li > a:hover, #hornav > ul > li.active > a, .mainMenuParentBtnFocused {
+	background-color:  !important;
+}*/
+
+/* Top Menu */
+.hornavmenu  {
+	background-color: rgba(255,255,255, 1.0 );
+}
+.slicknav_menu {background:#ffffff}
+.is-sticky #container_hornav .wrapper960 {background-color: #ffffff;}
+
+.container_spacer3 .wrapper960, .container_spacer4 .wrapper960 {
+	background-color: rgba(255,255,255, 0.8 );
+}
+
+/* Header */
+#container_header {
+	background-color: rgba(237,237,237, 1.0 );
+	border-bottom: 3px solid #466599;
+}
+#container_spacer1 {
+    background-color: #466599;
+}
+.is-sticky .header_bar {
+	background-color: rgba(237,237,237, 1 );
+}
+
+/* Showcase */
+#container_slideshow { 
+	background-color: rgba(240,240,240, 0.0 );
+}
+/* Top-1# Module Background */
+#container_top1_modules, #container_top1_modules ul.tabs li a.linkopen, #container_top1_modules dl.tabs dt.open  h3 a:link, 
+#container_top1_modules dl.tabs dt.open h3 a:visited, .csstransforms3d .tabs a:hover span::before, .csstransforms3d .tabs a:focus span::before, .tabs a span {
+	background-color: rgba(85,106,141, 0.0 );
+}
+#container_top1_modules .wrapper960 {background-color:#556a8d;}
+/* Top-2# Module Background */
+#container_top2_modules {
+	background-color: rgba(209,213,222, 0.0 );
+}
+#container_top2_modules .wrapper960 {background-color:#d1d5de;}
+/* Top-3# Module Background */
+#container_top3_modules {
+	background-color: rgba(235,235,235, 0.0 );
+}
+#container_top3_modules .wrapper960 {background-color:#ebebeb;}
+
+/* Article Background Color */
+#container_main {
+	background-color: rgba(255,255,255, 0.0 );
+}
+#container_main .wrapper960 {
+	background-color:#ffffff;
+}
+
+/* Bottom-1 Modules */
+#container_bottom1_modules {
+	background-color: rgba(237,237,237, 0.0 );
+}
+#container_bottom1_modules .wrapper960 {background-color:#ededed;}
+
+/* Bottom-2 Modules */
+#container_bottom2_modules {
+	background-color: rgba(237,237,237, 0.0 );
+}
+#container_bottom2_modules .wrapper960 {background-color:#ededed;}
+
+/* Base Modules */
+#container_base {
+	background-color: rgba(82,103,137, 0.9 );
+}
+#container_base .wrapper960 {background-color:#526789;}
+
+/* Logo Image Dimensions */
+.logo_container, h1.logo, h1.logo a {
+    width: px;
+    height: px;
+}
+
+/* Responsive Options */
+
+		@media only screen and ( max-width: 767px ) {
+	#container_top1_modules {display:none;}
+	}
+	
+		@media only screen and ( max-width: 767px ) {
+	#container_top2_modules {display:none;}
+	}
+	
+		@media only screen and ( max-width: 767px ) {
+	#container_top3_modules {display:none;}
+	}
+	
+	
+	
+	
+		
+		@media only screen and ( max-width: 767px ) {
+	.showcase {display:inline;}
+	.mobile_showcase {display:none;}
+	}
+		
+
+/* Custom Reponsive CSS */
+   
+   
+
+ /* Module Container Padding */
+
+
+
+
+
+
+
+/* Header-# Adjustment */
+
+/*--Load Custom Css Styling--*/
+.fixed-images {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+.fixed-images img {
+  display: block;
+  margin-bottom: 8px;
+  width: 175px;   /* nagyobb ikonméret */
+  height: auto;
+}
+
+/* Hover effekt */
+.fixed-images a:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+border: 2px solid #007BFF;   /* kék keret */
+  border-radius: 6px;          /* lekerekített sarkok */ 
+ transition: all 0.3s ease;
+}
+
+/* Mobil reszponzív szabály */
+@media (max-width: 600px) {
+  .fixed-images img {
+    width: 80px;  /* mobilon kisebb */
+    margin-bottom: 5px;
+  }
+}
+
+
+ </style>
+
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+<div data-type="background" id="body_bg">
+<div class="j51container" id="container_spacer1"><div class="wrapper960">
+</div></div>
+<div class="j51container" id="container_spacer2"><div class="wrapper960">
+</div></div>
+<div class="content_background_container">
+
+<div class="backgrounds">
+<div class="content_background"></div>
+</div>
+
+<div class="content_background">
+<div class="j51container" id="container_header">
+<div class="wrapper960">
+<div id="socialmedia">
+<ul id="navigation">
+</ul>
+</div> <div id="header">
+<div id="logo">
+<div class="logo_container">
+<div class="logo"> <a data-review-original-href="/index.php" href="#" tabindex="-1" title="">
+<img alt="Logo" style="display: block;"/>
+</a> </div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="hornavmenu">
+<div id="hornav">
+<ul class="menu" id="moomenu">
+<li class="item-101"><a data-review-original-href="/index.php" href="#" tabindex="-1">Kezdőlap</a></li><li class="item-103 deeper parent"><a data-review-original-href="/index.php/onkormanyzat" href="#" tabindex="-1">Önkormányzat</a><ul><li class="item-104"><a data-review-original-href="/index.php/onkormanyzat/mezonagymihaly-kozseg-onkormanyzat" href="#" tabindex="-1">Mezőnagymihály Község Önkormányzat</a></li><li class="item-105"><a data-review-original-href="/index.php/onkormanyzat/mezonagymihaly-kozseg-onkormanyzat-2" href="#" tabindex="-1">Közös Önkormányzati Hivatal</a></li><li class="item-114"><a data-review-original-href="/index.php/onkormanyzat/nyomtatvanyok" href="#" tabindex="-1">Nyomtatványok</a></li><li class="item-125"><a data-review-original-href="/index.php/onkormanyzat/hatarozatok-2" href="#" tabindex="-1">Jegyzőkönyvek</a></li><li class="item-115"><a data-review-original-href="/index.php/onkormanyzat/hatarozatok" href="#" tabindex="-1">Határozatok</a></li><li class="item-116"><a data-review-original-href="https://or.njt.hu/onkorm/-:5:838:-:-:1:-:1:-/1/10" href="#" tabindex="-1">Rendeletek</a></li><li class="item-124"><a data-review-original-href="/index.php/onkormanyzat/onkormanyzati-valasztas-2019" href="#" tabindex="-1">Önkormányzati választás 2019</a></li><li class="item-155"><a data-review-original-href="/index.php/onkormanyzat/kozerdeku-adatok" href="#" tabindex="-1">Közérdekű adatok</a></li></ul></li><li class="item-113 deeper parent"><a data-review-original-href="/index.php/palyazatok" href="#" tabindex="-1">Pályázatok</a><ul><li class="item-150"><a data-review-original-href="/index.php/palyazatok/kehop-2-2-2-15-2016-00120" href="#" tabindex="-1">KEHOP pályázatok</a></li><li class="item-127"><a data-review-original-href="/index.php/palyazatok/top-2-1-3-15-bo1-2016-00062" href="#" tabindex="-1">TOP pályázatok</a></li><li class="item-154"><a data-review-original-href="/index.php/palyazatok/top-plusz-1-2-1-21-bo1-2022-00049" href="#" tabindex="-1">TOP_PLUSZ pályázatok</a></li><li class="item-139"><a data-review-original-href="/index.php/palyazatok/vp6-19-2-1-20-11-22" href="#" tabindex="-1">VP pályázatok</a></li></ul></li><li class="item-137 deeper parent"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-4" href="#" tabindex="-1">Intézmények</a><ul><li class="item-138"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-4/mezonagymihalyi-mesevar-ovoda-es-konyha" href="#" tabindex="-1">Mezőnagymihályi Mesevár Óvoda és Konyha</a></li><li class="item-152"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-4/falugondnoki-szolgalat" href="#" tabindex="-1">Falugondnoki Szolgálat</a></li></ul></li><li class="item-106 active deeper parent"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3" href="#" tabindex="-1">Szolgáltatások</a><ul><li class="item-107"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/jarasi-hivatal-ugysegedi-iroda" href="#" tabindex="-1">Járási Hivatal Ügysegédi Iroda</a></li><li class="item-108 current active"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/orvosi-rendelo" href="#" tabindex="-1">Orvosi Rendelő</a></li><li class="item-109"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/vedonoi-szolgalat" href="#" tabindex="-1">Védőnői Szolgálat</a></li><li class="item-110"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/rendorseg" href="#" tabindex="-1">Rendőrség</a></li><li class="item-111"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/gyermekjoleti-es-csaladsegito-szolgalat" href="#" tabindex="-1">Gyermekjóléti és Családsegítő szolgálat</a></li><li class="item-112"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/eszak-magyarorszagi-regionalis-vizmuvek-zrt" href="#" tabindex="-1">Heves Megyei Vízművek (ivóvíz szolgáltatás)</a></li><li class="item-126"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/eszak-magyarorszagi-regionalis-vizmuvek-zrt-2" href="#" tabindex="-1">Észak-magyarországi Regionális Vízművek Zrt.</a></li><li class="item-129"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/bmh-nonprofit-kft" href="#" tabindex="-1">MiReHu Nonprofit Kft.</a></li><li class="item-153"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3/falugondnoki-szolgalat" href="#" tabindex="-1">Falugondnoki Szolgálat</a></li></ul></li><li class="item-117 deeper parent"><a data-review-original-href="/index.php/civil-szervezetek" href="#" tabindex="-1">Civil szervezetek</a><ul><li class="item-118"><a data-review-original-href="/index.php/civil-szervezetek/mezonagymihalyi-hagyomanyorzo-nepdalkor" href="#" tabindex="-1">Mezőnagymihályi Hagyományőrző Népdalkör</a></li><li class="item-119"><a data-review-original-href="/index.php/civil-szervezetek/hagyomanyorzo-nyugdijasklub" href="#" tabindex="-1">Hagyományőrző Nyugdíjasklub</a></li><li class="item-120"><a data-review-original-href="/index.php/civil-szervezetek/mezonagymihaly-kozseg-sportegyesulete" href="#" tabindex="-1">Mezőnagymihály Község Sportegyesülete</a></li><li class="item-121"><a data-review-original-href="/index.php/civil-szervezetek/mezonagymihalyi-polgaror-egyesulet" href="#" tabindex="-1">Mezőnagymihályi Polgárőr Egyesület</a></li><li class="item-122"><a data-review-original-href="/index.php/civil-szervezetek/mi-falunkert-kozalapitvany" href="#" tabindex="-1">Mi Falunkért Közalapítvány</a></li><li class="item-123"><a data-review-original-href="/index.php/civil-szervezetek/iskola-a-gyermekekert-alapitvany" href="#" tabindex="-1">Iskola a Gyermekekért Alapítvány</a></li></ul></li><li class="item-140 deeper parent"><a data-review-original-href="/index.php/valasztasi-informaciok" href="#" tabindex="-1">Választási információk</a><ul><li class="item-141 deeper parent"><a data-review-original-href="/index.php/valasztasi-informaciok/valasztasi-szervek" href="#" tabindex="-1">Választási szervek</a><ul><li class="item-145"><a data-review-original-href="/index.php/valasztasi-informaciok/valasztasi-szervek/valasztasi-iroda" href="#" tabindex="-1">Választási iroda</a></li><li class="item-146"><a data-review-original-href="/index.php/valasztasi-informaciok/valasztasi-szervek/valasztasi-bizottsag" href="#" tabindex="-1">Választási bizottság</a></li></ul></li><li class="item-142"><a data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1" target="_blank">Választási ügyintézés</a></li><li class="item-143 deeper parent"><a data-review-original-href="/index.php/valasztasi-informaciok/2024-evi-altalanos-valasztasok" href="#" tabindex="-1">2024. évi általános választások</a><ul><li class="item-147"><a data-review-original-href="/index.php/valasztasi-informaciok/2024-evi-altalanos-valasztasok/valasztopolgaroknak" href="#" tabindex="-1">Választópolgároknak</a></li><li class="item-148"><a data-review-original-href="/index.php/valasztasi-informaciok/2024-evi-altalanos-valasztasok/jelolteknek" href="#" tabindex="-1">Jelölteknek</a></li></ul></li><li class="item-144"><a data-review-original-href="/index.php/valasztasi-informaciok/korabbi-valasztasok" href="#" tabindex="-1">Korábbi választások</a></li></ul></li></ul>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="j51container" id="container_slideshow"><div class="wrapper960 group-border-shadow">
+<div class="block_holder" id="slideshow">
+<div class="showcase">
+<div class="showcase_padding">
+<div class="slideshowcontainer">
+<a class="slidesjs-previous slidesjs-navigation" data-review-original-href="#" href="#" tabindex="-1" title="Previous"><i class="fa fa-chevron-left"></i></a>
+
+<div id="slides">
+<img alt="07"/>
+<img alt="13"/>
+<img alt="14"/>
+<img alt="16"/>
+<img alt="18"/>
+<img alt="24"/>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+<div class="mobile_showcase">
+<div class="showcase_padding">
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div></div>
+<div class="outside_center">
+<div class="j51container" id="container_main">
+<div class="wrapper960 group-border-shadow">
+
+<div class="block_holder" id="main">
+
+<div class="backgrounds">
+<div id="sidecol_b">
+</div>
+<div id="content_remainder"></div>
+</div>
+
+
+<div class="side_margins" id="sidecol_b">
+<div class="sidecol_block">
+<div class="module">
+<div class="module_surround">
+<div class="module_content">
+<div class="custom">
+<p style="text-align: center;">
+<img alt="" style="width: 300px; height: 172px; border-width: 0px; border-style: solid; margin: 3px;"/></p>
+<p style="text-align: center;">
+<a data-review-original-href="https://ohp-20.asp.lgov.hu/nyitolap" href="#" tabindex="-1" target="_blank"><span style="font-size:11px;"><strong><span style="font-family:verdana,geneva,sans-serif;">ELEKTRONIKUS ÜGYINDÍTÁSI LEHETŐSÉG</span></strong></span></a></p>
+<p style="text-align: center;">
+<a data-review-original-href="https://www.ijsz.hu/ellatottjogi-kepviselok-elerhetosegei-2.html" href="#" tabindex="-1" target="_blank"><img alt="" style="width: 300px; height: 205px; border-width: 0px; border-style: solid; margin: 3px;"/></a></p>
+<p style="text-align: center;">
+<a data-review-original-href="https://www.ijsz.hu/ellatottjogi-kepviselok-elerhetosegei-2.html" href="#" tabindex="-1"><span style="font-family: Arial, Helvetica, sans-serif; font-size: small;">Ellátottjogi képviselő elérhetősége</span></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="module">
+<div class="module_surround">
+<div class="module_header">
+<h3>2026. évi hulladéknaptár</h3>
+<span class="hairline"></span>
+</div>
+<div class="module_content">
+<div class="custom">
+<p>
+<a data-review-original-href="https://mezonagymihaly.hu/images/!!!!!_ALLANDO_KEPEK_!!!!!/3443_mezonagymihaly_hulladeknaptar2026_jav251127_o1-1.jpg" href="#" tabindex="-1"><img alt="" height="785" width="1111"/></a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="module animate fadeInUpBig">
+<div class="module_surround">
+<div class="module_content">
+<div class="custom">
+<p style="text-align: center;">
+<a data-review-original-href="http://mezonagymihaly.hu/index.php/palyazatok/top-2-1-3-15-bo1-2016-00062/187-kulcsar-volgyi-es-csincse-patak-telepuleseinek-belteruleti-vizrendezese-harsany-kisgyor-bukkaranyos-emod-gelej-mezonagymihaly-top-2-1-3-15-bo1-2016-00062" href="#" tabindex="-1" target="_parent"><img alt="" style="width: 300px; height: 212px; border-width: 0px; border-style: solid; margin: 3px;"/></a></p>
+<p style="text-align: center;">
+<a data-review-original-href="http://mezonagymihaly.hu/index.php/kezdolap/palyazatok/top-2-1-3-15-bo1-2016-00062/121-top-2-1-3-15-bo1-2016-00062" href="#" tabindex="-1" target="_blank"><img alt="" class="cke-resize cke-resize" style="width: 300px; height: 212px;"/></a></p>
+<p style="text-align: center;">
+<a data-review-original-href="/images/!!!!!_ALLANDO_KEPEK_!!!!!/20220321_projekt_tabla02.jpg" href="#" tabindex="-1" target="_blank"><img alt="" style="width: 300px; height: 208px; border-width: 0px; border-style: solid; margin: 3px;"/></a></p>
+<div id="ckimgrsz" style="left: 303.333px; top: 12px;">
+<div class="preview">
+		 </div>
+</div>
+<div id="ckimgrsz" style="left: 399.2px; top: 12px;">
+<div class="preview">
+		 </div>
+</div>
+<p style="text-align: center;">
+<a data-review-original-href="http://mezonagymihaly.hu/index.php/kezdolap/palyazatok/top-3-2-1-16-bo1-2018-00085/123-onkormanyzati-epuletek-energetikai-korszerusitese" href="#" tabindex="-1" target="_blank"><img alt="" class="cke-resize cke-resize" style="width: 300px; height: 207px; border-width: 0px; border-style: solid; margin: 3px;"/></a></p>
+<p style="text-align: center;">
+<a data-review-original-href="http://mezonagymihaly.hu/index.php/palyazatok/vp6-19-2-1-20-11-22" href="#" tabindex="-1" target="_parent"><img alt="" style="width: 300px; height: 212px; border-width: 0px; border-style: solid; margin: 3px;"/></a></p>
+<div id="ckimgrsz" style="left: 303.333px; top: 12px;">
+<div class="preview">
+		 </div>
+</div>
+<div id="ckimgrsz" style="left: 540.5px; top: 12px;">
+<div class="preview">
+		 </div>
+</div>
+<p style="text-align: center;">
+<span style="font-size:11px;"><strong><span style="font-family:verdana,geneva,sans-serif;"><a data-review-original-href="https://e-kerelem.mvh.allamkincstar.gov.hu/enter/mfpbongeszo/mfpBongeszoLite.xhtml" href="#" tabindex="-1" target="_blank"><img alt="" class="cke-resize" style="width: 300px; height: 300px; border-width: 0px; border-style: solid; margin: 3px;"/></a></span></strong></span></p>
+<p style="text-align: center;">
+<a data-review-original-href="/images/!!!!!_ALLANDO_KEPEK_!!!!!/20211206_bg_logo02.jpg" href="#" tabindex="-1" target="_blank"><img alt="" class="cke-resize cke-resize cke-resize" style="width: 300px; height: 301px; border-width: 0px; border-style: solid; margin: 3px;"/></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="side_margins" id="content_remainder">
+
+
+<div class="maincontent">
+<div class="message">
+<div id="system-message-container">
+</div>
+</div>
+<div class="item-page" itemscope="" itemtype="https://schema.org/Article">
+<meta content="hu-HU" itemprop="inLanguage"/>
+<div itemprop="articleBody">
+<div>
+<span style="font-size:12px;"><span style="font-family: verdana, geneva, sans-serif;">3443 Mezőnagymihály, Kossuth u. 95.</span></span></div>
+<div>
+	 </div>
+<div>
+<strong><span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">Háziorvos:</span></span></strong></div>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">Dr. Gondi Teodóra</span></span></div>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;"><strong>Telefon:</strong>  30/488-2441</span></span></div>
+<div>
+	 </div>
+<div>
+<strong><span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">Rendelési idő</span></span></strong></div>
+<table border="0" cellpadding="0" style="width: 100%">
+<tbody>
+<tr>
+<td style="width:120px;">
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">Hétfő</span></span></div>
+</td>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">8.00 – 13.00 Rendelés</span></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">Kedd</span></span></div>
+</td>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">8.00-12.00 Nővér ügyelet</span></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+					 </div>
+</td>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">13.00 – 15.00 Rendelés</span></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">szerda</span></span></div>
+</td>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">8.00 – 13.00 (Gelej)</span></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">Csütörtök</span></span></div>
+</td>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">8.00 – 13.00 Rendelés</span></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">Péntek</span></span></div>
+</td>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">8.00 – 9.00 (csak visszarendelt betegeknek)</span></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+					 </div>
+</td>
+<td>
+<div>
+<span style="font-size:12px;"><span style="font-family:verdana,geneva,sans-serif;">9.00 – 13.00 (Gelej)</span></span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+	 </p>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+
+</div>
+<div class="clear"></div>
+
+</div>
+<div class="clear"></div> </div></div>
+</div>
+</div>
+</div>
+<div class="j51container" id="container_base">
+<div class="wrapper960 group-border-shadow">
+<div class="block_holder" id="base1_modules">
+</div>
+<div class="block_holder" id="base2_modules">
+</div>
+<div>
+</div>
+</div>
+<div class="j51container" id="container_copyright">
+<div class="wrapper960">
+<div id="footermenu">
+<ul class="menu">
+<li class="item-101"><a data-review-original-href="/index.php" href="#" tabindex="-1">Kezdőlap</a></li><li class="item-103 parent"><a data-review-original-href="/index.php/onkormanyzat" href="#" tabindex="-1">Önkormányzat</a></li><li class="item-113 parent"><a data-review-original-href="/index.php/palyazatok" href="#" tabindex="-1">Pályázatok</a></li><li class="item-137 parent"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-4" href="#" tabindex="-1">Intézmények</a></li><li class="item-106 active parent"><a data-review-original-href="/index.php/mezonagymihaly-kozseg-onkormanyzat-3" href="#" tabindex="-1">Szolgáltatások</a></li><li class="item-117 parent"><a data-review-original-href="/index.php/civil-szervezetek" href="#" tabindex="-1">Civil szervezetek</a></li><li class="item-140 parent"><a data-review-original-href="/index.php/valasztasi-informaciok" href="#" tabindex="-1">Választási információk</a></li></ul>
+<div class="clear"></div>
+</div>
+<div id="copyright"><p>(c) 2018 VBM Média<br/><span class="j51_nsx">A <a data-review-original-href="http://www.joomla51.com" href="#" tabindex="-1">Joomla51.com</a> Design</span></p></div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div class="custom">
+<div class="fixed-images">
+<a data-review-original-href="https://mezonagymihaly.hu/index.php/palyazatok/top-2-1-3-15-bo1-2016-00062" href="#" tabindex="-1" target="_blank"> <img alt="Kép 1" height="254" width="372"/> </a> <a data-review-original-href="https://mezonagymihaly.hu/index.php/palyazatok/top-plusz-1-2-1-21-bo1-2022-00049" href="#" tabindex="-1" target="_blank"> <img alt="Kép 2" height="205" width="796"/> </a></div>
+</div>
+</div></body>
+</html>
