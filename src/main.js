@@ -102,15 +102,17 @@ function normalizeHost(url) {
 function stateLabel(value) {
   return {
     needs_review: "Needs review",
-    confirmed: "Confirmed",
-    no_email: "No email",
+    confirmed: "Accepted",
+    no_email: "No public email",
     not_processed: "Not processed",
-    excluded: "Excluded",
+    excluded: "Not accepted",
   }[value] || value || "Needs review";
 }
 
 function laneLabel(value) {
   return {
+    accepted: "Accepted",
+    not_accepted: "Not accepted",
     needs_review: "Needs review",
     no_matched_email: "No matched email",
     no_public_email: "No public email",
@@ -119,11 +121,15 @@ function laneLabel(value) {
 }
 
 function confidencePool(item, lane) {
+  if (item.status === "confirmed") return "accepted";
+  if (item.status === "excluded") return "not_accepted";
   if (lane !== "no_email") return "needs_review";
   return item.status === "no_email" ? "no_public_email" : "no_matched_email";
 }
 
 function normalizedLaneSelection(value) {
+  if (["accepted", "confirmed"].includes(value)) return "accepted";
+  if (["not_accepted", "excluded"].includes(value)) return "not_accepted";
   if (["review", "auto_confirm", "auto_suppress", "high_confidence", "low_confidence", "needs_review"].includes(value)) return "needs_review";
   if (["no_email", "no_matched_email"].includes(value)) return "no_matched_email";
   if (["no_public_email", "all"].includes(value)) return value;
@@ -387,6 +393,8 @@ const App = {
         .filter((item) => selectedLane.value === "all" || item.confidence_pool === selectedLane.value)
         .filter((item) => {
           if (selectedLane.value === "all") return true;
+          if (selectedLane.value === "accepted") return item.status === "confirmed";
+          if (selectedLane.value === "not_accepted") return item.status === "excluded";
           if (selectedLane.value === "no_public_email") return item.status === "no_email";
           return !["confirmed", "no_email", "excluded"].includes(item.status);
         })
@@ -406,7 +414,7 @@ const App = {
         .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
     });
     const laneCounts = computed(() => {
-      const counts = { needs_review: 0, no_matched_email: 0, no_public_email: 0, all: preparedQueue.value.length };
+      const counts = { accepted: 0, not_accepted: 0, needs_review: 0, no_matched_email: 0, no_public_email: 0, all: preparedQueue.value.length };
       for (const item of preparedQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
       return counts;
     });
@@ -1016,9 +1024,9 @@ const App = {
     async function excludeCurrent() {
       if (!clinic.value) return;
       const previousState = currentClinicState.value ? { ...currentClinicState.value } : null;
-      await persistDecisionAndState(null, "excluded", null, "out_of_scope", previousState);
+      await persistDecisionAndState(null, "excluded", null, "not_relevant", previousState);
       sessionDecisionCount.value += 1;
-      saveStatus.value = "Excluded · press U to undo";
+      saveStatus.value = "Not accepted";
       await setIndex(currentIndex.value);
     }
 
@@ -1238,7 +1246,7 @@ const App = {
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
-          <button v-for="lane in ['needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['accepted','not_accepted','needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
@@ -1252,6 +1260,7 @@ const App = {
           <div class="clinic-meta">
             <span class="pill lane">{{ laneLabel(currentItem.confidence_pool) }}</span>
             <span class="muted">{{ currentItem.city }} · {{ currentItem.registry_id }}</span>
+            <button v-if="currentItem.status !== 'excluded'" class="clinic-not-accepted" @click="excludeCurrent">Not accepted</button>
           </div>
           <h2>{{ clinic.clinic.name }}</h2>
           <p class="clinic-address">{{ clinic.clinic.address }}</p>

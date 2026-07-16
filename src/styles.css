@@ -195,6 +195,18 @@ input, textarea {
   justify-content: space-between;
   gap: 10px;
 }
+.clinic-not-accepted {
+  margin-left: auto;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--concrete-100);
+  background: white;
+  color: var(--black-60);
+  font-size: 0.72rem;
+}
+.clinic-not-accepted:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
 .pill {
   display: inline-flex;
   align-items: center;
