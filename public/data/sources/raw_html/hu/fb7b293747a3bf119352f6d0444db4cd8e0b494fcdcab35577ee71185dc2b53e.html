@@ -87,7 +87,8 @@ body:not(.template-slider) #Header_wrapper{background-image:url(https://tibairod
 
 <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -111,38 +112,12 @@ body:not(.template-slider) #Header_wrapper{background-image:url(https://tibairod
 </div>
 
 <div class="header_placeholder"></div>
-<div class="loading" id="Top_bar">
-<div class="container">
-<div class="column one">
-<div class="top_bar_left clearfix">
 
-<div class="logo"><a data-height="60" data-padding="40" data-review-original-href="https://tibairoda.hu" href="#" id="logo" tabindex="-1" title="Dr. Tiba Zsolt Ügyvéd- Attorney-at-Law"><img alt="tibairoda_logo" class="logo-main scale-with-grid" data-height="195" data-retina="https://tibairoda.hu/wp-content/uploads/2017/09/tibairoda_logo.png"/><img alt="dr_tiba_zsolt_logo" class="logo-sticky scale-with-grid" data-height="110" data-retina="https://tibairoda.hu/wp-content/uploads/2017/09/object502563075.png"/><img alt="tibairoda_logo" class="logo-mobile scale-with-grid" data-height="195" data-retina="https://tibairoda.hu/wp-content/uploads/2017/09/tibairoda_logo.png"/><img alt="tibairoda_logo" class="logo-mobile-sticky scale-with-grid" data-height="195" data-retina="https://tibairoda.hu/wp-content/uploads/2017/09/tibairoda_logo.png"/></a></div>
-<div class="menu_wrapper">
-<a class="responsive-menu-toggle" data-review-original-href="#" href="#" tabindex="-1"><i class="icon-menu-fine"></i></a>
-</div>
-<div class="secondary_menu_wrapper">
-
-</div>
-<div class="banner_wrapper">
-</div>
-<div class="search_wrapper">
-
-<div data-review-disabled-form="true">
-<i class="icon_search icon-search-fine"></i>
-<a class="icon_close" data-review-original-href="#" href="#" tabindex="-1"><i class="icon-cancel-fine"></i></a>
-<input class="field" id="s" name="s" placeholder="Enter your search" type="text"/>
-<input class="submit" style="display:none;" type="submit" value=""/>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="mfn-main-slider" id="mfn-rev-slider">
 <div class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" id="rev_slider_1_1_wrapper" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
 
 <div class="rev_slider fullwidthabanner" data-version="5.4.5.1" id="rev_slider_1_1" style="display:none;">
-<ul>
+<ul> 
 <li data-delay="10800" data-description="" data-easein="default" data-easeout="default" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1" data-masterspeed="300" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-title="Slide" data-transition="fade">
 
 <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" title="Főoldal"/>

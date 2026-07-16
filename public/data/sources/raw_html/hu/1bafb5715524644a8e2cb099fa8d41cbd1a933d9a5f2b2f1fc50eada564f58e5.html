@@ -21,7 +21,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -767,7 +768,7 @@ Rendelési idők</p>
     @media(max-width:991px) {
         .footer-partner-column {
             width: 20%;
-            margin: auto 0.5% 10px;
+            margin: auto 0.5% 10px; 
             float:left;
 
         }
@@ -778,7 +779,7 @@ Rendelési idők</p>
     @media (max-width: 767px) {
         .footer-partner-column {
             width: 32%;
-            margin: auto 0.5% 10px;
+            margin: auto 0.5% 10px; 
             float:left;
 
         }
@@ -792,7 +793,7 @@ Rendelési idők</p>
     @media (max-width: 474px) {
         .footer-partner-column {
             width: 99%;
-            margin: auto 0.5% 20px;
+            margin: auto 0.5% 20px; 
             float:left;
             clear:both;
         }

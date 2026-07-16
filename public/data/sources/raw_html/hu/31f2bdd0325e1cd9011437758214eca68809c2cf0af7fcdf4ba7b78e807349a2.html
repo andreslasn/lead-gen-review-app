@@ -71,7 +71,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			.center {text-align:center;}		</style>
 <noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -127,7 +128,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 </div>
 </div>
 </div>
-</div>
+</div> 
 <div class="main-wrapper">
 <div class="main-container">
 <div class="page-wrapper">

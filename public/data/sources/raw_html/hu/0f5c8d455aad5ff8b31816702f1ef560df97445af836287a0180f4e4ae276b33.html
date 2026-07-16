@@ -120,7 +120,8 @@ body.custom-background { background-color: #f4e3e3; }
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -243,9 +244,9 @@ body.custom-background { background-color: #f4e3e3; }
 <footer class="site-footer" id="colophon" role="contentinfo">
 <div class="site-footer-wrapper">
 <div class="site-info">
-
-
-				SEO &amp; DEVELOPED BY: JVGTech Informatikai és Szolgáltató Kft. <a data-review-original-href="https://jvgtech.hu" href="#" rel="designer" tabindex="-1">jvgtech.hu</a>.
+				
+				
+				SEO &amp; DEVELOPED BY: JVGTech Informatikai és Szolgáltató Kft. <a data-review-original-href="https://jvgtech.hu" href="#" rel="designer" tabindex="-1">jvgtech.hu</a>.	
 			</div>
 </div>
 </footer>
@@ -285,7 +286,7 @@ body.custom-background { background-color: #f4e3e3; }
 </div>
 <style>
                         .ays-pb-modal_1{
-
+                            
                             max-height: none;
                         }
 
@@ -330,26 +331,26 @@ body.custom-background { background-color: #f4e3e3; }
                         .ays-pb-modal_1.ays-pb-bg-styles_1:not(.ays_winxp_window, .ays_template_window),
                         .ays_winxp_content.ays-pb-bg-styles_1,
                         footer.ays_template_footer.ays-pb-bg-styles_1 div.ays_bg_image_box {
-
+                            
                         }
 
                         .ays-pb-modal_1.ays_template_window {
-
+                            
                         }
 
                         .ays_cmd_window {
                             background-color: rgba( 255,255,255,0.85 );
                         }
-
+                        
                         .ays_cmd_window-cursor .ays_cmd_i-cursor-underscore {
                             background-color: black;
                         }
-
+                        
                         .ays_cmd_window-cursor .ays_cmd_i-cursor-indicator {
                             background-color: transparent;
                         }
 
-                        .ays-pb-modal_1 .ays_pb_description > *,
+                        .ays-pb-modal_1 .ays_pb_description > *, 
                         .ays-pb-modal_1 .ays_pb_timer,
                         .ays-pb-modal_1 .ays_content_box p,
                         .ays-pb-modal_1 .ays-pb-dismiss-ad > button#ays_pb_dismiss_ad{
@@ -359,12 +360,12 @@ body.custom-background { background-color: #f4e3e3; }
 
                         .ays-pb-modal_1 .close-image-btn{
                             color: #000000 !important;
-                        }
+                        }    
 
                         .ays-pb-modal_1 .close-image-btn:hover,
                         .ays-pb-modal_1 .close-template-btn:hover{
                             color: #000000 !important;
-                        }
+                        }    
 
                         .ays-pb-modal_1 .ays_pb_material_close_circle_icon{
                             fill: #000000 !important;
@@ -373,15 +374,15 @@ body.custom-background { background-color: #f4e3e3; }
                         .ays-pb-modal_1 .ays_pb_material_close_circle_icon:hover{
                             fill: #000000 !important;
                         }
-
+                        
                         .ays-pb-modal_1 .ays_pb_material_close_icon{
                             fill: #000000 !important;
                         }
-
+                        
                         .ays-pb-modal_1 .ays_pb_material_close_icon:hover{
                             fill: #000000 !important;
                         }
-
+                        
                         #ays-pb-screen-shade_1 {
                             opacity: 0;
                             background: rgb(0,0,0);
@@ -403,8 +404,8 @@ body.custom-background { background-color: #f4e3e3; }
                         }
 
                         .ays-pb-disable-scroll-on-popup{
-
-
+                             
+                            
                         }
                         .ays_lil_window .ays_lil_main,
                         .ays_window.ays-pb-modal_1 .ays_pb_description,
@@ -412,22 +413,22 @@ body.custom-background { background-color: #f4e3e3; }
                         .ays_cmd_window.ays-pb-modal_1 .ays_pb_description,
                         .ays_winxp_window.ays-pb-modal_1 .ays_pb_description,
                         .ays_ubuntu_window.ays-pb-modal_1 .ays_pb_description{
-
+                            
                         }
-
+                        
                         .ays-pb-modals .ays-pb-modal_1 .ays_pb_description + hr{
-
+                            
                         }
 
                         .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_lil_head, .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_topBar, .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_cmd_window-header, .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_ubuntu_topbar, .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_ubuntu_tools, .ays-pb-modal_1 .ays_winxp_title-bar, .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_win98_head, .ays-pb-modal_1 .ays_cmd_window-header, .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_cmd_window-cursor, .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_ubuntu_folder-info.ays_pb_timer_1, .ays_cmd_window-content .ays_pb_timer.ays_pb_timer_1{
-
-
+                            
+                            
                         }
                         .ays_cmd_window-content .ays_pb_timer.ays_pb_timer_1{
-
+                            
                         }
                         .ays-pb-modals.av_pop_modals_1 .ays-pb-modal_1 .ays_pb_description ~ ays-pb-modal .ays_pb_description{
-
+                            
                         }
 
                         .ays-pb-modal_1 .ays-pb-modal-close_1:hover .close-lil-btn {
@@ -476,11 +477,11 @@ body.custom-background { background-color: #f4e3e3; }
                             .ays-pb-modal_1.ays-pb-bg-styles_1:not(.ays_winxp_window, .ays_template_window),
                             .ays_winxp_content.ays-pb-bg-styles_1,
                             footer.ays_template_footer.ays-pb-bg-styles_1 div.ays_bg_image_box {
-
+                                
                             }
 
                             .ays-pb-modal_1.ays_template_window {
-
+                                
                             }
 
                             .ays-pb-bg-styles_1 {
@@ -507,7 +508,7 @@ body.custom-background { background-color: #f4e3e3; }
                             }
 
                             .ays-pb-modal_1.ays_template_window p.ays_pb_timer.ays_pb_timer_1{
-
+                                
                             }
 
                             .ays-pb-modal_1 div.ays_image_content p.ays_pb_timer.ays_pb_timer_1,
@@ -517,11 +518,11 @@ body.custom-background { background-color: #f4e3e3; }
                             }
 
                             .ays-pb-modal_1.ays_template_window footer.ays_template_footer{
-
+                                
                             }
 
                             .ays-pb-modal_1.ays_template_window div.ays_bg_image_box{
-
+                                
                             }
 
                             #ays-pb-screen-shade_1 {
@@ -538,7 +539,7 @@ body.custom-background { background-color: #f4e3e3; }
                             }
 
                             .ays-pb-disable-scroll-on-popup{
-                                overflow:auto !important;
+                                overflow:auto !important; 
                                 overflow-y: auto !important
                             }
 

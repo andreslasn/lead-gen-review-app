@@ -91,7 +91,7 @@ body.pagelayer-body em, body.pagelayer-body i:not(.fa, .fas, .far, .fab){font-st
 	.pagelayer-last-sm {
 		order: 1;
 	}
-
+	
 
 }
 @media (max-width: 360px){
@@ -99,7 +99,7 @@ body.pagelayer-body h1{font-size:30px}
 body.pagelayer-body h2{font-size:26px}
 }
 
-</style>
+</style> 
 
 
 
@@ -160,7 +160,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

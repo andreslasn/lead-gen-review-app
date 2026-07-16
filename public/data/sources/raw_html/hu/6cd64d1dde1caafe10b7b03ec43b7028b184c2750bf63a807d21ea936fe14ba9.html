@@ -35,8 +35,8 @@
 <style>div.cc-window.cc-floating{max-width:24em}@media(max-width: 639px){div.cc-window.cc-floating:not(.cc-center){max-width: none}}div.cc-window, span.cc-cookie-settings-toggler, span.cc-cookie-domains-toggler{font-size:16px}div.cc-revoke{font-size:16px}div.cc-settings-label,span.cc-cookie-settings-toggle{font-size:14px}div.cc-window.cc-banner{padding:1em 1.8em}div.cc-window.cc-floating{padding:2em 1.8em}input.cc-cookie-checkbox+span:before, input.cc-cookie-checkbox+span:after{border-radius:1px}div.cc-center,div.cc-floating,div.cc-checkbox-container,div.gdpr-fancybox-container div.fancybox-content,ul.cc-cookie-category-list li,fieldset.cc-service-list-title legend{border-radius:10px}div.cc-window a.cc-btn,span.cc-cookie-settings-toggle{border-radius:5px}</style>
 <style>div.cc-checkboxes-container input.cc-cookie-checkbox+span,fieldset.cc-cookie-list-title .gdpr_cookie_switcher label.gdpr_onoffswitch-label{border-radius:15px}div.cc-checkboxes-container input.cc-cookie-checkbox+span::before{border-radius:10px;height:14px;bottom: 2px;width:14px}fieldset.cc-cookie-list-title .gdpr_cookie_switcher span.gdpr_onoffswitch-switch{border-radius:10px;height:14px;top:2px;right:3px}fieldset.cc-cookie-list-title .gdpr_onoffswitchcookie.gdpr_cookie_switcher.disabled .gdpr_onoffswitch-switch{right:25px}div.cc-checkboxes-container input.cc-cookie-checkbox:checked+span::before{left:8px}div.cc-checkboxes-container input.cc-cookie-checkbox+span::before{left:3px}div.gdpr-component-view span.cc-checkboxes-placeholder,div.gdpr-component-view div.cc-checkboxes-container input.cc-cookie-checkbox+span::before{border-radius:10px}div.gdpr-component-view div.cc-checkboxes-container input.cc-cookie-checkbox+span::before{height: 14px;bottom: 2px;left:3px}div.gdpr-component-view div.cc-checkboxes-container input.cc-cookie-checkbox:checked+span::before{transform:translateX(22px)}</style>
 <style>@media(min-width: 1400px) {.sppb-row-container { max-width: 1140px; }}</style>
-<style>.idokep .sppb-panel-default,
-.idokep .sppb-panel-default .sppb-panel-heading,
+<style>.idokep .sppb-panel-default, 
+.idokep .sppb-panel-default .sppb-panel-heading, 
 .idokep .sppb-panel-default .sppb-panel-body {
   background: none !important;
   border: none !important;
@@ -164,7 +164,8 @@ Ugorjatok be hozzánk bármelyik évszakban!" property="og:description"/>
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -4994,7 +4995,7 @@ padding-left: 0px;
 @media (max-width: 1199.98px) {#sppb-addon-1539254070708 .sppb-addon-header .sppb-addon-title{}}
 @media (max-width: 991.98px) {#sppb-addon-1539254070708 .sppb-addon-header .sppb-addon-title{}}
 @media (max-width: 767.98px) {#sppb-addon-1539254070708 .sppb-addon-header .sppb-addon-title{}}
-@media (max-width: 575.98px) {#sppb-addon-1539254070708 .sppb-addon-header .sppb-addon-title{}}</style></div></div><div class="sppb-addon-wrapper addon-root-icons-group" id="sppb-addon-wrapper-1539253804662"><div class="clearfix" id="sppb-addon-1539253804662"><div class="sppb-addon sppb-addon-icons-group icons-group-title-postion-top"><ul class="sppb-icons-group-list"><li class="" id="icon-15392538046621"><a aria-label="" data-review-original-href="https://www.facebook.com/elmenyfalu.hu" href="#" tabindex="-1"><i aria-hidden="true" class="fa fa-facebook-official" title=""></i><span class="sppb-form-label-visually-hidden">fa fa-facebook-official</span></a></li><li class="" id="icon-15392538046622"><a aria-label="" data-review-original-href="https://www.instagram.com/elmenyfalu/?hl=hu" href="#" tabindex="-1"><i aria-hidden="true" class="fab fa-instagram" title=""></i><span class="sppb-form-label-visually-hidden">fab fa-instagram</span></a></li><li class="" id="icon-15392538046623"><a aria-label="" data-review-original-href="https://www.youtube.com/channel/UCMgjgPDnlUcUwgBIwwlsLIg" href="#" tabindex="-1"><i aria-hidden="true" class="fa fa-youtube-play" title=""></i><span class="sppb-form-label-visually-hidden">fa fa-youtube-play</span></a></li></ul></div><style type="text/css">#sppb-addon-1539253804662{
+@media (max-width: 575.98px) {#sppb-addon-1539254070708 .sppb-addon-header .sppb-addon-title{}}</style></div></div><div class="sppb-addon-wrapper addon-root-icons-group" id="sppb-addon-wrapper-1539253804662"><div class="clearfix" id="sppb-addon-1539253804662"><div class="sppb-addon sppb-addon-icons-group icons-group-title-postion-top"><ul class="sppb-icons-group-list"><li id="icon-15392538046621"><a aria-label="" data-review-original-href="https://www.facebook.com/elmenyfalu.hu" href="#" tabindex="-1"><i aria-hidden="true" class="fa fa-facebook-official" title=""></i><span class="sppb-form-label-visually-hidden">fa fa-facebook-official</span></a></li><li id="icon-15392538046622"><a aria-label="" data-review-original-href="https://www.instagram.com/elmenyfalu/?hl=hu" href="#" tabindex="-1"><i aria-hidden="true" class="fab fa-instagram" title=""></i><span class="sppb-form-label-visually-hidden">fab fa-instagram</span></a></li><li id="icon-15392538046623"><a aria-label="" data-review-original-href="https://www.youtube.com/channel/UCMgjgPDnlUcUwgBIwwlsLIg" href="#" tabindex="-1"><i aria-hidden="true" class="fa fa-youtube-play" title=""></i><span class="sppb-form-label-visually-hidden">fa fa-youtube-play</span></a></li></ul></div><style type="text/css">#sppb-addon-1539253804662{
 box-shadow: 0 0 0 0 #ffffff;
 }#sppb-addon-1539253804662{
 color: #909090;
@@ -6413,7 +6414,7 @@ color: #000;
 
 </body>
 </html>
-<div class="" id="sp-pagebuilder-overlay-192" style="position: fixed; inset: 0; z-index: 9999;"></div>
+<div id="sp-pagebuilder-overlay-192" style="position: fixed; inset: 0; z-index: 9999;"></div>
 <div class="sp-page-builder page-192 sp-pagebuilder-popup">
 <div class="sp-pagebuilder-container-popup">
 <div class="page-content builder-container"><section class="sppb-section" id="section-id-04ae0d48-2434-4d31-8a6d-96f22e4d9d53"><div class="sppb-row-container"><div class="sppb-row"><div class="sppb-row-column" id="column-wrap-id-19fec522-3104-440b-ba73-d52bcfd77141"><div class="sppb-column" id="column-id-19fec522-3104-440b-ba73-d52bcfd77141"><div class="sppb-column-addons"><div class="sppb-addon-wrapper addon-root-feature" id="sppb-addon-wrapper-6d5be38e-58d7-434f-b5fa-234932f4b67a"><div class="clearfix" id="sppb-addon-6d5be38e-58d7-434f-b5fa-234932f4b67a"><style>#sppb-addon-6d5be38e-58d7-434f-b5fa-234932f4b67a .sppb-addon-content-align-before {
@@ -6431,60 +6432,60 @@ display: block;
 
 <style>  .page-192.sp-pagebuilder-popup .builder-container {
 		width: 30%;
-
+		
 		height: 30vh;
-
-
+		
+		
 		}
 		@media (max-width: 1200px) {
 			.page-192.sp-pagebuilder-popup .builder-container {
 				width: 30%;
-
+				
 				height: 30vh;
-
-
+				
+				
 			}
 		}
 		@media (max-width: 992px) {
 			.page-192.sp-pagebuilder-popup .builder-container {
 				width: 30%;
-
+				
 				height: 60vh;
-
-
+				
+				
 			}
 		}
 		@media (max-width: 768px) {
 			.page-192.sp-pagebuilder-popup .builder-container {
 				width: 40%;
-
+				
 				height: 60vh;
-
-
+				
+				
 			}
 		}
 		@media (max-width: 575px) {
 			.page-192.sp-pagebuilder-popup .builder-container {
 				width: 70%;
-
+				
 				height: 60vh;
-
-
+				
+				
 			}
-		}
+		} 
 			.page-192.sp-pagebuilder-popup .builder-container {
 				position: absolute;
 				animation-duration: 0s;
 			}
-
+		 
 		.page-192.sp-pagebuilder-popup .builder-container {
 			padding: 0px 0px 0px 0px;
 			margin: calc(0px - 0px) calc(0px - 0px);
-
+	
 			border-width: initial;
 			border-style: initial;
 			border-color: initial;
-		}
+		} 
 		 .page-192.sp-pagebuilder-popup {
 			display: none;
 		} #sp-pagebuilder-overlay-192 {

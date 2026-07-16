@@ -23,12 +23,12 @@
 
 
 
-<noscript><a data-review-original-href="http://webhostingtop.org/drupal-hosting" href="#" rel="follow" tabindex="-1" title="Best Drupal Hosting">Best Drupal Hosting</a><a data-review-original-href="http://webhostingtop.org/joomla-hosting" href="#" rel="follow" tabindex="-1" title="Best Joomla Hosting">Best Joomla Hosting</a><a data-review-original-href="http://webhostingtop.org/wordpress-hosting" href="#" rel="follow" tabindex="-1" title="Best Wordpress Hosting">Best Wordpress Hosting</a></noscript>
+<noscript><a data-review-original-href="http://webhostingtop.org/drupal-hosting" href="#" rel="follow" tabindex="-1" title="Best Drupal Hosting">Best Drupal Hosting</a><a data-review-original-href="http://webhostingtop.org/joomla-hosting" href="#" rel="follow" tabindex="-1" title="Best Joomla Hosting">Best Joomla Hosting</a><a data-review-original-href="http://webhostingtop.org/wordpress-hosting" href="#" rel="follow" tabindex="-1" title="Best Wordpress Hosting">Best Wordpress Hosting</a></noscript> 
 
 
 
 <style type="text/css">
- .banner_ujhonlap_figyelmeztetes {
+ .banner_ujhonlap_figyelmeztetes { 
  		width:960px; margin:0 auto; /* size of banner, also centers the color background*/
    		text-align:center; /*centers-text for all child elements!*/
    	 	padding:0;
@@ -50,7 +50,8 @@
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -166,7 +167,7 @@ max-width: 90%;
 .SecondLevelMenuParent:hover > .SecondLevelMenu,
 .ThirdLevelMenuParent:hover > .ThirdLevelMenu {
 	display: block;
-
+	
 }
 .SecondLevelMenu {
 	display: none;

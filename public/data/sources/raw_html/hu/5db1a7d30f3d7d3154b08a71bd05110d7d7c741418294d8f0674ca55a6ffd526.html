@@ -34,11 +34,12 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="">
+<body>
 <div class="uk-hidden-visually uk-notification uk-notification-top-left uk-width-auto">
 <div class="uk-notification-message">
 <a class="uk-link-reset" data-review-original-href="#tm-main" href="#" tabindex="-1">Fő tartalom átugrása</a>
@@ -1289,16 +1290,16 @@
 <div class="uk-flex-middle uk-grid-small uk-child-width-1-1" uk-grid="">
 <div class="el-item">
 <a class="el-content uk-width-1-1 uk-button uk-button-default uk-button-small" data-review-original-href="/beszamolok-2" href="#" tabindex="-1">
-
-        Dokumentumtár
-
+    
+        Dokumentumtár    
+    
 </a>
 </div>
 <div class="el-item">
 <a class="el-content uk-width-1-1 uk-button uk-button-default uk-button-small" data-review-original-href="/setavezetoink/impresszum" href="#" tabindex="-1">
-
-        Impresszum
-
+    
+        Impresszum    
+    
 </a>
 </div>
 </div>

@@ -1,0 +1,73 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Vonal:
+Orvosi rendelő
+(
+1120295753
+)
+Verzió
+#
+2
+Javítva a kártevőirtás és méhészet egy helyen, pontok épületté változtatása
+Szerkesztette
+PMHiv
+több mint 1 évvel ezelőtt
+Módosításcsomag
+162775314
+0
+Címkék
+addr:city
+Isztimér
+addr:housenumber
+100
+addr:postcode
+8045
+addr:street
+Köztársaság út
+amenity
+doctors
+building
+yes
+email
+isztimer.rendelo@gmail.com
+healthcare
+doctor
+healthcare:speciality
+general
+name
+phone
++36 22 595020
+wheelchair
+Pontok
+8 pont
+10246411609
+10246411615
+10246411610
+10246411611
+10246411612
+10246411613
+10246411614
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+,
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

@@ -43,7 +43,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -59,7 +60,7 @@
 
 <div class="jb-cookie-bg black"></div>
 <p class="jb-cookie-title">Cookie kezelés</p>
-<p>Weboldalunk sütiket használ a felhasználói élmény fokozása érdekében. Az oldal használatával Ön beleegyezik a cookie-k (sütik) alkalmazásába. Amennyiben nem egyezik bele, kérem zárja be az oldalt.
+<p>Weboldalunk sütiket használ a felhasználói élmény fokozása érdekében. Az oldal használatával Ön beleegyezik a cookie-k (sütik) alkalmazásába. Amennyiben nem egyezik bele, kérem zárja be az oldalt.																	
 <a data-review-original-href="#jbcookies" data-target="#jbcookies" data-toggle="modal" href="#" tabindex="-1">Bővebben</a>
 </p>
 <div class="jb-accept btn blue">Elfogadom</div>

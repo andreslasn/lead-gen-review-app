@@ -211,7 +211,8 @@
         </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -220,7 +221,7 @@
 <a class="skip-link screen-reader-text" data-review-original-href="#main" href="#" tabindex="-1">Skip to content</a>
 <header class="site-header clearfix spacious-header-display-four" id="masthead">
 <div class="wp-custom-header" id="wp-custom-header"><img alt="OKFŐ" class="header-image" height="120" width="1345"/></div>
-<div class="" id="header-text-nav-container">
+<div id="header-text-nav-container">
 <div class="inner-wrap" id="spacious-header-display-four">
 <div class="clearfix" id="header-text-nav-wrap">
 <div id="header-left-section">
@@ -544,7 +545,7 @@ A pályázatot kiíró nem vállalja semmilyen, a beadott pályázat eredményé
 </div>
 </div>
 
-
+ 
 <div id="fb-root"></div>
 
 

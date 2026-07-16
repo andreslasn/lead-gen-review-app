@@ -42,7 +42,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -54,7 +55,7 @@
 <div class="mr-3">
 <span class="fa fa-envelope"></span> <a data-review-original-href="mailto:info@szentandrasonnyaralunk.hu" href="#" tabindex="-1">info@szentandrasonnyaralunk.hu</a>
 </div>
-<div class="">
+<div>
 <span class="fa fa-phone"></span> <a data-review-original-href="tel:36203182212" href="#" tabindex="-1">+36-20/318-2212</a>
 </div>
 </div>
@@ -163,7 +164,7 @@
 </div>
 <div class="container-fluid-2">
 <div class="hero-section" style="
-
+          
          background-image: url(https://szentandrasonnyaralunk.hu/thumbnails/original_fit_02_elerhetosegek.png)
                   ">
 <div class="col-md-12 text-center">
@@ -270,7 +271,7 @@ Szarvas, Szabadság út 25-27<br/>
 <button class="float-right accept-cookie btn btn-brown btn-sm" type="button">Elfogadom</button>
 </div>
 </div>
-</div>
+</div> 
 
 
 

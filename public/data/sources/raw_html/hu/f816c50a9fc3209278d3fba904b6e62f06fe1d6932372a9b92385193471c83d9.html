@@ -38,12 +38,13 @@
     height: 60px;
     min-width: 700px;
 	width:auto;
-
+	
 }
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -108,7 +109,7 @@
 <a class="dropdown-toggle" data-review-original-href="#" data-toggle="dropdown" href="#" tabindex="-1"><span>Intézmények<b class="caret"></b></span></a>
 <ul class="dropdown-menu"><li><a data-review-original-href="/oldal/ovoda" href="#" tabindex="-1"><span>Óvoda</span></a></li><li><a data-review-original-href="/oldal/iskola" href="#" tabindex="-1"><span>Iskola</span></a></li><li><a data-review-original-href="/oldal/konyvtar" href="#" tabindex="-1"><span>Könyvtár</span></a></li><li><a data-review-original-href="/oldal/egeszseghaz" href="#" tabindex="-1"><span>Egészségház</span></a></li><li><a data-review-original-href="/oldal/orvosi_ugyelet" href="#" tabindex="-1"><span>Orvosi ügyelet</span></a></li><li><a data-review-original-href="/oldal/csaladsegito" href="#" tabindex="-1"><span>Téglási Bölcsőde, Családsegítő-, és Gyermekjóléti Szolgálat</span></a></li><li><a data-review-original-href="/oldal/szocialis_gondozas_kozpont" href="#" tabindex="-1"><span>Szociális Gondozási Központ</span></a></li><li><a data-review-original-href="/oldal/Konyha" href="#" tabindex="-1"><span>Téglási Konyha</span></a></li><li><a data-review-original-href="/oldal/sportegyesulet" href="#" tabindex="-1"><span>Téglás Városi Sportpálya</span></a></li><li><a data-review-original-href="/oldal/ebrendeszeti-telep" href="#" tabindex="-1"><span>Ebrendészeti telep</span></a></li><li><a data-review-original-href="/oldal/okmanyiroda" href="#" tabindex="-1"><span>Okmányiroda</span></a></li><li><a data-review-original-href="/oldal/falugaszdasz" href="#" tabindex="-1"><span>Falugazdász</span></a></li><li><a data-review-original-href="/oldal/Energia" href="#" tabindex="-1"><span>Közműszolgáltatók</span></a></li><li><a data-review-original-href="/oldal/hulladekszallitas" href="#" tabindex="-1"><span>Hulladékszállítás</span></a></li><li class="nav-header">Szolgáltatók</li><li><a data-review-original-href="/oldal/posta" href="#" tabindex="-1"><span>Posta</span></a></li><li><a data-review-original-href="/oldal/penzintezet" href="#" tabindex="-1"><span>Pénzintézet</span></a></li><li><a data-review-original-href="/oldal/temetkezes" href="#" tabindex="-1"><span>Temetkezés</span></a></li><li><a data-review-original-href="/oldal/kozlekedes" href="#" tabindex="-1"><span>Közlekedés</span></a></li><li><a data-review-original-href="/oldal/gyogyszertar" href="#" tabindex="-1"><span>Gyógyszertár</span></a></li></ul> </li><li class="dropdown">
 <a class="dropdown-toggle" data-review-original-href="#" data-toggle="dropdown" href="#" tabindex="-1"><span>Gazdaság<b class="caret"></b></span></a>
-<ul class="dropdown-menu"><li><a data-review-original-href="/oldal/cegek" href="#" tabindex="-1"><span>Cégek, vállalkozások</span></a></li></ul> </li><li><a class="active" data-review-original-href="/galeria/" href="#" tabindex="-1"><span>Galéria</span></a></li><li><a class="active" data-review-original-href="/oldal/palyazatok" href="#" tabindex="-1"><span>Pályázatok</span></a></li><li><a class="active" data-review-original-href="/oldal/E-ugyintezes" href="#" tabindex="-1"><span>E-ügyintézés</span></a></li><li><a class="active" data-review-original-href="/oldal/kapcsolat" href="#" tabindex="-1"><span>Kapcsolat</span></a></li>
+<ul class="dropdown-menu"><li><a data-review-original-href="/oldal/cegek" href="#" tabindex="-1"><span>Cégek, vállalkozások</span></a></li></ul> </li><li><a class="active" data-review-original-href="/galeria/" href="#" tabindex="-1"><span>Galéria</span></a></li><li><a class="active" data-review-original-href="/oldal/palyazatok" href="#" tabindex="-1"><span>Pályázatok</span></a></li><li><a class="active" data-review-original-href="/oldal/E-ugyintezes" href="#" tabindex="-1"><span>E-ügyintézés</span></a></li><li><a class="active" data-review-original-href="/oldal/kapcsolat" href="#" tabindex="-1"><span>Kapcsolat</span></a></li> 
 </ul>
 </div>
 </div>
@@ -296,7 +297,7 @@ Időpont egyeztetés: Téglási Gondozási Központ. Tel.: 0620/479-1375</span><
 
 
 
-
+	
 <div id="copyright">
 <div class="container">
 <div class="row copyright_green">

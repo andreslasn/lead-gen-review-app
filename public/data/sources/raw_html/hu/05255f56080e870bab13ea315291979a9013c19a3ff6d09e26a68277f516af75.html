@@ -103,7 +103,7 @@ body {font-family: "Open Sans", Helvetica, sans-serif; font-size: 14pxpx; line-h
 				.menu-toggle,
 				#navbar  {
 					display: none!important;
-				}
+				}				
 			}
 			#wprmenu_bar {
 				background: #2e2e2e;
@@ -139,7 +139,7 @@ body {font-family: "Open Sans", Helvetica, sans-serif; font-size: 14pxpx; line-h
 			#wprmenu_bar .wprmenu_icon span {
 				background: #FFFFFF;
 			}
-
+			
 			#wprmenu_menu.left {
 				width:80%;
 				left: -80%;
@@ -152,7 +152,7 @@ body {font-family: "Open Sans", Helvetica, sans-serif; font-size: 14pxpx; line-h
 			}
 
 
-
+			
 						/* show the bar and hide othere navigation elements */
 			@media only screen and (max-width: 1069px) {
 				html { padding-top: 42px!important; }
@@ -355,7 +355,8 @@ body {font-family: "Open Sans", Helvetica, sans-serif; font-size: 14pxpx; line-h
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

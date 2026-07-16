@@ -50,7 +50,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -59,26 +60,26 @@
 <div class="container">
 <nav class="nav_header">
 <div class="navbar"><div class="navbar-inner"><div class="container-fluid"><a class="btn btn-navbar" data-review-original-href="" data-target="#yii_bootstrap_collapse_0" data-toggle="collapse" href="#" tabindex="-1"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" data-review-original-href="https://www.medofnyul.hu" href="#" tabindex="-1" title="Főoldal"><img alt="Med. of Nyúl Egészségügyi Bt. 33 éve Győrben és környékén " id="logo" title="Med. of Nyúl Egészségügyi Bt. 33 éve Győrben és környékén "/></a><div class="nav-collapse" id="yii_bootstrap_collapse_0"><ul id="topMenu">
-<li class="hasSubmenu"><a class="" data-link="bemutatkozas" data-review-original-href="/bemutatkozas" data-url="1" href="#" tabindex="-1" title="Bemutatkozás">Bemutatkozás</a>
+<li class="hasSubmenu"><a data-link="bemutatkozas" data-review-original-href="/bemutatkozas" data-url="1" href="#" tabindex="-1" title="Bemutatkozás">Bemutatkozás</a>
 <ul>
-<li><a class="" data-link="dr-begya-laszlo-sebesz" data-review-original-href="/bemutatkozas/dr-begya-laszlo-sebesz" data-url="1" href="#" tabindex="-1" title="Dr. Begya László sebész">Dr. Begya László sebész</a></li>
-<li><a class="" data-link="dr.-gaal-eva-pszichiater-hipnozis" data-review-original-href="/bemutatkozas/dr.-gaal-eva-pszichiater-hipnozis" data-url="1" href="#" tabindex="-1" title="Dr. Gaál Éva pszichiáter">Dr. Gaál Éva pszichiáter</a></li>
+<li><a data-link="dr-begya-laszlo-sebesz" data-review-original-href="/bemutatkozas/dr-begya-laszlo-sebesz" data-url="1" href="#" tabindex="-1" title="Dr. Begya László sebész">Dr. Begya László sebész</a></li>
+<li><a data-link="dr.-gaal-eva-pszichiater-hipnozis" data-review-original-href="/bemutatkozas/dr.-gaal-eva-pszichiater-hipnozis" data-url="1" href="#" tabindex="-1" title="Dr. Gaál Éva pszichiáter">Dr. Gaál Éva pszichiáter</a></li>
 </ul>
 </li>
-<li class="hasSubmenu"><a class="" data-link="szolgaltatasok" data-review-original-href="/szolgaltatasok" data-url="1" href="#" tabindex="-1" title="Szolgáltatások">Szolgáltatások</a>
+<li class="hasSubmenu"><a data-link="szolgaltatasok" data-review-original-href="/szolgaltatasok" data-url="1" href="#" tabindex="-1" title="Szolgáltatások">Szolgáltatások</a>
 <ul>
-<li><a class="" data-link="haziorvosi-szolgalat" data-review-original-href="/szolgaltatasok/haziorvosi-szolgalat" data-url="1" href="#" tabindex="-1" title="Háziorvosi Szolgálat">Háziorvosi Szolgálat</a></li>
-<li><a class="" data-link="pszichiatriai-rendeles" data-review-original-href="/szolgaltatasok/pszichiatriai-rendeles" data-url="1" href="#" tabindex="-1" title="Pszichiátriai rendelés">Pszichiátriai rendelés</a></li>
-<li><a class="" data-link="utazasi-orvoslas-nemzetkozi-oltokozpont" data-review-original-href="/szolgaltatasok/utazasi-orvoslas-nemzetkozi-oltokozpont" data-url="1" href="#" tabindex="-1" title="Utazási orvoslás">Utazási orvoslás</a></li>
-<li><a class="" data-link="sebeszet-labszarfekely-kronikus-seb" data-review-original-href="/szolgaltatasok/sebeszet-labszarfekely-kronikus-seb" data-url="1" href="#" tabindex="-1" title="Sebészeti magánrendelés">Sebészeti magánrendelés</a></li>
-<li><a class="" data-link="foglalkozas-egeszsegugy-szolgalat" data-review-original-href="/szolgaltatasok/foglalkozas-egeszsegugy-szolgalat" data-url="1" href="#" tabindex="-1" title="Foglalkozás-egészségügy">Foglalkozás-egészségügy</a></li>
-<li><a class="" data-link="treningek" data-review-original-href="/szolgaltatasok/treningek" data-url="1" href="#" tabindex="-1" title="Tréningek">Tréningek</a></li>
-<li><a class="" data-link="egeszsegugyi-szolgalatok" data-review-original-href="/szolgaltatasok/egeszsegugyi-szolgalatok" data-url="1" href="#" tabindex="-1" title="Egészségügyi Szolgálatok">Egészségügyi Szolgálatok</a></li>
+<li><a data-link="haziorvosi-szolgalat" data-review-original-href="/szolgaltatasok/haziorvosi-szolgalat" data-url="1" href="#" tabindex="-1" title="Háziorvosi Szolgálat">Háziorvosi Szolgálat</a></li>
+<li><a data-link="pszichiatriai-rendeles" data-review-original-href="/szolgaltatasok/pszichiatriai-rendeles" data-url="1" href="#" tabindex="-1" title="Pszichiátriai rendelés">Pszichiátriai rendelés</a></li>
+<li><a data-link="utazasi-orvoslas-nemzetkozi-oltokozpont" data-review-original-href="/szolgaltatasok/utazasi-orvoslas-nemzetkozi-oltokozpont" data-url="1" href="#" tabindex="-1" title="Utazási orvoslás">Utazási orvoslás</a></li>
+<li><a data-link="sebeszet-labszarfekely-kronikus-seb" data-review-original-href="/szolgaltatasok/sebeszet-labszarfekely-kronikus-seb" data-url="1" href="#" tabindex="-1" title="Sebészeti magánrendelés">Sebészeti magánrendelés</a></li>
+<li><a data-link="foglalkozas-egeszsegugy-szolgalat" data-review-original-href="/szolgaltatasok/foglalkozas-egeszsegugy-szolgalat" data-url="1" href="#" tabindex="-1" title="Foglalkozás-egészségügy">Foglalkozás-egészségügy</a></li>
+<li><a data-link="treningek" data-review-original-href="/szolgaltatasok/treningek" data-url="1" href="#" tabindex="-1" title="Tréningek">Tréningek</a></li>
+<li><a data-link="egeszsegugyi-szolgalatok" data-review-original-href="/szolgaltatasok/egeszsegugyi-szolgalatok" data-url="1" href="#" tabindex="-1" title="Egészségügyi Szolgálatok">Egészségügyi Szolgálatok</a></li>
 </ul>
 </li>
-<li><a class="" data-link="hirek-informaciok" data-review-original-href="/hirek-informaciok" data-url="1" href="#" tabindex="-1" title="Hírek, információk">Hírek, információk</a></li>
-<li><a class="" data-link="tudastar" data-review-original-href="/tudastar" data-url="1" href="#" tabindex="-1" title="Tudástár">Tudástár</a></li>
-<li><a class="" data-link="kapcsolat" data-review-original-href="/kapcsolat" data-url="1" href="#" tabindex="-1" title="Kapcsolat">Kapcsolat</a></li>
+<li><a data-link="hirek-informaciok" data-review-original-href="/hirek-informaciok" data-url="1" href="#" tabindex="-1" title="Hírek, információk">Hírek, információk</a></li>
+<li><a data-link="tudastar" data-review-original-href="/tudastar" data-url="1" href="#" tabindex="-1" title="Tudástár">Tudástár</a></li>
+<li><a data-link="kapcsolat" data-review-original-href="/kapcsolat" data-url="1" href="#" tabindex="-1" title="Kapcsolat">Kapcsolat</a></li>
 </ul></div></div></div></div> </nav>
 </div>
 </header>

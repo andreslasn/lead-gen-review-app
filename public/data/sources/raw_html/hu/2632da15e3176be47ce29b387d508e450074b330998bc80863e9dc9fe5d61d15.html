@@ -36,7 +36,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 
 <style id="ui-fontsize.css-inline-css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
@@ -139,7 +139,8 @@ margin-right:15px;
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -554,7 +555,7 @@ margin-right:15px;
 <div class="elementor-element elementor-element-cddbfbb elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="cddbfbb" data-settings='{"_animation":"none"}' data-widget_type="heading.default">
 <div class="elementor-widget-container">
 <h2 class="elementor-heading-title elementor-size-default">Újpesti<br/>
-Szakorvosi
+Szakorvosi 
 Rendelőintézet</h2> </div>
 </div>
 </div>

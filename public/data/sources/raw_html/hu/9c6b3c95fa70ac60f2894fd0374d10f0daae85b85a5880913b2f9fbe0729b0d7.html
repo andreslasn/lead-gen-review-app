@@ -39,7 +39,8 @@
 
 <noscript><img class="facebook" height="1" width="1"/></noscript> <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -117,7 +118,7 @@
 </li>
 </ul>
 </div>
-</nav>
+</nav> 
 
 
 
@@ -1256,7 +1257,7 @@
 <path d="M15.75,11.188c0,1.207,0.981,2.188,2.188,2.188h0.875c0.241,0,0.438,0.196,0.438,0.438
 					s-0.196,0.438-0.438,0.438H15.75V16h3.063C20.02,16,21,15.02,21,13.813c0-1.206-0.98-2.188-2.188-2.188h-0.875
 					c-0.241,0-0.438-0.196-0.438-0.438s0.196-0.438,0.438-0.438H21V9h-3.063C16.731,9,15.75,9.982,15.75,11.188z" fill="currentColor"></path>
-<polygon fill="currentColor" points="6.281,9 5.625,10.4 4.969,9 3,9 4.641,12.5 3,16 4.969,16 5.625,14.6 6.281,16 8.25,16
+<polygon fill="currentColor" points="6.281,9 5.625,10.4 4.969,9 3,9 4.641,12.5 3,16 4.969,16 5.625,14.6 6.281,16 8.25,16 
 					6.609,12.5 8.25,9 		"></polygon>
 <path d="M22,6H2C0.897,6,0,6.898,0,8v9c0,1.103,0.897,2,2,2h20c1.103,0,2-0.897,2-2V8
 					C24,6.898,23.103,6,22,6z M2,17V8h20l0.001,9H2z" fill="currentColor"></path>

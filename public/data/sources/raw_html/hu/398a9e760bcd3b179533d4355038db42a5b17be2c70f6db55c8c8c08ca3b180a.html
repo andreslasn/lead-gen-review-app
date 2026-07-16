@@ -112,7 +112,8 @@ ul.dropdown-menu.default > .current-menu-item > a {
     </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -131,7 +132,7 @@ ul.dropdown-menu.default > .current-menu-item > a {
 <a class="skip-link screen-reader-text" data-review-original-href="#page-content" href="#" tabindex="-1">Skip to content</a>
 <div class="header-top homepage" id="page-top">
 <div class="header-top-bar">
-<div class="">
+<div>
 <div class="header-top-bar-inner row middle-xs start-xs">
 <div class="header-top-bar-area col-xs area-left">
 <div class="top-bar-field" data-dynamic-mod="true" data-type="group">

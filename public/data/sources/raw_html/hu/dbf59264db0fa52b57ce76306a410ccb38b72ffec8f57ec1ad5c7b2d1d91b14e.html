@@ -133,7 +133,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -301,7 +302,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="html-after-content"></div>
 </div>
 </article>
-</main>
+</main> 
 
 <aside class="block" id="sidebar">
 <ul id="widgetlist">
@@ -509,7 +510,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 </div>
 
-<footer class="" id="footer">
+<footer id="footer">
 <div class="footer-menu maxwidth">
 <ul class="footmenu clearfix"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132" id="menu-item-132"><a data-review-original-href="https://hosszupalyi.hu/kapcsolat/" href="#" tabindex="-1">Kapcsolat</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204" id="menu-item-204"><a data-review-original-href="https://www.facebook.com/Hossz%C3%BAp%C3%A1lyi-Nagyk%C3%B6zs%C3%A9g-%C3%96nkorm%C3%A1nyzata-1557266544543668/?fref=ts" href="#" tabindex="-1">Facebook</a></li>

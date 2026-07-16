@@ -58,7 +58,7 @@
 .palyazat-lebego-kep1, .palyazat-lebego-kep2, .palyazat-lebego-kep3 {
     position: fixed !important;
     z-index: 9999;
-
+    
     /* --- A DARABOSSÁG (RÁNGATÓZÁS) JAVÍTÁSA --- */
     transition: none !important; /* Szigorúan letiltjuk a sablon saját animációit */
     will-change: top; /* Szólunk a böngészőnek előre, hogy ez változni fog */
@@ -67,15 +67,15 @@
 }
 
 /* 2. Oldalsó elhelyezkedés */
-.palyazat-lebego-kep1 {
+.palyazat-lebego-kep1 { 
     left: 0px; /* A vízszintes logó a bal szélen */
 }
 
-.palyazat-lebego-kep2 {
+.palyazat-lebego-kep2 { 
     right: 0px; /* A négyzetes logó a jobb szélen */
 }
 
-.palyazat-lebego-kep3 {
+.palyazat-lebego-kep3 { 
     right: 0px; /* A harmadik logó a jobb szélen */
 }
 </style>
@@ -85,7 +85,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -214,11 +215,11 @@
 <div class="uk-width-3-4@m">
 <div class="uk-card-default uk-card uk-height-viewport uk-card-body">
 <h1 class="uk-heading-bullet uk-text-primary">
-
-
-                    Intézmények
-
-
+    
+        
+                    Intézmények        
+        
+    
 </h1>
 <div class="uk-panel uk-margin-remove-first-child uk-margin">
 <div class="el-content uk-panel uk-text-left uk-margin-small-top"><h3><strong>Alapszolgáltatási Központ:</strong></h3>
@@ -505,7 +506,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-26">
 <h3 class="uk-card-title uk-heading-divider">
 
-                2024. évi választások
+                2024. évi választások        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://murony.hu/2024/03/04/2024-evi-valasztasok/" href="#" tabindex="-1" target="_self" title="2024. évi választások"><img alt="2024. évi választások" class="attachment-full" decoding="async" height="120" style="max-width: 100%;" width="194"/></a>
 </div>
@@ -513,7 +514,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_custom_html" id="custom_html-4">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Magyar Falu Program
+                Magyar Falu Program        
         </h3>
 <div class="textwidget custom-html-widget"><a data-review-original-href="#sidebar-modal1" href="#" tabindex="-1" uk-toggle=""><img decoding="async" width=""/></a>
 <div class="uk-flex-top" id="sidebar-modal1" uk-modal="">
@@ -527,7 +528,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-5">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Közérdekű adatok
+                Közérdekű adatok        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://murony.hu/kozerdeku-adatok/" href="#" tabindex="-1" target="_self" title="Közérdekű adatok"><img alt="Közérdekű adatok" class="attachment-full aligncenter" decoding="async" fetchpriority="high" height="500" sizes="(max-width: 500px) 100vw, 500px" style="max-width: 100%;" width="500"/></a>
 </div>
@@ -535,7 +536,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-18">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Murony Rendezési Tervezet
+                Murony Rendezési Tervezet        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://murony.hu/2018/04/12/rendezesi-terv/" href="#" tabindex="-1" target="_self" title="Murony Rendezési Tervezet"><img alt="Murony Rendezési Tervezet" class="attachment-full" decoding="async" height="695" sizes="(max-width: 596px) 100vw, 596px" style="max-width: 100%;" width="596"/></a>
 </div>
@@ -543,7 +544,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-17">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Murony Község Településképi Arculati Kézikönyve
+                Murony Község Településképi Arculati Kézikönyve        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://murony.hu/2018/01/18/murony-kozseg-telepuleskepi-arculati-kezikonyve/" href="#" tabindex="-1" target="_self" title="Murony Község Településképi Arculati Kézikönyve"><img alt="Murony Község Településképi Arculati Kézikönyve" class="attachment-full" decoding="async" height="183" sizes="(max-width: 183px) 100vw, 183px" style="max-width: 100%;" width="183"/></a>
 </div>
@@ -551,7 +552,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-27">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Murony Település Veszély-elhárítási Terve
+                Murony Település Veszély-elhárítási Terve        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://murony.hu/2021/03/25/murony-telepules-veszely-elharitasi-terve/" href="#" tabindex="-1" target="_self" title="Murony Település Veszély-elhárítási Terve"><img alt="Murony Település Veszély-elhárítási Terve" class="attachment-full aligncenter" decoding="async" height="202" sizes="(max-width: 200px) 100vw, 200px" style="max-width: 100%;" width="200"/></a>
 </div>
@@ -559,7 +560,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-19">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Önkormányzati elektronikus ügyintézés
+                Önkormányzati elektronikus ügyintézés        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://murony.hu/e-onkormanyzat/" href="#" tabindex="-1" target="_self" title="Önkormányzati elektronikus ügyintézés"><img alt="Önkormányzati elektronikus ügyintézés" class="attachment-full" decoding="async" height="308" sizes="(max-width: 227px) 100vw, 227px" style="max-width: 100%;" width="227"/></a>
 </div>
@@ -571,7 +572,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-3">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Térkép
+                Térkép        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://murony.hu/murony-terkep" href="#" tabindex="-1" target="_self" title="Térkép"><img alt="Murony térkép" class="attachment-full aligncenter" decoding="async" height="1280" sizes="(max-width: 1280px) 100vw, 1280px" style="max-width: 100%;" width="1280"/></a>
 </div>
@@ -583,7 +584,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center widget widget_sp_image" id="widget_sp_image-21">
 <h3 class="uk-card-title uk-heading-divider">
 
-                DAREH Bázis Hulladék-gazdálkodási Nonprofit Zrt
+                DAREH Bázis Hulladék-gazdálkodási Nonprofit Zrt        
         </h3>
 <a class="widget_sp_image-image-link" data-review-original-href="https://dareh.hu/_bazis/" href="#" tabindex="-1" target="_blank" title="DAREH Bázis Hulladék-gazdálkodási Nonprofit Zrt"><img alt="DAREH Bázis Hulladék-gazdálkodási Nonprofit Zrt" class="attachment-full" decoding="async" height="227" style="max-width: 100%;" width="190"/></a>
 </div>
@@ -591,7 +592,7 @@
 <div class="uk-card uk-card-body uk-card-default sidebar-widget uk-text-center tm-child-list widget widget_archive" id="archives-3">
 <h3 class="uk-card-title uk-heading-divider">
 
-                Archívum
+                Archívum        
         </h3>
 <label class="screen-reader-text" for="archives-dropdown-3">Archívum</label>
 <select id="archives-dropdown-3" name="archive-dropdown">
@@ -796,11 +797,11 @@
 <div class="uk-width-1-3@m">
 <div class="uk-divider-small"></div>
 <h3 class="uk-h5 uk-margin-small">
-
-
-                    Muronyi Közös Önkormányzati Hivatal
-
-
+    
+        
+                    Muronyi Közös Önkormányzati Hivatal        
+        
+    
 </h3>
 <ul class="uk-list uk-list-collapse"> <li class="el-item">
 <div class="uk-child-width-expand uk-grid-small" uk-grid=""> <div class="uk-width-auto">
@@ -847,11 +848,11 @@
 <div class="uk-width-1-3@m">
 <div class="uk-divider-small"></div>
 <h3 class="uk-h5 uk-margin-small">
-
-
-                    Ügyfélfogadás
-
-
+    
+        
+                    Ügyfélfogadás        
+        
+    
 </h3>
 <ul class="uk-list uk-list-collapse"> <li class="el-item">
 <div class="uk-child-width-expand uk-grid-small" uk-grid=""> <div class="uk-width-auto">
@@ -898,40 +899,40 @@
 <div class="uk-width-1-3@m">
 <div class="uk-divider-small"></div>
 <h3 class="uk-h5 uk-margin-small">
-
-
-                    Hasznos linkek
-
-
+    
+        
+                    Hasznos linkek        
+        
+    
 </h3>
 <div id="footer#0">
 <ul class="uk-margin-remove-bottom uk-nav uk-nav-default"> <li class="el-item">
 <a class="el-link" data-review-original-href="https://www.allamkincstar.gov.hu/" href="#" tabindex="-1" target="_blank">
-
-
-                    Magyar Államkincstár
-
+    
+        
+                    Magyar Államkincstár        
+    
 </a></li>
 <li class="el-item">
 <a class="el-link" data-review-original-href="https://magyarorszag.hu/" href="#" tabindex="-1" target="_blank">
-
-
-                    Magyarország.hu
-
+    
+        
+                    Magyarország.hu        
+    
 </a></li>
 <li class="el-item">
 <a class="el-link" data-review-original-href="https://nav.gov.hu/" href="#" tabindex="-1" target="_blank">
-
-
-                    Nemzeti Adó- és Vámhivatal
-
+    
+        
+                    Nemzeti Adó- és Vámhivatal        
+    
 </a></li>
 <li class="el-item">
 <a class="el-link" data-review-original-href="https://ohp-20.asp.lgov.hu/nyitolap" href="#" tabindex="-1" target="_blank">
-
-
-                    e-Ügyintézés
-
+    
+        
+                    e-Ügyintézés        
+    
 </a></li>
 </ul>
 </div>

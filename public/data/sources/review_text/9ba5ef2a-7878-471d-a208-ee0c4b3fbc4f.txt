@@ -1,0 +1,6 @@
+s?i=17&m=202629"></script> <div id="marketingbar" class="marketing-bar noskim "><div class="marketing-bar-text">Design a site like this with WordPress.com</div><a class="marketing-bar-button" href="https://wordpress.com/start/hu?ref=marketing_bar">Kezdjük el</a><a class="marketing-bar-link" tabindex="-1" aria-label="Create your website at WordPress.com" href="https://wordpress.com/start/hu?ref=marketing_bar"></a></div> <script type="text/javascript">
+ window._tkq = window._tkq || [];
+
+ window._tkq.push( [ 'recordEvent', 'wpcom_marketing_bar_impression', {"is_current_user_blog_owner":false} ] );
+
+ document.querySelectorAll( '#marketingbar > a' ).forEach( link

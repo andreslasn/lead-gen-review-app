@@ -32,7 +32,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -371,18 +372,18 @@ p img { max-width:100%; }
 }
 
 @media (max-width: 768px) {
-
+	
 	.socials { display:none; }
 	.socials2 { display:block; }
-
+	
 	.right-menu a span, .right-menu2 a span, { display:none; }
-
-	#fileupload td .btn { margin-top:6px; }
+	
+	#fileupload td .btn { margin-top:6px; } 
 	.template-upload img, .template-download img { display:none; }
 	.template-upload video, .files video { display:none; }
-
+	
 	iframe { max-width:100%; box-sizing:border-box; }
-
+	
 	/*.navbar-brand { padding:0px 0px 0px 0px; margin:32px 0px 0px 30px; background: url("templates/monostorpalyi/images/logo_mobile.png") top left no-repeat; width:140px; height:37px; }*/
 	.navbar-inverse .navbar-nav { background-color:#bcc7d3; }
 	.navbar { height:auto; min-height:62px; background:#bcc7d3 url("templates/monostorpalyi/images/header.jpg"); padding:0px 0px 0px 0px; box-sizing:border-box; }
@@ -399,7 +400,7 @@ p img { max-width:100%; }
 	a.main-icon-council { background-image: url("templates/monostorpalyi/images/main-icon-council-hover.png"); background-size:40px; background-position:center 0px; }
 	a.main-icon-office { background-image: url("templates/monostorpalyi/images/main-icon-office-hover.png"); background-size:40px; background-position:center 0px; }
 	a.main-icon-contact { background-image: url("templates/monostorpalyi/images/main-icon-contact-hover.png"); background-size:40px; background-position:center 0px; }
-
+	
 	/*.container #menu ul.main li .dropdown { width:100%; box-sizing:border-box; display:block; position:absolute; top:215px; padding:10px 10px; background:rgba(83, 195, 143, 1.0); height:auto; }*/
 	.container #menu ul.main li .dropdown { width:100%; box-sizing:border-box; display:block; position:absolute; top:290px; padding:10px 10px; background:rgba(11,60,116,0.80); height:auto; }
 	.container #menu ul.main li .dropdown .dd-col { width:100%; background-color:#4a8fd2; }
@@ -411,97 +412,97 @@ p img { max-width:100%; }
 	.container #menu h3 a, .container #menu h3 { color:rgba(51,51,51,1.0); text-decoration:none; }
 	.container #menu ul.main li .dropdown .dd-col h3 a { /*color:#ffcc00;*/ color:#0b3c74; }
 	.container #menu ul.main li .dropdown .dd-col ul.dd-list li a:hover, .container #menu ul.main li .dropdown .dd-col ul.dd-list li a:focus { font-size:1.1em; color:#ffcc00; text-decoration:none; }
-
+	
 	.fullwidth-lightbrown .thumbnail .imgcont { max-height:100%; }
-
+		
 	.palyazatok { text-align:center; }
 	.palyazatok ul { max-height:100%; height:auto; overflow-y:visible; }
-
+	
 	.slider { height:auto; }
 	.slider img { width:100%; height:auto; }
-
+	
 	header.carousel, header.carousel .fill { height:340px; overflow:hidden; }
-
+	
 	.fl { display:none; margin:0px 0px 0px 0px; }
-
+	
 	.navbar-brand { zoom:0.5; margin:50px 10px 10px 50px; }
 	nav ul { list-style:none; padding:0px 0px 0px 0px; margin:10px 0px 20px 0px; /*background:#bcc7d3;*/ background:rgba(11,60,116,1.0); }
 	.container #menu, .container #menu ul { background:rgba(11,60,116,1.0); color:#ffffff; }
 	.menubtn, .menubtn a, .menubtn:hover, .menubtn a:hover  { display:block; float:none; color:#ffffff; font-weight:700; font-style:normal; font-size:14px; text-decoration:none; margin:6px 5px 0px 6px; padding:0px 0px; line-height:20px; vertical-align:middle; }
-
+	
 }
 @media (min-width: 768px) {
-
+	
 	.fl { display:none; margin:0px 0px 0px 0px; }
-
+	
 	nav ul { list-style:none; padding:0px 0px 0px 0px; margin:28px 0px 0px 0px; background:#ffffff; }
-
+	
 	.menubtn, .menubtn a { display:block; float:left; color:#333333; font-weight:700; font-style:normal; font-size:13px; text-decoration:none; margin:36px 5px 0px 6px; padding:0px 0px; line-height:24px; vertical-align:middle; }
-
+	
 	/*.navbar-brand { padding:0px 0px 0px 0px; margin:37px 0px 0px 15px; background: url("templates/monostorpalyi/images/logo_mobile.png") top left no-repeat; width:140px; height:37px; }*/
 	/*
 	#menu-btn-1 a, #menu-btn-2 a, #menu-btn-3 a, #menu-btn-4 a { padding-left:16px; padding-right:16px; font-size:15px; }
 	#menu-btn-1 a { margin-left:10px; }
 	*/
 	.slider .caption { height:auto; min-height:380px; padding:30px 60px 30px 60px; text-align:center;}
-
+	
 	.slider img { width:100%; height:445px; }
-
+	
 	.fullwidth-lightbrown .thumbnail .imgcont { max-height:100%; }
-
+	
 	.control-label { margin-top:10px; }
-
+	
 	.socials { display:none; }
 	.socials2 { display:block; }
-
+	
 	header.carousel, header.carousel .fill { height:540px; overflow:hidden; }
 }
 @media (min-width: 992px) {
-
+	
 	nav ul { list-style:none; padding:0px 0px 0px 0px; margin:14px 0px 0px 0px; background:#ffffff; }
-
+	
 	.menubtn, .menubtn a { display:block; float:left; color:#333333; font-weight:700; font-style:normal; font-size:15px; text-decoration:none; margin:46px 5px 0px 6px; padding:0px 0px; line-height:30px; vertical-align:middle; }
-
+	
 	.fl { display:block; float:left; width:160px; margin-top:75px; margin-right:20px; padding:0px 20px 0px 0px; }
-
+	
 	/*.navbar-brand { padding:0px 0px 0px 0px; margin:17px 30px 0px 15px; background: url("templates/monostorpalyi/images/logo.png") top left no-repeat; background-size:80% 80%; width:170px; height:170px; }*/
 	/*#menu-btn-1 a, #menu-btn-2 a, #menu-btn-3 a, #menu-btn-4 a { padding-left:22px; padding-right:22px; font-size:17px; } */
-
+	
 	.slider .caption { height:auto; min-height:174px; padding:40px 20px 40px 20px; text-align:left; }
 	.slider { margin:15px 0px; max-width:100%; width:750px; height:346px; overflow:hidden; }
 	.slider img { width:100%; height:285px; }
-
+	
 	.fullwidth-lightbrown .thumbnail .imgcont { max-height:160px; }
-
+	
 	.datum { clear:both; float:left; display:block; margin-top:-10px; margin-left:0px; }
 	.nevnap { float:left; display:block; margin-left:0px; margin-top:-10px; }
-
+	
 	.socials { display:none; }
 	.socials2 { display:block; }
-
+	
 	header.carousel, header.carousel .fill { height:530px; overflow:hidden; }
 }
 @media (min-width: 1200px) {
-
+	
 	nav ul { list-style:none; padding:0px 0px 0px 0px; margin:24px 0px 0px 0px; background:#ffffff; }
-
+	
 	.menubtn, .menubtn a { display:block; float:left; color:#333333; font-weight:700; font-style:normal; font-size:16px; text-decoration:none; margin:36px 5px 0px 6px; padding:0px 0px; line-height:30px; vertical-align:middle; }
-
+	
 	.fl { display:block; float:left; width:220px; margin-top:60px; margin-right:40px; padding:0px 40px 0px 0px; }
-
+	
 	/*.navbar-brand { padding:0px 0px 0px 0px; margin:10px 55px 0px 15px; background: url("templates/monostorpalyi/images/logo.png") top left no-repeat; width:170px; height:170px; }*/
-
+	
 	.slider .caption { height:auto; min-height:140px; padding:40px 20px 40px 20px; text-align:left; }
 	.slider { margin:15px 0px; max-width:100%; width:750px; height:596px; overflow:hidden; }
 	.slider img { width:100%; height:475px; }
-
+	
 	.fullwidth-lightbrown .thumbnail .imgcont { max-height:200px; }
 	.datum { clear:both; float:left; display:block; margin-top:5px; margin-left:0px; }
 	.nevnap { float:left; display:block; margin-left:0px; margin-top:5px; }
-
+	
 	.socials { display:none; }
 	.socials2 { display:block; }
-
+	
 	header.carousel, header.carousel .fill { max-height:604px; overflow:hidden; }
 	header.carousel, header.carousel img { height:604px; }
 }
@@ -518,7 +519,7 @@ p img { max-width:100%; }
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
-.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current, 
 xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
     background: #00538F !important;
 }
@@ -558,15 +559,15 @@ div#magyarfaluprogramc {
 <h3><a data-review-original-href="hirek/tajekoztatas-oltasi-akcionaprol" href="#" tabindex="-1" title="Tájékoztatás oltási akciónapról">Tájékoztatás oltási akciónapról</a></h3>
 <p>Tisztelt Lakosok!
 
-
+ 
 
 Ezúton tájékoztatjuk Önöket, hogy a háziorvos által megadott oltási napok időpontjai a következők:
 
-
+ 
 
 Dr. Varga Zoltán László          2022. január 21-22.
 
-
+ 
 
 További információért, kérjük keresse fel a háziorvosát!
 </p>
@@ -617,7 +618,7 @@ Monostorpályi </p>
 
 Takarék Mobil Bankfiók menetrendváltozás 2021. december hónapban
 
-
+ 
 
 Tisztelt Ügyfelünk!
 
@@ -637,11 +638,11 @@ Személyes ügyintézés céljából kérjük, szíveskedjenek</p>
 <h3><a data-review-original-href="hirek/aramszunet-ertesito-2021-12-10" href="#" tabindex="-1" title="Áramszünet értesítő 2021.12.10.">Áramszünet értesítő 2021.12.10.</a></h3>
 <p>Tisztelt Lakosok!
 
-
+ 
 
 Szolgáltatásaink kiváló minősége és a biztonságos ellátás érdekében folyamatos korszerűsítést hajtunk végre hálózatunkon. A tervszerű fejlesztések elvégzéséhez elengedhetetlen a szolgáltatás időszakos szüneteltetése. Ezért Monostorpályi településen áramszünet várható a következő időszakban:
 
-
+ 
 
 Utca        &amp;nbs</p>
 </div>

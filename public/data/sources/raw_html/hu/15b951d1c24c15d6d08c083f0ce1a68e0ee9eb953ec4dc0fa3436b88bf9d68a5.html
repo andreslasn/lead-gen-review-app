@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head><body><!DOCTYPE HTML>
@@ -43,7 +44,7 @@
 }
 	</style>
 </head>
-<body class="">
+<body>
 <a data-review-original-href="https://www.onga.hu/news/szechenyi2020" href="#" tabindex="-1"><img class="img-infoblock" width="215px"/></a>
 <div id="hiddensearch">
 <div class="inner">
@@ -619,8 +620,8 @@
 <footer class="clearfix" id="footer">
 <div class="inner">
 <div class="links">
-<a class="" data-review-original-href="/news/260763/kapcsolat,_ugyfelfogadas" href="#" tabindex="-1">Kapcsolat, ügyfélfogadás</a>
-<a class="" data-review-original-href="/news/260868/impresszum" href="#" tabindex="-1">Impresszum</a>
+<a data-review-original-href="/news/260763/kapcsolat,_ugyfelfogadas" href="#" tabindex="-1">Kapcsolat, ügyfélfogadás</a>
+<a data-review-original-href="/news/260868/impresszum" href="#" tabindex="-1">Impresszum</a>
 </div>
 </div>
 </footer>
@@ -634,7 +635,7 @@
     #cookiebar p {color:white;display:inline-block;}
     #cookiebar a {color:white;font-weight:bold;}
     #cookiebar #cookieaccept {display:inline-block;background-color:#cb0a03;color:#fff;border:none;margin:10px;border-color:white;padding:8px 10px;cursor:pointer;}
-
+    
 </style>
 
 </body>

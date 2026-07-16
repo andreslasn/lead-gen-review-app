@@ -12,12 +12,13 @@
 
 
 
-
+ 
 
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -654,7 +655,7 @@
 <img alt="Bányarekultiváció" class="img img-responsive img-fluid"/> </a>
 </div>
 <h4 class="mag-head" style="text-transform: none"><i class="fa fa-film color"></i>Videók Pilisszentivánról</h4>
-<div class="" id="film">
+<div id="film">
 <a alt="Pilisszentiván, a pilisi len hazája" data-review-original-href="/hirek/pilisszentivan-a-pilisi-len-hazaja-video" href="#" tabindex="-1">
 <img alt="Pilisszentiván a pilisi len hazája - film" class="img img-responsive img-fluid"/> </a>
 </div>

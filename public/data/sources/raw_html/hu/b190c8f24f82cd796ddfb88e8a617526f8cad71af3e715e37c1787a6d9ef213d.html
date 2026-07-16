@@ -72,7 +72,7 @@ table.posts-data-table { visibility: hidden; }
 
 <style id="polyclinic-inline-css">
 /* START CSS variables */
-:root {
+:root { 
 --color_accent: #006f5c; --color_accent_text: #000000; --color_success_background: #006f5c; --color_header_background: #ffffff; --color_header_text: #000000; --color_header_decoration: #006f5c; --color_navigation_background: #f7f7f7; --color_navigation_text: #000000; --color_header_info_background: #006f5c; --color_intro_background: #ffffff; --color_intro_title_background: #006f5c; --color_content_background: #ffffff; --color_content_text: #000000; --color_content_headings: #000000; --color_footer_background: #ffffff; --color_footer_text: #000000; --color_footer_headings: #006f5c; --color_footer_decoration: #006f5c; --color_footer_accent: #000000; --color_footer_info_background: #006f5c; --color_footer_info_text--a20: rgba(0,0,0,0.2); --color_footer_info_text: #000000; --color_site_info_background: #006f5c; --color_site_info_text: #ffffff; --layout_width_content: 1260px; --typography_size_html: 15px;
 }
 /* END CSS variables */
@@ -153,7 +153,7 @@ border-width: 2px;
 }
 
 div.wpforms-container-full .wpforms-field.wpforms-field-checkbox ul li input, div.wpforms-container-full .wpforms-field.wpforms-field-radio ul li input, div.wpforms-container-full .wpforms-field.wpforms-field-payment-checkbox ul li input, div.wpforms-container-full .wpforms-field.wpforms-field-payment-multiple ul li input, div.wpforms-container-full .wpforms-field.wpforms-field-gdpr-checkbox ul li input {
-    margin-top: 0px!important;
+    margin-top: 0px!important; 
 }
 
 
@@ -180,14 +180,14 @@ span.byline.author.vcard.entry-meta-element {
 }
 
 .short-nav {
-	padding: 7px!important;
+	padding: 7px!important; 
 	border: 1px solid white!important;
 }
 
 .short-nav-elojegyzes {
 	background-color: white;
 	color: black;
-	padding: 7px!important;
+	padding: 7px!important; 
 	margin-top: 10px!important
 }
 
@@ -295,7 +295,8 @@ nav.navigation.post-navigation {
 		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

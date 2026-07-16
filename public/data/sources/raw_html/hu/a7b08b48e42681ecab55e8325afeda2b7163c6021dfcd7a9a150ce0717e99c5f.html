@@ -30,7 +30,7 @@
 		#camera_wrap_159 .camera_caption {
 			display: none !important;
 		}
-
+		
 }</style>
 <style>body{font-family: 'Nunito Sans', sans-serif;text-decoration: none;}
 </style>
@@ -89,7 +89,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

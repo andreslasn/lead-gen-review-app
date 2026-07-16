@@ -60,7 +60,8 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 <meta content="https://dunakeszi.hu/wp-content/uploads/2022/02/favicon.png" name="msapplication-TileImage"/>
 <style data-type="vc_shortcodes-custom-css" type="text/css">.vc_custom_1676984376557{padding-top: 50px !important;padding-bottom: 40px !important;}.vc_custom_1676984390788{padding-top: 50px !important;padding-bottom: 50px !important;}.vc_custom_1676983923640{padding-top: 50px !important;padding-bottom: 50px !important;}.vc_custom_1653386909084{padding-bottom: 80px !important;background-color: #f5fbf2 !important;}.vc_custom_1666612155116{margin-top: 60px !important;margin-bottom: 40px !important;}.vc_custom_1666612163836{padding-top: 40px !important;}.vc_custom_1673532729855{margin-bottom: 100px !important;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -75,7 +76,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 </a>
 </div>
 <button aria-expanded="false" aria-label="Toggle navigation" class="my-3" id="hamburger-menu-wrapper" type="button">
-<div class="" id="hamburger-menu-button">
+<div id="hamburger-menu-button">
 <div></div>
 <div></div>
 <div></div>
@@ -2123,7 +2124,7 @@ Jegyző email: <a data-review-original-href="mailto:jegyzo@dunakeszi.hu" href="#
 </div>
 </nav>
 
-<button aria-label="Cookie beállítások" class="" data-href="#moove_gdpr_cookie_modal" id="moove_gdpr_save_popup_settings_button" style="display: none;">
+<button aria-label="Cookie beállítások" data-href="#moove_gdpr_cookie_modal" id="moove_gdpr_save_popup_settings_button" style="display: none;">
 <span class="moove_gdpr_icon">
 <svg style="max-width: 30px; max-height: 30px;" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 <g data-name="1">

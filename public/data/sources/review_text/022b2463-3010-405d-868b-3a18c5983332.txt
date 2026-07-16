@@ -1,0 +1,178 @@
+Környék
+10
+20
+30
+40
+km | Rendezés:
+település neve
+távolság
+helyszín neve
+Infobuborék
+Gyermekorvosi rendelő
+(orvosi rendelő)
+2094
+Nagykovácsi
+, Kolozsvár tér 8.
+Weboldal:
+http://nagykovacsi.hu/orvosi-rendelok/
+Telefon:
+06-26-355-340
+Leírás
+Dr. Jakab Erika:
+Hétfõ: 8.00-11.00 rendelés
+Kedd: 11.30-14.00 tanácsadás 14.00-17.00 rendelés
+Szerda: 8.00-11.00 rendelés
+Csütörtök: 14.00-17.00 rendelés
+Péntek: páros hónap: 8.00-11.00 rendelés páratlan hónap: 12.00-15.00 rendelés
+Dr. Kordé Izabella:
+Hétfõ: 12.00-14.00 tanácsadás 14.00-17.00 rendelés
+Kedd: 8.00-11.00 rendelés
+Szerda: 12.00-14.00 tanácsadás 14.00-17.00 rendelés
+Csütörtök: 9.00-12.00 rendelés
+Péntek: páros hónap: 12.00-15.00 rendelés páratlan hónap: 8.00-11.00 rendelés
+Mind a két orvos rendelési helye a következõ címen található
+: 2094 Nagykovácsi, Kaszáló utca 12-14.
+(a bölcsõde mellett)
+Betegrendelésre a gyermekorvosok
+asszisztenseitõl kell idõpontot kérni
+, egészséges tanácsadásra a védõnõk adnak idõpontot mindkét orvoshoz az alábbi telefonszámon: 06-30-575-9469
+Ha észrevétele van a megjelenő adatokkal kapcsolatban, aktuálisabb vagy bővebb információt tud a helyszínről, kérjük küldje el nekünk az alábbi szövegmező segítségével.
+A beküldött észrevételeket kollégáink feldolgozzák és az észrevételek alapján módosítják az adatlapot. Maga a beküldött üzenet a lapon nem jelenik. meg!
+Amennyiben visszajelzést szeretne, kérjük, hogy az üzenetben hagyja meg elérhetőségeit.
+Adatait az adatkezelési szabályzatunk alapján bizalmasan kezeljük, azt harmadik félnek nem adjuk ki.
+Címlap
+Előző oldal
+Lap tetejére
+Lista eleje
+Technikai kérdések
+Üzemeltető
+Általános szerződési feltételek
+Adatkezelési szabályzat
+Üzlet
+Kapcsolat
+Hogyan regisztrálhatom a szálláshelyemet?
+Nem szállásadó vagyok, hogyan kerülhetek fel az oldalra?
+Hogyan használjam az oldalt?
+Új hely ajánlása
+Adataim
+Adataim szerkesztése
+Foglalásaim, ajánlatkéréseim
+Bejelentkezés
+Regisztráció
+Belépés/regisztráció facebook-kal
+Kijelentkezés
+©2026 Minden jog fenntartva | szallas@szallashegyek.hu | +36 70 603 3312
+•
+Börzsöny szállás
+Börzsöny vendéglátás
+Börzsöny látnivaló
+Börzsöny program
+Börzsöny szolgáltatás
+Börzsöny túra
+Börzsöny közlekedés
+Börzsöny helyi termék
+Börzsöny szabadidő
+Börzsöny erdei iskola
+Börzsöny csapatépítés
+Pilis szállás
+Pilis vendéglátás
+Pilis látnivaló
+Pilis program
+Pilis szolgáltatás
+Pilis túra
+Pilis közlekedés
+Pilis helyi termék
+Pilis szabadidő
+Pilis erdei iskola
+Pilis csapatépítés
+Cserhát szállás
+Cserhát vendéglátás
+Cserhát látnivaló
+Cserhát program
+Cserhát szolgáltatás
+Cserhát túra
+Cserhát közlekedés
+Cserhát helyi termék
+Cserhát szabadidő
+Cserhát erdei iskola
+Cserhát csapatépítés
+Gerecse szállás
+Gerecse vendéglátás
+Gerecse látnivaló
+Gerecse program
+Gerecse szolgáltatás
+Gerecse túra
+Gerecse közlekedés
+Gerecse helyi termék
+Gerecse szabadidő
+Gerecse erdei iskola
+Gerecse csapatépítés
+Vértes szállás
+Vértes vendéglátás
+Vértes látnivaló
+Vértes program
+Vértes szolgáltatás
+Vértes túra
+Vértes közlekedés
+Vértes helyi termék
+Vértes szabadidő
+Vértes erdei iskola
+Vértes csapatépítés
+Bükk szállás
+Bükk vendéglátás
+Bükk látnivaló
+Bükk program
+Bükk szolgáltatás
+Bükk túra
+Bükk közlekedés
+Bükk helyi termék
+Bükk szabadidő
+Bükk erdei iskola
+Bükk csapatépítés
+Mátra szállás
+Mátra vendéglátás
+Mátra látnivaló
+Mátra program
+Mátra szolgáltatás
+Mátra túra
+Mátra közlekedés
+Mátra helyi termék
+Mátra szabadidő
+Mátra erdei iskola
+Mátra csapatépítés
+Mecsek szállás
+Mecsek vendéglátás
+Mecsek látnivaló
+Mecsek program
+Mecsek szolgáltatás
+Mecsek túra
+Mecsek közlekedés
+Mecsek helyi termék
+Mecsek szabadidő
+Mecsek erdei iskola
+Mecsek csapatépítés
+Velencei tó szállás
+Velencei tó vendéglátás
+Velencei tó látnivaló
+Velencei tó program
+Velencei tó szolgáltatás
+Velencei tó túra
+Velencei tó közlekedés
+Velencei tó helyi termék
+Velencei tó szabadidő
+Velencei tó erdei iskola
+Velencei tó csapatépítés
+Balaton szállás
+Balaton vendéglátás
+Balaton látnivaló
+Balaton program
+Balaton szolgáltatás
+Balaton túra
+Balaton közlekedés
+Balaton helyi termék
+Balaton szabadidő
+Balaton erdei iskola
+Balaton csapatépítés
+Oldalunk GDPR-kompatibilis adatkezelési szabályzatát
+ide kattntva
+olvashatja el. X

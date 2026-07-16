@@ -119,7 +119,8 @@ body{background-color:var(--base-2);color:var(--contrast);}a{color:var(--accent)
 <meta content="https://szegvar.hu/wp-content/uploads/2025/04/cropped-Nevtelen-terv-14-scaled-1-270x270.jpg" name="msapplication-TileImage"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

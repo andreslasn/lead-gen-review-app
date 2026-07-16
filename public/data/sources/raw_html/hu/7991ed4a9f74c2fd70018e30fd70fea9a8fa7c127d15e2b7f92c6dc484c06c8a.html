@@ -79,7 +79,7 @@ body { font-family:'Titillium Web', Arial, sans-serif;font-size:1.00rem }@media 
 
 
 
-
+ 
 
 
 
@@ -88,7 +88,7 @@ body { font-family:'Titillium Web', Arial, sans-serif;font-size:1.00rem }@media 
 	color: white;
 	font-size: 2em;
 	font-style: normal;
-
+	
 }
 
 #header {
@@ -96,7 +96,7 @@ body { font-family:'Titillium Web', Arial, sans-serif;font-size:1.00rem }@media 
 	background-size: cover;
 }
 
-
+	
 #header .mobile-title-logo-in-header {
 		height: 100px;
 }
@@ -121,7 +121,8 @@ body { font-family:'Titillium Web', Arial, sans-serif;font-size:1.00rem }@media 
 		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

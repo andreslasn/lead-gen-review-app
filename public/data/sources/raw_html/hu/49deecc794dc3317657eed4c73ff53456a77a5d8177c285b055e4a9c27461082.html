@@ -295,7 +295,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -1389,25 +1390,25 @@
 <li class="active">
 <a data-review-original-href="https://erzsebetvaros.hu?page=1#news" href="#" style="background-color: gray; color: white; ; border-color: #006a88;" tabindex="-1">1</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://erzsebetvaros.hu?page=2#news" href="#" style="background-color: white; color: black; ; border-color: #006a88;" tabindex="-1">2</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://erzsebetvaros.hu?page=3#news" href="#" style="background-color: white; color: black; ; border-color: #006a88;" tabindex="-1">3</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://erzsebetvaros.hu?page=4#news" href="#" style="background-color: white; color: black; ; border-color: #006a88;" tabindex="-1">4</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://erzsebetvaros.hu?page=5#news" href="#" style="background-color: white; color: black; ; border-color: #006a88;" tabindex="-1">5</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://erzsebetvaros.hu?page=6#news" href="#" style="background-color: white; color: black; ; border-color: #006a88;" tabindex="-1">6</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://erzsebetvaros.hu?page=7#news" href="#" style="background-color: white; color: black; ; border-color: #006a88;" tabindex="-1">7</a>
 </li>
-<li class="">
+<li>
 <a aria-label="Next" data-review-original-href="https://erzsebetvaros.hu?page=2#news" href="#" style="color: black; border: none; border-left: 1px solid #006a88;" tabindex="-1">
 <span aria-hidden="true">»</span>
 </a>
@@ -1684,7 +1685,7 @@
                         Szerzői Jog ©
                                                     Erzsébetváros
                          -
-
+						
 </span>
 </div>
 <div class="col-sm-6">

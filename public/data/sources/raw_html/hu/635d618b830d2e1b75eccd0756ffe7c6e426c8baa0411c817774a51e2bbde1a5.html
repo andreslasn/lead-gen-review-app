@@ -120,7 +120,7 @@ html, body { font-size: 16px; }
 				padding: 0 13px;
 				white-space: nowrap;
 			}
-
+		
 /*# sourceURL=akismet-widget-style-inline-css */
 </style>
 
@@ -139,7 +139,8 @@ html, body { font-size: 16px; }
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -625,9 +626,9 @@ html, body { font-size: 16px; }
 								szombat							</div>
 <div class="post__hours-item-value">
 
-
+								
 									Closed
-
+								
 							</div>
 </li>
 <li class="post__hours-item post__hours-item--sun">
@@ -635,9 +636,9 @@ html, body { font-size: 16px; }
 								vasárnap							</div>
 <div class="post__hours-item-value">
 
-
+								
 									Closed
-
+								
 							</div>
 </li>
 </ul>

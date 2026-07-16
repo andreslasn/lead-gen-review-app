@@ -1,0 +1,66 @@
+OpenStreetMap
+Nyelv kiválasztása
+Betöltés…
+Bezárás
+Hol van ez?
+GraphHopper
+OSRM
+Valhalla
+Pont:
+Háziorvosi rendelő Valet Bt.
+(
+3760656252
+)
+Verzió
+#
+6
+címek
+Szerkesztette
+efi99
+több mint 4 évvel ezelőtt
+Módosításcsomag
+113210411
+0
+Hely:
+47,5897694
+,
+16,8786665
+Címkék
+addr:city
+Fertőszentmiklós
+addr:housenumber
+5
+addr:postcode
+9444
+addr:street
+Ifjúság tér
+amenity
+doctors
+description
+Teljeskörű háziorvosi ellátás ambuláns betegeket is beleértve. Sürgősségi ellátás 07:30-15:30 között!
+Előre történő bejelentkezés lehetősége: +3699/544-087
+Acut és krónikus sebek kezelése Bioptron polarizált fénnyel. Bemer keringésjavító kezelés lehetőség
+email
+dfoeldv@freemail.hu
+healthcare
+doctor
+name
+opening_hours
+Mo 08:00-12:00
+XML letöltése
+Üdvözöljük az OpenStreetMap-en!
+Az OpenStreetMap egy világtérkép, amelyet hozzád hasonló emberek készítenek és szabad licenc alatt elérhető.
+A hostingot a
+Fastly
+OSMF társasági tagok
+és más
+partnerek
+támogatják.
+Ezen weboldal vagy más, az OpenStreetMap Alapítvány által biztosított infrastruktúra használatával beleegyezel a(z)
+Felhasználási feltételek
+-be.
+További info
+Térképezés indítása
+https://openstreetmap.org/copyright
+https://openstreetmap.org
+Copyright OpenStreetMap és közreműködői, egy nyílt licenc alatt

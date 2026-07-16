@@ -1,0 +1,231 @@
+Telefonkönyv
+A keresés a következőkre működik: Név, Munkahely (szervezeti egység), Beosztás, Munkakör, Mellék
+Szervezetek
+DE Klinikai Központ (DEKK)
+Egészségügyi Szolgáltató Egységek
+Asszisztált Reprodukciós Centrum
+Debreceni Alapellátási és Egészségfejlesztési Intézet
+Anyatejgyűjtő Állomás
+Egészségfejlesztési Iroda
+Egyetemi Foglalkozás-egészségügyi Szolgálat
+Fogászati Alapellátás és Ügyelet
+Háziorvosi Szolgálat
+Iskola- és Óvodaegészségügy
+Vármegyei Védőnői Szolgálat
+Diagnosztikai Egységek
+Igazságügyi Orvostan
+Igazságügyi Genetikai Laboratórium
+Laboratóriumi Medicina
+Orvosi Képalkotó Klinika
+Nukleáris Medicina
+Radiológia
+Orvosi Mikrobiológia
+Pathologia
+Egyetemi Gyógyszertár
+KK Klinikai Szakpszichológiai Központ
+KK Ritka Betegségek Szakértői Központ
+Klinikai Genetikai Központ
+Klinikák
+Aneszteziológiai és Intenzív Terápiás Klinika
+Aneszteziológiai Részleg
+Intenzív Részleg
+Központi Műtő Részleg
+Arc-, Állcsont- és Szájsebészeti Klinika
+Belgyógyászati Klinika
+Belgyógyászati Klinika A épület
+Belgyógyászati Klinika B épület
+Belgyógyászati Klinika C épület
+Belgyógyászati Klinika D épület
+Általános belgyógyászat
+Belgyógyászati Rehabilitáció és Ápolás
+Bőrgyógyászati Klinika
+Bőr- és Nemibeteg Gondozó
+Fogászati Klinika
+Fül-Orr-Gégészeti és Fej-Nyaksebészeti Klinika
+Szilvássy Judit Audiológiai Központ
+Gasztroenterológiai Klinika
+Gyermekgyógyászati Klinika
+Általános Gyermekgyógyászat
+Csecsemő és Gyermek Részleg
+Gyermek Rehabilitáció
+Gyermekgyógyászati Klinika Gyermeksürgősségi Központ
+Gyermekhematológia
+Neonatológia
+Idegsebészeti Klinika
+Kardiológiai és Szívsebészeti Klinika
+Kardiológia
+Szívsebészet
+KK Infektológiai Klinika
+Neurológiai Klinika
+Onkológiai Klinika
+Onkoradiológiai Klinika
+Ortopédiai és Traumatológiai Klinika
+Ortopédia
+Traumatológia és Kézsebészet
+Orvosi Rehabilitáció és Fizikális Medicina Klinika
+Pszichiátriai és Pszichoterápiás Klinika
+Reumatológiai és Immunológiai Klinika
+Sebészeti Klinika
+Robotsebészeti Központ
+Végtagsebészet
+Sportegészségügyi Klinika
+Sürgősségi Klinika
+Szemklinika
+Szülészeti és Nőgyógyászati Klinika
+Nőgyógyászati Meddőségi Központ
+Tüdőgyógyászati Klinika
+Tüdőgondozó
+Urológiai Klinika
+Urológiai és Andrológiai Meddőségi Központ
+Központi Sterilizáló
+Transzlációs Neuropszichiátriai Központ
+Egészségügyi tevékenység ellátásához kapcsolódó szervezeti egységek
+Betegirányító Központ
+KK Elnöki Hivatal
+Jogi és Humánpolitikai Osztály
+Kommunikációs és Arculatfejlesztési Iroda
+KK Koordinációs alelnök
+Ápolási és Szakdolgozói Igazgatóság
+Egyetemi Dietetikai Szolgálat
+Kenézy Gyula Campus Dietetikai Szolgálat
+Klinikai Dietetikai Szolgálat
+Kórházlelkészi Szolgálat
+Központi Betegkísérő Szolgálat KGYC
+Nővérotthon
+Szakdolgozói Felnőttképzési Központ
+Szociális Munka Munkacsoport
+KK Operatív Igazgatóság
+Egészségügyi Pályázatkezelő Csoport
+KK Képzéskoordinációs Osztály
+KK Minőségügyi Iroda
+Kórházhigiénés Osztály
+Gróf Tisza István Campus
+GTIC Betegellátó egységek
+Ápolási Osztály GTIC
+Belgyógyászat-Gasztroenterológia Osztály GTIC
+Egynapos ellátás GTIC
+GTIC Gondozó egységek
+Bőr- és nemibeteg gondozó- szakrendelő GTIC
+Psychiátria Gondozó- Szakrendelő GTIC
+Tüdőgondozó GTIC
+Gyermekosztály GTIC
+Ideggyógyászat Osztály GTIC
+Intenzív és Szubintenzív Megfigyelő Egység (ISZME)
+Központi Anaesthesiológiai és Intenzív Betegellátó Osztály GTIC
+Krónikus Belgyógyászati Osztály GTIC
+Mozgásszervi Rehabilitációs Osztály GTIC
+Operatív Mátrix Osztály GTIC
+Psychiátria Osztály GTIC
+Sürgősségi Betegellátó Osztály GTIC
+Szakrendelések GTIC
+Szülészet-nőgyógyászat Osztály GTIC
+GTIC Egyéb campus szervezeti egységek
+Betegfelvételi Iroda
+Egészségfejlesztési Iroda (EFI)
+Foglalkozás üzemegészségügy
+Igazgatói titkárság
+Kórház higiénia
+Központi szervezet
+GTIC Központi diagnosztikai egységek
+Központi Laboratórium - Transzfúziológia GTIC
+MR GTIC
+Pathologiai Osztály GTIC
+Radiológiai Osztály GTIC
+GTIC Központi egészségügyi szolgáltatások
+Intézményi Gyógyszertár
+Központi Betegszállító Szolgálat
+Központi Dietetikai Szolgálat
+Központi Fizioterápiás Szolgálat
+Központi Műtős Szakasszisztensi és Műtőssegédi Szolgálat
+Központi Sterilizáló GTIC
+Kenézy Gyula Campus
+Járóbeteg Szakellátási Központ
+KGYC Betegellátó egységek
+Egynapos Sebészeti Központ
+Egynapos Szemészeti Központ
+Fürdőgyógyászati Centrum
+Gyermek- és Ifjúságpszichiátriai Osztály
+Hospice-Palliatív Terápiás Osztály
+KGYC Diagnosztikai Osztályok
+Központi Laboratórium
+KGYC egészségügyi tevékenység ellátásához kapcsolódó szervezeti egységek
+KK Diagnosztikáért felelős alelnök
+KK Orvosszakmai alelnök
+Járványügyi Koordinációs Központ
+Felettes szervezeti egységek
+Alárendelt szervezeti egységek
+dr. Papp Csaba Sándor
+igazgató (habil. egyetemi docens)
+Szervezet
+Debreceni Egyetem, DE Klinikai Központ (DEKK), Egészségügyi Szolgáltató Egységek, Debreceni Alapellátási és Egészségfejlesztési Intézet
+Szervezet, beosztás
+Debreceni Alapellátási és Egészségfejlesztési Intézet, igazgató
+Központi telefonszám, mellék
++36 52 411 600
+/ 56143
+E-mail
+papp.csaba@med.unideb.hu
+Cím
+4031 Debrecen Pósa utca 1
+Épület, emelet, szobaszám
+DAEFI Egészségfejlesztési Iroda, 1. emelet, 1
+Website
+Tudóstér profil
+Ács Eszter
+általános ápoló
++36 52 316 666
+/ 23010
+acs.eszter@med.unideb.hu
+4032 Debrecen Nagyerdei körút 98
+II. Nővérszálló
+Baloghné Konc Aranka
+diplomás ápoló
++36 52 411 717
+/ 55863
+baloghne.aranka@med.unideb.hu
+DAEFI Egészségfejlesztési Iroda, 1. emelet
+Bhattoa-Buzás Edina
+egészségügyi menedzser (titkárságvezető)
+ebuzas@med.unideb.hu
+DEKK DAEFI
+Girhiny Szabolcs
+ügyvivő-szakértő
+girhiny.szabolcs@med.unideb.hu
+4031 Debrecen, Pósa u. 1.
+DAEFI Egészségfejlesztési Iroda
+Gyurkó Zsuzsanna
+dietetikus
+gyurko.zsuzsanna@med.unideb.hu
+Kerezsi-Batári Diána
+asszisztens
+/ 59406
+kerezsi-batari.diana@med.unideb.hu
+DAEFI Egészségfejlesztési Iroda (Igazgatóság)
+Kiss András
+portás
+/ 30036
+kiss.andras2@med.unideb.hu
+DAEFI Egészségfejlesztési Iroda, földszint (porta)
+Kovács Evelin
+egészségnevelő (egészségnevelő)
+/ 59463
+Közvetlen telefonszám, mellék
++36 30 281 46 21
+kovacs.evelin@med.unideb.hu
+Kozma Enikő
+egészségügyi menedzser
+kozmae@med.unideb.hu
+4031 Debrecen, Pósa u. 1
+DEKK DAEFI, 1. emelet (DAEFI igazgatóság)
+Lékóné Fecskovics Szilvia
+szilviaf@med.unideb.hu
+lekone.fecskovics.szilvia@fin.unideb.hu
+DEKK DAEFI, 1. emelet
+Lungu Boglárka Katalin
+lungu.boglarka@med.unideb.hu
+DAEFI Egészségfejlesztési Iroda, 1. emelet (igazgatóság)
+Dolgozói adatmódosítás igénylése a DE telefonkönyvében
+|
+Külső személyek rögzítése a DE telefonkönyvében
+Súgó
+Hibabejelentés

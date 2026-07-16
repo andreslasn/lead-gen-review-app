@@ -135,7 +135,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </style>
 
 <style id="ui-fontsize.css-inline-css" type="text/css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
@@ -215,7 +215,8 @@ url('https://kiskunfelegyhaza.hu/wp-content/uploads/avia_fonts/sanyi_uj/sanyi_uj
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -223,7 +224,7 @@ url('https://kiskunfelegyhaza.hu/wp-content/uploads/avia_fonts/sanyi_uj/sanyi_uj
 <div id="wrap_all">
 <header class="all_colors header_color light_bg_color av_header_top av_logo_left av_main_nav_header av_menu_right av_slim av_header_sticky av_header_shrinking av_header_stretch_disabled av_mobile_menu_tablet av_header_searchicon av_header_unstick_top_disabled av_bottom_nav_disabled av_alternate_logo_active av_header_border_disabled" id="header" itemscope="itemscope" itemtype="https://schema.org/WPHeader" role="banner">
 <div class="container_wrap container_wrap_logo" id="header_main">
-<div class="container av-logo-container"><div class="inner-container"><span class="logo avia-standard-logo"><a class="" data-review-original-href="https://kiskunfelegyhaza.hu/" href="#" tabindex="-1"><img alt="Kiskunfélegyháza Város hivatalos honlapja" height="100" title="Kiskunfélegyháza-Weblap-Címer-6-20170309-min" width="300"/></a></span><nav class="main_menu" data-selectname="Válasszon lapot" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation"><div class="avia-menu av-main-nav-wrap"><ul class="menu av-main-nav" id="avia-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-top-level menu-item-top-level-1" id="menu-item-36"><a data-review-original-href="https://kiskunfelegyhaza.hu/" href="#" itemprop="url" role="menuitem" tabindex="-1" title="menu"><span class="avia-bullet"></span><span class="avia-menu-text">FŐOLDAL</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<div class="container av-logo-container"><div class="inner-container"><span class="logo avia-standard-logo"><a data-review-original-href="https://kiskunfelegyhaza.hu/" href="#" tabindex="-1"><img alt="Kiskunfélegyháza Város hivatalos honlapja" height="100" title="Kiskunfélegyháza-Weblap-Címer-6-20170309-min" width="300"/></a></span><nav class="main_menu" data-selectname="Válasszon lapot" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation"><div class="avia-menu av-main-nav-wrap"><ul class="menu av-main-nav" id="avia-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-top-level menu-item-top-level-1" id="menu-item-36"><a data-review-original-href="https://kiskunfelegyhaza.hu/" href="#" itemprop="url" role="menuitem" tabindex="-1" title="menu"><span class="avia-bullet"></span><span class="avia-menu-text">FŐOLDAL</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
 <li class="only_mobile menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-2" id="menu-item-9320"><a data-review-original-href="https://kiskunfelegyhaza.hu/varosi-programok/lista/" href="#" itemprop="url" role="menuitem" tabindex="-1"><span class="avia-bullet"></span><span class="avia-menu-text">Aktuális Programok</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-top-level menu-item-top-level-3" id="menu-item-2588"><a data-review-original-href="#" href="#" itemprop="url" role="menuitem" tabindex="-1" title="menu"><span class="avia-bullet"></span><span class="avia-menu-text">ÖNKORMÁNYZAT</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
 <ul class="sub-menu">
@@ -578,6 +579,6 @@ A pályázat elektronikus úton is benyújtható: a <a data-review-original-hre
 <div class="cookie-revoke-container" style="color: #fff"><span class="cn-buttons-container" id="cn-revoke-buttons"><button aria-label="Cookie beállítás módosítása" class="cn-revoke-cookie cn-button" id="cn-revoke-cookie" style="background-color: #00a99d">Cookie beállítás módosítása</button></span>
 </div>
 </div>
-
+ 
 </body>
 </html>

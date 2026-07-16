@@ -114,7 +114,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }</style><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -279,7 +280,7 @@ Március 15. Tér 8.</p>
 </div>
 <div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div> </div>
 </header>
-<main class="" id="main">
+<main id="main">
 <div class="content-area" id="content" role="main">
 <div class="slider-wrapper relative" id="slider-1484351190">
 <div class="slider slider-nav-dots-square slider-nav-simple slider-nav-normal slider-nav-dark slider-style-normal is-draggable flickity-enabled" data-flickity-options='{
@@ -677,7 +678,7 @@ Március 15. Tér 8.</p>
 <div class="col-inner">
 <div class="box has-hover has-hover box-text-bottom">
 <div class="box-image" style="border-radius:100%;width:50%;">
-<a data-review-original-href="/szolgaltatasok/ultrahang-vizsgalatok/" href="#" tabindex="-1"> <div class="">
+<a data-review-original-href="/szolgaltatasok/ultrahang-vizsgalatok/" href="#" tabindex="-1"> <div>
 <img alt="" class="attachment- size-" decoding="async" height="512" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" width="512"/> </div>
 </a> </div>
 <div class="box-text text-center">
@@ -693,7 +694,7 @@ Március 15. Tér 8.</p>
 <div class="col-inner">
 <div class="box has-hover has-hover box-text-bottom">
 <div class="box-image" style="border-radius:100%;width:50%;">
-<a data-review-original-href="/szolgaltatasok/laborvizsgalatok/" href="#" tabindex="-1"> <div class="">
+<a data-review-original-href="/szolgaltatasok/laborvizsgalatok/" href="#" tabindex="-1"> <div>
 <img alt="" class="attachment- size-" decoding="async" height="512" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" width="512"/> </div>
 </a> </div>
 <div class="box-text text-center">
@@ -709,7 +710,7 @@ Március 15. Tér 8.</p>
 <div class="col-inner">
 <div class="box has-hover has-hover box-text-bottom">
 <div class="box-image" style="border-radius:100%;width:50%;">
-<a data-review-original-href="/szolgaltatasok/kombinalt-vizsgalatok/" href="#" tabindex="-1"> <div class="">
+<a data-review-original-href="/szolgaltatasok/kombinalt-vizsgalatok/" href="#" tabindex="-1"> <div>
 <img alt="" class="attachment- size-" decoding="async" height="512" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" width="512"/> </div>
 </a> </div>
 <div class="box-text text-center">
@@ -725,7 +726,7 @@ Március 15. Tér 8.</p>
 <div class="col-inner">
 <div class="box has-hover has-hover box-text-bottom">
 <div class="box-image" style="border-radius:100%;width:50%;">
-<a data-review-original-href="/szolgaltatasok/kilegzeses-vizsgalatok/" href="#" tabindex="-1"> <div class="">
+<a data-review-original-href="/szolgaltatasok/kilegzeses-vizsgalatok/" href="#" tabindex="-1"> <div>
 <img alt="" class="attachment- size-" decoding="async" height="512" loading="lazy" sizes="auto, (max-width: 512px) 100vw, 512px" width="512"/> </div>
 </a> </div>
 <div class="box-text text-center">
@@ -1291,7 +1292,7 @@ Március 15. Tér 8.</p>
 </style>
 </div>
 <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1522242007">
-<a class="" data-review-original-href="/egeszsegpenztar/" href="#" tabindex="-1"> <div class="img-inner dark">
+<a data-review-original-href="/egeszsegpenztar/" href="#" tabindex="-1"> <div class="img-inner dark">
 <img alt="" class="attachment-original size-original" decoding="async" height="100" loading="lazy" sizes="auto, (max-width: 800px) 100vw, 800px" width="800"/>
 </div>
 </a>

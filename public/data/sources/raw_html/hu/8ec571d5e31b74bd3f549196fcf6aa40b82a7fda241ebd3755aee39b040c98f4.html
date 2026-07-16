@@ -56,12 +56,13 @@
 <title>Martonvásár</title>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body data-page="gov">
-<div class="" id="hide-screen"></div>
+<div id="hide-screen"></div>
 <section class="header no-margin">
 <div class="logo"><a data-review-original-href="/" href="#" tabindex="-1"></a></div>
 <div class="search-wrapper">

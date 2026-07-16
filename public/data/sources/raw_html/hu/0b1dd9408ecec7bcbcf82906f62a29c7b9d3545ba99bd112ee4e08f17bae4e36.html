@@ -37,7 +37,7 @@
 
 
 <style id="ui-fontsize.css-inline-css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
@@ -95,7 +95,8 @@ a,abbr,acronym,address,applet,b,big,blockquote,body,center,cite,code,dd,del,dfn,
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -179,8 +180,8 @@ a,abbr,acronym,address,applet,b,big,blockquote,body,center,cite,code,dd,del,dfn,
 <span class="select_page">Oldal kiválasztása</span>
 <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
 </div>
-</div> </div>
-</div>
+</div> </div> 
+</div> 
 <div class="et_search_outer">
 <div class="container et_search_form_container">
 <div data-review-disabled-form="true">
@@ -188,7 +189,7 @@ a,abbr,acronym,address,applet,b,big,blockquote,body,center,cite,code,dd,del,dfn,
 <span class="et_close_search_field"></span>
 </div>
 </div>
-</header>
+</header> 
 <div id="et-main-area">
 <div id="main-content">
 <article class="post-667 page type-page status-publish hentry" id="post-667">

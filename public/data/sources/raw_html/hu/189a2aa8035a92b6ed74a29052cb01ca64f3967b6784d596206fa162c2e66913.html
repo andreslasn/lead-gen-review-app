@@ -60,8 +60,8 @@ form input.display-none{display:none!important}
 .trailer_box .desc h2 { font-size: 25px; }
 .pricing-box-box.pricing-box-featured  { color: #d9c186; }
 .pricing-box-box.pricing-box-featured .plan-header h2 { color: #102111; }
-.pricing-box-box.pricing-box-featured .plan-header .price sup.currency,
-.pricing-box-box.pricing-box-featured .plan-header .price > span,
+.pricing-box-box.pricing-box-featured .plan-header .price sup.currency, 
+.pricing-box-box.pricing-box-featured .plan-header .price > span, 
 .pricing-box-box.pricing-box-featured .plan-header .price sup.period  { color: #f2643d; }
 /*# sourceURL=mfn-custom-inline-css */
 </style>
@@ -97,7 +97,8 @@ https://yellowpencil.waspthemes.com/
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -229,9 +230,9 @@ https://yellowpencil.waspthemes.com/
 <rs-slides>
 <rs-slide data-anim="ei:d;eo:d;s:200;r:0;t:fade;sl:d;" data-key="rs-1" data-title="Slide">
 <img class="rev-slidebg" data-no-retina="" data-panzoom="d:9000;ss:100%;se:107%;os:0/0px;oe:50px/0px;" data-parallax="off" height="1152" title="esztetikai-lezer-centrum-tavasz" width="1920"/>
-<rs-layer class="rs-pxl-4" data-color="#ffffff" data-frame_0="tp:600;" data-frame_1="tp:600;sR:10;" data-frame_999="o:0;tp:600;st:w;sR:8690.0006103516;" data-padding="r:10;b:2;l:10;" data-rsp_ch="on" data-text="s:60;l:80;fw:200;" data-type="text" data-xy="x:c;xo:-358px;y:c;yo:-186px;" id="slider-1-slide-1-layer-1" style="z-index:5;font-family:Muli;">Szép és <br/>Egészséges <br/>Bőr Önnek!
-</rs-layer><rs-layer class="rs-pxl-4" data-color="#ffffff" data-frame_0="tp:600;" data-frame_1="tp:600;sR:10;" data-frame_999="o:0;tp:600;st:w;sR:8690.0006103516;" data-padding="t:3;r:10;b:8;l:10;" data-rsp_ch="on" data-text="s:40;l:40;fw:800;" data-type="text" data-xy="x:c;xo:-239px;y:c;yo:-15px;" id="slider-1-slide-1-layer-2" style="z-index:6;background-color:rgba(0,0,0,0.3);font-family:Muli;">Ismerje meg az <br/>Esztétikai Lézer Centrumot!
-</rs-layer><a class="rs-layer rev-btn rs-pxl-4" data-border="bos:solid;boc:#ffffff;bow:2px,2px,2px,2px;bor:4px,4px,4px,4px;" data-color="#ffffff" data-dim="w:178px;" data-frame_0="tp:600;" data-frame_1="tp:600;sR:10;" data-frame_999="o:0;tp:600;st:w;sR:8690.0006103516;" data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:4px,4px,4px,4px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;" data-padding="t:12;r:35;b:12;l:35;" data-review-original-href="/bemutatkozas" data-rsp_bd="off" data-text="s:14;l:17;fw:700;a:inherit;" data-type="button" data-vbility="t,t,f,f" data-xy="x:c;xo:-426px;y:c;yo:74px;" href="#" id="slider-1-slide-1-layer-3" style="z-index:7;background-color:rgba(142,142,147,0.3);font-family:Muli;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;" tabindex="-1" target="_self">Bemutatkozás
+<rs-layer class="rs-pxl-4" data-color="#ffffff" data-frame_0="tp:600;" data-frame_1="tp:600;sR:10;" data-frame_999="o:0;tp:600;st:w;sR:8690.0006103516;" data-padding="r:10;b:2;l:10;" data-rsp_ch="on" data-text="s:60;l:80;fw:200;" data-type="text" data-xy="x:c;xo:-358px;y:c;yo:-186px;" id="slider-1-slide-1-layer-1" style="z-index:5;font-family:Muli;">Szép és <br/>Egészséges <br/>Bőr Önnek! 
+</rs-layer><rs-layer class="rs-pxl-4" data-color="#ffffff" data-frame_0="tp:600;" data-frame_1="tp:600;sR:10;" data-frame_999="o:0;tp:600;st:w;sR:8690.0006103516;" data-padding="t:3;r:10;b:8;l:10;" data-rsp_ch="on" data-text="s:40;l:40;fw:800;" data-type="text" data-xy="x:c;xo:-239px;y:c;yo:-15px;" id="slider-1-slide-1-layer-2" style="z-index:6;background-color:rgba(0,0,0,0.3);font-family:Muli;">Ismerje meg az <br/>Esztétikai Lézer Centrumot! 
+</rs-layer><a class="rs-layer rev-btn rs-pxl-4" data-border="bos:solid;boc:#ffffff;bow:2px,2px,2px,2px;bor:4px,4px,4px,4px;" data-color="#ffffff" data-dim="w:178px;" data-frame_0="tp:600;" data-frame_1="tp:600;sR:10;" data-frame_999="o:0;tp:600;st:w;sR:8690.0006103516;" data-frame_hover="c:#000;bgc:#fff;boc:#fff;bor:4px,4px,4px,4px;bos:solid;bow:2px,2px,2px,2px;oX:50;oY:50;sp:0;" data-padding="t:12;r:35;b:12;l:35;" data-review-original-href="/bemutatkozas" data-rsp_bd="off" data-text="s:14;l:17;fw:700;a:inherit;" data-type="button" data-vbility="t,t,f,f" data-xy="x:c;xo:-426px;y:c;yo:74px;" href="#" id="slider-1-slide-1-layer-3" style="z-index:7;background-color:rgba(142,142,147,0.3);font-family:Muli;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;" tabindex="-1" target="_self">Bemutatkozás 
 </a> </rs-slide>
 </rs-slides>
 <rs-static-layers></rs-static-layers>

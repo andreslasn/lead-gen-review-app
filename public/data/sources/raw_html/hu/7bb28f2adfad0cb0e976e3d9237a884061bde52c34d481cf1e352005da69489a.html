@@ -40,7 +40,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -564,7 +565,7 @@ Deutsch</span>
 </a>
 </li>
 <li>
-<a class="" data-link="language-change" data-review-original-href="?lang=en" href="#" tabindex="-1">
+<a data-link="language-change" data-review-original-href="?lang=en" href="#" tabindex="-1">
 <img/>
 <span class="languageName">
 English</span>
@@ -599,7 +600,7 @@ Italiano</span>
 </a>
 </li>
 <li>
-<a class="" data-link="language-change" data-review-original-href="?lang=hu" href="#" tabindex="-1">
+<a data-link="language-change" data-review-original-href="?lang=hu" href="#" tabindex="-1">
 <img/>
 <span class="languageName">
 Magyar</span>
@@ -752,7 +753,7 @@ Deutsch</span>
 </a>
 </li>
 <li>
-<a class="" data-link="language-change" data-review-original-href="?lang=en" href="#" tabindex="-1">
+<a data-link="language-change" data-review-original-href="?lang=en" href="#" tabindex="-1">
 <img/>
 <span class="languageName">
 English</span>
@@ -787,7 +788,7 @@ Italiano</span>
 </a>
 </li>
 <li>
-<a class="" data-link="language-change" data-review-original-href="?lang=hu" href="#" tabindex="-1">
+<a data-link="language-change" data-review-original-href="?lang=hu" href="#" tabindex="-1">
 <img/>
 <span class="languageName">
 Magyar</span>

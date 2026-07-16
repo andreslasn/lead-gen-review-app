@@ -357,7 +357,7 @@ table td {
   background-size: absolute;
 }
 
-
+    
 .header-menu-primary__item--dropdown .header-menu-primary__submenu--level-0 .header-menu-primary__item-link {
   display: block;
   padding: 7px 20px 7px 20px;
@@ -392,7 +392,7 @@ table td {
 .post-archive--grid.post-archive--layout-style-light .post-permalink__link {
   display: none;
 }
-
+	
 .ngg-albumoverview.default-view .ngg-album-compact {
   text-align: center;
   margin: 0 0px 5px 0 !important;
@@ -411,7 +411,8 @@ table td {
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

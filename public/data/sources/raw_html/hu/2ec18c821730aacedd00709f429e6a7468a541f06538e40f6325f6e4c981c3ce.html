@@ -81,7 +81,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -1201,7 +1202,7 @@ A Telefondoktor egyszemélyes darab, méghozzá az elsősorban rendezőként ism
 <div class="submenu-text expanded" data-menu="programhelyszinek">
 <h1 class="katlan-main-title">Fesztiváltérkép</h1>
 <p style="text-align:center; max-width:800px; margin:0 auto 30px;">
-                Nagyítható, böngészhető, kattintható térkép – az egyes helyszínekre kattintva az ottani programra vezető link található!
+                Nagyítható, böngészhető, kattintható térkép – az egyes helyszínekre kattintva az ottani programra vezető link található! 
                 <br/>
                 A bal felső sarokban látható ikonra kattintva egy lista is előugrik.
             </p>

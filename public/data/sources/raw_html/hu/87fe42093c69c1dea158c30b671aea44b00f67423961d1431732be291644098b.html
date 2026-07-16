@@ -58,7 +58,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta content="#ffffff" name="theme-color"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -102,7 +103,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <span class="line line2"></span>
 <span class="line line3"></span>
 </div>
-<ul class="" id="menu-primary-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-53" id="menu-item-53"><a aria-current="page" data-review-original-href="https://szegeduzemorvos.hu/rolunk/" href="#" tabindex="-1">Rólunk</a></li>
+<ul id="menu-primary-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-53" id="menu-item-53"><a aria-current="page" data-review-original-href="https://szegeduzemorvos.hu/rolunk/" href="#" tabindex="-1">Rólunk</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51" id="menu-item-51"><a data-review-original-href="https://szegeduzemorvos.hu/szolgaltatasok/" href="#" tabindex="-1">Szolgáltatások</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52" id="menu-item-52"><a data-review-original-href="https://szegeduzemorvos.hu/referenciak/" href="#" tabindex="-1">Referenciák</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232" id="menu-item-232"><a data-review-original-href="https://szegeduzemorvos.hu/blog/" href="#" tabindex="-1">Blog</a></li>
@@ -119,7 +120,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div class="container-fluid">
 <div class="row">
 <div class="col-12">
-<ul class="" id="menu-primary-menu-1"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-53"><a aria-current="page" data-review-original-href="https://szegeduzemorvos.hu/rolunk/" href="#" tabindex="-1">Rólunk</a></li>
+<ul id="menu-primary-menu-1"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-53"><a aria-current="page" data-review-original-href="https://szegeduzemorvos.hu/rolunk/" href="#" tabindex="-1">Rólunk</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a data-review-original-href="https://szegeduzemorvos.hu/szolgaltatasok/" href="#" tabindex="-1">Szolgáltatások</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a data-review-original-href="https://szegeduzemorvos.hu/referenciak/" href="#" tabindex="-1">Referenciák</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a data-review-original-href="https://szegeduzemorvos.hu/blog/" href="#" tabindex="-1">Blog</a></li>
@@ -400,7 +401,7 @@ minőségirányítási rendszerrel működik. Rendszeresen auditáljuk szolgált
 </div>
 <div class="col-12 col-md-6 col-lg-3 menu">
 <h4>Menü</h4>
-<ul class="" id="menu-primary-menu-2"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-53"><a aria-current="page" data-review-original-href="https://szegeduzemorvos.hu/rolunk/" href="#" tabindex="-1">Rólunk</a></li>
+<ul id="menu-primary-menu-2"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-53"><a aria-current="page" data-review-original-href="https://szegeduzemorvos.hu/rolunk/" href="#" tabindex="-1">Rólunk</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a data-review-original-href="https://szegeduzemorvos.hu/szolgaltatasok/" href="#" tabindex="-1">Szolgáltatások</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a data-review-original-href="https://szegeduzemorvos.hu/referenciak/" href="#" tabindex="-1">Referenciák</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a data-review-original-href="https://szegeduzemorvos.hu/blog/" href="#" tabindex="-1">Blog</a></li>
@@ -425,8 +426,8 @@ minőségirányítási rendszerrel működik. Rendszeresen auditáljuk szolgált
 <div class="row">
 <div class="col-12">
 <div class="copyright">
-© 2026 Foglalkozás-egészségügyi / Üzemorvosi Szolgáltató, Szeged. Minden jog fenntartva.
-<ul class="" id="menu-privacy-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60" id="menu-item-60"><a data-review-original-href="https://szegeduzemorvos.hu/impresszum/" href="#" tabindex="-1">Impresszum</a></li>
+© 2026 Foglalkozás-egészségügyi / Üzemorvosi Szolgáltató, Szeged. Minden jog fenntartva.  
+<ul id="menu-privacy-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60" id="menu-item-60"><a data-review-original-href="https://szegeduzemorvos.hu/impresszum/" href="#" tabindex="-1">Impresszum</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59" id="menu-item-59"><a data-review-original-href="https://szegeduzemorvos.hu/adatkezelesi-tajekoztato/" href="#" tabindex="-1">Adatkezelési tájékoztató</a></li>
 </ul>
 </div>

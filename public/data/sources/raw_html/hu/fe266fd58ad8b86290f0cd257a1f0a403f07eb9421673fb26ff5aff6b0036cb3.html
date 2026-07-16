@@ -38,11 +38,12 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="">
+<body>
 
 <noscript></noscript>
 
@@ -666,7 +667,7 @@
 <div class="row">
 <div class="col-12 col-md-6 col-lg-4">
 <div class="mb-2">
-<a class="" data-review-original-href="https://maps.app.goo.gl/nA8gTzeVNyfi2iMp6" href="#" tabindex="-1" target="_blank">
+<a data-review-original-href="https://maps.app.goo.gl/nA8gTzeVNyfi2iMp6" href="#" tabindex="-1" target="_blank">
 <i class="fa-solid fa-location-dot fc-main mr-1"></i> 3400 Mezőkövesd, József Attila u. 3
                     </a>
 </div>
@@ -698,7 +699,7 @@
 <div class="row">
 <div class="col-12 col-md-6 col-lg-4">
 <div class="mb-2">
-<a class="" data-review-original-href="https://www.google.com/maps/place/Mez%C5%91k%C3%B6vesd,+M%C3%A1ty%C3%A1s+kir%C3%A1ly+%C3%BAt+75,+3400/@47.8064325,20.5624119,17z/data=!3m1!4b1!4m6!3m5!1s0x4740eaa6a3677545:0x49478d7a872c702!8m2!3d47.8064325!4d20.5649868!16s%2Fg%2F11csn5wy_y?entry=ttu" href="#" tabindex="-1" target="_blank">
+<a data-review-original-href="https://www.google.com/maps/place/Mez%C5%91k%C3%B6vesd,+M%C3%A1ty%C3%A1s+kir%C3%A1ly+%C3%BAt+75,+3400/@47.8064325,20.5624119,17z/data=!3m1!4b1!4m6!3m5!1s0x4740eaa6a3677545:0x49478d7a872c702!8m2!3d47.8064325!4d20.5649868!16s%2Fg%2F11csn5wy_y?entry=ttu" href="#" tabindex="-1" target="_blank">
 <i class="fa-solid fa-location-dot fc-main mr-1"></i> 3400 Mezőkövesd, Mátyás király u. 75.
                     </a>
 </div>
@@ -718,13 +719,13 @@
 </div>
 <div class="col-12 col-md-6 col-lg-4">
 <div class="mb-2">
-<a class="" data-review-original-href="mailto:" href="#" tabindex="-1">
+<a data-review-original-href="mailto:" href="#" tabindex="-1">
 <i class="fa-solid fa-envelope fc-main mr-1"></i>
                         mezokovesd.rendelo@t-online.hu
                     </a>
 </div>
 <div class="mb-2">
-<a class="" data-review-original-href="https://www.mkrendelo.hu/" href="#" tabindex="-1" target="_blank">
+<a data-review-original-href="https://www.mkrendelo.hu/" href="#" tabindex="-1" target="_blank">
 <i class="fa-solid fa-circle-info fc-main mr-1"></i> https://www.mkrendelo.hu/
                     </a>
 </div>
@@ -1065,7 +1066,7 @@
 <div class="row">
 <div class="col-12 col-md-6 col-lg-4">
 <div class="mb-2">
-<a class="" data-review-original-href="https://maps.app.goo.gl/53jKhYnknJGYAjtN8" href="#" tabindex="-1" target="_blank">
+<a data-review-original-href="https://maps.app.goo.gl/53jKhYnknJGYAjtN8" href="#" tabindex="-1" target="_blank">
 <i class="fa-solid fa-location-dot fc-main mr-1"></i> 3400 Mezőkövesd, Széchenyi u. 1.
                     </a>
 </div>
@@ -1082,7 +1083,7 @@
 </div>
 <div class="col-12 col-md-6 col-lg-4">
 <div class="mb-2">
-<a class="" data-review-original-href="mailto:" href="#" tabindex="-1">
+<a data-review-original-href="mailto:" href="#" tabindex="-1">
 <i class="fa-solid fa-envelope fc-main mr-1"></i>
                         belgyogyaszat.mezokovesd@mfkh.hu
                     </a>
@@ -1113,7 +1114,7 @@
 <div class="row">
 <div class="col-12 col-md-6 col-lg-4">
 <div class="mb-2">
-<a class="" data-review-original-href="https://maps.app.goo.gl/dLz5A9Miye9wLkdEA" href="#" tabindex="-1" target="_blank">
+<a data-review-original-href="https://maps.app.goo.gl/dLz5A9Miye9wLkdEA" href="#" tabindex="-1" target="_blank">
 <i class="fa-solid fa-location-dot fc-main mr-1"></i> 3400 Mezőkövesd-Zsóry, Fülemüle u. 1.
                     </a>
 </div>
@@ -1128,7 +1129,7 @@
 </div>
 <div class="col-12 col-md-6 col-lg-4">
 <div class="mb-2">
-<a class="" data-review-original-href="mailto:" href="#" tabindex="-1">
+<a data-review-original-href="mailto:" href="#" tabindex="-1">
 <i class="fa-solid fa-envelope fc-main mr-1"></i>
                         mrkzsory@mrk-mezokovesd.hu
                     </a>
@@ -1263,7 +1264,7 @@
 <p class="text-center mb-3 mb-lg-3 text-white">
             Copyright © Mezőkövesd Önkormányzata Minden jog fenntartva.
         </p>
-<div class="">
+<div>
 <div class="d-flex justify-content-center flex-wrap mb-2 mb-lg-0">
 <a class="p-1 pl-lg-0 text-white mr-lg-2" data-review-original-href="/adatvedelmi-iranyelvek" href="#" tabindex="-1">
                     Adatvédelmi irányelvek

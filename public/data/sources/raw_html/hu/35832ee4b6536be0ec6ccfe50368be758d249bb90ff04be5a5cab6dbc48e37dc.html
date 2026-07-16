@@ -25,7 +25,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -873,7 +874,7 @@
 <div class="footer-inner">
 <div class="cog--mq">
 <div class="footer-top">
-<a class="" data-review-original-href="/" href="#" tabindex="-1" title="Kezdőlap">
+<a data-review-original-href="/" href="#" tabindex="-1" title="Kezdőlap">
 <img alt="Visegrád" class="site-logo--footer"/>
 </a>
 <div class="footer-description"><span class="footer-bottom__copy">© 2021 </span>Visegrád Város hivatalos honlapja</div>

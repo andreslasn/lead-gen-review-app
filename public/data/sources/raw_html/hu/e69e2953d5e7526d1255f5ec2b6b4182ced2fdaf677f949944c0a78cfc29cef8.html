@@ -75,7 +75,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 
 <style id="ui-fontsize.css-inline-css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 /*# sourceURL=ui-fontsize.css-inline-css */
 </style>
 
@@ -105,7 +105,7 @@ html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px
   border-radius: 4px;
 }
 
-button:focus-visible,
+button:focus-visible, 
 a:focus-visible {
   outline-color: #e67e22 !important;
 }
@@ -138,7 +138,8 @@ a:focus-visible {
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -1099,7 +1100,7 @@ Csóka Zita<br/>
 <div class="main-col first tf_clearfix">
 <div class="footer-left-wrap first">
 <div class="footer-logo-wrapper tf_clearfix">
-<div id="footer-logo"><a data-review-original-href="https://www.rackeveszakrendelo.hu" href="#" tabindex="-1" title="Szakorvosi Rendelőintézet Ráckeve"><span>Szakorvosi Rendelőintézet Ráckeve</span></a></div>
+<div id="footer-logo"><a data-review-original-href="https://www.rackeveszakrendelo.hu" href="#" tabindex="-1" title="Szakorvosi Rendelőintézet Ráckeve"><span>Szakorvosi Rendelőintézet Ráckeve</span></a></div> 
 </div>
 <div class="social-widget tf_inline_b tf_vmiddle">
 <div class="widget widget_text" id="text-1010"> <div class="textwidget"><p>Ráckeve Város Szakorvosi Rendelőintézete ellátási területe közel 40 000 főt számlál. <strong>Ellátandó települések:</strong> Ráckeve, Szigetcsép, Szigetszentmárton, Szigetújfalu, Szigetbecse, Makád, Lórév, Kiskunlacháza, Dömsöd és Apaj.</p>

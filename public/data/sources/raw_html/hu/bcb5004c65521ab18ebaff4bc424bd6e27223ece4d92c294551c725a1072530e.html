@@ -29,7 +29,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -62,7 +63,7 @@
 <ul class="menu-list">
 <h3>
 </h3>
-<li class="menu-item"> <a class="" data-hover="Rólunk" data-review-original-href="about-us" href="#" tabindex="-1">Rólunk</a> </li> <li class="menu-item"> <a class="" data-hover="Jegyvásárlás" data-review-original-href="tickets" href="#" tabindex="-1">Jegyvásárlás</a> </li> <li class="menu-item"> <a class="" data-hover="Szolgáltatásaink" data-review-original-href="services" href="#" tabindex="-1">Szolgáltatásaink</a> </li> <li class="menu-item"> <a class="" data-hover="Programjaink" data-review-original-href="programs" href="#" tabindex="-1">Programjaink</a> </li> <li class="menu-item"> <a class="" data-hover="Szakmai oldal" data-review-original-href="technical-page" href="#" tabindex="-1">Szakmai oldal</a> </li> <li class="menu-item d-flex align-items-center px-0 mt-50">
+<li class="menu-item"> <a data-hover="Rólunk" data-review-original-href="about-us" href="#" tabindex="-1">Rólunk</a> </li> <li class="menu-item"> <a data-hover="Jegyvásárlás" data-review-original-href="tickets" href="#" tabindex="-1">Jegyvásárlás</a> </li> <li class="menu-item"> <a data-hover="Szolgáltatásaink" data-review-original-href="services" href="#" tabindex="-1">Szolgáltatásaink</a> </li> <li class="menu-item"> <a data-hover="Programjaink" data-review-original-href="programs" href="#" tabindex="-1">Programjaink</a> </li> <li class="menu-item"> <a data-hover="Szakmai oldal" data-review-original-href="technical-page" href="#" tabindex="-1">Szakmai oldal</a> </li> <li class="menu-item d-flex align-items-center px-0 mt-50">
 <div class="menu-item-logo d-none d-md-block text-center w-logo">
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
@@ -1022,10 +1023,10 @@
 <a aria-label="Change language to hungarian" class="active" data-review-original-href="/hu" href="#" tabindex="-1">hu</a>
 </div>
 <div class="bd-header-lang__item">
-<a aria-label="Change language to english" class="" data-review-original-href="/en" href="#" tabindex="-1">en</a>
+<a aria-label="Change language to english" data-review-original-href="/en" href="#" tabindex="-1">en</a>
 </div>
 <div class="bd-header-lang__item">
-<a aria-label="Change language to german" class="" data-review-original-href="/de" href="#" tabindex="-1">de</a>
+<a aria-label="Change language to german" data-review-original-href="/de" href="#" tabindex="-1">de</a>
 </div>
 </div>
 </div>
@@ -1215,7 +1216,7 @@
 </a>
 </div>
 <div class="w-100">
-<h4 class=""><a data-review-original-href="eszterhaza/" href="#" tabindex="-1">ESTERHÁZY-KASTÉLY FERTŐDÖN</a></h4>
+<h4><a data-review-original-href="eszterhaza/" href="#" tabindex="-1">ESTERHÁZY-KASTÉLY FERTŐDÖN</a></h4>
 <div><p>Fedezd fel a magyar Versailles-t, ahol egykor Haydn szerzett zenét! Az ország második legnagyobb és legdíszesebb főúri kastélyában barokk pompa, rokokó fényűzés és romantikus franciakert vár.</p></div>
 </div>
 </div> <div class="col-12 col-lg-4 equal-high-cards mb-4 mb-lg-0">
@@ -1234,7 +1235,7 @@
 </a>
 </div>
 <div class="w-100">
-<h4 class=""><a data-review-original-href="nagycenk/" href="#" tabindex="-1">NAGYCENKI SZÉCHENYI-KASTÉLY</a></h4>
+<h4><a data-review-original-href="nagycenk/" href="#" tabindex="-1">NAGYCENKI SZÉCHENYI-KASTÉLY</a></h4>
 <div><p>Ismerd meg a “legnagyobb magyar” egykori otthonát! A kiterjedt nagycenki birtokon egy 18. századi klasszicista kastély, benne Széchenyi István emlékmúzeuma vár, az épület körül pedig vadregényes angolkert!</p>
 </div>
 </div>
@@ -1254,7 +1255,7 @@
 </a>
 </div>
 <div class="w-100">
-<h4 class=""><a data-review-original-href="sopronbanfalvi-kolostor/" href="#" tabindex="-1">SOPRONBÁNFALVI KOLOSTOR HOTEL ÉS ÉTTEREM</a></h4>
+<h4><a data-review-original-href="sopronbanfalvi-kolostor/" href="#" tabindex="-1">SOPRONBÁNFALVI KOLOSTOR HOTEL ÉS ÉTTEREM</a></h4>
 <div><p>Látogass el a középkori kolostorból kialakított hotel-étterembe! A határvidék erdeibe simuló középkori épületben szállás, a rokokó freskókkal dekorált díszteremben pedig változatos fogások várnak! </p>
 </div>
 </div>
@@ -1403,7 +1404,7 @@
 </div>
 </div>
 </a>
-</div>
+</div> 
 </div>
 </div>
 </div>
@@ -1722,7 +1723,7 @@
 </div>
 </a>
 </div>
-</div>
+</div> 
 </div>
 </div>
 </div>
@@ -1802,24 +1803,24 @@
 <div class="bd-booking-3__input">
 <label for="fname">Név</label>
 <div class="bd-booking-3__input-inner p-relative">
-<input class="" id="fname" name="fname" placeholder="Név" type="text"/>
+<input id="fname" name="fname" placeholder="Név" type="text"/>
 </div>
 </div>
 <div class="bd-booking-3__input">
 <label for="phone">Telefon szám</label>
 <div class="bd-booking-3__input-inner p-relative">
-<input class="" id="phone" name="phone" placeholder="Telefon szám" type="phone"/>
+<input id="phone" name="phone" placeholder="Telefon szám" type="phone"/>
 </div>
 </div>
 <div class="bd-booking-3__input">
 <label for="email">Email</label>
 <div class="bd-booking-3__input-inner p-relative">
-<input class="" id="email" name="email" placeholder="Email" type="email"/>
+<input id="email" name="email" placeholder="Email" type="email"/>
 </div>
 </div>
 <div class="bd-booking-3__input mb-15">
 <label for="date">Időpont</label>
-<input class="" id="date" name="date" placeholder="Időpont" type="date"/>
+<input id="date" name="date" placeholder="Időpont" type="date"/>
 </div>
 <div class="bd-booking-3__input">
 <label for="dateOf">Időpont</label>
@@ -1928,7 +1929,7 @@
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6">
-<div class="">
+<div>
 <img alt="" class="w-100"/>
 </div>
 </div>
@@ -2031,27 +2032,27 @@
 <div class="bd-booking-3__input mb-3">
 <label for="contact_nameEszK">Név</label>
 <div class="bd-booking-3__input-inner p-relative">
-<input autocomplete="off" class="" id="contact_nameEszK" name="contact_nameEszK" placeholder="Név" type="text"/>
+<input autocomplete="off" id="contact_nameEszK" name="contact_nameEszK" placeholder="Név" type="text"/>
 <input class="control-input" name="name" type="text" value=""/>
 </div>
 </div>
 <div class="bd-booking-3__input mb-3">
 <label for="phone">Telefonszám</label>
 <div class="bd-booking-3__input-inner p-relative">
-<input autocomplete="phone" class="" id="contact_phoneEszK" name="contact_phoneEszK" placeholder="Telefonszám" type="contact_phoneEszK"/>
+<input autocomplete="phone" id="contact_phoneEszK" name="contact_phoneEszK" placeholder="Telefonszám" type="contact_phoneEszK"/>
 <input class="control-input" name="email" type="text" value=""/>
 </div>
 </div>
 <div class="bd-booking-3__input mb-3">
 <label for="contact_emailEszK">Email</label>
 <div class="bd-booking-3__input-inner p-relative">
-<input autocomplete="email" class="" id="contact_emailEszK" name="contact_emailEszK" placeholder="Email" type="email"/>
+<input autocomplete="email" id="contact_emailEszK" name="contact_emailEszK" placeholder="Email" type="email"/>
 </div>
 </div>
 <div class="bd-booking-3__input mb-3 bd-booking-4__input">
 <label for="contact_messageEszK">Üzenet</label>
 <div class="bd-booking-4__input-inner p-relative">
-<textarea autocomplete="off" class="" id="contact_messageEszK" name="contact_messageEszK" placeholder="Üzenet" rows="4"></textarea>
+<textarea autocomplete="off" id="contact_messageEszK" name="contact_messageEszK" placeholder="Üzenet" rows="4"></textarea>
 </div>
 </div>
 

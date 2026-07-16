@@ -30,7 +30,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -90,8 +91,8 @@
 <div id="wrapper">
 <section id="main">
 <h1>
-				Cégregiszter
-				<span> |
+				Cégregiszter 
+				<span> | 
 								Egészség, életmód								</span>
 </h1>
 <div class="read nopd">
@@ -193,7 +194,7 @@
 </div>
 <div class="copyright">
 				Copyright InfoVárosok.
-
+				
 		Minden jog fenntartva. | Web design &amp; arculat by <a data-review-original-href="http://www.voov.hu" href="#" tabindex="-1">Voov</a>
 </div>
 </footer>

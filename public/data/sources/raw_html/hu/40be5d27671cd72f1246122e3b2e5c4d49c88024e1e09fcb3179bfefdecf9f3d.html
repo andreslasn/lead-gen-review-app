@@ -144,14 +144,15 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="wp-singular post-template-default single single-post postid-14164 single-format-standard wp-theme-barch-theme ally-default wph-menu-overlay-black wpb-js-composer js-comp-ver-6.7.0 vc_responsive">
 
 <div class="preloader-overlay">
-<div class="preloader main-site-preloader"></div>
+
 </div>
 
 <div id="page-top"></div>
@@ -488,8 +489,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 
 <div class="container copyright-line">
-<div class="text">© Sajóvámos Község Önkormányzata 2002 - 2026 Minden jog fenntartva !
-A weboldalak tartalmának, képeinek másodközlése, felhasználása csak a tulajdonos írásos engedélyével lehetséges.
+<div class="text">© Sajóvámos Község Önkormányzata 2002 - 2026 Minden jog fenntartva ! 
+A weboldalak tartalmának, képeinek másodközlése, felhasználása csak a tulajdonos írásos engedélyével lehetséges.  
 
 Készítette: <a data-review-original-href="https://nagyisu.com/" href="#" tabindex="-1" target="_blank" title="Professzionális Weboldalak készítése vállalkozásoknak és magánszemélyeknek ">Nagyisu</a> </div>
 <nav></nav>
@@ -581,7 +582,7 @@ Készítette: <a data-review-original-href="https://nagyisu.com/" href="#" tabin
 <div class="_5w1r _3_om _5wdf">
 <div class="_4gx_">
 <div class="_1aa6">
-<div class="">
+<div>
 <p>Ez a weboldal sütiket (kisméretű szöveges fájlokat) használ, hogy a lehető legjobb felhasználói élményt nyújtsa számodra. A süti információkat a böngésződ tárolja, és olyasmiket csinál, mint például felismer, hogy jártál-e már ezen a weblapon, és ha igen, megőrzi, hogy mit csináltál és hogyan szereted használni a weboldalt, vagy például névtelen információkat gyűjt a látogatókról, ezzel segítve az én munkámat, hogy tudjam, melyik tartalom volt a leghasznosabb számodra.</p>
 <p>A sütik beállításait a bal oldalon található füleken módosíthatod.</p>
 </div>

@@ -39,12 +39,13 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
-<body class="loading home">
-<div class="loader active"></div>
+<body class="home">
+
 <div class="overflow">
 <header class="index">
 <div class="container">
@@ -290,9 +291,7 @@
 </div>
 </div>
 <div class="resultSearch">
-<div class="loader">
-<div class="loading"></div>
-</div>
+
 <ul class="hidden">
 </ul>
 </div>
@@ -935,7 +934,7 @@ Az utakról elkoptak mára már ezek a lengyel autók, melyek a régi idők "pre
 <div class="col-lg-5 col-xs-12">
 <div class="widgetBox widgetMap">
 <div class="map" data-icon="/uploads/widget/map/small-location-dot-solid-16450246581385.png" data-lat="46.8941316" data-lng="19.9659482" data-markers='[{"marker-lat":"46.89413159999999","marker-lng":"19.9659482","marker-title":"Lakitelek, Szentkirályi út 5., 6065 Magyarország","marker-desc":"","marker-url":""}]' data-style="" data-zoom="12" style="height: 300px;">
-<div class="loader active"></div>
+
 <div class="error">
                 Nincs elfogadva a funkcionális süti, így a google térképet nem tudjuk megjeleníteni.<br/>
 <button class="btn btn-submit function-cookie" type="button">Funkcionális süti elfogadása</button>
@@ -1065,7 +1064,7 @@ A süti tájékoztatónkat a SÜTI TÁJÉKOZTATÓ alatt olvashat.
 </div>
 <div class="cookie-panel cookie-aszf">
 <div class="cookie-header">Adatvédelmi nyilatkozat</div>
-<div class="cookie-desc"><div class="loader active"></div></div>
+<div class="cookie-desc"></div>
 <div class="row">
 <div class="col-sm-6 col-xs-12">
 <span class="btn btn-block cookie-accept">Elfogadás</span>

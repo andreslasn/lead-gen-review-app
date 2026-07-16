@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head><body><!DOCTYPE HTML>
@@ -636,7 +637,7 @@ Fax: 22/430 002
     #cookiebar p {color:white;display:inline-block;}
     #cookiebar a {color:white;font-weight:bold;}
     #cookiebar #cookieaccept {display:inline-block;background-color:#cb0a03;color:#fff;border:none;margin:10px;border-color:white;padding:8px 10px;cursor:pointer;}
-
+    
 </style>
 
 </body>

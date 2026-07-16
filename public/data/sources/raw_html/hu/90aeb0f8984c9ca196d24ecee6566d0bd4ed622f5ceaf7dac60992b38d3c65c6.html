@@ -62,12 +62,13 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body>
-<div class="loader" style=""></div>
+
 <nav id="mobile-menu">
 <ul>
 <li><a data-review-original-href="/main.php" href="#" tabindex="-1">Kezdőlap</a></li>
@@ -234,7 +235,7 @@
 <div class="html_edited">
 <div class="page_title">
 <h1>EGÉSZSÉGÜGY
-
+		
 		</h1>
 </div>
 <div> </div>
@@ -491,8 +492,8 @@ dr. Takács Daniella<br/>
 <br/>
 Ügyeleti telefonszám:<br/>
 +36-30-132-5525
-
-
+                
+                
 		   </div>
 
 </div>
@@ -539,6 +540,6 @@ dr. Takács Daniella<br/>
 </div>
 </div>
 </div>
-</div>
+</div> 
 </body>
 </html>

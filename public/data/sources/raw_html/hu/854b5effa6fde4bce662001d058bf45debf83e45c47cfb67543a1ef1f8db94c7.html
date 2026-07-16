@@ -211,7 +211,7 @@ a#szechenyi2020 img {
 }
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {	
   #szechenyi2020,
   #szechenyi-terv-plusz {
     top: 91px !important;
@@ -254,10 +254,10 @@ border-bottom: 1px dashed #444444;
 
 .tribe-events .tribe-events-calendar-list__event-date-tag-datetime span {
     color: #fff;
-	background-color: #c10517;
+	background-color: #c10517;  
 }
 a.tribe-events-widget-events-list__view-more-link,
-a.tribe-events-widget .tribe-events-widget-events-list__view-more-link,
+a.tribe-events-widget .tribe-events-widget-events-list__view-more-link, 
 a.tribe-events-widget .tribe-events-widget-events-list__view-more-link:visited{
 width: 100%;
 	text-align: center;
@@ -379,14 +379,15 @@ color: #c10517 !important;
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="wp-singular post-template-default single single-post postid-204 single-format-standard wp-embed-responsive wp-theme-betheme tribe-no-js woocommerce-block-theme-has-button-styles with_aside aside_right color-red content-brightness-light input-brightness-light style-default button-animation-fade layout-full-width header-modern sticky-header sticky-white ab-hide subheader-transparent subheader-title-left responsive-overflow-x-mobile mobile-tb-center mobile-mini-mr-ll mobile-icon-user-ss mobile-icon-wishlist-ss mobile-icon-search-ss mobile-icon-wpml-ss mobile-icon-action-ss be-page-204 be-reg-2762 wpb-js-composer js-comp-ver-7.6 vc_responsive">
 
 <div id="Wrapper">
-<div class="" id="Header_wrapper">
+<div id="Header_wrapper">
 <header id="Header">
 <div class="header_placeholder"></div>
 <div id="Top_bar">
@@ -865,14 +866,14 @@ color: #c10517 !important;
   transition: all .7s ease-in-out;
 	color: #fff;
 		background-color: #c10517;
-
+		
 		-webkit-border-top-left-radius: 4px;
 -webkit-border-bottom-left-radius: 4px;
 -moz-border-radius-topleft: 4px;
 -moz-border-radius-bottomleft: 4px;
 border-top-left-radius: 4px;
 border-bottom-left-radius: 4px;
-
+		
 	}
 	a#esemenyek-badge i {
 		font-size: 40px;
@@ -881,12 +882,12 @@ border-bottom-left-radius: 4px;
 	a#esemenyek-badge span {
 		font-size: 12px;
 	}
-
+	
 	a#esemenyek-badge:hover {
 		opacity: 0.7;
 		background-color: #000;
 	}
-
+	
 	@media only screen and (max-width: 767px){
 		a#esemenyek-badge {
 			top: 50%;

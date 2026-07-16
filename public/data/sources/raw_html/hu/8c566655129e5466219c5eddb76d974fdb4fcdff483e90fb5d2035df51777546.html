@@ -84,7 +84,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta content="en_US" property="og:locale"/>
 <meta content="Cím: 9545 Jánosháza, Ifjúság u. 3 Útvonal Telefonszám: (06 95) 450 148 1. sz. Orvosi rendelő Dr. Győrffy Éva gyermekorvos Rendelési idő: Hétfő- Péntek: 7.15-10-ig Tanácsadás: Minden 2. és 4. szerdán és csütörtökön 10 és 11 óra kö..." property="og:description"/>
 <meta content="https://www.janoshaza.hu/files/75580443_735530550191186_3991386461919248384_n-150x150.jpg" property="og:image"/>
-
+ 
 
 
 <meta content="https://www.janoshaza.hu/files/cropped-Janoshaza-Cimer-1-270x270.png" name="msapplication-TileImage"/>
@@ -97,7 +97,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -341,7 +342,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <div id="content-left">
 <img alt="Jánosháza" class="alignleft" style="padding-right: 5px; padding-top: 5px;"/>
 <h1>Jánosházi Közös Önkormányzati Hivatal</h1>
-<p class="leftinfo">9545 Jánosháza, Batthyány u. 2.<br/>
+<p class="leftinfo">9545 Jánosháza, Batthyány u. 2.<br/> 
 		  Telefon: +36 95 551-210<br/>
 		  Fax: +36 95 551-213<br/>
 		  E-mail: hivatal@janoshaza.hu</p>

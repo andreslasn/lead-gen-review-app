@@ -55,7 +55,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -160,7 +161,7 @@
 
 
 <section class="section-hero hero-1 max-width">
-<div class="carousel carousel-dark slide" data-bs-interval="6000" data-bs-ride="carousel" id="heroSlider">
+<div class="carousel carousel-dark slide" data-bs-interval="6000" data-bs-ride="carousel" id="heroSlider"> 
 <div class="carousel-indicators">
 <div aria-current="true" class="d-flex align-items-center gap-3 gap-lg-1 lh-1 active" data-bs-slide-to="0" data-bs-target="#heroSlider">
 <span class="indecators-item display-4 fw-extra-bold mb-0">01</span>

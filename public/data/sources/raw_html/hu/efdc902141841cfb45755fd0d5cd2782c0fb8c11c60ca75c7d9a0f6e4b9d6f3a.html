@@ -167,7 +167,8 @@ a.highslide-credits:hover i {
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -234,17 +235,17 @@ a.highslide-credits:hover i {
 <ul class="nav navbar-nav">
 <li>
 <a data-review-original-href="https://jaszjakohalma.hu/news.php" href="#" role="button" tabindex="-1" title="">
-		 Hírek
+		 Hírek 
 		</a>
 </li>
 <li>
 <a data-review-original-href="https://jaszjakohalma.hu/contact.php" href="#" role="button" tabindex="-1" title="">
-		 Kapcsolat
+		 Kapcsolat 
 		</a>
 </li>
 <li class="dropdown">
 <a class="dropdown-toggle" data-review-original-href="https://jaszjakohalma.hu/#" data-target="" data-toggle="dropdown" href="#" role="button" tabindex="-1" title="">
-		 Településünkről
+		 Településünkről 
 		<b class="caret"></b>
 </a>
 <ul class="dropdown-menu" data-appear-animation="fadeInDown" role="menu">
@@ -269,7 +270,7 @@ a.highslide-credits:hover i {
 </li>
 <li class="dropdown">
 <a class="dropdown-toggle" data-review-original-href="https://jaszjakohalma.hu/#" data-target="" data-toggle="dropdown" href="#" role="button" tabindex="-1" title="">
-		 Polgármesteri Hivatal
+		 Polgármesteri Hivatal 
 		<b class="caret"></b>
 </a>
 <ul class="dropdown-menu" data-appear-animation="fadeInDown" role="menu">
@@ -292,7 +293,7 @@ a.highslide-credits:hover i {
 </li>
 <li class="dropdown">
 <a class="dropdown-toggle" data-review-original-href="https://jaszjakohalma.hu/#" data-target="" data-toggle="dropdown" href="#" role="button" tabindex="-1" title="">
-		 Elektronikus ügyintézés
+		 Elektronikus ügyintézés 
 		<b class="caret"></b>
 </a>
 <ul class="dropdown-menu" data-appear-animation="fadeInDown" role="menu">
@@ -318,12 +319,12 @@ a.highslide-credits:hover i {
 </li>
 <li>
 <a data-review-original-href="https://jaszjakohalma.hu/oldal/onkormanyzat-kepviselo-testulet" href="#" role="button" tabindex="-1" title="">
-		 Önkormányzat, Képviselő-testület
+		 Önkormányzat, Képviselő-testület 
 		</a>
 </li>
 <li class="dropdown">
 <a class="dropdown-toggle" data-review-original-href="https://jaszjakohalma.hu/" data-target="" data-toggle="dropdown" href="#" role="button" tabindex="-1" title="">
-		 Pályázatok
+		 Pályázatok 
 		<b class="caret"></b>
 </a>
 <ul class="dropdown-menu" data-appear-animation="fadeInDown" role="menu">
@@ -343,12 +344,12 @@ a.highslide-credits:hover i {
 </li>
 <li>
 <a data-review-original-href="https://jaszjakohalma.hu/oldal/kozerdeku-adatok" href="#" role="button" tabindex="-1" title="">
-		 Közérdekű adatok
+		 Közérdekű adatok 
 		</a>
 </li>
 <li class="dropdown">
 <a class="dropdown-toggle" data-review-original-href="https://jaszjakohalma.hu/#" data-target="" data-toggle="dropdown" href="#" role="button" tabindex="-1" title="">
-		 Választási információk
+		 Választási információk 
 		<b class="caret"></b>
 </a>
 <ul class="dropdown-menu" data-appear-animation="fadeInDown" role="menu">
@@ -362,7 +363,7 @@ a.highslide-credits:hover i {
 <a data-placement="left" data-review-original-href="http://www.valasztas.hu" data-toggle="tooltip" href="#" tabindex="-1" title="">2026. évi választás</a>
 </li>
 <li class="dropdown" role="menuitem">
-<a class="dropdown-toggle" data-review-original-href="https://jaszjakohalma.hu/" data-toggle="dropdown" href="#" id="dropdown-link" tabindex="-1">
+<a class="dropdown-toggle" data-review-original-href="https://jaszjakohalma.hu/" data-toggle="dropdown" href="#" id="dropdown-link" tabindex="-1"> 
         Korábbi választások
           <i class="fa fa-angle-down"></i>
 </a>
@@ -554,7 +555,7 @@ a.highslide-credits:hover i {
 </ul><div class="e-menu-link news-menu-archive"><a class="btn btn-default btn-secondary btn-sm" data-review-original-href="/e107_plugins/blogcalendar_menu/archive.php" href="#" tabindex="-1">Archívum</a></div></div>
 </div>
 </div>
-</div>
+</div> 
 </div>
 <footer>
 <div class="container">

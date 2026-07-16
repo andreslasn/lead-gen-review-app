@@ -25,13 +25,13 @@
 
 <style>
 
-
+			
 			/*https://bataszek.hu/files/slider/zzzzsss.jpg*/
 			body {
 				background-image: url('https://bataszek.hu/files/slider/zzzzsss.jpg');
 				background-repeat: no-repeat;
 				background-attachment: fixed;
-				background-position: center;
+				background-position: center; 				
 			}
 
 
@@ -121,12 +121,12 @@
 			html {
 					overflow: scroll;
 				}
+			
+			
+			
 
-
-
-
-
-
+			
+			
 
 
 
@@ -147,7 +147,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -707,7 +708,7 @@
 <h2>Hibát észlelt?</h2>
 <div class="panel-content">
 <small>Ha az oldalon valamilyen nehézséget, hibát észlelt, küldje el észrevételét számunkra! <br/>Ezt megteheti a lenti űrlapon keresztül.</small>
-<div class="">
+<div>
 <div data-review-disabled-form="true">
 <input id="url_ok" name="url_ok" type="hidden" value="kapcsolat_sikeres"/>
 <input id="pid" name="pid" type="hidden" value="1397"/>

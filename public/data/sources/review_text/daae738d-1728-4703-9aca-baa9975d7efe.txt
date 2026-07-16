@@ -1,0 +1,21 @@
+01. számú körzet
+Körzet száma:
+1
+Orvos:
+Dr. Cseh Tamás
+Cég:
+Empátia Bt.
+Cím:
+Váralja u. 6/A.
+Telefon:
++36-34-481-217
+E-mail:
+csehdr@empatiabt.t-online.hu
+Rendelési idő:
+H: 13:00-17:00
+K: 8:00-11:00
+Sz: 13:00-16:00
+Cs: 8:00-11:00
+P: 8:00-10:00
+A körzethez tartozó utcák
+Ágnes út, Akácos út, Arany János, Árok utca, Balassi Bálint utca, Barlang köz, Berkenye utca, Császár Attila utca (Fácános kert), Cser út, Dadi út, Dob utca, Erzsébet út, Fácános kert, Fazekas köz, Fazekas utca /Kálvária utcától végig/, Fekete út, Fellner Jakab utca, Fenyves út, Galagonya utca, Gázgyár utca, Gerle köz, Gyertyános út, Győri út, Halász utca, Hedvig út, Horgász sétány, Ida út, Ilona út, Irén út, Iskola utca, Judit út, Kalapács utca, Kálvária utca, Kilátó köz, Kinizsi Pál utca, Klára út, Kocsi utca /Környei utcától Kossuth térig/, Koltói Anna utca, Kőporos köz, Környei köz, Környei utca, Lombos út, Magdolna út, Margit út, Mária puszta, Mária út, Mókus tér, Molnár utca, Móricz Zsigmond tér, Naplókert utca, Naplókert, Nefelejcs utca, Nyúl út, Őz út, Platános tér, Remeteség puszta, Schneer István utca (ipari park), Szarvas út, Széles csapás út, Taliga út, Tócsőszház, Toldi Miklós utca, Tölgyes utca, Vitéz utca, Víztorony köz

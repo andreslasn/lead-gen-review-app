@@ -48,7 +48,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -171,7 +172,7 @@
 <a class="back-to-top" data-review-original-href="#0" href="#" tabindex="-1"></a>
 <div class="block" style="background-color: #bddd6c;">
 <div class="container">
-<div class="" style="background-color: #bddd6c;">
+<div style="background-color: #bddd6c;">
 <div class="container">
 <h2 style="color:white;">Partnereink</h2>
 <div class="row">
@@ -279,7 +280,7 @@
 <div class="col-md-3 col-sm-4">
 <aside>
 <h4>Információk</h4>
-<ul class="">
+<ul>
 <li class="item-238"><a data-review-original-href="/rolunk/munkatarsaink" href="#" tabindex="-1">Munkatársak</a></li><li class="item-239"><a data-review-original-href="/reklam/mediaajanlat" href="#" tabindex="-1">Mediaajánlat</a></li><li class="item-240"><a data-review-original-href="/reklam/partner-program" href="#" tabindex="-1">Partner program</a></li><li class="item-241"><a data-review-original-href="/reklam/sugarzasi-terkep" href="#" tabindex="-1">Sugárzási térkép</a></li></ul>
 </aside>
 </div>
@@ -304,7 +305,7 @@
 </div>
 </div>
 </div>
-<div class="background"><img alt="" class=""/></div>
+<div class="background"><img alt=""/></div>
 </section>
 <section id="footer-bottom">
 <div class="container">
@@ -358,7 +359,7 @@
     }
 </style>
 <button class="btn btn-primary" id="palyazat-toggle"></button>
-<div class="" id="palyazat"></div>
+<div id="palyazat"></div>
 
 </div>
 

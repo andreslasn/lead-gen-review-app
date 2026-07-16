@@ -66,7 +66,8 @@ h1{font-family: 'Arial', sans-serif;}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -192,7 +193,7 @@ h1{font-family: 'Arial', sans-serif;}
 <span aria-hidden="true" class="fa fa-print"></span>
 	Nyomtatás</span>
 </a> 
-
+							
 									<a data-review-original-href="/component/mailto/?tmpl=component&amp;template=ltmedical&amp;link=03bdea07c658310080c7483eee5cb4e3b3092889" href="#" rel="nofollow" tabindex="-1" title="Hivatkozás elküldése e-mailben egy ismerősnek"><span class="btn btn-outline-secondary btn-sm">
 <span aria-hidden="true" class="fa fa-envelope"></span>
 	E-mail</span></a> </div>

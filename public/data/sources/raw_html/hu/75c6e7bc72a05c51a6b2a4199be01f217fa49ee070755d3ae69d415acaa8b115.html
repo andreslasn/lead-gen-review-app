@@ -60,7 +60,8 @@ html, body { font-size: 16px; }
 }		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -377,7 +378,7 @@ html, body { font-size: 16px; }
 <header class="lsvr-townpress-sitemap__header">
 <h2 class="lsvr-townpress-sitemap__title lsvr-townpress-sitemap__title--has-icon">
 <i aria-hidden="true" class="lsvr-townpress-sitemap__title-icon icon-road-sign"></i>
-
+                                
                                 Válasszon, mi érdekli
                             </h2>
 </header>
@@ -442,7 +443,7 @@ html, body { font-size: 16px; }
 <i aria-hidden="true" class="lsvr-townpress-posts__title-icon icon-reading"></i>
 <a class="lsvr-townpress-posts__title-link" data-review-original-href="https://www.gutorfolde.hu/hirek/" href="#" tabindex="-1">
 
-
+                                
                                     Hírek
                                 </a>
 </h2>
@@ -564,13 +565,13 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-0 menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item" id="lsvr-townpress-menu-widget__item-25-183" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-0" data-review-original-href="/" href="#" id="lsvr-townpress-menu-widget__item-link-25-183" role="menuitem" tabindex="-1">
 
-
+                    
                     Kezdőlap</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" id="lsvr-townpress-menu-widget__item-124-730" role="presentation">
 <a aria-controls="lsvr-townpress-menu-widget__submenu-124-730" aria-expanded="false" aria-haspopup="true" aria-owns="lsvr-townpress-menu-widget__submenu-124-730" class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-0" data-review-original-href="/koszonto" href="#" id="lsvr-townpress-menu-widget__item-link-124-730" role="menuitem" tabindex="-1">
 
-
+                    
                     Községünk</a>
 <button aria-controls="lsvr-townpress-menu-widget__submenu-124-730" aria-expanded="false" aria-haspopup="true" aria-label="Expand submenu" class="lsvr-townpress-menu-widget__toggle lsvr-townpress-menu-widget__toggle--level-0" type="button">
 <i aria-hidden="true" class="lsvr-townpress-menu-widget__toggle-icon"></i>
@@ -579,31 +580,31 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-123-650" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/koszonto/" href="#" id="lsvr-townpress-menu-widget__item-link-123-650" role="menuitem" tabindex="-1">
 
-
+                    
                     Köszöntő</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-custom menu-item-object-custom" id="lsvr-townpress-menu-widget__item-449-444" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="/galeriak/" href="#" id="lsvr-townpress-menu-widget__item-link-449-444" role="menuitem" tabindex="-1">
 
-
+                    
                     Galériák</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-127-517" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/telepulestortenet/" href="#" id="lsvr-townpress-menu-widget__item-link-127-517" role="menuitem" tabindex="-1">
 
-
+                    
                     Településtörténet</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-130-868" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/hires-emberek/" href="#" id="lsvr-townpress-menu-widget__item-link-130-868" role="menuitem" tabindex="-1">
 
-
+                    
                     Híres Emberek</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-82-115" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/virtualis-tura/" href="#" id="lsvr-townpress-menu-widget__item-link-82-115" role="menuitem" tabindex="-1">
 
-
+                    
                     Virtuális Túra</a>
 </li>
 </ul>
@@ -611,7 +612,7 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" id="lsvr-townpress-menu-widget__item-161-691" role="presentation">
 <a aria-controls="lsvr-townpress-menu-widget__submenu-161-691" aria-expanded="false" aria-haspopup="true" aria-owns="lsvr-townpress-menu-widget__submenu-161-691" class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-0" data-review-original-href="/polgarmesteri-hivatal/" href="#" id="lsvr-townpress-menu-widget__item-link-161-691" role="menuitem" tabindex="-1">
 
-
+                    
                     Önkormányzat</a>
 <button aria-controls="lsvr-townpress-menu-widget__submenu-161-691" aria-expanded="false" aria-haspopup="true" aria-label="Expand submenu" class="lsvr-townpress-menu-widget__toggle lsvr-townpress-menu-widget__toggle--level-0" type="button">
 <i aria-hidden="true" class="lsvr-townpress-menu-widget__toggle-icon"></i>
@@ -620,37 +621,37 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-268-923" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/polgarmesteri-hivatal/" href="#" id="lsvr-townpress-menu-widget__item-link-268-923" role="menuitem" tabindex="-1">
 
-
+                    
                     Polgármesteri hivatal</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-custom menu-item-object-custom" id="lsvr-townpress-menu-widget__item-222-986" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="/szemelyek/" href="#" id="lsvr-townpress-menu-widget__item-link-222-986" role="menuitem" tabindex="-1">
 
-
+                    
                     Képviselő-testület</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-237-401" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/telefonszamok/" href="#" id="lsvr-townpress-menu-widget__item-link-237-401" role="menuitem" tabindex="-1">
 
-
+                    
                     Telefonszámok</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-custom menu-item-object-custom" id="lsvr-townpress-menu-widget__item-55-811" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="/dokumentumok/" href="#" id="lsvr-townpress-menu-widget__item-link-55-811" role="menuitem" tabindex="-1">
 
-
+                    
                     Dokumentumok</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-custom menu-item-object-custom" id="lsvr-townpress-menu-widget__item-149-311" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="/ertesitesek/" href="#" id="lsvr-townpress-menu-widget__item-link-149-311" role="menuitem" tabindex="-1">
 
-
+                    
                     Értesítések</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-300-64" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/jarasi-hivatal/" href="#" id="lsvr-townpress-menu-widget__item-link-300-64" role="menuitem" tabindex="-1">
 
-
+                    
                     Járási Hivatal</a>
 </li>
 </ul>
@@ -658,7 +659,7 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" id="lsvr-townpress-menu-widget__item-388-257" role="presentation">
 <a aria-controls="lsvr-townpress-menu-widget__submenu-388-257" aria-expanded="false" aria-haspopup="true" aria-owns="lsvr-townpress-menu-widget__submenu-388-257" class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-0" data-review-original-href="/jatek-var-ovoda" href="#" id="lsvr-townpress-menu-widget__item-link-388-257" role="menuitem" tabindex="-1">
 
-
+                    
                     Intézmények</a>
 <button aria-controls="lsvr-townpress-menu-widget__submenu-388-257" aria-expanded="false" aria-haspopup="true" aria-label="Expand submenu" class="lsvr-townpress-menu-widget__toggle lsvr-townpress-menu-widget__toggle--level-0" type="button">
 <i aria-hidden="true" class="lsvr-townpress-menu-widget__toggle-icon"></i>
@@ -667,19 +668,19 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-387-951" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/jatek-var-ovoda/" href="#" id="lsvr-townpress-menu-widget__item-link-387-951" role="menuitem" tabindex="-1">
 
-
+                    
                     Játék-Vár Óvoda</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-391-499" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/gutorfoldi-tagintezmeny-altalanos-iskola/" href="#" id="lsvr-townpress-menu-widget__item-link-391-499" role="menuitem" tabindex="-1">
 
-
+                    
                     Gutorföldi Tagintézmény Általános Iskola</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" id="lsvr-townpress-menu-widget__item-397-49" role="presentation">
 <a aria-controls="lsvr-townpress-menu-widget__submenu-397-49" aria-expanded="false" aria-haspopup="true" aria-owns="lsvr-townpress-menu-widget__submenu-397-49" class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="/haziorvosi-ellatas" href="#" id="lsvr-townpress-menu-widget__item-link-397-49" role="menuitem" tabindex="-1">
 
-
+                    
                     Egészségügy</a>
 <button aria-controls="lsvr-townpress-menu-widget__submenu-397-49" aria-expanded="false" aria-haspopup="true" aria-label="Expand submenu" class="lsvr-townpress-menu-widget__toggle lsvr-townpress-menu-widget__toggle--level-1" type="button">
 <i aria-hidden="true" class="lsvr-townpress-menu-widget__toggle-icon"></i>
@@ -688,37 +689,37 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-2 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-398-23" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-2" data-review-original-href="https://www.gutorfolde.hu/haziorvosi-ellatas/" href="#" id="lsvr-townpress-menu-widget__item-link-398-23" role="menuitem" tabindex="-1">
 
-
+                    
                     Háziorvosi Ellátás</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-2 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-402-864" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-2" data-review-original-href="https://www.gutorfolde.hu/aranyalma-gyogyszertar/" href="#" id="lsvr-townpress-menu-widget__item-link-402-864" role="menuitem" tabindex="-1">
 
-
+                    
                     Aranyalma Gyógyszertár</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-2 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-405-150" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-2" data-review-original-href="https://www.gutorfolde.hu/fogaszat/" href="#" id="lsvr-townpress-menu-widget__item-link-405-150" role="menuitem" tabindex="-1">
 
-
+                    
                     Fogászat</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-2 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-411-548" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-2" data-review-original-href="https://www.gutorfolde.hu/vedonoi-szolgalat/" href="#" id="lsvr-townpress-menu-widget__item-link-411-548" role="menuitem" tabindex="-1">
 
-
+                    
                     Védőnői szolgálat</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-2 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-410-357" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-2" data-review-original-href="https://www.gutorfolde.hu/allatorvos/" href="#" id="lsvr-townpress-menu-widget__item-link-410-357" role="menuitem" tabindex="-1">
 
-
+                    
                     Állatorvos</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-2 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-898-514" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-2" data-review-original-href="https://www.gutorfolde.hu/zalaegerszegi-jarasi-hivatal-nepegeszsegugyi-osztaly/" href="#" id="lsvr-townpress-menu-widget__item-link-898-514" role="menuitem" tabindex="-1">
 
-
+                    
                     Zalaegerszegi Járási Hivatal Népegészségügyi Osztály</a>
 </li>
 </ul>
@@ -726,25 +727,25 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-416-168" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/muvelodesi-haz-es-konyvtar/" href="#" id="lsvr-townpress-menu-widget__item-link-416-168" role="menuitem" tabindex="-1">
 
-
+                    
                     Művelődési Ház és Könyvtár</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-419-55" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/egyhazkozseg/" href="#" id="lsvr-townpress-menu-widget__item-link-419-55" role="menuitem" tabindex="-1">
 
-
+                    
                     Egyházközség</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-427-581" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/posta/" href="#" id="lsvr-townpress-menu-widget__item-link-427-581" role="menuitem" tabindex="-1">
 
-
+                    
                     Mozgóposta</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-426-499" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/baki-takarek-kirendeltseg-gutorfolde/" href="#" id="lsvr-townpress-menu-widget__item-link-426-499" role="menuitem" tabindex="-1">
 
-
+                    
                     MBH Bank Zrt.</a>
 </li>
 </ul>
@@ -752,7 +753,7 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" id="lsvr-townpress-menu-widget__item-178-972" role="presentation">
 <a aria-controls="lsvr-townpress-menu-widget__submenu-178-972" aria-expanded="false" aria-haspopup="true" aria-owns="lsvr-townpress-menu-widget__submenu-178-972" class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-0" data-review-original-href="/egyutt-gutorfoldeert-hagyomanyorzo-es-kulturalis-egyesulet/" href="#" id="lsvr-townpress-menu-widget__item-link-178-972" role="menuitem" tabindex="-1">
 
-
+                    
                     Egyesületek / Alapítványok</a>
 <button aria-controls="lsvr-townpress-menu-widget__submenu-178-972" aria-expanded="false" aria-haspopup="true" aria-label="Expand submenu" class="lsvr-townpress-menu-widget__toggle lsvr-townpress-menu-widget__toggle--level-0" type="button">
 <i aria-hidden="true" class="lsvr-townpress-menu-widget__toggle-icon"></i>
@@ -761,37 +762,37 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-179-224" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/egyutt-gutorfoldeert-hagyomanyorzo-es-kulturalis-egyesulet/" href="#" id="lsvr-townpress-menu-widget__item-link-179-224" role="menuitem" tabindex="-1">
 
-
+                    
                     Együtt Gutorföldéért Hagyományőrző és Kulturális Egyesület</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-183-513" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/gutorfoldi-iskola-alapitvany-a-jovonkert/" href="#" id="lsvr-townpress-menu-widget__item-link-183-513" role="menuitem" tabindex="-1">
 
-
+                    
                     Gutorföldi Iskola Alapítvány a Jövőnkért</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-186-937" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/gutorfolde-polgaror-egyesulet/" href="#" id="lsvr-townpress-menu-widget__item-link-186-937" role="menuitem" tabindex="-1">
 
-
+                    
                     Gutorfölde Polgárőr Egyesület</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-198-784" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/gutorfolde-horgasz-egyesulet/" href="#" id="lsvr-townpress-menu-widget__item-link-198-784" role="menuitem" tabindex="-1">
 
-
+                    
                     Gutorfölde Horgász Egyesület</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-196-27" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/radihazai-lovas-klub/" href="#" id="lsvr-townpress-menu-widget__item-link-196-27" role="menuitem" tabindex="-1">
 
-
+                    
                     Rádiházai Lovas Klub</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-195-973" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/sportklub-gutorfolde/" href="#" id="lsvr-townpress-menu-widget__item-link-195-973" role="menuitem" tabindex="-1">
 
-
+                    
                     Sportklub Gutorfölde</a>
 </li>
 </ul>
@@ -799,7 +800,7 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" id="lsvr-townpress-menu-widget__item-81-383" role="presentation">
 <a aria-controls="lsvr-townpress-menu-widget__submenu-81-383" aria-expanded="false" aria-haspopup="true" aria-owns="lsvr-townpress-menu-widget__submenu-81-383" class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-0" data-review-original-href="/boli-erdeszhaz/" href="#" id="lsvr-townpress-menu-widget__item-link-81-383" role="menuitem" tabindex="-1">
 
-
+                    
                     Turizmus</a>
 <button aria-controls="lsvr-townpress-menu-widget__submenu-81-383" aria-expanded="false" aria-haspopup="true" aria-label="Expand submenu" class="lsvr-townpress-menu-widget__toggle lsvr-townpress-menu-widget__toggle--level-0" type="button">
 <i aria-hidden="true" class="lsvr-townpress-menu-widget__toggle-icon"></i>
@@ -808,13 +809,13 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-164-557" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/boli-erdeszhaz/" href="#" id="lsvr-townpress-menu-widget__item-link-164-557" role="menuitem" tabindex="-1">
 
-
+                    
                     Boli Erdészház</a>
 </li>
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-1 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-174-633" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-1" data-review-original-href="https://www.gutorfolde.hu/kabala-menes/" href="#" id="lsvr-townpress-menu-widget__item-link-174-633" role="menuitem" tabindex="-1">
 
-
+                    
                     Kabala-Ménes</a>
 </li>
 </ul>
@@ -822,7 +823,7 @@ html, body { font-size: 16px; }
 <li class="lsvr-townpress-menu-widget__item lsvr-townpress-menu-widget__item--level-0 menu-item menu-item-type-post_type menu-item-object-page" id="lsvr-townpress-menu-widget__item-850-502" role="presentation">
 <a class="lsvr-townpress-menu-widget__item-link lsvr-townpress-menu-widget__item-link--level-0" data-review-original-href="https://www.gutorfolde.hu/gutorfolde-bevezeti-a-munipolis-kommunikacios-rendszert/" href="#" id="lsvr-townpress-menu-widget__item-link-850-502" role="menuitem" tabindex="-1">
 
-
+                    
                     MUNIPOLIS</a>
 </li>
 </ul>

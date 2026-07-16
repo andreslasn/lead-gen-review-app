@@ -146,7 +146,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -344,8 +345,8 @@ július 27-augusztus 9</p>
 <div class="fusion-social-networks boxed-icons"><div class="fusion-social-networks-wrapper"><a class="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook" data-placement="top" data-review-original-href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fpilisborosjeno.hu%2Fportfolio-items%2Ffelnott-haziorvosi-rendelo-2%2F&amp;t=H%C3%A1ziorvosi%20rendel%C5%91" data-title="Facebook" data-toggle="tooltip" href="#" rel="noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_blank" title="Facebook"><span class="screen-reader-text">Facebook</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-twitter awb-icon-twitter" data-placement="top" data-review-original-href="https://x.com/intent/post?url=https%3A%2F%2Fpilisborosjeno.hu%2Fportfolio-items%2Ffelnott-haziorvosi-rendelo-2%2F&amp;text=H%C3%A1ziorvosi%20rendel%C5%91" data-title="X" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_blank" title="X"><span class="screen-reader-text">X</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-reddit awb-icon-reddit" data-placement="top" data-review-original-href="https://reddit.com/submit?url=https://pilisborosjeno.hu/portfolio-items/felnott-haziorvosi-rendelo-2/&amp;title=H%C3%A1ziorvosi%20rendel%C5%91" data-title="Reddit" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_blank" title="Reddit"><span class="screen-reader-text">Reddit</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-linkedin awb-icon-linkedin" data-placement="top" data-review-original-href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fpilisborosjeno.hu%2Fportfolio-items%2Ffelnott-haziorvosi-rendelo-2%2F&amp;title=H%C3%A1ziorvosi%20rendel%C5%91&amp;summary=" data-title="LinkedIn" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_blank" title="LinkedIn"><span class="screen-reader-text">LinkedIn</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-whatsapp awb-icon-whatsapp" data-placement="top" data-review-original-href="https://api.whatsapp.com/send?text=https%3A%2F%2Fpilisborosjeno.hu%2Fportfolio-items%2Ffelnott-haziorvosi-rendelo-2%2F" data-title="WhatsApp" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_blank" title="WhatsApp"><span class="screen-reader-text">WhatsApp</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-tumblr awb-icon-tumblr" data-placement="top" data-review-original-href="https://www.tumblr.com/share/link?url=https%3A%2F%2Fpilisborosjeno.hu%2Fportfolio-items%2Ffelnott-haziorvosi-rendelo-2%2F&amp;name=H%C3%A1ziorvosi%20rendel%C5%91&amp;description=" data-title="Tumblr" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_blank" title="Tumblr"><span class="screen-reader-text">Tumblr</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-pinterest awb-icon-pinterest" data-placement="top" data-review-original-href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fpilisborosjeno.hu%2Fportfolio-items%2Ffelnott-haziorvosi-rendelo-2%2F&amp;description=&amp;media=https%3A%2F%2Fpilisborosjeno.hu%2Fwp-content%2Fuploads%2F2020%2F02%2Fegeszseghaz.jpg" data-title="Pinterest" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_blank" title="Pinterest"><span class="screen-reader-text">Pinterest</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-mail awb-icon-mail fusion-last-social-icon" data-placement="top" data-review-original-href="mailto:?body=https://pilisborosjeno.hu/portfolio-items/felnott-haziorvosi-rendelo-2/&amp;subject=H%C3%A1ziorvosi%20rendel%C5%91" data-title="Email:" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:var(--sharing_social_links_icon_color);background-color:var(--sharing_social_links_box_color);border-color:var(--sharing_social_links_box_color);" tabindex="-1" target="_self" title="Email:"><span class="screen-reader-text">Email:</span></a><div class="fusion-clearfix"></div></div></div> </div>
 </article>
 </section>
-</div>
-</main>
+</div> 
+</main> 
 <div class="fusion-footer">
 <footer class="fusion-footer-widget-area fusion-widget-area">
 <div class="fusion-row">
@@ -380,9 +381,9 @@ július 27-augusztus 9</p>
 </div>
 <div style="clear:both;"></div></section> </div>
 <div class="fusion-clearfix"></div>
-</div>
-</div>
-</footer>
+</div> 
+</div> 
+</footer> 
 <footer class="fusion-footer-copyright-area" id="footer">
 <div class="fusion-row">
 <div class="fusion-copyright-content">
@@ -392,12 +393,12 @@ július 27-augusztus 9</p>
 </div>
 <div class="fusion-social-links-footer">
 <div class="fusion-social-networks boxed-icons"><div class="fusion-social-networks-wrapper"><a class="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook" data-placement="top" data-review-original-href="https://www.facebook.com/PBJonkormanyzat/" data-title="Facebook" data-toggle="tooltip" href="#" rel="noreferrer" style="color:#ffffff;background-color:#3b5998;border-color:#3b5998;" tabindex="-1" target="_blank" title="Facebook"><span class="screen-reader-text">Facebook</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-youtube awb-icon-youtube" data-placement="top" data-review-original-href="https://www.youtube.com/channel/UC1bbX70RVzQZ_8XUBhvQO7w" data-title="YouTube" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:#ffffff;background-color:#cd201f;border-color:#cd201f;" tabindex="-1" target="_blank" title="YouTube"><span class="screen-reader-text">YouTube</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-twitter awb-icon-twitter" data-placement="top" data-review-original-href="https://twitter.com/pilisborosjeno" data-title="X" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:#ffffff;background-color:#000000;border-color:#000000;" tabindex="-1" target="_blank" title="X"><span class="screen-reader-text">X</span></a><a class="fusion-social-network-icon fusion-tooltip fusion-mail awb-icon-mail" data-placement="top" data-review-original-href="mailto:info@pilisborosjeno.hu" data-title="Email:" data-toggle="tooltip" href="#" rel="noopener noreferrer" style="color:#ffffff;background-color:#000000;border-color:#000000;" tabindex="-1" target="_self" title="Email:"><span class="screen-reader-text">Email:</span></a></div></div></div>
-</div>
-</div>
-</footer>
-</div>
-</div>
-</div>
+</div> 
+</div> 
+</footer> 
+</div> 
+</div> 
+</div> 
 <a aria-hidden="true" class="fusion-one-page-text-link fusion-page-load-link" data-review-original-href="#" href="#" tabindex="-1">Page load link</a>
 <div class="avada-footer-scripts">
 

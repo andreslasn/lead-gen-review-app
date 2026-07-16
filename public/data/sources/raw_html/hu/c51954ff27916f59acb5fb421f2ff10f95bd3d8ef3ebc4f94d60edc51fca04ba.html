@@ -13,7 +13,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -45,31 +46,31 @@ Kórházunkról</a>
 <p class="sr_only">Almenü lenyitása.</p>
 </button>
 <ul class="submenu" id="sm-1">
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/korhazunkrol/foigazgato-koszonto/" href="#" tabindex="-1">
 Főigazgató köszöntő</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/korhazunkrol/korhazvezetes/" href="#" tabindex="-1">
 Kórházvezetés</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/korhazunkrol/minosegpolitika/" href="#" tabindex="-1">
 Tanúsítványok, Politikák</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/korhazunkrol/gazdasagi-muszaki-igazgatasi-osztalyok/" href="#" tabindex="-1">
 Gazdasági, műszaki, igazgatási osztályok</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/korhazunkrol/sajtoanyagok-konyvek/" href="#" tabindex="-1">
 Sajtóanyagok, könyvek</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/korhazunkrol/alapitvanyok/" href="#" tabindex="-1">
 Alapítványok</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/korhazunkrol/bizottsagok/" href="#" tabindex="-1">
 bizottságok</a>
 </li>
@@ -83,39 +84,39 @@ bizottságok</a>
 <p class="sr_only">Almenü lenyitása.</p>
 </button>
 <ul class="submenu" id="sm-2">
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/hirek/" href="#" tabindex="-1">
 Hírek</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/kozerdeku-adatok/" href="#" tabindex="-1">
 Közérdekű információk</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/parkolasi-rend-tajekoztatas/" href="#" tabindex="-1">
 Parkolási rend, tájékoztatás</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/patika-nyitvatartas/" href="#" tabindex="-1">
 Közforgalmú Gyógyszertár</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/oktatas-tudomany-peto-erno-oktatasi-kozpont/" href="#" tabindex="-1">
 Oktatás, tudomány - Dr. Tiborcz Sándor Oktatási Központ</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/betegkereses-szemelyesen/" href="#" tabindex="-1">
 Betegkeresés személyesen</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/kapcsolat/" href="#" tabindex="-1">
 Kapcsolat</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/fejlesztesi-projektek/" href="#" tabindex="-1">
 Fejlesztési Projektek</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/akadalymentesitesi-nyilatkozat/" href="#" tabindex="-1">
 Akadálymentesítési nyilatkozat</a>
 </li>
@@ -166,61 +167,61 @@ Beteg info</a>
 <p class="sr_only">Almenü lenyitása.</p>
 </button>
 <ul class="submenu" id="sm-29">
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/telefonos-idopontfoglalas/" href="#" tabindex="-1">
 Időpontfoglalás</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/covid-online-idopontfoglalas/" href="#" tabindex="-1">
 COVID Online időpontfoglalás</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/elegedettsegi-kerdoivek/" href="#" tabindex="-1">
 Elégedettségi kérdőívek</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/tamogato-veradas/" href="#" tabindex="-1">
 Támogató véradás</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/adatvedelem/" href="#" tabindex="-1">
 Adatvédelem</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/hazirend/" href="#" tabindex="-1">
 Házirend</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://jogviszony.neak.gov.hu/varolista_pub/" href="#" tabindex="-1" target="_blank">
 Várólista</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/betegjogi-kepviselo/" href="#" tabindex="-1">
 Betegjogi képviselő</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/korhazi-lelkesz/" href="#" tabindex="-1">
 Kórházi lelkészek</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/betegtajekoztatok-es-beleegyezo-nyilatkozatok/" href="#" tabindex="-1">
 Betegtájékoztatók és beleegyező nyilatkozatok</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/letoltheto-dokumentumok/" href="#" tabindex="-1">
 Letölthető dokumentumok</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/beteg-info/kapcsolati-urlap/" href="#" tabindex="-1">
 Kapcsolat</a>
 </li>
 </ul>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/kozerdeku-adatok/" href="#" tabindex="-1">
 Közérdekű adatok</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/vedonoiszolgalat/" href="#" tabindex="-1">
 Védőnői Szolgálat</a>
 </li>
@@ -232,19 +233,19 @@ Védőnői Szolgálat</a>
 <p class="sr_only">Almenü lenyitása.</p>
 </button>
 <ul class="submenu" id="sm-71">
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/allashirdetesek/orvosok/" href="#" tabindex="-1">
 Orvosok</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/allashirdetesek/szakdolgozok/" href="#" tabindex="-1">
 Szakdolgozók</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/allashirdetesek/egyeb/" href="#" tabindex="-1">
 Egyéb</a>
 </li>
-<li class="">
+<li>
 <a data-review-original-href="https://markusovszky.hu/allashirdetesek/lakhatasi-lehetosegek/" href="#" tabindex="-1">
 Lakhatási lehetőségek</a>
 </li>
@@ -296,12 +297,12 @@ Lakhatási lehetőségek</a>
 <nav id="main-menu">
 <ul class="topMenu fc-override">
 <li class="m-item">
-<a class="" data-review-original-href="https://markusovszky.hu" href="#" tabindex="-1">
+<a data-review-original-href="https://markusovszky.hu" href="#" tabindex="-1">
 Kezdőlap
 </a>
 </li>
 <li class="m-item">
-<a class="" data-review-original-href="https://markusovszky.hu/korhazunkrol/" href="#" tabindex="-1">
+<a data-review-original-href="https://markusovszky.hu/korhazunkrol/" href="#" tabindex="-1">
 Kórházunkról</a>
 <button aria-controls="sm-1" aria-expanded="false" aria-label="Almenü lenyitása." class="sub-btn m-icon" data-state-closed="Almenü lenyitása." data-state-open="Almenü összecsukása.">
 <i aria-hidden="true" class="fa fa-chevron-down"></i>
@@ -338,7 +339,7 @@ bizottságok</a>
 </ul>
 </li>
 <li class="m-item">
-<a class="" data-review-original-href="https://markusovszky.hu/altalanos-informaciok/" href="#" tabindex="-1">
+<a data-review-original-href="https://markusovszky.hu/altalanos-informaciok/" href="#" tabindex="-1">
 Általános információk</a>
 <button aria-controls="sm-2" aria-expanded="false" aria-label="Almenü lenyitása." class="sub-btn m-icon" data-state-closed="Almenü lenyitása." data-state-open="Almenü összecsukása.">
 <i aria-hidden="true" class="fa fa-chevron-down"></i>
@@ -421,7 +422,7 @@ Orvosok
 </ul>
 </li>
 <li class="m-item">
-<a class="" data-review-original-href="https://markusovszky.hu/beteg-info/" href="#" tabindex="-1">
+<a data-review-original-href="https://markusovszky.hu/beteg-info/" href="#" tabindex="-1">
 Beteg info</a>
 <button aria-controls="sm-29" aria-expanded="false" aria-label="Almenü lenyitása." class="sub-btn m-icon" data-state-closed="Almenü lenyitása." data-state-open="Almenü összecsukása.">
 <i aria-hidden="true" class="fa fa-chevron-down"></i>
@@ -478,15 +479,15 @@ Kapcsolat</a>
 </ul>
 </li>
 <li class="m-item">
-<a class="" data-review-original-href="https://markusovszky.hu/kozerdeku-adatok/" href="#" tabindex="-1">
+<a data-review-original-href="https://markusovszky.hu/kozerdeku-adatok/" href="#" tabindex="-1">
 Közérdekű adatok</a>
 </li>
 <li class="m-item">
-<a class="" data-review-original-href="https://markusovszky.hu/vedonoiszolgalat/" href="#" tabindex="-1">
+<a data-review-original-href="https://markusovszky.hu/vedonoiszolgalat/" href="#" tabindex="-1">
 Védőnői Szolgálat</a>
 </li>
 <li class="m-item">
-<a class="" data-review-original-href="https://markusovszky.hu/allashirdetesek/" href="#" tabindex="-1">
+<a data-review-original-href="https://markusovszky.hu/allashirdetesek/" href="#" tabindex="-1">
 Álláshirdetések</a>
 <button aria-controls="sm-71" aria-expanded="false" aria-label="Almenü lenyitása." class="sub-btn m-icon" data-state-closed="Almenü lenyitása." data-state-open="Almenü összecsukása.">
 <i aria-hidden="true" class="fa fa-chevron-down"></i>
@@ -572,7 +573,7 @@ zitaerdei<span class="at-sign"><p class="sr_only">kukac</p></span>freemail.hu</a
 <h4>Rendelési idő</h4>
 <table class="col-12 doctors-opening" style="text-align:center;font-size:16px;">
 <tbody>
-<tr class="">
+<tr>
 <td style="font-size:13px;vertical-align:middle;">Szerda</td>
 <td>
 09:00 - 12:00  </td>

@@ -36,12 +36,13 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body debug="rendelesek">
-<div class="" id="divMenuBck">
+<div id="divMenuBck">
 <div class="wrapper" id="divMenu">
 <a data-review-original-href="https://www.szakrendelovelence.hu" href="#" tabindex="-1">
 <div class="afterPreLoadIL" id="iconHeaderLogo">
@@ -130,7 +131,7 @@
 <a data-review-original-href="https://www.szakrendelovelence.hu/hirek/korabbi_hirek" href="#" tabindex="-1"><div class="subMenuItem" id="submenu86" main_menu_id="76" pro_duct="" seoname="korabbi_hirek" sub_menu_id="86">Korábbi hírek</div></a>
 </div></div><div class="newMenuCont"><a data-review-original-href="https://www.szakrendelovelence.hu/elerhetosegek" href="#" tabindex="-1"><div act="0" class="menuItem" id="menu28" menu_id="28" pro_duct="" seoname="elerhetosegek"><div class="menuItemText">Elérhetőségek</div></div></a></div><div class="newMenuCont"><a data-review-original-href="https://www.szakrendelovelence.hu/" href="#" tabindex="-1"><div act="0" class="menuItem" id="menu92" menu_id="92" pro_duct="" seoname=""><div class="menuItemText">Adatvédelem</div></div></a></div></div></div> </div>
 <a data-review-original-href="https://www.szakrendelovelence.hu" href="#" tabindex="-1">
-<div class="" id="iconHeaderLogo2">
+<div id="iconHeaderLogo2">
 <noscript class="m" iclass="" iid="imgHeaderLogo2" wave="1"></noscript>
 </div>
 </a>
@@ -195,7 +196,7 @@
 <a data-review-original-href="https://www.szakrendelovelence.hu/hirek/friss_hirek" href="#" tabindex="-1"><div class="subMenuItem" id="submenu87" main_menu_id="76" pro_duct="" seoname="friss_hirek" sub_menu_id="87">Friss hírek</div></a>
 <a data-review-original-href="https://www.szakrendelovelence.hu/hirek/korabbi_hirek" href="#" tabindex="-1"><div class="subMenuItem" id="submenu86" main_menu_id="76" pro_duct="" seoname="korabbi_hirek" sub_menu_id="86">Korábbi hírek</div></a>
 </div><a data-review-original-href="https://www.szakrendelovelence.hu/elerhetosegek" href="#" tabindex="-1"><div act="0" class="menuItem mob" id="menu28" menu_id="28" seoname="elerhetosegek"><div class="menuItemText">Elérhetőségek</div></div></a><a data-review-original-href="https://www.szakrendelovelence.hu/" href="#" tabindex="-1"><div act="0" class="menuItem mob" id="menu92" menu_id="92" seoname=""><div class="menuItemText">Adatvédelem</div></div></a></div> </div>
-<div class="" id="divBody" mobile="" seomenu="rendelesek" seomenuid="65" seosubmenu="haziorvosi_rendelesek" seosubmenuid="62" tablet="">
+<div id="divBody" mobile="" seomenu="rendelesek" seomenuid="65" seosubmenu="haziorvosi_rendelesek" seosubmenuid="62" tablet="">
 <div act="1" class="lane" id="lane126" menu="62" style="background-color:#ffffff;color:#000000;">
 <div class="cont_fullwidth grey_to_white">
 <img class="cont_halfwidth_img"/>
@@ -667,7 +668,7 @@
 </div> </div>
 <div class="wrapper noPadding" id="divSiteMap">
 <div class="afterPreLoad" id="siteMap">
-<div class="" id="siteMapLinks">
+<div id="siteMapLinks">
 <div class="siteLinkGroup sl1">
 <img class="siteLinkLogoB"/>
 </div>

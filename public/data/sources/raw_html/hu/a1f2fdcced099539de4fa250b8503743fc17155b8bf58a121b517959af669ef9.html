@@ -120,13 +120,13 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 [data-header*="type-1"] .ct-header [data-id="text"] {
     --theme-font-size: 13px;
 }
-/* főoldali programok régi*/
+/* főoldali programok régi*/ 
 /*.mainpage-programok .etn-row.etn-event-wrapper {flex-direction: column;}*/
 .mainpage-programok .etn-col-md-6.etn-col-lg-12 {max-width: 100%; flex: 0 0 100%;}
 .mainpage-programok .etn-event-thumb {display: none;}
 .mainpage-programok .etn-event-item {padding: 0px; box-shadow: none;}
 .mainpage-programok .etn-title.etn-event-title {font-size: 20px; font-weight: 500; line-height: 1.3; margin-bottom: 5px;}
-.etn-atend-btn {display: none;}
+.etn-atend-btn {display: none;} 
 #firstsection {margin-bottom: 20px;}
 /* Kategória cím */
 .page-title .ct-title-label {display: none;}
@@ -158,7 +158,8 @@ h3.etn-title {font-weight: 500; line-height: 1.3;}
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -199,7 +200,7 @@ h3.etn-title {font-weight: 500; line-height: 1.3;}
 </div>
 <div class="ct-panel-content" data-device="desktop"><div class="ct-panel-content-inner"></div></div><div class="ct-panel-content" data-device="mobile"><div class="ct-panel-content-inner">
 <nav aria-label="Mobil menü" class="mobile-menu menu-container has-submenu" data-id="mobile-menu" data-interaction="click" data-submenu-dots="yes" data-toggle-type="type-1">
-<ul class="" id="menu-mobil-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-583" id="menu-item-583"><a class="ct-menu-link" data-review-original-href="https://www.atadhir.hu/" href="#" tabindex="-1">Főoldal</a></li>
+<ul id="menu-mobil-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-583" id="menu-item-583"><a class="ct-menu-link" data-review-original-href="https://www.atadhir.hu/" href="#" tabindex="-1">Főoldal</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-589" id="menu-item-589"><span class="ct-sub-menu-parent"><a class="ct-menu-link" data-review-original-href="https://www.atadhir.hu/hirek/" href="#" tabindex="-1">Rovatok</a><button aria-expanded="false" aria-haspopup="true" aria-label="Legördülő menü kibontása" class="ct-toggle-dropdown-mobile"><svg aria-hidden="true" class="ct-icon toggle-icon-1" height="15" viewbox="0 0 15 15" width="15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"></path></svg></button></span>
 <ul class="sub-menu">
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-877" id="menu-item-877"><a class="ct-menu-link" data-review-original-href="https://www.atadhir.hu/nagyatad/" href="#" tabindex="-1">Nagyatád</a></li>

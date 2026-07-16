@@ -69,7 +69,8 @@
     </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -94,16 +95,16 @@
 <div aria-expanded="false" aria-haspopup="true" class="dropdown menu-doboz" data-toggle="dropdown" role="button">
 <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle menu-link" data-review-original-href="https://www.ergonom.hu/szolgaltatasaink" data-toggle="dropdown" href="#" role="button" tabindex="-1" target="_self">Szolgáltatásaink</a>
 <ul class="dropdown-menu">
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/munka-estuzvedelem" href="#" tabindex="-1" target="_self">Munkavédelem és tűzvédelem</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/foglalkozas-egeszsegugy" href="#" tabindex="-1" target="_self">Foglalkozás-egészségügy (üzemorvoslás)</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/meresek" href="#" tabindex="-1" target="_self">Gépvizsgálatok, munkakörnyezeti mérések</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/koernyezetvedelem" href="#" tabindex="-1" target="_self">Környezetvédelem</a>
 </li>
 </ul>
@@ -111,28 +112,28 @@
 <div aria-expanded="false" aria-haspopup="true" class="dropdown menu-doboz" data-toggle="dropdown" role="button">
 <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle menu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink" data-toggle="dropdown" href="#" role="button" tabindex="-1" target="_self">Képzéseink</a>
 <ul class="dropdown-menu">
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/2/munkavedelmi-kepviselo-alapkepzes" href="#" tabindex="-1">Munkavédelmi képviselő alapképzés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/13/munkavedelmi-kepviselo-tovabbkepzes" href="#" tabindex="-1">Munkavédelmi képviselő továbbképzés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/9/munkahelyi-elsosegelynyujto-kepzes" href="#" tabindex="-1">Munkahelyi elsősegélynyújtó képzés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/14/gyakorlatorientalt-elsosegelynyujto-kepzes" href="#" tabindex="-1">Gyakorlatorientált elsősegélynyújtó képzés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/4/tuzvedelmi-szakvizsga" href="#" tabindex="-1">Tűzvédelmi szakvizsga</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/11/kert-es-parkgondozoi-kisgepkezelo-kepzes" href="#" tabindex="-1">Kert- és parkgondozói kisgépkezelő képzés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/12/karbantartoi-es-ingatlan-uzemeltetoi-kisgepkezelo-kepzes" href="#" tabindex="-1">Karbantartói és ingatlan üzemeltetői kisgépkezelő képzés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/kepzeseink/7/munkavedelmi-es-vagy-tuzvedelmi-oktatas" href="#" tabindex="-1">Munka- és/vagy tűzvédelmi oktatás</a>
 </li>
 </ul>
@@ -140,37 +141,37 @@
 <div aria-expanded="false" aria-haspopup="true" class="dropdown menu-doboz" data-toggle="dropdown" role="button">
 <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle menu-link" data-review-original-href="ELÉRHETŐSÉGEK" data-toggle="dropdown" href="#" role="button" tabindex="-1" target="_self">ELÉRHETŐSÉGEK</a>
 <ul class="dropdown-menu">
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/ertekesites" href="#" tabindex="-1" target="_blank">Értékesítési csoport</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/oktatasi-csoport" href="#" tabindex="-1" target="_blank">Oktatási csoport</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/koezpont" href="#" tabindex="-1" target="_blank">Központ (titkárság)</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/gazdasagi-iroda" href="#" tabindex="-1" target="_blank">Gazdasági iroda</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/muszaki-uezletag" href="#" tabindex="-1" target="_blank">Műszaki üzletág</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/gepvizsgalo-csoport" href="#" tabindex="-1" target="_blank">Gépvizsgáló csoport</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/egeszseguegyi-uezletag" href="#" tabindex="-1" target="_blank">Egészségügyi üzletág</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/menedzserszures" href="#" tabindex="-1" target="_self">Menedzserszűrés</a>
 </li>
 <li class="active">
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/hazorvosi-rendeles" href="#" tabindex="-1" target="_self">Háziorvosi rendelés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/ultrahang-maganrendeles" href="#" tabindex="-1" target="_self">Ultrahang magánrendelés</a>
 </li>
-<li class="">
+<li>
 <a class="almenu-link" data-review-original-href="https://www.ergonom.hu/szakorvosi-maganrendelesek" href="#" tabindex="-1" target="_self">Szakorvosi magánrendelések</a>
 </li>
 </ul>
@@ -318,7 +319,7 @@
                     Híreink                </h4>
 <div class="oldalsav-hir-elem">
 <time class="small text-muted" datetime="2026-06-29 08:30">2026.06.29.</time>
-<h3><a class="" data-review-original-href="https://www.ergonom.hu/hireink/95/semmelweis-nap" href="#" tabindex="-1">Semmelweis-nap, a magyar egészségügy napja</a> </h3>
+<h3><a data-review-original-href="https://www.ergonom.hu/hireink/95/semmelweis-nap" href="#" tabindex="-1">Semmelweis-nap, a magyar egészségügy napja</a> </h3>
 <div class="row">
 <div class="col-xs-12">
 <a data-review-original-href="https://www.ergonom.hu/hireink/95/semmelweis-nap" href="#" tabindex="-1">
@@ -334,7 +335,7 @@
 </div>
 </div> <div class="oldalsav-hir-elem">
 <time class="small text-muted" datetime="2025-06-27 12:01">2025.06.27.</time>
-<h3><a class="" data-review-original-href="https://www.ergonom.hu/hireink/147/tajekoztatas-a-33-1998-nm-rendelet-modositasarol" href="#" tabindex="-1">Tájékoztatás a 33/1998. (VI. 24.) NM rendelet módosításáról</a> </h3>
+<h3><a data-review-original-href="https://www.ergonom.hu/hireink/147/tajekoztatas-a-33-1998-nm-rendelet-modositasarol" href="#" tabindex="-1">Tájékoztatás a 33/1998. (VI. 24.) NM rendelet módosításáról</a> </h3>
 <div class="row">
 <div class="col-xs-12">
 <a data-review-original-href="https://www.ergonom.hu/hireink/147/tajekoztatas-a-33-1998-nm-rendelet-modositasarol" href="#" tabindex="-1">
@@ -350,7 +351,7 @@
 </div>
 </div> <div class="oldalsav-hir-elem">
 <time class="small text-muted" datetime="2025-06-27 12:00">2025.06.27.</time>
-<h3><a class="" data-review-original-href="https://www.ergonom.hu/hireink/143/kotelezo-e-az-uzemorvosi-vizsgalat" href="#" tabindex="-1">Kötelező-e az üzemorvosi vizsgálat?</a> </h3>
+<h3><a data-review-original-href="https://www.ergonom.hu/hireink/143/kotelezo-e-az-uzemorvosi-vizsgalat" href="#" tabindex="-1">Kötelező-e az üzemorvosi vizsgálat?</a> </h3>
 <div class="row">
 <div class="col-xs-12">
 <a data-review-original-href="https://www.ergonom.hu/hireink/143/kotelezo-e-az-uzemorvosi-vizsgalat" href="#" tabindex="-1">
@@ -370,7 +371,7 @@ Az elmúlt közel másfél évben folyamatosan felmerülő kérdés a foglalkoz�
                     Blog                </h4>
 <div class="oldalsav-hir-elem">
 <time class="small text-muted" datetime="2026-04-24 11:08">2026.04.24.</time>
-<h3><a class="" data-review-original-href="https://www.ergonom.hu/blog/41/mobilalkalmazasok-az-egeszsegunkert" href="#" tabindex="-1">Mobilalkalmazások az egészségünkért</a> </h3>
+<h3><a data-review-original-href="https://www.ergonom.hu/blog/41/mobilalkalmazasok-az-egeszsegunkert" href="#" tabindex="-1">Mobilalkalmazások az egészségünkért</a> </h3>
 <div class="row">
 <div class="col-xs-12">
 <a data-review-original-href="https://www.ergonom.hu/blog/41/mobilalkalmazasok-az-egeszsegunkert" href="#" tabindex="-1">
@@ -386,7 +387,7 @@ Az elmúlt közel másfél évben folyamatosan felmerülő kérdés a foglalkoz�
 </div>
 </div> <div class="oldalsav-hir-elem">
 <time class="small text-muted" datetime="2026-01-19 08:00">2026.01.19.</time>
-<h3><a class="" data-review-original-href="https://www.ergonom.hu/blog/39/a-mesterseges-intelligencia-es-a-munkavedelem" href="#" tabindex="-1">A mesterséges intelligencia és a munkavédelem</a> </h3>
+<h3><a data-review-original-href="https://www.ergonom.hu/blog/39/a-mesterseges-intelligencia-es-a-munkavedelem" href="#" tabindex="-1">A mesterséges intelligencia és a munkavédelem</a> </h3>
 <div class="row">
 <div class="col-xs-12">
 <a data-review-original-href="https://www.ergonom.hu/blog/39/a-mesterseges-intelligencia-es-a-munkavedelem" href="#" tabindex="-1">
@@ -402,7 +403,7 @@ Az elmúlt közel másfél évben folyamatosan felmerülő kérdés a foglalkoz�
 </div>
 </div> <div class="oldalsav-hir-elem">
 <time class="small text-muted" datetime="2026-01-05 14:00">2026.01.05.</time>
-<h3><a class="" data-review-original-href="https://www.ergonom.hu/blog/33/hidegben-torteno-munkavegzes-munkavedelmi-eloirasai" href="#" tabindex="-1">Hidegben történő munkavégzés munkavédelmi előírásai</a> </h3>
+<h3><a data-review-original-href="https://www.ergonom.hu/blog/33/hidegben-torteno-munkavegzes-munkavedelmi-eloirasai" href="#" tabindex="-1">Hidegben történő munkavégzés munkavédelmi előírásai</a> </h3>
 <div class="row">
 <div class="col-xs-12">
 <a data-review-original-href="https://www.ergonom.hu/blog/33/hidegben-torteno-munkavegzes-munkavedelmi-eloirasai" href="#" tabindex="-1">

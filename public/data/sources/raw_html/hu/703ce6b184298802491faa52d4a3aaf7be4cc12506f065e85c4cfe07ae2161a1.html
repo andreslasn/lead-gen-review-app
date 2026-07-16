@@ -69,7 +69,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -730,7 +731,7 @@
 </div>
 </div>
 
-</div>
+</div> 
 <div id="eu-infoblokk-fixed">
 <a data-review-original-href="https://www.taborfalva.hu/content/energetika-felujitas" href="#" rel="noopener" tabindex="-1" target="_blank">
 <img alt="EU / ERFA infoblokk"/>

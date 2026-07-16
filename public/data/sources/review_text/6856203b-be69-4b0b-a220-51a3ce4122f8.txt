@@ -1,0 +1,1096 @@
+Ország
+Magyarország
+Határon túli
+Időpont
+2020-02-14
+2020-02-15
+2020-02-16
+Megye
+Válasszon
+Komárom-Esztergom megye
+Jász-Nagykun-Szolnok megye
+Szabolcs-Szatmár-Bereg megye
+Bács-Kiskun megye
+Csongrád megye
+Hajdú-Bihar megye
+Heves megye
+Baranya megye
+Pest megye
+Fejér megye
+Nógrád megye
+Zala megye
+Borsod-Abaúj-Zemplén megye
+Somogy megye
+Veszprém megye
+Békés megye
+Tolna megye
+Győr-Moson-Sopron megye
+Vas megye
+Helyszín
+Abony
+Agyagosszergény
+Ajka
+Almamellék
+Almásfüzitő
+Alsózsolca
+Attala
+Baj
+Balassagyarmat
+Balatonboglár
+Balatonfűzfő
+Balatongyörök
+Ballószög
+Baracs
+Barcs
+Bekölce
+Berente
+Berhida
+Besenyszög
+Bicske
+Bonyhád
+Bordány
+Budakeszi
+Budapest
+Budaörs
+Bugyi
+Buják
+Bábolna
+Bárdudvarnok
+Bátaszék
+Bátonyterenye
+Békéscsaba
+Bódvaszilas
+Bölcske
+Cegléd
+Celldömölk
+Cigánd
+Csabaszabadi
+Csemő
+Csenger
+Csengőd
+Csurgó
+Csécse
+Csévharaszt
+Csór
+Csömör
+Dabas
+Debrecen
+Derekegyház
+Deszk
+Doboz
+Dombóvár
+Dunaföldvár
+Dunavarsány
+Dunaújváros
+Edelény
+Eger
+Egerszalók
+Encs
+Enying
+Erdőkertes
+Erdősmecske
+Esztergom
+Fadd
+Fegyvernek
+Fehérgyarmat
+Feked
+Feldebrő
+Fertőszentmiklós
+Furta
+Gyula
+Gyál
+Gyöngyös
+Gyöngyösoroszi
+Győr
+Győrság
+Győrújbarát
+Gödöllő
+Hajdúszoboszló
+Hajdúsámson
+Heves
+Hódmezővásárhely
+Ikervár
+Isaszeg
+Jászfényszaru
+Kadarkút
+Kalocsa
+Kapospula
+Kaposvár
+Karancskeszi
+Kazincbarcika
+Kecskemét
+Kerekegyháza
+Kerepes
+Keszthely
+Kisbér
+Kiscsősz
+Kiskunmajsa
+Kiskőrös
+Kismarja
+Kismaros
+Kispáli
+Kisszállás
+Kisvárda
+Kocs
+Komló
+Komádi
+Komárom
+Kozárd
+Kozármisleny
+Kunadacs
+Kunbaracs
+Kurityán
+Körösnagyharsány
+Kőszárhegy
+Lajosmizse
+Lengyeltóti
+Lesenceistvánd
+Letenye
+Lovászi
+Lábatlan
+Lébény
+Madaras
+Madocsa
+Magyaralmás
+Makó
+Martfű
+Medgyesegyháza
+Mezőberény
+Mindszent
+Miskolc
+Mocsa
+Monostorapáti
+Mágocs
+Mány
+Máriapócs
+Mórahalom
+Nagybajom
+Nagykanizsa
+Nagykereki
+Nagykovácsi
+Nagykőrös
+Nagylók
+Nagymágocs
+Nagyvenyim
+Napkor
+Noszvaj
+Nyíradony
+Nyírbátor
+Nyíregyháza
+Nádasd
+Nádudvar
+Olaszfa
+Oroszlány
+Palotás
+Patak
+Petőfibánya
+Piliscsaba
+Polgár
+Pácin
+Pápa
+Pécs
+Pér
+Püspökmolnári
+Raposka
+Recsk
+Rácalmás
+Rátka
+Rém
+Rönök
+Sajóbábony
+Sajókaza
+Sajólád
+Sajószentpéter
+Salgótarján
+Simontornya
+Siófok
+Sokorópátka
+Soltvadkert
+Szabadegyháza
+Szabadkígyós
+Szabadszállás
+Szajol
+Szakonyfalu
+Szank
+Szarvas
+Szeged
+Szekszárd
+Szentgotthárd
+Szentlászló
+Szigetszentmiklós
+Szirák
+Szolnok
+Szombathely
+Szécsény
+Székesfehérvár
+Székkutas
+Sződliget
+Szűcsi
+Ságvár
+Sámsonháza
+Sárkeresztes
+Sárospatak
+Sátoraljaújhely
+Sávoly
+Söjtör
+Tamási
+Tar
+Tarján
+Tatabánya
+Tiszafüred
+Tiszakarád
+Tiszalök
+Tiszanána
+Tiszaújváros
+Tokodaltáró
+Tolmács
+Tolna
+Tuzsér
+Tállya
+Tápiószecső
+Tázlár
+Téglás
+Törtel
+Törökszentmiklós
+Vasvár
+Vecsés
+Veszprém
+Veszprémfajsz
+Vonyarcvashegy
+Vámospércs
+Vásárosbéc
+Vésztő
+Zalaegerszeg
+Zalahaláp
+Zalalövő
+Zalaszántó
+Záhony
+Ács
+Ócsa
+Ózd
+Újfehértó
+Újszász
+Korosztály
+Senior
+Ifjúsági
+Családi
+Kisgyermek
+Gyermek
+Fiatal felnőtt
+Felnőtt
+Rendezvény típusa
+Bemutató
+Szakkör
+Filmvetítés
+Táncos rendezvény
+Koncert komolyzenei
+Kiállítás
+Kiállítás megnyitó
+Hagyományőrzés, jeles nap
+Előadás
+Közönséget bevonó program
+Összejövetel
+Verseny, vetélkedő
+Ismeretterjesztés
+Kézműves foglalkozás
+Koncert népzenei
+Népzene
+Nyílt próba
+Jelmezes felvonulás
+Közösségi beszélgetés
+Sport és rekreáció
+Koncert könnyűzenei
+Gyermekműsor
+Néptánc
+Vásár
+Színház prózai
+Közösségi tervezés
+Gasztronómia
+Koncert alternatív
+Táncház
+Irodalmi program
+Színház zenés
+Könyvbemutató
+Szabaduló játék
+Történelmi játék
+Ásványműhely – ékszer készítés
+Helyszín neve :
+Keller Lajos Városi Könyvtár és Kulturális Központ
+Helyszín:
+Mindszent Szabadság tér 37.
+Kezdete:
+2020-02-14 17:00
+Vége:
+2020-02-14 20:00
+Belépőjegy:
+Ingyenes
+Ha a tél közepén jól jönne egy kis energia….bízzuk magunkat az ásványokra. Készítsd el saját magad a báli ékszered, vagy készíts egy last minute Valentin-napi meglepetést a Kedvesednek, családtagjaidnak, vagy akár a barátnőddel közös emlékkarkötőt is alkothattok.
+A foglalkozás önköltségi áras (csak az ásványok ára).
+Szomszédolás – népzenei találkozó
+Tázlár Község Önkormányzat Művelődési Háza
+Tázlár Kecskeméti u. 3.
+2020-02-14 16:00
+2020-02-14 23:00
+Népzenei találkozó a helyi népi csoportok fellépése, Tázlári Rozmaring Asszonykórus, Pacsirták, Tázlári Citerazenekar, Pintyőke tánccsoport., valamint a környékbeli csoportok bemutatkozás: Csengődi Dankó Pista férfikar, Császártöltési Német csoport, Kiskőrösi Szlovák együttes, Soltvadkerti Citerazenekar, Keceli Kéknefelejcs Kórus.
+Kézimunka kiállítás
+Tázlár Kecskeméti u.3.
+2020-02-14 09:00
+A 15 éves Tázlári Kézimunka Klub tagjainak munkáit mutatjuk be egész napos kiállításon. Több mint 80 db Gobelin képet készítettek már, ami a Helyi Értéktár része. Horgolások, varrott kézimunkák, különböző technikákkal készült kézimunkák bemutatása a cél.
+Pezsgős tárlatvezetés a szerelmesek napján
+Deák Ferenc Emlékház
+Söjtör Deák Ferenc út 154.
+2020-02-14 19:00
+2020-02-14 23:59
+3. alkalommal csatlakozik a Deák Ferenc Emlékház a Kultúrházak éjjel-nappal rendezvénysorozathoz. Az idei évben is pezsgős tárlatvezetéssel várjuk a kedves érdeklődőket. Február 14-e alkalmából minden szerelmespárt, házaspárt apró meglepetéssel köszöntünk! A tárlatvezetés során megkóstolható a Deák-kuglóf és egyéb finomságok is.
+Azt meséld el, Pista!
+KMO Művelődési Központ
+Budapest Teleki utca 50.
+2020-02-14 21:00
+2,900 Ft
+Örkény Istvánt bemutató est a KMO-ban
+Elmondja: Mácsai Pál
+Az író saját szavaiból színpadra állította: Bereményi Géza és Mácsai Pál
+Mi lenne, hogyha Örkény István ismét megjelenne, egy színészben, egy színházban, egy este, leülne, venne egy lélegzetet, beszélni kezdene, elmesélné a saját szavaival az életét, vagy ami hirtelen az eszébe jut, azután megint eltűnne.
+Fotó: Gordon Eszter
+„Gyöngyöt az embernek”- színházi előadás
+Gyöngyház Kulturális Központ
+Soltvadkert Kossuth Lajos u. . 10.
+2020-02-14 20:40
+2,000 Ft
+Ray Cooney, Család ellen nincs orvosság a kiskőrösi Szilveszter Társulat előadásában.
+/komédia 2 részben/
+Házasság Hete – esküvői fotókiállítás
+Arany János Közösségi Ház és Városi Könyvtár
+Gyál Kőrösi út 118-120.
+2020-02-14 18:00
+A Közösségi Házban 2020. február 14-én különleges kiállítás nyílik, amely tárlat keretében esküvői fotókat kívánunk kiállítani. Dédszülőkről-nagyszülőkről-szülőkről-önmagukról-gyermekekről-unokákról.
+A képek mellett feltüntetjük az beküldők által fontosnak tartott üzeneteket pl.: mi a hosszú házasság titka, miért szép a házasság stb...
+Kedvenc sportom – gyermekrajz kiállítás
+Lóverseny téri Közösségi Ház
+Budapest Lóverseny tér 6.
+2020-02-14 08:00
+A „Kedvenc sportom” című újpesti gyermek rajzpályázat díjnyertes és legszebb alkotásainak kiállítása a Homoktövis Környezetvédelmi Oktatóközpont szervezésében. A kiállítás ingyenesen megtekinthető a Lóverseny téri Közösségi Házban. Az alkotások kiválóan bemutatják a sportolás örömét és hasznosságát, mindenkit arra buzdítanak, hogy sportoljon rendszeresen, így egészségesebben és boldogabban élhet. Minden érdeklődőt szeretettel várunk.
+Valentin-napi bonbon készítés
+3K - Kaszásdűlői Kulturális Központ
+Budapest Pethe Ferenc tér 2.
+2020-02-14 18:30
+1,200 Ft
+A programot a Lady Lavender Csokoládé Manufaktúra tartja.
+A vendégek bepillantást nyerhetnek a bonbonkészítés rejtelmeibe. Megtudhatják, hogyan lehet gépek nélkül, kizárólag kézműves módszerrel bonbont készíteni, márványlapos temperálással elérni, hogy fényes és roppanós legyen a bonbon burka, hogyan kell kikeverni a lágy, krémes, ínycsiklandó ganachokat (töltelékeket), hogyan kerül ez a bonbonba, hogyan zárjuk le, és miképpen díszíthetjük ezeket.
+A 66. Vásárhelyi Őszi Tárlat díjazott alkotóinak kiállítása
+Óbudai Kulturális Központ
+Budapest San Marco u. 81.
+A Vásárhelyi Őszi Tárlat, amelyet – az országban egyedülálló módon – több mint hat évtizede minden esztendőben megrendeznek, mára a kortárs alkotók egyik legnívósabb seregszemléjévé vált.
+Közreműködik: Pogány Gábor ésGarami Gréta
+A kiállítás március 6-ig, hétköznapokon, 9.00–16.00 óráig ingyenesen látogatható a ház nyitvatartási idejében.
+©Vásárhelyi Őszi tárlat, 2019 ©Tornyai János Múzeum
+(Gresa Márton: A szimulákrum. vegyes technika, fatábla. 95 × 125 cm. 2019, fotó: Dömötör Mihály)
+Senior néptánc képzés a Somló Bandával
+Kiscsősz Faluház
+Kiscsősz Kossuth u. 47.
+2020-02-16 12:00
+A vas megyei senior néptáncéletet képviselő néptánc kör hétvégi táncos továbbképzése.
+A továbbképzést vezetik: Spiegel Zoltán és Spiegel-Szabó Viktória. Szombaton, február 15-én este 20.00-tól táncház a Somló Banda zenéjével. A belépés díjtalan. Helyszín: Kiscsősz Faluház (Kossuth Lajos utca 47.) Táncképzés pénteken 20.00-22.00, szombaton 9.00-17.00 ebédszünettel, vasárnap 9.00-12.00.
+Farsangi vigadalom
+Sokorópátkai Művelődési Otthon
+Sokorópátka Öreg u. 49.
+A szülői munkaközösség idén sok szeretettel várja a felső tagozat minden diákját farsangolni.
+Farsangi kézműves délután
+Hírös Agóra Eleven Ifjúsági Közösségi tér és Információs Pont
+Kecskemét Széchenyi sétány 11.
+2020-02-14 14:00
+Stenycilszatyor készítésére várunk mindenkit szeretettel
+A Makoldi vonal
+Debreceni Művelődési Központ Belvárosi Közösségi Háza
+Debrecen Kossuth u. 1.
+Kiállítás Makoldi Sándor rajzaiból
+Móré Mihály festő- és grafikusművész emlékkiállítása
+Debreceni Művelődési Központ Józsai Közösségi Háza
+Debrecen Szentgyörgyfalvi u. 9
+2020-02-14 10:00
+2020-02-16 18:00
+Móré Mihály festő-, és grafikusművész jellegzetes mozgásával, karakterével, humorával különleges figurája volt a Debrecen kulturális életének. 1955-től Debrecenben élt és dolgozott, élete végéig erősen kötődött a városhoz. Jellegzetes mozgásával, karakterével, humorával különleges figurája volt a Debrecen kulturális életének. Festményeit, grafikáit számos megyei és országos kiállításon mutatták be. Munkássága elismeréséül Csokonai-díjban részesült. Jelen kiállítás anyaga a hagyaték egy része,
+Bálint-napi sláger péntek
+Debreceni Művelődési Központ Újkerti Közösségi Háza
+Debrecen Jerikó u. 17-19.
+2020-02-14 15:00
+Az idén 10 éves jubileumát ünneplő anzX csoport - nevéhez illően -a sokféleséget, a változatosságot tartja legfontosabbnak programjai összeállításában. Különböző formációi gyermek, családi, valamint tánczenei, retró és rock műsorokat adnak elő.
+A Maticska Jenő Képzőművészeti Kör kiállítása
+A Maticska Jenő Képzőművészeti Kör a fiatalon elhunyt őstehetségről, Maticska Jenő festőművészről kapta a nevét. Tagjai olyan elhivatott alkotók - festők, grafikusok, írók, költők -, akik szívesen gyarapítják, osztják meg és tárják nyilvánosság elé szakmai tudásukat. A Kör - melynek vezetője Kerékgyártó Kálmán író, költő - tavaly ünnepelte megalakulásának 10. évfordulóját.
+Nagyváradtól Debrecenig – fotografikai kiállítás
+Debreceni Művelődési Központ Csapókerti Közösségi Háza
+Debrecen Süveg u. 3.
+Kocsis Csaba fotográfus, író, szerkesztő, előadóművész, kulturális menedzser. Erdésznek tanult, végül mégis a tanítói pályát választotta, de dolgozott népművelőként és újságíróként is. Irodalmi műsorokat, pódiumesteket állít össze barátaival, és szívesen énekel megzenésített verseket. Munkája mellett írt drámát, regényeket, valamint kiadványokat szerkeszt. 2005-ben nyílt első fotografikai kiállítása, azóta több mint 150 alkalommal mutatkozott már be önálló kiállításokon itthon és külföldön.
+Érzelmek az információs korban – Tari Annamária előadása
+Kisvárdai Várszínház és Művészetek Háza
+Kisvárda Flórián tér 20.
+500 Ft
+Tari Annamária pszichoanalitikus szakember előadása a párkapcsolattól a gyereknevelésig. "Az élet az nem egy applikáció..." Az online tér és a közösségi média óriási változásokat idézett elő az érzelmek sokszínűségében és megélésében. Elveszett a felhőtlen gyerekkor és fiatalkor és mindez nem pótolható a pillanatok online megosztásának múló örömével. Ha segíteni akarunk, meg kell érteni mindazt, amivel a digitális generációk szembenéznek.
+Little G Weevil -Kc Brown
+Kossuth Művelődési Központ NKft. kamaraterem
+Cegléd Kossuth tér 5/A
+3,500 Ft
+Little G Weevil dobosként kezdte zenei pályafutását – Gerdesits Ferenc, a Quimby dobosa volt a tanára –, majd 17 évesen kezdett el gitározni. 2013-ban elhódította a 29. International Blues Challange szóló/duó kategória első helyét, ami mellett átvehette a legjobb gitárosnak járó címet ugyancsak szóló/duó kategóriában. 2014-ben Moving című albumát az év akusztikus lemeze díjra jelölték az amerikai Blast zenei díjátadón.
+Jegyek elővételben: 3000 Ft, a napján: 3500 Ft (NKA Hangfoglaló Program)
+Kékfestőnek lenni Isten áldása
+Kossuth Művelődési Központ NKft. - Ceglédi Galéria
+2020-02-15 12:00
+Kiállító műhelyek:
+Bácsalmási Kékfestő Műhely—Bakos Zoltán István Népi Iparművész
+Győri Kékfestő Műhely—Tóth Ildikó Népművészet Mestere, Gerencsér Zsolt Népművészet Ifjú Mestere
+Kovács Kékfestő Műhely Tiszakécske, Szentedre—Kovács Miklós Népművészet Mestere,
+Kossuth-díjas, Kovács Miklósné Népi Iparművész, Panákné Kovács Mária Népi Iparművész,
+Ruzicska-Panák Annamária Népművészet Ifjú Mestere
+Nagynyárádi Kékfestő Műhely—Sárdi János Népi Iparművész
+Tolnai Kékfestő Műhely - Horváth Tiborné ...
+Dalinda, Korinda a Tázló klubban
+Eötvös10 Közösségi és Kulturális Színtér
+Budapest Eötvös utca 10.
+2020-02-15 00:30
+1,000 Ft
+2020. február 14., péntek
+19.00–20.00 moldvai tánctanítás – Molnár Előd, Skopp Júlia és a FolkPakk
+20.00–20.45 koncert – Dalinda
+20.45–00.30 moldvai csángó táncház – Korinda, Tázló
+A szünetben daltanulás a Dalindával
+Jegyár: 1000 Ft; diák, nyugdíjas: 700 Ft; terézvárosiaknak: 500 Ft
+Jegyvásárlás az Eötvös10 jegypénztárában és a jegy.hu-n.
+Bécsi táncház
+Spö klubház Favoriten
+Ausztria Bécs Jagdgasse 1/b
+Linczenbolf Macimilian táncházvezető és Kalász Máté és zenekara garantálja a kitűnő hangulatot a Délibáb Bécsi Magyar Kultúregyesület által szervezett táncházban. 18 órakor gyerek táncház 20 órakor felnőtt táncház. Ez az esemény is része annak a határon túli táncház sorozatnak amely a Magyar Népművelők Egyesülete sikeres pályázatának köszönhetően a Csoóri Sándor Alap támogatásával valósul meg.
+Z E N – a hallgatás extázisa
+VOKE Arany János Művelődési Ház GALÉRIA
+Győr Révai u. 5.
+Fülöp Péter fotográfus tárlata.
+A tárlatot megnyitja: Fabulya Andrea és Fülöp Péter.
+Filmvetítés: Z E N – Kelet - Nyugat
+Kozma Orsi Duó
+Corvin Művelődési Ház-Erzsébetligeti Színház
+Budapest Hunyadvár utca 43/c.
+2020-02-14 19:30
+Kozma Orsi többszörös arany-és platinalemezes énekesnő, a Jazz+Az, a Cotton Club Singers tagja, szólóban a 10 éves Kozma Orsi Quartet alapítója.
+Találkozások
+Kozma Orsi évek óta együtt muzsikál Cseke Gábor zongoraművésszel, a páros egy bensőséges “bestof “ koncertet ad: kedvenc jazz örökzöldek (Sinatra, Fitzgerald), ismert slágerek (Sting, George Benson ), magyar melódiák (LGT)és Orsi dalai invitálnak zenei bújócskára, melyben a műfajok és a két művész találkozása izgalmas élményt nyújt.
+Farsangi játszóház
+Komló Város Önkormányzat Közösségek Háza, Színház- és Hangversenyterem
+Komló 48-as tér 1.
+200 Ft
+Farsangi játszóház és karneváli forgatag várja a jelmezeseket. Minden jelmezes résztvevő ajándékot kap! Kreatív foglalkozás keretén belül zajkeltő hangszereket készítünk, melyek a jelmezes felvonulás kísérő zenéjét biztosítják. De lesz arcfestés, csillám tetoválás, álarckészítés is. Käsz Ildikó óvodapedagógus vezetésével Dalolgató foglalkozás keretén belül varázsolunk karneváli hangulatot és zenés mókát a Közösségek Házába.
+Hagyományaink nyomában
+VOKE Kodály Zoltán Művelődési Ház
+Nagykanizsa Csengery út 67.
+2020-02-14 12:30
+12.30 Tollfosztás a Mamik hagyományőrző Dalkörrel 15.00 MOL borverseny A rendezvény ideje alatt megtekinthető a :Képek az ország vasútjairól című országos vasutas fotópályázat vándorkiállítása.
+Veréb Tamás és Zenekara – Valentin-napi koncert
+József Attila Művelődési Központ
+Budapest József Attila tér 4
+2020-02-14 20:30
+3,000 Ft
+Veréb Tamás fiatal kora ellenére már számos szakmai elismeréssel rendelkezik, energikus, nagyközeget megfogó zeneiséggel mozog akár a komolyzene a musical és a könnyűzene világában is. Számos főszerepet játszik a Budapesti Operettszínházban, továbbá fellépett már a Margitszigeti és a Szegedi Szabadtéri Színpad produkcióiban is. Belépődíj: Első szektor: 3500 Ft, Második szektor: 3000 Ft
+Jegyek a helyszínen vagy a kult13.jegy.hu internetes oldalon válthatók.
+Picirkusz babaszínházi előadás
+PannKa Közösségi Tér
+Budapest Pannónia u 18.
+2020-02-14 10:20
+800 Ft
+Varázslatos cirkusz - kicsiben, a legkisebbeknek, ahogy két bohóc elképzeli! Fellép a kendőfülű elefánt és a félelmetes esernyő-oroszlán, de látható itt a különleges erőművész szám és a táncoló törpe is! Ajánlott korosztály: 0 - 4 éves korig
+Belépődíj: 800Ft/fő, XIII. kerületi Partner Kártyával 500 Ft/fő
+Regisztráció szükséges a www.pannka.hu oldalon keresztül!
+Helytörténeti kiállítás – Kőbányai Északi J.J.
+Törekvés Művelődési Központ
+Budapest Könyves Kálmán krt. 25., I. emelet Galéria
+2020-02-16 16:00
+A Törekvés alapítóinak bázisa az Északi Főműhely volt.
+150 évre visszatekintő fénykép kiállítást készítettünk, mely a továbbiakban mint állandó kiállítás színesíti a Törekvés galériáját, mely a Villanások az Északi Főműhely működéséből nevet viseli.
+150 év több emberöltő! Egy gyár életében négy munkás generáció! A magyar vasút életében majdnem a teljes korszak, egy bezárt gyárnál az emlékezés időhorizontja, nem lehet bezárni azt a szellemet, szellemiséget, melyet ez a gyár képviselt
+Paca szakkör a farsang jegyében a Táncsicsban
+Táncsics Mihály Művelődési Ház
+Budapest Grassalkovich út 122-124.
+2020-02-14 15:30
+2020-02-14 17:30
+Paca szakkörünk keretén belül ingyenes kézműves foglalkozást tartunk farsang jegyében. Minden érdeklődőt szeretettel várunk! 15:30-16:30 között az óvodás korosztályt és 16:30-17:30 pedig az iskolás korú gyermekeket várjuk.
+Szerelmes kubai latin est
+Klauzál Ház
+Budapest Nagytétényi út 31-33.
+Latin Combo Duo koncert
+Kubai Fiesta - Salsa la cubana tánc-show - kubai salsa, latin tánc tanítás, buli.
+ének: Lili Garces
+gitár: B. Bíró Zoltán
+A koncert után DJ ZULU
+jegyár: 1200 Ft
+Rajz- és meseíró pályázat
+2020-02-14 13:30
+A Klauzál Gábor Budafok-Tétényi Művelődési Központ rajz- és meseíró pályázatot hirdet:
+Artúr, a kulturátor címmel az óvodás és iskolás gyermekek számára.
+Programnyitó – Győri Vasutas Természetjáró Egyesület bemutatkozása
+VOKE Arany János Művelődési Ház
+Határtalan túrák Európa tájegységein, hegyvidékein és városain keresztül. Természeti látványosságok, épített értékek felkeresése.
+Élményszerző túrák Magyarországon: kalandozások hazánk sokszínű vidékein, kis falvak nagy értékek.
+Európai népek-kultúrák megismerése. Utazások a környező országokban és mediterrán tájakon.
+Házigazda: Csuka István elnök
+Farsangi hagyományőrző táncház
+Budapest Könyves Kálmán krt. 25., II. emelet Manninger terem
+2020-02-14 22:30
+Hagyományainkhoz híven ismételten csatlakozunk a Kultúrházak éjjel-nappal rendezvénysorozathoz. Táncházvezető: Vizi Adrienn. Az esemény támogatója az Emberi Erőforrások Támogatáskezelő - Csoóri Sándor Alap - benyújtott sikeres pályázatunk alapján.
+Festménykiállítás
+Köfém Oktatási és Közművelődési Központ
+Székesfehérvár Verseci u. 1-15.
+2020-02-16 17:00
+Monhaltné Patkós Mária festőművész alkotásait tekinthetik meg a Kultúrházak éjjel-nappal programsorozat hétvégéjén a Köfém Művelődési Ház aulájában. A tárlat február 14-16 között látogatható 9:00-17:00 óra között. A festménykiállítás megtekintése ingyenes.
+A 2020. esztendőben rejlő sorsfordító lehetőségek
+Budaörsi Jókai Mór Művelődési Ház
+Budaörs Szabadság út 26.
+Veres Mónika előadása különös tekintettel a párkapcsolatokra.
+A Nyilas és a Sas fénylő csillagképi környezetében három kardinális bolygó együttállása fogja a jövő évet vezérelni. Itt a lehetőség az Isteni Tudást lehozni az anyagba és elkezdeni a gyakorlatban működtetni, hogy egy magasabb minőségbe emelkedjen az életünk. Sorsfeladataink, mint egy égi kapcsoló most bekapcsolódnak, a gyökeres változás kikerülhetetlen. Az esztendő jelmondata: Mindaz, amiben vesztesnek érezted magad, most győzhetsz!
+Les Alouettes – francia táncház
+TEMI Fővárosi Művelődési Háza (FMH)
+Budapest Fehérvári út 47.
+2020-02-14 22:00
+Francia néptáncok élő zenére, a Les Alouettes együttessel. Havonta egyszer, pénteken, Bretagne, Provence, Auvergne, Limousin táncait tanítjuk. A lépéseket könnyen megtanulhatja bárki, várunk minden korosztályt a különleges, francia hangulatú táncházunkba!
+Táncmesterek: Bojtor Mária és Yves-André Gomez
+Alsó-Szilézia fotós szemmel – fotókiállítás
+2020-02-16 19:00
+A Fénysugár Fotóklub 2019 szeptemberében bebarangolta a lengyelországi Kudowa-Zdrój környékét. Az ott készült fotók töredéke képezi a kiállítás anyagát.
+„Véled vagy nélküled” – Gecse Attila előadása
+Sajóládi Polgármesteri hivatal Házasságkötő terme
+Sajólád Ady E. u. 2.
+Sajólád Község Önkormányzata szeretettel meghívja Önt és kedves családját
+a Sajóládi Polgármesteri Hivatal Házasságkötő termébe
+2020. február 14-én, pénteken 17.00 órától
+Gecse Attila, a B-A-Z Megyei Központi Kórház és Egyetemi Oktatókórház lelkészének előadására, melynek címe: „Véled vagy nélküled” Az előadás ingyenes!
+A rendezvény felelőse: Takácsné Gah Erzsébet, 20/474-52-49
+A rendezvényen nyilvános fotó-és videófelvétel készülhet.
+Mecsek Alkotóműhely kiállítás megnyitója
+PKK Patacsi Művelődési Ház
+Pécs Fő utca 20.
+Tisztelettel meghívjuk Önt a Mecsek Alkotóműhely kiállítás megnyitójára
+A kiállítás február 27-ig hétköznaponként 8:00-18:00 óra között díjmentesen megtekinthető.
+További információ: Bencze Anikó 30/826-1290
+Farsangi mulatság
+Hírös Agóra Kék Elefánt Közössági Tér és Információs Pont
+Kecskemét Batthiány u. 33.
+Tánc, zene, verseny
+Activity délután
+Hírös Agóra 10perc Közösségi Tér
+Kecskemét Kossuth tér 4.
+2020-02-14 13:00
+Közös játék, közös élmény.
+Látható és láthatatlan
+Zuglói Ifjúsági Centrum
+Budapest Uzsoki utca 57.
+Pascalau Mariana képzőművész kamara kiállítása.
+A kiállítás megtekinthető március 16-ig.
+Aerobik nyílt nap
+Hírös Agóra Hetényegyházi Közösségi Háza
+Kecskemét Kossuth Lajos u. 83.
+Kóstolj bele a mozgásba!
+Készíts ajándékot Valentin-napra!
+Csak az ügyes kezeidet ne hagyd otthon! Minden mást nálunk megtalálsz.
+Suli farsangoló
+Cervinus Teátrum Művészeti Nonprofit Kft.
+Szarvas Kossuth tér 3.
+A Benka Gyula Evangélikus Általános Iskola farsangi műsora és mulatsága délutántól estig színvonalas műsorral és diszkóval. Az iskola diákjai, szülői, pedagógusai és meghívott vendégei számára.
+Farsangi batyus bál
+Cigánd-Iskolai Étkezde
+Cigánd Iskola u. 19.
+2020-02-15 03:00
+Hatodik alkalommal szervezi meg a Sarkantyús Néptáncegyüttes a farsangi jelmezes bálját Cigándon 2020. február 14-én.
+A rendezvényen az együttes tagjai egy rövid, jó hangulatú műsorral kedveskednek a megjelent vendégeknek.
+Jó ebédhez szól a népdal
+Katona József Művelődési Ház
+Kerekegyháza Szent István tér 12.
+2020-02-14 12:00
+Tavaszi Szél Népdalkör művészeti csoport 1972-ben alakult. 2010-ben Kerekegyházáért kitüntetést kaptak. Ugyanebben az évben lemezfelvétel is készült a népdalkörrel. Évente több alkalommal is fellépnek helyi illetve más települések rendezvényein. Minden héten, pénteken délelőtt tartják próbáikat a művelődési ház kistermében.
+Fodorinda néptánc program
+Máriapócs, Kulturális Központ
+Máriapócs Kossuth tér 2.
+Gyermek és felnőtt táncház Balogh Tamás vezetésével.
+Kézműves foglalkozások: fazekas, szövő, bőrözés, fonás, nemezelés.
+Muzsikál a Görice Zenekar.
+Belépés díjtalan! A programot támogatja a
+a CSSP-E-TANCHAZ-2019-0024 támogatásból .
+Időpontjai a Kultúrházak éjjel- nappal eseménysorozaton kívül:
+február 8. szombat 17 óra
+május 02. szombat 17 óra
+március 14. szombat 17 óra
+április 11. szombat 15 óra
+június 13. szombat 17 óra
+Iskolai farsang Palotáson
+Mihályfi Ernő Művelődési Ház és Könyvtár
+Palotás Szabadság út 26.
+A helyi általános iskola már évek óta szervezi diákjai részvételével a farsangi mulatságot, mely az egyik legnagyobb létszámú programja az intézménynek. A sok-sok beöltözött, ötletes maskarás gyermek jókedvűen mulat társai és szüleik, barátaik társaságában a művelődési házban. Reméljük ebben az évben is sokan látogatnak el erre a színvonalas programra!
+Faluházak kiállítás
+Kispáli Községháza
+Kispáli József A. u. 40.
+Faluházak - A közöségépítés múltja, jelene és jövője című kiállítás Kispáliban.
+A Kós Károly Egyesülés 30 éves évfordulója alkalmából az építész tagok munkásságát bemutató kiállítást megnyitja Fülöp Tibor építész.
+A szerelem fogságában
+Ady Endre Művelődési Központ
+Bátonyterenye Molnár Sándor út 1-3
+-100 Ft
+Bálint-napi szabadulós játék Shakespeare-től a mesék szerelméig az Ady Endre Művelődési Központban.Várjuk baráti társaságok,családok,szerelmesek jelentkezését.
+Szentföldi úti beszámoló
+Művelődési Információs Központ és Könyvtár, Klarissza-ház
+Piliscsaba Templom tér 9.
+Szeretettel várunk mindenkit a Kultúrházak éjjel-nappal - rendezvénysorozat keretén belül Szentföldi úti beszámolóra Bodó-Csiba Gizella író és Holéczi Zsuzsa író előadásában.
+Házigazda és moderátor: Dr. Szelke László
+Nyitott zománcműhely
+Hírös Agóra Ifjúsági Otthon
+Az Ifjúsági Otthon Tűzzománc alkotóműhelyének titkaiba tekinthetnek be az érdeklődők:
+Kőrös Sára grafikus segítségével
+Bessenyei György Művelődési Ház és Könyvtár
+Bugyi Beleznay tér 2.
+A játszóházban álarcokat, vidám figurákat, farsangi dekorációkat készítünk az általános iskolák alsó tagozatos tanulóival. A farsangi fánkot az Őszi Fények Nyugdíjasklub tagjai sütik.
+Ég a tűz – zománckiállítás
+A VSG egy közösség, egy fiatal keramikusokból álló lendületes csapat. Egyaránt foglalkozunk képzőművészeti és funkcionális kerámiák készítésével. Összeköt minket az egyetemen tanult technikák szeretete, a tűz, és a közös energiákból fakadó munka élménye.
+Variációk – ezer papír origami
+Serényi Hedvig művésznő kiállításának megnyitója a Beleznay kastélyban.
+Besenyő Só
+Bugyi Kossuth L. u. 1.
+Laár András önálló estje a művelődési ház nagytermében.
+Könyvajándékozás
+Rácalmási Művelődési Ház és Könyvtár
+Rácalmás Szigetfő utca 31.
+Február 14-e a Nemzetközi Könyvajándékozási Nap. Ezen a napon a rácalmási városi könyvtár minden évben elrejt becsomagolt könyveket a könyvtárban, amelyek a megtalálójuké.
+Anya jóga
+A Rácalmási Baba-Mama Klub szervezésében az anya jóga egy nyitott jóga óra.
+Ezen az órán a középpontban most Te leszel, egy kis Én időben 60 perc alatt átmozgatjuk az egész testünket, erősítjük, rugalmassá varázsoljuk, frissítő, regeneráló női gyakorlatokkal. Feltöltődünk nyugalommal, tápláljuk testünket, lelkünket és ez csodálatosan kihat a kisgyermekre is. Kiegyensúlyozottabb, derűsebb anyaként, nőként érezheted magad! Apukák is csatlakozhatnak!
+Rácalmási Baba-Mama Klub nyitott klubfoglalkozás
+A Rácalmási Baba-Mama Klubban megoszthatod mindennapi problémádat, tanácsot adhatsz és kaphatsz, valamint megismerkedhetsz hasznos praktikákkal is. Most alkalmad nyílik arra, hogy megismerkedhess Velünk pocakosan vagy ha babával jönnél! Mi várunk sok szeretettel ezen a nyitott klubfoglalkozáson!
+Aktívmami Hordozós Fitness
+2020-02-14 10:30
+2020-02-14 11:00
+Gyere és próbáld ki az Hordozós Aktívmamit!
+Az Aktívmami nem hordozós edzés vagy baba-mama torna, hanem olyan, kifejezetten anyukáknak kifejlesztett mozgásrendszer, ami ugyan figyelembe veszi az állapotot, támogatja a regenerációt, de mégis a fókuszában a hatékony alakformálás áll.
+Ennek ellenére biztonságos, hiszen mind a gyakorlatokat, mind az intenzitást maximálisan magadra tudod igazítani, és ebben oktatóink is a segítségedre vannak!
+Aktívmami Hordozós Fitness - a hordozás és az összebújás
+Rácalmási Hurciklub
+2020-02-14 11:15
+Érdekel a hordozás világa? Szeretnél tenni a környezetünkért, de még nem tudod hogyan?
+A klubalkalmon lehetőséged nyílik:
+- a különböző hordozóeszközöket megismerni és kipróbálni
+- már elsajátított kötések javításra
+- hordozó eszközök bérlésére
+- környezettudatos gyereknevelés és háztartásvezetési tippek megismerésére
+Ha már van saját hordozó eszközöd, de nem vagy biztos a használatában, hozd el magaddal erre a nyitott órára és segítek!
+Ha még nincs eszközöd,azért gyere el, hogy kipróbálhasd!
+Dokumentum filmklub
+Cserepesház
+Budapest Vezér utca 28/b.
+A szabadság boldog körei
+– dokumentumfilm, 55 perc (2018)
+Rendezô: Dér András – Muhi Klára
+Goldschmidt Dénes, a reformer pszichiáter a Kádárrendszerben sajátos menedéket – ún. antipszichiátriai
+intézetet – teremtett Intapusztán azoknak az embereknek, akik valamilyen okból nem tudtak alkalmazkodni
+a „kádári normális világhoz”. Goldschmidt a rendszer ellen dolgozott, miközben intézetét csak ügynökként, besúgások
+árán tudta fönntartani.
+Vendégek: a rendezôk
+Ruminitől a Sötét Birodalomig
+2020-02-14 16:30
+A Rácalmási Cimbora Klub szervezésében Berg Judit írónő látogat el a Rácalmási Művelődési Házba.
+A sokak által ismert Rumini mellett szó lesz az új regényről, a Sötét Birodalomról is.
+A részvétel ingyenes.
+Szeretettel várunk minden érdeklődőt!
+Gubanc – modern női fonó
+Reménysugár Kulturális Egyesület - PKK Belvárosi Közösségi Tér
+Pécs Király u. 9.
+Kéthetente összegyűlünk és különböző, a nők életéhez kapcsolódó témákról beszélgetünk. Eközben tanulunk egymástól, akárcsak a régi idők fonóiban a lányok és asszonyok. Hozd be a meglévő kötésedet, horgolásodat, hímzésedet, és alkossunk együtt! Inspirálódjunk egymás kreatív munkájából.
+Körvezető: Gyenese Andrea és Zombai Zita
+A belépés díjtalan.
+Bálint-napi Líra Műhely
+A Líraműhely alkalmat kínál a „találkozásra” a vers, a költő és az olvasó között, miközben műhelybeszélgetést kezdeményez a kortárs költészetről és kultúráról.
+Kiss Georgina, irodalomtörténész, költő, kritikus, a Leőwey Klára Gimnázium tanára
+Mekis D. János, irodalomtörténész, irodalomkritikus, PTE BTK Modern Irodalomtörténeti és Irodalomelméleti Tanszék oktatója
+Mohácsi Balázs, költő, műfordító, kritikus, a Jelenkor folyóirat szerkesztője
+Papp Katinka, irodalomtörténész.
+Kid Rock&Roll nyílt óra gyerekeknek
+A Kid Rock And Roll SE. 2006. május elsején alakult. Fő profilja az akrobatikus rock and roll.
+Rácalmáson 2019-ben kezdte el az akrobatikus rock&roll oktatását az egyesület, azóta szép számmal csatlakoztak hozzájuk rácalmási és a környező településekről gyerekek. A csoport nagyon eredményes, több versenyen is megméretették tudásukat, ahonnan előkelő helyezéseket elérve tértek haza.
+A nyílt órán lehetőség van bepillantani az edzésbe.
+RáJÁTSZIK Rácalmási Színjátszó Kör: Hófehérke, és improvizációs játék
+A RáJÁTSZIK Rácalmási Színjátszó Kör egy eddig még nem látott darabot mutat be Hófehérke címmel.
+Ahogy azt már a közönség megszokhatta a színjátszókörtől, a Kultúrházak éjjel-nappal rendezvény keretében improvizációs játékra is lesz lehetőség.
+Táncház a Rácalmási Barina Táncegyüttessel és a Selyöm Zenekarral
+2018-ban a Kultúrházak éjjel-nappal rendezvény egyik népszerű programja volt az ingyenes élőzenés táncház.
+A Rácalmási Barina Táncegyüttes néptáncosai mellett a Selyöm Zenekar várja a népzene és a néptánc szerelmeseit idén is!
+Ingyenes beiratkozás, könyvtári totó és amnesztia nap
+A rácalmási városi könyvtár idén is könyvtári programokkal készül a Kultúrházak éjjel-nappal rendezvény látogatóinak.
+Érdemes ezen a napon beiratkozni a könyvtárba, hiszen február 15-én szombaton nem kérjük el a könyvtári tagdíjat a beiratkozóktól.
+A kölcsönzött könyveivel megcsúszóknak szintén érdemes ezen a napon visszahozni a könyvtárba a könyveiket, mert amnesztia nap lévén nem kérik el a késedelmi díjat.
+A könyvtári totó helyben való kitöltésével értékes nyereményekhez lehet jutni.
+A szerelmes Chagall – koncertszínház Horgas Eszter fuvolaművésszel
+Hírös Agóra Kulturális Központ
+Kecskemét Deák Ferenc tér 1.
+Marc Chagall festőművész életútját követve orosz, zsidó, francia, amerikai klasszikus és jazz zeneműveiből válogatott bravúros feldolgozásokat hallhat a közönség. Az est különlegessége hogy Chagall szerepében Bálint András Kossuth és Jászai-díjas színművésszel találkozhatnak a nézők.
+Közreműködnek: Lőwenberg Dániel zongora és a ClassJazz Band (Dajka Krisztián gitár, Hárs Viktor basszus, Kaszás Péter dob, Pusztai Csaba ütőhangszerek, Révész Richárd zongora )
+Nyitott jóga óra
+2020-02-14 09:30
+A művelődési házban lehetőség van minden szombat reggel jógával kezdeni a hétvégét!
+A február 15-ére eső jóga órán azok is becsatlakozhatnak és kipróbálhatják a jógát, akik még sosem találkoztak vele.
+A jógázni vágyók hozzanak magukkal polifoam-ot, esetleg egy törölközőt és kényelmes ruhát!
+Fekete-fehér-igen-nem vetélkedő Kovács Áronnal
+Gyorsan vág az eszed?Biztosan meg tudod állni, hogy ki ne mondd a 4 szót? A népszerű játék vetélkedője a 2020 Kultúrházak éjjel-nappal rendezvényen szombat délelőtt lesz.
+Jelentkezni lehet 2 korosztályban: 10–18 éves korig – gyerek korosztály és 19 éves kortól – felnőtt korosztály Korosztályonként maximum 20 fő nevezhet! Nevezni a művelődési ház vezetékes telefonszámán (25/440-456) lehet, január 28-tól!
+A verseny február 15-én, szombaton 9.00-kor kezdődik, a művelődési házban! Nézőként is várunk
+Hungaricum játszóház
+Egy kis hungarikum, egy kis játék és játszva tanulás, tudásmérés. Szeretettel várjuk a gyerekeket és a felnőtteket is!
+Nyílt próba és karaoke a Rácalmási Napsugár Asszonykórussal
+A 2019-ben minősítést szerzett Rácalmási Napsugár Asszonykórus nyílt próbát tart február 15-én, szombaton. A csatlakozni vágyók betekintést nyerhetnek milyen a kórus próbája. Aki pedig csak énekelni szeretne egy jót, nemtől, kortól függetlenül szintén csatlakozhat, hiszen karaokezásra is lehetőség lesz!
+Olvasóklub nyitott foglalkozás
+A Rácalmási Olvasóklub 2018. októberében alakult. Azóta folyamatosan növekedő taglétszámmal havi egy alkalommal találkoznak a tagok és osztják meg olvasásélményeiket egymással. Hogyan kell elképzelni egy klubfoglalkozást? Mi történik az olvasóklubban? Miért érdemes csatlakozni? Ezekre a kérdésekre mind választ talál, aki eljön és bepillant a február 15-i nyitott klubalkalomba.
+Határtalan MÜPA élmény – Eszterházy Péter est felvételének vetítése
+Esterházy Péter Kossuth- és Herder-díjas író, a kortárs magyar irodalom egyik legjelentősebb alkotója 2016. július 14-én hunyt el.
+2016. novemberében telt ház előtt került megrendezésre a MÜPA-ban az Eszterházy Péter-emlékest. A műsorvezető, Veiszer Alinda Spiró Györggyel, Parti Nagy Lajossal, Bán Zsófiával, Závada Pállal, Dés Lászlóval és Dés András beszélgetett az íróról.
+Az emlékest felvételét a MÜPA engedélyével, HD minőségben vetítjük le.
+A felvétel megtekintése ingyenes.
+Minecraftozás a Digisulival
+2020-02-14 00:00
+A Digisulisok játék készítéssel (blokk programozással) foglalkoznak hetente egy alkalommal a művelődési házban.
+A számítógép a gyermekek életének is fontos része, ahogyan a számítógépes játékok is.
+A szülők által is egyre ismertebb Minecraft játékkal játszhatnak az érdeklődők, legyenek akár profik, vagy azzal még csak ismerkedni vágyók. Várjuk azokat a szülőket is akik meg szeretnék nézni mi ez a játék és miért olyan népszerű a fiatal körében.
+Műanyag zacskó helyett varrjunk ökozsákot!
+Dokumentumtár és Információs Központ
+Budapest Bocskai utca 74-78.
+Varró foglalkozásunkon a nulla hulladék (zero waste) jegyében tüll és vászonzsákokat készítünk, melyek használata sok hulladéktól kíméli meg a környezetünket.
+Az anyagokat és az eszközöket biztosítjuk, de ha van kedvenc anyagod, hozd magaddal!
+A foglalkozás regisztrációköteles: barta.ildiko@dokuinfo.hu
+Textiltörténetek – a Modern Műhely iparművészeti kiállítása
+Polgár Centrum - Újpest Galéria
+Budapest Árpád út 66.
+A fagyos februárt enyhíti a „Textiltörténetek”címet viselő kiállítás, mely a Modern Műhely alkotói körének munkáiból készült válogatás. A csoportot 2006-ban alapította tíz hasonló gondolkodású quiltművész, és mára a számuk 20 főre bővült. 2009 óta rendszeresen állítanak ki magyar múzeumokban, hazai és külföldi quilt fesztiválokon. A Textiltörténetek nem egy közös témára felfűzött tárlat, inkább tekinthető 20 „pillanatképnek” arról, hogy kit mi foglalkoztatott leginkább az elmúlt évben.
+Farsangi móka Jankával
+Itt a farsang, a babák se maradjanak ki a mulatságból! Február 14-én, pénteken 10-11ig várjuk a Kölyökkuckóba a vállalkozó szellemű babákat (4 hónapostól 3 éves korig)és anyukájukat egy kis farsangi mulatozásra. Lesz mondókázás,ének,tánc és farsangi finomságok! A babákat jelmezben várjuk,de ha anyuka is szeretne beöltözni,hajrá!
+Retro Valentin-napi disco
+2020-02-15 04:00
+1,500 Ft
+A zenei paletta a1970-es évektől 2000-es évek elejéig terjed.
+Szuper hangulat, ahová reméljük Cupido is ellátogat majd.
+Asztalfoglalás a 06-1-286-0262 telefonszámon. Belépő: 1500 Ft/fő.
+Le a szívószálakkal!
+BEMKK Fiatalok háza
+Bicske Kossuth tér 19.
+Játékos környezetvédelmi program általános- és középiskolásoknak a Fiatalok Házában.
+Diavetítéssel kísért előadást tart Farkas Bernadett közművelődési szakember, majd játszóház tematikus állomásokkal.
+Kisze, kisze haj!
+BEMKK Kultúrkúria
+Bicske Ady E. u. 11.
+Bütykölde kézműves klub és kreatív foglalkozás a Bicskei Kultúrkúriában.
+A tavasztündérek segítségével a gyerekek kiszebabát, zajkeltő szerszámokat, tavasztündéreket készítenek, majd télűző rigmusokkal ismerkednek meg, hogy vasárnap elűzhessék a telet.
+Tavasztündérek:
+Bakné Kata és Bukó Bori
+Foglalkozásvezető:
+Kiss Irén
+Akinek búja, bánata van, az írja fel egy papírosra, hozza el, és tűzze ki a banya szoknyájára.
+Szeretettel várjuk a kicsiket és nagyokat!
+Akik maradtak – filmvetítés
+Bicske Kossuth tér
+Magyar filmdráma, 83 p
+Filmvetítés a Fiatalok Házában.
+Egy kamaszlány és egy középkorú férfi egymásra találásának megható hangvételű története a második világháború után.
+Tóth Barnabás filmje az Oscar-díj szűkített listájára, a legjobb nemzetközi film kategória 10 jelöltje közé is bekerült.
+Jegyek ára elővételben: 500 Ft
+Előadásnapi belépődíj: 1 000 Ft
+Mesedélelőtt óvodásoknak
+Rátkai Közösségi Ház
+Rátka Iskola tér 2/a.
+2020-02-14 11:30
+Az óvodások rendszeresen járnak mesedélelőttre a Közösségi Házba. Ezen a délelőttön a farsang kerül terítékre.
+Filmvetítésen a Bogyó és Babóca sorozatból a Jelmezbál című mesét nézzük meg. A kézműves foglalkozáson farsangi álarcot és sapkát készítünk. készítünk.
+Jelmezes bemutató és táncmulatság
+Az általános iskola szervezésében farsangi forgatagon vehetnek részt az érdeklődők. Farsangi jelmezversenyen mérik össze kreativitásukat az osztályok és az egyéni jelentkezők. Az ötletes jelmezek mellett a humoros előadások is teret kapnak. Tombola, büfé és táncmulatság zárja a délutánt.
+Viasszal írt üzenet
+2020-02-16 14:00
+Fekete Ildikó Junior Príma-díjas tojásfestő, népi iparművész kiállítása a Bicskei Kultúrkúriában.
+A kiállítás a Bicskei Kultúrkúria nyitvatartási idejében tekinthető meg.
+Sakk klub nyitott klubnap
+A sakkozás iránt érdeklődőket várják oktatással, nyílt klubfoglakozással
+ZegJam – Zalaegerszegi Jam Session Találkozó
+Apáczai Csere János Művelődési Központ
+Zalaegerszeg Apáczai tér 5.
+Zalaegerszegi és vidéki zenekarok előadóművészei tolmácsolásában hallhatunk közkedvelt, tradicionális rock, blues, pop dalokat különböző felállásokban.
+20.00 Kapunyitás
+20.00 Dream by Chords minikoncert
+21.00 Berkes Quartett– jazz, swing, minikoncert
+22.00 ZegJam
+A belépés díjtalan!
+Szenior örömtánc Ildikóval
+A mozgás és a tanulás fiatalít! Ezt jól tudják azok, akik már részt vesznek Szűcsné Gyöngyösi Ildikó Szenior Örömtánc foglalkozásain. Most mindenki kipróbálhatja! A szenior táncfoglalkozáshoz nem szükséges előzetes tánctudás. Az új lépések megtanulása intenzív koncentrációt kíván, ez elősegíti az idegpályák olajozását. A táncolás jótékonyan hat a testre, lélekre és a szellemre, növeli az állóképességet, javítja a hangulatot és segít a szellemet frissen tartani.
+Mattadó Sakksuli
+Sokoldalú személyiségfejlesztő hatása miatt a sakkozás egyre népszerűbb nevelési eszköz. 2013-tól a választható tantárgyak közé is bekerült a Nemzeti Alaptantervben. A sakkozó gyerekek könnyebben megkülönböztetik a lényegest a lényegtelentől, gyorsabban és hatékonyabban tanulnak. A játék fejleszti a tervszerű és logikus gondolkodást, a koncentrációs- és megfigyelő képességet, a kombinációs készséget.
+Farsang 2020
+Művelődési Ház
+Monostorapáti Petőfi u 12
+400 Ft
+Alsó tagozatos tanulók farsangi zenés, műsoros bemutatkozása
+Extreme Dance Team
+Kovács Pál Művelődési Központ
+Tiszafüred Örvényi út 6.
+Az Extreme Dance Team évek óta működő amatőr előadó-művészeti csoport, mely próbáit a Kovács Pál Művelődési Központ nagy termében tartja. Sok versenyen indulnak és neveznek, belföldön és külföldön egyaránt. Rendszeres fellépői a város különböző rendezvényeinek. A csapathoz folyamatosan lehet csatlakozni. De nem csak lányok hanem fiúk jelentkezését is várják ugyanis megalakult a zászlóforgatók csoportjuk is.
+Művészeti vezetőjük: Faragó Judit
+Fallaway Táncegyesület nyitott foglalkozása
+Modern és társas táncok.
+Szeretettel várunk minden olyan táncolni szerető gyermeket és felnőttet, akik szeretnék magukat kipróbálni az igényes táncok világában
+Luxemburg grófja
+Színház, Szentgotthárd
+Szentgotthárd Széll Kálmán tér 7.
+2020-02-14 21:30
+Nagyoperett két felvonásban a Pest Művészszínház előadásában.
+Népzenei kurzus, daltanítás, táncház
+Agóra Veszprém
+Veszprém Táborállás park 1.
+2020-02-15 02:00
+Helyszín: Agóra 10-11-es terem, kamaraterem
+Tanítanak: Kacsó Hanga Borbála (ének), Dulai Zoltán (hegedű) és a Zagyva Banda (hegedű, brácsa, nagybőgő, cimbalom)
+Tananyag: Gömöri népzene és néptánc
+16.00-19.00 népzeneoktatás
+19.00-20.00 daltanítás
+20.00-02.00 táncház
+A belépés díjtalan
+Csapatjáték szerelemmel – közösségi est
+Könyvtár, Ballószög
+Ballószög Rákóczi u. 11.
+A Házasság Hete és a Kultúrházak éjjel-nappal rendezvénysorozathoz kapcsolódva közösségi, beszélgetős estet szervezünk. Az alkalmon meghívott vendégek tartanak előadást a párkapcsolat, házasság, család témakörben, amit kötetlen beszélgetés követ. Meghívott vendégek Adamek Norbert ballószögi református lelkész, Hatházi Róbert római katolikus plébános, a kecskeméti Szentcsalád Plébánia plébánosa .
+Farsangi játékok
+Bekölce Közösségi Színtér
+Bekölce Béke út 41.
+Az óvodásokat várjuk szeretettel a bekölcei Közösségi Színtér könyvtárába. Farsangi álarcokat készítünk, ragasztunk, színezünk. Közben vidám hangulatban mondókázunk.
+Táncház Halmos Attilával, a Borsával és a Koccantóval
+17:30 – Aprók tánca vezeti Czene Zsuzsa
+19:00 – Moldvai táncok tanítása
+20:00 – táncház hajnalig
+Muzsikálnak: Halmos Attila, Borsa együttes, Koccantó zenekar
+Kézműves foglalkozás fél 6-tól Dobi Pállal és Balla Gyöngyivel.
+Gyimesi tánckurzus a táncház előtt 14:00-tól!
+Farsangi táncház
+Faluház és Könyvtár, Ballószög
+Ballószög Rákóczi utca 11.
+2020-02-14 23:30
+2020. február 14-én pénteken este táncházat tartunk a Ballószögi Faluházban.
+A táncokat tanítja: Trencsényi-Csiha Tímea és Molnár Dominik.
+Zenél a Padka Banda.
+19:00 - 19:30 - Aprók tánca
+19:30 - 24:00 - Nagyobbak tánca
+Mindenkit szeretettel várunk, kicsiket, nagyokat, szülőket, nagyszülőket a családi táncházba! Aki szeretne, jöjjön jelmezben!
+Természetgyógyász klub – Mesés tisztítókúra
+Balaton Kongresszusi Központ és Színház
+Keszthely Fő tér 3.
+2020-02-14 15:45
+Rozmarintszál, forrasztó fű, szentjános fű. Gyógynövények a mesékben. Hogyan segíthetik az embert a mesék a tisztításban, a tisztulásban, a gyógyulásban? Erre keressük röviden a lehetséges válaszokat az előadás keretein belül Szánti Éva Rita mesemondó terapeutával. Az előadások előzetes klubtagsági regisztrációval díjmentesen látogathatók!
+Bridzs klub
+Goldmark Károly Művelődési Központ
+Keszthely Kossuth Lajos u. 28.
+A kártyajátékok iránt érdeklődők megtanulhatják az alapvető és egyszerűbb fogásokat.
+Színházi kulisszatitkok – Mi van a színfalak mögött?
+Ezen az estén intézményünk műszaki vezetője betekintést nyújt az érdeklődőknek a színfalak mögötti kulisszatitkok rejtelmeibe.
+Ki nevet a végén?
+Programunkat elsősorban az idősebb korosztálynak ajánljuk. Öt fős csapatok illetve jókedvű jelentkezőket, ügyességi, észmozgató játékokkal, értékes ajándékokkal és egy vidám délelőttel várjuk. Jelentkezni a megadott telefonszámon illetve személyesen, a Kovács Pál Művelődési Központban lehet.
+Kollár Klemencz László – zenés szerzői est
+Ferencvárosi Művelődési Központ - FMK
+Budapest Haller utca 27.
+Kollár-Klemencz László szólólemezei (Ember a fán, Legesleges, Rengeteg) alapvetően zenéjével és szövegeivel a természetben mélyül el,
+és keresi a sokszor elfeledett tiszta, egyszerű kapcsolatot az ember és a teremtett természet között, valamint az ember
+és a saját természete között olyan hozzáállással, ami szembe mer nézni a valósággal, mégis meggyőződéssel hisz az ideákban.
+Lendületben sorozat – Ocean’s Seven: Az északi pokol
+A Lendületben sorozat következő részében Mányoki Attila nyíltvízi hosszútávúszó filmvetítéssel egybekötött élménybeszámolóját hallhatják. Ő a 18. ember a világon és az egyetlen magyar, aki teljesítette az Ocean's Seven nevű sorozatot - ráadásul világrekordot jelentő időeredménnyel -, ami hét ikonikus tengerszoros átúszásából áll.
+Kristóf Ágota gyökereiről – Kuglics Gábor történész előadása
+Püspökmolnári Faluház
+Püspökmolnári Béke utca 4.
+A Kossuth-díjas írónő, "A nagy füzet" szerzőjeként ismertté vált Kristóf Ágota apjának családja a Vas megyei Püspökmolnáriból származott. Az írónő apja, Kristóf Kálmán kántortanító maga is írt verseket, melyek közül több nyomtatásban is megjelent.
+A Kristóf-családról villant fel fényképeket, történeteket a település múltjának kutatója, Kuglics Gábor.
+Az előadásra a vasvári Nagy Gáspár Művelődési Központ Vasi Őrtüzek című irodalmi vándorkonferenciája keretében kerül sor.
+The Qualitons presents Kexek
+Ferencvárosi Művelődési Központ
+2020-02-14 21:15
+A pszichedelikus prog-rock-beat zenét játszó The Qualitons idén tavasszal, első magyar zenekarként mutatkozott be a seattle-i, kultikus KEXP rádióban. Az itthon is nagy sikert aratott, Fonogram-díjas Echoes Calling lemezük után most egy különleges, magyar aktualitással jelentkeznek az év végére. Az idén 50 éve alakult legendás, ám mégis méltatlanul elfeledett Kex zenekar előtt tisztelegve egy feldolgozás lemezt jelentettek meg.
+Farsang a LISZI-ben
+EKMK LISZI
+Eger Kallómalom u. 88.
+14.00-16.00 Családi játszóház - közös játék, arcfestés és farsangi álarc készítése.
+16.30-17.30 Rejtélyes LISZI – detektív témájú játék
+18.00-20.00 Klubok farsangja
+Zenés összejövetelre várjuk közösségeinket és az újabb érdeklődőket. Rövid beszélgetésben bemutatkoznak klubjaink, majd egy farsangi vigassággal zárjuk a napot.
+Társasjáték délután
+EKMK IFI PONT
+Eger Dobó tér 7-9.
+Játékos délutánra várunk minden kedves érdeklődőt! Kipróbálhatják az iroda sokszínű játéktárát, többek között az Óriás Activity-t és a Twister kuckót.
+Csiri-biri babatorna
+Petőfi Sándor Művelődési Központ
+Kiskőrös Petőfi tér 4/a
+Szeretettel várjuk a Csiri-Biri babatornára a kisgyermekeket szüleikkel!
+A foglalkozás minden egyes mozzanata, fejlesztően hat a gyermek személyiségére, mozgásfejlődésére, ritmusérzékére, zenei hallására.
+Fejlődik a téri tájékozódás, egyensúlyészlelés- és érzék, a szem- kéz-láb koordináció, a ritmusérzék, a figyelemkoncentráció, és a finom motorika, s nem utolsó sorban az anya aktív jelenléte ad mindehhez biztonságot.
+A fejlesztő tornára 1-4 év közti gyermekeket várjuk!
+Tűzben edzett örökség
+Nagyné Török Zsóka népi iparművész fazekasműhelye ma Tiszafüred egyik büszkesége. A látogatót első látásra elbűvöli a kész edények semmihez sem hasonlítható varázsa, formák, színek, stílusok gazdagsága, az agyag, a kemence illata. Hitvallása szerint legkedvesebb stíluscsoportja, a Közép-Tisza-vidék fazekassága. Valamennyi tárgya magán viseli védjegyének tekinthető alkotói jellegzetességét, a vékonyra korongolt testet, a díszítmény nőiesen finom vonalait, harmonikus színvilágát és a munka örömét
+Szép leányok, ne sírjatok!
+Budapest Haller u. 27.
+2020-02-14 21:45
+Magyar filmdráma, 84 perc, 1970
+Rendező: Mészáros Márta
+A film előtt Murai András filmesztéta felvezető előadását hallhatjuk.
+Helyszín: FMK, Színházterem
+Valentin-napi koncert Vastag Tamással
+Abonyi Lajos Művelődési Ház, Könyvtár és Múzeumi Kiállítóhely
+Abony Kálvin u. 1.
+A Studio11 Ensemble hagyományosan Valentin-nap környékén megrendezésre kerülő abonyi előadásának sztárvendége idén Vastag Tamás, Fonogram-díjas énekes.
+Jegyár: 2000 Ft(I. kategória), 1800 Ft (II. kategória)
+Bábszínház a Művészetek Házában
+Fejér Megyei Művelődési Központ – Művészetek Háza
+Székesfehérvár III. Béla király tér 1.
+2020-02-14 11:45
+A Babzsák színház bemutatja a Meseerdő Bábszínház két előadását:
+9.00 – Süni és a csodaszaxofon
+10.15 – Varázsvirág
+A részvétel ingyenes, de regisztrációhoz kötött. Jelentkezni Láda-Handa Edinánál lehet a handaedina1992@gmail.com e-mail címen vagy a +36/70-457-9002 telefonszámon.
+A terem befogadóképessége 200 fő.
+Kreativiti műhelyfoglalkozás
+A Kreativiti műhelyfoglalkozására várjuk az alkotni vágyó iskolás csoportokat!
+A délután folyamán lehetőség nyílik tikverőzős álarc, valamint ördöglakat készítésére.
+A belépés ingyenes, de regisztrációhoz kötött.
+Kapcsolattartó:
+Pintérné Palkovics Gabriella
+terepjarodse@gmail.com
++36/20-269-0096
+Farsangi kézműves foglalkozás
+Déryné Művelődési Központ
+Törtel Dózsa György út 20-22.
+Óvodásokat és iskolásokat váruk szervezett formában ezen a délelőttön, ahol farsanggal kapcsolatos dolgokat készítünk közösen kollégáinkkal.
+Játékos farsangolás
+Furtai ÁMK Juhász Erzsébet Művelődési Háza
+Furta Petőfi u. 1
+Az első napon 2020. február 14-én pénteken délelőtt 9-től 11 óráig az Általános Iskola 3.és 4. osztályos tanulói számára kreatív játékos kézműves foglalkozást tervertünk. Bohócot és bohóc sapkát készítünk, megmutatva a gyerekeknek, hogy az otthon található anyagokból ők is könnyen el tudják készíteni. Ezt követően különféle egyéni és csoportos ügyességi játékékokban tehetik próbára magukat a gyerekek.
+Karneváli mesemaraton
+Kisiskolásokat várunk a könyvtárba "Karnevál " témában mesével, játékos mesefeldolgozással, és mesefilm klubbal.
+Wass Albert emlékműsor
+A Panoráma Világklub közreműködésével szervezzük az emlékestet, melyre minden korosztályt várunk szeretettel. Zenés, verses, filmvetítős est, az író halálának 22. évfordulójára emlékezvén. ( 1998. február 17.)
+Az estet az író műveiből jelenleg állományunkban megtalálható kiállítás egészíti ki.
+Damu Roland önálló estje
+Ráth-ház, Arany Oroszlán Klub
+Budapest Papnövelde u.2.
+2020-02-14 20:15
+Szeretettel és tisztelettel várjuk az érdeklődőket egy meglehetősen hatásos, mind a tartalmát, mind a megjelenését tekintve “ütős”, előadásra, mely ennek ellenére a kedves humort, az előadó és a közönség közös játékát sem mellőzi.
+Versek, rózsák helyett
+2020-02-15 01:00
+Költőknek, zenészeknek bemutatkozási lehetőség!
+A rendezvényen színészek és irodalmárok szavalnak Valentin napra való verseket, illetve zenészek és énekesek is fellépnek. Lesz klasszikus és kortárs zene, egy kis blues és természetesen forralt bor is. Tagjaink az ország különböző pontjairól és a határon túlról is érkeznek hozzánk.
+A rendezvényre minden érdeklődőt szeretettel várunk.
+Csili Dancing Party
+Csili Művelődési Központ
+Budapest Nagy Győry István utca 4-6.
+"A tánc nem káros az egészségre" (Földi Béla)
+Az évek óta megszokott időpontban – minden hónap második péntekén 20-23.30 óráig várjuk az igényes szórakozásra vágyó közönséget. Megújult programunkban immár két zenekar szolgáltatja a minőségi élő zenét a rock and roll szerelmeseinek.
+Ezen az estén a Brillantin zenekar játszik.
+Fess velünk!
+2020-02-14 14:30
+Interaktív rajzórára várjuk az alkotni vágyó csoportokat. A jelentkezők közös munkáját a Derkovits Képzőművészeti Kör segíti. A résztvevők háromféle feladatból választhatnak: készíthetnek csendéletet, egy előre megfestett kép másolatát vagy egy kiválasztott fotó megfestését. A festmények temperával készülnek.
+Belépés: ingyenes, de regisztrációhoz kötött
+Szakkör koktél
+Kiállítás a Művészetek Házában működő körök munkáiból.
+A Művészetek Házában évtizedes múltra visszatekintő szakkörök működnek, akiknek színvonalas munkáit minden évben több alkalommal bemutatják a kiállítóteremben.
+Megnyitja: Juhász Zsófia, a Fejér Megyei Művelődési Központ megbízott igazgatója
+Közreműködik: Kisrügy Énekegyüttes
+Bemutatkozó körök:
+- Derkovits Képzőművészeti Kör
+- Fehérvári Szövőkör
+- Kosárfonó műhely
+- Bőrtárgykészítő műhely
+- Fafaragó műhely
+- Kerámia műhely
+Színezd ki a folyosónk falát és szelfizz a fotófalunk előtt!
+2020-02-15 19:30
+A Művészetek Háza programjainak ideje alatt egész nap lehetőség nyílik a felállított fotófal előtt családi, páros vagy egyéni fotózásra kiegészítőkkel, valamint a folyosó falára kihelyezett óriásszínező dekorálására is.
+Mindennapi értékeink
+Csenger Ady Endre u. 7-11.
+Szeretettel várunk minden érdeklődőt az óvodásoktól a felsősökig papírszínházi és színházi kellékbemutatónkra. Népi táncház foglalkozásunkon minden korcsoportot szeretnénk megmozgatni!
+“Írtam, mert valamit el akartam mondani”
+Budapesti Művelődési Központ
+Budapest Etele út 55.
+Összeállítás Márai Sándor életéből és műveiből. A világpolgár újságíró, író, költő, műfordító, ahogy mi láttuk.
+Előadók: Kriszta Edina és Uri Terézia – Ezüstnet Egyesület tagjai.
+Százszorszép Mesegyűrű mesemondó verseny Csongrád megyei fordulója
+Szent-Györgyi Albert Agóra
+Szeged Kálvária sgt. 23.
+A Szent-Györgyi Albert Agóra mesemondó versenyt hirdet 2020-ban is.
+Jelentkezési határidő: 2020. január 31. péntek
+A versenyre a következő korosztályokban lehet nevezni:
+I. Óvodás
+II. Általános iskola- alsó tagozatos diák
+III. Általános iskola- felső tagozatos diák
+IV. Középiskolás diák
+V. Sajátos nevelési igényű (tanulásban akadályozott) diák
+VI. Felnőtt kategória
+Minden pályázó egy szabadon választott mese, népmese elmondásával nevezhet.
+LEGO kiállítás és játszóház
+Pestújhelyi Közösségi Ház
+Budapest Szűcs István utca 45.
+900 Ft
+A kiállításon láthatsz LEGO® várost működő vasúttal, villamossal, valamint kalóz, középkori, Star Wars, western LEGO-t és Playmobil-t.
+Az interaktív játszóházban irányíthatsz H0-s vasutat, LEGO® kincskeresőzhetsz, kipróbálhatod a Thomas vasutat és a favonatokat.
+Belépődíj: felnőtt 900 Ft, gyerek (2-18 éves korig) 700 Ft, családi (2 szülő és 3 gyerek) 2800 Ft, iskolás és óvodás csoportok (min. 10 fő) 500 Ft/fő,
+Nyitva tartás: péntek 9-18-ig, szombat 10-18-ig, vasárnap 10-17-ig
+Interaktív játszóház és kiállítás
+Petőfi Művelődési Ház
+Dunavarsány Petőfi tér 1.
+Legóból meg mindenféléből építhetjük fel álmainkat, képzett animátorok segítségével, három napon át.
+Kortárs művészeti kiállítás
+Dózsa György Művelődési Otthon
+Isaszeg Dózsa György u. 2.
+Az ArtWall Stúdió kortárs művészeti társulat, melyet magyar és külföldi művészek alkotják és alkotásaikkal csoportos kiállításokon mutatkoznak meg.
+Pajtaszínház Patakon
+Patak Kossuth út 6.
+2020-02-14 17:45
+Ingyenes színházi előadás. Szeretettel várunk mindenkit egy kis szórakozásra Patak községbe!
+Bohém trió koncert
+Martfű Városi Művelődési Központ és Könyvtár
+Martfű Mártírok útja 1
+2020-02-14 13:15
+2020-02-14 14:15
+Általános iskolások számára tartott zenei előadás.
+Színdaráló művésztelep kiállítás megnyitója
+Tamási Galéria
+Tamási Tamási, Szabadság u. 29/2.
+A Miszla Art által szervezett 2019. évi Színdaráló művésztelep a "továbbított üzenet" szókapcsolat mentén került megrendezésre. A művészet különböző területeiről meghívott alkotók a témát szabadon értelmezve alkottak július 5-14. között a miszlai művésztelepen.
+Az alkotók autonóm kifejezései. Az alkotások valamilyen üzenetet hordoznak, amelyeket a befogadó felé műalkotások formájában továbbítanak. Ezekből az alkotásokból nyílik kiállítás a Tamási Galériában, mely március 8-ig tekinthető meg.
+Tini disco
+A József Attila Általános Iskola diákjai számára Valentin napi disco. Kísérő programok : játékos vetélkedők, kézműves foglalkozások, versek, rímek játékosan, mézeskalács-díszítés
+Mozifilm vetítés – Közel a horizonthoz, Úriemberek
+890 Ft
+Közel a horizonthoz 12+: - Egy nagy szerelem története. Történet a bizalomról, bátorságról, fájdalomról, kétségekről, és az elengedés erejéről.
+Úriemberek 18+: Amikor híre megy, hogy az amerikai drogkereskedő, Mickey Pearson (Matthew McConaughey) túl akar adni szuperjövedelmező londoni marihuána birodalmán az egész alvilág felbolydul. Rengeteg lóvé forog kockán, nem is csoda, hogy a gengszterek között kirobban a harc.
+Sakk szakkör
+Bátki József Közösségi Ház
+Salgótarján Zagyva út 3.
+Mindenkit várunk a nyílt szakköri foglalkozásra akit érdekel ez az ősi szellemi sport.
+Sakk
+A martfűi sakk szakosztály foglalkozása gyerekeknek.
+Kulturális kerekasztal
+Petőfi Sándor Városi Könyvtár, Művelődési Ház és Kiállítóhely
+Hajdúsámson Szabadság tér 7.
+A 2020. évi programok közös tervezése a településen működő intézményekkel, egyesületekkel.
+Dalma Dance Club
+2020-02-14 16:45
+Táncpróba ovisoknak és általános Iskolásoknak.
+Szilasi Esték
+Petőfi Sándor Művelődési Ház és Könyvtár
+Bódvaszilas Petőfi Sándor út
+50 Ft
+Szilasi elsők.....
+A falu legkorábbi írásos és képes történeti forrásai:
+*a falu első említése
+*a legkorábban papírra vetett „Szilas” településnév
+*az első névvel említett szilasi(ak)
+*először nyomtatásban Szilas neve
+*az első községi pecsét
+*a legelső faluábrázolás
+*az első Szilason készült fotó...
+Oscar after party
+AGORA- Savaria Filmszínház
+Szombathely Mártírok tere 1.
+Filmvetítés eredeti nyelven
+20.50 Kisasszonyok (12)
+23.20 Élősködők (16)
+21.00 Joker (16)
+23.30 Volt egyszer… egy Hollywood (18)
+Filmbevezetőt mond Vágvölgyi András médiapedagógus
+Meglepetésve

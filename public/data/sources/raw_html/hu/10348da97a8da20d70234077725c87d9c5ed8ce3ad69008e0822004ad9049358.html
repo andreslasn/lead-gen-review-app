@@ -47,7 +47,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -63,7 +64,7 @@
 <div class="d-flex flex-wrap w-100 flex-grow-1 align-items-center gap-3">
 <div class="names-day-wrapper d-flex flex-wrap justify-content-between align-items-center flex-grow-1 col-12 col-lg-auto gap-2">
 <div aria-label="Mai névnapok" class="names fs-6 col-12 col-sm-auto">
-            Július 16, csütörtök,
+            Július 16, csütörtök, 
             Valter, Irma        </div>
 <div aria-label="Szegedi időjárás" class="d-flex gap-3 justify-content-start align-items-center get-weather weather">
 <div class="top d-flex">

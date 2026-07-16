@@ -29,10 +29,10 @@
 
 <style id="wpa-style-inline-css" type="text/css">
 .wpa-visible-ltr#skiplinks a, .wpa-visible-ltr#skiplinks a:hover, .wpa-visible-ltr#skiplinks a:visited {
-
+	
 }
 .wpa-visible-ltr#skiplinks a:active,  .wpa-visible-ltr#skiplinks a:focus {
-
+	
 }
 	:root { --admin-bar-top : 7px; }
 </style>
@@ -210,7 +210,7 @@ body:not(.template-slider) .widget-area {
 .pa a, a:hover {
 color: #00813c;
 text-align: center;
-font-size: 20px;
+font-size: 20px; 
 }
 
 .ke {
@@ -239,7 +239,8 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 }		</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -254,77 +255,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 <header id="Header">
 
 <div class="header_placeholder"></div>
-<div class="loading" id="Top_bar">
-<div class="container">
-<div class="column one">
-<div class="top_bar_left clearfix">
-
-<div class="logo"><a data-height="75" data-padding="15" data-review-original-href="https://gyorvar.hu" href="#" id="logo" tabindex="-1" title="Győrvár Község Önkormányzata"><img alt="" class="logo-main scale-with-grid" data-height="" data-retina=""/><img alt="" class="logo-sticky scale-with-grid" data-height="" data-retina=""/><img alt="" class="logo-mobile scale-with-grid" data-height="" data-retina=""/><img alt="" class="logo-mobile-sticky scale-with-grid" data-height="" data-retina=""/></a></div>
-<div class="menu_wrapper">
-<nav id="menu"><ul class="menu menu-main" id="menu-navigacio_hu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-48 current_page_item" id="menu-item-65"><a data-review-original-href="https://gyorvar.hu/" href="#" tabindex="-1"><span>Kezdőlap</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" id="menu-item-64"><a data-review-original-href="https://gyorvar.hu/a-mi-falunk/" href="#" tabindex="-1"><span>A mi falunk</span></a>
-<ul class="sub-menu">
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-254"><a data-review-original-href="https://gyorvar.hu/a-mi-falunk/foldrajzi-fekves/" href="#" tabindex="-1"><span>Földrajzi fekvés</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-253"><a data-review-original-href="https://gyorvar.hu/a-mi-falunk/latnivalok/" href="#" tabindex="-1"><span>Látnivalók</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-252"><a data-review-original-href="https://gyorvar.hu/a-mi-falunk/termeszeti-ertekek/" href="#" tabindex="-1"><span>Természeti értékek</span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" id="menu-item-255"><a data-review-original-href="https://gyorvar.hu/onkormanyzat/" href="#" tabindex="-1"><span>Közügyeink</span></a>
-<ul class="sub-menu">
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-295"><a data-review-original-href="https://gyorvar.hu/kepviselo-testulet/" href="#" tabindex="-1"><span>Képviselő testület</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-257"><a data-review-original-href="https://gyorvar.hu/szervezetek/" href="#" tabindex="-1"><span>Szervezetek</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-256"><a data-review-original-href="https://gyorvar.hu/kozerdeku/" href="#" tabindex="-1"><span>Közérdekű</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-287"><a data-review-original-href="https://gyorvar.hu/rendeletek/" href="#" tabindex="-1"><span>Rendeletek</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-288"><a data-review-original-href="https://gyorvar.hu/nyomtatvanyok/" href="#" tabindex="-1"><span>Nyomtatványok</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-485"><a data-review-original-href="https://gyorvar.hu/valasztasi-informaciok/" href="#" tabindex="-1"><span>Választási Információk</span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" id="menu-item-258"><a data-review-original-href="https://gyorvar.hu/intezmenyek/" href="#" tabindex="-1"><span>Intézmények</span></a>
-<ul class="sub-menu">
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-283"><a data-review-original-href="https://gyorvar.hu/intezmenyek/ovoda/" href="#" tabindex="-1"><span>Óvoda</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-280"><a data-review-original-href="https://gyorvar.hu/intezmenyek/altalanos-iskola/" href="#" tabindex="-1"><span>Általános Iskola</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-284"><a data-review-original-href="https://gyorvar.hu/intezmenyek/orvosi-rendelo/" href="#" tabindex="-1"><span>Orvosi rendelő</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-281"><a data-review-original-href="https://gyorvar.hu/intezmenyek/faluhaz/" href="#" tabindex="-1"><span>Faluház</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-282"><a data-review-original-href="https://gyorvar.hu/intezmenyek/telehaz/" href="#" tabindex="-1"><span>Teleház</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-285"><a data-review-original-href="https://gyorvar.hu/intezmenyek/csaladsegito-es-gyermekjoleti-szolgalat/" href="#" tabindex="-1"><span>Családsegítő és Gyermekjóléti Szolgálat</span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-380"><a data-review-original-href="https://gyorvar.hu/palyazat/" href="#" tabindex="-1"><span>Pályázat</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" id="menu-item-245"><a data-review-original-href="https://gyorvar.hu/mi-ujsag-gyorvaron/" href="#" tabindex="-1"><span>Mi újság Győrváron?</span></a>
-<ul class="sub-menu">
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-248"><a data-review-original-href="https://gyorvar.hu/mi-ujsag-gyorvaron/" href="#" tabindex="-1"><span>Helyi hírek</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-247"><a data-review-original-href="https://gyorvar.hu/mi-ujsag-gyorvaron/hirtallozo-vas-nepe/" href="#" tabindex="-1"><span>Hírtallózó-Vas népe</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-246"><a data-review-original-href="https://gyorvar.hu/mi-ujsag-gyorvaron/hirtallozo-zalai-hirlap/" href="#" tabindex="-1"><span>Hírtallózó-Zalai hírlap</span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" id="menu-item-249"><a data-review-original-href="https://gyorvar.hu/kepek-videok/" href="#" tabindex="-1"><span>Képek, videók</span></a>
-<ul class="sub-menu">
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-251"><a data-review-original-href="https://gyorvar.hu/kepek-videok/" href="#" tabindex="-1"><span>Képek</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-250"><a data-review-original-href="https://gyorvar.hu/kepek-videok/videok/" href="#" tabindex="-1"><span>Videók</span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-60"><a data-review-original-href="https://gyorvar.hu/kapcsolat/" href="#" tabindex="-1"><span>Kapcsolat</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-400"><a data-review-original-href="https://gyorvar.hu/adatkezelesi-tajekoztato/" href="#" tabindex="-1"><span>Adatkezelési tájékoztató</span></a></li>
-</ul></nav><a class="responsive-menu-toggle" data-review-original-href="#" href="#" tabindex="-1"><i class="icon-menu-fine"></i></a>
-</div>
-<div class="secondary_menu_wrapper">
-
-</div>
-<div class="banner_wrapper">
-</div>
-<div class="search_wrapper">
-
-<div data-review-disabled-form="true">
-<i class="icon_search icon-search-fine"></i>
-<a class="icon_close" data-review-original-href="#" href="#" tabindex="-1"><i class="icon-cancel-fine"></i></a>
-<input class="field" name="s" placeholder="Írja be a keresőszót" type="text"/>
-<input class="submit" style="display:none;" type="submit" value=""/>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div> <div class="mfn-main-slider" id="mfn-layer-slider"><div class="ls-wp-container fitvidsignore" id="layerslider_1" style="width:1920px;height:600px;margin:0 auto;"><div class="ls-slide" data-ls="duration:3000;transition2d:5;kenburnsscale:1.2;"><img alt="" class="ls-bg" height="600" sizes="(max-width: 1920px) 100vw, 1920px" width="1920"/><a class="ls-l" data-ls="static:forever;" data-review-original-href="/palyazat/" href="#" style="" tabindex="-1" target="_self"><img alt="" class="" height="465" sizes="(max-width: 663px) 100vw, 663px" style="top:419px;left:1674px;width:265px;height:186px;" width="663"/></a><a class="ls-l" data-ls="static:forever;" data-review-original-href="/palyazat/" href="#" style="" tabindex="-1" target="_self"><img alt="" class="" height="465" sizes="(max-width: 663px) 100vw, 663px" style="top:-3px;left:1654px;width:265px;height:186px;" width="663"/></a><a class="ls-l" data-ls="static:forever;" data-review-original-href="/palyazat/" href="#" style="" tabindex="-1" target="_self"><img alt="" class="" height="450" sizes="(max-width: 1504px) 100vw, 1504px" style="top:0px;left:0px;width:392px;height:117px;" width="1504"/></a></div><div class="ls-slide" data-ls="duration:4000;transition2d:5;kenburnsscale:1.2;"><img alt="" class="ls-bg" height="600" sizes="(max-width: 1920px) 100vw, 1920px" width="1920"/></div></div></div> </header>
+ <div class="mfn-main-slider" id="mfn-layer-slider"><div class="ls-wp-container fitvidsignore" id="layerslider_1" style="width:1920px;height:600px;margin:0 auto;"><div class="ls-slide" data-ls="duration:3000;transition2d:5;kenburnsscale:1.2;"><img alt="" class="ls-bg" height="600" sizes="(max-width: 1920px) 100vw, 1920px" width="1920"/><a class="ls-l" data-ls="static:forever;" data-review-original-href="/palyazat/" href="#" style="" tabindex="-1" target="_self"><img alt="" height="465" sizes="(max-width: 663px) 100vw, 663px" style="top:419px;left:1674px;width:265px;height:186px;" width="663"/></a><a class="ls-l" data-ls="static:forever;" data-review-original-href="/palyazat/" href="#" style="" tabindex="-1" target="_self"><img alt="" height="465" sizes="(max-width: 663px) 100vw, 663px" style="top:-3px;left:1654px;width:265px;height:186px;" width="663"/></a><a class="ls-l" data-ls="static:forever;" data-review-original-href="/palyazat/" href="#" style="" tabindex="-1" target="_self"><img alt="" height="450" sizes="(max-width: 1504px) 100vw, 1504px" style="top:0px;left:0px;width:392px;height:117px;" width="1504"/></a></div><div class="ls-slide" data-ls="duration:4000;transition2d:5;kenburnsscale:1.2;"><img alt="" class="ls-bg" height="600" sizes="(max-width: 1920px) 100vw, 1920px" width="1920"/></div></div></div> </header>
 </div>
 
 

@@ -138,7 +138,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 			</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -198,7 +199,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <main class="site-main" id="main">
 <article class="post-12 page type-page status-publish ast-article-single" id="post-12" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
 <header class="entry-header ast-no-thumbnail ast-no-title ast-header-without-markup">
-</header>
+</header> 
 <div class="entry-content clear" itemprop="text">
 <div class="elementor elementor-12" data-elementor-id="12" data-elementor-post-type="page" data-elementor-type="wp-page">
 <div class="elementor-element elementor-element-37759e1d e-flex e-con-boxed e-con e-parent" data-e-type="container" data-element_type="container" data-id="37759e1d" data-settings='{"background_background":"classic"}'>
@@ -515,7 +516,7 @@ Miért a Mia-Manó a legjobb választás gyermeke egészségéhez?					</p>
 </article>
 </main>
 </div>
- </div>
+ </div> 
 </div>
 <footer class="elementor elementor-721 elementor-location-footer" data-elementor-id="721" data-elementor-post-type="elementor_library" data-elementor-type="footer">
 <div class="elementor-element elementor-element-1a67737a e-grid e-con-full e-con e-parent" data-e-type="container" data-element_type="container" data-id="1a67737a" data-settings='{"background_background":"classic"}'>

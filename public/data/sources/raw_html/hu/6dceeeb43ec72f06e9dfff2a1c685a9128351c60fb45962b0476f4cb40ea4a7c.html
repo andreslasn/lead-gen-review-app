@@ -62,7 +62,8 @@
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -1935,7 +1936,7 @@
     display: none;
     z-index: 9999;
     /* GÖRGETÉS JAVÍTÁSA: */
-    overflow-y: auto;
+    overflow-y: auto; 
     -webkit-overflow-scrolling: touch; /* Sima görgetés iOS-en */
     padding: 20px;
     box-sizing: border-box;
@@ -1944,7 +1945,7 @@
 
   .kh-overlay.kh-visible {
     /* Megszüntetjük a flex-alapú középre igazítást, ami elvágja a tetejét */
-    display: block;
+    display: block; 
     text-align: center; /* Vízszintes középre igazításhoz */
   }
 
@@ -1953,11 +1954,11 @@
     background: #fff4e0;
     max-width: 840px;
     width: 100%;
-
-    /* EZ A KULCS: margin auto függőlegesen is középre teszi,
+    
+    /* EZ A KULCS: margin auto függőlegesen is középre teszi, 
        de ha magasabb a tartalom, megáll a tetejénél és engedi a scrollt */
-    margin: 40px auto;
-
+    margin: 40px auto; 
+    
     padding: 48px 56px;
     border-radius: 8px;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
@@ -2100,13 +2101,13 @@
 <div class="news-text">
 <div class="news-date">
 											2026. július 07., kedd 18:20
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="/docs/kobanya/hu/news/209018.pdf?v=ca07ee48efd5f5b34bae8ca95af4bab9" href="#" tabindex="-1">
-
-
-
+							
+			
+											
 					Öveket becsatolni!</a></h2>
 <div class="news-lead"></div>
 </div>
@@ -2118,12 +2119,12 @@
 <div class="news-text">
 <div class="news-date">
 											2026. július 03., péntek 08:08
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="?module=news&amp;action=show&amp;nid=209016" href="#" tabindex="-1">
 
-
+											
 					Búcsúzunk</a></h2>
 <div class="news-lead"><p>Ars longa, vita brevis.</p>
 <p>A művészet örök, az élet rövid.</p>
@@ -2137,13 +2138,13 @@
 <div class="news-text">
 <div class="news-date">
 											2026. június 01., hétfő 08:58
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="/docs/kobanya/hu/news/208638.pdf?v=ca07ee48efd5f5b34bae8ca95af4bab9" href="#" tabindex="-1">
-
-
-
+							
+			
+											
 					Piknik Mozi</a></h2>
 <div class="news-lead"></div>
 </div>
@@ -2160,12 +2161,12 @@
 <div class="news-text">
 <div class="news-date">
 											2026. július 10., péntek 11:26
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="?module=news&amp;action=show&amp;nid=209042" href="#" tabindex="-1">
 
-
+											
 					Lakossági tájékoztató</a></h2>
 <div class="news-lead"><p style="text-align: justify;">A Budapesti <strong>Bajcsy-Zsilinszky Kórház és Rendelőintézet tájékoztatása szerint a Sürgősségi Betegellátó Osztályon</strong> (SBO) <strong>2026. július 9. és 2026. július 23. között</strong> átalakítási munkálatok kezdődnek az új CT-berendezés beüzemelésével összefüggésben.</p>
 <p style="text-align: justify;"> A munkálatok ideje alatt <strong>a sürgősségi betegellátás az alábbi rend szerint történik</strong>:</p>
@@ -2181,12 +2182,12 @@
 <div class="news-text">
 <div class="news-date">
 											2026. július 15., szerda 09:22
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="?module=news&amp;action=show&amp;nid=191109" href="#" tabindex="-1">
 
-
+											
 					Lakossági tájékoztató az aktuális kerületi munkakezdési útkezelői hozzájárulások kiadásáról</a></h2>
 <div class="news-lead"><p><em>(Budapest X. kerületben az alábbi járda- és útburkolatbontási munkálatok várhatóak, illetve zajlanak)</em></p></div>
 </div>
@@ -2198,12 +2199,12 @@
 <div class="news-text">
 <div class="news-date">
 											2026. július 10., péntek 10:10
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="?module=news&amp;action=show&amp;nid=209041" href="#" tabindex="-1">
 
-
+											
 					Augusztusban érvényüket vesztik a régi, könyv formátumú személyazonosító igazolványok</a></h2>
 <div class="news-lead"><p style="text-align: justify;"><strong>2026. augusztus 3. napjával a régi, könyv formátumú</strong> (papíralapú, akár puha- vagy keményfedeles) <strong>személyazonosító igazolványok érvényessége megszűnik.</strong> A lejárat ténye a hatósági nyilvántartásba hivatalból kerül bejegyzésre, így <strong>az érintett állampolgárok a változásról külön, személyre szabott értesítést nem kapnak.</strong></p></div>
 </div>
@@ -2218,7 +2219,7 @@
 <h2 class="news-title">
 <a data-review-original-href="?module=news&amp;action=show&amp;nid=209035" href="#" tabindex="-1">
 
-
+											
 					Igazgatási szünet a Polgármesteri Hivatalban</a></h2>
 <div class="news-lead"><p style="text-align: justify;">Tisztelt Ügyfelünk!</p>
 <p style="text-align: justify;">Tájékoztatjuk, hogy Budapest Főváros X. kerület Önkormányzat Képviselő-testülete a Budapest Főváros X. kerület <strong>Kőbányai Polgármesteri Hivatalban </strong>a nyári időszakban<strong> 2026. július 6-ától 2026. július 31-éig igazgatási szünetet rendelt el.</strong></p>
@@ -2236,12 +2237,12 @@
 <div class="news-text">
 <div class="news-date">
 											2026. július 15., szerda 09:09
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="?module=news&amp;action=list&amp;fname=NAV							" href="#" tabindex="-1">
 
-
+											
 					NAV sajtóközlemény, folyamatosan frissülő aktualitások</a></h2>
 <div class="news-lead"></div>
 </div>
@@ -2253,12 +2254,12 @@
 <div class="news-text">
 <div class="news-date">
 											2026. július 03., péntek 07:04
-
+										
 					</div>
 <h2 class="news-title">
 <a data-review-original-href="?module=news&amp;action=show&amp;nid=209015" href="#" tabindex="-1">
 
-
+											
 					Oltó utca távhővezeték rekonstrukció, II. ütem</a></h2>
 <div class="news-lead"><p style="text-align: justify;">A BKM Nonprofit Zrt. FŐTÁV Távhőszolgáltatási Divízió az alábbi épületeket érintő távvezetéki hibaelhárítási munkálatokat folytat 2026. július 16. 03.00 és  2026. július 17. 08.00 óra között a használati melegvíz elletást érintően az alábbi épülőketben:</p></div>
 </div>

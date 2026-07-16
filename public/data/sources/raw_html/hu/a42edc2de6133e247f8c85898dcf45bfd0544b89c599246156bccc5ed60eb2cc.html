@@ -95,11 +95,11 @@ body{background-color:#f8f8f9;color:#666a76;}a{color:var(--accent);}a:hover, a:f
     text-align: left;
     font-size: 12px;
 }
-.lablink {
+.lablink { 
 font-size: 18px;
 }
 
-.labszoveg {
+.labszoveg { 
 font-size: 13px;
 }
 input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea, select {
@@ -112,7 +112,8 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 </style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

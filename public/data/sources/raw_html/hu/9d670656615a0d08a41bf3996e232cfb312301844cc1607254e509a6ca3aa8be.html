@@ -23,7 +23,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -39,9 +40,9 @@
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-links" id="nav-links">
-<li><a class="" data-review-original-href="/" href="#" tabindex="-1">Főoldal</a></li>
+<li><a data-review-original-href="/" href="#" tabindex="-1">Főoldal</a></li>
 <li><a class="active" data-review-original-href="/szakrendelok" href="#" tabindex="-1">Szakrendelők</a></li>
-<li><a class="" data-review-original-href="/impresszum" href="#" tabindex="-1">Impresszum</a></li>
+<li><a data-review-original-href="/impresszum" href="#" tabindex="-1">Impresszum</a></li>
 </ul>
 </div>
 </nav>

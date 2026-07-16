@@ -13,7 +13,7 @@
 <meta content="Lajosmizsei Egészségház" name="generator"/>
 
 
-<title id="meta_title">Háziorvos</title><meta content="" id="meta_description" name="description"/><meta content="" name="keywords"/><meta content="https://egeszseghazlm.hu/oldal/haziorvos" id="meta_url" property="og:url"/><meta content="Háziorvos" id="meta_site_name" property="og:site_name"/><meta content="website" id="meta_type" property="og:type"/><meta content="Háziorvos" id="meta_og_title" property="og:title"/><meta content="" id="meta_og_description" property="og:description"/>
+<title id="meta_title">Háziorvos</title><meta content="" id="meta_description" name="description"/><meta content="" name="keywords"/><meta content="https://egeszseghazlm.hu/oldal/haziorvos" id="meta_url" property="og:url"/><meta content="Háziorvos" id="meta_site_name" property="og:site_name"/><meta content="website" id="meta_type" property="og:type"/><meta content="Háziorvos" id="meta_og_title" property="og:title"/><meta content="" id="meta_og_description" property="og:description"/> 
 
 
 
@@ -55,7 +55,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -66,7 +67,7 @@
 <div class="alerts_container row m-0 justify-content-end"><div class="alerts"></div></div>
 <div id="uzenet"></div>
 <div class="page_loading">
-<div class="">
+<div>
 <div class="ball"></div>
 <div class="ball1"></div>
 </div></div>
@@ -80,8 +81,8 @@
 <div class="row align-items-center justify-content-start">
 <div class="col-lg-6 col-12 row m-0 align-items-center link p-2" href="/oldal/kezdolap">
 <div class="logo col-3 m-0 col-auto p-0"></div>
-<div class="col-9 text-left m-0 p-0 pl-3 font2 text-uppercase"><div>Lajosmizse Város Önkormányzata</div><div><span class="text-blue">Egészségügyi, Gyermekjóléti és Szociális Intézménye</span></div><div class="">
-<div class="">
+<div class="col-9 text-left m-0 p-0 pl-3 font2 text-uppercase"><div>Lajosmizse Város Önkormányzata</div><div><span class="text-blue">Egészségügyi, Gyermekjóléti és Szociális Intézménye</span></div><div>
+<div>
 <div class="fontom text-dark mt-2">6050 Lajosmizse, Dózsa György út 104-106. szám</div>
 </div>
 </div></div>
@@ -155,7 +156,7 @@
 
 
 
-<div class="breadcrumbs_div breadcrumbs_div_oldal"><ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumbs_first have_child" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/kezdolap" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Kezdőlap</span></a><meta content="1" itemprop="position"/></li><li class="have_child" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/egeszsegugyi-ellatasok" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Egészségügyi ellátások</span></a><meta content="2" itemprop="position"/></li><li class="have_child" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/alapellatasok" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Alapellátások</span></a><meta content="3" itemprop="position"/></li><li class="breadcrumbs_aktiv" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/haziorvos" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Háziorvos</span></a><meta content="4" itemprop="position"/></li></ol></div>
+<div class="breadcrumbs_div breadcrumbs_div_oldal"><ol class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="breadcrumbs_first have_child" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/kezdolap" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Kezdőlap</span></a><meta content="1" itemprop="position"/></li><li class="have_child" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/egeszsegugyi-ellatasok" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Egészségügyi ellátások</span></a><meta content="2" itemprop="position"/></li><li class="have_child" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/alapellatasok" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Alapellátások</span></a><meta content="3" itemprop="position"/></li><li class="breadcrumbs_aktiv" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a class="link" data-review-original-href="https://egeszseghazlm.hu/oldal/haziorvos" href="#" itemprop="item" itemtype="https://schema.org/Thing" tabindex="-1"><span itemprop="name">Háziorvos</span></a><meta content="4" itemprop="position"/></li></ol></div> 
 
 
 
@@ -450,7 +451,7 @@ IV. számú felnőtt háziorvosi körzet<br/>
 II. számú felnőtt háziorvosi körzet<br/>
 6050 Lajosmizse, Városház tér 7.<br/>
 <span style="color: rgb(71, 71, 71); font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Telefon:76/356-345</span><br/>
- </div></div></div>
+ </div></div></div> 
 </main><footer class="lablec"><div id="footer">
 <div class="footer-top py-3 py-lg-5">
 <div class="container">
@@ -473,7 +474,7 @@ II. számú felnőtt háziorvosi körzet<br/>
 <span class="text-white font2">Címünk:</span><br/>6050 Lajosmizse, Dózsa György út 104-106. szám
 						<br/><br/>
 <span class="text-white font2">E-mail:</span><br/>egeszseghaz{kukac}egeszseghazlm.hu
-
+						
 					</p>
 <div class="col-12 mt-2 p-0">
 <a class="text-white h6" data-review-original-href="https://www.facebook.com/egeszseghaz.lajosmizse/" href="#" tabindex="-1" target="_blank">

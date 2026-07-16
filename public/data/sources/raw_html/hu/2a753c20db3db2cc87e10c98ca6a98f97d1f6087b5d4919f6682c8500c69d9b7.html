@@ -102,7 +102,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -223,7 +224,7 @@
 <div class="view view-hir-rovatok view-id-hir_rovatok view-display-id-page view-dom-id-3aa4d5b8aeaba30a6279ec9a6b1beab0">
 <div class="view-content">
 <div data-review-disabled-form="true"><div><div class="container-inline"><div class="form-item form-type-select form-item-jump">
-<select class="ctools-jump-menu-select ctools-jump-menu-change form-select" id="edit-jump" name="jump"><option selected="selected" value="">- Rovat kiválasztás -</option><option value="38517d33c7ad3229ea09d0caf5d68e5a::/taxonomy/term/197">
+<select class="ctools-jump-menu-select ctools-jump-menu-change form-select" id="edit-jump" name="jump"><option selected="selected" value="">- Rovat kiválasztás -</option><option value="38517d33c7ad3229ea09d0caf5d68e5a::/taxonomy/term/197">  
           Egyéb  </option></select>
 </div>
 <input class="ctools-jump-menu-button ctools-jump-menu-hide form-submit" id="edit-go" name="op" type="submit" value="Mehet"/></div><input name="form_build_id" type="hidden" value="form-GuPqz8VxROC4x7EduRhmee7s8cf54upVUZXrK0hcsYo"/>

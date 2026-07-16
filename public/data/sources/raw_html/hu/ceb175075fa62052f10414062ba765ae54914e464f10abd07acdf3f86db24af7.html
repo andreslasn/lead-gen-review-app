@@ -26,7 +26,8 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -186,7 +187,7 @@
             Rendelés helye:	Tapolca, Deák F. u. 10.<br/>
             Rendelés ideje: <br/>
             páratlan hét: 8h-12h<br/>
-            páros hét:	12h-16h
+            páros hét:	12h-16h 
         </td>
 <td>
 <a data-review-original-href="/pages/images/haziorvos03nagy.jpg" href="#" rel="lightbox[group]" tabindex="-1">

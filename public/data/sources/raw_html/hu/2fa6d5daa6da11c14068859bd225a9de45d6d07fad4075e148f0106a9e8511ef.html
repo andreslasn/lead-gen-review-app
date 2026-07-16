@@ -58,15 +58,15 @@
 
 
 <style id="ui-fontsize.css-inline-css" type="text/css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 </style>
 
 <style id="wpa-style-inline-css" type="text/css">
 .wpa-hide-ltr#skiplinks a, .wpa-hide-ltr#skiplinks a:hover, .wpa-hide-ltr#skiplinks a:visited {
-
+	
 }
 .wpa-hide-ltr#skiplinks a:active,  .wpa-hide-ltr#skiplinks a:focus {
-
+	
 }
 	:root { --admin-bar-top : 7px; }
 </style>
@@ -106,7 +106,8 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 }</style><style type="text/css">/** Mega Menu CSS: fs **/</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -217,8 +218,8 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 <div class="col-md-12">
 <hr class="header-main-nav-hr"/>
 <div class="header-nav">
-
-
+                                
+                                 
                                     <div class="mega-menu-wrap" id="mega-menu-wrap-fo_menu"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class="mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-0" id="mega-toggle-block-0"><button aria-expanded="false" aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button">
 <span class="mega-toggle-animated-box">
 <span class="mega-toggle-animated-inner"></span>
@@ -307,9 +308,9 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 </li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-25598" id="mega-menu-item-25598"><a aria-expanded="false" class="mega-menu-link" data-review-original-href="#" href="#" tabindex="-1">Választási információk<span aria-hidden="true" class="mega-indicator"></span></a>
 <ul class="mega-sub-menu">
 <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-25596" id="mega-menu-item-25596"><a class="mega-menu-link" data-review-original-href="https://www.ullo.hu/valasztasi-informaciok/valasztasi-szervek" href="#" tabindex="-1">Választási szervek</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-25597" id="mega-menu-item-25597"><a class="mega-menu-link" data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1">Választási ügyintézés</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-25594" id="mega-menu-item-25594"><a class="mega-menu-link" data-review-original-href="https://www.ullo.hu/valasztasi-informaciok/korabbi-valasztasok" href="#" tabindex="-1">Korábbi választások</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-25595" id="mega-menu-item-25595"><a class="mega-menu-link" data-review-original-href="https://www.ullo.hu/valasztasi-informaciok/2024-evi-altalanos-valasztasok" href="#" tabindex="-1">2024. évi általános választások</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-40692" id="mega-menu-item-40692"><a class="mega-menu-link" data-review-original-href="https://www.ullo.hu/2026-evi-idokozi-helyi-onkormanyzati-kepviselovalasztas" href="#" tabindex="-1">2026. évi Időközi helyi Önkormányzati képviselőválasztás</a></li></ul>
-</li></ul><button aria-label="Close" class="mega-close"></button></div>
-                                   
-
+</li></ul><button aria-label="Close" class="mega-close"></button></div> 
+                                     
+                                
                                 </div>
 </div>
 </div>
@@ -845,7 +846,7 @@ Zsák</td>
             			</a></p>
 </div>
 
-</ul></div></div></aside>
+</ul></div></div></aside> 
 </div>
 
 </div>

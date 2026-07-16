@@ -45,12 +45,13 @@
 </noscript>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="design_ver4 design_subver1" id="ud_cms_page">
-<style> .grecaptcha-badge { display: none !important; } </style>
+<style> .grecaptcha-badge { display: none !important; } </style> 
 <div class="no-slideshow page_cms_page_629779" id="container">
 <header class="header position-relative">
 <div class="js-element nanobar js-nanobar" data-element-name="header_text_section_1">
@@ -345,7 +346,7 @@
 <li class="plus-menu" data-id="251068">
 <span class="plus-menu__name text-uppercase font-weight-bold">
 <a class="plus-menu__link" data-review-original-href="http://valasztas.hu/home" href="#" tabindex="-1" target="_blank">
-							2026. évi választás
+							2026. évi választás 
 						</a>
 </span>
 </li>

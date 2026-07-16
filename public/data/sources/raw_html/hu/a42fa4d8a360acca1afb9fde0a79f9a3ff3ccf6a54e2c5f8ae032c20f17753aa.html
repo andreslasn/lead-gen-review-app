@@ -39,7 +39,7 @@
 			#dj-megamenu202, #dj-megamenu202sticky, #dj-megamenu202placeholder { display: none !important; }
 			#dj-megamenu202mobile { display: block; }
 		}
-
+	
 	</style>
 
 
@@ -82,13 +82,14 @@
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
 <body class="sticky-bar topbar2"><div class="dj-offcanvas-wrapper"><div class="dj-offcanvas-pusher"><div class="dj-offcanvas-pusher-in">
 <div id="jm-allpage">
-<header aria-label="Logo and navigation" class="" id="jm-bar" role="banner">
+<header aria-label="Logo and navigation" id="jm-bar" role="banner">
 <div id="jm-top-bar">
 <div class="container-fluid" id="jm-top-bar-in">
 <div class="pull-left" id="jm-top-bar1">
@@ -241,7 +242,7 @@
 </div>
 </div>
 </div>
-<div aria-label="Bottom2 modules" class="" id="jm-bottom2" role="region">
+<div aria-label="Bottom2 modules" id="jm-bottom2" role="region">
 <div class="container-fluid">
 <div class="row-fluid jm-flexiblock jm-bottom2"><div class="span6" data-default="span6" data-mobile="span100" data-normal="span6" data-tablet="span100" data-wide="span6" data-xtablet="span6"><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Kapcsolat</span></h3><div class="jm-module-content clearfix">
 <div class="custom">
@@ -282,7 +283,7 @@
 
 </div></div></div></div><div class="span6" data-default="span6" data-mobile="span100 first-span" data-normal="span6" data-tablet="span100 first-span" data-wide="span6" data-xtablet="span6"><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Karmacs</span> irányítószáma:  8354 | Térkép</h3><div class="jm-module-content clearfix"></div></div></div></div></div> </div>
 </div>
-<div aria-label="Footer modules" class="" id="jm-footer-mod" role="region">
+<div aria-label="Footer modules" id="jm-footer-mod" role="region">
 <div class="container-fluid" id="jm-footer-mod-in">
 <div class="row-fluid jm-flexiblock jm-footer"><div class="span3" data-default="span3" data-mobile="span100" data-normal="span3" data-tablet="span50" data-wide="span3" data-xtablet="span3"><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Közösségi</span> média</h3><div class="jm-module-content clearfix">
 <div class="custom">

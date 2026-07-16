@@ -52,7 +52,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
  color: #CA1440!important;
  text-align: center!important;
   }
-
+  
   .dpl-post-item a {
  color: #CA1440!important;
   }
@@ -148,7 +148,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta content="https://gyermekborgyogyasz.hu/wp-content/uploads/2019/12/cropped-ikon-270x270.png" name="msapplication-TileImage"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -249,7 +250,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </output>
 </div>
 <button class="e-search-submit" type="submit">
-<span class="">
+<span>
 						Keresés					</span>
 </button>
 <input name="e_search_props" type="hidden" value="96b3cea-1499"/>
@@ -525,7 +526,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </section>
 </footer>
 
-<span aria-hidden="true" class="dashicons dashicons-arrow-up-alt2" id="to_top_scrollup" style="background-color: #d8293d;"><span class="screen-reader-text">Scroll Up</span></span>
+<span aria-hidden="true" class="dashicons dashicons-arrow-up-alt2" id="to_top_scrollup" style="background-color: #d8293d;"><span class="screen-reader-text">Scroll Up</span></span> 
 
 
 

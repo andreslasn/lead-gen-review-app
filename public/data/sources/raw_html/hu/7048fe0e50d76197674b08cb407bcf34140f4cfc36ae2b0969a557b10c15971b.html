@@ -75,7 +75,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta content="https://www.tabajd.hu/wp-content/uploads/2019/10/cimer.jpg" name="msapplication-TileImage"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -122,8 +123,8 @@ body.custom-background { background-color: #777778; }
 		#masthead.colormag-header-classic .main-navigation ul ul.sub-menu li.current-menu-item,
 		#masthead.colormag-header-classic #site-navigation .menu-toggle,
 		#masthead.colormag-header-classic #site-navigation .menu-toggle:hover,
-		#masthead.colormag-header-classic .main-navigation ul > li:hover > a,
-        #masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a,
+		#masthead.colormag-header-classic .main-navigation ul > li:hover > a, 
+        #masthead.colormag-header-classic .main-navigation ul > li.current-menu-item > a, 
         #masthead.colormag-header-classic .main-navigation ul > li.current-menu-ancestor > a,
         #masthead.colormag-header-classic .main-navigation ul li.focus > a{ border-color:#005ca1}
 		.promo-button-area a:hover{border:2px solid #005ca1;background-color:#005ca1}
@@ -179,7 +180,7 @@ body.custom-background { background-color: #777778; }
 <div class="inner-wrap">
 <div class="clearfix" id="header-text-nav-wrap">
 <div id="header-left-section">
-<div class="" id="header-text">
+<div id="header-text">
 <h3 id="site-title">
 <a data-review-original-href="https://www.tabajd.hu/" href="#" rel="home" tabindex="-1" title="Tabajd Község honlapja">Tabajd Község honlapja</a>
 </h3>
@@ -331,7 +332,7 @@ hivatal@tabajd.hu</p>
 <div class="footer-socket-left-section">
 <div class="copyright">Copyright © 2026 <a data-review-original-href="https://www.tabajd.hu/" href="#" tabindex="-1" title="Tabajd Község honlapja"><span>Tabajd Község honlapja</span></a>. All rights reserved.<br/>Theme: ColorMag by <a data-review-original-href="https://themegrill.com/themes/colormag" href="#" rel="designer" tabindex="-1" target="_blank" title="ThemeGrill"><span>ThemeGrill</span></a>. Powered by <a data-review-original-href="https://wordpress.org" href="#" tabindex="-1" target="_blank" title="WordPress"><span>WordPress</span></a>.</div> <div class="footer-socket-left-section">
 <div class="footer-bal-szoveg">
-
+					
 			 TABAJD KÖZSÉG ÖNKORMÁNYZAT<br/> HIVATALOS WEBOLDALA<br/><br/><br/><a data-review-original-href="https://www.tabajd.hu/impresszum/" href="#" tabindex="-1">IMPRESSZUM
 </a></div>
 </div>
@@ -351,7 +352,7 @@ hivatal@tabajd.hu</p>
 </div>
 <div class="footer-socket-left-section">
 <div class="copyright">Copyright © 2026 <a data-review-original-href="https://www.tabajd.hu/" href="#" tabindex="-1" title="Tabajd Község honlapja"><span>Tabajd Község honlapja</span></a>. All rights reserved.<br/>Theme: ColorMag by <a data-review-original-href="https://themegrill.com/themes/colormag" href="#" rel="designer" tabindex="-1" target="_blank" title="ThemeGrill"><span>ThemeGrill</span></a>. Powered by <a data-review-original-href="https://wordpress.org" href="#" tabindex="-1" target="_blank" title="WordPress"><span>WordPress</span></a>.</div> <div class="footer-socket-left-section">
-			© TABAJD KÖZSÉG ÖNKORMÁNYZATA
+			© TABAJD KÖZSÉG ÖNKORMÁNYZATA 
 			</div>
 </div>
 </div>

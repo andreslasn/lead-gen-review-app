@@ -68,7 +68,7 @@ h1 {
 }
 
 #site-logo a {
-	color:#facf00;
+	color:#facf00; 
 }
 
 #site-motto {
@@ -153,7 +153,8 @@ h1 {
 	</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -218,7 +219,7 @@ Email cím nem változott,  rendelolaszlodallos@gmail.com<br/>
 De! ezen a héten a korábban kiírtak szerint ( 07.14-én kedden 08-12-ig, , és 07. 17-én pénteken 12-16-ig lesz a rendelés )</div></p><p><div><style>
 				#rendelesi_tablazat_szeles {	display:none;	}
 				#rendelesi_tablazat_keskeny {	display:block;	}
-
+				
 				@media (min-width:730px){
 					#rendelesi_tablazat_szeles {	display:block;	}
 					#rendelesi_tablazat_keskeny {	display:none;	}

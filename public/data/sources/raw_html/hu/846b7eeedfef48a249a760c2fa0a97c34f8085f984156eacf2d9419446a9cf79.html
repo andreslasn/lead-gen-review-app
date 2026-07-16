@@ -84,7 +84,7 @@ a:hover{color: #004D99;}
 	display: none;
 }
 
-.gdpr_button{
+.gdpr_button{ 
 	display: block;
 	background-color: #1769af;
 	color: white;
@@ -95,7 +95,7 @@ a:hover{color: #004D99;}
 	font-size: 16px;
 	text-align: center;
 	margin-top: 20px;
-}
+} 
 
 section#toaxonomy-corporate-category .content-container .corporate-container .corporate-card-container .row .person-card-details {
 	margin-top: 110px
@@ -135,7 +135,7 @@ section#toaxonomy-corporate-category .content-container .corporate-container .co
 }
 
 
-@media only screen and (min-width: 1400px){
+@media only screen and (min-width: 1400px){	
 	.person-card-details .details-container .wrapper {padding-left: 200px}
 }
 
@@ -330,7 +330,7 @@ section.main-news .small-link-container .small-link-button{
 <meta content="Home" itemprop="headline"/>
 <meta content="Home" itemprop="description"/>
 <meta content="Admin Admin" itemprop="author"/>
-
+ 
 
 <meta content="Home" name="twitter:title"/>
 <meta content="https://budavar.hu" name="twitter:url"/>
@@ -342,7 +342,8 @@ section.main-news .small-link-container .small-link-button{
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -624,7 +625,7 @@ section.main-news .small-link-container .small-link-button{
 </div>
 </section>
 <section class="main-search">
-<img alt="" class="loader"/>
+
 <div class="container content-container">
 <div class="main-search-card-container"> <div class="main-search-card" data-permalink="https://budavar.hu/hirek/" data-search-value="Hírek">
 <a data-review-original-href="https://budavar.hu/hirek/" href="#" tabindex="-1">

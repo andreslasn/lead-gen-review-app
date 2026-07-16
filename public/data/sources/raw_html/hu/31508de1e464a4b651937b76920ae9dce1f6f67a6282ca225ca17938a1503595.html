@@ -96,18 +96,18 @@ img.emoji {
 
 .map {
 	width:100%;
-	height:500px;
+	height:500px;	
 }
 
 
 .map-wrap {
-	position:relative;
+	position:relative; 
 }
-
+	
 .overlay {
 	width:100%;
-	min-height:500px;
-	position:absolute;
+	min-height:500px; 
+	position:absolute; 
 	top:0;
 }
 
@@ -385,7 +385,8 @@ a.button:after, a.tp-button:after, button:after, input[type="submit"]:after, inp
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -400,53 +401,7 @@ a.button:after, a.tp-button:after, button:after, input[type="submit"]:after, inp
 <header id="Header">
 
 <div class="header_placeholder"></div>
-<div class="loading" id="Top_bar">
-<div class="container">
-<div class="column one">
-<div class="top_bar_left clearfix">
 
-<div class="logo">
-<a data-review-original-href="https://multimed.hu" href="#" id="logo" tabindex="-1" title="Multi-Med Team"><img alt="Multi-Med Team" class="logo-main scale-with-grid"/><img alt="" class="logo-sticky scale-with-grid"/><img alt="" class="logo-mobile scale-with-grid"/></a> </div>
-<div class="menu_wrapper">
-<nav class="menu-navigacio_hu-container" id="menu"><ul class="menu" id="menu-navigacio_hu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home" id="menu-item-160"><a data-review-original-href="https://multimed.hu/" href="#" tabindex="-1"><span>Kezdőlap</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-159"><a data-review-original-href="https://multimed.hu/rolunk/" href="#" tabindex="-1"><span>Rólunk</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children" id="menu-item-158"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/" href="#" tabindex="-1"><span>Szolgáltatásaink</span></a>
-<ul class="sub-menu">
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-203"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/uzemorvosi-szolgaltatas/" href="#" tabindex="-1"><span>Üzemorvosi szolgáltatás</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-388"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/ekg-vizsgalat/" href="#" tabindex="-1"><span>EKG vizsgálat</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-200"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/egeszsegugyi-kiskonyv/" href="#" tabindex="-1"><span>Egészségügyi kiskönyv</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-199"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/munkahelyi-elsosegelynyujto-kepzes/" href="#" tabindex="-1"><span>Munkahelyi elsősegélynyújtó képzés</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-197"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/arteriograf-szures/" href="#" tabindex="-1"><span>Arteriográf szűrés</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-196"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/szurovizsgalatok/" href="#" tabindex="-1"><span>Szűrővizsgálatok</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-190 current_page_item" id="menu-item-195"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/haziorvosi-korzetek-uzemeltetese/" href="#" tabindex="-1"><span>Háziorvosi körzetek üzemeltetése</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-395"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/dietetika/" href="#" tabindex="-1"><span>Dietetika <i class="icon-alert"></i></span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-400"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/eletmod-orvosi-tanacsadas/" href="#" tabindex="-1"><span>Életmód orvosi tanácsadás <i class="icon-alert"></i></span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-416"><a data-review-original-href="https://multimed.hu/szolgaltatasaink/vervetel/" href="#" tabindex="-1"><span>Vérvétel <i class="icon-alert"></i></span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-300"><a data-review-original-href="https://multimed.hu/letoltheto-dokumentumok/" href="#" tabindex="-1"><span>Letölthető dokumentumok  <i class="icon-download"></i></span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page" id="menu-item-161"><a data-review-original-href="https://multimed.hu/kapcsolat/" href="#" tabindex="-1"><span>Kapcsolat</span></a></li>
-</ul></nav><a class="responsive-menu-toggle" data-review-original-href="#" href="#" tabindex="-1"><i class="icon-menu"></i></a>
-</div>
-<div class="secondary_menu_wrapper">
-
-</div>
-<div class="banner_wrapper">
-</div>
-<div class="search_wrapper">
-
-<div data-review-disabled-form="true">
-<i class="icon_search icon-search"></i>
-<a class="icon_close" data-review-original-href="#" href="#" tabindex="-1"><i class="icon-cancel"></i></a>
-<input class="field" id="s" name="s" placeholder="Enter your search" type="text"/>
-<input class="submit" style="display:none;" type="submit" value=""/>
-</div>
-</div>
-</div>
-<div class="top_bar_right"><div class="top_bar_right_wrapper"></div></div>
-</div>
-</div>
-</div>
 </header>
 </div>
 

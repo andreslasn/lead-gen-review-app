@@ -93,7 +93,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -103,7 +104,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 
 
-
+   
 <div class="d-none d-sm-block" id="check-mobile"></div>
 <div aria-hidden="true" class="modal" id="header-karok" role="dialog" tabindex="-1">
 <div class="modal-dialog mx-0 mx-md-2" role="document">
@@ -744,7 +745,7 @@ Figyelem, bejelentkezés szükséges!
 <div class="col-lg-6 col-12 mx-md-auto mt-md-0 mt-2 pl-0 pr-md-2 pr-normal order-1">
 <div class="section-row d-flex mt-0 mb-2 pr-normal ml-md-0 ml-lg-auto">
 <div class="col-auto section-title">
-<h2 class="">Rólunk</h2>
+<h2>Rólunk</h2>
 </div>
 </div>
 <div class="col-12 mt-md-0 mt-2 pl-0 pr-md-2 pr-normal">
@@ -762,7 +763,7 @@ Intézményünkben a járó-beteg szakellátás és gondozás, valamint a védő
 </div>
 <div class="infobox-img col-lg-6 col-12 col-md-11 mx-md-auto px-normal pb-2 order-2" style="">
 <div class="card-img">
-<img alt="" class="attachment-large size-large wp-post-image" decoding="async" height="502" loading="lazy" sizes="auto, (max-width: 753px) 100vw, 753px" width="753"/>
+<img alt="" class="attachment-large size-large wp-post-image" decoding="async" height="502" loading="lazy" sizes="auto, (max-width: 753px) 100vw, 753px" width="753"/> 
 </div>
 </div>
 </div>
@@ -785,19 +786,19 @@ Intézményünkben a járó-beteg szakellátás és gondozás, valamint a védő
 <div class="col-3 col-header-normal px-0 d-none"></div>
 <div class="col-9 col-header-pale px-0 d-none"></div>
 <div class="col-12 pl-0 pr-1 mt-md-3">
-<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/betegellatas/hazirend/" href="#" tabindex="-1">
+<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/betegellatas/hazirend/" href="#" tabindex="-1">  
                         Intézményünk házirendje<i class="fa fa-long-arrow-right"></i>
 </a>
-<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/betegellatas/egeszsegugyi-veszelyes-hulladek/" href="#" tabindex="-1">
+<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/betegellatas/egeszsegugyi-veszelyes-hulladek/" href="#" tabindex="-1">  
                         Egészségügyi veszélyes hulladék leadás<i class="fa fa-long-arrow-right"></i>
 </a>
-<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/allasok/" href="#" tabindex="-1">
+<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/allasok/" href="#" tabindex="-1">  
                         Állásajánlataink<i class="fa fa-long-arrow-right"></i>
 </a>
-<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/alapitvany/" href="#" tabindex="-1">
+<a class="d-block" data-review-original-href="https://semmelweis.hu/godollo/alapitvany/" href="#" tabindex="-1">  
                         Dr. Lumniczer Sándor Alapítvány<i class="fa fa-long-arrow-right"></i>
 </a>
-<a class="d-block" data-review-original-href="https://help.semmelweis.hu/" href="#" tabindex="-1">
+<a class="d-block" data-review-original-href="https://help.semmelweis.hu/" href="#" tabindex="-1">  
                         Semmelweis Help<i class="fa fa-long-arrow-right"></i>
 </a>
 </div>
@@ -1180,7 +1181,7 @@ Intézményünkben a járó-beteg szakellátás és gondozás, valamint a védő
                     /* top: -30px; */
                     /* background-position-y: calc(50% - 28px); */
                     background-position-y: calc(50% + 5px) ;
-
+               
                 }
 
             </style>
@@ -1223,7 +1224,7 @@ Intézményünkben a járó-beteg szakellátás és gondozás, valamint a védő
 </p>
 </h6>
 <h6>
-<i aria-hidden="true" class="fa fa-desktop"></i> SEMEDUNIV (KRID: 648905308)
+<i aria-hidden="true" class="fa fa-desktop"></i> SEMEDUNIV (KRID: 648905308)                
             </h6>
 <h6 class="sociallinks">
 <a class="follow-box" data-review-original-href="https://facebook.com/semmelweisegyetem" href="#" tabindex="-1" target="_blank" title="Facebook - Kövess minket!">

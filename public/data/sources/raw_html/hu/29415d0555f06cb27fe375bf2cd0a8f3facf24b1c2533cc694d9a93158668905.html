@@ -85,7 +85,8 @@ box-shadow: inset 0 0 0 5px rgba(0,0,0,0.1); }
 <meta content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." name="generator"/>
 <noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

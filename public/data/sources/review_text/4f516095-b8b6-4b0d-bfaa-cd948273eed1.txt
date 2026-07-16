@@ -1,0 +1,16 @@
+el.style.lineHeight = `${size}px`;
+ el.style.borderRadius = '50%';
+ el.style.textAlign = 'center';
+ el.style.display = 'inline-block';
+ }
+
+
+ function getCookie(name) {
+ // Prefix the cookie string with `"; "` so we can reliably split on `"; name="`
+ var value = "; " + document.cookie;
+ // Split at the point where `; name=` appears
+ var parts = value.split("; " + name + "=");
+ if (parts.length === 2) {
+ // If we got two parts, the second part starts with the cookie’s value,
+ // possibly followed by `;` and more cookies. Split on `";"` and take the first segment.
+ return parts.pop().split(";").shift();

@@ -65,16 +65,16 @@ body{--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #ab
 
 
 <style id="ui-fontsize.css-inline-css">
-html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; }
+html { --wpa-font-size: clamp( 24px, 1.5rem, 36px ); --wpa-h1-size : clamp( 48px, 3rem, 72px ); --wpa-h2-size : clamp( 40px, 2.5rem, 60px ); --wpa-h3-size : clamp( 32px, 2rem, 48px ); --wpa-h4-size : clamp( 28px, 1.75rem, 42px ); --wpa-sub-list-size: 1.1em; --wpa-sub-sub-list-size: 1em; } 
 </style>
 
 <style id="wpa-style-inline-css">
 
 .wpa-hide-ltr#skiplinks a, .wpa-hide-ltr#skiplinks a:hover, .wpa-hide-ltr#skiplinks a:visited {
-
+	
 }
 .wpa-hide-ltr#skiplinks a:active,  .wpa-hide-ltr#skiplinks a:focus {
-
+	
 }
 	:root { --admin-bar-top : 7px; }
 </style>
@@ -118,8 +118,8 @@ Kattintsunk a segítség ikonra a további információk felirat felett..
 
 #content {margin-right:20%}
 #content-sidebar {
-	  width:20%;
-	  background-color:#FFF;
+	  width:20%; 
+	  background-color:#FFF; 
 	  padding-right: 20px;
     padding-left: 30px;
 	  margin-top: 52px ;
@@ -128,27 +128,27 @@ Kattintsunk a segítség ikonra a további információk felirat felett..
 	DISPLAY: block;}
 
 article .entry-title {
-	padding-top: 3px;
-	font-size:1.2em;
-	font-weight:bold;
+	padding-top: 3px; 
+	font-size:1.2em; 
+	font-weight:bold; 
 	font-color:#000}
 
 body.list-view .post {
-	width:47%;
-	float:left;
-	clear:none;
-	line-height:1em;
+	width:47%; 
+	float:left; 
+	clear:none; 
+	line-height:1em; 
 	border:3px !important;
-	margin-bottom:10px;
-	height:600px;
+	margin-bottom:10px; 
+	height:600px; 
 	overflow-y:auto;
 	margin-left:2px;
 	margin-right:5px;
 	margin-left:5px;
-	padding:4px !important;
+	padding:4px !important; 
 	border-top:#fff;
-	border-top: 2px solid #C9C9C9 !important;
-	border-left:2px solid #C9C9C9 !important;
+	border-top: 2px solid #C9C9C9 !important; 
+	border-left:2px solid #C9C9C9 !important;   
 	box-shadow: 3px 3px 5px #050505;   color: #050505}
 
 body.single-post .post {width:100%}
@@ -158,10 +158,10 @@ body.single-post .post {width:100%}
 .entry-header {padding:1px}
 
 .gcal {width:73%; height:260px;     border: 1px solid;}
-.gcal-iframe {height:272px; width: 265px; }
+.gcal-iframe {height:272px; width: 265px; }	
 .gcal-iframe:hover {position:relative; z-index:270; width:500px; height:300x; margin-left:-200px}
 
-.content-sidebar .widget .widget-title{
+.content-sidebar .widget .widget-title{ 
   border-color: #2ba8d2;
 	font color: #fff;
 	padding-left:15px;
@@ -169,11 +169,11 @@ body.single-post .post {width:100%}
 	height: 5px;
   padding-bottom: 10px;
   border-top-width: 7px;
-  text-align: -webkit-center;
+  text-align: -webkit-center;	
 }
 #primary a, .site-content  .site-content .entry-content, .site-content .entry-summary, .page-content
 { padding-top: -5px;
-	color: #000;
+	color: #000;  
 }
 .content-area, .content-sidebar {
     padding-top: 52px;
@@ -195,7 +195,8 @@ width: 100%; height: 100%;
 			</style>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>

@@ -95,9 +95,9 @@ body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a
 line-height: initial !important;
 }
 
-body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) h4,
-body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) h3,
-body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) h2,
+body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) h4, 
+body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) h3, 
+body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) h2, 
 body.pojo-a11y-negative-contrast, body.pojo-a11y-negative-contrast *:not(#pojo-a11y-toolbar) h1 {
     height: auto;
 }
@@ -176,7 +176,7 @@ div#Subheader {
 @media only screen and (min-width: 1240px)  {
 .layout-boxed.boxed-no-margin {
     background-color: #cdeade !important;
-	background-image:
+	background-image: 
     url(https://site.szatymaz.hu/wp-content/uploads/2021/04/bg-header.jpg),
     url(https://site.szatymaz.hu/wp-content/uploads/2021/04/footer-bg7.jpg);
   background-position:
@@ -185,7 +185,7 @@ div#Subheader {
   background-repeat:
     repeat-x /* this applies to both images */
 }
-
+	
 	#Footer .widgets_wrapper {
     padding: 15px 35px;
     max-height: 500px;
@@ -224,15 +224,15 @@ div#Subheader {
 .youtube img{
     display:none;
 }
-
+	
 	 .facebook img{
     display:none;
 }
-
+	
 	a.elerhetoseg {
     display: none !important;
 }
-
+	
 	.elerhetoseg {
     display: none !important;
 }
@@ -553,7 +553,7 @@ html .rotary-boxUser__desktop svg {
  .widget-area {
     max-width: 150px !important;
 }
-
+	
 	.one-ten.column {
     width: 17%;
 }
@@ -616,20 +616,20 @@ rs-layer#slider-3-slide-3-layer-2 h1 {
     width: 30px !important;
 	  display:none;
 }
-
+	
 rs-module rs-mask-wrap .rs-layer, rs-module rs-mask-wrap *:last-child, .wpb_text_column rs-module rs-mask-wrap .rs-layer, .wpb_text_column rs-module rs-mask-wrap *:last-child {
     margin-bottom: 0px;
 }
-
+	
 	rs-layer h1 {
     display: none;
 }
-
+	
 
 rs-module-wrap a.tribe-events-widget-events-list__event-title-link.tribe-common-anchor-thin {
     font-size: 10px;
 }
-
+	
 
 rs-module-wrap	.tribe-common .tribe-common-h7 {
     line-height: 0px !important;
@@ -641,11 +641,11 @@ rs-module-wrap .tribe-events-widget-events-list__event-datetime-wrapper.tribe-co
 	time.tribe-events-widget-events-list__event-datetime {
     display: none;
 }
-
+	
 	rs-module-wrap .tribe-events-widget-events-list__event-wrapper.tribe-common-g-col {
     margin-top: -6px;
 }
-
+	
 	rs-module-wrap .tribe-events-widget .tribe-events-widget-events-list__event-row {
     margin-bottom: 0px !important;
 }
@@ -688,45 +688,45 @@ a.next_page {
 }
 }
 
-/*
+/* 
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media
+@media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr {
-		display: block;
+	table, thead, tbody, th, td, tr { 
+		display: block; 
 	}
-
+	
 	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr {
+	thead tr { 
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
-
+	
 	tr { border: 1px solid #ccc; }
-
-	td {
+	
+	td { 
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid #eee; 
 		position: relative;
-		padding-left: 50%;
+		padding-left: 50%; 
 	}
-
-	td:before {
+	
+	td:before { 
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
-		width: 45%;
-		padding-right: 10px;
+		width: 45%; 
+		padding-right: 10px; 
 		white-space: nowrap;
 	}
 }
@@ -774,12 +774,12 @@ rs-layer .tribe-common .tribe-common-h7, .tribe-common .tribe-common-h8 a{
     text-overflow: ellipsis;
     max-width: 120px !important;
 }
-
+	
 	.tribe-common .tribe-common-c-svgicon {
    display:none;
 }
-
-
+	
+	
 	}
 
 @media only screen and (max-width: 820px) and (min-width: 401px) {
@@ -787,7 +787,7 @@ rs-layer .tribe-common .tribe-common-h7, .tribe-common .tribe-common-h8 a{
 	.tribe-common .tribe-common-c-svgicon {
    display:none;
 }
-
+	
 .tribe-events-widget .tribe-events-widget-events-list__event-date-tag {
     width: 30px !important;
 	  overflow: hidden;
@@ -923,7 +923,8 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 </style>
 <style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta content="WP Rocket 3.21.3" data-wpr-features="wpr_minify_concatenate_js wpr_preconnect_external_domains wpr_automatic_lazy_rendering wpr_oci wpr_minify_css wpr_desktop" name="generator"/><style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -932,7 +933,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 <div id="valasztas"><a data-review-original-href="https://www.azevhonlapja.hu/nevezes/benyujtott-palyamu/31/szatymaz-k%C3%B6zs%C3%A9g" href="#" tabindex="-1"><img class="lazyload" data-src="https://site.szatymaz.hu/wp-content/uploads/2022/09/unnamed.gif" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATwAAACCAQMAAADhfOb0AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABxJREFUWMPtwQENAAAAwqD3T20ON6AAAAAAAF4MFNIAAbmnUToAAAAASUVORK5CYII="/><noscript><img data-eio="l"/></noscript></a></div>
 
 <div id="Wrapper">
-<div class="" id="Header_wrapper">
+<div id="Header_wrapper">
 <header id="Header">
 <div id="Overlay"><nav id="overlay-menu"><ul class="menu overlay-menu" id="menu-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-422" id="menu-item-422"><a data-review-original-href="https://site.szatymaz.hu/esemenyek/" href="#" tabindex="-1">Események</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-214" id="menu-item-214"><a data-review-original-href="https://site.szatymaz.hu/elerhetosegek/" href="#" tabindex="-1">Elérhetőségek</a></li>
@@ -940,24 +941,7 @@ body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1362" id="menu-item-1362"><a data-review-original-href="https://www.youtube.com/channel/UCB6mqL-aNGl70y1OlIKGDgQ" href="#" tabindex="-1">Youtube</a></li>
 <li class="astm-search-menu is-menu default menu-item"><div data-review-disabled-form="true"><label for="is-search-input-58"><span class="is-screen-reader-text">Search for:</span><input autocomplete="off" class="is-search-input" id="is-search-input-58" name="s" placeholder="Keresés..." type="search" value=""/><span class="is-loader-image lazyload" data-back="https://site.szatymaz.hu/wp-content/plugins/add-search-to-menu/public/images/spinner.gif" style="display: none;"></span></label><button class="is-search-submit" type="submit"><span class="is-screen-reader-text">Search Button</span><span class="is-search-icon"><svg aria-label="Search" focusable="false" viewbox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button></div><div class="search-close"></div></li></ul></nav></div><a class="overlay-menu-toggle" data-review-original-href="#" href="#" tabindex="-1"><i class="open icon-menu-fine"></i><i class="close icon-cancel-fine"></i></a>
 <div class="header_placeholder"></div>
-<div class="loading" id="Top_bar">
-<div class="container">
-<div class="column one">
-<div class="top_bar_left clearfix">
-<div class="logo"><a data-height="60" data-padding="15" data-review-original-href="https://site.szatymaz.hu" href="#" id="logo" tabindex="-1" title="Szatymaz.hu"><img alt="szatymaz" class="logo-main scale-with-grid lazyload" data-height="339" data-no-retina="" data-retina="" data-src="https://site.szatymaz.hu/wp-content/uploads/2021/05/szatymaz.png" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAFTAQMAAAC+hX03AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAACVJREFUaN7twQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAAAG8GOkQAASyvACEAAAAASUVORK5CYII="/><noscript><img alt="szatymaz" class="logo-main scale-with-grid" data-eio="l" data-height="339" data-no-retina="" data-retina=""/></noscript><img alt="szatymaz" class="logo-sticky scale-with-grid lazyload" data-height="339" data-no-retina="" data-retina="" data-src="https://site.szatymaz.hu/wp-content/uploads/2021/05/szatymaz.png" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAFTAQMAAAC+hX03AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAACVJREFUaN7twQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAAAG8GOkQAASyvACEAAAAASUVORK5CYII="/><noscript><img alt="szatymaz" class="logo-sticky scale-with-grid" data-eio="l" data-height="339" data-no-retina="" data-retina=""/></noscript><img alt="szatymaz" class="logo-mobile scale-with-grid lazyload" data-height="339" data-no-retina="" data-retina="" data-src="https://site.szatymaz.hu/wp-content/uploads/2021/05/szatymaz.png" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAFTAQMAAAC+hX03AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAACVJREFUaN7twQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAAAG8GOkQAASyvACEAAAAASUVORK5CYII="/><noscript><img alt="szatymaz" class="logo-mobile scale-with-grid" data-eio="l" data-height="339" data-no-retina="" data-retina=""/></noscript><img alt="szatymaz" class="logo-mobile-sticky scale-with-grid lazyload" data-height="339" data-no-retina="" data-retina="" data-src="https://site.szatymaz.hu/wp-content/uploads/2021/05/szatymaz.png" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAAFTAQMAAAC+hX03AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAACVJREFUaN7twQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAAAG8GOkQAASyvACEAAAAASUVORK5CYII="/><noscript><img alt="szatymaz" class="logo-mobile-sticky scale-with-grid" data-eio="l" data-height="339" data-no-retina="" data-retina=""/></noscript></a></div>
-<div class="menu_wrapper">
-</div>
-<div class="secondary_menu_wrapper">
-</div>
-<div class="banner_wrapper">
-</div>
-<div class="search_wrapper">
-<div data-review-disabled-form="true"><label for="is-search-input-58"><span class="is-screen-reader-text">Search for:</span><input autocomplete="off" class="is-search-input" id="is-search-input-58" name="s" placeholder="Keresés..." type="search" value=""/><span class="is-loader-image lazyload" data-back="https://site.szatymaz.hu/wp-content/plugins/add-search-to-menu/public/images/spinner.gif" style="display: none;"></span></label><button class="is-search-submit" type="submit"><span class="is-screen-reader-text">Search Button</span><span class="is-search-icon"><svg aria-label="Search" focusable="false" viewbox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button></div> </div>
-</div>
-<div class="top_bar_right"><div class="top_bar_right_wrapper"><a class="has-input" data-review-original-href="" href="#" id="search_button" tabindex="-1"><div data-review-disabled-form="true"><i class="icon-search-fine"></i><input class="field" name="s" placeholder="Keresés..." type="text"/><input class="submit" style="display:none;" type="submit" value=""/></div></a></div></div>
-</div>
-</div>
-</div>
+
 <div class="mfn-main-slider mfn-rev-slider">
 <p class="rs-p-wp-fix"></p>
 <sr7-module data-alias="szatymaz-kepviselo-testulet-1" data-id="8" data-version="7.0.15" id="SR7_8_1">
@@ -1423,7 +1407,7 @@ Szeged, Korányi fasor 14-15. (a Tisza-parton)</p>
 					background-color: #e5e5e5;
 					color: #333333;
 				}
-
+			
 				.single-tribe_events .tribe-events-single-event-title {
 					color: #dd911f;
 				}

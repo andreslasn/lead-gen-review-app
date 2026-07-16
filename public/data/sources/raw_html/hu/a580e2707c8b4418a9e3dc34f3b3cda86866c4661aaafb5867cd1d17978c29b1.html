@@ -9,7 +9,8 @@
 <meta content="hu" http-equiv="content-language"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -31,7 +32,7 @@
 			Házi gyermekorvosi rendelés
 			<div style="padding-left:20px;">
 				› <a data-review-original-href="hazi-gyermekorvosi-rendeles.php" href="#" tabindex="-1">Betegrendelés</a><br/>
-				› <a data-review-original-href="egeszseges-tanacsadas.php" href="#" tabindex="-1">Egészséges tanácsadás</a><br/>
+				› <a data-review-original-href="egeszseges-tanacsadas.php" href="#" tabindex="-1">Egészséges tanácsadás</a><br/>	
 				› <a data-review-original-href="korzetek.php" href="#" tabindex="-1">Körzetek</a><br/>
 				› <a data-review-original-href="gyermekorvosi-ugyelet.php" href="#" tabindex="-1">Ügyelet</a>
 </div>
@@ -173,8 +174,8 @@
 <div class="sep10"></div>
 <div id="footer">
 <div style="padding-top:21px;">
-<b>1sz. Gyermekorvosi rendelő:</b> Budapest, 1073. Akácfa u. 62.   Tel: +36 1 342-0149   •  
-		<b>2.sz. Gyermekorvosi rendelő:</b> Budapest, 1074. Vörösmarty u. 14.   Tel: +36 1 322-8876
+<b>1sz. Gyermekorvosi rendelő:</b> Budapest, 1073. Akácfa u. 62.   Tel: +36 1 342-0149   •   
+		<b>2.sz. Gyermekorvosi rendelő:</b> Budapest, 1074. Vörösmarty u. 14.   Tel: +36 1 322-8876 
 		<br/>
 <a data-review-original-href="hazi-gyermekorvosi-rendeles.php" href="#" tabindex="-1" title="Házi gyermekorvosi rendelés">Házi gyermekorvosi rendelés</a>   •   <a data-review-original-href="maganorvosi-szakrendeles.php" href="#" tabindex="-1" title="Magánorvosi gyermek szakrendelések">Magánorvosi szakrendelések</a>   •   <a data-review-original-href="gyermekorvosi-ugyelet.php" href="#" tabindex="-1" title="Gyermekorvosi ügyelet Budapest">Gyermekorvosi ügyelet</a>   •   TAO Germekrendelő   •   <a data-review-original-href="http://www.alexgraphics.hu" href="#" tabindex="-1" title="Honlapkészítés">Honlapkészítés: Alexgraphics</a><br/>
 </div>

@@ -34,7 +34,7 @@
 
 
 
-
+ 
 
 
 
@@ -101,8 +101,8 @@ padding-right: 5px;
             }
 table { border-collapse: separate; }
                            body table { border-collapse: collapse; }
-
-.social-links .social-icon:before { content: none }
+                          
+.social-links .social-icon:before { content: none } 
 .sticky-enabled .tc-shrink-on .site-logo img {
     					height:30px!important;width:auto!important
     				}
@@ -192,7 +192,7 @@ table { border-collapse: separate; }
 
 #tc-push-footer { display: none; visibility: hidden; }
          .tc-sticky-footer #tc-push-footer.sticky-footer-enabled { display: block; }
-
+        
 
 </style>
 
@@ -358,7 +358,8 @@ code {
 <meta content="https://kajarpec.hu/wp-content/uploads/2016/01/cropped-Kajarpec_cimer-1-270x270.jpg" name="msapplication-TileImage"/>
 <style>
       html { scroll-behavior: auto !important; }
-      body { min-height: 100vh; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
       a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
       [data-review-disabled-form='true'] { display: contents; }
     </style></head>
@@ -366,10 +367,10 @@ code {
 
 <noscript></noscript>
  <a class="screen-reader-text skip-link" data-review-original-href="#content" href="#" tabindex="-1">Skip to content</a>
-<div class="" id="tc-page-wrap">
+<div id="tc-page-wrap">
 <header class="tc-header clearfix row-fluid tc-tagline-on tc-title-logo-on tc-shrink-on tc-menu-on logo-left tc-second-menu-in-sn-before-when-mobile">
 <div class="brand span3 pull-left">
-<a aria-label="Kajarpec | Kajárpéc Községi Önkormányzat" class="site-logo" data-review-original-href="https://kajarpec.hu/" href="#" tabindex="-1"><img alt="Ugrás a kezdőlapra" class="attachment-90" data-no-retina="" height="143" width="100"/></a> </div>
+<a aria-label="Kajarpec | Kajárpéc Községi Önkormányzat" class="site-logo" data-review-original-href="https://kajarpec.hu/" href="#" tabindex="-1"><img alt="Ugrás a kezdőlapra" class="attachment-90" data-no-retina="" height="143" width="100"/></a> </div> 
 <div class="container outside"><h2 class="site-description">Kajárpéc Községi Önkormányzat</h2></div> <div class="navbar-wrapper clearfix span9 tc-submenu-fade tc-submenu-move tc-open-on-hover pull-menu-right">
 <div class="navbar resp">
 <div class="navbar-inner" role="navigation">
@@ -588,7 +589,7 @@ ___________________</small></center> </p>
 <div id="tc-push-footer"></div>
 </div>
 
-<footer class="" id="footer">
+<footer id="footer">
 <div class="container footer-widgets">
 <div class="row widget-area" role="complementary">
 <div class="span4" id="footer_one">
