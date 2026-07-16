@@ -2,11 +2,11 @@
   "format": "lead-gen-review-package",
   "schema_version": 1,
   "dataset_id": "hu-review-20260716T182317Z",
-  "dataset_version": "2026-07-16T19:33:51.924208+00:00",
+  "dataset_version": "2026-07-16T19:41:32.580197+00:00",
   "base_data_hash": "sha256:77598f0a6a0fe07134006a6f7fdb6bc1070b1e8bdbc3a5ce8fad93fb0ea38930",
   "country": "HU",
   "scope": "actionable_email_clinics",
-  "generated_at": "2026-07-16T19:33:51.924208+00:00",
+  "generated_at": "2026-07-16T19:41:32.580197+00:00",
   "source_commit": "7d1323fdbb8a",
   "counts": {
     "clinics": 2226,
