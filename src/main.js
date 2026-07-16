@@ -181,6 +181,42 @@ function fullEvidenceHtml(text, email) {
   return `${escapeHtml(source.slice(0, index))}<mark>${escapeHtml(source.slice(index, index + needle.length))}</mark>${escapeHtml(source.slice(index + needle.length))}`;
 }
 
+function evidencePresentation(link, document) {
+  const rawHtmlPath = link?.raw_html_path || document?.raw_html_path;
+  const screenshotPath = link?.screenshot_path || document?.screenshot_path;
+  const reviewTextPath = link?.review_text_path || document?.review_text_path;
+  if (rawHtmlPath) {
+    return {
+      kind: "html",
+      label: "Archived HTML",
+      detail: "Sanitized capture of the original webpage.",
+      path: rawHtmlPath,
+    };
+  }
+  if (screenshotPath) {
+    return {
+      kind: "screenshot",
+      label: "Screenshot fallback",
+      detail: "No archived HTML was available. This is a compressed screenshot of the captured page.",
+      path: screenshotPath,
+    };
+  }
+  if (reviewTextPath) {
+    return {
+      kind: "text",
+      label: "Text-only fallback",
+      detail: "This is extracted page text, not the original webpage layout or HTML.",
+      path: reviewTextPath,
+    };
+  }
+  return {
+    kind: "excerpt",
+    label: "Evidence excerpt fallback",
+    detail: "No archived HTML or screenshot was available. This is retained extraction context only.",
+    path: null,
+  };
+}
+
 function candidateRoleLabel(candidate) {
   const text = [
     candidate?.value,
@@ -287,6 +323,7 @@ const App = {
     const db = ref(null);
     const manifest = ref(null);
     const queue = ref([]);
+    const clinicIndex = ref([]);
     const clinic = ref(null);
     const clinicCache = ref({});
     const decisions = ref([]);
@@ -307,6 +344,8 @@ const App = {
     const note = ref("");
     const showOtherCandidates = ref(false);
     const showInvalidCandidates = ref(false);
+    const reassignMode = ref(false);
+    const reassignSearch = ref("");
     const lastExportAt = ref(localStorage.getItem("review.lastExportAt") || "");
     const lastAction = ref(null);
     const sessionStartedAt = ref(Date.now());
@@ -372,20 +411,16 @@ const App = {
       return groups;
     });
     const displayedCandidateRows = computed(() => {
-      const rows = candidateGroups.value.primary.map((row) => ({ type: "candidate", ...row }));
-      if (candidateGroups.value.other.length) {
-        rows.push({ type: "toggle", group: "other", count: candidateGroups.value.other.length });
-        if (showOtherCandidates.value) rows.push(...candidateGroups.value.other.map((row) => ({ type: "candidate", ...row })));
-      }
-      if (candidateGroups.value.invalid.length) {
-        rows.push({ type: "toggle", group: "invalid", count: candidateGroups.value.invalid.length });
-        if (showInvalidCandidates.value) rows.push(...candidateGroups.value.invalid.map((row) => ({ type: "candidate", ...row })));
-      }
-      return rows;
+      return candidateGroups.value.primary.map((row) => ({ type: "candidate", ...row }));
     });
-    const selectedCandidate = computed(() => candidates.value[selectedCandidateIndex.value] || candidates.value[0] || currentItem.value?.best_candidate || null);
+    const selectedCandidate = computed(() => {
+      const selected = candidates.value[selectedCandidateIndex.value];
+      if (selected && candidatePresentationGroup(selected, clinic.value?.clinic) === "primary") return selected;
+      return candidateGroups.value.primary[0]?.candidate || null;
+    });
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
     const selectedDocument = computed(() => (clinic.value?.documents || []).find((document) => document.id === selectedEvidence.value?.source_document_id) || null);
+    const selectedEvidencePresentation = computed(() => evidencePresentation(selectedEvidence.value, selectedDocument.value));
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
     const roleOverrideByContact = computed(() => Object.fromEntries(roleOverrides.value.map((item) => [item.contact_point_id, item])));
@@ -394,6 +429,31 @@ const App = {
     const fullEvidenceBody = computed(() => fullEvidenceText.value
       ? fullEvidenceHtml(fullEvidenceText.value, selectedCandidate.value?.value)
       : evidenceBody.value);
+    const reassignMatches = computed(() => {
+      const currentClinicId = clinic.value?.clinic?.id;
+      const tokens = normalizedMatchText(reassignSearch.value)
+        .split(/[^a-z0-9]+/)
+        .filter((token) => token.length >= 2);
+      if (!tokens.length) return [];
+      return clinicIndex.value
+        .filter((item) => item.id !== currentClinicId)
+        .map((item) => {
+          const haystack = normalizedMatchText([
+            item.name,
+            item.registry_id,
+            item.city,
+            item.region,
+            item.address,
+          ].filter(Boolean).join(" "));
+          const matched = tokens.filter((token) => haystack.includes(token)).length;
+          const exactRegistry = String(item.registry_id || "").toLowerCase() === reassignSearch.value.trim().toLowerCase();
+          return { item, score: matched + (exactRegistry ? 10 : 0) };
+        })
+        .filter((row) => row.score > 0 && row.score >= tokens.length)
+        .sort((a, b) => b.score - a.score || String(a.item.name || "").localeCompare(String(b.item.name || "")))
+        .slice(0, 12)
+        .map((row) => row.item);
+    });
 
     function artifactUrl(path) {
       if (!path) return null;
@@ -435,7 +495,11 @@ const App = {
     function candidateDecisionLabel(candidate) {
       const decision = candidateDecision(candidate);
       if (!decision) return "";
-      return decision.decision === "rejected" ? "Rejected" : "Confirmed";
+      if (decision.decision === "rejected") return "Rejected";
+      if (decision.decision === "reassigned") {
+        return `Reassigned → ${decision.target_clinic_name || decision.target_registry_id || decision.target_clinic_id || "other clinic"}`;
+      }
+      return "Confirmed";
     }
 
     function focusArchivedEvidence(event) {
@@ -510,14 +574,17 @@ const App = {
     }
 
     async function loadStaticData() {
-      const [manifestResponse, queueResponse] = await Promise.all([
+      const [manifestResponse, queueResponse, clinicIndexResponse] = await Promise.all([
         fetch("data/manifest.json", { cache: "no-cache" }),
         fetch("data/queue.json", { cache: "no-cache" }),
+        fetch("data/clinic-index.json", { cache: "no-cache" }),
       ]);
-      if (!manifestResponse.ok || !queueResponse.ok) throw new Error("Review dataset is missing. Run lead-gen review package first.");
+      if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok) throw new Error("Review dataset is missing. Run lead-gen review package first.");
       manifest.value = await manifestResponse.json();
       const payload = await queueResponse.json();
       queue.value = payload.items || [];
+      const indexPayload = await clinicIndexResponse.json();
+      clinicIndex.value = indexPayload.items || [];
     }
 
     async function hydrateLocal() {
@@ -578,12 +645,14 @@ const App = {
       const item = filteredQueue.value[currentIndex.value];
       pendingReject.value = false;
       editMode.value = false;
+      reassignMode.value = false;
+      reassignSearch.value = "";
       note.value = "";
-      selectedCandidateIndex.value = 0;
       clinic.value = await loadClinic(item.id);
-      showOtherCandidates.value = candidateGroups.value.primary.length === 0;
+      selectedCandidateIndex.value = candidateGroups.value.primary[0]?.index ?? 0;
+      showOtherCandidates.value = false;
       showInvalidCandidates.value = false;
-      evidenceTab.value = selectedEvidence.value?.raw_html_path ? "archive" : "snapshot";
+      evidenceTab.value = selectedEvidencePresentation.value.kind;
       editValue.value = selectedCandidate.value?.value || "";
       itemStartedAt.value = Date.now();
       if (updateHash) window.history.replaceState(null, "", `#/clinics/${encodeURIComponent(item.id)}`);
@@ -609,7 +678,7 @@ const App = {
       selectedCandidateIndex.value = clamp(index, 0, Math.max(candidates.value.length - 1, 0));
       editValue.value = selectedCandidate.value?.value || "";
       pendingReject.value = false;
-      evidenceTab.value = selectedEvidence.value?.raw_html_path ? "archive" : "snapshot";
+      evidenceTab.value = selectedEvidencePresentation.value.kind;
       nextTick(() => {
         scrollEvidenceToHighlight();
         focusArchivedEvidence({ target: archiveFrame.value });
@@ -625,11 +694,28 @@ const App = {
     function rejectCandidate(index) {
       selectCandidate(index);
       pendingReject.value = true;
+      reassignMode.value = false;
+    }
+
+    function startReassign(index) {
+      selectCandidate(index);
+      pendingReject.value = false;
+      reassignMode.value = true;
+      reassignSearch.value = "";
+      nextTick(() => document.querySelector(".reassign-search")?.focus());
+    }
+
+    function cancelReassign() {
+      reassignMode.value = false;
+      reassignSearch.value = "";
     }
 
     function moveCandidate(delta) {
-      if (!candidates.value.length) return;
-      selectCandidate(selectedCandidateIndex.value + delta);
+      const indices = candidateGroups.value.primary.map((row) => row.index);
+      if (!indices.length) return;
+      const currentPosition = Math.max(0, indices.indexOf(selectedCandidateIndex.value));
+      const nextPosition = clamp(currentPosition + delta, 0, indices.length - 1);
+      selectCandidate(indices[nextPosition]);
     }
 
     async function nextLead() {
@@ -640,12 +726,16 @@ const App = {
       await setIndex(currentIndex.value - 1);
     }
 
-    async function saveDecision(decisionType, { reasonCode = null, reviewedValue = null } = {}) {
+    async function saveDecision(decisionType, { reasonCode = null, reviewedValue = null, targetClinic = null } = {}) {
       if (!clinic.value) return;
       const candidate = selectedCandidate.value;
       const value = (reviewedValue || editValue.value || candidate?.value || "").trim();
       if (["confirmed", "edited_confirmed"].includes(decisionType) && !value) {
         error.value = "A confirmed decision needs an email value.";
+        return;
+      }
+      if (decisionType === "reassigned" && (!targetClinic?.id || targetClinic.id === clinic.value.clinic.id)) {
+        error.value = "Choose a different target clinic for reassignment.";
         return;
       }
       const previousState = currentClinicState.value ? { ...currentClinicState.value } : null;
@@ -657,13 +747,16 @@ const App = {
         decision: decisionType,
         reviewed_value: value || candidate?.value || "",
         original_value: candidate?.value || null,
-        is_primary: decisionType !== "rejected" && Boolean(value || candidate?.value),
-        reason_code: reasonCode,
+        is_primary: ["confirmed", "edited_confirmed"].includes(decisionType) && Boolean(value || candidate?.value),
+        reason_code: decisionType === "reassigned" ? "wrong_clinic" : reasonCode,
         note: note.value || null,
         reviewer_id: reviewer.value || "reviewer",
         source_dataset_id: manifest.value?.dataset_id || null,
         source_dataset_version: manifest.value?.dataset_version || null,
         supersedes_id: null,
+        target_clinic_id: targetClinic?.id || null,
+        target_clinic_name: targetClinic?.name || null,
+        target_registry_id: targetClinic?.registry_id || null,
         created_at: createdAt,
         evidence_viewed: evidenceTab.value,
         evidence_link_id: selectedEvidence.value?.id || null,
@@ -680,12 +773,14 @@ const App = {
           selected: index === selectedCandidateIndex.value,
         })),
       };
-      const allCandidatesRejected = decisionType === "rejected" && candidates.value.every((item) =>
-        item.id === candidate?.id || candidateDecision(item)?.decision === "rejected"
+      const terminalNegativeDecision = ["rejected", "reassigned"].includes(decisionType);
+      const targetCandidates = candidateGroups.value.primary.map((row) => row.candidate);
+      const allCandidatesRejected = terminalNegativeDecision && targetCandidates.every((item) =>
+        item.id === candidate?.id || ["rejected", "reassigned"].includes(candidateDecision(item)?.decision)
       );
       const status = allCandidatesRejected
         ? "no_email"
-        : decisionType === "rejected"
+        : terminalNegativeDecision
           ? "needs_review"
           : decisionType === "no_email"
             ? "no_email"
@@ -693,13 +788,15 @@ const App = {
       await persistDecisionAndState(decision, status, decision?.is_primary ? decision.id : null, reasonCode, previousState);
       pendingReject.value = false;
       editMode.value = false;
+      reassignMode.value = false;
+      reassignSearch.value = "";
       sessionDecisionCount.value += 1;
       saveStatus.value = `${stateLabel(status)} · press U to undo`;
-      if (decisionType === "rejected") {
+      if (terminalNegativeDecision) {
         const decidedIds = new Set(currentClinicDecisions.value.map((item) => item.contact_point_id));
         decidedIds.add(candidate?.id);
-        const remainingIndices = candidates.value
-          .map((item, index) => ({ item, index }))
+        const remainingIndices = candidateGroups.value.primary
+          .map(({ candidate: item, index }) => ({ item, index }))
           .filter(({ item }) => !decidedIds.has(item.id))
           .map(({ index }) => index);
         const nextIndex = remainingIndices.find((index) => index > selectedCandidateIndex.value)
@@ -710,6 +807,10 @@ const App = {
       } else {
         await setIndex(currentIndex.value);
       }
+    }
+
+    async function reassignCandidate(targetClinic) {
+      await saveDecision("reassigned", { targetClinic });
     }
 
     async function persistDecisionAndState(decision, status, primaryDecisionId = null, reason = null, previousState = null) {
@@ -948,6 +1049,7 @@ const App = {
       selectedCandidate,
       selectedCandidateIndex,
       selectedEvidence,
+      selectedEvidencePresentation,
       evidenceBody,
       fullEvidenceBody,
       evidencePane,
@@ -969,6 +1071,9 @@ const App = {
       displayedCandidateRows,
       showOtherCandidates,
       showInvalidCandidates,
+      reassignMode,
+      reassignSearch,
+      reassignMatches,
       safeText,
       candidateRoleLabel,
       candidateEvidenceCount,
@@ -985,6 +1090,9 @@ const App = {
       selectCandidate,
       previewCandidate,
       rejectCandidate,
+      startReassign,
+      cancelReassign,
+      reassignCandidate,
       saveDecision,
       rejectWithReason,
       markNoPublicEmail,
@@ -1024,36 +1132,31 @@ const App = {
             <p class="label">Email candidates</p>
             <p v-if="candidateGroups.other.length || candidateGroups.invalid.length" class="candidate-group-note">
               Showing {{ candidateGroups.primary.length }} likely relevant candidate{{ candidateGroups.primary.length === 1 ? '' : 's' }}.
-              {{ candidateGroups.other.length }} other page contact{{ candidateGroups.other.length === 1 ? '' : 's' }} and
-              {{ candidateGroups.invalid.length }} extraction artifact{{ candidateGroups.invalid.length === 1 ? '' : 's' }} are collapsed.
+              {{ candidateGroups.other.length }} unrelated shared-page contact{{ candidateGroups.other.length === 1 ? '' : 's' }} and
+              {{ candidateGroups.invalid.length }} extraction artifact{{ candidateGroups.invalid.length === 1 ? '' : 's' }} are hidden from review but retained in the export audit trail.
             </p>
-            <div v-if="candidates.length" class="candidate-table-wrap">
+            <div v-if="candidateGroups.primary.length" class="candidate-table-wrap">
               <table class="candidate-table">
                 <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Decision</th></tr></thead>
                 <tbody>
-                  <tr v-for="row in displayedCandidateRows" :key="row.type === 'candidate' ? (row.candidate.id || row.index) : row.group" :class="row.type === 'candidate' ? {selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)} : 'candidate-group-toggle'" @mouseenter="row.type === 'candidate' && previewCandidate(row.index)" @click="row.type === 'candidate' && selectCandidate(row.index)">
-                    <template v-if="row.type === 'candidate'">
-                      <td class="candidate-radio">{{ row.index === selectedCandidateIndex ? '●' : '○' }}</td>
-                      <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
-                      <td>
-                        <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
-                          <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
-                        </select>
-                      </td>
-                      <td class="candidate-actions">
-                        <button class="candidate-confirm" @click.stop="selectCandidate(row.index); saveDecision('confirmed')">Confirm</button>
-                        <button class="candidate-reject" @click.stop="rejectCandidate(row.index)">Reject</button>
-                      </td>
-                    </template>
-                    <td v-else colspan="4">
-                      <button v-if="row.group === 'other'" @click.stop="showOtherCandidates = !showOtherCandidates">{{ showOtherCandidates ? 'Hide' : 'Show' }} {{ row.count }} other contact{{ row.count === 1 ? '' : 's' }} from this shared source</button>
-                      <button v-else @click.stop="showInvalidCandidates = !showInvalidCandidates">{{ showInvalidCandidates ? 'Hide' : 'Show' }} {{ row.count }} invalid extraction artifact{{ row.count === 1 ? '' : 's' }}</button>
+                  <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
+                    <td class="candidate-radio">{{ row.index === selectedCandidateIndex ? '●' : '○' }}</td>
+                    <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
+                    <td>
+                      <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
+                        <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
+                      </select>
+                    </td>
+                    <td class="candidate-actions">
+                      <button class="candidate-confirm" @click.stop="selectCandidate(row.index); saveDecision('confirmed')">Confirm</button>
+                      <button class="candidate-reject" @click.stop="rejectCandidate(row.index)">Reject</button>
+                      <button class="candidate-reassign" @click.stop="startReassign(row.index)">Reassign</button>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p v-else class="muted">No email candidate packaged for this clinic.</p>
+            <p v-else class="muted">No likely target-clinic email remains after machine ownership filtering.</p>
             <p v-if="candidateReasonWithoutTriageDuplication(selectedCandidate)" class="candidate-reason">{{ candidateReasonWithoutTriageDuplication(selectedCandidate) }}</p>
             <div v-if="selectedCandidate?.triage" class="triage-summary" :class="'triage-' + selectedCandidate.triage.decision">
               <div class="triage-heading">
@@ -1080,6 +1183,23 @@ const App = {
             <button @click="saveDecision('edited_confirmed', { reviewedValue: editValue })">Save edited email</button>
           </section>
 
+          <section v-if="reassignMode" class="reassign-panel">
+            <div class="reassign-heading">
+              <div>
+                <p class="label">Reassign candidate</p>
+                <p class="muted">Choose the clinic this email actually belongs to. The target will return to review after import.</p>
+              </div>
+              <button class="quiet" @click="cancelReassign">Cancel</button>
+            </div>
+            <input v-model="reassignSearch" class="reassign-search" type="search" placeholder="Search clinic, city or registry ID…" />
+            <div v-if="reassignSearch && !reassignMatches.length" class="muted">No matching clinic in this market.</div>
+            <button v-for="target in reassignMatches" :key="target.id" class="reassign-target" @click="reassignCandidate(target)">
+              <strong>{{ target.name }}</strong>
+              <span>{{ target.city }} · {{ target.registry_id }}</span>
+              <small>{{ target.address }}</small>
+            </button>
+          </section>
+
           <div class="action-bar">
             <button class="secondary" @click="markNoPublicEmail"><kbd>3</kbd> No public email</button>
             <button class="quiet" @click="editMode=!editMode">Edit</button>
@@ -1092,13 +1212,17 @@ const App = {
 
         <section class="evidence-pane">
           <div class="evidence-toolbar">
+            <div class="evidence-provenance" :class="'evidence-' + selectedEvidencePresentation.kind">
+              <strong>{{ selectedEvidencePresentation.label }}</strong>
+              <span>{{ selectedEvidencePresentation.detail }}</span>
+            </div>
             <a v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open live page ↗</a>
           </div>
 
-          <div v-if="selectedEvidence?.raw_html_path" class="archive-pane">
+          <div v-if="selectedEvidencePresentation.kind === 'html'" class="archive-pane">
             <iframe
               class="archive-frame"
-              :src="focusedHtmlUrl(selectedEvidence?.raw_html_path, selectedCandidate?.value)"
+              :src="focusedHtmlUrl(selectedEvidencePresentation.path, selectedCandidate?.value)"
               :title="'Archived evidence for ' + (selectedCandidate?.value || 'email')"
               sandbox="allow-same-origin"
               referrerpolicy="no-referrer"
@@ -1107,7 +1231,11 @@ const App = {
             ></iframe>
           </div>
 
-          <div v-else ref="evidencePane" class="snapshot-pane">
+          <div v-else-if="selectedEvidencePresentation.kind === 'screenshot'" class="screenshot-pane">
+            <img class="evidence-screenshot" :src="artifactUrl(selectedEvidencePresentation.path)" :alt="'Captured page evidence for ' + (selectedCandidate?.value || 'email')" />
+          </div>
+
+          <div v-else ref="evidencePane" class="snapshot-pane text-fallback-pane">
             <pre class="snapshot-text" v-html="fullEvidenceBody"></pre>
           </div>
         </section>
