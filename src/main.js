@@ -287,8 +287,19 @@ const App = {
     function focusedHtmlUrl(path, value) {
       const url = artifactUrl(path);
       if (!url) return null;
-      const needle = String(value || "").trim();
-      return needle ? `${url}#:~:text=${encodeURIComponent(needle)}` : url;
+      return url;
+    }
+
+    function candidateDecision(candidate) {
+      return [...currentClinicDecisions.value]
+        .filter((decision) => decision.contact_point_id && decision.contact_point_id === candidate?.id)
+        .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")))[0] || null;
+    }
+
+    function candidateDecisionLabel(candidate) {
+      const decision = candidateDecision(candidate);
+      if (!decision) return "";
+      return decision.decision === "rejected" ? "Rejected" : "Confirmed";
     }
 
     function focusArchivedEvidence(event) {
@@ -299,34 +310,51 @@ const App = {
       for (const element of document.querySelectorAll("[class*='cookie' i], [id*='cookie' i], [class*='consent' i], [id*='consent' i]")) {
         element.style.setProperty("display", "none", "important");
       }
-      let target = [...document.querySelectorAll("a[href^='mailto:' i]")].find((element) =>
-        `${element.textContent || ""} ${element.getAttribute("href") || ""}`.toLowerCase().includes(needle)
-      );
+      document.querySelectorAll("[data-review-spotlight]").forEach((element) => element.remove());
+      let target = null;
+      let matchedRange = null;
+      if (document.body) {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          const value = String(node.nodeValue || "");
+          const start = value.toLowerCase().indexOf(needle);
+          if (start < 0) continue;
+          target = node.parentElement;
+          matchedRange = document.createRange();
+          matchedRange.setStart(node, start);
+          matchedRange.setEnd(node, start + needle.length);
+          break;
+        }
+      }
+      if (!target) {
+        target = [...document.querySelectorAll("a")].find((element) =>
+          `${element.textContent || ""} ${element.getAttribute("data-review-original-href") || ""}`.toLowerCase().includes(needle)
+        );
+      }
       if (!target) {
         target = [...document.querySelectorAll("*")].find((element) =>
           [...element.attributes].some((attribute) => String(attribute.value || "").toLowerCase().includes(needle))
         );
       }
-      if (!target && document.body) {
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-        let node;
-        while ((node = walker.nextNode())) {
-          if (String(node.nodeValue || "").toLowerCase().includes(needle)) {
-            target = node.parentElement;
-            break;
-          }
-        }
-      }
       if (!target) return;
-      target.style.setProperty("background", "#fff36d", "important");
-      target.style.setProperty("color", "#111", "important");
-      target.style.setProperty("outline", "5px solid #ff2d7d", "important");
-      target.style.setProperty("outline-offset", "4px", "important");
-      const badge = document.createElement("div");
-      badge.textContent = `Email evidence: ${selectedCandidate.value?.value || ""}`;
-      badge.style.cssText = "display:block!important;margin:10px 0!important;padding:10px 12px!important;background:#ff2d7d!important;color:white!important;font:700 16px/1.25 sans-serif!important;border-radius:6px!important;";
-      target.insertAdjacentElement("afterend", badge);
-      requestAnimationFrame(() => target.scrollIntoView({ block: "center", inline: "nearest" }));
+      target.scrollIntoView({ block: "center", inline: "center" });
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const sourceRect = matchedRange?.getBoundingClientRect() || target.getBoundingClientRect();
+        const padding = 12;
+        const left = Math.max(8, sourceRect.left - padding);
+        const top = Math.max(8, sourceRect.top - padding);
+        const right = Math.min(document.documentElement.clientWidth - 8, sourceRect.right + padding);
+        const bottom = Math.min(document.documentElement.clientHeight - 8, sourceRect.bottom + padding);
+        const spotlight = document.createElement("div");
+        spotlight.setAttribute("data-review-spotlight", "true");
+        spotlight.style.cssText = `position:fixed!important;left:${left}px!important;top:${top}px!important;width:${Math.max(24, right - left)}px!important;height:${Math.max(24, bottom - top)}px!important;z-index:2147483646!important;pointer-events:none!important;border:4px solid #ff2d7d!important;border-radius:8px!important;box-shadow:0 0 0 100vmax rgba(0,0,0,.72),0 0 28px rgba(255,45,125,.8)!important;background:rgba(255,243,109,.18)!important;box-sizing:border-box!important;`;
+        const badge = document.createElement("div");
+        badge.setAttribute("data-review-spotlight", "true");
+        badge.textContent = selectedCandidate.value?.value || "Email found here";
+        badge.style.cssText = `position:fixed!important;left:${left}px!important;top:${Math.max(8, top - 38)}px!important;z-index:2147483647!important;pointer-events:none!important;padding:7px 10px!important;background:#ff2d7d!important;color:#fff!important;font:700 14px/1.2 sans-serif!important;border-radius:6px!important;box-shadow:0 4px 18px rgba(0,0,0,.35)!important;`;
+        document.body.append(spotlight, badge);
+      }));
     }
 
     async function init() {
@@ -411,7 +439,21 @@ const App = {
       editValue.value = selectedCandidate.value?.value || "";
       pendingReject.value = false;
       evidenceTab.value = selectedEvidence.value?.raw_html_path ? "archive" : "snapshot";
-      nextTick(scrollEvidenceToHighlight);
+      nextTick(() => {
+        scrollEvidenceToHighlight();
+        focusArchivedEvidence({ target: archiveFrame.value });
+      });
+    }
+
+    function previewCandidate(index) {
+      if (pendingReject.value) return;
+      if (index === selectedCandidateIndex.value) return;
+      selectCandidate(index);
+    }
+
+    function rejectCandidate(index) {
+      selectCandidate(index);
+      pendingReject.value = true;
     }
 
     function moveCandidate(delta) {
@@ -467,14 +509,36 @@ const App = {
           selected: index === selectedCandidateIndex.value,
         })),
       };
-      const status = decisionType === "rejected" ? "needs_review" : decisionType === "no_email" ? "no_email" : "confirmed";
+      const allCandidatesRejected = decisionType === "rejected" && candidates.value.every((item) =>
+        item.id === candidate?.id || candidateDecision(item)?.decision === "rejected"
+      );
+      const status = allCandidatesRejected
+        ? "no_email"
+        : decisionType === "rejected"
+          ? "needs_review"
+          : decisionType === "no_email"
+            ? "no_email"
+            : "confirmed";
       await persistDecisionAndState(decision, status, decision?.is_primary ? decision.id : null, reasonCode, previousState);
       pendingReject.value = false;
       editMode.value = false;
       sessionDecisionCount.value += 1;
       saveStatus.value = `${stateLabel(status)} · press U to undo`;
-      if (status === "needs_review") await nextLead();
-      else await setIndex(currentIndex.value);
+      if (decisionType === "rejected") {
+        const decidedIds = new Set(currentClinicDecisions.value.map((item) => item.contact_point_id));
+        decidedIds.add(candidate?.id);
+        const remainingIndices = candidates.value
+          .map((item, index) => ({ item, index }))
+          .filter(({ item }) => !decidedIds.has(item.id))
+          .map(({ index }) => index);
+        const nextIndex = remainingIndices.find((index) => index > selectedCandidateIndex.value)
+          ?? remainingIndices[0]
+          ?? -1;
+        if (nextIndex >= 0) selectCandidate(nextIndex);
+        else if (status === "no_email") await setIndex(currentIndex.value);
+      } else {
+        await setIndex(currentIndex.value);
+      }
     }
 
     async function persistDecisionAndState(decision, status, primaryDecisionId = null, reason = null, previousState = null) {
@@ -717,12 +781,16 @@ const App = {
       candidateRoleLabel,
       candidateSourceLabel,
       candidateEvidenceCount,
+      candidateDecision,
+      candidateDecisionLabel,
       artifactUrl,
       focusedHtmlUrl,
       focusArchivedEvidence,
       stateLabel,
       visibleBackupReminder,
       selectCandidate,
+      previewCandidate,
+      rejectCandidate,
       saveDecision,
       rejectWithReason,
       markNoPublicEmail,
@@ -739,6 +807,7 @@ const App = {
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
+          <span class="queue-summary">{{ manifest?.counts?.clinics || 0 }} clinics · {{ manifest?.counts?.candidate_emails || 0 }} candidate emails</span>
           <button v-for="lane in ['review','auto_confirm','auto_suppress','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
@@ -761,13 +830,17 @@ const App = {
             <p class="label">Email candidates</p>
             <div v-if="candidates.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Source</th></tr></thead>
+                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Source</th><th>Decision</th></tr></thead>
                 <tbody>
-                  <tr v-for="(candidate, index) in candidates" :key="candidate.id || candidate.value || index" :class="{selected:index===selectedCandidateIndex}" @click="selectCandidate(index)" @dblclick="saveDecision('confirmed')">
+                  <tr v-for="(candidate, index) in candidates" :key="candidate.id || candidate.value || index" :class="{selected:index===selectedCandidateIndex, decided: candidateDecision(candidate)}" @mouseenter="previewCandidate(index)" @click="selectCandidate(index)">
                     <td class="candidate-radio">{{ index === selectedCandidateIndex ? '●' : '○' }}</td>
-                    <td><span class="candidate-email">{{ candidate.value }}</span></td>
+                    <td><span class="candidate-email">{{ candidate.value }}</span><small v-if="candidateDecision(candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(candidate) }}</small></td>
                     <td>{{ candidateRoleLabel(candidate) }}</td>
                     <td><span>{{ candidateSourceLabel(candidate, currentItem) }}</span><small>{{ candidateEvidenceCount(candidate) }}</small></td>
+                    <td class="candidate-actions">
+                      <button class="candidate-confirm" @click.stop="selectCandidate(index); saveDecision('confirmed')">Confirm</button>
+                      <button class="candidate-reject" @click.stop="rejectCandidate(index)">Reject</button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -806,8 +879,6 @@ const App = {
           </section>
 
           <div class="action-bar">
-            <button class="primary" @click="saveDecision('confirmed')"><kbd>1</kbd> Confirm</button>
-            <button class="secondary" @click="pendingReject=true"><kbd>2</kbd> Reject</button>
             <button class="secondary" @click="markNoPublicEmail"><kbd>3</kbd> No public email</button>
             <button class="quiet" @click="editMode=!editMode">Edit</button>
             <button class="quiet" @click="excludeCurrent">Exclude</button>
@@ -819,26 +890,10 @@ const App = {
 
         <section class="evidence-pane">
           <div class="evidence-toolbar">
-            <div>
-              <p class="eyebrow">Captured evidence</p>
-              <h2>{{ snapshotTitle }}</h2>
-            </div>
-            <div class="evidence-links">
-              <a v-if="selectedEvidence?.raw_html_path" :href="focusedHtmlUrl(selectedEvidence.raw_html_path, selectedCandidate?.value)" target="_blank" rel="noreferrer">Centered HTML ↗</a>
-              <a v-if="selectedEvidence?.raw_html_path" :href="artifactUrl(selectedEvidence.raw_html_path)" target="_blank" rel="noreferrer">Raw HTML ↗</a>
-              <a v-if="selectedEvidence?.screenshot_path" :href="artifactUrl(selectedEvidence.screenshot_path)" target="_blank" rel="noreferrer">Screenshot ↗</a>
-              <a v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open live site ↗</a>
-            </div>
+            <a v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open live page ↗</a>
           </div>
-          <nav class="evidence-tabs">
-            <button v-if="selectedEvidence?.raw_html_path" :class="{active:evidenceTab==='archive'}" @click="evidenceTab='archive'">Archived HTML</button>
-            <button :class="{active:evidenceTab==='snapshot'}" @click="evidenceTab='snapshot'">Snapshot</button>
-            <button :class="{active:evidenceTab==='live'}" @click="evidenceTab='live'">Live</button>
-            <button :class="{active:evidenceTab==='sources'}" @click="evidenceTab='sources'">Sources</button>
-          </nav>
 
-          <div v-if="evidenceTab==='archive'" class="archive-pane">
-            <p class="archive-note">Archived source, positioned at <strong>{{ selectedCandidate?.value }}</strong>. Scripts and forms are disabled.</p>
+          <div v-if="selectedEvidence?.raw_html_path" class="archive-pane">
             <iframe
               class="archive-frame"
               :src="focusedHtmlUrl(selectedEvidence?.raw_html_path, selectedCandidate?.value)"
@@ -850,50 +905,8 @@ const App = {
             ></iframe>
           </div>
 
-          <div v-else-if="evidenceTab==='snapshot'" ref="evidencePane" class="snapshot-pane">
-            <div class="snapshot-meta">
-              <span>{{ selectedEvidence?.evidence_kind || 'evidence' }}</span>
-              <span>{{ selectedEvidence?.observed_at || selectedCandidate?.observed_at || 'unknown time' }}</span>
-              <span>{{ selectedCandidate?.source_url || selectedEvidence?.source_url || 'unknown source' }}</span>
-            </div>
-            <a v-if="selectedEvidence?.screenshot_path" :href="artifactUrl(selectedEvidence.screenshot_path)" target="_blank" rel="noreferrer">
-              <img class="evidence-screenshot" :src="artifactUrl(selectedEvidence.screenshot_path)" alt="Saved full-page evidence screenshot" />
-            </a>
+          <div v-else ref="evidencePane" class="snapshot-pane">
             <pre class="snapshot-text" v-html="evidenceBody"></pre>
-          </div>
-
-          <div v-else-if="evidenceTab==='live'" class="live-pane">
-            <h3>Live website is intentionally not embedded.</h3>
-            <p>Review decisions should be based on the captured evidence snapshot. Live pages can change and many sites block iframes with CSP or X-Frame-Options.</p>
-            <a class="primary-link" v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open current live page ↗</a>
-          </div>
-
-          <div v-else class="sources-pane">
-            <details open>
-              <summary>Candidate metadata</summary>
-              <dl>
-                <div><dt>Owner</dt><dd>{{ selectedCandidate?.owner_name || selectedCandidate?.owner_type || '—' }}</dd></div>
-                <div><dt>Role</dt><dd>{{ selectedCandidate?.contact_role || selectedCandidate?.associated_role || '—' }}</dd></div>
-                <div><dt>Association</dt><dd>{{ selectedCandidate?.association_type || '—' }}</dd></div>
-                <div><dt>Deliverability</dt><dd>{{ selectedCandidate?.syntax_status || '—' }} · {{ selectedCandidate?.mx_status || '—' }} · {{ selectedCandidate?.deliverability_status || '—' }}</dd></div>
-                <div v-if="selectedCandidate?.triage"><dt>Triage</dt><dd>{{ selectedCandidate.triage.method }} · {{ selectedCandidate.triage.decision }} · {{ selectedCandidate.triage.ownership_class }}</dd></div>
-              </dl>
-            </details>
-            <details>
-              <summary>All sources</summary>
-              <ul>
-                <li v-for="source in clinic.sources" :key="source.url">
-                  <a :href="source.url" target="_blank" rel="noreferrer">{{ source.domain || source.url }}</a>
-                  <span>{{ source.source_role }} · {{ source.ownership_status }} · useful {{ source.useful }}</span>
-                </li>
-              </ul>
-            </details>
-            <details>
-              <summary>Local decision history</summary>
-              <ul>
-                <li v-for="decision in currentClinicDecisions" :key="decision.id">{{ decision.decision }} · {{ decision.reviewed_value }} · {{ decision.created_at }}</li>
-              </ul>
-            </details>
           </div>
         </section>
       </main>

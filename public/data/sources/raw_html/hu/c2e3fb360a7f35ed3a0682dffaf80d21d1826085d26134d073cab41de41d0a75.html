@@ -1,0 +1,153 @@
+<!doctype html>
+<?DOCTYPE html?>
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta charset="utf-8"/>
+<title></title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
+      #unsupported {
+        display: none;
+      }
+    </style>
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body id="tpl-master" ng-app="njcsite">
+<div id="unsupported">Ez a böngésző nem támogatja teljesen az oldal megtekintését.<br/>Kérjük, frissítse a böngészőt a legújabb változatra!.</div>
+<div class="headtop-margin"></div>
+<div ng-view=""></div>
+<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container header-container">
+<div class="navbar-header">
+<div id="left-top-margin"></div>
+<div class="gf-cloak" id="right-top-margin">
+
+<div class="facebookShare" data-shares="shares" data-url="http://njcsite.greenfinity.hu/" facebook="">{{shares}}</div>
+<br/><br/>
+<a data-count="horizontal" data-lang="en" data-review-original-href="" data-size="medium" data-text="Twitter Share" data-url="http://njcsite.greenfinity.hu/" data-via="GreenfinityLLC" href="#" tabindex="-1" twitter=""></a>
+<br/><br/>
+<div class="linkedinShare" data-shares="linkedinshares" data-summary="LinkedIn Share" data-title="LinkedIn Share" data-url="http://njcsite.greenfinity.hu/" linkedin="">{{linkedinshares}}</div>
+<br/><br/>
+<div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://njcsite.greenfinity.hu/" data-size="tall" gplus=""></div>
+<br/><br/>
+<a data-review-original-href="http://www.eela.org/" href="#" tabindex="-1"><div class="eela-button"></div></a>
+
+</div>
+<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" data-review-original-href="http://www.drnagy-iroda.hu" href="#" tabindex="-1">
+<span class="logo-wrapper">
+<img id="logo"/>
+<span class="logo-title">Dr. Nagy Judit Csilla Ügyvédi Iroda</span>
+</span>
+</a>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li ng-class="{active: $root.selectedMenu == 'index'}">
+<a class="dropdown-toggle" data-review-original-href="http://www.drnagy-iroda.hu/hu/iroda/" data-toggle="dropdown" href="#" id="index" tabindex="-1">
+              Iroda
+            </a>
+<ul aria-labelledby="index" class="dropdown-menu" role="menu">
+<li role="presentation">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/iroda/kapcsolat/" href="#" role="menuitem" tabindex="-1">
+                  Kapcsolat
+                </a>
+</li>
+<li role="presentation">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/iroda/szakmai-hatter/" href="#" role="menuitem" tabindex="-1">
+                  Szakmai háttér
+                </a>
+</li>
+</ul>
+</li>
+<li ng-class="{active: $root.selectedMenu == 'index'}">
+<a class="dropdown-toggle" data-review-original-href="http://www.drnagy-iroda.hu/hu/szakteruletek/" data-toggle="dropdown" href="#" id="index" tabindex="-1">
+              Szakterületek
+            </a>
+<ul aria-labelledby="index" class="dropdown-menu" role="menu">
+<li role="presentation">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/szakteruletek/ingatlanjog/" href="#" role="menuitem" tabindex="-1">
+                  Ingatlanjog
+                </a>
+</li>
+<li role="presentation">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/szakteruletek/kereskedelmi-jog/" href="#" role="menuitem" tabindex="-1">
+                  Kereskedelmi jog
+                </a>
+</li>
+<li role="presentation">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/szakteruletek/munkajog/" href="#" role="menuitem" tabindex="-1">
+                  Munkajog
+                </a>
+</li>
+<li role="presentation">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/szakteruletek/szellemi-alkotasok-joga/" href="#" role="menuitem" tabindex="-1">
+                  Szellemi alkotások joga
+                </a>
+</li>
+<li role="presentation">
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/szakteruletek/tarsasagi-jog/" href="#" role="menuitem" tabindex="-1">
+                  Társasági jog
+                </a>
+</li>
+</ul>
+</li>
+<li ng-class="{active: $root.selectedMenu == 'index'}">
+<a class="" data-review-original-href="http://www.drnagy-iroda.hu/hu/partnerek/" data-toggle="" href="#" id="index" tabindex="-1">
+              Partnerek
+            </a>
+</li>
+</ul>
+<span class="flag-selector">
+<a class="" data-review-original-href="http://www.drnagy-iroda.hu/en" href="#" tabindex="-1">
+      EN
+    </a>
+<a class="active" data-review-original-href="http://www.drnagy-iroda.hu/hu" href="#" tabindex="-1">
+      HU
+    </a>
+</span>
+</div>
+</div>
+</header>
+<div class="container" id="content">
+<div class="headtop"></div>
+<div>
+<h1>Kapcsolat</h1>
+<p><h3><strong>Dr. Nagy Judit Csilla Ügyvédi Iroda</strong></h3>
+<div>Irodavezető ügyvéd: dr. Nagy Judit Csilla, LL.M.</div>
+<div>Mobil: +36 20 458 3796</div>
+<div>E-mail: <a data-review-original-href="mailto:judit.csilla.nagy@drnagy-iroda.hu" href="#" tabindex="-1">n</a><a data-review-original-href="mailto:jc@drnagy-iroda.hu" href="#" tabindex="-1">jc@drnagy-iroda.hu</a></div>
+<div> </div>
+<div>Szépvölgyi Office Park </div>
+<div>1037 Budapest, Montevideó utca 9. 2. emelet 317.</div>
+<div>(Regus Iroda)</div></p>
+</div>
+</div>
+<footer class="row" margin="32" njc-footer="" style="opacity: 0;">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<span>Copyright © 2014, NJC Ügyvédi Iroda. Minden jog fenntartva.</span>
+<br/>
+<span>Webdesign:</span>
+<a data-review-original-href="http://kelenyigabi.hu" href="#" tabindex="-1">Kelényi Gabi</a> -
+      <span>Webfejlesztés és üzemeltetés:</span>
+<a data-review-original-href="http://greenfinity.hu" href="#" tabindex="-1">Greenfinity Kft.</a>
+<br/>
+<a data-review-original-href="http://www.drnagy-iroda.hu/hu/kapcsolat/" href="#" tabindex="-1">Kapcsolat</a>
+</div>
+</footer>
+
+
+</body>
+</html>

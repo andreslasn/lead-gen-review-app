@@ -1,0 +1,396 @@
+<!doctype html>
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<html>
+
+
+
+
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<title>Helyszín:</title><meta content="HelyszínEger, Köztársaság tér 10/a, 20-as körzet orvosi rendelőKonzultáció, endoscopos vizsgálatok és hasi ultrahangelőjegyzés alapján         Előjegyzés:   Telefonon:..." name="description"/><meta content="foglalást,online,órával,időpontfoglalás,Online," name="keywords"/>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="hu" http-equiv="content-language"/>
+
+<style>
+ body {font-family: arial, verdana; font-size: 12;  color: #000000; text-decoration: none; }
+ td {font-family: arial, verdana; font-size: 12;  color: #000000; text-decoration: none;}
+ a {font-family: arial, verdana; /*font-size: 12;*/  color: #2222FF; text-decoration: none;}
+ a:hover {font-family: arial, verdana; /*font-size: 12; */ color: orange; }
+ h1 {font-family: arial, verdana; font-size: 20;  color: #990000; text-decoration: none;}
+ .grayinput {font-family: arial, verdana;font-size: 11px; background-color: #EEEEEE; height: 18px; padding: 1px 1px;padding-bottom:2px; margin: 0px; color: #333333; border-left:1px solid #bbbbbb; border-right:1px solid #bbbbbb; border-bottom:1px solid #bbbbbb; border-top:1px solid #bbbbbb;}
+ .graytextarea {font-family: arial, verdana;font-size: 11px; background-color: #EEEEEE; padding: 1px 1px;padding-bottom:2px; margin: 0px; color: #333333; border-left:1px solid #bbbbbb; border-right:1px solid #bbbbbb; border-bottom:1px solid #bbbbbb; border-top:1px solid #bbbbbb;}
+
+ .box {
+	border: 5px solid #FF695E;
+	margin-bottom: 5px;
+	background-color: white;
+}
+
+#menu a {
+	display: block;
+	padding: 5px 0 5px 25px;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: white;
+	background: #FF695E;
+}
+.overflow{
+	overflow: hidden;
+	width: 100%;
+        text-overflow: ellipsis;
+}
+
+.lcdstyle{ /*Example CSS to create LCD countdown look*/
+background-color:white;
+color:#ff4400;
+font: 30px Impact;
+padding: 3px;
+}
+
+.lcdstyle sup{ /*Example CSS to create LCD countdown look*/
+font-size: 80%
+}
+
+</style>
+<style>
+#fix /*,#fix2*/
+{
+height:20px;
+background:#eee;
+color:black;
+text-align:right;
+padding-right:50px;
+padding-top:1px;
+padding-bottom:5px;
+position:fixed;
+width:100%;
+z-index:9999;
+top:0px;
+left:0px;
+border-bottom:1px solid #777;
+-webkit-box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+}
+
+/*#fix2
+{
+padding-top:4px;
+border-top:1px solid #777;
+border-bottom:0px solid #777;
+text-align:center;
+position:fixed;
+top:100%;
+margin-top:-25px;
+-webkit-box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+}
+*/
+/*
+#fix #ljelent a
+{
+padding:1px;
+padding-left:1px;
+padding-right:1px;
+margin-right:2px;
+background:#cccccc;
+border:1px outset #bbb;
+color:white;
+cursor:pointer;
+font-weight:bold;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+}
+*/
+a#ljelent
+{
+padding:2px;
+padding-left:5px;
+padding-right:5px;
+background:#ccc;
+border:1px outset gray;
+margin-right:10px;
+color:white;
+cursor:pointer;
+font-weight:bold;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+}
+
+
+#ljelent:hover
+{
+background:red;
+}
+/*
+#fix #ljelent a:hover
+{
+background:#777;
+}
+*/
+#alsobox
+{
+display:none;
+width:200px;
+border:1px solid #ccc;
+border-top:1px solid #aaa;
+border-left:1px solid #aaa;
+background:rgba(255,255,255,0.76);
+bottom:4px;
+right:200px;
+padding:0px;
+margin-bottom:-204px;
+margin-right:200px;
+-webkit-box-shadow:8px 8px 8px rgba(0, 0, 0, 0.8);
+-moz-box-shadow:8px 8px 10px rgba(0, 0, 0, 0.8);
+box-shadow:8px 8px 10px rgba(0, 0, 0, 0.8);
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+#alsobox {position: absolute; right: 2px; bottom: 4px;}
+body > div#alsobox {position: fixed;}
+
+#feje
+{
+background:#990000;
+padding:2px;
+text-align:center;
+color:white;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+#fixfuggo
+{
+display:none;
+width:125px;
+padding:3px;
+background:white;
+position:absolute;
+z-index:1000;
+top:40px;
+right:10px;
+
+border:1px solid #777;
+-webkit-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-webkit-border-radius: .5em;
+-moz-border-radius: .5em;
+}
+body > div#fixfuggo { position: fixed;  }
+p
+{
+margin:0px;
+}
+</style>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+
+<body leftmargin="0" rightmargin="0" topmargin="0"><div id="fix"><table border="0" style="width:100%"><tr><td style="width:200px;"><style>
+. addthis_toolbox addthis_default_style a{text-decoration:none;float:left;margin-right:1px;padding:0;}
+.addthis_toolbox addthis_default_style img{width:23px;border:0;background:#EEEEEE;margin:0;}
+</style>
+</td><td>
+<div style="text-align:center;width:90%">
+
+</div></td><td style="width:50px;"><a data-review-original-href="" href="#" id="ljelent" tabindex="-1">Bejelentés</a></td></tr></table></div><br/><br/>
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="880">
+<tr>
+<td background="elemek/w2/bf.png" height="50" width="30"></td>
+<td background="elemek/w2/felso.png" height="50" valign="bottom" width="820">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td height="40" valign="center" width="391">
+<span style="font-family:arial;font-size:20px"><i><b>
+<font color="#2a6ca9">Gasztroenterológia Egerben</font> </b></i></span>
+</td>
+<td align="right" height="40" valign="center" width="391">
+<span style="font-family:arial;color:#999999"><i><b>
+<font color="#2a6ca9">Dr. Kozák Róbert honlapja</font>
+</b></i></span>
+</td>
+</tr>
+</table>
+</td>
+<td background="elemek/w2/jf.png" height="50" width="30"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="880">
+<tr>
+<td style="width:6px; background:url(elemek/w2/bal.png)"></td>
+<td bgcolor="white" width="840">
+<table border="0" cellpadding="0" cellspacing="0" width="869">
+<tr>
+<td bgcolor="#2a6ca9" height="1"></td></tr>
+<tr>
+<td bgcolor="white" height="1"></td>
+</tr>
+<tr>
+<td style="text-align:center"><img width="869"/></td></tr>
+<tr>
+<td bgcolor="white" height="1"></td>
+</tr>
+<tr><td bgcolor="#2a6ca9" height="1"></td></tr>
+<tr>
+<td bgcolor="white" height="1">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top" width="180"><br/>
+<table border="0" cellpadding="0" cellspacing="0" width="90%"><tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=7KqFpBqubd" href="#" tabindex="-1"><font color="#555555">Főoldal</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+<tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=BVrX_i5blr" href="#" tabindex="-1"><font color="#555555">Rendelés</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+<tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=FnEk0WM6dB" href="#" tabindex="-1"><font color="#555555">Bemutatkozás</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+<tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=6dgK1nKkQ4" href="#" tabindex="-1"><font color="#555555">Információ</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+<tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=q8OR8Ifwl9" href="#" tabindex="-1"><font color="#555555">Galéria</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+<tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=RNtHxtPfLR" href="#" tabindex="-1"><font color="#555555">Műszeres vizsgálatok</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+<tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=kwVcug6uSF" href="#" tabindex="-1"><font color="#555555">Előkészítés</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+<tr><td align="right" bgcolor="white" height="21" width="200">
+<div style="padding-right:3">
+<a data-review-original-href="web.php?a=gasztroenterologus&amp;o=bqgLEIe0n0" href="#" tabindex="-1"><font color="#555555">Kapcsolatok</font></a></div></td></tr>
+<tr><td bgcolor="#CCCCCC" height="1"></td></tr>
+</table>
+<br/><center><div style="padding-left:20px">
+
+<style type="text/css">
+				#content_popup {top: 50%; transform: translateY(-50%);}
+
+			</style>
+<noscript>
+</noscript>
+
+
+<br/><br/><hr/>
+<br/>
+
+
+
+</div></center><br/> <br/><br/></td>
+<td id="toszlop" valign="top" width="480">
+<div id="tartalom" style="font-family:arial;font-size:14px;padding:10px;">
+<font size="5"><b>Magánrendelés elérhetősége:</b></font><br/><br/><font size="+1"> Helyszín </font><br/><b> Eger, Köztársaság tér 10/a, 20-as körzet orvosi rendelő </b> Konzultáció, endoscopos vizsgálatok és hasi ultrahang  előjegyzés alapján
+<hr/>
+<br/>
+
+<br/>
+<br/>
+<font size="+1"> Előjegyzés:</font>
+<br/>
+<ul>
+<li><b>Telefonon: 30/6746451</b> (munkanapokon 9-12 között) </li>
+<li><b>Email-ben: egrigasztroenterologus@gmail.com </b></li>
+<li><b><a data-review-original-href="https://gasztroenterologia-eger.reservio.com" href="#" tabindex="-1"> Online időpontfoglalás </a> </b></li>
+</ul>
+<p><font color="#ff0000">
+<b>Fontos: Kérjük, hogy online időpontfoglalás előtt mindenképpen olvassa el a következőket:</b></font></p>
+<p> A beteg nevét kell regisztrálni, akkor is, ha a foglalást nem saját maga végzi, továbbá a visszaigazoláshoz lakcím, emailcím, telefonszám megadása is szükséges, ezek hiányában a foglalást elutasítjuk! A foglalást díjmentesen tudja törölni, vagy módosítani, legalább 24 órával a lefoglalt időpont előtt. Online foglalás 3 héten túli időpontra nem lehetséges, ha ennél távolabbi időpontot szeretne, kérjük, hogy látogasson vissza honlapunkra később. A lemondott időpont azonnal látható és foglalható. <b><u>Ha mégsem tud eljönni, ne felejtse el az online lefoglalt időpontot minumum 24 órával előbb, szintén az online felületen lemondani,</u></b> mert a készenlét díja (10000 HUF) kiszámlázásra kerül, ha Ön nem jelenik meg. Megértését köszönjük! </p>
+<hr/>
+<font size="+1"> Szerződött egészségpénztárak:</font>
+<br/>
+AXA Egészségpénztár
+<br/>
+Medicover
+<br/>
+OTP Egészségpénztár
+<br/>
+Prémium Egészségpénztár
+
+<hr/> <br/> </div>
+</td>
+<td align="center" id="joszlop" valign="top" width="180">
+<br/><br/>
+
+
+<p>
+<br/><br/>
+
+<br/><br/></p></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="#2a6ca9" height="5"></td></tr>
+</table>
+</td>
+<td background="elemek/w2/jobb.png" height="40" width="6"></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="880">
+<tr>
+<td background="elemek/w2/ba.png" height="40" width="30"></td>
+<td align="center" background="elemek/w2/also.png" height="40" width="820">
+</td>
+<td background="elemek/w2/ja.png" height="40" width="30"></td>
+</tr>
+</table>
+<br/><br/>
+<div id="fix2">
+
+<br/><br/></div><a data-review-original-href="http://www.5mp.eu" href="#" tabindex="-1" target="_blank"><div style="width:200;height:20;padding:3;background:white;color:navy">Ingyenes honlapkészítő</div></a><a data-review-original-href="http://www.shp.hu" href="#" tabindex="-1" target="_blank"><div style="width:200;height:20;padding:3;background:white;color:navy">Profi, üzleti honlapkészítő</div></a>
+
+</center>
+<div id="somediv" style="display:none"></div>
+<div id="alsobox">
+<div id="feje">Hirdetés   <span style="margin-left:2px;font-size:1.1em">10</span></div>
+<div align="center" style="padding:3px;margin:0 auto">
+<a data-review-original-href="http://angolnyelvtanulas.shp.hu" href="#" tabindex="-1" target="_blank">
+<div style="margin: 5px; padding: 2px; background: white; color: black; text-align: center; border: 3px solid gray;">
+<center>
+<div style="color:#ff4400;font-size:14px;padding:6px;border-style:solid;border-color:#DDDDDD;border-width:1px;width:">
+<span style="color:#0000ff;">
+<strong>
+<span style="font-size:smaller;">Végre értem amit angolul mondanak nekem, és megértik amit mondok.
+		</span></strong>
+</span>
+<strong><br/>
+<br/>
+<span style="color:#FF6600;">KÖSZÖNÖM NOÉMI!
+		</span></strong>
+
+
+</div>
+</center>
+</div>
+</a>
+<br/> </div>
+</div>
+</body>
+</html>

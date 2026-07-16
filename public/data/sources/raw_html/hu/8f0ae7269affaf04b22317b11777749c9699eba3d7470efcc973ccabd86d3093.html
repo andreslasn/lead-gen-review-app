@@ -1,0 +1,382 @@
+<!doctype html>
+
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<style>
+body {margin:0;font-family:Arial}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+</style>
+<style>
+        .image-container {
+            position: relative;
+            width: 300px;
+        }
+        .image-container img {
+            width: 100%;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+        .image-container:hover img {
+            transform: scale(1.9);
+            z-index: 10;
+        }
+</style>
+<style>
+img {
+    margin: 0;
+    padding: 0;
+}
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+</style>
+<body>
+<table bgcolor="#666666" width="100%"><tr><td> </td></tr></table>
+<div class="topnav" id="myTopnav">
+<a class="active" data-review-original-href="/" href="#" tabindex="-1">Főoldal</a>
+<div class="dropdown">
+<button class="dropbtn">A pályázatról
+<i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+<a data-review-original-href="/bevezeto.php" href="#" tabindex="-1"> Bevezető </a>
+<a data-review-original-href="/palyazat.html" href="#" tabindex="-1"> A pályázat bemutatása </a>
+<a data-review-original-href="/Tamogato_nyilatkozatok.html" href="#" tabindex="-1"> Támogató nyilatkozatok </a>
+<a data-review-original-href="https://www.youtube.com/embed/RR9rnIBsBLE?start=22" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"> <b>A nyertes pályázatokról (YT)</b></a>
+</div>
+</div>
+<div class="dropdown">
+<button class="dropbtn">Egészségpercek
+      <i class="fa fa-caret-down"></i> </button>
+<div class="dropdown-content">
+<a data-review-original-href="https://www.youtube.com/watch?v=5P8LCzxWH7o" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b> Vírusok a gyermekek között (YT)</b></a>
+<a data-review-original-href="https://www.youtube.com/watch?v=mBWkXq7hsWQ" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b> Megérkezett az ősz: jönnek a vírusok is  (YT)</b></a>
+<a data-review-original-href="https://www.youtube.com/watch?v=Ebjb7r2_HU0" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b> Mozgás receptre (YT)</b> - A mozgás gyógyít</a>
+<a data-review-original-href="https://www.youtube.com/watch?v=KeFhMdEfL6M" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b> Gyermekeink egészsége napjainkban (YT)</b></a>
+<a data-review-original-href="https://kolcseytv.hu/hir/egeszsegnap-a-bujtosi-varosligetben" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b> Egészségnapunk a Híradóban (Kölcsey Televízió)</b></a>
+<a data-review-original-href="https://kolcseytv.hu/hir/ijesztoen-sok-a-kover-gyerek" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b> Ijesztően sok a kövér gyerek (Kölcsey Televízió)</b></a>
+<a data-review-original-href="https://kolcseytv.hu/hir/ket-nap-alatt-15-fok-minusz" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b>2 nap alatt 15 fok minusz (Kölcsey Televízió)</b></a>
+<a data-review-original-href="https://kolcseytv.hu/hir/idojaras-valtozas-hatasa" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b>Időjárás-változás hatása (Kölcsey Televízió)</b></a>
+<a data-review-original-href="https://kolcseytv.hu/hir/ujabb-vedooltas-lett-kotelezo" href="#" style="color: #ee8528;" tabindex="-1" target="_blank" title="Új oldalt nyit a böngŕszőben"><b>Ujabb védőoltás kötelező (Kölcsey Televízió)</b></a>
+<a data-review-original-href="https://www.google.com/search?source=hp&amp;ei=u_aBXZGPC7qGwPAPzLq-yA4&amp;q=eg%C3%A9szs%C3%A9g&amp;oq=eg%C3%A9szs%C3%A9g&amp;gs_l=psy-ab.3..0i131j0l2j0i131j0l2j0i131j0l3.2414.5288..6282...0.0..0.82.576.8......0....1..gws-wiz.7dZXUuuYUxg&amp;ved=0ahUKEwjR2Ma4hdrkAhU6AxAIHUydD-kQ4dUDCAU&amp;uact=5" href="#" style="color: #ee8528;" tabindex="-1" target="_blank"><b>Minden ami egészség (GooGLE találatok)</b> </a>
+</div>
+</div>
+<a class="menulink" data-review-original-href="/aktualitasok.html" href="#" tabindex="-1"><font color="red"><b><u>AKTUALITÁSOK</u></b></font> </a>
+<a class="menulink" data-review-original-href="/egeszsegtippek.html" href="#" tabindex="-1">Egészségtippek </a>
+<div class="dropdown">
+<button class="dropbtn">Programjaink
+      <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+<a data-review-original-href="/eletmod.php" href="#" tabindex="-1"> Életmód tanácsadás</a>
+</div>
+</div>
+<a class="menulink" data-review-original-href="https://www.facebook.com/Praxisk%C3%B6z%C3%B6ss%C3%A9g-Ny%C3%ADregyh%C3%A1za-Makk-Marci-108823363835381" href="#" tabindex="-1">A Facebookon is ott vagyunk </a>
+<div class="dropdown">
+<button class="dropbtn">Archivum
+      <i class="fa fa-caret-down"></i> </button>
+<div class="dropdown-content">
+<a data-review-original-href="archivum2023.html" href="#" tabindex="-1">2023</a>
+</div>
+</div>
+<a class="menulink" data-review-original-href="/fotoalbum.html" href="#" tabindex="-1">Fotóalbum</a>
+<a class="menulink" data-review-original-href="/kapcsolat.php" href="#" tabindex="-1">Kapcsolat</a>
+<a class="icon" data-review-original-href="javascript:void(0);" href="#" style="font-size:15px;" tabindex="-1">☰</a>
+<a class="menulink" data-review-original-href="/gdpr.php" href="#" tabindex="-1">Adatvédelmi nyilatkozat (GDPR)</a>
+<a class="icon" data-review-original-href="javascript:void(0);" href="#" style="font-size:15px;" tabindex="-1">☰</a>
+<a class="menulink" data-review-original-href="/akadalymentes-fo.htm" href="#" tabindex="-1"><img width="120"/> </a>
+<a class="icon" data-review-original-href="javascript:void(0);" href="#" style="font-size:15px;" tabindex="-1">☰</a>
+</div>
+<div align="center"><center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td align="center">
+<table border="0" width="100%"><tr><td>
+<div align="center"><center><img width="80%"/>
+</center></div></td></tr></table></td></tr></tbody></table></center></div>
+<table bgcolor="#fefefe" cellpadding="0" cellspacing="0" width="80%">
+<tr> <td>
+<div align="right" valign="top"><right><strong><font color="#ff6600"><font size="+2">
+</font></font>
+</strong></right></div></td></tr></table>
+<div align="center"><center><font ,="" face="Calibri" sans-serif=""></font></center></div>
+<div align="center"><center>
+<div align="center"><center><table bgcolor="lightblue" width="80%"><tr><td><b><font color="red"><font size="+1"><div align="center"><center>
+<s>Még mindig tart az influenza szezon! Most sem késő felvenni a védőoltást.</s>
+Bővebben olvashat róla az <a data-review-original-href="https://makkmarcipraxis.hu/aktualitasok.html" href="#" style="text-decoration: none" tabindex="-1"> <font color="black"> aktualitásokban (itt)</font></a></center></div></font></font></b></td></tr></table></center></div></center></div>
+<table bgcolor="#fefefe" cellpadding="0" cellspacing="0" width="80%">
+<tr> <td>
+<table border="0" bordercolor="#000000" cellpadding="0" cellspacing="0" width="100%">
+<col width="35%"/>
+<col width="35%"/>
+<tr>
+<td colspan="0" valign="TOP" width="100%">
+<div style="max-height: 500px; overflow-y: auto;">
+<p align="CENTER"><font size="5"><b>Tisztelt
+				Városlakó !</b></font></p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0.1cm">
+<font size="+1">
+Rövidesen érzékelni fogja sok felnőtt korú és
+gyermekes család, hogy a megszokott gondos egészségügyi
+ellátásuk mellett több háziorvos és
+gyermekorvosi rendelőben de azon kívül is az eddigiektől
+kissé eltérő figyelemmel fordulunk hozzájuk.
+Tesszük ezt azért, mert egy pályázati
+lehetőség révén több szolgáltatást
+tudunk nyújtani, egyúttal jobban és hamarabb
+hozzá tudjuk juttatni a lakosok egy részét a
+teljes gyógyuláshoz de még inkább a
+betegségek megelőzéséhez.</font></p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0.28cm">Nagy
+örömömre szolgál, hogy kollégáimmal
+együtt nagyon sok városlakónak segíthettünk
+egy teljes éven át, de reményeink szerint az
+eredmények bemutatásával, tovább is.</p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0.28cm">
+A Kormányzat által biztosított többlet forrás és
+az egészségügyi ellátásban
+érdekeltek- közöttük elsőként említve
+a Nyíregyháza Megyei Jogú Várost- jobb
+együttműködésével elkezdjük a munkát.
+Bátran igényeljék  a segítségünket.</p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0.28cm">
+A Konzorcium formában működő orvos csoport tagjai: Dr Barta Nelly, Dr
+Csobánka Margit, Dr Kántor Irén, Dr Kubinyi
+Erika, Dr Mérnyi Ágnes, Dr Molnár Bernadett,-
+házi gyermekorvosok. Dr Böszörményi Vántus
+Judit, Dr Dauda György, Dr Kovács Emilia háziorvosok,
+valamint Dr Ujhelyi János házi gyermekorvos  a
+konzorcium vezetője. Az orvosok többségének több
+szakvizsgája van, mely a lehetőségeinket gyarapítja.</p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0.28cm">
+A 10 orvos munkáját 10 ápolónő 7 védőnő, 5 kórházi
+szakorvos pszichológus gyógytornász és
+dietetikus segíti.</p>
+<p align="CENTER" class="western" style="margin-bottom: 0.28cm"><b>Makk
+Marci Nyíregyháza Praxisközösség
+szakmai-szervezési programja és szűrési,
+gondozási eljárásrendje</b></p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0.28cm">
+Vizsgálatok igazolják, hogy az egészségi állapot
+megőrzésében, javításában az
+életmód tényezők közül kiemelt
+szerepet játszik a fizikai aktivitás és az
+étrend. A lakosság rossz népegészségügyi
+mutatóiért az egyéni felelősség, az
+egészségtudatos életmód, valamint az
+egészségügyi ismeretek hiánya felelős,
+amelyet a szűrővizsgálatokon való alacsony részvétel
+súlyosbít. Nyíregyháza Megyei Jogú
+város területén praktizáló
+háziorvosok és házi gyermekorvosok csoportja,
+praxisközösségünk célként
+fogalmazza meg, hogy ezen változtassunk, és ezáltal
+a lakosság népegészségügyi mutatóit
+javítsuk. A szív- és érrendszeri
+kockázatszűrés és -menedzsment alapvető színtere
+a háziorvosi praxis, hisz itt történik a legtöbb
+orvos-beteg találkozás, összegződnek a páciensről
+rendelkezésre álló releváns kórelőzményi
+adatok a szakellátás különböző
+területeiről.  Lényegében maradéktalanul
+elvégezhetők a kockázat-besoroláshoz szükséges
+fizikális, egyes műszeres és laborvizsgálatok.
+Továbbá innen menedzselhető a kockázati szinttől
+függő, egyénre szabott terápia is. Gyermekorvosi
+praxisaink közül mindannyian végzünk óvoda
+és iskola egészségügyi ellátást
+is és a pályázat adta lehetőségeket
+kihasználva a tapasztalatokat ott is hasznosítani
+tudjuk. A közösségünk 10 praxisa összesen
+26 szakemberrel együtt egységes szemléletű és
+technikai hátterű, páciensközpontú
+többletszolgáltatásokat nyújtó
+ellátást kíván megvalósítani.</p>
+<p align="CENTER" class="western" style="margin-bottom: 0.28cm"><b>Szükségletfelmérés,
+célcsoport szükségleteinek bemutatása</b></p>
+<p align="JUSTIFY" class="western" style="margin-bottom: 0.28cm">
+
+Praxisközösségünk Nyíregyháza megyei jogú város területén
+jön létre. A konzorciumban részt vevő praxisok
+közül van olyan, mely különösen hátrányos
+helyzetű lakosság ellátását végzi,
+illetve olyan, mely a várostól távolabb eső
+részén, úgymond falusi jellegű, de többségében
+egy egységes körülhatárolható
+területet látnak el. Jelentősek az etnikai különbségek,
+továbbá megemlítendő a levegő szennyezettségének
+súlyos mértéke a térségben. <font size="3">Az
+alábbiakban bemutatjuk az elérni kívánt
+célcsoportokat és elérésük
+stratégiáját. A célcsoportok bevonásának
+módszertana megfelel a Szakmai terv formai-alaki követelményei
+2.2 pontjában rögzítetteknek. Nyíregyháza lakosságszáma 2018-as adatok
+alapján 20.086
+fő. <b>A projekt közvetlen célcsoportjai </b> azok,
+akik a projekt megvalósítása során
+létrejött szolgáltatások és
+eredmények közvetlen használói, azaz <b>a
+praxisközösség területi ellátási
+kötelezettsége alá eső lakosság. </b>A praxisközösség ellátási területe
+a Nyíregyházi járás 1 településének
+– Nyíregyháza és annak különböző
+városrészei - <b>10
+háziorvosi körzete (7 gyermek háziorvosi és
+3 felnőtt háziorvosi praxis). A praxisközösséghez</b>
+jelenlegi adataink szerint 5.845 fő 18 év feletti, 6.904 fő 18
+év alatti, összesen <b>12.749
+fő tartozik, akik az elsődleges célcsoportot jelentik a
+számunkra.</b></font></p>
+
+</div>
+</td>
+</tr>
+</table>
+<table border="0" width="100%">
+<tr><td><b>Életképek: Megbeszélés </b></td></tr>
+<tr valign="TOP">
+<td align="center" width="32%">
+<p>
+<div class="image-container">
+<div align="center">
+<center><img align="top" border="0" width="300"/></center>
+</div>
+</div>
+</p>
+</td>
+<td align="center" width="30%">
+<center><img align="BOTTOM" border="0" width="210"/></center>
+</td>
+<td align="center" width="32%">
+<p>
+<div class="image-container">
+<div align="center">
+<center><img align="top" border="0" width="300"/></center>
+</div>
+</div>
+</p>
+</td>
+</tr>
+</table>
+<p align="CENTER" class="western">
+ </p></td> </tr> </table>
+<p class="western">
+
+
+Az oldal nem használ sütiket (cookies), nem tárol személyes adatokat!  Lásd <a data-review-original-href="http://makkmarcipraxis.hu/gdpr.php" href="#" tabindex="-1"> adatvédelmi nyilatkozat.</a>
+
+
+    Utolsó frissítés: 2024. okt. 27. (Apró pontosítások)
+További fejlesztés várható.
+
+
+</p></body><style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head></html>

@@ -1,0 +1,299 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="hu"><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="%7B%22modulePrefix%22%3A%22n3%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22history%22%2C%22EmberENV%22%3A%7B%22EXTEND_PROTOTYPES%22%3Afalse%2C%22FEATURES%22%3A%7B%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_NO_IMPLICIT_ROUTE_MODEL%22%3Atrue%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%2C%22_USE_EMBER_MODULES%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22n3%22%2C%22version%22%3A%220.0.0%2B55e02581%22%7D%2C%22fastboot%22%3A%7B%22hostWhitelist%22%3A%5B%22localhost%3A3000%22%2C%220.0.0.0%3A3000%22%2C%22444.hu%22%5D%7D%2C%22metricsAdapters%22%3A%5B%7B%22name%22%3A%22GoogleTagManager%22%2C%22environments%22%3A%5B%22production%22%5D%2C%22config%22%3A%7B%22id%22%3A%22GTM-KZVBKWD%22%7D%7D%2C%7B%22name%22%3A%22Remp%22%2C%22environments%22%3A%5B%22production%22%5D%2C%22config%22%3A%7B%22scriptUrl%22%3A%22https%3A%2F%2Fcdn.pmd.444.hu%2Fassets%2Flib%2Fjs%2Fheartbeat.js%22%2C%22host%22%3A%22https%3A%2F%2Fheartbeat.pmd.444.hu%22%2C%22token%22%3A%2258501271-8451-48bf-821e-10821a06f364%22%2C%22cookieDomain%22%3A%22.444.hu%22%7D%7D%5D%2C%22emberRollbarClient%22%3A%7B%22enabled%22%3Atrue%2C%22accessToken%22%3A%224c0fcee6de3b4ca9a8c6e629555ab07e%22%2C%22verbose%22%3Atrue%2C%22captureUncaught%22%3Atrue%2C%22captureUnhandledRejections%22%3Atrue%2C%22payload%22%3A%7B%22environment%22%3A%22production%22%2C%22client%22%3A%7B%22javascript%22%3A%7B%22source_map_enabled%22%3Atrue%2C%22code_version%22%3A%220.0.0%2B55e0258%22%2C%22guess_uncaught_frames%22%3Atrue%7D%7D%7D%2C%22hostSafeList%22%3A%5B%22444.hu%22%5D%7D%2C%22ENGINES%22%3A%5B%7B%22name%22%3A%22valasztas--election%22%2C%22type%22%3A%22election%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22444%22%2C%22jo%22%5D%7D%7D%2C%7B%22name%22%3A%22author--author%22%2C%22type%22%3A%22author%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22444%22%2C%22insight-hungary%22%2C%22partizan%22%2C%22jo%22%5D%7D%7D%2C%7B%22name%22%3A%22kereses--search%22%2C%22type%22%3A%22search%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22444%22%2C%22insight-hungary%22%2C%22partizan%22%2C%22jo%22%5D%7D%7D%2C%7B%22name%22%3A%22foci%2Fbajnoksag--championship%22%2C%22type%22%3A%22championship%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22444%22%2C%22jo%22%5D%7D%7D%2C%7B%22name%22%3A%22partizan--reader%22%2C%22type%22%3A%22reader%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22partizan%22%5D%7D%7D%2C%7B%22name%22%3A%22jo--reader%22%2C%22type%22%3A%22reader%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22jo%22%5D%7D%7D%2C%7B%22name%22%3A%22--reader%22%2C%22type%22%3A%22reader%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22444%22%2C%22jo%22%5D%7D%7D%5D%7D" name="n3/config/environment"/>
+ <meta content="" name="ember-head-start"/>
+<meta content="Haász János" name="author"/>
+<meta content="belföld,kincses gyula,egészségügy,betöltetlen háziorvosi praxis,háziorvos" name="keywords"/>
+<meta content="belföld,kincses gyula,egészségügy,betöltetlen háziorvosi praxis,háziorvos" name="news_keywords"/>
+<meta content="belföld,kincses gyula,egészségügy,betöltetlen háziorvosi praxis,háziorvos" itemprop="keywords"/>
+<meta content="summary_large_image" name="twitter:card"/>
+
+<meta content="https://444.hu/2025/01/06/mara-minden-hetedik-haziorvosi-korzet-betoltetlen-mondja-a-volt-orvoskamarai-elnok" property="og:url"/>
+<meta content="https://444.hu/2025/01/06/mara-minden-hetedik-haziorvosi-korzet-betoltetlen-mondja-a-volt-orvoskamarai-elnok" property="twitter:url"/>
+<meta content="444" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="hu" property="og:locale"/>
+<title>Mára minden hetedik háziorvosi körzet betöltetlen, mondja a volt orvoskamarai elnök</title>
+<meta content="Mára minden hetedik háziorvosi körzet betöltetlen, mondja a volt orvoskamarai elnök" name="title"/>
+<meta content="Mára minden hetedik háziorvosi körzet betöltetlen, mondja a volt orvoskamarai elnök" property="og:title"/>
+<meta content="Mára minden hetedik háziorvosi körzet betöltetlen, mondja a volt orvoskamarai elnök" name="twitter:title"/>
+<meta content="Négy éve még csak minden tizedik háziorvosi praxis volt betöltetlen, azóta nagyot romlott ez az arány." name="description"/>
+<meta content="Négy éve még csak minden tizedik háziorvosi praxis volt betöltetlen, azóta nagyot romlott ez az arány." property="og:description"/>
+<meta content="Négy éve még csak minden tizedik háziorvosi praxis volt betöltetlen, azóta nagyot romlott ez az arány." name="twitter:description"/>
+<meta content="https://assets.4cdn.hu/kraken/7a32qetWkL281ECoUs-lg.jpeg" property="og:image"/>
+<meta content="https://assets.4cdn.hu/kraken/7a32qetWkL281ECoUs-lg.jpeg" name="twitter:image"/>
+<meta content="max-image-preview:large" name="robots"/>
+
+<meta content="2025-01-06T08:05:45+01:00" property="article:published_time"/>
+
+
+
+
+
+
+<meta content="" name="ember-head-end"/>
+<meta content="%7B%22modulePrefix%22%3A%22author%22%2C%22environment%22%3A%22production%22%7D" name="author/config/environment"/>
+<meta content="%7B%22modulePrefix%22%3A%22championship%22%2C%22environment%22%3A%22production%22%7D" name="championship/config/environment"/>
+<meta content="%7B%22modulePrefix%22%3A%22election%22%2C%22environment%22%3A%22production%22%7D" name="election/config/environment"/>
+
+<meta content="%7B%22modulePrefix%22%3A%22reader%22%2C%22environment%22%3A%22production%22%7D" name="reader/config/environment"/>
+<meta content="%7B%22modulePrefix%22%3A%22search%22%2C%22environment%22%3A%22production%22%7D" name="search/config/environment"/>
+<meta content="%GENERATED_ASSET_MANIFEST%" name="n3/config/asset-manifest"/>
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="_1bucvez1 jtivel0 xrg4ok0 _1pjxevg0 _4n4slr0 xsgiua0 _1g4l6550 i0wrnc0 srf2jf0 _15jjbzu0 _8da7wc0 ovyd8u0 _1nentwd0 epzvfx0 ana7u81 _8b6bxc9 _1dy6oyqid">
+
+<div>
+
+
+
+<div class="p03hpr0 _1chu0ywg p4kpu33i p4kpu38d">
+<div class="_13ou49a0" id="ap-site-header-top"></div>
+<header class="v9sb5o0 _1chu0ywu _1chu0ywz _1chu0ywm _1chu0ywg _1chu0yw14 ta3a4c1ig ta3a4c106 ta3a4c1aa p4kpu38y">
+
+<a class="uwwrama ta3a4c0 ta3a4cdf ta3a4c4h ta3a4c8y _1chu0ywh _1chu0yw12 ta3a4c1fc ta3a4c14n p4kpu30 _1chu0yw17" data-review-original-href="https://444.hu" href="#" rel="noopener" tabindex="-1">
+<svg style="height: 38px; width: 119px;" xmlns="http://www.w3.org/2000/svg">
+<use fill="currentColor" href="/assets/logo-444.svg#logo"></use>
+</svg>
+</a>
+ </header>
+<div class="_13ou49a0" id="ap-site-header-bottom"></div>
+<div class="_13ou49a0" id="ap-featured"></div>
+
+<div class="_13ou49a0 slotHeader" id="ap-top"></div>
+<div class="_2r9i95 _1chu0ywh p4kpu3e _1chu0ywh p4kpu3hp p4kpu3i5">
+
+<div class="_1j8zfzf3 ta3a4cz ta3a4c1f ta3a4c5g ta3a4c5w _1chu0yw9 _2r9i9g">
+<h1 class="_19gjvagj _1dy6oyq4l _19gjvagm _19gjvagk _19gjvags _19gjvagq">
+<span>
+ <span class="_1dy6oyq5g _1dy6oyq5s">Mára minden hetedik háziorvosi körzet betöltetlen, mondja a volt orvoskamarai elnök</span>
+</span>
+</h1>
+</div>
+<div class="_1rlsxp0 p4kpu3dm p4kpu3i3 _1chu0yw9 _1chu0ywh _1chu0yw9 _2r9i9h _2r9i9l">
+<div class="_2r9i95 _1chu0ywh p4kpu3e _1chu0yw9 _1rlsxpe _1rlsxpf _1rlsxps _1rlsxp15 _1rlsxp1i _1rlsxp1v _1rlsxp2f _1rlsxp2l _1rlsxp2y _1rlsxp3b _1rlsxp3o _1rlsxp41 _1chu0ywh p4kpu3hp p4kpu3i5 slotDoubleColumn">
+<div class="_1chu0ywg p4kpu34h p4kpu34c p4kpu3cn p4kpu3hp _1chu0yw9 _2r9i9d">
+<div class="p4kpu3c9 p4kpu3gq _1chu0ywg _1dy6oyq2r _1dy6oyqb5 p4kpu31k ta3a4c106 ta3a4czu p4kpu35g">
+<div class="_1chu0ywg p4kpu3c2">
+<div class="_1wsp8zg4 _1chu0ywu _1chu0ywz _1chu0ywk _8b6bx51 _1dy6oyqb5 _1chu0ywt _1chu0ywy _1wsp8zg2" style="--_1wsp8zg0:40">
+<img alt="" class="ta3a4c106 ta3a4c1fc _1chu0ywo" loading="lazy"/>
+</div>
+</div>
+<div class="_1chu0ywh p4kpu31k">
+<div>
+<a class="_1dy6oyq5o" data-review-original-href="/author/haaszj" href="#" tabindex="-1">Haász János</a>
+</div>
+<div class="_1chu0ywg p4kpu3c2">
+<span class="_1dy6oyq4k">
+<a class="_1dy6oyq5o" data-review-original-href="/category/belfold" href="#" tabindex="-1">belföld</a> </span>
+<span class="_2eey3i9 _1dy6oyq4b"></span>
+<time class="_2eey3i8" datetime="2025-01-06T08:05:45+01:00">
+2025. január 6. 8:05            </time>
+</div>
+</div>
+</div>
+<div class="_1n6u2803 _1chu0ywe">
+<div class="_1n6u2804 _1chu0ywk">
+<button class="_1oiqrbrt p4kpu3c9 p4kpu3gq _1chu0yw6 _1chu0ywl ta3a4c1i2 p4kpu377 p4kpu31k p4kpu37z _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _1oiqrbr0 uwwram3 uwwramj _18ssces1 _18ssces5 _18ssces15 _18ssces7n _18sscesh3 _1dy6oyq5v _1dy6oyqam _1dy6oyqk2 diq4x0 _1oiqrbr6 _7oso933 _1chu0yw14 ta3a4css ta3a4cxn" type="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x" data-icon="share" style="--_15pnudm0:18;--_15pnudm2:0">
+</span>
+
+
+          Megosztás
+
+  </button>
+</div>
+
+<div class="_1n6u2805 _1chu0yw13 _1n6u2806 _1n6u2808 _1n6u280a" popover="auto">
+
+<div class="_25g4rm3 ta3a4cj2 ta3a4cnj _1chu0ywh p4kpu37l _1chu0ywu _8b6bx65 diq4xa _1chu0ywt _1chu0ywy _25g4rm1">
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="content_copy" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Link másolása
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_facebook" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Facebook
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_x" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            X (Twitter)
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_tumblr" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Tumblr
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_linkedin" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            LinkedIn
+
+    </span>
+ </button>
+</div>
+</div>
+</div>
+ </div>
+<div class="_13ou49a0" id="ap-article-top-001"></div>
+<div class="fkng932 _1chu0yw9 _2r9i9h _2r9i9i slotArticle">
+<p class="">
+    A kormány az egészségügyben máig adós maradt az alapellátás megerősítésével, „jelenleg 940 betöltetlen praxis van, ami azt jelenti, hogy a körzetek 14 százalékában nincs állandó orvos” – mondta Kincses Gyula, a Magyar Orvosi Kamara volt elnöke a Népszavának adott <a data-review-original-href="https://nepszava.hu/3263814_egeszsegugy-magyarorszag-intezkedesek-lazas-semmiteves-2026" href="#" tabindex="-1" target="_blank">interjúban</a>. Az országban most 6424 háziorvosi és házi gyermekorvosi praxis van, ami tízzel kevesebb az egy évvel korábbinál.
+  </p>
+<p class="">
+    De hiába csökkent a körzetek száma, évről évre nő a betöltetlen praxisoké: 2013-ban még a körzetek 3,4 százaléka volt betöltetlen, 2017-ben 5,3 százalék, 2021-ben már 10,2 százalék, ez év elején 14,6 százalékra, <a data-review-original-href="https://www.penzcentrum.hu/egeszseg/20250106/kritikus-a-helyzet-a-magyar-rendelokben-millionyi-magyar-egeszsege-a-tet-egyre-tobben-lesznek-1161452" href="#" tabindex="-1" target="_blank">írja</a> a Pénzcentrum. A tartósan betöltetlen, tehát legalább fél éve megüresedett praxisok száma 833, ami a 940-nek csaknem a kilencven százaléka. Van olyan üres háziorvosi körzet (Győrzámolyon), ahol több mint ötezer betegnek nincs állandó háziorvosa.
+  </p>
+<p class="">
+    Kincses az interjúban azt mondta, hogy három probléma van az egészségügyben, amire idén megoldást kellene találni: széttöredezett az ellátórendszer, egyre erősebben érezhetők a humánerőforrás-problémák, ezen belül is a szakdolgozóhiány, valamint gondot jelent a köz- és a magánellátás viszonyának rendezetlensége. Komoly előrelépésre szerinte nem lehet számítani, mivel a reformokhoz egyfelől pénz kellene, másfelől azok könnyen olyan érdekeket sértenének, amik miatt hangos tiltakozások jönnének. „A politika korán váltott kampányüzemmódra, így a hátralévő időt a botránykerülő lázas semmittevés foga jellemezni”, mondta Kincses, aki szerint legfeljebb olyan közérzetjavító intézkedések várhatók, mint a kórtermek kampányszerű kifestése volt.
+  </p>
+</div>
+<div class="_13ou49a0" id="ap-article-bottom-001"></div>
+<div class="_13ou49a0" id="ap-article-bottom-002"></div>
+<div class="_13ou49a0" id="ap-article-bottom-003"></div>
+<div class="_1chu0ywg p4kpu34h p4kpu3c9 p4kpu3hb _1chu0yw9 _2r9i9d">
+
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1go36eq2 _1dy6oyq4k" data-group="" data-review-original-href="/category/belfold" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    belföld
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/kincses-gyula" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    kincses gyula
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/egeszsegugy" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    egészségügy
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/betoltetlen-haziorvosi-praxis" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    betöltetlen háziorvosi praxis
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/haziorvos" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    háziorvos
+
+
+    </span>
+ </a>
+</div>
+<div class="_1chu0ywm slotVideoPlayer _1chu0yw9 _2r9i9d"></div>
+
+</div>
+
+</div>
+</div>
+<div class="ta3a4c1mq"></div>
+<footer class="sun34x0 ta3a4ckm ta3a4cp3 _1chu0ywh p4kpu3hp _1dy6oyq1s ta3a4c0">
+<div class="ta3a4csw ta3a4ctl ta3a4cxd ta3a4cy2 _1chu0ywg p4kpu31k p4kpu37z p4kpu34h">
+<a class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" data-review-original-href="/gyik" href="#" tabindex="-1">
+        GYIK
+      </a>
+<span class="sun34x3 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces _1dy6oyq4b"></span>
+<a class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" data-review-original-href="mailto:elakadtam@444.hu" href="#" tabindex="-1">
+        Hibát jelentek
+      </a>
+<span class="sun34x3 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces _1dy6oyq4b"></span>
+<a class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" data-review-original-href="/impresszum" href="#" tabindex="-1">
+        Impresszum
+      </a>
+<span class="sun34x3 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces _1dy6oyq4b"></span>
+<a class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" data-review-original-href="/helyreigazitasok-javitasok" href="#" tabindex="-1">
+        Javítások kezelése
+      </a>
+<span class="sun34x3 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces _1dy6oyq4b"></span>
+<a class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" data-review-original-href="/jogi-dokumentumok" href="#" tabindex="-1">
+        Jogi dokumentumok
+      </a>
+<span class="sun34x3 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces _1dy6oyq4b"></span>
+<a class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" data-review-original-href="/mediaajanlat" href="#" tabindex="-1">
+        Médiaajánlat
+      </a>
+<span class="sun34x3 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces _1dy6oyq4b"></span>
+<a class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" data-review-original-href="/feed" href="#" tabindex="-1">
+        RSS
+      </a>
+<span class="sun34x3 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces _1dy6oyq4b"></span>
+<span class="ta3a4cj9 ta3a4cnq _1dy6oyq5o uwwrama _1dy6oyq4x" role="button">
+        Sütibeállítások
+      </span>
+</div>
+<div class="ta3a4csw ta3a4ctl ta3a4cxd ta3a4cy2 _1chu0ywg p4kpu31k p4kpu37z p4kpu34h">
+<span>
+        ©
+        2026
+        Magyar Jeti Zrt.
+      </span>
+</div>
+<div class="sun34x4 _1chu0ywh p4kpu31k p4kpu3cu">
+<hr class="_18wajyd1 _1chu0ywf _8b6bx8d sun34x5"/>
+
+      Vége
+
+  <hr class="_18wajyd1 _1chu0ywf _8b6bx8d sun34x5"/>
+</div>
+</footer>
+</div>
+
+</div>
+
+
+
+
+
+</body></html>

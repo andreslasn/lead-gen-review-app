@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
 dist/
-public/data/sources/
+public/data/sources/screenshots/
 .env
 .env.*

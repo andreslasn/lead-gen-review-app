@@ -1,0 +1,2437 @@
+<!doctype html>
+﻿<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beremend - információk, alapadatok, elérhetőségek | Netérkép</title>
+<meta content="Beremend - információk, alapadatok, elérhetőségek, szolgáltatások és térképes nézet egy helyen| Netérkép" name="description"/>
+<meta content="elérhetőségek, térkép, adatbázis" name="keywords"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .toggle-btn {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    border: none;
+  }
+
+  .toggle-btn:hover {
+    background: #2980b9;
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .content.show {
+    max-height: 5000px;
+    opacity: 1;
+    padding: 0px 0;
+  }
+
+  .content-box {
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+  }
+</style>
+
+
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+
+<meta content="website" property="og:type"/>
+<meta content="NetTérkép" property="og:site_name"/>
+<meta content="hu_HU" property="og:locale"/>
+<meta content="Beremend – információk, elérhetőségek, térkép" property="og:title"/>
+<meta content="Beremend - információk, alapadatok, elérhetőségek, szolgáltatások és térképes nézet egy helyen | Nettérkép" property="og:description"/>
+<meta content="https://www.netterkep.hu/beremend" property="og:url"/>
+
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Beremend – információk, elérhetőségek, térkép" name="twitter:title"/>
+<meta content="Beremend - információk, alapadatok, elérhetőségek, szolgáltatások és térképes nézet egy helyen | Nettérkép" name="twitter:description"/>
+<style>
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<style>
+  .faq-section {
+    max-width: 760px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+    font-family: inherit;
+  }
+
+  .faq-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: #1f2937;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .faq-item {
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .faq-item + .faq-item {
+    border-top: 1px solid #e2e2e2;
+  }
+
+  .faq-question {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.95rem 1.1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    background: #f7f7f8;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    position: relative;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: "";
+    position: absolute;
+    background: #4b5563;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-icon::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .faq-icon::after {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  details[open] .faq-icon::after {
+    transform: translateX(-50%) scaleY(0);
+  }
+
+  .faq-answer {
+    padding: 0 1.1rem 1rem 1.1rem;
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .faq-heading {
+      font-size: 1.3rem;
+    }
+    .faq-question {
+      font-size: 0.95rem;
+      padding: 0.85rem 0.9rem;
+    }
+  }
+</style>
+
+<style>
+      #map {
+	    width: calc(100%-10);
+        aspect-ratio: 4/3;
+        margin: 0;
+      }
+    </style>
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="blog-details-page">
+<header class="header d-flex align-items-center position-relative" id="header">
+<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<a class="logo d-flex align-items-center" data-review-original-href="/" href="#" tabindex="-1">
+
+<img alt="Nettérkép logó"/>
+<span class="sitename">NetTérkép</span>
+</a>
+<nav class="navmenu" id="navmenu">
+<ul>
+<li><a data-review-original-href="/" href="#" tabindex="-1">Főoldal</a></li>
+<li class="dropdown"><a data-review-original-href="#" href="#" tabindex="-1">Térkép <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul>
+<li class="dropdown"><a data-review-original-href="/kozigazgatasilag" href="#" tabindex="-1">Közigazgatásilag</a>
+<ul>
+<li><a data-review-original-href="/varmegyek" href="#" tabindex="-1">Vármegyék</a></li>
+<li><a data-review-original-href="/jarasok" href="#" tabindex="-1">Járások</a></li>
+<li><a data-review-original-href="/telepulesek" href="#" tabindex="-1">Települések</a></li>
+</ul>
+</li>
+<li class="dropdown"><a data-review-original-href="/foldrajzilag" href="#" tabindex="-1">Földrajzi tájak szerint</a>
+<ul>
+<li><a data-review-original-href="/nagytajak" href="#" tabindex="-1">Nagy tájegységek</a></li>
+<li><a data-review-original-href="/kozeptajak" href="#" tabindex="-1">Közép tájegységek</a></li>
+<li><a data-review-original-href="/kistajak" href="#" tabindex="-1">Kis tájegységek</a></li>
+</ul>
+</li>
+<li><a data-review-original-href="/utvonaltervezo" href="#" tabindex="-1">Útvonaltervező</a></li>
+</ul>
+</li>
+<li><a data-review-original-href="/kviz" href="#" tabindex="-1">Települési kvíz</a></li>
+<li class="dropdown"><a data-review-original-href="/idojaras" href="#" tabindex="-1">Időjárás <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul>
+<li><a data-review-original-href="/orszagos-elorejelzes" href="#" tabindex="-1">Országos előrejelzés</a></li>
+<li><a data-review-original-href="/varmegyei-radar-kepek" href="#" tabindex="-1">Vármegyei radarképek</a></li>
+<li><a data-review-original-href="/jarasi-radar-kepek" href="#" tabindex="-1">Járási radarképek</a></li>
+<li><a data-review-original-href="/telepulesi-elorejelzes" href="#" tabindex="-1">Települési időjárás előrejelzés</a></li>
+</ul>
+</li>
+</ul>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+</div>
+</header>
+<main class="main">
+
+<div class="page-title dark-background" data-aos="fade" style="background-image: url(/stilusok/telepulesek1/assets/img/page-title-bg.webp);">
+<div class="container position-relative">
+<h1>Beremend - információk, adatok, elérhetőségek</h1>
+<p>Beremend település Baranya vármegyében, a Siklósi járásban található.</p>
+<nav class="breadcrumbs">
+<ol>
+<li><a data-review-original-href="/" href="#" tabindex="-1">Főoldal</a></li>
+<li class="current">Beremend - információk, adatok, elérhetőségek</li>
+</ol>
+</nav>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+
+<section class="blog-details section" id="blog-details">
+<div class="container">
+<article class="article">
+<h2 class="title">Beremend a térképen</h2><div id="map"></div>
+<div aria-label="Önkormányzat adatai, elérhetőségei:" class="table_tib" id="onkormanyzat" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<h3 style="color: white; font-size: 18px;">Önkormányzat adatai, elérhetőségei:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib" iidiid="" role="rowgroup">
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Önkormányzat hivatalos neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremend Nagyközség Önkormányzat</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Önkormányzat címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Szabadság tér 1.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Önkormányzat telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">+36 72 574920</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Önkormányzat email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">beremend@beremend.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Önkormányzat weboldala:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="http://www.beremend.hu" href="#" tabindex="-1" target="_blank">Beremend Nagyközség Önkormányzat</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Polgármester neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Theisz Ferenc</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Képviselő testület tagjai:</div>
+<div class="cell_tib cell--right_tib" role="cell">Dobi János, Dr. Berger Nikolett, Harcosné Illés Orsolya, Illés Márió, Katona-Kungler Kinga, Müller Károly</div>
+</div>
+</div>
+</div>
+<div aria-label="Önkormányzati hivatal adatai, elérhetőségei:" class="table_tib" id="koh" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<h3 style="color: white; font-size: 18px;">Önkormányzati hivatal adatai, elérhetőségei:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib" iidiid="" role="rowgroup">
+<div class="row_tib row--full_tib" id="beremendi-kozos-onkormanyzati-hivatal-7827-beremend-szabadsag-ter-1" role="row">
+<div class="cell_tib" role="cell"><p>Az Önkormányzat közös önkormányzati hivatalt tart fenn más településekkel. A hivatal központja a településen található. . A Közös Önkormányzati Hivatalban még az alábbi települések találhatóak: <a data-review-original-href="/kistapolca" href="#" tabindex="-1">Kistapolca</a>.</p></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">A hivatal neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremendi Közös Önkormányzati Hivatal</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">A hivatal címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend Szabadság tér 1.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">A hivatal telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">+36 72 574921, +36 20 2670877</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">A hivatal email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">jegyzo@beremend.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Jegyző neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Dr. Vajda János Tamás</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend elhelyezkedése:" class="table_tib" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<h3 style="color: white; font-size: 18px;">Beremend elhelyezkedése:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib" id="tablazat3" role="rowgroup">
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Mely vármegyében található:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="/baranya-varmegye" href="#" tabindex="-1">Baranya vármegyében</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Vármegye székhely:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="/pecs" href="#" tabindex="-1">Pécs</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Vármegye székhely távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">45 km.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Mely járásban található:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="/siklosi-jaras" href="#" tabindex="-1">Siklósi járásban</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">A járás központja:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="/siklos" href="#" tabindex="-1">Siklós</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">A járás központ távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend földrajzi elhelyezkedése:" class="table_tib" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<h3 style="color: white; font-size: 18px;">Beremend földrajzi elhelyezkedése:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib" id="tablazat4" role="rowgroup">
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Mely nagytáj(ak)ban található:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="alfold-nagy-tajegyseg" href="#" tabindex="-1">Alföld</a><br/></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Mely középtáj(ak)ban található:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="drava-menti-siksag-kozep-tajegyseg" href="#" tabindex="-1">Dráva menti síkság</a><br/></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Mely kistáj(ak)ban található:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="nyarad-harkanyi-sik-kis-tajegyseg" href="#" tabindex="-1">Nyárád-Harkányi-sík</a><br/></div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend rövid története:" class="table_tib" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<h3 style="color: white; font-size: 18px;">Beremend rövid története:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib" id="tablazat5" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><p>Beremend nevét először egy <strong>1281</strong>-ből származó oklevél említi, Beremund formában. A középkorban virágzó település volt, amely több nemesi család birtokában állt. A török hódoltság idején a falu elnéptelenedett, pusztasággá vált. Az <strong>18. század</strong> elején indult meg újratelepítése, melynek során magyar és horvát családok érkeztek a faluba, újra élettel töltve meg a határmenti települést. Gazdasági fellendülését a <strong>20. század</strong> elején alapozta meg a térségben található jelentős mészkő- és agyagkészletre épülő ipar. Az <strong>1908</strong>-ban megnyílt Beremendi Cement- és Mészmű jelentős ipari központtá emelte a települést. Ez a meghatározó ipari létesítmény a mai napig a falu egyik legnagyobb foglalkoztatója és motorja a helyi gazdaságnak. Beremend történetét a <strong>20. század</strong> folyamán a határmenti elhelyezkedés és az ipari jelleg egyaránt formálta. A település ma is fontos ipari és logisztikai csomópont a Dél-Dunántúlon, megőrizve egyedi karakterét.</p></div>
+</div>
+</div>
+</div>
+<div aria-label="Egyéb hasznos adatok:" class="table_tib" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<h3 style="color: white; font-size: 18px;">Egyéb hasznos adatok:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib" id="tablazat6" role="rowgroup">
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Postai irányítószám:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Vezetékes telefon körzetszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">72</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Lakosságszám (2025. január 01.):</div>
+<div class="cell_tib cell--right_tib" role="cell">2311 fő</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő nemzetiségi önkormányzatok:" class="table_tib" id="nemzetisegi_onk" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn7">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő nemzetiségi önkormányzatok:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat7" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Roma nemzetiségi önkormányzat</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Hivatalos neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremendi Roma Nemzetiségi Önkormányzat</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Elnök neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Jovánovics Sándor</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Szabadság tér 1</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">sandorjovanovics16@gmail.com</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszám:</div>
+<div class="cell_tib cell--right_tib" role="cell">+36 30 3662357</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Német nemzetiségi önkormányzat</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Hivatalos neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremendi Német Önkormányzat </div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Elnök neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Orgyán-Péter Kármen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Szabadság  tér 1.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">petra.valkaine@gmail.com</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszám:</div>
+<div class="cell_tib cell--right_tib" role="cell">+36 30 9639845</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend nagyközség nemzetiségi összetétele:" class="table_tib" id="nemzetisegiosszetetel" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn8">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend nagyközség nemzetiségi összetétele:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat8" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Nemzetiségi összetétel a 2022-es népszámlálás alapján</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div style="width: 100%; text-align: justify;"><p>A 2022-es népszámlálás során 2163 fő nyilatkozott a nemzetiségi hovatartozásáról. Ez a lakónépesség (2389 fő) 90.54 százaléka.  1962 fő vallotta magát magyar nemzetiséghez tartozónak, ez a nyilatkozók 90.71 százaléka, a teljes lakosság 82.13 százaléka. 49 fő vallotta magát német nemzetiséghez tartozónak, ez a nyilatkozók 2.27 százaléka, a teljes lakosság 2.05 százaléka. 44 fő vallotta magát roma nemzetiséghez tartozónak, ez a nyilatkozók 2.03 százaléka, a teljes lakosság 1.84 százaléka.</p><p></p><p>172 fő nem nyilatkozott a nemzetiségi hovatartozásáról, ez a nyilatkozók 7.95 százaléka, a teljes lakosság 7.2 százaléka. </p><p>
+	  Nézzük táblázatos formában, részletesen:</p><div style="width: 100%"><table style="width:100%;">
+<tr>
+<th>
+		 Nemzetiség
+		</th>
+<th>
+		 Fő
+		</th>
+<th>
+		 Arány a válaszadók között<br/>(2163 fő)
+		</th>
+<th>
+		 Arány a lakosok között<br/>(2389 fő)
+		</th>
+</tr>
+<tr>
+<td>
+		     magyar
+		    </td>
+<td>
+		     1962
+		    </td>
+<td>
+		     90.71 %
+		    </td>
+<td>
+		     82.13 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     német
+		    </td>
+<td>
+		     49
+		    </td>
+<td>
+		     2.27 %
+		    </td>
+<td>
+		     2.05 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     roma
+		    </td>
+<td>
+		     44
+		    </td>
+<td>
+		     2.03 %
+		    </td>
+<td>
+		     1.84 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     horvát
+		    </td>
+<td>
+		     19
+		    </td>
+<td>
+		     0.88 %
+		    </td>
+<td>
+		     0.8 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     lengyel
+		    </td>
+<td>
+		     4
+		    </td>
+<td>
+		     0.18 %
+		    </td>
+<td>
+		     0.17 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     szerb
+		    </td>
+<td>
+		     4
+		    </td>
+<td>
+		     0.18 %
+		    </td>
+<td>
+		     0.17 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Nem nyilatkozott
+		    </td>
+<td>
+		     172
+		    </td>
+<td>
+		     7.95 %
+		    </td>
+<td>
+		     7.2 %
+		    </td>
+</tr></table></div></div></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Nemzetiségi összetétel a 2011-es népszámlálás alapján</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div style="width: 100%; text-align: justify;"><p>A 2011-es népszámlálás során 2511 fő nyilatkozott a nemzetiségi hovatartozásáról. Ez a lakónépesség (2624 fő) 95.69 százaléka.  1859 fő vallotta magát magyar nemzetiséghez tartozónak, ez a nyilatkozók 74.03 százaléka, a teljes lakosság 70.85 százaléka. 74 fő vallotta magát német nemzetiséghez tartozónak, ez a nyilatkozók 2.95 százaléka, a teljes lakosság 2.82 százaléka. 27 fő vallotta magát horvát nemzetiséghez tartozónak, ez a nyilatkozók 1.08 százaléka, a teljes lakosság 1.03 százaléka.</p><p></p><p>636 fő nem nyilatkozott a nemzetiségi hovatartozásáról, ez a nyilatkozók 25.33 százaléka, a teljes lakosság 24.24 százaléka. </p><p>
+	  Nézzük táblázatos formában, részletesen:</p><div style="width: 100%"><table style="width:100%;">
+<tr>
+<th>
+		 Nemzetiség
+		</th>
+<th>
+		 Fő
+		</th>
+<th>
+		 Arány a válaszadók között<br/>(2511 fő)
+		</th>
+<th>
+		 Arány a lakosok között<br/>(2624 fő)
+		</th>
+</tr>
+<tr>
+<td>
+		     magyar
+		    </td>
+<td>
+		     1859
+		    </td>
+<td>
+		     74.03 %
+		    </td>
+<td>
+		     70.85 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     német
+		    </td>
+<td>
+		     74
+		    </td>
+<td>
+		     2.95 %
+		    </td>
+<td>
+		     2.82 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     horvát
+		    </td>
+<td>
+		     27
+		    </td>
+<td>
+		     1.08 %
+		    </td>
+<td>
+		     1.03 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     roma
+		    </td>
+<td>
+		     24
+		    </td>
+<td>
+		     0.96 %
+		    </td>
+<td>
+		     0.91 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     szerb
+		    </td>
+<td>
+		     5
+		    </td>
+<td>
+		     0.2 %
+		    </td>
+<td>
+		     0.19 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     lengyel
+		    </td>
+<td>
+		     4
+		    </td>
+<td>
+		     0.16 %
+		    </td>
+<td>
+		     0.15 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Nem nyilatkozott
+		    </td>
+<td>
+		     636
+		    </td>
+<td>
+		     25.33 %
+		    </td>
+<td>
+		     24.24 %
+		    </td>
+</tr></table></div></div></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Nemzetiségi összetétel a 2001-es népszámlálás alapján</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div style="width: 100%; text-align: justify;"><p>A 2001-es népszámlálás során 2833 fő nyilatkozott a nemzetiségi hovatartozásáról. Ez a lakónépesség (2820 fő) 100.46 százaléka.  2494 fő vallotta magát Magyar nemzetiséghez tartozónak, ez a nyilatkozók 88.03 százaléka, a teljes lakosság 88.44 százaléka. 22 fő vallotta magát Német nemzetiséghez tartozónak, ez a nyilatkozók 0.78 százaléka, a teljes lakosság 0.78 százaléka. 15 fő vallotta magát Horvát nemzetiséghez tartozónak, ez a nyilatkozók 0.53 százaléka, a teljes lakosság 0.53 százaléka.</p><p></p><p>298 fő nem nyilatkozott a nemzetiségi hovatartozásáról, ez a nyilatkozók 10.52 százaléka, a teljes lakosság 10.57 százaléka. </p><p>
+	  Nézzük táblázatos formában, részletesen:</p><div style="width: 100%"><table style="width:100%;">
+<tr>
+<th>
+		 Nemzetiség
+		</th>
+<th>
+		 Fő
+		</th>
+<th>
+		 Arány a válaszadók között<br/>(2833 fő)
+		</th>
+<th>
+		 Arány a lakosok között<br/>(2820 fő)
+		</th>
+</tr>
+<tr>
+<td>
+		     Magyar
+		    </td>
+<td>
+		     2494
+		    </td>
+<td>
+		     88.03 %
+		    </td>
+<td>
+		     88.44 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Német
+		    </td>
+<td>
+		     22
+		    </td>
+<td>
+		     0.78 %
+		    </td>
+<td>
+		     0.78 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Horvát
+		    </td>
+<td>
+		     15
+		    </td>
+<td>
+		     0.53 %
+		    </td>
+<td>
+		     0.53 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Roma
+		    </td>
+<td>
+		     13
+		    </td>
+<td>
+		     0.46 %
+		    </td>
+<td>
+		     0.46 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Szerb
+		    </td>
+<td>
+		     5
+		    </td>
+<td>
+		     0.18 %
+		    </td>
+<td>
+		     0.18 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Lengyel
+		    </td>
+<td>
+		     3
+		    </td>
+<td>
+		     0.11 %
+		    </td>
+<td>
+		     0.11 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Nem nyilatkozott
+		    </td>
+<td>
+		     298
+		    </td>
+<td>
+		     10.52 %
+		    </td>
+<td>
+		     10.57 %
+		    </td>
+</tr></table></div></div></div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend település lakónépességének alakulása:" class="table_tib" id="lakonepesseg" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn9">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend település lakónépességének alakulása:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat9" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><table><tr><td>1986. január 1.</td><td>3188 fő</td></tr><tr><td>1987. január 1.</td><td>3164 fő</td></tr><tr><td>1988. január 1.</td><td>3113 fő</td></tr><tr><td>1989. január 1.</td><td>3065 fő</td></tr><tr><td>1990. január 1.</td><td>3018 fő</td></tr><tr><td>1991. január 1.</td><td>3004 fő</td></tr><tr><td>1992. január 1.</td><td>3007 fő</td></tr><tr><td>1993. január 1.</td><td>2966 fő</td></tr><tr><td>1994. január 1.</td><td>2945 fő</td></tr><tr><td>1995. január 1.</td><td>2923 fő</td></tr><tr><td>1996. január 1.</td><td>2877 fő</td></tr><tr><td>1997. január 1.</td><td>2883 fő</td></tr><tr><td>1998. január 1.</td><td>2883 fő</td></tr><tr><td>1999. január 1.</td><td>2857 fő</td></tr><tr><td>2000. január 1.</td><td>2821 fő</td></tr><tr><td>2001. január 1.</td><td>2820 fő</td></tr><tr><td>2002. január 1.</td><td>2805 fő</td></tr><tr><td>2003. január 1.</td><td>2805 fő</td></tr><tr><td>2004. január 1.</td><td>2788 fő</td></tr><tr><td>2005. január 1.</td><td>2786 fő</td></tr><tr><td>2006. január 1.</td><td>2758 fő</td></tr><tr><td>2007. január 1.</td><td>2729 fő</td></tr><tr><td>2008. január 1.</td><td>2694 fő</td></tr><tr><td>2009. január 1.</td><td>2668 fő</td></tr><tr><td>2010. január 1.</td><td>2623 fő</td></tr><tr><td>2011. január 1.</td><td>2624 fő</td></tr><tr><td>2012. január 1.</td><td>2620 fő</td></tr><tr><td>2013. január 1.</td><td>2586 fő</td></tr><tr><td>2014. január 1.</td><td>2538 fő</td></tr><tr><td>2015. január 1.</td><td>2521 fő</td></tr><tr><td>2016. január 1.</td><td>2510 fő</td></tr><tr><td>2017. január 1.</td><td>2494 fő</td></tr><tr><td>2018. január 1.</td><td>2450 fő</td></tr><tr><td>2019. január 1.</td><td>2441 fő</td></tr><tr><td>2020. január 1.</td><td>2414 fő</td></tr><tr><td>2021. január 1.</td><td>2389 fő</td></tr><tr><td>2022. január 1.</td><td>2356 fő</td></tr><tr><td>2023. január 1.</td><td>2338 fő</td></tr><tr><td>2024. január 1.</td><td>2324 fő</td></tr><tr><td>2025. január 1.</td><td>2311 fő</td></tr></table></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div id="myChart" style="width:100%; height:400px"></div> </div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">A KSH minden évben január 1.-ei adatokat tesz közzé nyilvánosan. Ha ennél pontosabb adatokra van szüksége, keresse az önkormányzati hivatalt.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő postai szolgáltatások:" class="table_tib" id="postak" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn10">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő postai szolgáltatások:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat10" role="rowgroup">
+<div class="row_tib row--full_tib" id="beremend-posta7827-beremend-jokai-mor-utca-31-306" role="row">
+<div class="cell_tib" role="cell"><strong>Posta által üzemeltetett hivatal</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Hivatalos neve:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremend Posta</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Jókai Mór utca 31.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Hétfői nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">08:00-12:00  12:30-16:00</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Keddi nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">08:00-12:00  12:30-16:00</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Szerdai nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">08:00-12:00  12:30-16:00</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Csütörtöki nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">08:00-12:00  12:30-16:00</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Pénteki nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">08:00-12:00  12:30-16:00</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Szombati nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">zárva</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Vasárnapi nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">zárva</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő postaautomaták:" class="table_tib" id="postaautomatak" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn11">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő postaautomaták:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat11" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen jelenleg nem működik posta automata.</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi benzinkutakat találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">815 sz. automata - Siklós Tesco <a data-review-original-href="/siklos#postaautomatak" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Harkányi út 55</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő benzinkutak:" class="table_tib" id="benzinkutak" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn12">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő benzinkutak:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat12" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen jelenleg nem működik benzinkút.</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi benzinkutakat találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">MOL hálózat által üzemeltetett benzinkút <a data-review-original-href="/villany#benzinkutak" href="#" tabindex="-1">Villány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7773 Villány, Virágosi út hrsz.0102.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">14 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">MOL hálózat által üzemeltetett benzinkút <a data-review-original-href="/siklos#benzinkutak" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Szent István tér</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">MOL hálózat által üzemeltetett benzinkút <a data-review-original-href="/harkany#benzinkutak" href="#" tabindex="-1">Harkány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7815 Harkány, Pécsi út</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">22 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">MOL hálózat által üzemeltetett benzinkút <a data-review-original-href="/boly#benzinkutak" href="#" tabindex="-1">Bóly</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7744 Bóly, külterület 0184/158 hrsz.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">26 km.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő bankfiókok:" class="table_tib" id="bankok" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn13">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő bankfiókok:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat13" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen jelenleg nem működik bankfiók.</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi bankfiókokat találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">OTP Dél-dunántúli r., Villány  <a data-review-original-href="/villany#bankok" href="#" tabindex="-1">Villány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7773 Villány, Baross Gábor utca 36</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">14 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">OTP Dél-dunántúli r., Siklós  <a data-review-original-href="/siklos#bankok" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Felszabadulás utca 60-62</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">K&amp;H Bank Zrt. 243 Siklós  <a data-review-original-href="/siklos#bankok" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Felszabadulás utca 42</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">MBH Bank Harkány Kossuth  <a data-review-original-href="/harkany#bankok" href="#" tabindex="-1">Harkány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7815 Harkány, Kossuth Lajos utca 16</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">22 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">MBH Bank Újpetre Kossuth  <a data-review-original-href="/ujpetre#bankok" href="#" tabindex="-1">Újpetre</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7766 Újpetre, Kossuth utca 16/a</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">25 km.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő ATM-ek:" class="table_tib" id="atmek" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn14">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő ATM-ek:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat14" role="rowgroup">
+<div class="row_tib row--full_tib" id="k-h-bank-zrt-altal-uzemeltetett-atm-7827-beremend-hrsz-064-2" role="row">
+<div class="cell_tib" role="cell"><strong>K&amp;H Bank Zrt. által üzemeltetett ATM</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, HRSZ: 064/2 </div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">0-24, H-V.</div>
+</div>
+<div class="row_tib row--full_tib" id="otp-bank-nyrt-altal-uzemeltetett-atm-7827-beremend-kossuth-l-utca-18" role="row">
+<div class="cell_tib" role="cell"><strong>OTP Bank Nyrt. által üzemeltetett ATM</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Kossuth L. utca 18</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Nyitvatartás:</div>
+<div class="cell_tib cell--right_tib" role="cell">0-24, H-V.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő bölcsődék:" class="table_tib" id="bolcsodek" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn15">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő bölcsődék:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat15" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen jelenleg nem működik bölcsőde.</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi bölcsődéket találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Magyarbólyi Óvoda, Mini Bölcsőde És Konyha <a data-review-original-href="/magyarboly#bolcsodek" href="#" tabindex="-1">Magyarbóly</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7775 Magyarbóly, Kossuth utca 15.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">mbolyovi@gmail.com</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">72/456111</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">8 km</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Nagyharsányi Óvoda, Mini Bölcsőde, Könyvtár És Konyha Mini Bölcsőde Telephelye <a data-review-original-href="/nagyharsany#bolcsodek" href="#" tabindex="-1">Nagyharsány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7822 Nagyharsány, Petőfi utca 4-6</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">ovoda@nagyharsany.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">72/568-018</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">9 km</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Egyházasharaszti Óvoda És Bölcsőde <a data-review-original-href="/egyhazasharaszti#bolcsodek" href="#" tabindex="-1">Egyházasharaszti</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7824 Egyházasharaszti, Kossuth utca 69.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">ovodaegyhazash@freemail.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">72/379426</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">11 km</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Villányi Kikerics Óvoda, Mini Bölcsőde És Főzőkonyha <a data-review-original-href="/villany#bolcsodek" href="#" tabindex="-1">Villány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7773 Villány, Rákóczi Ferenc utca 19.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">villanyovi@gmail.com</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">0672492576</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">14 km</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Siklósi Óvoda És Bölcsőde Köztársaság Téri Tagóvodája <a data-review-original-href="/siklos#bolcsodek" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Köztársaság tér 7</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">ski.kozteriovoda@gmail.com</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">06308842014</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő Óvodák:" class="table_tib" id="ovodak" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn16">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő Óvodák:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat16" role="rowgroup">
+<div class="row_tib row--full_tib" id="napsugar-ovoda-beremend-7827-beremend-kossuth-utca-37-37" role="row">
+<div class="cell_tib" role="cell"><strong>Napsugár Óvoda Beremend</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Kossuth utca 37.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">ovoda@beremend.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">72/574008</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő általános iskolák:" class="table_tib" id="altisk" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn17">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő általános iskolák:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat17" role="rowgroup">
+<div class="row_tib row--full_tib" id="beremendi-altalanos-iskola-es-alapfoku-muveszeti-iskola-7827-beremend-szabadsag-ter-11-107" role="row">
+<div class="cell_tib" role="cell"><strong>Beremendi Általános Iskola És Alapfokú Művészeti Iskola</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Szabadság tér 11.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">admin@altisk-bmend.edu.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">06-30/831-0829</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő középiskolák:" class="table_tib" id="kozepisk" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn18">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő középiskolák:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat18" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen jelenleg nem működik középiskola.</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi középiskolákat találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Déli ASzC Teleki Zsigmond Mezőgazdasági Technikum, Szakképző Iskola és Kollégium <a data-review-original-href="/villany#kozepisk" href="#" tabindex="-1">Villány</a> településen | <a data-review-original-href="/utvonaltervezo?forrascim=Beremend&amp;celcim=7773+Vill%C3%A1ny%2C+Mathi%C3%A1sz+J%C3%A1nos+utca+2&amp;celnev=Vill%C3%A1ny+telep%C3%BCl%C3%A9sen+tal%C3%A1lhat%C3%B3+D%C3%A9li+ASzC+Teleki+Zsigmond+Mez%C5%91gazdas%C3%A1gi+Technikum%2C+Szakk%C3%A9pz%C5%91+Iskola+%C3%A9s+Koll%C3%A9gium+nev%C5%B1+k%C3%B6z%C3%A9piskol%C3%A1hoz" href="#" rel="nofollow" tabindex="-1" target="_blank" title="Útvonal tervet kérek a Villány településen található Déli ASzC Teleki Zsigmond Mezőgazdasági Technikum, Szakképző Iskola és Kollégium nevű középiskolához">Útvonal tervet kérek!</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7773 Villány, Mathiász János utca 2</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell"></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">+36 72 492 534</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">14 km</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">A Tan Kapuja Buddhista Gimnázium És Általános Iskola Alsószentmártoni Telephelye <a data-review-original-href="/alsoszentmarton#kozepisk" href="#" tabindex="-1">Alsószentmárton</a> településen | <a data-review-original-href="/utvonaltervezo?forrascim=Beremend&amp;celcim=7826+Als%C3%B3szentm%C3%A1rton%2C+Pet%C5%91fi+utca+4%2FA.&amp;celnev=Als%C3%B3szentm%C3%A1rton+telep%C3%BCl%C3%A9sen+tal%C3%A1lhat%C3%B3+A+Tan+Kapuja+Buddhista+Gimn%C3%A1zium+%C3%89s+%C3%81ltal%C3%A1nos+Iskola+Als%C3%B3szentm%C3%A1rtoni+Telephelye+nev%C5%B1+k%C3%B6z%C3%A9piskol%C3%A1hoz" href="#" rel="nofollow" tabindex="-1" target="_blank" title="Útvonal tervet kérek a Alsószentmárton településen található A Tan Kapuja Buddhista Gimnázium És Általános Iskola Alsószentmártoni Telephelye nevű középiskolához">Útvonal tervet kérek!</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7826 Alsószentmárton, Petőfi utca 4/A.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">buddhistagimnazium@tkbg.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">3672379413</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">14 km</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Baranya Vármegyei SZC Garai Miklós Technikum és Szakképző Iskola <a data-review-original-href="/siklos#kozepisk" href="#" tabindex="-1">Siklós</a> településen | <a data-review-original-href="/utvonaltervezo?forrascim=Beremend&amp;celcim=7800+Sikl%C3%B3s%2C+Iskola+utca+10%2Fa&amp;celnev=Sikl%C3%B3s+telep%C3%BCl%C3%A9sen+tal%C3%A1lhat%C3%B3+Baranya+V%C3%A1rmegyei+SZC+Garai+Mikl%C3%B3s+Technikum+%C3%A9s+Szakk%C3%A9pz%C5%91+Iskola+nev%C5%B1+k%C3%B6z%C3%A9piskol%C3%A1hoz" href="#" rel="nofollow" tabindex="-1" target="_blank" title="Útvonal tervet kérek a Siklós településen található Baranya Vármegyei SZC Garai Miklós Technikum és Szakképző Iskola nevű középiskolához">Útvonal tervet kérek!</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Iskola utca 10/a</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell"></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">+36 70 399 2837</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Siklósi Táncsics Mihály Gimnázium És Általános Iskola  <a data-review-original-href="/siklos#kozepisk" href="#" tabindex="-1">Siklós</a> településen | <a data-review-original-href="/utvonaltervezo?forrascim=Beremend&amp;celcim=7800+Sikl%C3%B3s%2C+Gy%C5%B1di+%C3%BAt+2.&amp;celnev=Sikl%C3%B3s+telep%C3%BCl%C3%A9sen+tal%C3%A1lhat%C3%B3+Sikl%C3%B3si+T%C3%A1ncsics+Mih%C3%A1ly+Gimn%C3%A1zium+%C3%89s+%C3%81ltal%C3%A1nos+Iskola++nev%C5%B1+k%C3%B6z%C3%A9piskol%C3%A1hoz" href="#" rel="nofollow" tabindex="-1" target="_blank" title="Útvonal tervet kérek a Siklós településen található Siklósi Táncsics Mihály Gimnázium És Általános Iskola  nevű középiskolához">Útvonal tervet kérek!</a></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Gyűdi út 2.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">ski.igazgato@gmail.com</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">308297477</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő gyógyszertárak:" class="table_tib" id="gyogyszertar" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn19">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő gyógyszertárak:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat19" role="rowgroup">
+<div class="row_tib row--full_tib" id="kosas-gyogyszertar-7827-beremend-kossuth-lajos-utca-11" role="row">
+<div class="cell_tib" role="cell"><strong>Kősas  Gyógyszertár</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Kossuth Lajos utca 11</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">(72) 474-111</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Nyitvatartása:</div>
+<div class="cell_tib cell--right_tib" role="cell"><p>Nyitvatartási idő: munkanapon és folyó évben rendeletben rögzített rendkívüli munkanapokon: hétfőtől péntekig: 08:00 órától-16.00 óráig, szombaton és pihenőnapon: zárva, vasárnap és munkaszüneti napon: zárva.
+
+</p></div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő háziorvosi rendelők:" class="table_tib" id="haziorvosirendelok" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn20">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő háziorvosi rendelők:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat20" role="rowgroup">
+<div class="row_tib row--full_tib" id="medimon-2012-egeszsegugyi-kft-7827-beremend-szabadsag-ter-5" role="row">
+<div class="cell_tib" role="cell"><strong>Medimon 2012. Egészségügyi Kft.</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Orvos:</div>
+<div class="cell_tib cell--right_tib" role="cell">Dr. Meszlényi Mónika
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Szabadság tér 5</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">(72)268-252</div>
+</div>
+<div class="row_tib row--full_tib" id="beremend-onkormanyzat-7827-beremend-szabadsag-ter-5" role="row">
+<div class="cell_tib" role="cell"><strong>Beremend Önkormányzat</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Orvos:</div>
+<div class="cell_tib cell--right_tib" role="cell">BETÖLTETLEN
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Szabadság tér 5</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">(72)268-252</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő járóbeteg ellátó rendelők:" class="table_tib" id="jarobetegrendelok" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn21">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő járóbeteg ellátó rendelők:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat21" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen jelenleg nem működik járóbeteg ellátó központ.</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi járóbeteg központokat találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Medi-Home Bt.<a data-review-original-href="/siklos#jarobetegek" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Magyar utca 2.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Pécsi Tudományegyetem Klinikai Központ<a data-review-original-href="/siklos#jarobetegek" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Baross Gábor utca 6.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Pécsi Tudományegyetem Klinikai Központ<a data-review-original-href="/harkany#jarobetegek" href="#" tabindex="-1">Harkány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7815 Harkány, Zsigmondy sétány 1.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">22 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Vasútegészségügyi Szolgáltató Nonprofit Közhasznú Kft., Budapest<a data-review-original-href="/harkany#jarobetegek" href="#" tabindex="-1">Harkány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7815 Harkány, Bajcsy-Zsilinszky utca 1.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">22 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Pécsi Tudományegyetem Klinikai Központ<a data-review-original-href="/boly#jarobetegek" href="#" tabindex="-1">Bóly</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7754 Bóly, Hősök tere 9.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">26 km.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő fekvőbeteg ellátó kórházak:" class="table_tib" id="fekvobetegrendelok" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn22">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő fekvőbeteg ellátó kórházak:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat22" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen jelenleg nem működik járóbeteg ellátó központ.</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi fekvőbeteg központokat találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Medi-Home Bt.<a data-review-original-href="/siklos#fekvőbetegek" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Magyar utca 2.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Pécsi Tudományegyetem Klinikai Központ<a data-review-original-href="/siklos#fekvőbetegek" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Baross Gábor utca 6.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Pécsi Tudományegyetem Klinikai Központ<a data-review-original-href="/harkany#fekvőbetegek" href="#" tabindex="-1">Harkány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7815 Harkány, Zsigmondy sétány 1.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">22 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Vasútegészségügyi Szolgáltató Nonprofit Közhasznú Kft., Budapest<a data-review-original-href="/harkany#fekvőbetegek" href="#" tabindex="-1">Harkány</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7815 Harkány, Bajcsy-Zsilinszky utca 1.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">22 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Pécsi Tudományegyetem Klinikai Központ<a data-review-original-href="/boly#fekvőbetegek" href="#" tabindex="-1">Bóly</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7754 Bóly, Hősök tere 9.
+</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">26 km.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő orvosi ügyeletek:" class="table_tib" id="orvosiugyelet" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn23">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő orvosi ügyeletek:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat23" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen orvosi ügyelet nem működik</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">30 km-en belül az alábbi orvosi ügyeleteket találhatja:</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Nappali és éjszakai ügyelet <a data-review-original-href="/siklos#orvosiugyelet" href="#" tabindex="-1">Siklós</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7800 Siklós, Iskola u. 36-40.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">16 km.</div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell">Orvosi nappali ügyelet <a data-review-original-href="/boly#orvosiugyelet" href="#" tabindex="-1">Bóly</a> településen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7754 Bóly, Szabadság u. 1/B.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Távolsága:</div>
+<div class="cell_tib cell--right_tib" role="cell">26 km.</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő templomok:" class="table_tib" id="templomok" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn24">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő templomok:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat24" role="rowgroup">
+<div class="row_tib row--full_tib" id="szent-mihaly-templom-beremend-szabadsag-ter-5-7827-magyarorszag" role="row">
+<div class="cell_tib" role="cell"><strong>Szent Mihály-templom</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Felekezet:</div>
+<div class="cell_tib cell--right_tib" role="cell">Római katolikus</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremend, Szabadság tér 5, 7827 Magyarország</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">(06 72) 474 049</div>
+</div>
+<div class="row_tib row--full_tib" id="megbekeles-kapolna-beremend-tancsics-mihaly-u-7827-magyarorszag" role="row">
+<div class="cell_tib" role="cell"><strong>Megbékélés kápolna</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Felekezet:</div>
+<div class="cell_tib cell--right_tib" role="cell">Római katolikus</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremend, Táncsics Mihály u., 7827 Magyarország</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">06 30 587 1450</div>
+</div>
+<div class="row_tib row--full_tib" id="beremend-kornyeki-reformatus-tarsegyhazkozseg-temploma-beremend-7827-kossuth-lajos-u-104-7824-magyarorszag" role="row">
+<div class="cell_tib" role="cell"><strong>Beremend környéki Református Társegyházközség temploma</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Felekezet:</div>
+<div class="cell_tib cell--right_tib" role="cell">Református</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremend, 7827, Kossuth Lajos u. 104, 7824 Magyarország</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">06 20 965 6688</div>
+</div>
+<div class="row_tib row--full_tib" id="romai-katolikus-plebaniahivatal-beremend-szabadsag-ter-7-7827-magyarorszag" role="row">
+<div class="cell_tib" role="cell"><strong>Római Katolikus Plébániahivatal</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Felekezet:</div>
+<div class="cell_tib cell--right_tib" role="cell">Római katolikus</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremend, Szabadság tér 7, 7827 Magyarország</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">(06 72) 474 049</div>
+</div>
+<div class="row_tib row--full_tib" id="eglise-de-lascension-du-christ-beremend-kossuth-u-57-7827-magyarorszag" role="row">
+<div class="cell_tib" role="cell"><strong>Eglise de lAscension du Christ</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Felekezet:</div>
+<div class="cell_tib cell--right_tib" role="cell">Ismeretlen</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">Beremend, Kossuth u. 57, 7827 Magyarország</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">06 30 659 5790</div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő könyvtárak:" class="table_tib" id="konyvtarak" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn25">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő könyvtárak:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat25" role="rowgroup">
+<div class="row_tib row--full_tib" id="kozmuvelodesi-es-iskolai-konyvtar-beremend-7827-beremend-kossuth-l-u-2" role="row">
+<div class="cell_tib" role="cell"><strong>Közművelődési és Iskolai Könyvtár Beremend</strong></div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">7827 Beremend, Kossuth L. u. 2.</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Email címe:</div>
+<div class="cell_tib cell--right_tib" role="cell">konyvtar@beremend.hu</div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Telefonszáma:</div>
+<div class="cell_tib cell--right_tib" role="cell">
++36 72 474-270   (központi) </div>
+</div>
+<div class="row_tib" role="row">
+<div class="cell_tib cell--left_tib" role="cell">Weboldal:</div>
+<div class="cell_tib cell--right_tib" role="cell"><a data-review-original-href="http://www.beremend.hu" href="#" tabindex="-1" target="_blank">http://www.beremend.hu</a></div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend településen működő falugondnoki szolgálatok:" class="table_tib" id="falugondnokiszolgalat" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn26">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend településen működő falugondnoki szolgálatok:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat26" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>A településen nem működik falugondnoki szolgálat!</strong></div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend nagyközség vallási összetétele:" class="table_tib" id="vallasiosszetetel" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<button class="toggle-btn" id="toggleBtn27">▼ Mutat</button> <h3 style="color: white; font-size: 18px;">Beremend nagyközség vallási összetétele:</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib content" id="tablazat27" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Vallási összetétel a 2022-es népszámlálás alapján</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div style="width: 100%; text-align: justify;"><p>A 2022-es népszámlálás során 2163 fő nyilatkozott a vallási hovatartozásáról. Ez a lakónépesség (2389 fő) 90.54 százaléka. 860 fő vallotta magát Római katolikus valláshoz tartozónak, ez a nyilatkozók 39.76 százaléka, a teljes lakosság 36 százaléka.179 fő vallotta magát Református valláshoz tartozónak, ez a nyilatkozók 8.28 százaléka, a teljes lakosság 7.49 százaléka.8 fő vallotta magát Evangélikus valláshoz tartozónak, ez a nyilatkozók 0.37 százaléka, a teljes lakosság 0.33 százaléka.</p><p>316 fő úgy nyilatkozott, hogy egy valláshoz sem tartozik, ez a nyilatkozók 14.61 százaléka, a teljes lakosság 13.23 százaléka. </p><p>767 fő nem nyilatkozott a vallási hovatartozásáról, ez a nyilatkozók 35.46 százaléka, a teljes lakosság 32.11 százaléka. </p><p>
+	  Nézzük táblázatos formában, részletesen:</p><div style="width: 100%"><table style="width:100%;">
+<tr>
+<th>
+		 Vallás
+		</th>
+<th>
+		 Fő
+		</th>
+<th>
+		 Arány a válaszadók között<br/>(2163 fő)
+		</th>
+<th>
+		 Arány a lakosok között<br/>(2389 fő)
+		</th>
+</tr>
+<tr>
+<td>
+		     Római katolikus
+		    </td>
+<td>
+		     860
+		    </td>
+<td>
+		     39.76 %
+		    </td>
+<td>
+		     36 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Református
+		    </td>
+<td>
+		     179
+		    </td>
+<td>
+		     8.28 %
+		    </td>
+<td>
+		     7.49 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Evangélikus
+		    </td>
+<td>
+		     8
+		    </td>
+<td>
+		     0.37 %
+		    </td>
+<td>
+		     0.33 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     ortodox
+		    </td>
+<td>
+		     6
+		    </td>
+<td>
+		     0.28 %
+		    </td>
+<td>
+		     0.25 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Görög katolikus
+		    </td>
+<td>
+		     3
+		    </td>
+<td>
+		     0.14 %
+		    </td>
+<td>
+		     0.13 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Más keresztény vallású
+		    </td>
+<td>
+		     3
+		    </td>
+<td>
+		     0.14 %
+		    </td>
+<td>
+		     0.13 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Más valláshoz tartozó
+		    </td>
+<td>
+		     3
+		    </td>
+<td>
+		     0.14 %
+		    </td>
+<td>
+		     0.13 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Egy valláshoz sem tartozik
+		    </td>
+<td>
+		     316
+		    </td>
+<td>
+		     14.61 %
+		    </td>
+<td>
+		     13.23 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Nem nyilatkozott
+		    </td>
+<td>
+		     767
+		    </td>
+<td>
+		     35.46 %
+		    </td>
+<td>
+		     32.11 %
+		    </td>
+</tr></table></div></div></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Vallási összetétel a 2011-es népszámlálás alapján</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div style="width: 100%; text-align: justify;"><p>A 2011-es népszámlálás során 2511 fő nyilatkozott a vallási hovatartozásáról. Ez a lakónépesség (2624 fő) 95.69 százaléka. 1173 fő vallotta magát Római katolikus valláshoz tartozónak, ez a nyilatkozók 46.71 százaléka, a teljes lakosság 44.7 százaléka.227 fő vallotta magát Református valláshoz tartozónak, ez a nyilatkozók 9.04 százaléka, a teljes lakosság 8.65 százaléka.16 fő vallotta magát Evangélikus valláshoz tartozónak, ez a nyilatkozók 0.64 százaléka, a teljes lakosság 0.61 százaléka.</p><p>283 fő úgy nyilatkozott, hogy egy valláshoz sem tartozik, ez a nyilatkozók 11.27 százaléka, a teljes lakosság 10.79 százaléka. </p><p>794 fő nem nyilatkozott a vallási hovatartozásáról, ez a nyilatkozók 31.62 százaléka, a teljes lakosság 30.26 százaléka. </p><p>
+	  Nézzük táblázatos formában, részletesen:</p><div style="width: 100%"><table style="width:100%;">
+<tr>
+<th>
+		 Vallás
+		</th>
+<th>
+		 Fő
+		</th>
+<th>
+		 Arány a válaszadók között<br/>(2511 fő)
+		</th>
+<th>
+		 Arány a lakosok között<br/>(2624 fő)
+		</th>
+</tr>
+<tr>
+<td>
+		     Római katolikus
+		    </td>
+<td>
+		     1173
+		    </td>
+<td>
+		     46.71 %
+		    </td>
+<td>
+		     44.7 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Református
+		    </td>
+<td>
+		     227
+		    </td>
+<td>
+		     9.04 %
+		    </td>
+<td>
+		     8.65 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Evangélikus
+		    </td>
+<td>
+		     16
+		    </td>
+<td>
+		     0.64 %
+		    </td>
+<td>
+		     0.61 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Görög katolikus
+		    </td>
+<td>
+		     6
+		    </td>
+<td>
+		     0.24 %
+		    </td>
+<td>
+		     0.23 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Más keresztény vallású
+		    </td>
+<td>
+		     6
+		    </td>
+<td>
+		     0.24 %
+		    </td>
+<td>
+		     0.23 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     ortodox
+		    </td>
+<td>
+		     5
+		    </td>
+<td>
+		     0.2 %
+		    </td>
+<td>
+		     0.19 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Egy valláshoz sem tartozik
+		    </td>
+<td>
+		     283
+		    </td>
+<td>
+		     11.27 %
+		    </td>
+<td>
+		     10.79 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Nem nyilatkozott
+		    </td>
+<td>
+		     794
+		    </td>
+<td>
+		     31.62 %
+		    </td>
+<td>
+		     30.26 %
+		    </td>
+</tr></table></div></div></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><strong>Vallási összetétel a 2001-es népszámlálás alapján</strong></div>
+</div>
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div style="width: 100%; text-align: justify;"><p>A 2001-es népszámlálás során 2833 fő nyilatkozott a vallási hovatartozásáról. Ez a lakónépesség (2820 fő) 100.46 százaléka. 1822 fő vallotta magát Római katolikus valláshoz tartozónak, ez a nyilatkozók 64.31 százaléka, a teljes lakosság 64.61 százaléka.329 fő vallotta magát Református valláshoz tartozónak, ez a nyilatkozók 11.61 százaléka, a teljes lakosság 11.67 százaléka.22 fő vallotta magát Más keresztény vallású valláshoz tartozónak, ez a nyilatkozók 0.78 százaléka, a teljes lakosság 0.78 százaléka.</p><p>280 fő úgy nyilatkozott, hogy egy valláshoz sem tartozik, ez a nyilatkozók 9.88 százaléka, a teljes lakosság 9.93 százaléka. </p><p>338 fő nem nyilatkozott a vallási hovatartozásáról, ez a nyilatkozók 11.93 százaléka, a teljes lakosság 11.99 százaléka. </p><p>
+	  Nézzük táblázatos formában, részletesen:</p><div style="width: 100%"><table style="width:100%;">
+<tr>
+<th>
+		 Vallás
+		</th>
+<th>
+		 Fő
+		</th>
+<th>
+		 Arány a válaszadók között<br/>(2833 fő)
+		</th>
+<th>
+		 Arány a lakosok között<br/>(2820 fő)
+		</th>
+</tr>
+<tr>
+<td>
+		     Római katolikus
+		    </td>
+<td>
+		     1822
+		    </td>
+<td>
+		     64.31 %
+		    </td>
+<td>
+		     64.61 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Református
+		    </td>
+<td>
+		     329
+		    </td>
+<td>
+		     11.61 %
+		    </td>
+<td>
+		     11.67 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Más keresztény vallású
+		    </td>
+<td>
+		     22
+		    </td>
+<td>
+		     0.78 %
+		    </td>
+<td>
+		     0.78 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Evangélikus
+		    </td>
+<td>
+		     21
+		    </td>
+<td>
+		     0.74 %
+		    </td>
+<td>
+		     0.74 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Görög katolikus
+		    </td>
+<td>
+		     18
+		    </td>
+<td>
+		     0.64 %
+		    </td>
+<td>
+		     0.64 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     ortodox
+		    </td>
+<td>
+		     3
+		    </td>
+<td>
+		     0.11 %
+		    </td>
+<td>
+		     0.11 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Egy valláshoz sem tartozik
+		    </td>
+<td>
+		     280
+		    </td>
+<td>
+		     9.88 %
+		    </td>
+<td>
+		     9.93 %
+		    </td>
+</tr>
+<tr>
+<td>
+		     Nem nyilatkozott
+		    </td>
+<td>
+		     338
+		    </td>
+<td>
+		     11.93 %
+		    </td>
+<td>
+		     11.99 %
+		    </td>
+</tr></table></div></div></div>
+</div>
+</div>
+</div>
+<div aria-label="Beremend - gyakran ismételt kérdések" class="table_tib" role="table">
+<div class="table__head_tib" role="rowgroup">
+<div class="row_tib row--head_tib" role="row">
+<div class="cell_tib" role="columnheader">
+<h3 style="color: white; font-size: 18px;">Beremend - gyakran ismételt kérdések</h3>
+</div>
+</div>
+</div>
+<div class="table__body_tib" id="tablazat28" role="rowgroup">
+<div class="row_tib row--full_tib" role="row">
+<div class="cell_tib" role="cell"><div class="faq-list">
+<details class="faq-item">
+<summary class="faq-question">
+          Mi Beremend önkormányzatának címe?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend önkormányzatának címe: 7827 Beremend, Szabadság tér 1..</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Mi Beremend önkormányzatának telefonszáma?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend önkormányzatának telefonszáma: +36 72 574920.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Ki Beremend polgármestere?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend polgármestere Theisz Ferenc.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Mik Beremend önkormányzati hivatalának elérhetőségei?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend település közös önkormányzati hivatalt tart fenn más településekkel, a hivatal központja a településen található. A jegyző neve: Dr. Vajda János Tamás. A hivatal címe: 7827 Beremend Szabadság tér 1., telefonszáma: +36 72 574921, +36 20 2670877, emailcíme: jegyzo@beremend.hu.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Hol található Beremend?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend Baranya vármegyében, a(z) Siklósi járásban található.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Mi Beremend postai irányítószáma?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend postai irányítószáma: 7827.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Mi Beremend vezetékes körzetszáma?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend vezetékes körzetszáma: 72.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Mennyi Beremend lakossága?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend lakossága: 2311 fő, a KSH 2025. január 1.-i adatok szerint.</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+          Mi Beremend nemzetiségi összetétele?
+          <span aria-hidden="true" class="faq-icon"></span>
+</summary>
+<div class="faq-answer">
+<p>Beremend leggyakoribb nemzetiségei a 2022-es népszámlálás alapján: magyar 82.13%, német 2.05%, roma 1.84%. A településen jelenleg roma, német nemzetiségi önkormányzat(ok) működnek.</p>
+</div>
+</details></div></div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<div class="col-lg-4 sidebar">
+<div class="widgets-container">
+<div class="search-widget widget-item">
+<h3 class="widget-title">Időjárás</h3><div style="background: lightblue; color: steelblue; font-weight: bold;; padding: 10px;"><center><span style="font-size: 20px;">Aktuális időjárás</span><br/><span style="font-size: 20px;">Többnyire napos</span><br/><image alt="Többnyire napos"/><br/><span style="font-size: 30px;">23.6  °C</span></center><div style="font-size: 14px; float: left; min-width: 49%;">Min: 20.5  °C<br/>Max: 27.2  °C</div><div style="font-size: 14px; float: left; min-width: 49%;">Napkelte: 05:12<br/>Napnyugta: 20:32</div><center><a alt="Beremend időjárás előrejelzés" data-review-original-href="https://www.netterkep.hu/telepulesi-elorejelzes/beremend" href="#" tabindex="-1">Beremend időjárás előrejelzés</a></center></div></div>
+<div class="search-widget widget-item">
+<h3 class="widget-title">Keresés</h3>
+<div data-review-disabled-form="true">
+<input size="30" type="text"/>
+<div id="livesearch"></div>
+</div></div>
+<div class="search-widget widget-item">
+<h3 class="widget-title">Hirdetés</h3><center>
+
+
+<ins class="adsbygoogle" data-ad-client="ca-pub-3808341201525608" data-ad-format="auto" data-ad-slot="6704347362" data-full-width-responsive="true" style="display:block"></ins>
+</center></div>
+<div class="search-widget widget-item">
+<h3 class="widget-title">Hirdetés</h3><center>
+<a data-review-original-href="https://ilp.bogrevar.hu/cbr_design_49577" href="#" tabindex="-1" target="_blank"><img alt="Póló - A Tiszára szeveztem és nem bántam meg szöveggel." style="width: 100%;"/></a>
+</center></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer dark-background" id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row gy-4">
+<div class="col-lg-4 col-md-6 footer-about">
+<a class="logo d-flex align-items-center" data-review-original-href="index.html" href="#" tabindex="-1">
+<span class="sitename">NetTérkép</span>
+</a>
+<div class="footer-contact pt-3">
+<p>Az internetes adatbázis</p>
+<p>Minden, amit a településekről tudni érdemes.</p>
+<p class="mt-3"><strong>Telefon:</strong> <span>06-70-459-2024</span></p>
+<p><strong>Email:</strong> <span>ujhazi@koalahu.hu</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="copyright text-center">
+<div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+<div class="d-flex flex-column align-items-center align-items-lg-start">
+<div>
+            � Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
+          </div>
+<div class="credits">
+
+
+
+
+            Designed by <a data-review-original-href="https://bootstrapmade.com/" href="#" tabindex="-1">BootstrapMade</a> Distributed by <a data-review-original-href="https://themewagon.com" href="#" tabindex="-1">ThemeWagon</a>
+
+
+<noscript><div class="statcounter"><a data-review-original-href="https://www.statcounter.hu/" href="#" tabindex="-1" target="_blank" title="látogató
+számláló"><img alt="látogató számláló" class="statcounter" referrerpolicy="no-referrer-when-downgrade"/></a></div></noscript>
+
+</div>
+</div>
+<div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+<a data-review-original-href="" href="#" tabindex="-1"><i class="bi bi-twitter-x"></i></a>
+<a data-review-original-href="" href="#" tabindex="-1"><i class="bi bi-facebook"></i></a>
+<a data-review-original-href="" href="#" tabindex="-1"><i class="bi bi-instagram"></i></a>
+<a data-review-original-href="" href="#" tabindex="-1"><i class="bi bi-linkedin"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+<a class="scroll-top d-flex align-items-center justify-content-center" data-review-original-href="#" href="#" id="scroll-top" tabindex="-1"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

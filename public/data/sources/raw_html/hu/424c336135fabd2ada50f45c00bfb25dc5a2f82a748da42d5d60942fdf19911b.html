@@ -1,0 +1,387 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Molnár Enikő – Háziorvosi rendelő Tatabánya</title>
+<meta content="Dr. Molnár Enikő – 21. sz. felnőtt háziorvosi körzet (Tatabánya). Rendelési idők, elérhetőség, receptkérés, körzethez tartozó utcák." name="description"/>
+<style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --stroke: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --accent: #5dd6ff;
+      --accent2: #8cffc7;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1060px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(93,214,255,.20), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(140,255,199,.14), transparent 55%),
+        radial-gradient(800px 500px at 40% 110%, rgba(93,214,255,.12), transparent 60%),
+        linear-gradient(180deg, #070b14, #0b1220 35%, #070b14);
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.9}
+
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(12px);
+      background: rgba(7,11,20,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; min-width: 220px;}
+    .logo{
+      width:34px; height:34px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 24px rgba(93,214,255,.22);
+    }
+    .brand b{display:block; font-size: 14px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+
+    nav{display:flex; gap: 14px; flex-wrap:wrap; justify-content:flex-end;}
+    nav a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+
+    .wrap{max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px;}
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 10px;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr}
+      nav{display:none}
+      .brand{min-width:auto}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .card.soft{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+    }
+
+    h1{margin: 0 0 8px 0; font-size: clamp(26px, 3vw, 40px); letter-spacing: -.4px; line-height: 1.12;}
+    .subtitle{margin: 0 0 16px 0; color: var(--muted); font-size: 15px; line-height: 1.5;}
+
+    .pillrow{display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px;}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .btn.primary{
+      border-color: rgba(93,214,255,.45);
+      background: linear-gradient(135deg, rgba(93,214,255,.28), rgba(140,255,199,.14));
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns: 1fr} }
+
+    .section-title{display:flex; align-items:center; justify-content:space-between; gap: 10px; margin: 0 0 10px 0;}
+    .section-title h2{margin:0; font-size: 18px; letter-spacing: -.2px;}
+    .hint{color: var(--muted); font-size: 13px}
+
+    table{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    th,td{
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align:left;
+      font-size: 14px;
+    }
+    th{color: var(--muted); font-weight: 700; background: rgba(255,255,255,.04);}
+    tr:last-child td{border-bottom:none}
+
+    ul{margin: 10px 0 0 18px; color: var(--muted)}
+    li{margin: 6px 0; line-height: 1.4}
+
+    .alert{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(93,214,255,.28);
+      background: rgba(93,214,255,.10);
+      padding: 12px 12px;
+      color: rgba(255,255,255,.86);
+      font-size: 14px;
+      line-height: 1.45;
+      margin-top: 14px;
+    }
+
+    .map{
+      width: 100%;
+      height: 360px;
+      border: 0;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+    }
+
+    /* Nyitva/Zárva */
+    .statusbar{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .statuspill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: rgba(255,255,255,.35);
+      box-shadow: 0 0 0 6px rgba(255,255,255,.06);
+      flex: 0 0 auto;
+    }
+    .dot.open{
+      background: #33e07a;
+      box-shadow: 0 0 0 6px rgba(51,224,122,.12);
+    }
+    .dot.closed{
+      background: #ff5f6d;
+      box-shadow: 0 0 0 6px rgba(255,95,109,.12);
+    }
+    .statuspill strong{color: var(--text)}
+
+    footer{
+      max-width: var(--max);
+      margin: 28px auto 0;
+      padding: 0 18px 30px;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .smallprint{max-width: 760px; line-height:1.45}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  </style>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+<div class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div aria-hidden="true" class="logo"></div>
+<div>
+<b>Dr. Molnár Enikő</b>
+<span>Családorvos – Tatabánya</span>
+</div>
+</div>
+<nav aria-label="Fő navigáció">
+<a data-review-original-href="#elerhetoseg" href="#" tabindex="-1">Elérhetőség</a>
+<a data-review-original-href="#rendeles" href="#" tabindex="-1">Háziorvosi</a>
+
+<a data-review-original-href="#korzet" href="#" tabindex="-1">Körzet</a>
+<a data-review-original-href="#terkep" href="#" tabindex="-1">Térkép</a>
+</nav>
+</div>
+</div>
+<main class="wrap">
+<section class="hero">
+<div class="card">
+<h1>Háziorvosi rendelő</h1>
+<p class="subtitle">
+          Elérhetőségek, rendelési idők, receptkérés és körzeti információk egy helyen.
+        </p>
+<div class="pillrow">
+<div class="pill">☎️ Ügyelet: <b>1830</b></div>
+<div class="pill">🆘 Életveszély: <b>112</b></div>
+<div class="pill">📍 2800 Tatabánya, Komáromi út 45.</div>
+</div>
+
+<div aria-label="Aktuális rendelési státusz" class="statusbar">
+<div class="statuspill">
+<span aria-hidden="true" class="dot" id="dotGp"></span>
+<span><strong>Háziorvosi rendelés:</strong> <span id="statusGp">–</span></span>
+</div>
+<div class="statuspill">
+<span aria-hidden="true" class="dot" id="dotOcc"></span>
+
+</div>
+</div>
+<div class="statusbar">
+<div class="statuspill">⏱️ <span id="nextGp">Következő háziorvosi rendelés: –</span></div>
+
+</div>
+<div class="actions">
+<a class="btn primary" data-review-original-href="tel:+3634300560" href="#" tabindex="-1">📞 Hívás</a>
+<a class="btn" data-review-original-href="mailto:gyogyszer@bubobt.hu?subject=Receptk%C3%A9r%C3%A9s&amp;body=K%C3%A9rem%20recept%20fel%C3%ADr%C3%A1s%C3%A1t.%0A%0AN%C3%A9v%3A%20%0ASz%C3%BClet%C3%A9si%20d%C3%A1tum%3A%20%0ATAJ%3A%20%0AGy%C3%B3gyszer%20neve%3A%20" href="#" tabindex="-1">✉️ Receptkérés e-mail</a>
+
+<a class="btn primary" data-review-original-href="https://www.mentok.hu/ugyelet/" href="#" rel="noopener" tabindex="-1" target="_blank">🚑 Ügyeleti információ</a>
+</div>
+<div class="alert">
+          Fertőző betegség gyanúja esetén kérjük, <b>előzetesen telefonon egyeztessen</b>.
+        </div>
+</div>
+<div class="card soft" id="elerhetoseg">
+<div class="section-title">
+<h2>Elérhetőség</h2>
+<div class="hint">Gyors kapcsolatok</div>
+</div>
+<p style="margin:10px 0 14px; color: var(--muted); line-height:1.55;">
+<b style="color:var(--text)">Dr. Molnár Enikő</b><br/>
+          21. sz. felnőtt háziorvosi körzet<br/>
+          2800 Tatabánya, Komáromi út 45.
+        </p>
+<p style="margin:0 0 10px; color: var(--muted); line-height:1.55;">
+<b style="color:var(--text)">Telefon:</b><br/>
+<a class="mono" data-review-original-href="tel:+3634300560" href="#" tabindex="-1">+36 34 300-560</a>
+</p>
+<p style="margin:0 0 10px; color: var(--muted); line-height:1.55;">
+<b style="color:var(--text)">E-mail (receptkérés):</b><br/>
+<a class="mono" data-review-original-href="mailto:gyogyszer@bubobt.hu?subject=Receptk%C3%A9r%C3%A9s&amp;body=K%C3%A9rem%20recept%20fel%C3%ADr%C3%A1s%C3%A1t.%0A%0AN%C3%A9v%3A%20%0ASz%C3%BClet%C3%A9si%20d%C3%A1tum%3A%20%0ATAJ%3A%20%0AGy%C3%B3gyszer%20neve%3A%20" href="#" tabindex="-1">gyogyszer@bubobt.hu</a>
+</p>
+
+<div class="alert" style="margin-top:14px;">
+          Ismétlődő gyógyszerek felírása kérhető e-mailben vagy a rendelőben leadott lista alapján. A listának és az e-mailnak tartalmaznia kell a páciens nevét, születési idejét és TAJ számát! A receptek az <b>EESZT</b> rendszerbe kerülnek.
+        </div>
+</div>
+</section>
+<section class="grid" style="margin-top:18px;">
+<div class="card" id="rendeles">
+<div class="section-title">
+<h2>Háziorvosi rendelési idő</h2>
+<div class="hint">Helyi idő szerint</div>
+</div>
+<table aria-label="Háziorvosi rendelési idők">
+<thead>
+<tr><th>Nap</th><th>Idő</th></tr>
+</thead>
+<tbody>
+<tr><td>Hétfő</td><td>11:00 – 12:30 gondozási idő, rendelés <u> NINCS</u>. <br/>  Rendelés: 12:30 - 15:30</td></tr>
+<tr><td>Kedd</td><td>Rendelés: 08:00 – 11:30.<br/>11:30 – 12:30 gondozási idő, rendelés <u> NINCS</u>.<br/> </td></tr>
+<tr><td>Szerda</td><td>12:30 – 15:30</td></tr>
+<tr><td>Csütörtök</td><td>08:00 – 12:00</td></tr>
+<tr><td>Péntek</td><td>12:00 – 15:00</td></tr>
+</tbody>
+</table>
+<p style="margin:12px 0 0; color: var(--muted); font-size: 13px; line-height:1.5;">
+          Tanácsadás és vizsgálat lehetőség szerint előzetes egyeztetéssel történik.
+        </p>
+</div>
+
+</section>
+<section class="grid" style="margin-top:18px;">
+<div class="card" id="korzet">
+<div class="section-title">
+<h2>A 21. sz. felnőtt háziorvosi körzethez tartozó utcák</h2>
+<div class="hint">Tájékoztató jellegű</div>
+</div>
+<ul>
+<li>Előd vezér utca 13.</li>
+<li>Esztergomi utca 2–8 páros, 9-től végig</li>
+<li>Fellner Jakab tér</li>
+<li>Győri út 1–29.</li>
+<li>Komáromi utca 9–39 páratlan</li>
+<li>Komáromi utca 16–32 páros</li>
+<li>Kond vezér utca</li>
+<li>Nagy Imre tér</li>
+<li>Piac tér</li>
+</ul>
+<div class="alert" style="margin-top:14px;">
+          Ha nem biztos a körzetbe tartozásban, kérjük egyeztessen telefonon.
+        </div>
+</div>
+<div class="card" id="terkep">
+<div class="section-title">
+<h2>Google Térkép</h2>
+<div class="hint">Komáromi út 45.</div>
+</div>
+
+<div class="actions" style="margin-top:12px;">
+<a class="btn primary" data-review-original-href="https://www.google.com/maps/search/?api=1&amp;query=2800%20Tatab%C3%A1nya%2C%20Kom%C3%A1romi%20%C3%BAt%2045" href="#" rel="noopener" tabindex="-1" target="_blank">
+            🧭 Megnyitás a Google Térképen
+          </a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="smallprint">
+      © Dr. Molnár Enikő – Családorvos.<br/>
+<span style="color:rgba(255,255,255,.45)">Ügyelet: 1830 • Életveszély: 112</span>
+</div>
+<div style="color:rgba(255,255,255,.45)">
+<span class="mono">gyogyszer@bubobt.hu </span>
+</div>
+</footer>
+
+</body>
+</html>

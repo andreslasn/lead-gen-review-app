@@ -122,6 +122,14 @@ input, textarea {
   justify-content: flex-end;
   gap: 6px;
 }
+.queue-summary {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 4px;
+  color: var(--black-60);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
 .lane-tabs button {
   display: inline-flex;
   align-items: center;
@@ -157,16 +165,16 @@ input, textarea {
 .review-layout {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(340px, 36%) minmax(0, 64%);
+  grid-template-columns: minmax(430px, 42%) minmax(0, 58%);
   gap: 10px;
 }
 .decision-pane, .evidence-pane, .empty-state {
   min-height: 0;
   overflow: hidden;
   border: 1px solid var(--concrete-100);
-  border-radius: 1.25rem;
+  border-radius: 0.75rem;
   background: rgb(255 255 255 / 0.96);
-  box-shadow: var(--shadow-elevated);
+  box-shadow: var(--shadow-card);
 }
 .decision-pane {
   position: relative;
@@ -208,10 +216,11 @@ input, textarea {
 }
 
 .candidate-card, .excerpt-card, .reason-panel, .edit-panel {
-  border: 1px solid var(--concrete-100);
-  border-radius: 1rem;
-  background: white;
-  padding: 10px;
+  border: 0;
+  border-top: 1px solid var(--concrete-100);
+  border-radius: 0;
+  background: transparent;
+  padding: 10px 0 0;
 }
 .candidate-header {
   display: flex;
@@ -227,8 +236,8 @@ input, textarea {
 .candidate-table-wrap {
   max-height: 12rem;
   overflow: auto;
-  border: 1px solid var(--concrete-100);
-  border-radius: 0.8rem;
+  border-top: 1px solid var(--concrete-100);
+  border-bottom: 1px solid var(--concrete-100);
 }
 .candidate-table {
   width: 100%;
@@ -264,9 +273,36 @@ input, textarea {
 }
 .candidate-table .candidate-email {
   display: inline-block;
-  max-width: 15rem;
-  font: 750 0.86rem/1.2 var(--font-body);
+  max-width: 100%;
+  font: 750 0.8rem/1.2 var(--font-body);
   letter-spacing: -0.02em;
+}
+.candidate-table tr.decided {
+  color: var(--black-60);
+}
+.candidate-decision-label {
+  color: var(--success) !important;
+  font-weight: 800;
+}
+.candidate-actions {
+  min-width: 4.7rem;
+}
+.candidate-actions button {
+  display: block;
+  width: 100%;
+  padding: 0.32rem 0.48rem;
+  border-radius: 0.4rem;
+  font-size: 0.7rem;
+}
+.candidate-confirm {
+  background: var(--black-100);
+  color: white;
+}
+.candidate-reject {
+  margin-top: 4px;
+  background: white;
+  color: var(--error);
+  border: 1px solid #efaaa2;
 }
 .candidate-radio {
   width: 1.35rem;
@@ -295,14 +331,15 @@ input, textarea {
 }
 .triage-summary {
   margin-top: 8px;
-  padding: 8px;
-  border: 1px solid var(--concrete-100);
-  border-radius: 0.75rem;
-  background: var(--lake-20);
+  padding: 7px 0 7px 10px;
+  border: 0;
+  border-left: 3px solid var(--blue-40);
+  border-radius: 0;
+  background: transparent;
   font-size: 0.78rem;
 }
-.triage-summary.triage-promote { border-color: #8acbbc; background: #effaf7; }
-.triage-summary.triage-suppress { border-color: #efaaa2; background: #fff4f2; }
+.triage-summary.triage-promote { border-color: #22967f; }
+.triage-summary.triage-suppress { border-color: #dc3545; }
 .triage-heading {
   display: flex;
   align-items: center;
@@ -335,6 +372,7 @@ mark {
 .reason-panel {
   background: var(--blue-10);
   border-color: var(--blue-40);
+  padding: 10px;
 }
 .reason-grid {
   display: grid;
@@ -355,6 +393,7 @@ mark {
 .edit-panel {
   display: grid;
   gap: 10px;
+  padding: 10px;
 }
 .edit-panel label {
   display: grid;
@@ -419,14 +458,14 @@ mark {
 
 .evidence-pane {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: 48px minmax(0, 1fr);
 }
 .evidence-toolbar {
   display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 12px 14px 8px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--concrete-100);
 }
 
 .evidence-links {
@@ -450,23 +489,17 @@ mark {
 
 .archive-pane {
   min-height: 0;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 8px;
-  padding: 10px 14px 14px;
-}
-
-.archive-note {
-  margin: 0;
-  color: var(--black-60);
-  font-size: 0.78rem;
+  display: block;
+  padding: 0;
 }
 
 .archive-frame {
+  display: block;
   width: 100%;
-  min-height: calc(100vh - 190px);
-  border: 1px solid var(--concrete-100);
-  border-radius: 1rem;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
   background: white;
 }
 .evidence-toolbar a, .primary-link {
@@ -484,23 +517,6 @@ mark {
 .evidence-toolbar a:hover, .primary-link:hover {
   background: var(--primary);
   text-decoration: none;
-}
-.evidence-tabs {
-  display: flex;
-  gap: 6px;
-  padding: 0 14px 8px;
-  border-bottom: 1px solid var(--concrete-100);
-}
-.evidence-tabs button {
-  padding: 0.42rem 0.7rem;
-  background: white;
-  color: var(--black-60);
-  border: 1px solid var(--concrete-100);
-}
-.evidence-tabs button.active {
-  background: var(--blue-10);
-  color: var(--primary);
-  border-color: var(--blue-40);
 }
 .snapshot-pane, .sources-pane, .live-pane {
   min-height: 0;
