@@ -1,18 +1,18 @@
 {
   "format": "lead-gen-review-package",
   "schema_version": 1,
-  "dataset_id": "hu-review-20260716T122510Z",
-  "dataset_version": "2026-07-16T12:25:10.422903+00:00",
-  "base_data_hash": "sha256:db30b1da3cf1f2117e09b81f89b7ad00c7f935c60a385b845c2cdca9e86c2b4b",
+  "dataset_id": "hu-review-20260716T131550Z",
+  "dataset_version": "2026-07-16T13:15:50.036710+00:00",
+  "base_data_hash": "sha256:81923785baf5261bf00686ade39a072699f3e1f8cb5fdbb983d0824840b091bc",
   "country": "HU",
   "scope": "actionable_email_clinics",
-  "generated_at": "2026-07-16T12:25:10.422903+00:00",
-  "source_commit": "cf0aee353359",
+  "generated_at": "2026-07-16T13:15:50.036710+00:00",
+  "source_commit": "0b048a3c8017",
   "counts": {
-    "clinics": 2132,
-    "candidate_emails": 12982,
+    "clinics": 2131,
+    "candidate_emails": 12973,
     "states": {
-      "needs_review": 2132
+      "needs_review": 2131
     }
   },
   "files": {
@@ -22,6 +22,6 @@
     "evidence_artifacts": "sources/**"
   },
   "evidence_artifacts_copied": 1,
-  "stale_clinic_payloads_pruned": 0,
-  "stale_evidence_artifacts_pruned": 0
+  "stale_clinic_payloads_pruned": 1,
+  "stale_evidence_artifacts_pruned": 1
 }
