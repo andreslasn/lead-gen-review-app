@@ -203,12 +203,6 @@ function candidateRoleCode(candidate) {
   return ROLE_OPTIONS.find((option) => option.label === label)?.value || "unclear";
 }
 
-function candidateSourceLabel(candidate, item) {
-  const source = normalizeHost(candidate?.source_url || candidate?.evidence_links?.[0]?.source_url || item?.website || "");
-  if (item?.source_coverage_status === "verified_official") return source ? `Official · ${source}` : "Official";
-  return source || "Source";
-}
-
 function candidateEvidenceCount(candidate) {
   const count = candidate?.evidence_links?.length || 0;
   return count ? `${count} evidence` : "Evidence";
@@ -936,7 +930,6 @@ const App = {
       showInvalidCandidates,
       safeText,
       candidateRoleLabel,
-      candidateSourceLabel,
       candidateEvidenceCount,
       candidateReasonWithoutTriageDuplication,
       displayedCandidateRole,
@@ -995,24 +988,23 @@ const App = {
             </p>
             <div v-if="candidates.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Source</th><th>Decision</th></tr></thead>
+                <thead><tr><th></th><th>Email</th><th>Role guess</th><th>Decision</th></tr></thead>
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.type === 'candidate' ? (row.candidate.id || row.index) : row.group" :class="row.type === 'candidate' ? {selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)} : 'candidate-group-toggle'" @mouseenter="row.type === 'candidate' && previewCandidate(row.index)" @click="row.type === 'candidate' && selectCandidate(row.index)">
                     <template v-if="row.type === 'candidate'">
                       <td class="candidate-radio">{{ row.index === selectedCandidateIndex ? '●' : '○' }}</td>
-                      <td><span class="candidate-email">{{ row.candidate.value }}</span><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
+                      <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
                       <td>
                         <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
                           <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
                         </select>
                       </td>
-                      <td><span>{{ candidateSourceLabel(row.candidate, currentItem) }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small></td>
                       <td class="candidate-actions">
                         <button class="candidate-confirm" @click.stop="selectCandidate(row.index); saveDecision('confirmed')">Confirm</button>
                         <button class="candidate-reject" @click.stop="rejectCandidate(row.index)">Reject</button>
                       </td>
                     </template>
-                    <td v-else colspan="5">
+                    <td v-else colspan="4">
                       <button v-if="row.group === 'other'" @click.stop="showOtherCandidates = !showOtherCandidates">{{ showOtherCandidates ? 'Hide' : 'Show' }} {{ row.count }} other contact{{ row.count === 1 ? '' : 's' }} from this shared source</button>
                       <button v-else @click.stop="showInvalidCandidates = !showInvalidCandidates">{{ showInvalidCandidates ? 'Hide' : 'Show' }} {{ row.count }} invalid extraction artifact{{ row.count === 1 ? '' : 's' }}</button>
                     </td>
@@ -1028,13 +1020,7 @@ const App = {
                 <strong>{{ selectedCandidate.triage.ownership_class }} · {{ Math.round(Number(selectedCandidate.triage.confidence || 0) * 100) }}%</strong>
               </div>
               <p>{{ selectedCandidate.triage.reason }}</p>
-              <blockquote v-if="selectedCandidate.triage.exact_quote">{{ selectedCandidate.triage.exact_quote }}</blockquote>
             </div>
-          </section>
-
-          <section class="excerpt-card">
-            <p class="label">Evidence excerpt</p>
-            <div class="excerpt" v-html="evidenceBody"></div>
           </section>
 
           <section v-if="pendingReject" class="reason-panel">
