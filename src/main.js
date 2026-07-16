@@ -6,19 +6,10 @@ const DB_VERSION = 1;
 const REVIEW_FORMAT = "lead-gen-clinic-review";
 const SCHEMA_VERSION = 1;
 const STATES = ["needs_review", "confirmed", "no_email", "not_processed", "excluded"];
-const DECISION_REASON_CODES = [
-  { key: "w", code: "wrong_clinic", label: "Wrong clinic" },
-  { key: "t", code: "third_party", label: "Third party" },
-  { key: "o", code: "outdated", label: "Outdated" },
-  { key: "d", code: "duplicate", label: "Duplicate" },
-  { key: "i", code: "invalid", label: "Invalid" },
-  { key: "x", code: "other", label: "Other" },
-];
 const ROLE_OPTIONS = [
   { value: "clinic_contact", label: "Generic contact" },
   { value: "doctor_staff", label: "Doctor/staff" },
-  { value: "not_clinic_owned", label: "Not clinic-owned" },
-  { value: "unclear", label: "Unclear" },
+  { value: "not_relevant", label: "Not relevant" },
 ];
 const PREFETCH_COUNT = 3;
 
@@ -248,24 +239,24 @@ function candidateRoleLabel(candidate) {
   if (classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
   if (classification.includes("clinic") || contactRole.includes("clinic")) return "Generic contact";
   if (classification.includes("generic")) return "Generic contact";
-  if (classification.includes("third") || classification.includes("directory") || classification.includes("webmaster")) return "Not clinic-owned";
-  return "Unclear";
+  if (classification.includes("third") || classification.includes("directory") || classification.includes("webmaster")) return "Not relevant";
+  return "Not relevant";
 }
 
 function candidateRoleCode(candidate) {
   const ownershipClass = candidate?.triage?.ownership_class;
   if (["target_person", "same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "doctor_staff";
   if (ownershipClass === "target_practice") return "clinic_contact";
-  if (["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_clinic_owned";
+  if (["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_relevant";
   const label = candidateRoleLabel(candidate);
-  return ROLE_OPTIONS.find((option) => option.label === label)?.value || "unclear";
+  return ROLE_OPTIONS.find((option) => option.label === label)?.value || "not_relevant";
 }
 
 function normalizedRoleCode(role) {
   if (role === "covering_provider") return "doctor_staff";
   if (role === "prescription_refill") return "clinic_contact";
-  if (["other_provider", "source_operator"].includes(role)) return "not_clinic_owned";
-  return ROLE_OPTIONS.some((option) => option.value === role) ? role : "unclear";
+  if (["not_clinic_owned", "unclear", "other_provider", "source_operator"].includes(role)) return "not_relevant";
+  return ROLE_OPTIONS.some((option) => option.value === role) ? role : "not_relevant";
 }
 
 function candidateEvidenceCount(candidate) {
@@ -356,7 +347,6 @@ const App = {
     const archiveFrame = ref(null);
     const saveStatus = ref("Loading");
     const error = ref("");
-    const pendingReject = ref(false);
     const editMode = ref(false);
     const editValue = ref("");
     const note = ref("");
@@ -609,6 +599,10 @@ const App = {
             position: relative !important;
             z-index: 2147483647 !important;
           }
+          [data-review-proof-text] {
+            display: block !important;
+            white-space: pre-wrap !important;
+          }
         `;
         (document.head || document.documentElement).append(style);
       }
@@ -653,8 +647,10 @@ const App = {
           }
         }
         const normalizedText = String(document.body.innerText || document.body.textContent || "")
-          .replace(/\s+/g, " ")
-          .trim();
+          .split(/\r?\n/)
+          .map((line) => line.replace(/[\t ]+/g, " ").trim())
+          .filter(Boolean)
+          .join("\n");
         const proofText = document.createElement("div");
         proofText.setAttribute("data-review-proof-text", "true");
         proofText.textContent = normalizedText;
@@ -790,7 +786,6 @@ const App = {
       }
       currentIndex.value = clamp(index, 0, filteredQueue.value.length - 1);
       const item = filteredQueue.value[currentIndex.value];
-      pendingReject.value = false;
       editMode.value = false;
       reassignMode.value = false;
       reassignSearch.value = "";
@@ -824,7 +819,6 @@ const App = {
     function selectCandidate(index) {
       selectedCandidateIndex.value = clamp(index, 0, Math.max(candidates.value.length - 1, 0));
       editValue.value = selectedCandidate.value?.value || "";
-      pendingReject.value = false;
       evidenceTab.value = selectedEvidencePresentation.value.kind;
       nextTick(() => {
         scrollEvidenceToHighlight();
@@ -833,20 +827,22 @@ const App = {
     }
 
     function previewCandidate(index) {
-      if (pendingReject.value) return;
       if (index === selectedCandidateIndex.value) return;
       selectCandidate(index);
     }
 
-    function rejectCandidate(index) {
+    async function confirmCandidate(index = selectedCandidateIndex.value) {
       selectCandidate(index);
-      pendingReject.value = true;
-      reassignMode.value = false;
+      const candidate = candidates.value[index];
+      if (displayedCandidateRole(candidate) === "not_relevant") {
+        await saveDecision("rejected", { reasonCode: "not_relevant" });
+        return;
+      }
+      await saveDecision("confirmed");
     }
 
     function startReassign(index) {
       selectCandidate(index);
-      pendingReject.value = false;
       reassignMode.value = true;
       reassignSearch.value = "";
       nextTick(() => document.querySelector(".reassign-search")?.focus());
@@ -933,7 +929,6 @@ const App = {
             ? "no_email"
             : "confirmed";
       await persistDecisionAndState(decision, status, decision?.is_primary ? decision.id : null, reasonCode, previousState);
-      pendingReject.value = false;
       editMode.value = false;
       reassignMode.value = false;
       reassignSearch.value = "";
@@ -1008,10 +1003,6 @@ const App = {
       const index = filteredQueue.value.findIndex((item) => item.id === lastAction.value.state_clinic_id);
       lastAction.value = null;
       if (index >= 0) await setIndex(index);
-    }
-
-    function rejectWithReason(reason) {
-      saveDecision("rejected", { reasonCode: reason.code });
     }
 
     async function markNoPublicEmail() {
@@ -1138,18 +1129,8 @@ const App = {
     function onKey(event) {
       if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
       const key = event.key.toLowerCase();
-      if (pendingReject.value) {
-        const reason = DECISION_REASON_CODES.find((item) => item.key === key);
-        if (reason) {
-          event.preventDefault();
-          rejectWithReason(reason);
-        }
-      if (key === "escape") pendingReject.value = false;
-        return;
-      }
-      if (event.key === "1") saveDecision("confirmed");
-      if (key === "enter") saveDecision("confirmed");
-      if (event.key === "2") pendingReject.value = true;
+      if (event.key === "1") confirmCandidate();
+      if (key === "enter") confirmCandidate();
       if (event.key === "3") markNoPublicEmail();
       if (key === "j") moveCandidate(1);
       if (key === "k") moveCandidate(-1);
@@ -1205,14 +1186,12 @@ const App = {
       snapshotTitle,
       currentClinicState,
       currentClinicDecisions,
-      pendingReject,
       editMode,
       editValue,
       note,
       saveStatus,
       error,
       lastExportAt,
-      DECISION_REASON_CODES,
       ROLE_OPTIONS,
       candidateGroups,
       displayedCandidateRows,
@@ -1236,12 +1215,11 @@ const App = {
       visibleBackupReminder,
       selectCandidate,
       previewCandidate,
-      rejectCandidate,
+      confirmCandidate,
       startReassign,
       cancelReassign,
       reassignCandidate,
       saveDecision,
-      rejectWithReason,
       markNoPublicEmail,
       excludeCurrent,
       nextLead,
@@ -1256,7 +1234,6 @@ const App = {
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
-          <span class="queue-summary">{{ manifest?.counts?.clinics || 0 }} clinics</span>
           <button v-for="lane in ['high_confidence','low_confidence','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
@@ -1277,17 +1254,11 @@ const App = {
 
           <section class="candidate-card">
             <p class="label">Email candidates</p>
-            <p v-if="candidateGroups.other.length || candidateGroups.invalid.length" class="candidate-group-note">
-              Showing {{ candidateGroups.primary.length }} likely relevant candidate{{ candidateGroups.primary.length === 1 ? '' : 's' }}.
-              {{ candidateGroups.other.length }} unrelated shared-page contact{{ candidateGroups.other.length === 1 ? '' : 's' }} and
-              {{ candidateGroups.invalid.length }} extraction artifact{{ candidateGroups.invalid.length === 1 ? '' : 's' }} are hidden from review but retained in the export audit trail.
-            </p>
             <div v-if="candidateGroups.primary.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th></th><th>Email</th><th>Type</th><th>Decision</th></tr></thead>
+                <thead><tr><th>Email</th><th>Type</th><th>Decision</th></tr></thead>
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
-                    <td class="candidate-radio">{{ row.index === selectedCandidateIndex ? '●' : '○' }}</td>
                     <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
                     <td>
                       <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
@@ -1295,8 +1266,7 @@ const App = {
                       </select>
                     </td>
                     <td class="candidate-actions">
-                      <button class="candidate-confirm" @click.stop="selectCandidate(row.index); saveDecision('confirmed')">Confirm</button>
-                      <button class="candidate-reject" @click.stop="rejectCandidate(row.index)">Reject</button>
+                      <button class="candidate-confirm" @click.stop="confirmCandidate(row.index)">Confirm</button>
                       <button class="candidate-reassign" @click.stop="startReassign(row.index)">Reassign</button>
                     </td>
                   </tr>
@@ -1312,16 +1282,6 @@ const App = {
               </div>
               <p>{{ selectedCandidate.triage.reason }}</p>
             </div>
-          </section>
-
-          <section v-if="pendingReject" class="reason-panel">
-            <p class="label">Reject reason</p>
-            <div class="reason-grid">
-              <button v-for="reason in DECISION_REASON_CODES" :key="reason.code" @click="rejectWithReason(reason)">
-                <strong>{{ reason.key }}</strong> {{ reason.label }}
-              </button>
-            </div>
-            <p class="muted">Press reason key, or Esc to cancel.</p>
           </section>
 
           <section v-if="editMode" class="edit-panel">
@@ -1347,7 +1307,6 @@ const App = {
             </button>
           </section>
 
-          <p class="shortcut-line">J/K alternate · ←/→ lead · decisions auto-advance</p>
         </section>
 
         <section class="evidence-pane">
