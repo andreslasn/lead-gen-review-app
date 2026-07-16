@@ -17,7 +17,6 @@ const DECISION_REASON_CODES = [
 const ROLE_OPTIONS = [
   { value: "clinic_contact", label: "Generic contact" },
   { value: "doctor_staff", label: "Doctor/staff" },
-  { value: "prescription_refill", label: "Prescription/refill" },
   { value: "not_clinic_owned", label: "Not clinic-owned" },
   { value: "unclear", label: "Unclear" },
 ];
@@ -227,7 +226,7 @@ function candidateRoleLabel(candidate) {
   ].join(" ").toLowerCase();
   const classification = String(candidate?.classification || "").toLowerCase();
   const contactRole = String(candidate?.contact_role || "").toLowerCase();
-  if (/(recept|prescription|rx|repeat)/i.test(text) || contactRole.includes("prescription")) return "Prescription/refill";
+  if (/(recept|prescription|rx|repeat)/i.test(text) || contactRole.includes("prescription")) return "Generic contact";
   if (classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
   if (classification.includes("clinic") || contactRole.includes("clinic")) return "Generic contact";
   if (classification.includes("generic")) return "Generic contact";
@@ -246,6 +245,7 @@ function candidateRoleCode(candidate) {
 
 function normalizedRoleCode(role) {
   if (role === "covering_provider") return "doctor_staff";
+  if (role === "prescription_refill") return "clinic_contact";
   if (["other_provider", "source_operator"].includes(role)) return "not_clinic_owned";
   return ROLE_OPTIONS.some((option) => option.value === role) ? role : "unclear";
 }
