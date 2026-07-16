@@ -1,13 +1,13 @@
 {
   "format": "lead-gen-review-package",
   "schema_version": 1,
-  "dataset_id": "hu-review-20260716T131550Z",
-  "dataset_version": "2026-07-16T13:15:50.036710+00:00",
-  "base_data_hash": "sha256:81923785baf5261bf00686ade39a072699f3e1f8cb5fdbb983d0824840b091bc",
+  "dataset_id": "hu-review-20260716T133330Z",
+  "dataset_version": "2026-07-16T13:33:30.953171+00:00",
+  "base_data_hash": "sha256:ab77da94ac73ab5c8452181a3bc8a03fd8c882156ea5ab38d589c346a3873f35",
   "country": "HU",
   "scope": "actionable_email_clinics",
-  "generated_at": "2026-07-16T13:15:50.036710+00:00",
-  "source_commit": "0b048a3c8017",
+  "generated_at": "2026-07-16T13:33:30.953171+00:00",
+  "source_commit": "4ebb473c086a",
   "counts": {
     "clinics": 2131,
     "candidate_emails": 12973,
@@ -22,6 +22,6 @@
     "evidence_artifacts": "sources/**"
   },
   "evidence_artifacts_copied": 1,
-  "stale_clinic_payloads_pruned": 1,
-  "stale_evidence_artifacts_pruned": 1
+  "stale_clinic_payloads_pruned": 0,
+  "stale_evidence_artifacts_pruned": 0
 }
