@@ -293,6 +293,29 @@ input, textarea {
   color: var(--black-80);
   font-size: 0.82rem;
 }
+.triage-summary {
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid var(--concrete-100);
+  border-radius: 0.75rem;
+  background: var(--lake-20);
+  font-size: 0.78rem;
+}
+.triage-summary.triage-promote { border-color: #8acbbc; background: #effaf7; }
+.triage-summary.triage-suppress { border-color: #efaaa2; background: #fff4f2; }
+.triage-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.triage-summary p { margin: 6px 0 0; color: var(--black-80); }
+.triage-summary blockquote {
+  margin: 6px 0 0;
+  padding-left: 8px;
+  border-left: 3px solid var(--blue-40);
+  color: var(--black-80);
+}
 .excerpt-card {
   overflow: hidden;
 }
@@ -404,6 +427,47 @@ mark {
   justify-content: space-between;
   gap: 14px;
   padding: 12px 14px 8px;
+}
+
+.evidence-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.evidence-screenshot {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: top;
+  margin: 12px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.archive-pane {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
+  padding: 10px 14px 14px;
+}
+
+.archive-note {
+  margin: 0;
+  color: var(--black-60);
+  font-size: 0.78rem;
+}
+
+.archive-frame {
+  width: 100%;
+  min-height: calc(100vh - 190px);
+  border: 1px solid var(--concrete-100);
+  border-radius: 1rem;
+  background: white;
 }
 .evidence-toolbar a, .primary-link {
   flex: 0 0 auto;
