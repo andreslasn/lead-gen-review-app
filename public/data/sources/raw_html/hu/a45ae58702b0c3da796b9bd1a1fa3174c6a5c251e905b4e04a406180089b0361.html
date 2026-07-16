@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Szigetség – Orvosi Rendelések</title>
+<style>
+    :root { --brand: #1d6b53; --brand-light: #edf6f1; --bg: #f5efe6; }
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 20px; display: flex; justify-content: center; }
+
+    .app-container { width: 100%; max-width: 450px; }
+
+    /* Vezérlők */
+    .controls { margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .city-select { width: 100%; padding: 12px; border: 1px solid #dcd9d1; border-radius: 12px; font-size: 1.1rem; font-weight: bold; color: var(--brand); outline: none; background: #fff; cursor: pointer; }
+
+    /* GPS Státusz */
+    .gps-indicator { font-size: 0.85rem; color: #10b981; font-weight: bold; margin-bottom: 15px; display: none; text-align: center; }
+    .pulse { height: 8px; width: 8px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 5px; animation: pulse-animation 2s infinite; }
+    @keyframes pulse-animation { 0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.7); } 70% { box-shadow: 0 0 0 10px rgba(16,185,129,0); } 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); } }
+
+    /* Alert (Helyettesítés/Szabadság) */
+    .alert-banner { background: #fff3cd; color: #856404; padding: 15px; border-radius: 12px; margin-bottom: 15px; font-size: 0.95rem; border: 1px solid #ffeeba; line-height: 1.4; }
+
+    /* Kategória Szekciók */
+    .category-section { background: #fff; border-radius: 20px; padding: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.04); margin-bottom: 25px; border: 1px solid #eee; }
+    .category-title { font-size: 1.3rem; color: var(--brand); border-bottom: 2px solid var(--brand-light); padding-bottom: 8px; margin-bottom: 15px; text-transform: uppercase; font-weight: 800; }
+
+    /* Aktív Orvos Doboz */
+    .active-now-box { background: #10b981; color: white; border-radius: 12px; padding: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 10px rgba(16,185,129,0.2); }
+    .active-info b { font-size: 1.2rem; display: block; margin: 3px 0; }
+    .active-info small { opacity: 0.9; font-weight: 600; }
+    .active-call-btn { background: white; color: #10b981; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+    /* Inaktív (Nincs rendelés) Doboz */
+    .inactive-now-box { background: #f8f9fa; color: #6c757d; border-radius: 12px; padding: 15px; margin-bottom: 20px; text-align: center; border: 1px dashed #ced4da; font-weight: 600; font-size: 0.95rem; }
+
+    /* Lista / Grid */
+    .doc-row { padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
+    .doc-row:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .doc-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .name-small { font-weight: bold; color: var(--brand); font-size: 1.1rem; }
+    .call-link { text-decoration: none; color: var(--brand); font-size: 0.9rem; font-weight: 600; background: var(--brand-light); padding: 4px 10px; border-radius: 12px; }
+
+    .times-grid { display: flex; flex-direction: column; gap: 6px; }
+    .time-item { display: flex; font-size: 0.95rem; }
+    .day-label { width: 90px; color: #888; }
+    .time-val { font-weight: 600; color: #444; flex: 1; }
+    .time-val.now { color: #10b981; }
+    .time-note { display: block; font-weight: normal; color: #d97706; font-size: 0.85rem; margin-top: 2px; }
+
+    /* Loader */
+    .loader { border: 3px solid #f3f3f3; border-top: 3px solid var(--brand); border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; margin-right: 10px; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* Lábléc */
+    .page-footer { text-align: center; padding: 20px 0 30px; }
+    .push-footer-btn { background: none; border: none; color: var(--brand); font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: underline; padding: 8px; }
+
+    /* Push gomb stílusok (modal-ban is használva) */
+    .push-button { border: none; border-radius: 999px; padding: 11px 16px; font-weight: 700; cursor: pointer; font-size: 0.93rem; }
+    .push-button.primary { background: var(--brand); color: #fff; }
+    .push-button.secondary { background: #edf3ef; color: #365448; }
+    .push-status { margin-top: 12px; min-height: 22px; color: #5f6b65; font-size: 0.92rem; }
+    .push-status.success { color: #17643f; }
+    .push-status.error { color: #9a2d2d; }
+
+    /* Modal */
+    .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; overflow-y: auto; padding: 20px; }
+    .modal-box { background: #fff; border-radius: 20px; max-width: 450px; margin: 0 auto; padding: 24px; position: relative; }
+    .modal-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #888; line-height: 1; }
+    .modal-title { margin: 0 0 6px; color: var(--brand); font-size: 1.15rem; }
+    .modal-subtitle { margin: 0 0 16px; color: #58636c; font-size: 0.9rem; line-height: 1.5; }
+    .push-modal-groups { display: flex; flex-direction: column; gap: 14px; }
+    .push-modal-group { background: #f7fbf9; border: 1px solid #e0ece6; border-radius: 14px; padding: 14px; }
+    .push-modal-group-title { font-size: 0.95rem; font-weight: 800; color: var(--brand); margin-bottom: 10px; }
+    .push-modal-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .push-modal-option { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #d6e4dc; border-radius: 999px; padding: 7px 12px; background: #fff; color: #35564a; font-size: 0.9rem; cursor: pointer; }
+    .push-modal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+</style>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+<div class="app-container">
+<div class="controls">
+<select class="city-select" id="citySelect"><option value="Dunabogdány">Dunabogdány</option><option value="Kisoroszi">Kisoroszi</option><option value="Leányfalu">Leányfalu</option><option value="Pócsmegyer-Surány">Pócsmegyer-Surány</option><option value="Szigetmonostor">Szigetmonostor</option><option value="Tahitótfalu">Tahitótfalu</option></select>
+</div>
+<div class="gps-indicator" id="gpsStatus" style="display: none;"><span class="pulse"></span> Helyzet alapján kiválasztva</div>
+<div id="loading" style="text-align: center; padding: 30px; color: rgb(102, 102, 102); font-weight: 600; display: none;">
+ Adatok betöltése...
+    </div>
+<div id="content" style="display: block;">
+<div id="alertsContainer">
+<div class="alert-banner">
+<b>⚠️ Rendelési idő megváltozása</b><br/>Tisztelt Szülők!
+<br/>
+<br/>2026 július 06. – július 17.-e között a gyermekorvosi rendelési idő az alábbiak szerint változik:
+<br/>
+<br/>2026-07-06. hétfő: 14:00 – 16:00
+<br/>
+<br/>2026-07-07.  kedd: 13:30 – 15:30
+<br/>
+<br/>2026-07-08. szerda: 11:00 – 13:00 tanácsadás
+<br/>
+<br/>  14:00 – 16:00 rendelés
+<br/>
+<br/>2026-07-09. csütörtök: 08:00 – 10:00
+<br/>
+<br/>2026-07-13. hétfő: 08:00 – 10:00
+<br/>
+<br/>2026-07-14.  kedd: 08:00 – 10:00
+<br/>
+<br/>2026-07-15. szerda: 08:00 – 10:00
+<br/>
+<br/>2026-07-16. csütörtök: 08:00 – 10:00
+<br/>
+<br/>Időpont kérés a rendelés első órájában!
+<br/>
+<br/>A központi ügyeleti telefonszám: 1830, egyéb sürgős esetben a https://surgossegi.info/ honlapon tudnak tájékozódni!
+<br/>
+<br/>Kérjük, hogy a nyári időszak alatt is figyeljék a hirdetményeket, illetve telefonáljanak, e-mailezzenek az időpont előjegyzéséhez!
+                </div></div>
+<div id="scheduleList"><div class="category-section"><div class="category-title">Háziorvos</div><div class="inactive-now-box">🕒 Jelenleg nincs aktív rendelés.</div>
+<div class="doc-row">
+<div class="doc-info">
+<span class="name-small">Dr. Kondor Andrea</span>
+<a class="call-link" data-review-original-href="tel:+3626393380" href="#" tabindex="-1">📞 Hívás</a>
+</div>
+<div class="times-grid">
+<div class="time-item">
+<div class="day-label">Hétfő</div>
+<div class="time-val">
+                                08:00 - 11:00 
+                                
+                            </div>
+</div>
+<div class="time-item">
+<div class="day-label">Kedd</div>
+<div class="time-val">
+                                13:00 - 16:00 
+                                
+                            </div>
+</div>
+<div class="time-item">
+<div class="day-label">Szerda</div>
+<div class="time-val">
+                                08:00 - 11:00 
+                                
+                            </div>
+</div>
+<div class="time-item">
+<div class="day-label">Csütörtök</div>
+<div class="time-val">
+                                13:00 - 16:00 
+                                
+                            </div>
+</div>
+<div class="time-item">
+<div class="day-label">Péntek</div>
+<div class="time-val">
+                                08:00 - 12:00 
+                                
+                            </div>
+</div></div>
+</div></div><div class="category-section"><div class="category-title">Gyermekorvos</div><div class="inactive-now-box">🕒 Jelenleg nincs aktív rendelés.</div>
+<div class="doc-row">
+<div class="doc-info">
+<span class="name-small">Dr. Kovács Tibor / Dr. Adonyi Nóra</span>
+<a class="call-link" data-review-original-href="tel:+36706568157" href="#" tabindex="-1">📞 Hívás</a>
+</div>
+<div class="times-grid"><div style="color:#d97706; font-size:0.95rem; font-weight:bold; padding-top:5px;">⛔ A normál rendelés a fenti riasztás miatt szünetel / módosult.</div></div>
+</div></div></div>
+</div>
+<div class="page-footer">
+<button class="push-footer-btn" type="button">
+            🔔 Feliratkozás orvosi rendelés változásra
+        </button>
+</div>
+</div>
+
+<div class="modal-backdrop" id="pushModal">
+<div class="modal-box">
+<button class="modal-close" type="button">✕</button>
+<h2 class="modal-title">🔔 Orvosi rendelés értesítő</h2>
+<p class="modal-subtitle">Válaszd ki, melyik település melyik ellátástípusáról szeretnél értesítést kapni.</p>
+<div class="push-modal-groups" id="pushModalGroups">
+<div style="text-align:center; color:#888; padding:20px;">
+ Betöltés...
+            </div>
+</div>
+<div class="push-modal-actions">
+<button class="push-button primary" type="button">Értesítés bekapcsolása</button>
+<button class="push-button secondary" type="button">Leiratkozás</button>
+</div>
+<div class="push-status" id="medicalPushStatus"></div>
+</div>
+</div>
+
+</body></html>

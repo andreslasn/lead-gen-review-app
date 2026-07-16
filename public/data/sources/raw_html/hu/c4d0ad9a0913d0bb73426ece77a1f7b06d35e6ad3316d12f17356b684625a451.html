@@ -1,0 +1,862 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="hu-hu" xml:lang="hu-hu" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="Aranyos Martin" name="author"/>
+<meta content="Joomla! - Open Source Content Management - Version 5.4.6" name="generator"/>
+<title>Egészségügyi szolgáltatások</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+:root {
+	--primary: #5e81ac;
+	--secondary: #88c0d0;
+	--primary-color: #5e81ac;
+	--secondary-color: #88c0d0;
+	--base-color: #2e3440;
+	--button-color: #81a1c1;
+	--hornav_font_color: #4c566a;
+	--mobile-menu-bg: #2e3440;
+	--mobile-menu-toggle: #4c566a;
+}
+.hornav ul.menu ul .parent-indicator {
+	top: 10px;
+	position: relative;
+}
+body, .hornav ul ul, .hornav ul ul a {
+	color: #2e3440;
+}
+body, .hornav ul ul, .hornav ul ul a {
+	font-family:Rubik, Arial, Verdana, sans-serif;
+	font-size: 16px;
+}
+a {
+	color: #5e81ac;
+}
+h1 {
+	color: #3b4252;
+	font-family:Montserrat, Arial, Verdana, sans-serif; 
+}
+h2, 
+h2 a:link, 
+h2 a:visited {
+	background-color: #5e81ac;
+	color: #5e81ac;
+	font-family:Montserrat, Arial, Verdana, sans-serif;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+h3, 
+.module h3, 
+.module_menu h3, 
+.btn, 
+button {
+	color: #4c566a;
+	font-family:Montserrat, Arial, Verdana, sans-serif;
+}
+h4 {
+	font-family:Montserrat, Arial, Verdana, sans-serif;
+	color: #5e81ac; 
+}
+.hornav, .btn, .button, button {
+	font-family:Rubik 
+}
+.wrapper960 {
+	width: 1290px;
+}
+.logo {
+	top: 0px;
+	left: 0px;
+}
+.logo-text {
+	color: #ffffff;
+	font-family:Rubik;
+	font-size: 65px;
+}
+.scrolled .logo-text {
+	color: #9fc19c;
+}
+.logo-slogan {
+	color: #ffffff;
+	font-size: 9px;
+}
+
+.hornav ul.menu li a,
+.hornav ul.menu li span, 
+.hornav > ul > .parent::after {
+	color: #4c566a;
+}
+.hornav ul.menu ul li a,
+.hornav ul.menu ul li span {
+	color: #4c566a;
+}
+.hornav ul ul {
+	background-color: #f8f9fb;
+}
+.hornav ul ul:before {
+	border-color: transparent transparent #f8f9fb transparent;
+}
+.sidecol_a {
+	width: 35%;
+}
+.sidecol_b {
+	width: 37%;
+}
+.owl-theme .owl-nav [class*="owl-"],
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span,
+ul.dot li::before,
+.text-primary,
+#container_base h3 {
+ 	color: #5e81ac;
+ }
+.j51news .hover-overlay,
+.background-primary {
+	background-color: #5e81ac;
+}
+.btn, .btn-group.open .btn.dropdown-toggle, .pager.pagenav a, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled], .btn:hover, .slidesjs-next.slidesjs-navigation, .slidesjs-previous.slidesjs-navigation, .search .icon-search, .dropdown-toggle, .label-info[href], .badge-info[href], .tagspopular a:hover, .module .module_header h3::after, .module_menu .module_header h3::after {
+	background-color: #81a1c1;
+	color: #fff;
+}
+.btn, .button, button {
+	background-color: #81a1c1;
+}
+.btn:hover, button:hover, .btn:focus, .btn:active, .btn.active, .readmore .btn:hover, .dropdown-toggle:hover {
+	background-color: #5e81ac;
+	color: #ffffff;
+}
+.nav-tabs > .active > a, 
+.nav-tabs > .active > a:hover, 
+.nav-tabs > .active > a:focus {
+	border-bottom-color: #81a1c1;
+}
+blockquote {
+	border-color: #81a1c1;
+}
+.btn:hover, .button:hover, button:hover {
+	border-color: #5e81ac;
+}
+.tags .label-info[href] {
+	background-color: transparent;
+	color: #81a1c1;
+}
+body {
+	background-color: #fff;
+}
+.showcase_seperator svg {
+	fill: ;
+}
+#container_main {
+	background-color: rgba(255, 255, 255, 0);
+}
+.container_footer {
+	background-color: rgba(28, 38, 52, 1);
+}
+[id] {
+	scroll-margin-top: 90px;
+}
+#container_header {
+	margin-top: 1px;
+}
+</style>
+<style>
+	#container_header {
+		position: sticky;
+		top: 0;
+	}
+	.scrolled #container_header {
+		background-color: #ffffff;
+		transform: translateY(-2px;);
+	  }
+	</style>
+<style>
+	.body_bg {
+		background-color: #ffffff;
+		background-image: linear-gradient(to bottom, #ffffff, #f2f8f4);	
+	}
+	.body_bg::after {
+		border-color: #9fc19c transparent transparent transparent;
+	}
+	.scrolled .body_bg::after {
+		border-color: #f2f8f4 transparent transparent transparent;
+	}
+	.header_top {
+		background-color: #1c2634;
+	}
+</style>
+<style>@media only screen and (max-width: 959px) {
+		.primary-logo-image, .logo-image-scrolled{display:none !important;}
+		.mobile-logo-image{display:inline-block !important;}
+	}</style>
+<style>
+	@media only screen and (max-width: 1290px) {
+		.module_block, .wrapper960  {
+			width: 100% !important;
+		}	
+	}
+	@media only screen and (max-width: 959px) {
+		.hornav:not(.header-3) {display:none !important;}
+		.header-3 {width: 100%; margin-left:auto;}
+		.header_main {flex-wrap: wrap;}
+		.menu-toggle {display: flex;}
+	}
+</style>
+<style>@media only screen and ( max-width: 767px ) {.showcase {display:none;} .mobile_showcase {display:inline;}}</style>
+<style>@media only screen and (min-width: 768px) {.top-1a .module_surround {padding-bottom: 0px !important;}}</style>
+<style>@media only screen and (min-width: 768px) {.top-1b .module_surround {padding-right: 0px !important;}}</style>
+<style>@media only screen and (min-width: 768px) {.bottom-2b .module_surround {padding-left: 0px !important;}}</style>
+<style>@media only screen and (min-width: 768px) {.showcase-1a .module_surround {margin-top: -150px !important;}}</style>
+<style>.header_top {
+		background-color: #9fc19c;
+}</style>
+<style>@media only screen and (min-width: 768px) and (max-width: 959px) {}</style>
+<style>@media only screen and ( max-width: 767px ) {}</style>
+<style>@media only screen and (max-width: 440px) {}</style>
+<style>
+    @media only screen and (max-width: 767px) {
+        .sidecol_a, .sidecol_b {
+            order: 1 !important;
+        }
+    }
+    </style>
+<style>
+#socialmedia ul li a [class^="fa-"]::before, 
+#socialmedia ul li a [class*=" fa-"]::before {
+    color: #9fc19c;
+}</style>
+<style>#container_showcase1_modules {background-color: rgba(255, 255, 255, 0)}</style>
+<style>#container_showcase1_modules > .wrapper960 {width:100%;} #showcase1_modules.block_holder {padding: 0;}
+    		</style>
+<style>#container_base1_modules {background-color: rgba(255, 255, 255, 1)}</style>
+<style>
+.j51_inlineicons815 i:before {
+    font-size: 28px;
+}
+.j51_inlineicons815 {
+	text-align: left;
+}
+.j51_inlineicons815 .j51_inlineicon {
+	margin: 0px 8px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=5" name="viewport"/>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="site com_content view-article no-layout no-task itemid-763">
+<div class="unsupported-browser"></div>
+<div id="back-to-top"></div>
+<div class="body_bg"></div>
+<div class="mobile-menu" id="mobile-menu">
+<ul class="mod-menu mod-list menu">
+<li class="nav-item item-464 default"><a data-review-original-href="/index.php" href="#" tabindex="-1">Kezdőlap</a></li><li class="nav-item item-614 divider deeper parent"><span class="columns-2">Aktuális<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-706"><a class="columns-2" data-review-original-href="/index.php/aktualis/varosi-hirek" href="#" tabindex="-1"><img alt="Városi hírek"/><span class="image-title">Városi hírek</span> </a></li><li class="nav-item item-707"><a class="columns-2" data-review-original-href="/index.php/aktualis/meghivo" href="#" tabindex="-1"><img alt="Meghívók"/><span class="image-title">Meghívók</span> </a></li><li class="nav-item item-708"><a data-review-original-href="/index.php/aktualis/hirdetmeny" href="#" tabindex="-1"><img alt="Hirdetmények"/><span class="image-title">Hirdetmények</span> </a></li><li class="nav-item item-709"><a data-review-original-href="/index.php/aktualis/aktualis-palyazatok-berlakas-egyebek" href="#" tabindex="-1"><img alt="Aktuális pályázati kiírások, bérlakás, egyebek"/><span class="image-title">Aktuális pályázati kiírások, bérlakás, egyebek</span> </a></li><li class="nav-item item-711"><a class="columns-2" data-review-original-href="/index.php/aktualis/allas" href="#" tabindex="-1"><img alt="Állásajánlatok"/><span class="image-title">Állásajánlatok</span> </a></li><li class="nav-item item-712"><a class="columns-2" data-review-original-href="/index.php/aktualis/adozas" href="#" tabindex="-1"><img alt="Aktuális adózási információk"/><span class="image-title">Aktuális adózási információk</span> </a></li><li class="nav-item item-713"><a class="columns-2" data-review-original-href="/index.php/aktualis/sajtokozlemenyek" href="#" tabindex="-1"><img alt="Sajtóközlemények"/><span class="image-title">Sajtóközlemények</span> </a></li><li class="nav-item item-843"><a data-review-original-href="/index.php/aktualis/csaladbarat-munkahely" href="#" tabindex="-1"><img alt="Családbarát munkahely"/><span class="image-title">Családbarát munkahely</span> </a></li></ul></li><li class="nav-item item-507 deeper parent"><span>Városháza<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-823"><a data-review-original-href="/index.php/varoshaza/kozmeghallgatasok" href="#" tabindex="-1"><img alt="Közmeghallgatások"/><span class="image-title">Közmeghallgatások</span> </a></li><li class="nav-item item-519 divider deeper parent"><span><img alt="Önkormányzat &gt;"/><span class="image-title">Önkormányzat &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-746"><a data-review-original-href="/index.php/varoshaza/responsive-design/polgarmesteri-koszonto" href="#" tabindex="-1">○ Polgármesteri Köszöntő</a></li><li class="nav-item item-693 deeper parent"><a data-review-original-href="/index.php/varoshaza/responsive-design/kepviselo-testulet" href="#" tabindex="-1">○ Képviselő-testület<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></a><ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-876"><a data-review-original-href="/index.php/varoshaza/responsive-design/kepviselo-testulet/kepviseloi-vagyon-nyilatkozatok" href="#" tabindex="-1">Képviselői vagyon nyilatkozatok</a></li></ul></li><li class="nav-item item-694"><a data-review-original-href="/index.php/varoshaza/responsive-design/bizottsagok" href="#" tabindex="-1">○ Bizottságok</a></li><li class="nav-item item-695"><a data-review-original-href="/index.php/varoshaza/responsive-design/nemzetisegi-onkormanyzatok" href="#" tabindex="-1">○ Nemzetiségi önkormányzatok</a></li><li class="nav-item item-696 divider"><span>○ Társulások</span>
+</li><li class="nav-item item-697 divider"><span>○ Választási információk</span>
+</li><li class="nav-item item-794"><a data-review-original-href="/index.php/varoshaza/responsive-design/testver-varosok" href="#" tabindex="-1">○ Testvér Városok</a></li><li class="nav-item item-795"><a data-review-original-href="/index.php/varoshaza/responsive-design/jatszoterek" href="#" tabindex="-1">○ Játszóterek</a></li><li class="nav-item item-819"><a data-review-original-href="/index.php/varoshaza/responsive-design/varosfejlesztes" href="#" tabindex="-1">○ Városfejlesztés, koncepciók</a></li><li class="nav-item item-815"><a data-review-original-href="https://gis.erda.hu/erda/html/projects/szentlorinc/main.php" href="#" tabindex="-1">○ Térinformatikai térkép</a></li><li class="nav-item item-854"><a data-review-original-href="/index.php/varoshaza/responsive-design/kozbeszterv" href="#" tabindex="-1">Közbeszerzési terv</a></li></ul></li><li class="nav-item item-622 divider deeper parent"><span><img alt="Közös Hivatal &gt;"/><span class="image-title">Közös Hivatal &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-745"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/jegyzoi-koszonto" href="#" tabindex="-1">○ Jegyzői köszöntő</a></li><li class="nav-item item-699"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/szervezeti-szemelyzeti-adatok" href="#" tabindex="-1">○ Szervezeti, személyzeti adatok</a></li><li class="nav-item item-757"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/szabalyzatok" href="#" tabindex="-1">○ Szabályzatok, építési szabályozás</a></li><li class="nav-item item-855"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/beszamolok" href="#" tabindex="-1">○ Beszámolók</a></li><li class="nav-item item-796 divider deeper parent"><span>○ Közrend &gt;<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-816"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/kozrend/kozterulet-felugyelet" href="#" tabindex="-1">Közterület felügyelet</a></li><li class="nav-item item-817"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/kozrend/parkolas" href="#" tabindex="-1">Parkolás</a></li><li class="nav-item item-818"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/kozrend/terfigyelo-kamerak" href="#" tabindex="-1">Térfigyelő kamerák</a></li></ul></li></ul></li><li class="nav-item item-702 divider deeper parent"><span><img alt="Pályázatok &gt;"/><span class="image-title">Pályázatok &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-703"><a data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-meghirdetett-palyazatok" href="#" tabindex="-1">○ Aktuális pályázati kiírások, bérlakás, egyebek</a></li><li class="nav-item item-704"><a data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-elnyert-palyazatok" href="#" tabindex="-1">○ Önkormányzat által elnyert pályázatok</a></li><li class="nav-item item-705 divider"><span>○ Kitüntetések</span>
+</li><li class="nav-item item-839"><a data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-benyujtasra-kerult-palyazatok" href="#" tabindex="-1">○ Önkormányzat által benyújtásra kerűlt pályázatok</a></li></ul></li><li class="nav-item item-779 divider deeper parent"><span><img alt="Testületi anyagok &gt;"/><span class="image-title">Testületi anyagok &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-780"><a data-review-original-href="/index.php/varoshaza/testuleti-dokumentumok/eloterjesztesek" href="#" tabindex="-1">○ Előterjesztések</a></li><li class="nav-item item-781"><a data-review-original-href="/index.php/varoshaza/testuleti-dokumentumok/jegyzokonyvek" href="#" tabindex="-1">○ Jegyzőkönyvek</a></li></ul></li><li class="nav-item item-765"><a data-review-original-href="/index.php/varoshaza/gyermeketkeztetes" href="#" tabindex="-1"><img alt="Gyermekétkeztetés"/><span class="image-title">Gyermekétkeztetés</span> </a></li></ul></li><li class="nav-item item-714 divider deeper parent"><span>Ügyintézés<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-717 divider deeper parent"><span><img alt="Hivatali ügyek &gt;"/><span class="image-title">Hivatali ügyek &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-731"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/ugyfelfogadasi-ido" href="#" tabindex="-1">○ Ügyfélfogadási idő</a></li><li class="nav-item item-723"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/adougyek" href="#" tabindex="-1">○ Adóügyek</a></li><li class="nav-item item-724"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/hatosagi-ugyek" href="#" tabindex="-1">○ Hatósági ügyek</a></li><li class="nav-item item-725"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/szocialis-ugyek-hagyatek-anyakonyv" href="#" tabindex="-1">○ Szociális ügyek, Hagyaték, Anyakönyv</a></li><li class="nav-item item-726"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/vagyongazdalkodasi-ugyek" href="#" tabindex="-1">○ Vagyongazdálkodási ügyek</a></li><li class="nav-item item-727"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/epitesi-kornyezetvedelmi-kozterulet-hasznalati-ugyek" href="#" tabindex="-1">○ Építési, környezetvédelmi, közterület-használati ügyek</a></li><li class="nav-item item-728"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/varosepiteszeti-ugyek" href="#" tabindex="-1">○ Városépítészeti ügyek</a></li><li class="nav-item item-729"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/varosuzemeltetesi-ugyek" href="#" tabindex="-1">○ Városüzemeltetési ügyek</a></li><li class="nav-item item-730"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/panasz-es-kozerdeku-bejelentes" href="#" tabindex="-1">○ Panasz és közérdekű bejelentés</a></li><li class="nav-item item-732"><a data-review-original-href="https://kormanyhivatalok.hu/kormanyhivatalok/baranya/megye/kormanyablak/szentlorinc-7940" href="#" tabindex="-1">○ Kormányablak</a></li><li class="nav-item item-733"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/talalt-targyak-listaja" href="#" tabindex="-1">○ Talált tárgyak listája</a></li></ul></li><li class="nav-item item-718 divider deeper parent"><span><img alt="E-ügyintézés &gt;"/><span class="image-title">E-ügyintézés &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-754"><a data-review-original-href="https://or.njt.hu/onkorm/1:12:2164:-:-:1:-:-:-/1/10" href="#" tabindex="-1">○ Önkormányzati rendelettár</a></li><li class="nav-item item-755"><a data-review-original-href="https://ohp-20.asp.lgov.hu/kereses?sourceUrl=%2Fszolgaltatasok" href="#" tabindex="-1">○ Helyi adók egyenlegének lekérdezése</a></li><li class="nav-item item-756"><a data-review-original-href="https://magyarorszag.hu/" href="#" tabindex="-1">○ Magyarorszag.hu</a></li></ul></li><li class="nav-item item-719 divider deeper parent"><span><img alt="Adatvédelem &gt;"/><span class="image-title">Adatvédelem &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-734"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/adatvedelmi-tisztviselo" href="#" tabindex="-1">○ Adatvédelmi tisztviselő</a></li><li class="nav-item item-735"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/szemelyes-adatok-vedelme" href="#" tabindex="-1">○ Személyes adatok védelme</a></li><li class="nav-item item-737"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/adatvedelmi-egyuttmukodes" href="#" tabindex="-1">○ Adatvédelmi együttműködés</a></li><li class="nav-item item-758"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/uvegzseb" href="#" tabindex="-1">○ Üvegzseb</a></li><li class="nav-item item-821"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/adatkezeles-adatvedelem-dokumentumok" href="#" tabindex="-1">○ Adatkezelés, Adatvédelem dokumentumok </a></li></ul></li><li class="nav-item item-748 divider deeper parent"><span><img alt="Közérdekű adatok &gt;"/><span class="image-title">Közérdekű adatok &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-753"><a data-review-original-href="https://szentlorinc.hu/kozadat/" href="#" tabindex="-1" title="közérdekű adatai">Szentlőrinc Város</a></li><li class="nav-item item-749"><a data-review-original-href="https://szentlorinc.hu/kozadat/hivatal/" href="#" tabindex="-1" title="közérdekű adatai">Szentlőrinci K.Ö.H.</a></li><li class="nav-item item-750"><a data-review-original-href="https://szentlorinc.hu/kozadat/roma/" href="#" tabindex="-1" title="közérdekű adatai">Roma Nemzetiségi Önkormányzat</a></li><li class="nav-item item-752"><a data-review-original-href="https://szentlorinc.hu/kozadat/horvat/" href="#" tabindex="-1" title="közérdekű adatai">Horvát Nemzetiségi Önkormányzat</a></li><li class="nav-item item-751"><a data-review-original-href="https://szentlorinc.hu/kozadat/nemet/" href="#" tabindex="-1" title="közérdekű adatai">Német Nemzetiségi Önkormányzat</a></li><li class="nav-item item-736"><a data-review-original-href="https://www.kozadattar.hu/" href="#" tabindex="-1">Közérdekű adatok keresője</a></li></ul></li></ul></li><li class="nav-item item-715 active divider deeper parent"><span>Élet a városban<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-720 deeper parent"><span><img alt="Városinformációk &gt;"/><span class="image-title">Városinformációk &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-739"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-varos-jelkepei" href="#" tabindex="-1">○ Szentlőrinc város jelképei</a></li><li class="nav-item item-740"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/unnepek-evfordulok" href="#" tabindex="-1">○ Ünnepek, évfordulók</a></li><li class="nav-item item-741 divider deeper parent"><span>○ Sport<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-846"><a data-review-original-href="https://www.szentlorincse.hu/" href="#" tabindex="-1">Szentlőrinc SE</a></li><li class="nav-item item-847"><a data-review-original-href="https://www.facebook.com/profile.php?id=100068028229215" href="#" tabindex="-1">Szentlőrinci Kézilabda Sportegyesület</a></li></ul></li><li class="nav-item item-824"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/kozossegi-koltsegvetes-szentlorincen" href="#" tabindex="-1">○ Közösségi költségvetés Szentlőrincen</a></li><li class="nav-item item-742"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-telepulesi-ertektar" href="#" tabindex="-1">○ Szentlőrinc Települési Értéktár</a></li><li class="nav-item item-744"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-polgarmesterei" href="#" tabindex="-1">○ Szentlőrinc polgármesterei</a></li><li class="nav-item item-820"><a data-review-original-href="https://szentlorinc.hu/images/varos_dokumentumok/hep.pdf" href="#" tabindex="-1">○ Helyi Esélyegyenlőségi Program</a></li><li class="nav-item item-738"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-tortenete" href="#" tabindex="-1">○ Szentlőrinc története</a></li><li class="nav-item item-848"><a data-review-original-href="https://delkom.hu/szentlorinc/" href="#" tabindex="-1">○ Hulladékszállítás, lomtalanítás</a></li><li class="nav-item item-743 divider"><span>○ Várostörténeti érdekességek</span>
+</li><li class="nav-item item-853"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/kituntetesek" href="#" tabindex="-1">Kitüntetések</a></li></ul></li><li class="nav-item item-721 active divider deeper parent"><span><img alt="Intézmények &gt;"/><span class="image-title">Intézmények &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-759"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/muvelodesi-kozpont-konyvtar-es-konyha-szentlorinc" href="#" tabindex="-1">○ Művelődési Központ, Könyvtár és Konyha Szentlőrinc</a></li><li class="nav-item item-760"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/szocialis-szolgaltato-kozpont" href="#" tabindex="-1">○ Szociális Szolgáltató Központ</a></li><li class="nav-item item-761"><a data-review-original-href="https://www.szentlorinciskola.hu/" href="#" tabindex="-1">○ Szentlőrinci Általános iskola</a></li><li class="nav-item item-762"><a data-review-original-href="https://szentlorinciovoda.hu/" href="#" tabindex="-1">○ Szentlőrinci Kistérségi Óvoda és Bölcsőde</a></li><li class="nav-item item-763 current active"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/egeszsegugyi-szolgaltatasok" href="#" tabindex="-1">○ Egészségügyi szolgáltatások</a></li><li class="nav-item item-764"><a data-review-original-href="https://kozuzemi.hu/" href="#" tabindex="-1">○ Szentlőrinci Közüzemi Nkft.</a></li><li class="nav-item item-822"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/szentlorinci-media-nonprofit-kft" href="#" tabindex="-1">○ Szentlőrinci Média Nonprofit Kft.</a></li></ul></li><li class="nav-item item-722 divider deeper parent"><span><img alt="Civil szervezetek &gt;"/><span class="image-title">Civil szervezetek &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-793"><a data-review-original-href="/index.php/elet-a-varosban/civil-szervezetek/egyesuletek-es-alapitvanyok" href="#" tabindex="-1">Egyesületek és Alapítványok</a></li></ul></li><li class="nav-item item-845 divider"><span><img alt="Galéria"/><span class="image-title">Galéria</span> </span>
+</li><li class="nav-item item-849"><a data-review-original-href="/index.php/elet-a-varosban/lobbi-parti" href="#" tabindex="-1"><img alt="Lobbi parti"/><span class="image-title">Lobbi parti</span> </a></li></ul></li><li class="nav-item item-710 deeper parent"><span class="columns-2">Választások<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-840"><a data-review-original-href="/index.php/valasztas/2026-orszaggyulesi-valasztasok" href="#" tabindex="-1" target="_blank">2026 Országgyűlési Választások</a></li><li class="nav-item item-842"><a data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1">Választási ügyintézés</a></li><li class="nav-item item-841"><a data-review-original-href="/index.php/valasztas/valasztasi-szervek" href="#" tabindex="-1">Választási szervek</a></li><li class="nav-item item-850 deeper parent"><a data-review-original-href="/index.php/valasztas/valasztasi-archivum" href="#" tabindex="-1">Választási Archívum<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></a><ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-851"><a data-review-original-href="/index.php/valasztas/valasztasi-archivum/2024-helyi-valasztasok" href="#" tabindex="-1">2024 Helyi választások</a></li></ul></li></ul></li><li class="nav-item item-716"><a data-review-original-href="/index.php/kereses" href="#" tabindex="-1">Keresés</a></li></ul>
+</div>
+<div class="header_top">
+<div class="wrapper960">
+<div class="header-1">
+<div class="module">
+<div class="module_content">
+<div class="mod-custom custom" id="mod-custom1012">
+<p><a data-review-original-href="/./index.php" href="#" tabindex="-1"><img alt="cimer light" height="141" style="display: block; margin-left: auto; margin-right: auto;" width="115"/></a></p></div>
+</div>
+</div>
+</div>
+<div class="header-2">
+<div class="module">
+<div class="module_content">
+<div class="mod-custom custom" id="mod-custom1010">
+<p><img alt="szlogen3" height="345" width="409"/></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<header id="container_header">
+<div class="header_main wrapper960" id="header_main">
+<div class="logo" id="logo">
+<a data-review-original-href="/" href="#" tabindex="-1" title="Szentlőrinc">
+<img alt="Logo" class="logo-image primary-logo-image"/>
+<img alt="Logo" class="logo-image-scrolled primary-logo-image"/>
+<img alt="Mobile Logo" class="logo-image mobile-logo-image"/>
+</a>
+</div>
+<nav class="hornav" id="hornav-nav">
+<ul class="mod-menu mod-list menu">
+<li class="nav-item item-464 default"><a data-review-original-href="/index.php" href="#" tabindex="-1">Kezdőlap</a></li><li class="nav-item item-614 divider deeper parent"><span class="columns-2">Aktuális<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-706"><a class="columns-2" data-review-original-href="/index.php/aktualis/varosi-hirek" href="#" tabindex="-1"><img alt="Városi hírek"/><span class="image-title">Városi hírek</span> </a></li><li class="nav-item item-707"><a class="columns-2" data-review-original-href="/index.php/aktualis/meghivo" href="#" tabindex="-1"><img alt="Meghívók"/><span class="image-title">Meghívók</span> </a></li><li class="nav-item item-708"><a data-review-original-href="/index.php/aktualis/hirdetmeny" href="#" tabindex="-1"><img alt="Hirdetmények"/><span class="image-title">Hirdetmények</span> </a></li><li class="nav-item item-709"><a data-review-original-href="/index.php/aktualis/aktualis-palyazatok-berlakas-egyebek" href="#" tabindex="-1"><img alt="Aktuális pályázati kiírások, bérlakás, egyebek"/><span class="image-title">Aktuális pályázati kiírások, bérlakás, egyebek</span> </a></li><li class="nav-item item-711"><a class="columns-2" data-review-original-href="/index.php/aktualis/allas" href="#" tabindex="-1"><img alt="Állásajánlatok"/><span class="image-title">Állásajánlatok</span> </a></li><li class="nav-item item-712"><a class="columns-2" data-review-original-href="/index.php/aktualis/adozas" href="#" tabindex="-1"><img alt="Aktuális adózási információk"/><span class="image-title">Aktuális adózási információk</span> </a></li><li class="nav-item item-713"><a class="columns-2" data-review-original-href="/index.php/aktualis/sajtokozlemenyek" href="#" tabindex="-1"><img alt="Sajtóközlemények"/><span class="image-title">Sajtóközlemények</span> </a></li><li class="nav-item item-843"><a data-review-original-href="/index.php/aktualis/csaladbarat-munkahely" href="#" tabindex="-1"><img alt="Családbarát munkahely"/><span class="image-title">Családbarát munkahely</span> </a></li></ul></li><li class="nav-item item-507 deeper parent"><span>Városháza<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-823"><a data-review-original-href="/index.php/varoshaza/kozmeghallgatasok" href="#" tabindex="-1"><img alt="Közmeghallgatások"/><span class="image-title">Közmeghallgatások</span> </a></li><li class="nav-item item-519 divider deeper parent"><span><img alt="Önkormányzat &gt;"/><span class="image-title">Önkormányzat &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-746"><a data-review-original-href="/index.php/varoshaza/responsive-design/polgarmesteri-koszonto" href="#" tabindex="-1">○ Polgármesteri Köszöntő</a></li><li class="nav-item item-693 deeper parent"><a data-review-original-href="/index.php/varoshaza/responsive-design/kepviselo-testulet" href="#" tabindex="-1">○ Képviselő-testület<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></a><ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-876"><a data-review-original-href="/index.php/varoshaza/responsive-design/kepviselo-testulet/kepviseloi-vagyon-nyilatkozatok" href="#" tabindex="-1">Képviselői vagyon nyilatkozatok</a></li></ul></li><li class="nav-item item-694"><a data-review-original-href="/index.php/varoshaza/responsive-design/bizottsagok" href="#" tabindex="-1">○ Bizottságok</a></li><li class="nav-item item-695"><a data-review-original-href="/index.php/varoshaza/responsive-design/nemzetisegi-onkormanyzatok" href="#" tabindex="-1">○ Nemzetiségi önkormányzatok</a></li><li class="nav-item item-696 divider"><span>○ Társulások</span>
+</li><li class="nav-item item-697 divider"><span>○ Választási információk</span>
+</li><li class="nav-item item-794"><a data-review-original-href="/index.php/varoshaza/responsive-design/testver-varosok" href="#" tabindex="-1">○ Testvér Városok</a></li><li class="nav-item item-795"><a data-review-original-href="/index.php/varoshaza/responsive-design/jatszoterek" href="#" tabindex="-1">○ Játszóterek</a></li><li class="nav-item item-819"><a data-review-original-href="/index.php/varoshaza/responsive-design/varosfejlesztes" href="#" tabindex="-1">○ Városfejlesztés, koncepciók</a></li><li class="nav-item item-815"><a data-review-original-href="https://gis.erda.hu/erda/html/projects/szentlorinc/main.php" href="#" tabindex="-1">○ Térinformatikai térkép</a></li><li class="nav-item item-854"><a data-review-original-href="/index.php/varoshaza/responsive-design/kozbeszterv" href="#" tabindex="-1">Közbeszerzési terv</a></li></ul></li><li class="nav-item item-622 divider deeper parent"><span><img alt="Közös Hivatal &gt;"/><span class="image-title">Közös Hivatal &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-745"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/jegyzoi-koszonto" href="#" tabindex="-1">○ Jegyzői köszöntő</a></li><li class="nav-item item-699"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/szervezeti-szemelyzeti-adatok" href="#" tabindex="-1">○ Szervezeti, személyzeti adatok</a></li><li class="nav-item item-757"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/szabalyzatok" href="#" tabindex="-1">○ Szabályzatok, építési szabályozás</a></li><li class="nav-item item-855"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/beszamolok" href="#" tabindex="-1">○ Beszámolók</a></li><li class="nav-item item-796 divider deeper parent"><span>○ Közrend &gt;<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-816"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/kozrend/kozterulet-felugyelet" href="#" tabindex="-1">Közterület felügyelet</a></li><li class="nav-item item-817"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/kozrend/parkolas" href="#" tabindex="-1">Parkolás</a></li><li class="nav-item item-818"><a data-review-original-href="/index.php/varoshaza/kozos-onkormanyzati-hivatal/kozrend/terfigyelo-kamerak" href="#" tabindex="-1">Térfigyelő kamerák</a></li></ul></li></ul></li><li class="nav-item item-702 divider deeper parent"><span><img alt="Pályázatok &gt;"/><span class="image-title">Pályázatok &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-703"><a data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-meghirdetett-palyazatok" href="#" tabindex="-1">○ Aktuális pályázati kiírások, bérlakás, egyebek</a></li><li class="nav-item item-704"><a data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-elnyert-palyazatok" href="#" tabindex="-1">○ Önkormányzat által elnyert pályázatok</a></li><li class="nav-item item-705 divider"><span>○ Kitüntetések</span>
+</li><li class="nav-item item-839"><a data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-benyujtasra-kerult-palyazatok" href="#" tabindex="-1">○ Önkormányzat által benyújtásra kerűlt pályázatok</a></li></ul></li><li class="nav-item item-779 divider deeper parent"><span><img alt="Testületi anyagok &gt;"/><span class="image-title">Testületi anyagok &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-780"><a data-review-original-href="/index.php/varoshaza/testuleti-dokumentumok/eloterjesztesek" href="#" tabindex="-1">○ Előterjesztések</a></li><li class="nav-item item-781"><a data-review-original-href="/index.php/varoshaza/testuleti-dokumentumok/jegyzokonyvek" href="#" tabindex="-1">○ Jegyzőkönyvek</a></li></ul></li><li class="nav-item item-765"><a data-review-original-href="/index.php/varoshaza/gyermeketkeztetes" href="#" tabindex="-1"><img alt="Gyermekétkeztetés"/><span class="image-title">Gyermekétkeztetés</span> </a></li></ul></li><li class="nav-item item-714 divider deeper parent"><span>Ügyintézés<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-717 divider deeper parent"><span><img alt="Hivatali ügyek &gt;"/><span class="image-title">Hivatali ügyek &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-731"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/ugyfelfogadasi-ido" href="#" tabindex="-1">○ Ügyfélfogadási idő</a></li><li class="nav-item item-723"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/adougyek" href="#" tabindex="-1">○ Adóügyek</a></li><li class="nav-item item-724"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/hatosagi-ugyek" href="#" tabindex="-1">○ Hatósági ügyek</a></li><li class="nav-item item-725"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/szocialis-ugyek-hagyatek-anyakonyv" href="#" tabindex="-1">○ Szociális ügyek, Hagyaték, Anyakönyv</a></li><li class="nav-item item-726"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/vagyongazdalkodasi-ugyek" href="#" tabindex="-1">○ Vagyongazdálkodási ügyek</a></li><li class="nav-item item-727"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/epitesi-kornyezetvedelmi-kozterulet-hasznalati-ugyek" href="#" tabindex="-1">○ Építési, környezetvédelmi, közterület-használati ügyek</a></li><li class="nav-item item-728"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/varosepiteszeti-ugyek" href="#" tabindex="-1">○ Városépítészeti ügyek</a></li><li class="nav-item item-729"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/varosuzemeltetesi-ugyek" href="#" tabindex="-1">○ Városüzemeltetési ügyek</a></li><li class="nav-item item-730"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/panasz-es-kozerdeku-bejelentes" href="#" tabindex="-1">○ Panasz és közérdekű bejelentés</a></li><li class="nav-item item-732"><a data-review-original-href="https://kormanyhivatalok.hu/kormanyhivatalok/baranya/megye/kormanyablak/szentlorinc-7940" href="#" tabindex="-1">○ Kormányablak</a></li><li class="nav-item item-733"><a data-review-original-href="/index.php/ugyintezes/onkormanyzati-ugyek/talalt-targyak-listaja" href="#" tabindex="-1">○ Talált tárgyak listája</a></li></ul></li><li class="nav-item item-718 divider deeper parent"><span><img alt="E-ügyintézés &gt;"/><span class="image-title">E-ügyintézés &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-754"><a data-review-original-href="https://or.njt.hu/onkorm/1:12:2164:-:-:1:-:-:-/1/10" href="#" tabindex="-1">○ Önkormányzati rendelettár</a></li><li class="nav-item item-755"><a data-review-original-href="https://ohp-20.asp.lgov.hu/kereses?sourceUrl=%2Fszolgaltatasok" href="#" tabindex="-1">○ Helyi adók egyenlegének lekérdezése</a></li><li class="nav-item item-756"><a data-review-original-href="https://magyarorszag.hu/" href="#" tabindex="-1">○ Magyarorszag.hu</a></li></ul></li><li class="nav-item item-719 divider deeper parent"><span><img alt="Adatvédelem &gt;"/><span class="image-title">Adatvédelem &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-734"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/adatvedelmi-tisztviselo" href="#" tabindex="-1">○ Adatvédelmi tisztviselő</a></li><li class="nav-item item-735"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/szemelyes-adatok-vedelme" href="#" tabindex="-1">○ Személyes adatok védelme</a></li><li class="nav-item item-737"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/adatvedelmi-egyuttmukodes" href="#" tabindex="-1">○ Adatvédelmi együttműködés</a></li><li class="nav-item item-758"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/uvegzseb" href="#" tabindex="-1">○ Üvegzseb</a></li><li class="nav-item item-821"><a data-review-original-href="/index.php/ugyintezes/e-ugyintezes-2/adatkezeles-adatvedelem-dokumentumok" href="#" tabindex="-1">○ Adatkezelés, Adatvédelem dokumentumok </a></li></ul></li><li class="nav-item item-748 divider deeper parent"><span><img alt="Közérdekű adatok &gt;"/><span class="image-title">Közérdekű adatok &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-753"><a data-review-original-href="https://szentlorinc.hu/kozadat/" href="#" tabindex="-1" title="közérdekű adatai">Szentlőrinc Város</a></li><li class="nav-item item-749"><a data-review-original-href="https://szentlorinc.hu/kozadat/hivatal/" href="#" tabindex="-1" title="közérdekű adatai">Szentlőrinci K.Ö.H.</a></li><li class="nav-item item-750"><a data-review-original-href="https://szentlorinc.hu/kozadat/roma/" href="#" tabindex="-1" title="közérdekű adatai">Roma Nemzetiségi Önkormányzat</a></li><li class="nav-item item-752"><a data-review-original-href="https://szentlorinc.hu/kozadat/horvat/" href="#" tabindex="-1" title="közérdekű adatai">Horvát Nemzetiségi Önkormányzat</a></li><li class="nav-item item-751"><a data-review-original-href="https://szentlorinc.hu/kozadat/nemet/" href="#" tabindex="-1" title="közérdekű adatai">Német Nemzetiségi Önkormányzat</a></li><li class="nav-item item-736"><a data-review-original-href="https://www.kozadattar.hu/" href="#" tabindex="-1">Közérdekű adatok keresője</a></li></ul></li></ul></li><li class="nav-item item-715 active divider deeper parent"><span>Élet a városban<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-720 deeper parent"><span><img alt="Városinformációk &gt;"/><span class="image-title">Városinformációk &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-739"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-varos-jelkepei" href="#" tabindex="-1">○ Szentlőrinc város jelképei</a></li><li class="nav-item item-740"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/unnepek-evfordulok" href="#" tabindex="-1">○ Ünnepek, évfordulók</a></li><li class="nav-item item-741 divider deeper parent"><span>○ Sport<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-846"><a data-review-original-href="https://www.szentlorincse.hu/" href="#" tabindex="-1">Szentlőrinc SE</a></li><li class="nav-item item-847"><a data-review-original-href="https://www.facebook.com/profile.php?id=100068028229215" href="#" tabindex="-1">Szentlőrinci Kézilabda Sportegyesület</a></li></ul></li><li class="nav-item item-824"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/kozossegi-koltsegvetes-szentlorincen" href="#" tabindex="-1">○ Közösségi költségvetés Szentlőrincen</a></li><li class="nav-item item-742"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-telepulesi-ertektar" href="#" tabindex="-1">○ Szentlőrinc Települési Értéktár</a></li><li class="nav-item item-744"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-polgarmesterei" href="#" tabindex="-1">○ Szentlőrinc polgármesterei</a></li><li class="nav-item item-820"><a data-review-original-href="https://szentlorinc.hu/images/varos_dokumentumok/hep.pdf" href="#" tabindex="-1">○ Helyi Esélyegyenlőségi Program</a></li><li class="nav-item item-738"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/szentlorinc-tortenete" href="#" tabindex="-1">○ Szentlőrinc története</a></li><li class="nav-item item-848"><a data-review-original-href="https://delkom.hu/szentlorinc/" href="#" tabindex="-1">○ Hulladékszállítás, lomtalanítás</a></li><li class="nav-item item-743 divider"><span>○ Várostörténeti érdekességek</span>
+</li><li class="nav-item item-853"><a data-review-original-href="/index.php/elet-a-varosban/varosinformaciok/kituntetesek" href="#" tabindex="-1">Kitüntetések</a></li></ul></li><li class="nav-item item-721 active divider deeper parent"><span><img alt="Intézmények &gt;"/><span class="image-title">Intézmények &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-759"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/muvelodesi-kozpont-konyvtar-es-konyha-szentlorinc" href="#" tabindex="-1">○ Művelődési Központ, Könyvtár és Konyha Szentlőrinc</a></li><li class="nav-item item-760"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/szocialis-szolgaltato-kozpont" href="#" tabindex="-1">○ Szociális Szolgáltató Központ</a></li><li class="nav-item item-761"><a data-review-original-href="https://www.szentlorinciskola.hu/" href="#" tabindex="-1">○ Szentlőrinci Általános iskola</a></li><li class="nav-item item-762"><a data-review-original-href="https://szentlorinciovoda.hu/" href="#" tabindex="-1">○ Szentlőrinci Kistérségi Óvoda és Bölcsőde</a></li><li class="nav-item item-763 current active"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/egeszsegugyi-szolgaltatasok" href="#" tabindex="-1">○ Egészségügyi szolgáltatások</a></li><li class="nav-item item-764"><a data-review-original-href="https://kozuzemi.hu/" href="#" tabindex="-1">○ Szentlőrinci Közüzemi Nkft.</a></li><li class="nav-item item-822"><a data-review-original-href="/index.php/elet-a-varosban/intezmenyek/szentlorinci-media-nonprofit-kft" href="#" tabindex="-1">○ Szentlőrinci Média Nonprofit Kft.</a></li></ul></li><li class="nav-item item-722 divider deeper parent"><span><img alt="Civil szervezetek &gt;"/><span class="image-title">Civil szervezetek &gt;</span> <span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-793"><a data-review-original-href="/index.php/elet-a-varosban/civil-szervezetek/egyesuletek-es-alapitvanyok" href="#" tabindex="-1">Egyesületek és Alapítványok</a></li></ul></li><li class="nav-item item-845 divider"><span><img alt="Galéria"/><span class="image-title">Galéria</span> </span>
+</li><li class="nav-item item-849"><a data-review-original-href="/index.php/elet-a-varosban/lobbi-parti" href="#" tabindex="-1"><img alt="Lobbi parti"/><span class="image-title">Lobbi parti</span> </a></li></ul></li><li class="nav-item item-710 deeper parent"><span class="columns-2">Választások<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></span>
+<ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-840"><a data-review-original-href="/index.php/valasztas/2026-orszaggyulesi-valasztasok" href="#" tabindex="-1" target="_blank">2026 Országgyűlési Választások</a></li><li class="nav-item item-842"><a data-review-original-href="https://www.valasztas.hu/ugyintezes" href="#" tabindex="-1">Választási ügyintézés</a></li><li class="nav-item item-841"><a data-review-original-href="/index.php/valasztas/valasztasi-szervek" href="#" tabindex="-1">Választási szervek</a></li><li class="nav-item item-850 deeper parent"><a data-review-original-href="/index.php/valasztas/valasztasi-archivum" href="#" tabindex="-1">Választási Archívum<span aria-hidden="true" class="parent-indicator j51-inline-icon"><svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" fill="currentColor"></path></svg></span></a><ul class="mod-menu__sub list-unstyled small"><li class="nav-item item-851"><a data-review-original-href="/index.php/valasztas/valasztasi-archivum/2024-helyi-valasztasok" href="#" tabindex="-1">2024 Helyi választások</a></li></ul></li></ul></li><li class="nav-item item-716"><a data-review-original-href="/index.php/kereses" href="#" tabindex="-1">Keresés</a></li></ul>
+</nav>
+<div id="socialmedia">
+<ul id="navigation">
+</ul>
+</div> <a aria-haspopup="true" class="menu-toggle" data-review-original-href="#mobile-menu" href="#" role="button" tabindex="-1">
+<span></span>
+</a>
+</div>
+</header>
+<div class="module_block border_block" id="container_showcase1_modules">
+<div class="wrapper960">
+<div class="block_holder" id="showcase1_modules"><div class="block_holder_margin" id="wrapper_showcase-1"><div class="showcase-1 showcase-1c" style="max-width:100%;"><div class="module">
+<div class="module_surround">
+<div class="module_content">
+<div class="mod-custom custom" id="mod-custom1017">
+<p><img alt="sztl logo" height="358" style="float: right;" width="348"/></p></div>
+</div>
+</div>
+</div></div><div class="clear"></div></div></div> </div>
+</div>
+<div class="component_block" id="container_main">
+<div class="wrapper960">
+<div id="main">
+<div class="side_margins content_full" id="content_full">
+<div class="maincontent">
+<div class="message">
+<div aria-live="polite" id="system-message-container"></div>
+</div>
+<div class="com-content-article item-page">
+<meta content="hu-HU" itemprop="inLanguage"/>
+<div class="page-header">
+<h1>
+            Egészségügyi szolgáltatások        </h1>
+</div>
+<div class="com-content-article__body">
+<div class="article-header">
+<h1><span style="font-family: 'times new roman', times;">Eszterházy Egészség Központ</span></h1>
+<hr/><span style="font-size: 14pt; font-family: 'times new roman', times;">Cím: Szentlőrinc, Március 15. tér 1, 7940</span></div>
+<div> </div>
+<div class="article-header"><span style="font-family: 'times new roman', times; font-size: 14pt;">Honlap: <a data-review-original-href="https://www.eszterhazy-eu.hu/index.php?id=8&amp;menu=3" href="#" tabindex="-1">Megtekintés</a></span></div>
+<p></p>
+<div class="article-header">
+<h1 itemprop="headline"> </h1>
+<h1 itemprop="headline"><span style="font-family: 'times new roman', times;">Háziorvosi szolgáltatások</span></h1>
+</div>
+<div itemprop="articleBody"><hr/>
+<div class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Alapellátás - háziorvosi rendelési idők</strong></span></div>
+<div class="rtecenter"><span style="font-family: 'times new roman', times;">Cím: 7940 Szentlőrinc, Kossuth L. u. 1.</span></div>
+<hr/>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Dr. Rinfel József</strong> - háziorvos, belgyógyász, diabetológus</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Tel./Fax: 73/-440-368</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Mobil rendelő: 30/388-50-92 Mobil: 30/959-73-78</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Rendelési idő:</span></p>
+<table align="center" border="0" cellpadding="2" cellspacing="2" class="cke_show_border">
+<tbody>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> hétfő</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">9.00-13.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> kedd</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">13.30-17.30</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> szerda</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">9.00-13.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> csütörtök</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">13.30-17.30</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> péntek</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.00-12.00</span></td>
+</tr>
+</tbody>
+</table>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Dr. Weisz Mária</strong> - háziorvos, belgyógyász, diabetológus</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Tel: 73/370-277 Mobil: 30/216-03-00</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Rendelési idő:</span></p>
+<table align="center" border="0" cellpadding="2" cellspacing="2" class="cke_show_border">
+<tbody>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> hétfő</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">13.30-17.30</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> kedd</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">9.00-13.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> szerda</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">13.30-17.30</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> csütörtök</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">9.00-13.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> péntek</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">10.00-12.00</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Dr. Saska Zsuzsanna</strong> - háziorvos, neurológus</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Tel: 73/371-157</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Rendelési idő:</span></p>
+<table align="center" border="0" cellpadding="2" cellspacing="2" class="cke_show_border">
+<tbody>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> hétfő</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.00-13.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> kedd</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.00-13.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> szerda</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">13.00-17.30</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> csütörtök</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.00-13.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> péntek</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.00-12.00</span></td>
+</tr>
+</tbody>
+</table>
+<div><span style="font-family: 'times new roman', times;"></span></div>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Dr. Budavári Beáta </strong>- csecsemő és gyermekgyógyász szakorvos</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Tel: 73/371-036</span><br/><span style="font-family: 'times new roman', times;">Mobilszám: 06-30/969-4540</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Rendelési idő:</span></p>
+<table align="center" border="0" cellpadding="2" cellspacing="2" class="cke_show_border">
+<tbody>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> hétfő</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">7.30-10.00 és 15.00-16.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> kedd</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">7.30-9.30 és 9.30-tól vidék</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> szerda</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">7.30-10.00 és 10.30-tól iskola fogadás</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> csütörtök</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">7.30-10.00 és 15.00-16.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> péntek</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">7.30-10.00</span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"> <strong>Fogászat - fogászati rendelési idők</strong></span></p>
+<hr/>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Dr. Cserna Péter</strong> - fogszakorvos</span><br/><br/><span style="font-family: 'times new roman', times;">Tel.: 73/370-538</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Rendelési idő:</span></p>
+<table align="center" border="0" cellpadding="2" cellspacing="2" class="cke_show_border">
+<tbody>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> hétfő</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.30-13.30</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> kedd</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.30-14.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> szerda</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">8.30-13.30</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> csütörtök</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">12.30-18.00</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> péntek</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">iskolafogászat</span></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Dr. Szepesi Kinga</strong> - fogszakorvos</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Tel: 73/370-497</span></p>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;">Rendelési idő:</span></p>
+<table align="center" border="0" cellpadding="2" cellspacing="2" class="cke_show_border">
+<tbody>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> hétfő</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">délután</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> kedd</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">délután</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> szerda</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">délelőtt</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> csütörtök</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">délelőtt</span></td>
+</tr>
+<tr>
+<td><span style="font-family: 'times new roman', times;"><strong> péntek</strong></span></td>
+<td><span style="font-family: 'times new roman', times;">iskola fogászat</span></td>
+</tr>
+</tbody>
+</table>
+<p class="rtecenter"><span style="font-family: 'times new roman', times;"><strong>Dr. Magyar József </strong>- fogszakorvos</span></p>
+<p><span style="font-family: 'times new roman', times;"><strong>Címe:</strong></span></p>
+<p><span style="font-family: 'times new roman', times;">7940 Szentlőrinc, Eszterházy u. 1. (Eszterházy Egészségközpont)</span></p>
+<p><span style="font-family: 'times new roman', times;"><strong>Rendelési idő:                                                                      Rendelő telefonszáma:</strong></span></p>
+<p><span style="font-family: 'times new roman', times;">Hétfő: 12:00-18:00                                                               +36 30 162 9746</span></p>
+<p><span style="font-family: 'times new roman', times;">Kedd: 8:00-14:00</span></p>
+<p><span style="font-family: 'times new roman', times;">Szerda: 12:00-18:00</span></p>
+<p><span style="font-family: 'times new roman', times;">Csütörtök: 10:00-16:00</span></p>
+<p><span style="font-family: 'times new roman', times;">Péntek: 8:00-14:00</span></p>
+<hr/>
+<p><span style="font-family: 'times new roman', times;"><strong> <span style="font-size: 18pt;">Védőnői Szolgáltatások</span></strong></span></p>
+<hr/>
+<p><span style="font-family: 'times new roman', times;"><strong>Cím:</strong> ESZTERHÁZY EGÉSZSÉGKÖZPONT (Szentlőrinc, Eszetrházy u. 1.)</span></p>
+<p><span style="font-family: 'times new roman', times;"><strong>Védőnői tanácsadó:</strong></span></p>
+<p><span style="font-family: 'times new roman', times;">Szentlőrinc, Eszterházy Egészségközpont - Gyermekgyógyászati rendelő</span></p>
+<p><span style="font-family: 'times new roman', times;"><strong>Védőnői iroda:</strong></span></p>
+<p><span style="font-family: 'times new roman', times;">E-mail cím: </span></p>
+<p><span style="font-family: 'times new roman', times;">Facebook: Szentlőrinci Védőnői Szolgálat (zárt csoport)</span></p>
+<p><span style="font-family: 'times new roman', times;"><img alt="" data-alt="vedono 600"/></span></p>
+<p><span style="font-family: 'times new roman', times;"><img alt="" data-cke-saved-src="/data/informaciok/vedonoi_szolgalat/vedono_600.jpg"/></span></p>
+<h3><span style="font-family: 'times new roman', times;"><strong>Védőnői körzetek:</strong></span></h3>
+<p><span style="font-family: 'times new roman', times;"><strong>I-es számú védőnői körzet</strong></span></p>
+<p><span style="font-family: 'times new roman', times;">Védőnő: Szentgyörgyi Tünde</span><br/><br/><span style="font-family: 'times new roman', times;">E-mail: <a data-review-original-href="mailto:szentlorinc.vedono1@pte.hu" href="#" tabindex="-1"></a><a data-review-original-href="mailto:szentlorinc.vedono1@pte.hu" href="#" tabindex="-1"></a><joomla-hidden-mail base="" first="c3plbnRsb3JpbmMudmVkb25vMQ==" is-email="1" is-link="1" last="cHRlLmh1" text="c3plbnRsb3JpbmMudmVkb25vMUBwdGUuaHU=">Ez az e-mail-cím a szpemrobotok elleni védelem alatt áll. Megtekintéséhez engedélyeznie kell a JavaScript használatát.</joomla-hidden-mail></span><br/><br/><span style="font-family: 'times new roman', times;">Tel.: 30/176-75-50</span></p>
+<p><span style="font-family: 'times new roman', times;">Tanácsadási idő: hétfő - előzetes időpont egyeztetésével</span></p>
+<p><span style="font-family: 'times new roman', times;">Körzethez tartozó utcák:</span></p>
+<p><span style="font-family: 'times new roman', times;">Baja u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Bányász u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Bartók B. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Deák F. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Dózsa Gy. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Árpád u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Gárdony u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Erzsébet u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Hunyadi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">József A. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Kodály Z. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Liliom u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Liszt F. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Nyárfa u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Pécsi u. 23/A,B,C,D</span></p>
+<p><span style="font-family: 'times new roman', times;">Szent István u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Széchenyi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Táncsics M. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Váczi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Virág u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Vasút u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Ybli M. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Keresztespuszta</span></p>
+<p><span style="font-family: 'times new roman', times;">Tarcsapuszta</span></p>
+<p><span style="font-family: 'times new roman', times;"><strong>II-es számú védőnői körzet</strong></span></p>
+<p><span style="font-family: 'times new roman', times;">Védőnő: Borovácz Boglárka</span></p>
+<p><span style="font-family: 'times new roman', times;">E-mail: <span id="cloak2658fd1d09223b96d1f6e0a53105cc1f"><a data-review-original-href="mailto:szentlorinc.vedono2@pte.hu" href="#" tabindex="-1"></a><joomla-hidden-mail base="" first="c3plbnRsb3JpbmMudmVkb25vMg==" is-email="1" is-link="1" last="cHRlLmh1" text="c3plbnRsb3JpbmMudmVkb25vMkBwdGUuaHU=">Ez az e-mail-cím a szpemrobotok elleni védelem alatt áll. Megtekintéséhez engedélyeznie kell a JavaScript használatát.</joomla-hidden-mail></span></span></p>
+<p><span style="font-family: 'times new roman', times;">Tel.: 30/127-73-21</span></p>
+<p><span style="font-family: 'times new roman', times;">Tanácsadási idő: szerda - előzetes időpont egyeztetésével</span></p>
+<p><span style="font-family: 'times new roman', times;">Körzethez tartozó utcák:</span></p>
+<p><span style="font-family: 'times new roman', times;">Ady E. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Attila u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Aradi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Árok u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Bem u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Bertalan Püspök u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Bocskai u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Dr. Múró u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Fürdő u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Gyöngyvirág u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Ifjúság u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Jókai u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Kismező u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Kosztolányi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Könyves K. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Liget u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Madách u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Mátyás király u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Móra F. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Móricz Zs. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Szabadság u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Szentlászló u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Temető u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Tinódi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Törökföld u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Vörösmarty u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Kacsóta</span></p>
+<p><span style="font-family: 'times new roman', times;"><strong>III-as számú védőnői körzet</strong></span></p>
+<p><span style="font-family: 'times new roman', times;">Védőnő: Győrfiné Bencze Letícia</span></p>
+<p><span style="font-family: 'times new roman', times;">E-mail: <span id="cloak2d269ca1a421e8bc3406148c78ea7b8b"><a data-review-original-href="mailto:szentlorinc.vedono3@pte.hu" href="#" tabindex="-1"></a><joomla-hidden-mail base="" first="c3plbnRsb3JpbmMudmVkb25vMw==" is-email="1" is-link="1" last="cHRlLmh1" text="c3plbnRsb3JpbmMudmVkb25vM0BwdGUuaHU=">Ez az e-mail-cím a szpemrobotok elleni védelem alatt áll. Megtekintéséhez engedélyeznie kell a JavaScript használatát.</joomla-hidden-mail></span></span></p>
+<p><span style="font-family: 'times new roman', times;">Tel.: 30/177-59-07</span></p>
+<p><span style="font-family: 'times new roman', times;">Tanácsadási idő: csütörtök - előzetes időpont egyeztetésével</span></p>
+<p><span style="font-family: 'times new roman', times;">Körzethez tartozó utcák:</span></p>
+<p><span style="font-family: 'times new roman', times;">Arany J. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Keresztesi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Kossuth L. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Március 15 tér 3/A,B,C,D</span></p>
+<p><span style="font-family: 'times new roman', times;">Március 15 tér 4/A,B,C,D</span></p>
+<p><span style="font-family: 'times new roman', times;">Megye u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Mikszáth K. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Munkácsy M. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Munkácsy lakópark</span></p>
+<p><span style="font-family: 'times new roman', times;">Nefelejcs u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Pécsi út 1-19</span></p>
+<p><span style="font-family: 'times new roman', times;">Pécsi út 10/A,B. 12/A,B. 14/A,B. 16/A,B.18/A,B</span></p>
+<p><span style="font-family: 'times new roman', times;">Petőfi S. u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Rákóczi u.</span></p>
+<p><span style="font-family: 'times new roman', times;">Szent Imre u.</span></p>
+<p>Templom tér</p>
+<p>Tompa M. u.</p>
+<p>Csonkamindszent</p>
+</div> </div>
+</div> <div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="module_block border_block jarallax" id="container_base1_modules">
+<div class="wrapper960">
+<div id="base-1">
+<div class="block_holder" id="base1_modules"><div class="block_holder_margin" id="wrapper_base-1"><div class="base-1 base-1a" style="max-width:25%;"><div class="module">
+<div class="module_surround">
+<div class="module_header">
+<h3 class="mod_standard"><span>A mi városunk...</span></h3>
+</div>
+<div class="module_content">
+<div class="mod-custom custom" id="mod-custom915">
+<p><img alt="sztl logo" height="1285" width="1247"/></p></div>
+</div>
+</div>
+</div></div><div class="base-1 base-1b" style="max-width:25%;"><div class="module">
+<div class="module_surround">
+<div class="module_header">
+<h3 class="mod_standard"><span>Legújabb hírek</span></h3>
+</div>
+<div class="module_content">
+<ul class="mod-articlescategory category-module mod-list">
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/aktualis/varosi-hirek/382-tajekoztato-a-futesi-koltsegmegosztok-kotelezo-felszereleserol" href="#" tabindex="-1"> Tájékoztató a fűtési költségmegosztók kötelező felszereléséről</a>
+</li>
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/aktualis/varosi-hirek/208-ajanlatteteli-felhivas" href="#" tabindex="-1">Ajánlattételi felhívás</a>
+</li>
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/aktualis/varosi-hirek/376-ajanlatteteli-felhivas-dimop-plusz-2-1-1-24-2025-00006-projekt-kereteben" href="#" tabindex="-1">Ajánlattételi felhívás DIMOP_PLUSZ-2.1.1-24-2025-00006 projekt keretében</a>
+</li>
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/aktualis/varosi-hirek/377-ajanlatteteli-felhivas-tervezoi-es-elokeszito-tevekenyseg-ellatasara-dimop-plusz-2-1-1-24-2025-00006-azonositoszamu-projekt" href="#" tabindex="-1">Ajánlattételi felhívás Tervezői és előkészítő tevékenység ellátására  DIMOP_PLUSZ-2.1.1-24-2025-00006 azonosítószámú projekt</a>
+</li>
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/aktualis/varosi-hirek/326-aktiv-magyarorszag" href="#" tabindex="-1">Aktiv magyarország</a>
+</li>
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/aktualis/varosi-hirek/351-allergia-teszt" href="#" tabindex="-1">Allergia teszt</a>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div class="base-1 base-1c" style="max-width:25%;"><div class="module">
+<div class="module_surround">
+<div class="module_header">
+<h3 class="mod_standard"><span>Legújabb pályázatok</span></h3>
+</div>
+<div class="module_content">
+<ul class="mod-articlescategory category-module mod-list">
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-elnyert-palyazatok/258-efop-1-5-3-16-2017-00100-humanreaktor-szellemi-eroforrasfejlesztes-szentlorinc-tersegenek-kozszolgaltatasaiban" href="#" tabindex="-1">EFOP 1.5.3-16-2017-00100 HUMÁNREAKTOR - szellemi erőforrásfejlesztés Szentlőrinc térségének közszolgáltatásaiban </a>
+</li>
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-elnyert-palyazatok/183-nka-petofi-200-v-forradalmi-emlekmu-kornyezetenek-megujulasa" href="#" tabindex="-1">NKA PETŐFI 200 ,,V" FORRADALMI EMLÉKMŰ KÖRNYEZETÉNEK MEGÚJULÁSA</a>
+</li>
+<li>
+<a class="mod-articles-category-title" data-review-original-href="/index.php/varoshaza/palyazatok/onkormanyzat-altal-elnyert-palyazatok/124-nyugat-es-del-dunantuli-ivovizminoseg-javito-program-1" href="#" tabindex="-1">NYUGAT- ÉS DÉL-DUNÁNTÚLI IVÓVÍZMINŐSÉG-JAVÍTÓ PROGRAM 1.</a>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div class="base-1 base-1d" style="max-width:25%;"><div class="module">
+<div class="module_surround">
+<div class="module_header">
+<h3 class="mod_standard"><span>Kapcsolat </span></h3>
+</div>
+<div class="module_content">
+<div class="mod-custom custom" id="mod-custom916">
+<p>7940 Szentlőrinc,<br/> Templom tér 8.</p>
+<p style="margin-bottom: -50px;"><span class="text-primary">Telefon:</span> +36 73/570-000<br/> <span class="text-primary">Email:</span> <a data-review-original-href="mailto:titkarsag@szentlorinc.hu" href="#" tabindex="-1">titkarsag@szentlorinc.hu</a></p></div>
+</div>
+</div>
+</div><div class="module">
+<div class="module_surround">
+<div class="module_content">
+<div class="j51_inlineicons j51_inlineicons815"><a class="j51_inlineicon" data-balloon="Twitter" data-balloon-pos="up" data-review-original-href="https://www.twitter.com/joomla51" href="#" tabindex="-1" target="_blank"><i class="fa fa-twitter" style="color:#3d5575" title="Twitter"></i></a><a class="j51_inlineicon" data-balloon="Facebook" data-balloon-pos="up" data-review-original-href="https://www.facebook.com/people/V%C3%B6r%C3%B6s-S%C3%A1ra/61557393778735/" href="#" tabindex="-1" target="_blank"><i class="fa fa-facebook" style="color:#3d5575" title="Facebook"></i></a><a class="j51_inlineicon" data-balloon="Instagram" data-balloon-pos="up" data-review-original-href="#" href="#" tabindex="-1"><i class="fa fa-instagram" style="color:#3d5575" title="Instagram"></i></a></div> </div>
+</div>
+</div></div><div class="clear"></div></div></div> </div>
+</div>
+</div>
+<div class="module_block border_block jarallax" id="container_base2_modules">
+<div class="wrapper960">
+<div id="base-2">
+<div class="block_holder" id="base2_modules"></div> </div>
+<div class="block_holder_margin" id="footer-1">
+<div class="module">
+<div class="module_surround">
+<div class="module_header">
+<h3 class="mod_standard"><span>A Szentlőrinci Közös Önkormányzati Hiavatalhoz tartozó települések</span></h3>
+</div>
+<div class="module_content">
+<div class="mod-custom custom" id="mod-custom1015">
+<p> </p>
+<div class="wf-columns wf-columns-stack-medium wf-columns-layout-auto" data-wf-columns="1">
+<div class="wf-column">
+<p style="text-align: center;">Csonkamindszent</p>
+<p><a data-review-original-href="https://csonkamindszent.hu" href="#" tabindex="-1"><img alt="Csonkamindszent" height="131" style="display: block; margin-left: auto; margin-right: auto;" width="112"/></a></p>
+<p style="text-align: center;"> </p>
+</div>
+<div class="wf-column">
+<p style="text-align: center;">Gyöngyfa</p>
+<p><a data-review-original-href="https://www.szentlorinc.hu/gyongyfa/gyongyfa.html" href="#" tabindex="-1"><img alt="Gyongyfa" height="136" style="display: block; margin-left: auto; margin-right: auto;" width="118"/></a></p>
+<p style="text-align: center;"> </p>
+</div>
+<div class="wf-column">
+<p style="text-align: center;">Helesfa</p>
+<p><a data-review-original-href="https://helesfa.hu" href="#" tabindex="-1"><img alt="Helesfa" height="155" style="display: block; margin-left: auto; margin-right: auto;" width="105"/></a></p>
+<p style="text-align: center;"> </p>
+</div>
+<div class="wf-column">
+<p style="text-align: center;">Hetvehely</p>
+<p><a data-review-original-href="https://hetvehely.hu" href="#" tabindex="-1"><img alt="Hetvehely" height="157" style="display: block; margin-left: auto; margin-right: auto;" width="117"/></a></p>
+</div>
+<div class="wf-column">
+<p style="text-align: center;">Kacsóta</p>
+<p><a data-review-original-href="https://kacsota.hu" href="#" tabindex="-1"><img alt="Kacsota" height="184" width="243"/></a></p>
+<p style="text-align: center;"> </p>
+</div>
+<div class="wf-column">
+<p style="text-align: center;">Okorvölgy</p>
+<p><a data-review-original-href="https://okorvolgy.hu" href="#" tabindex="-1"><img alt="Okorvolgy" height="147" style="display: block; margin-left: auto; margin-right: auto;" width="125"/></a></p>
+<p style="text-align: center;"> </p>
+</div>
+<div class="wf-column">
+<p style="text-align: center;">Szentkatalin</p>
+<p><a data-review-original-href="https://szentkatalin.hu" href="#" tabindex="-1"><img alt="szentkatalin" height="139" style="display: block; margin-left: auto; margin-right: auto;" width="123"/></a></p>
+<p style="text-align: center;"> </p>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<footer class="container_footer" id="container_footer">
+<div class="wrapper960">
+<div class="copyright">
+<p>© Minden jog fenntartva! Szentlőrinc Város Önkormányzata 2025. </p>
+</div>
+<div class="footermenu">
+<ul class="mod-menu mod-list menu">
+<li class="nav-item item-630"><a data-review-original-href="/index.php/bejelentkezes-az-oldalra" href="#" tabindex="-1">Bejelentkezés az oldalra</a></li></ul>
+</div>
+</div>
+</footer>
+<a class="smooth-scroll" data-review-original-href="#back-to-top" data-scroll="" href="#" tabindex="-1">
+<div class="back-to-top">
+<svg aria-hidden="true" focusable="false" role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg>
+</div>
+</a>
+<div class="unsupported">
+<p><strong>Sorry, this website uses features that your browser doesn’t support.</strong> Upgrade to a newer version of <a data-review-original-href="https://www.mozilla.org/en-US/firefox/new/" href="#" rel="nofollow noopener" tabindex="-1" target="_blank">Firefox</a>, <a data-review-original-href="https://www.google.com/chrome/" href="#" rel="nofollow noopener" tabindex="-1" target="_blank">Chrome</a>, <a data-review-original-href="https://support.apple.com/downloads/safari" href="#" rel="nofollow noopener" tabindex="-1" target="_blank">Safari</a>, or <a data-review-original-href="https://www.microsoft.com/en-us/edge" href="#" rel="nofollow noopener" tabindex="-1" target="_blank">Edge</a> and you’ll be all set.</p>
+</div>
+
+</body>
+</html>

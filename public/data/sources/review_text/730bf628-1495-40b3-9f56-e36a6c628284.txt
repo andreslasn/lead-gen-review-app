@@ -1,0 +1,775 @@
+fő tartalom
+Fogorvosi körzetek beosztása
+1. számú fogászati alapellátási körzet: I. Rendelőintézet 2400 Dunaújváros, Vasmű út 10.
+1.1.
+Ady Endre utca
+valamennyi házszám
+1.2.
+Alájáródülő
+1.3.
+Aranyvölgyi út
+1.4.
+Barátság útja
+1.5.
+Bagolyvár utca
+1.6.
+Berkenye köz
+1.7.
+Bocskai István utca
+7/A-7/B.
+1.8.
+Csillagdomb utca
+1.9.
+Csillagfény utca
+1.10.
+Csillagfürt utca
+1.11.
+Dunasor
+páratlan oldal: 17-31.
+1.12.
+Esze Tamás utca
+páros oldal: 10-12.
+páratlan oldal: 9-15., 13/A-13/D.
+1.13.
+Eszperantó út
+1.14.
+Fiastyúk utca
+1.15.
+Futó út
+1.16.
+Gandhi utca
+1.17.
+Garibaldi út
+1.18.
+Gerely út
+1.19.
+Göncöl köz
+1.20.
+Hangulat utca
+1.21.
+Holdfény utca
+1.22.
+Jászai Mari tér
+1.23.
+Kála utca
+1.24.
+Kassák Lajos utca
+1.25.
+Kohász utca
+1.26.
+Lokomotív utca
+1.27.
+Luther köz
+1.28.
+Martinovics Ignác utca
+páros oldal: 22-34.;
+páratlan oldal: 21-35.
+1.29.
+Mickiewicz Ádám utca
+1.30.
+Nap utca
+1.31.
+Németh László utca
+1.32.
+Nowa-Huta tér
+1.33.
+Osztrava tér
+1.34.
+Óragyári út
+1.35.
+Panoráma út
+1.36.
+Papírgyári út
+1.37.
+Sárkány köz
+1.38.
+Siklói út
+1.39.
+Sport utca
+1.40.
+Szent György út
+1.41.
+Szilvás utca
+1.42.
+Tejút köz
+1.43.
+Tornász út
+1.44.
+Tűzoltó út
+1.45.
+Újmajor dűlő
+1.46.
+Vasmű út
+páratlan oldal: 1-5.
+1.47.
+Velinszky László utca
+1.48.
+Vigadó utca
+1.49.
+Weiner Tibor körút
+páros oldal: 2-10.
+1.50.
+Zecher János tér
+A 2. számhoz nem tartozik körzet.
+3. számú fogászati alapellátási körzet: 2400 Dunaújváros, Vasmű út 10.
+3.1.
+Akácos út
+3.2.
+Ágacska utca
+3.3.
+Barsi Dénes út
+3.4.
+Batsányi János utca
+3.5.
+Berán Lajos utca
+3.6.
+páros oldal: 2., 2/A-2/F. páratlan oldal: 1/B-1/D., 3/A.
+3.7.
+Borgőz utca
+3.8.
+Butykos köz
+3.9.
+Csabagyöngye utca
+3.10.
+Csalogány utca
+3.11.
+Csónakházi út
+3.12.
+Déli városi út
+3.13.
+Duna parti út
+3.14.
+páratlan oldal: 5-7., 5/A-5/C.
+3.15.
+Erkel kert
+3.16.
+Erkel köz
+3.17.
+Európa Tanács utca
+3.18.
+Határ út
+3.19.
+Hosszú sor
+3.20.
+Ivó utca
+3.21.
+Kondor Béla utca
+3.22.
+Korányi Sándor utca
+3.23.
+Kossuth Lajos utca
+páros oldal: 4-6., 10-22. páratlan oldal: 5., 11-41., 27/A.
+3.24.
+Mályva utca
+3.25.
+Október 23. tér
+3.26.
+Orgona utca
+3.27.
+Palánk utca
+3.28.
+Pipacs köz
+3.29.
+Pipacs utca
+3.30.
+Pitypang köz
+3.31.
+Somogyi József utca
+3.32.
+Százszorszép utca
+3.33.
+Széchenyi István utca
+3.34.
+Vágó Eszter utca
+3.35.
+páros oldal: 12-14., 10/A.
+A 4., 5., 6., számhoz nem tartozik körzet.
+7. számú fogászati alapellátási körzet: 2400 Dunaújváros, Petőfi S. u. 1.
+7.1.
+Arany János utca
+7.2.
+Álmos utca
+7.3.
+Árpád utca
+7.4.
+Attila utca
+7.5.
+Barackos utca
+7.6.
+Baracsi út
+7.7.
+Bem utca
+7.8.
+Berzsenyi Dániel út
+7.9.
+Búzavirág utca
+7.10.
+Csali köz
+7.11.
+Császár lejtő utca
+7.12.
+Császár tanyák utca
+7.13.
+Előd utca
+7.14.
+Eper köz
+7.15.
+Ezüstfenyő utca
+7.16.
+Farkastanya
+7.17.
+Frangepán köz
+7.18.
+Frangepán utca
+7.19.
+Gárdonyi Géza utca
+7.20.
+Gerle utca
+7.21.
+Gőzmalom utca
+7.22.
+Hajós utca
+7.23.
+Halász sor
+7.24.
+Harcsa utca
+7.25.
+Hatos köz
+7.26.
+Hegyekalja utca
+7.27.
+Hétvezér u.
+7.28.
+Horgász köz
+7.29.
+Hun utca
+7.30.
+Hunyadi János utca
+7.31.
+Janitsáry puszta
+7.32.
+Jókai Mór utca
+7.33.
+Juhar köz
+7.34.
+Kabók tanya
+7.35.
+Kajszi utca
+7.36.
+Kálvária utca
+7.37.
+Kinizsi utca
+7.38.
+Kistemető utca
+7.39.
+Kölcsey Ferenc
+7.40.
+Kőrösi Csoma Sándor út
+7.41.
+Kenderáztató utca
+7.42.
+Kultúr köz
+7.43.
+Lánczos Kornél utca
+7.44.
+Lengyel köz
+7.45.
+Lépcső sor
+7.46.
+Magyar út
+7.47.
+Mikszáth köz
+7.48.
+Mikszáth utca
+7.49.
+Mohácsi utca
+7.50.
+Móra Ferenc utca
+7.51.
+Móricz Zsigmond utca
+7.52.
+Muskátli út
+7.53.
+Neumann János utca
+7.54.
+Nyírfa köz
+7.55.
+Nyúli tanya
+7.56.
+Ond utca
+7.57.
+Oroszi tanya
+7.58.
+Öreghegyi utca
+7.59.
+Pacsirta utca
+7.60.
+Páskom utca
+7.61.
+Pentele lépcső
+7.62.
+Pentelei Molnár János utca
+7.63.
+Petőfi Sándor utca
+7.64.
+Pince sor
+7.65.
+Platán köz
+7.66.
+Rákóczi Ferenc utca
+7.67.
+Ravasz Erzsébet utca
+7.68.
+Rév út
+7.69.
+Rigó utca
+7.70.
+Rosti Pál sor
+7.71.
+Rózsa utca
+7.72.
+Ruhagyári út
+7.73.
+Strand út
+7.74.
+Szent István utca
+7.75.
+Szigeti út
+7.76.
+Szilárd Leó utca
+7.77.
+Szilágyi Erzsébet utca
+7.78.
+Szondi utca
+7.79.
+Táborállás utca
+7.80.
+Táltos utca
+7.81.
+Tanyák
+7.82.
+Tamási Áron utca
+7.83.
+Temető utca
+7.84.
+Thököly Imre utca
+7.85.
+Tisza utca
+7.86.
+Toldi köz
+7.87.
+Tolsztoj utca
+7.88.
+Tóth Árpád utca
+7.89.
+Tölgyfa köz
+7.90.
+Tövis köz
+7.91.
+Úsztató dűlő
+7.92.
+Üdülő sor
+7.93.
+Vadvirág utca
+7.94.
+Vak Bottyán utca
+7.95.
+Városréti utca
+7.96.
+Varsa köz
+7.97.
+Vasúti őrházak
+7.98.
+Venyimi utca
+7.99.
+Verebély László út
+7.100.
+Viola utca
+7.101.
+Virág utca
+7.102.
+Vízimolnár köz
+7.103.
+Vízimolnárok utca
+7.104.
+Zrínyi Miklós utca
+8. számhoz nem tartozik körzet.
+9. számú fogászati alapellátási körzet: I. Rendelőintézet 2400 Dunaújváros, Vasmű út 10.
+9.1.
+Balogh Ádám utca
+9.2.
+Bástya út
+9.3.
+Bóna István utca
+9.4.
+Csokonai Mihály tér
+páratlan oldal: 5.
+9.5.
+Devecseri Gábor utca
+9.6.
+Dózsa György tér
+9.7.
+páratlan oldal: 1-11., 15.
+9.8.
+Eötvös József utca
+9.9.
+Gábor Áron utca
+páratlan oldal: 1-15.
+9.10.
+Gagarin tér
+9.11.
+Gutenberg köz
+9.12.
+Kodály Zoltán utca
+9.13.
+Kovácsi tanya
+9.14.
+Kőműves utca
+9.15.
+Leitner tanya
+9.16.
+páros oldal: 2-20.
+páratlan oldal: 1-19., 13/A-13/B.
+9.17.
+Mehádia puszta
+9.18.
+Nagy Imre utca
+9.19.
+Réti tanya
+9.20.
+Római körút
+páros 34/A, 34/B, 36/A, 36/B.
+9.21.
+Semmelweis Ignác utca
+9.22.
+Táncsics Mihály utca
+páratlan oldal: 3-7., 3/A-3/G.
+9.23.
+páros oldal: 2-8.; páratlan oldal: 31-39.
+9.24.
+páratlan oldal: 1-23.
+10. számú fogászati alapellátási körzet: I. Rendelőintézet, 2400 Dunaújváros, Vasmű út 10.
+10.1.
+Babits Mihály utca
+10.2.
+Bartók Béla tér
+10.3.
+Bartók Béla út
+10.4.
+Béke tér
+10.5.
+páros oldal: 4.
+10.6.
+Bólyai utca
+10.7.
+Építők útja
+10.8.
+páros oldal: 2-8.; páratlan oldal: 1.;17-19.
+10.9.
+páros oldal: 2/A.
+10.10.
+Görbe utca
+10.11.
+Hunyadi út
+10.12.
+József Attila utca
+10.13.
+Liget köz
+10.14.
+Május 1. utca
+10.15.
+Rakodó út
+10.16.
+páratlan oldal: 37-51.
+10.17.
+Széchenyi István park
+10.18.
+Szórád Márton út
+páros oldal: 2-12.
+10.19.
+páros oldal: 10-38., 4/A-4/B, 6/A-6/B, 8/A-8/B.; páratlan oldal: 9-21.
+10.20.
+páratlan oldal: 7-29.
+11. számhoz nem tartozik körzet.
+12. számú fogászati alapellátási körzet: I. Rendelőintézet 2400 Dunaújváros, Vasmű út 10.
+12.1.
+Alsó sétány
+12.2.
+Árnyas sétány
+12.3.
+1., 6.
+12.4.
+Diák köz
+12.5.
+Fáy András utca
+12.6.
+Fenyő köz
+12.7.
+17.
+12.8.
+Gagarin köz
+12.9.
+Garázs sor
+12.10.
+Gyármegkerülő út
+12.11.
+Mese köz
+12.12.
+Munkácsy Mihály utca
+12.13.
+Pajtás utca
+12.14.
+Panel utca
+12.15.
+Petőfi liget
+12.16.
+páros oldal: 2-24., 38/A, 38/B, 40-42.;
+páratlan oldal: 1-7., 11-25., 9/A-9/D.
+12.17.
+2/A-2/B.
+12.18.
+Üzlet sor
+12.19.
+Váci Mihály utca
+12.20.
+Vörösmarty Mihály utca
+páros oldal: 2.; páratlan oldal: 1-7.
+13. számhoz nem tartozik körzet.
+14. számú fogászati alapellátási körzet: 2400 Dunaújváros, Hold u. 1. 1/2.
+14.1.
+Áram út
+14.2.
+páros oldal: 16.; páratlan oldal: 5-7., 5/B.
+14.3.
+Budai Nagy Antal út
+14.4.
+páros oldal: 2.
+14.5.
+Derkovits utca
+14.6.
+14.7.
+Dózsa György út
+páros oldal: 40-54.; páratlan oldal: 1-25., 25/A
+14.8.
+Felső sétány
+14.9.
+páratlan oldal: 9.
+14.10.
+Intercisa liget
+14.11.
+Keskeny köz
+14.12.
+Köztársaság út
+14.13.
+Krúdy Gyula sor
+14.14.
+Latinovits Zoltán utca
+14.15.
+Lilla köz
+14.16.
+Lőtér út
+14.17.
+Múzeum tér
+14.18.
+páros oldal 26-30, 32/A, 32/B.;
+páratlan oldal 47-49.
+14.19.
+Tűzálló u.
+14.20.
+Városháza tér
+15. számú fogászati alapellátási körzet: 2400 Dunaújváros, Alkotás u. 7.
+15.1.
+páros oldal: 6-14.; páratlan oldal: 3., 3/B, 5/A.
+15.2.
+páratlan oldal: 3.
+15.3.
+Dr. Molnár László emlékpark
+15.4.
+Gáztelep út
+15.5.
+Hajnal út
+15.6.
+Hold utca
+15.7.
+Hűvösvölgy
+15.8.
+Kallós Dezső u.
+15.9.
+Kenyérgyári út
+15.10.
+Majakovszkij út
+15.11.
+Március 15. tér
+15.12.
+Nyárfa utca
+15.13.
+Országút dűlő
+15.14.
+Piac tér
+15.15.
+páratlan oldal 27-35.
+15.16.
+Széna sor
+15.17.
+Tavasz utca
+15.18.
+Völgy sor
+16. számú fogászati alapellátási körzet: 2400 Dunaújváros, Derkovits u.  2.
+16.1.
+Ács utca
+16.2.
+Alkotás utca
+16.3.
+Akácfa utca
+16.4.
+Béke körút
+16.5.
+Diófa utca
+16.6.
+Fáklya utca
+16.7.
+Földes Ferenc liget
+16.8.
+Győzelem út
+16.9.
+Háromszög tér
+16.10.
+Hársfa utca
+16.11.
+Hengerész utca
+16.12.
+Lajos király körút
+16.13.
+Településszintű lakcímmel rendelkezők
+16.14.
+Lobogó út
+16.15.
+Munkás utca
+16.16.
+Szabadság út
+páros oldal: 2-26., 30-52.
+16.17.
+páros oldal: 34-42.
+16.18.
+Távvezeték utca
+17. számú fogászati alapellátási körzet: I. Rendelőintézet 2400 Dunaújváros, Vasmű út 10.
+17.1.
+Apáczai Csere János út
+17.2.
+Áruház utca
+17.3.
+páros oldal: 2-38.
+17.4.
+17.5.
+Gábor Dénes utca
+17.6.
+Galambos utca
+17.7.
+Hangos utca
+17.8.
+páros oldal: 2., 2/A-2/B, 8.
+páratlan oldal: 1-3., 7-9., 7/A.
+17.9.
+Könyvtár köz
+17.10.
+Liszt Ferenc kert
+17.11.
+Liszt Ferenc köz
+17.12.
+Mélyvölgyi utca
+17.13.
+Óállomás
+17.14.
+Parksor
+17.15.
+Radnóti Miklós utca
+17.16.
+Rákóczi Ferenc tér
+17.17.
+Raktár utca
+17.18.
+Sándorháza
+17.19.
+Stromfeld Aurél utca
+17.20.
+Szedres
+17.21.
+páros oldal: 14-32.
+17.22.
+páratlan oldal: 43-69.
+17.23.
+Vasút sor
+17.24.
+Vigadó tér
+17.25.
+páratlan oldal: 9-17.
+18. számú fogászati alapellátási körzet: I. Rendelőintézet 2400 Dunaújváros, Vasmű út 10.
+18.1.
+II. János Pál pápa tér
+18.2.
+Bercsényi Miklós utca
+18.3.
+páros oldal: 1/A, 18-34.
+18.4.
+18.5.
+Deák Ferenc utca
+18.6.
+Dobó István út
+18.7.
+Domanovszky Endre tér
+18.8.
+páros oldal: 60-64., 60/A-60/C, 62/A-62/B. ; páratlan oldal: 27-39.
+18.9.
+Erdő sor
+18.10.
+Kalamár  utca
+18.11.
+Kandó Kálmán tér
+18.12.
+Kiserdei sétány
+18.13.
+Kollégium utca
+18.14.
+Kőris utca
+18.15.
+Lombos köz
+18.16.
+Mátyás király út
+18.17.
+Palme köz
+18.18.
+Patak köz
+18.19.
+Rózsa udvar
+18.20.
+Schalbert sziget
+18.21.
+páratlan oldal: 1/A-1/F., 3-25.;
+páros oldal: 28.
+18. 22.
+páratlan oldal: 15-23.;
+páros oldal: 44-46.
+18.23.
+Vasmű tér
+18.24.
+Víztorony utca
+módosítva
+2026. április. 23.
+Képviselő keresés
+Kezdje el gépelni a keresendő utcát.
+Közvetlen Uniós programok keretében megvalósuló projektek
+A Széchenyi Terv TOP Plusz program keretében megvalósuló projektek
+Versenyképes Járások Program
+A Széchenyi 2020 program keretében megvalósuló projektek
+Az Új Széchenyi Terv program keretében megvalósuló projektek
+Ha lakossági közvilágítással kapcsolatos észrevétele van, kérjük hívja az ingyenes
+06 80 205 413
+-as vagy a normál díjas
+06 30/334 4005
+-as telefonszámot, vagy a
+hibabejelento@villkorr.hu
+e-mail címre küldjön üzenetet.
+Ha hat, vagy annál több lámpa nem világít egymás mellett, akkor azt az E.ON felé kérjük jelezni a
+06 80 205 020
+-as számon vagy az alábbi linken:
+Hibabejelentő

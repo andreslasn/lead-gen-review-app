@@ -1,0 +1,42 @@
+⚠️ Az oldal fejlesztés alatt, a tartalom tartalmazhat pontatlan információkat
+Főoldal
+›
+Impresszum
+Üzemeltető
+A
+orvosiugyelet.hu
+egy ingyenes, nem-kereskedelmi tájékoztató oldal, amely a magyarországi központi orvosi ügyeleti pontok elérhetőségét teszi kereshetővé.
+Adatforrás
+Az ügyeleti pontok adatait az Országos Mentőszolgálat (OMSZ) nyilvánosan közzétett adataiból gyűjtjük. Az adatok tájékoztató jellegűek — változás esetén az OMSZ hivatalos oldalán ellenőrizze.
+Felelősség kizárása
+Az oldal nem helyettesíti a hivatalos orvosi tanácsot.
+Életveszély esetén hívja a 112-t.
+Sürgős, de nem életveszélyes orvosi panasz esetén az 1830-as számot. Az oldalon megjelenő adatok pontosságáért nem vállalunk felelősséget.
+Adatkezelés
+Az oldal
+nem gyűjt közvetlenül személyes adatokat
+, és nem regisztrálja név vagy elérhetőség alapján a látogatókat. A szerver naplófájljai technikai okokból tárolják az IP-címet és a lekért URL-t, ezeket kizárólag hibakeresésre használjuk, és 30 nap után automatikusan töröljük.
+Google Analytics (látogatottsági statisztika)
+Az oldal a
+Google Analytics 4
+(GA4) szolgáltatást használja a látogatottság anonim mérésére (oldalmegtekintések, eszköztípus, hivatkozó forrás, hozzávetőleges földrajzi régió). A GA4 alapértelmezetten
+anonimizálja az IP-címeket
+, és nem tárol személyazonosításra alkalmas adatokat. A mérés célja az oldal működésének és tartalmának javítása.
+A Google Analytics böngésző-sütit (cookie) helyez el az Ön eszközén. Ha ezt nem szeretné, az alábbi módokon tilthatja le:
+Telepítheti a hivatalos
+Google Analytics opt-out böngészőkiegészítőt
+:
+tools.google.com/dlpage/gaoptout
+Böngészőjében letilthatja a harmadik féltől származó sütiket, vagy „Do Not Track" módot bekapcsolhatja.
+A Google adatkezelési szabályzata:
+policies.google.com/privacy
+Egyéb külső szolgáltatások
+Google Fonts
+(betűtípusok), az
+OpenStreetMap
+(térkép) és a
+Leaflet
+(térképkönyvtár) beágyazása előidézhet külső kéréseket a böngészőben. Ezek a szolgáltatások a saját adatvédelmi szabályzatuk szerint kezelik az IP-címet.
+Kapcsolat
+Adatpontosítás, hibabejelentés, javaslat:
+info@orvosiugyelet.hu

@@ -1,0 +1,113 @@
+Háziorvosok
+Rendelések, helyettesítések
+pt
+-> páratlan hét
+ps
+-> páros hét
+rendelő orvos
+időpont
+helyettesítő orvos
+helyettesítés helye, ideje
+Gyermekorvos
+Háziorvos
+Fogorvos
+Jelmagyarázat:
+- páros hét
+- páratlan hét
+üo
+- üzemorvosi rendelés
+io
+- iskolaorvosi rendelés
+A telefonszámok a 34-es közetszámúak.
+Dr. Seprődi Bence
+2890 Tata, Váralja út 6/A
+481-217
+hétfő
+kedd
+szerda
+csütörtök
+péntek
+Dr. Cseh Tamás
+1. körzet
+13 - 17
+8 - 11
+13 - 16
+8 - 10
+Dr. Reisz Kornélia
+2890 Tata, Fazekas u. 3.
+586-039
+2. körzet
+8 - 12
+12 - 16
+14 - 16
+Dr. Horváth Róbert
+2890 Tata, Bajcsy-Zsilinszky u. 7.
+487-938
+3. körzet
+ps 8 - 10
+pt 12 - 14
+Dr. Pálfi János
+4. körzet
+ps 12 - 14
+pt 8 - 10
+Dr. Hantay Zsuzsa
+2890 Tata, Mikovényi u. 34.
+487-404
+5. körzet
+üo: 8 - 11
+Rendelő elérhetősége: 34/487-404, 20/944-29-82,
+zsuzsa@hantay.hu
+helyettesítő: Dr. Nagy Mária
+2890 Tata, Erzsébet tér 18.
+489-170
+6. körzet
+9 - 12
+Dr. Bartha Levente
+2890 Tata, Kosztolányi u. 2.
++36203252795
+7. körzet
+8:00 - 11:00
+11:00 - 12:00 : prevenciós tanácsadás
+12:00 - 15:00
+15:00 - 16:00 : prevenciós tanácsadás
+telefonszám: 34/656-930, 20/32-52-795
+e-mail: tatarendelo.7@gmail.com
+2022.08.01-én a rendelési idő módosul az informatikai rendszer átállítása miatt: 12:00 - 16:00
+Dr. Kaizer Ákos
+2890 Tata, Váralja út 6
+(+36-70) 603-5380
+8. körzet
+Recept igénylő E-mail címünk:
+recept2890@gmail.com
+Dr. Peti Ildikó Edit
+2890 Tata, Május 1. út 61.
+381-570
+9. körzet
+12:30-16:30
+8-11
+13-16
+8-10
+dr. Túri László
+380-583
+10. körzet
+tatarendelo.10@gmail.hu
+Beutalók,táppénzes papírok, receptek elvételére a rendelés utolsó órájában van lehetőség.
+Sürgős esetben munkaidőben (de csak rendelési időn kívül) Dr. Túri László elérhető a 06-70/7429445 telefonszámon.
+Dr. Fekete Erika
+2544 Neszmély, Semmelweis tér 2.
+451-741
+Neszmély
+Dr. Mannaa Abdul Nasser
+2899 Naszály, Ságvári E. u. 10.
+350-621
+Naszály
+Dr. Hortobágyi Ágnes
+2898 Kocs, Kossuth L. u. 7.
+471-731
+Kocs
+Dr. Kaizer Csilla
+2836 Baj, Petőfi S. u. 2/j
+488-846
+Baj
+Dr. Kiss Zsuzsanna
+488-845

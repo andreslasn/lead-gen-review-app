@@ -1,0 +1,266 @@
+TELEFONKÖNYV
+Név
+Munkakör
+Email
+Telefonszám
+KÖZPONTI SZÁM
+info@mako.hu
++36 62 511 800
+ZÖLDSZÁM
++36 80 820 039
+FAX
++36 62 511 801
+Postázó
++36 62 511 809
+Porta
++36 62 511 808
+Farkas Éva Erzsébet
+polgármester
+polgarmester@mako.hu
++36 62 511 810
+Kabinet Iroda – Titkárság
+Gila Noémi
+polgármesteri referens
+gila.noemi@mako.hu
+Loós Krisztina
+loos.krisztina@mako.hu
++36 62 511 812
+Kabinet Iroda
+kabinet@mako.hu
+Andrási Lilla
+kabinetvezető
+andrasi.lilla@mako.hu
++36 62 511 843
+Borka Barnabás
+kabineti ügyintéző
+borka.barnabas@mako.hu
+Kormos Tamás Zsolt
+kabinet és kommunikációs munkatárs
+kormos.tamas@mako.hu
+Sirokmán Edit
+sirokman.edit@mako.hu
+Projekt és Városmarketing Iroda
+Barna Gábor
+irodavezető
+marketing@mako.hu
++36 62 611 326
+Projekt és Városmarketing Iroda – Városmarketing Csoport
+Madarász Roland
+marketing munkatárs
+infopont@mako.hu
++36 62 511 878
+Takács Szimonetta
+városmarketing iroda munkatársa
+takacs.szimonetta@mako.hu
+Seregély Bence
+seregely.bence@mako.hu
+Projekt és Városmarketing Iroda – Projekt Csoport
+Bozsonyi Dávid
+projektmenedzser
+bozsonyi.david@mako.hu
++36 62 511 816
+Borka Fanni
+projekt asszisztens
+borka.fanni@mako.hu
++36 62 511 837
+Jegyzői Iroda
+dr. Bodnár Gréta
+jegyző
+jegyzo@mako.hu
++36 62 611 335
+dr. Jeszenszky Diána
+aljegyző
+jeszenszky.diana@mako.hu
++36 62 611 323
+Jegyzői Iroda – Személyzeti és Adminisztrációs Csoport
+Héja Andrea
+csoportvezető
+heja.andrea@mako.hu
++36 62 511 824
+Barta Tímea
+közfoglalkoztatási ügyintéző
+barta.timea@mako.hu
++36 62 611 339
+Szilágyi Imre Lászlóné
+postazo@mako.hu
+Mendei Csaba
+közfoglalkoztatási koordinátor
+mendei.csaba@mako.hu
++36 62 611 338
+Kiss Boglárka
+humánpolitikai referens
+kiss.boglarka.mercedesz@mako.hu
++36 62 511 860
+Venczel István
+rendszergazda
+venczel.istvan@mako.hu
++36 62 511 870
+Takács Barna
+informatikus
+takacs.barna@mako.hu
++36 62 611 345
+Jegyzői Iroda – Jogi Csoport
+dr. Dohány-Szilágyi Tímea
+timea.dr.szilagyi@mako.hu
++36 62 511 841
+dr. Koczkás Réka Anna
+jogász
+dr.koczkas.reka.anna@mako.hu
++36 62 511 820
+Répa Renáta
+igazgatási ügyintéző
+repa.renata@mako.hu
++36 62 511 826
+Balázsné Makra Hajnalka
+jegyzőkönyvvezető
+balazsne.makra.hajnalka@mako.hu
++36 62 511 827
+Jegyzői Iroda – Hatósági Csoport
+dr. Miklós Melinda
+miklos.melinda@mako.hu
++36 62 511 848
+Daniné Kuti Katalin
+anyakönyvvezető
+danine@mako.hu
++36 62 511 855
+Dobronay-Fenyvessy Orsolya
+dobronay-fenyvessy.orsolya@mako.hu
++36 62 511 852
+Gyurkovics Zoltán
+hatósági ügyintéző
+gyurkovicsz@mako.hu
++36 62 511 853
+Szűcsné Mazula Angelika
+szucsne.angelika@mako.hu
++36 62 511 845
+Csikotáné Barta Zsuzsanna
+csikotane@mako.hu
++36 62 511 851
+Verók Laura
+vlaura@mako.hu
++36 62 511 839
+Kószó Anett
+koszo.anett@mako.hu
++36 62 511 849
+Árváné Szabó Barbara
+arvane.szabo.barbara@mako.hu
++36 62 511 863
+Lele Ágnes
+adminisztrátor
+lele.agnes@mako.hu
+Kaposta Áron
+építéshatósági ügyintéző
+aron.kaposta@mako.hu
++36 62 511 877
+Hegedűsné Molnár Ildikó
+hegedusnei@mako.hu
++36 62 511 875
+Központi Iktató
+Sipos Szilvia
+iktató
+balavia@mako.hu
++36 62 511 822
+Popovicsné Bárdos Anita
+bardosa@mako.hu
++36 62 511 823
+Belső ellenőrzés
+Pénzügyi Iroda
+Horváthné Harkai Rita
+horvathne.harkai.rita@mako.hu
++36 62 511 857
+Pénzügyi Iroda – Számviteli Csoport
+Oláhné Fodor Katalin
+olahne@mako.hu
++36 62 511 867
+Szabó Brigitta
+pénzügyi-számviteli ügyintéző
+szabo.brigitta@mako.hu
++36 62 511 835
+Szabó-Jani Adrienn
+pénzügyi ügyintéző
+szabo-jani.adrienn@mako.hu
++36 62 511 836
+Tóth Mónika
+toth.monika@mako.hu
++36 62 511 832
+Bajusz Terézia
+pénztáros
+bajusz.terezia@mako.hu
++36 62 511 834
+Ferenczi Ildikó
+ferenczi.ildiko@mako.hu
++36 62 510 331
+Varga Rózsa
+varga.rozsa@mako.hu
++36 62 511 868
+Solcz-Sipos Emese
+solcz-sipose@mako.hu
++36 62 511 866
+Sarkadiné Herczeg Anett
+herczeg.anett@mako.hu
++36 62 511 847
+Kovacsik-Gavallér Katalin
+kovacsik-gavaller.katalin@mako.hu
++36 62 511 898
+Gera-Beke Anikó
+gera-beke.aniko@mako.hu
++36 62 511 831
+Pénzügyi Iroda – Adócsoport
+Nagy Gábor
+nagygabor@mako.hu
++36 62 511 880
+Janek István
+adóügyi ügyintéző
+janeki@mako.hu
++36 62 511 882
+Kovács Zoltánné
+kovacs.zoltanne@mako.hu
++36 62 511 883
+Vargáné Jávorcsik Beáta
+varganebea@mako.hu
++36 62 511 881
+Harkai-Szalai Szilvia
+adóügyi előadó
+harkai-szalai.szilvia@mako.hu
++36 62 511 859
+Innovációs és Városfejlesztési Iroda
+mb. irodavezető
+Innovációs és Városfejlesztési Iroda – Beruházási Csoport
+Pál János
+műszaki koordinátor
+pal.janos@mako.hu
++36 62 611 325
+Innovációs és Városfejlesztési Iroda – Műszaki Csoport
+Zsámboki Zsolt
+zsamboki.zsolt@mako.hu
++36 62 511 856
+Kovács Csaba
+műszaki ügyintéző
+kovacs.csaba@mako.hu
++36 62 511 894
+Baranyi Katalin
+környezetvédelmi referens
+katalin.baranyi@mako.hu
++36 62 611 337
+Gellért Gréta
+gellert.greta@mako.hu
++36 62 511 897
+Innovációs és Városfejlesztési Iroda – Vagyoncsoport
+dr. Rövidné dr. Szentandrási Edit
+szentandrasiedit@mako.hu
+Lászlóné Vas Tünde
+vagyongazdálkodási ügyintéző
+vastunde@mako.hu
++36 62 511 871
+Olasz Éva
+olaszeva@mako.hu
++36 62 511 838
+Virághné Tajti Katalin
+viraghne.tajti.katalin@mako.hu
++36 62 511 821
+Bódi Ferenc
+vagyongazdálkodási referens
+bodi.ferenc@mako.hu
++36 62 511 840
+Monoki Edit Katalin
+monoki.edit.katalin@mako.hu

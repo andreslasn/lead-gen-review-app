@@ -1,0 +1,538 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html dir="ltr" lang="hu-hu" xml:lang="hu-hu" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+
+<meta content="Galcsik Róbert" name="author"/>
+<meta content="Joomla! - Open Source Content Management" name="generator"/>
+<title>Nemti weboldala - Orvosi rendelő</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+#accordeonck111 { padding:0;margin:0;padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;background: #F0F0F0;background-color: #F0F0F0;background: -moz-linear-gradient(top,  #F0F0F0 0%, #E3E3E3 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F0F0F0), color-stop(100%,#E3E3E3)); background: -webkit-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -o-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -ms-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%); -moz-border-radius: 5px 5px 5px 5px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;-moz-box-shadow: 0px 0px 3px 0px #444444;-webkit-box-shadow: 0px 0px 3px 0px #444444;box-shadow: 0px 0px 3px 0px #444444;border-top: #EFEFEF 1px solid ;border-right: #EFEFEF 1px solid ;border-bottom: #EFEFEF 1px solid ;border-left: #EFEFEF 1px solid ; } 
+#accordeonck111 li.accordeonck { list-style: none;overflow: hidden; }
+#accordeonck111 ul[class^="content"] { margin:0;padding:0; }
+#accordeonck111 li.accordeonck > span { position: relative; display: block; }
+#accordeonck111 li.accordeonck.parent > span { padding-right: 20px;}
+#accordeonck111 li.parent > span span.toggler_icon { position: absolute; cursor: pointer; display: block; height: 100%; z-index: 10;right:0; background: url(/modules/mod_accordeonmenuck/assets/plus.png) center center no-repeat !important;width: 20px;}
+#accordeonck111 li.parent.open > span span.toggler_icon { right:0; background: url(/modules/mod_accordeonmenuck/assets/minus.png) center center no-repeat !important;}
+#accordeonck111 li.accordeonck.level2 > span { padding-right: 0px;}
+#accordeonck111 li.level3 li.accordeonck > span { padding-right: 0px;}
+#accordeonck111 a.accordeonck { display: block;text-decoration: none; color: #636363;font-size: 12px;}
+#accordeonck111 a.accordeonck:hover { text-decoration: none; color: #000000;}
+#accordeonck111 li.parent > span a { display: block;outline: none; }
+#accordeonck111 li.parent.open > span a {  }
+#accordeonck111 a.accordeonck > .badge { margin: 0 0 0 5px; }
+#accordeonck111 li.level1 > span {  } 
+#accordeonck111 li.level1 > span a { padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;color: #636363;font-size: 12px; } 
+#accordeonck111 li.level1 > span span.accordeonckdesc { font-size: 10px; } 
+#accordeonck111 li.level1:hover > span {  } 
+#accordeonck111 li.level1:hover > span a { color: #000000; } 
+#accordeonck111 li.level1.active > span {  } 
+#accordeonck111 li.level1.active > span a { color: #000000; } 
+#accordeonck111 li.level2 > span {  } 
+#accordeonck111 li.level2 > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 15px;color: #636363; } 
+#accordeonck111 li.level2:hover > span {  } 
+#accordeonck111 li.level2:hover > span a { color: #000000; } 
+#accordeonck111 li.level2.active > span {  } 
+#accordeonck111 li.level2.active > span a { color: #000000; } 
+#accordeonck111 li.level2 li.accordeonck > span {  } 
+#accordeonck111 li.level2 li.accordeonck > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 25px;color: #636363; } 
+#accordeonck111 li.level2 li.accordeonck:hover > span {  } 
+#accordeonck111 li.level2 li.accordeonck:hover > span a { color: #000000; } 
+#accordeonck111 li.level2 li.accordeonck.active > span {  } 
+#accordeonck111 li.level2 li.accordeonck.active > span a { color: #000000; } #accordeonck111 ul[class^="content"] {
+	display: none;
+}
+#accordeonck110 { padding:0;margin:0;padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;background: #F0F0F0;background-color: #F0F0F0;background: -moz-linear-gradient(top,  #F0F0F0 0%, #E3E3E3 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F0F0F0), color-stop(100%,#E3E3E3)); background: -webkit-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -o-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -ms-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%); -moz-border-radius: 5px 5px 5px 5px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;-moz-box-shadow: 0px 0px 3px 0px #444444;-webkit-box-shadow: 0px 0px 3px 0px #444444;box-shadow: 0px 0px 3px 0px #444444;border-top: #EFEFEF 1px solid ;border-right: #EFEFEF 1px solid ;border-bottom: #EFEFEF 1px solid ;border-left: #EFEFEF 1px solid ; } 
+#accordeonck110 li.accordeonck { list-style: none;overflow: hidden; }
+#accordeonck110 ul[class^="content"] { margin:0;padding:0; }
+#accordeonck110 li.accordeonck > span { position: relative; display: block; }
+#accordeonck110 li.accordeonck.parent > span { padding-right: 20px;}
+#accordeonck110 li.parent > span span.toggler_icon { position: absolute; cursor: pointer; display: block; height: 100%; z-index: 10;right:0; background: url(/modules/mod_accordeonmenuck/assets/plus.png) center center no-repeat !important;width: 20px;}
+#accordeonck110 li.parent.open > span span.toggler_icon { right:0; background: url(/modules/mod_accordeonmenuck/assets/minus.png) center center no-repeat !important;}
+#accordeonck110 li.accordeonck.level2 > span { padding-right: 0px;}
+#accordeonck110 li.level3 li.accordeonck > span { padding-right: 0px;}
+#accordeonck110 a.accordeonck { display: block;text-decoration: none; color: #636363;font-size: 12px;}
+#accordeonck110 a.accordeonck:hover { text-decoration: none; color: #000000;}
+#accordeonck110 li.parent > span a { display: block;outline: none; }
+#accordeonck110 li.parent.open > span a {  }
+#accordeonck110 a.accordeonck > .badge { margin: 0 0 0 5px; }
+#accordeonck110 li.level1 > span {  } 
+#accordeonck110 li.level1 > span a { padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;color: #636363;font-size: 12px; } 
+#accordeonck110 li.level1 > span span.accordeonckdesc { font-size: 10px; } 
+#accordeonck110 li.level1:hover > span {  } 
+#accordeonck110 li.level1:hover > span a { color: #000000; } 
+#accordeonck110 li.level1.active > span {  } 
+#accordeonck110 li.level1.active > span a { color: #000000; } 
+#accordeonck110 li.level2 > span {  } 
+#accordeonck110 li.level2 > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 15px;color: #636363; } 
+#accordeonck110 li.level2:hover > span {  } 
+#accordeonck110 li.level2:hover > span a { color: #000000; } 
+#accordeonck110 li.level2.active > span {  } 
+#accordeonck110 li.level2.active > span a { color: #000000; } 
+#accordeonck110 li.level2 li.accordeonck > span {  } 
+#accordeonck110 li.level2 li.accordeonck > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 25px;color: #636363; } 
+#accordeonck110 li.level2 li.accordeonck:hover > span {  } 
+#accordeonck110 li.level2 li.accordeonck:hover > span a { color: #000000; } 
+#accordeonck110 li.level2 li.accordeonck.active > span {  } 
+#accordeonck110 li.level2 li.accordeonck.active > span a { color: #000000; } #accordeonck110 ul[class^="content"] {
+	display: none;
+}
+#accordeonck109 { padding:0;margin:0;padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;background: #F0F0F0;background-color: #F0F0F0;background: -moz-linear-gradient(top,  #F0F0F0 0%, #E3E3E3 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F0F0F0), color-stop(100%,#E3E3E3)); background: -webkit-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -o-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -ms-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%); -moz-border-radius: 5px 5px 5px 5px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;-moz-box-shadow: 0px 0px 3px 0px #444444;-webkit-box-shadow: 0px 0px 3px 0px #444444;box-shadow: 0px 0px 3px 0px #444444;border-top: #EFEFEF 1px solid ;border-right: #EFEFEF 1px solid ;border-bottom: #EFEFEF 1px solid ;border-left: #EFEFEF 1px solid ; } 
+#accordeonck109 li.accordeonck { list-style: none;overflow: hidden; }
+#accordeonck109 ul[class^="content"] { margin:0;padding:0; }
+#accordeonck109 li.accordeonck > span { position: relative; display: block; }
+#accordeonck109 li.accordeonck.parent > span { padding-right: 20px;}
+#accordeonck109 li.parent > span span.toggler_icon { position: absolute; cursor: pointer; display: block; height: 100%; z-index: 10;right:0; background: url(/modules/mod_accordeonmenuck/assets/plus.png) center center no-repeat !important;width: 20px;}
+#accordeonck109 li.parent.open > span span.toggler_icon { right:0; background: url(/modules/mod_accordeonmenuck/assets/minus.png) center center no-repeat !important;}
+#accordeonck109 li.accordeonck.level2 > span { padding-right: 0px;}
+#accordeonck109 li.level3 li.accordeonck > span { padding-right: 0px;}
+#accordeonck109 a.accordeonck { display: block;text-decoration: none; color: #636363;font-size: 12px;}
+#accordeonck109 a.accordeonck:hover { text-decoration: none; color: #000000;}
+#accordeonck109 li.parent > span a { display: block;outline: none; }
+#accordeonck109 li.parent.open > span a {  }
+#accordeonck109 a.accordeonck > .badge { margin: 0 0 0 5px; }
+#accordeonck109 li.level1 > span {  } 
+#accordeonck109 li.level1 > span a { padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;color: #636363;font-size: 12px; } 
+#accordeonck109 li.level1 > span span.accordeonckdesc { font-size: 10px; } 
+#accordeonck109 li.level1:hover > span {  } 
+#accordeonck109 li.level1:hover > span a { color: #000000; } 
+#accordeonck109 li.level1.active > span {  } 
+#accordeonck109 li.level1.active > span a { color: #000000; } 
+#accordeonck109 li.level2 > span {  } 
+#accordeonck109 li.level2 > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 15px;color: #636363; } 
+#accordeonck109 li.level2:hover > span {  } 
+#accordeonck109 li.level2:hover > span a { color: #000000; } 
+#accordeonck109 li.level2.active > span {  } 
+#accordeonck109 li.level2.active > span a { color: #000000; } 
+#accordeonck109 li.level2 li.accordeonck > span {  } 
+#accordeonck109 li.level2 li.accordeonck > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 25px;color: #636363; } 
+#accordeonck109 li.level2 li.accordeonck:hover > span {  } 
+#accordeonck109 li.level2 li.accordeonck:hover > span a { color: #000000; } 
+#accordeonck109 li.level2 li.accordeonck.active > span {  } 
+#accordeonck109 li.level2 li.accordeonck.active > span a { color: #000000; } #accordeonck109 ul[class^="content"] {
+	display: none;
+}
+#accordeonck112 { padding:0;margin:0;padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;background: #F0F0F0;background-color: #F0F0F0;background: -moz-linear-gradient(top,  #F0F0F0 0%, #E3E3E3 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F0F0F0), color-stop(100%,#E3E3E3)); background: -webkit-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -o-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -ms-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%); -moz-border-radius: 5px 5px 5px 5px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;-moz-box-shadow: 0px 0px 3px 0px #444444;-webkit-box-shadow: 0px 0px 3px 0px #444444;box-shadow: 0px 0px 3px 0px #444444;border-top: #EFEFEF 1px solid ;border-right: #EFEFEF 1px solid ;border-bottom: #EFEFEF 1px solid ;border-left: #EFEFEF 1px solid ; } 
+#accordeonck112 li.accordeonck { list-style: none;overflow: hidden; }
+#accordeonck112 ul[class^="content"] { margin:0;padding:0; }
+#accordeonck112 li.accordeonck > span { position: relative; display: block; }
+#accordeonck112 li.accordeonck.parent > span { padding-right: 20px;}
+#accordeonck112 li.parent > span span.toggler_icon { position: absolute; cursor: pointer; display: block; height: 100%; z-index: 10;right:0; background: url(/modules/mod_accordeonmenuck/assets/plus.png) center center no-repeat !important;width: 20px;}
+#accordeonck112 li.parent.open > span span.toggler_icon { right:0; background: url(/modules/mod_accordeonmenuck/assets/minus.png) center center no-repeat !important;}
+#accordeonck112 li.accordeonck.level2 > span { padding-right: 0px;}
+#accordeonck112 li.level3 li.accordeonck > span { padding-right: 0px;}
+#accordeonck112 a.accordeonck { display: block;text-decoration: none; color: #636363;font-size: 12px;}
+#accordeonck112 a.accordeonck:hover { text-decoration: none; color: #000000;}
+#accordeonck112 li.parent > span a { display: block;outline: none; }
+#accordeonck112 li.parent.open > span a {  }
+#accordeonck112 a.accordeonck > .badge { margin: 0 0 0 5px; }
+#accordeonck112 li.level1 > span {  } 
+#accordeonck112 li.level1 > span a { padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;color: #636363;font-size: 12px; } 
+#accordeonck112 li.level1 > span span.accordeonckdesc { font-size: 10px; } 
+#accordeonck112 li.level1:hover > span {  } 
+#accordeonck112 li.level1:hover > span a { color: #000000; } 
+#accordeonck112 li.level1.active > span {  } 
+#accordeonck112 li.level1.active > span a { color: #000000; } 
+#accordeonck112 li.level2 > span {  } 
+#accordeonck112 li.level2 > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 15px;color: #636363; } 
+#accordeonck112 li.level2:hover > span {  } 
+#accordeonck112 li.level2:hover > span a { color: #000000; } 
+#accordeonck112 li.level2.active > span {  } 
+#accordeonck112 li.level2.active > span a { color: #000000; } 
+#accordeonck112 li.level2 li.accordeonck > span {  } 
+#accordeonck112 li.level2 li.accordeonck > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 25px;color: #636363; } 
+#accordeonck112 li.level2 li.accordeonck:hover > span {  } 
+#accordeonck112 li.level2 li.accordeonck:hover > span a { color: #000000; } 
+#accordeonck112 li.level2 li.accordeonck.active > span {  } 
+#accordeonck112 li.level2 li.accordeonck.active > span a { color: #000000; } #accordeonck112 ul[class^="content"] {
+	display: none;
+}
+#accordeonck117 { padding:0;margin:0;padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;background: #F0F0F0;background-color: #F0F0F0;background: -moz-linear-gradient(top,  #F0F0F0 0%, #E3E3E3 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F0F0F0), color-stop(100%,#E3E3E3)); background: -webkit-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -o-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: -ms-linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%);background: linear-gradient(top,  #F0F0F0 0%,#E3E3E3 100%); -moz-border-radius: 5px 5px 5px 5px;-webkit-border-radius: 5px 5px 5px 5px;border-radius: 5px 5px 5px 5px;-moz-box-shadow: 0px 0px 3px 0px #444444;-webkit-box-shadow: 0px 0px 3px 0px #444444;box-shadow: 0px 0px 3px 0px #444444;border-top: #EFEFEF 1px solid ;border-right: #EFEFEF 1px solid ;border-bottom: #EFEFEF 1px solid ;border-left: #EFEFEF 1px solid ; } 
+#accordeonck117 li.accordeonck { list-style: none;overflow: hidden; }
+#accordeonck117 ul[class^="content"] { margin:0;padding:0; }
+#accordeonck117 li.accordeonck > span { position: relative; display: block; }
+#accordeonck117 li.accordeonck.parent > span { padding-right: 20px;}
+#accordeonck117 li.parent > span span.toggler_icon { position: absolute; cursor: pointer; display: block; height: 100%; z-index: 10;right:0; background: url(/modules/mod_accordeonmenuck/assets/plus.png) center center no-repeat !important;width: 20px;}
+#accordeonck117 li.parent.open > span span.toggler_icon { right:0; background: url(/modules/mod_accordeonmenuck/assets/minus.png) center center no-repeat !important;}
+#accordeonck117 li.accordeonck.level2 > span { padding-right: 0px;}
+#accordeonck117 li.level3 li.accordeonck > span { padding-right: 0px;}
+#accordeonck117 a.accordeonck { display: block;text-decoration: none; color: #636363;font-size: 12px;}
+#accordeonck117 a.accordeonck:hover { text-decoration: none; color: #000000;}
+#accordeonck117 li.parent > span a { display: block;outline: none; }
+#accordeonck117 li.parent.open > span a {  }
+#accordeonck117 a.accordeonck > .badge { margin: 0 0 0 5px; }
+#accordeonck117 li.level1 > span {  } 
+#accordeonck117 li.level1 > span a { padding-top: 5px;padding-right: 5px;padding-bottom: 5px;padding-left: 5px;color: #636363;font-size: 12px; } 
+#accordeonck117 li.level1 > span span.accordeonckdesc { font-size: 10px; } 
+#accordeonck117 li.level1:hover > span {  } 
+#accordeonck117 li.level1:hover > span a { color: #000000; } 
+#accordeonck117 li.level1.active > span {  } 
+#accordeonck117 li.level1.active > span a { color: #000000; } 
+#accordeonck117 li.level2 > span {  } 
+#accordeonck117 li.level2 > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 15px;color: #636363; } 
+#accordeonck117 li.level2:hover > span {  } 
+#accordeonck117 li.level2:hover > span a { color: #000000; } 
+#accordeonck117 li.level2.active > span {  } 
+#accordeonck117 li.level2.active > span a { color: #000000; } 
+#accordeonck117 li.level2 li.accordeonck > span {  } 
+#accordeonck117 li.level2 li.accordeonck > span a { padding-top: 5px;padding-bottom: 5px;padding-left: 25px;color: #636363; } 
+#accordeonck117 li.level2 li.accordeonck:hover > span {  } 
+#accordeonck117 li.level2 li.accordeonck:hover > span a { color: #000000; } 
+#accordeonck117 li.level2 li.accordeonck.active > span {  } 
+#accordeonck117 li.level2 li.accordeonck.active > span a { color: #000000; } #accordeonck117 ul[class^="content"] {
+	display: none;
+}
+.dj-hideitem { display: none !important; }
+
+
+		@media (min-width: 980px) { #dj-megamenu90mobile { display: none; } }
+		@media (max-width: 979px) { #dj-megamenu90, #dj-megamenu90sticky, #dj-megamenu90placeholder { display: none !important; } }
+	
+#redim-cookiehint-bottom {position: fixed; z-index: 99999; left: 0px; right: 0px; bottom: 0px; top: auto !important;}
+	</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="Orvosi rendelő" property="og:title"/>
+<meta content="https://nemti.hu/index.php/orvosi-rendelok" property="og:url"/>
+<meta content="article" property="og:type"/>
+<meta content="https://nemti.hu/images/kepek/rendelo.jpg" property="og:image"/>
+<meta content="Rendelőint&amp;eacute;zet 3152 Nemti, Kossuth Lajos &amp;uacute;t 80. H&amp;aacute;ziorvos - Rendel&amp;eacute;si idő: H&amp;eacute;tfő 1000 - 1400 Kedd &amp;nbsp;-&amp;nbsp; Szerda 1600 - 1900 ..." property="og:description"/>
+<meta content="Nemti weboldala" property="og:site_name"/>
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="topbar headerbg">
+<div id="jm-allpage">
+<div id="jm-mainpage">
+<div id="jm-top-bar">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="pull-right span12" id="jm-top-bar2">
+<div class="jm-module-raw"><div id="dj-megamenu90mobileWrap"></div>
+</div><div class="jm-module-raw">
+<div class="custom">
+<ul class="jm-contact-icons">
+<li class="jm-direction"><img alt="Direction"/><a data-review-original-href="#" href="#" tabindex="-1" title="Contact">Nemti Polgármesteri Hivatal</a></li>
+<li class="jm-email"><img alt="Email"/><a data-review-original-href="mailto:hivatal@nemti.hu" href="#" tabindex="-1" title="Contact">hivatal@nemti.hu</a></li>
+<li class="jm-phone"><img alt="Phone"/><a data-review-original-href="#" href="#" tabindex="-1" title="Contact">+36 32 364-002</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<header class="jm-responsive" data-mobile="hidden-mobile" id="jm-header-wrapper">
+<div class="container-fluid" id="jm-logo-nav">
+<nav class="pull-right jm-responsive" data-mobile="hidden-mobile" data-tablet="hidden-tablet" data-xtablet="hidden-xtablet" id="jm-top-menu-nav">
+<div class="jm-module-raw"><div class="dj-megamenu-wrapper" data-tmpl="jm-internet">
+<ul aria-label="DJ-MegaMenu" class="dj-megamenu dj-megamenu-override dj-megamenu-wcag horizontalMenu dj-fa-1" data-options='{"wrap":null,"animIn":"fadeInUp","animOut":"zoomOut","animSpeed":"normal","openDelay":250,"closeDelay":"500","event":"mouseenter","eventClose":"mouseleave","parentOpen":0,"fixed":0,"offset":0,"theme":"override","direction":"ltr","wcag":"1","overlay":0}' data-trigger="979" id="dj-megamenu90" role="menubar">
+<li class="dj-up itemid101 first" role="none"><a class="dj-up_a" data-review-original-href="/index.php" href="#" role="menuitem" tabindex="-1"><span><span class="title"><span class="name">Aktuális</span></span></span></a></li><li class="dj-up itemid114" role="none"><a class="dj-up_a" data-review-original-href="/index.php/bemutatkozas" href="#" role="menuitem" tabindex="-1"><span><span class="title"><span class="name">Bemutatkozás</span></span></span></a></li><li class="dj-up itemid115" role="none"><a class="dj-up_a" data-review-original-href="/index.php/galeria" href="#" role="menuitem" tabindex="-1"><span><span class="title"><span class="name">Galéria</span></span></span></a></li><li class="dj-up itemid128" role="none"><a class="dj-up_a" data-review-original-href="/index.php/kapcsolat" href="#" role="menuitem" tabindex="-1"><span><span class="title"><span class="name">Kapcsolat</span></span></span></a></li><li class="dj-up itemid243" role="none"><a class="dj-up_a" data-review-original-href="/index.php/kozerdeku-adatok" href="#" role="menuitem" tabindex="-1"><span><span class="title"><span class="name">Közérdekű adatok</span></span></span></a></li></ul>
+<div class="dj-megamenu-offcanvas dj-megamenu-offcanvas-dark" id="dj-megamenu90mobile">
+<button aria-label="Open mobile menu" class="dj-mobile-open-btn dj-fa-1"><span aria-hidden="true" class="dj-mobile-open-icon"></span></button> <aside aria-hidden="true" aria-label="DJ-MegaMenu" class="dj-offcanvas dj-offcanvas-dark dj-offcanvas-left dj-fa-1" data-effect="1" id="dj-megamenu90offcanvas">
+<div class="dj-offcanvas-top">
+<button aria-label="Close mobile menu" class="dj-offcanvas-close-btn"><span aria-hidden="true" class="dj-offcanvas-close-icon"></span></button>
+</div>
+<div class="dj-offcanvas-content">
+<ul class="dj-mobile-nav dj-mobile-dark" role="menubar">
+<li class="dj-mobileitem itemid-101" role="none"><a class="dj-up_a" data-review-original-href="/index.php" href="#" role="menuitem" tabindex="-1"><span class="title"><span class="name">Aktuális</span></span></a></li><li class="dj-mobileitem itemid-114" role="none"><a class="dj-up_a" data-review-original-href="/index.php/bemutatkozas" href="#" role="menuitem" tabindex="-1"><span class="title"><span class="name">Bemutatkozás</span></span></a></li><li class="dj-mobileitem itemid-115" role="none"><a class="dj-up_a" data-review-original-href="/index.php/galeria" href="#" role="menuitem" tabindex="-1"><span class="title"><span class="name">Galéria</span></span></a></li><li class="dj-mobileitem itemid-128" role="none"><a class="dj-up_a" data-review-original-href="/index.php/kapcsolat" href="#" role="menuitem" tabindex="-1"><span class="title"><span class="name">Kapcsolat</span></span></a></li><li class="dj-mobileitem itemid-243" role="none"><a class="dj-up_a" data-review-original-href="/index.php/kozerdeku-adatok" href="#" role="menuitem" tabindex="-1"><span class="title"><span class="name">Közérdekű adatok</span></span></a></li></ul>
+</div>
+</aside>
+</div> </div></div>
+</nav>
+</div>
+<div id="jm-header-bg">
+<div class="jm-module-raw">
+<div class="custom">
+<p><img alt="1262330283 nagykep" style="margin: 115px 0px 0px; width: 100%; height:250px"/></p></div>
+</div>
+</div>
+</header>
+<div id="jm-system-message"><div class="container-fluid"><div id="system-message-container">
+</div>
+</div></div>
+<div id="jm-main">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span8" data-mobile="span12" data-tablet="span12" data-xtablet="span12" id="jm-content">
+<div id="jm-maincontent">
+<div class="item-page" itemscope="" itemtype="http://schema.org/Article">
+<meta content="hu-HU" itemprop="inLanguage"/>
+<div class="page-header">
+<h2 itemprop="name">
+<a data-review-original-href="/index.php/orvosi-rendelok" href="#" itemprop="url" tabindex="-1"> Orvosi rendelő</a>
+</h2>
+</div>
+<div class="icons">
+</div>
+<div class="article-info muted">
+<dl class="article-info">
+<dt class="article-info-term">Részletek</dt>
+<dd class="published">
+<span class="icon-calendar"></span>
+<time datetime="2017-01-15T21:02:34+00:00" itemprop="datePublished">
+						Megjelent: 2017. január 15.					</time>
+</dd>
+</dl>
+</div>
+<div itemprop="articleBody">
+<p>
+<strong><a data-review-original-href="/images/kepek/rendelo.jpg" href="#" tabindex="-1" target="_blank"><img alt="" style="width: 400px; height: 218px; margin: 10px; float: right;"/></a></strong>Rendelőintézet<br/>
+	3152 Nemti, Kossuth Lajos út 80.</p>
+<p>
+<strong>Háziorvos - Rendelési idő:</strong></p>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 205px;">
+<tbody>
+<tr>
+<td style="width: 73px;">
+				Hétfő</td>
+<td style="width: 119px; text-align: center;">
+				10<u><sup>00</sup></u> - 14<u><sup>00</sup></u></td>
+</tr>
+<tr>
+<td style="width: 73px;">
+				Kedd</td>
+<td style="width: 119px; text-align: center;">
+				 - </td>
+</tr>
+<tr>
+<td style="width: 73px;">
+				Szerda</td>
+<td style="width: 119px; text-align: center;">
+				16<u><sup>00</sup></u> - 19<u><sup>00</sup></u></td>
+</tr>
+<tr>
+<td style="width: 73px;">
+				Csütörtö</td>
+<td style="width: 119px; text-align: center;">
+				10<u><sup>00</sup></u> - 14<u><sup>00</sup></u></td>
+</tr>
+<tr>
+<td style="width: 73px;">
+				Péntek</td>
+<td style="width: 119px; text-align: center;">
+				-</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Orvosi elérhetőségek</strong><br/>
+	A házi orvos reggel 08<u><sup>00</sup></u> - 16<u><sup>00</sup></u> óra között hívható<br/>
+	Telefon: +36 (32) 368 - 177<br/>
+	Telefon: +36 (32) 364 - 125</p>
+<p style="margin-left: 40px;">
+	Ünnepnapokon 24 órás ügyelet <br/>
+	Hétköznap délután16<u><sup>00</sup></u>-tól másnap reggel 08<u><sup>00 </sup></u>óráig ügyeleti szolgálat működik Bátonyterenyén<br/>
+	Telefon: +36 (32) 310 - 104</p>
+<p>
+<strong>Üzemorvos - Rendelési idő:</strong><br/>
+	Rendel Dr. Pilmayer Nándor háziorvos<br/>
+	Hétfő: 14<u><sup>00</sup></u> - 15<u><sup>00</sup></u><br/>
+	Csütörtök: 14<u><sup>00</sup></u> - 15<u><sup>00</sup></u></p>
+<p>
+<strong>Betegjogi képviselő:</strong><br/>
+	Dr. Balázs János<br/>
+	Telefon: +36 (20) 489 - 9526</p>
+<p>
+<strong><a data-review-original-href="/images/kepek/rendelo2.jpg" href="#" tabindex="-1" target="_blank"><img alt="" class="cke-resize" style="width: 400px; height: 232px; margin: 10px; float: right;"/></a>Nemti és Dorogháza védőnője</strong><br/>
+	Répás Fodor Klementína<br/>
+	Telefon: +36 (20) 233 - 1624<br/>
+	e-mail: <span id="cloakb8d9f42a2971560bbf035c4f51247d23">Ez az e-mail-cím a szpemrobotok elleni védelem alatt áll. Megtekintéséhez engedélyeznie kell a JavaScript használatát.</span></p>
+<p>
+<strong>Tanácsadások v</strong>árandósoknak:<br/>
+<strong>Védőnői</strong> tanácsadás:<br/>
+	Nemti, hétfő 10<u><sup>00</sup></u> - 11<u><sup>00</sup></u><span style="font-size: x-small;">    </span></p>
+<p>
+<strong>Szakorvosi</strong> tanácsadás:<br/>
+	Minden hónap második péntekén 09<u><sup>30</sup></u></p>
+<p style="margin-left: 40px;">
+	Rendel:<br/>
+	Dr. Uneh Anolue <br/>
+	szülész-nőgyógyász szakorvos</p>
+<p>
+<strong>Tanácsadás </strong>csecsemőknek és gyermekeknek<br/>
+	Hétfő: 11<u><sup>00</sup></u> - 12<u><sup>00</sup></u></p>
+<p>
+	 </p>
+<p>
+	 </p>
+<p>
+	 </p>
+<div id="ckimgrsz" style="left: -497px; top: 463px;">
+<div class="preview">
+		 </div>
+</div> </div>
+</div>
+</div>
+</div>
+<aside class="span4" data-mobile="span12 first-span" data-tablet="span12 first-span" data-xtablet="span12 first-span" id="jm-right">
+<div>
+<div class="jm-module"><div class="jm-module-in"><div class="jm-module-content clearfix notitle">
+<div class="custom">
+<p><a data-review-original-href="/index.php/palyazatok" href="#" tabindex="-1"><img alt="infoblokk kedv final felso cmyk ERFA" height="207" style="display: block; margin-left: auto; margin-right: auto;" width="300"/></a></p>
+<p><img alt="mflogo" height="270" style="display: block; margin-left: auto; margin-right: auto;" width="250"/></p></div>
+</div></div></div><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Polgármesteri</span> Hivatal</h3><div class="jm-module-content clearfix"><div class="accordeonck">
+<ul class="menu" id="accordeonck111">
+<li class="accordeonck item137 first level1" data-level="1" id="item-137"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/munkatarsak" href="#" tabindex="-1">Munkatársak, ügyfélfogadás<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item138 level1" data-level="1" id="item-138"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/nyomtatvanyok" href="#" tabindex="-1">Nyomtatványok<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item140 level1" data-level="1" id="item-140"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/hirdetmenyek" href="#" tabindex="-1">Nyilvántartások<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item141 level1" data-level="1" id="item-141"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/palyazatok" href="#" tabindex="-1">Pályázatok<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item188 last level1" data-level="1" id="item-188"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/adatkezelesi-tajekoztato" href="#" tabindex="-1">Adatkezelési Tájékoztató<span class="accordeonckdesc"></span></a></span></li></ul></div>
+</div></div></div><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Választási</span> információk</h3><div class="jm-module-content clearfix"><div class="accordeonck">
+<ul class="menu" id="accordeonck110">
+<li class="accordeonck item142 first level1" data-level="1" id="item-142"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/hvi-elerhetosegei-adatai" href="#" tabindex="-1">Választási szervek<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item145 level1" data-level="1" id="item-145"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/www-valasztas-hu" href="#" tabindex="-1" target="_blank">Választási ügyintézés <span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item241 level1" data-level="1" id="item-241"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/2024-evi-altalanos-valasztasok" href="#" tabindex="-1">2024. évi általános választások <span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item242 level1" data-level="1" id="item-242"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/korabbi-valasztasok" href="#" tabindex="-1">Korábbi választások <span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item246 last level1" data-level="1" id="item-246"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/2026-evi-valasztas" href="#" tabindex="-1">2026. évi választás<span class="accordeonckdesc"></span></a></span></li></ul></div>
+</div></div></div><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Önkormányzat</span> </h3><div class="jm-module-content clearfix"><div class="accordeonck">
+<ul class="menu" id="accordeonck109">
+<li class="accordeonck item189 first level1" data-level="1" id="item-189"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/kepviselok-bizottsagok" href="#" tabindex="-1">Képviselők, bizottságok<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item133 level1" data-level="1" id="item-133"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/rendeletek2" href="#" tabindex="-1">Rendeletek<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item182 level1" data-level="1" id="item-182"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/elektronikus-ugyintezes" href="#" tabindex="-1">Elektronikus ügyintézés<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck headingck item190 parent parent level1" data-level="1" id="item-190"><span class="accordeonck_outer toggler toggler_1"><span class="toggler_icon"></span><a class="accordeonck" data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Testületi ülések<span class="accordeonckdesc"></span></a></span><ul class="content_1 accordeonck" style="display:none;"><li class="accordeonck item130 first level2" data-level="2" id="item-130"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/testuleti-ulesek/testuleti-ulesek-jegyzokonyvei-hatarozatok" href="#" tabindex="-1">Jegyzőkönyvek<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item134 last level2" data-level="2" id="item-134"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/testuleti-ulesek/eloterjesztesek" href="#" tabindex="-1">Előterjesztések<span class="accordeonckdesc"></span></a></span></li></ul></li><li class="accordeonck item191 level1" data-level="1" id="item-191"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/szamlaszamok" href="#" tabindex="-1">Számlaszámok<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item192 level1" data-level="1" id="item-192"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/helyi-epitesi-szabalyzat" href="#" tabindex="-1">Helyi építési szabályzat<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item193 level1" data-level="1" id="item-193"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/polgarmesteri-hatarozatok-2020" href="#" tabindex="-1">Polgármesteri határozatok<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item244 last level1" data-level="1" id="item-244"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/elado-ingatlanok" href="#" tabindex="-1">Eladó ingatlanok<span class="accordeonckdesc"></span></a></span></li></ul></div>
+</div></div></div><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Intézmények</span></h3><div class="jm-module-content clearfix"><div class="accordeonck">
+<ul class="menu" id="accordeonck112">
+<li class="accordeonck item178 first level1" data-level="1" id="item-178"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/intezmenyek" href="#" tabindex="-1">Intézmények<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item146 level1" data-level="1" id="item-146"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/ovoda" href="#" tabindex="-1">Óvoda<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item147 level1" data-level="1" id="item-147"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/muvelodesi-kozpont" href="#" tabindex="-1">Könyvtár és közösségi hely<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item148 current active level1" data-level="1" id="item-148"><span class="accordeonck_outer"><a class="accordeonck isactive" data-review-original-href="/index.php/orvosi-rendelok" href="#" tabindex="-1">Orvosi rendelő<span class="accordeonckdesc"></span></a></span></li><li class="accordeonck item156 last level1" data-level="1" id="item-156"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/helyi-civil-szervezetek" href="#" tabindex="-1">Helyi civil szervezetek<span class="accordeonckdesc"></span></a></span></li></ul></div>
+</div></div></div><div class="jm-module"><div class="jm-module-in"><h3 class="jm-title"><span>Eladó</span> ingatlanok</h3><div class="jm-module-content clearfix"><div class="accordeonck">
+<ul class="menu" id="accordeonck117">
+<li class="accordeonck item245 last first level1" data-level="1" id="item-245"><span class="accordeonck_outer"><a class="accordeonck" data-review-original-href="/index.php/eladoingatlan" href="#" tabindex="-1">Eladó ingatlanok<span class="accordeonckdesc"></span></a></span></li></ul></div>
+</div></div></div> </div>
+</aside>
+</div>
+</div>
+</div>
+<div id="jm-bottom1">
+<div class="container-fluid">
+<div class="row-fluid jm-flexiblock jm-bottom1"><div class="span12" data-default="span12" data-mobile="span100" data-normal="span12" data-tablet="span100" data-wide="span12" data-xtablet="span12"><div class="jm-module"><div class="jm-module-in"><div class="jm-module-content clearfix notitle">
+<div class="custom">
+<p><a data-review-original-href="/index.php/orvosi-rendelok/8-magyar-statikus/246-szechenyi-terv-plusz" href="#" tabindex="-1" target="_blank"><img alt="MMF kedvezményezetti infóblokk" height="64px" style="height: 64px; position: fixed; left: 0px; top: 0px; z-index: 30000; display: block;"/></a></p></div>
+</div></div></div></div></div> </div>
+</div>
+<div id="jm-footer-mod">
+<div class="container-fluid">
+<div id="jm-footer-mod-in">
+<div class="row-fluid jm-flexiblock jm-footer-mod"><div class="span4" data-default="span4" data-mobile="span100" data-normal="span4" data-tablet="span100" data-wide="span4" data-xtablet="span6"><div class="jm-module dark-ms"><div class="jm-module-in"><h3 class="jm-title"><span>Elérhetőségek</span></h3><div class="jm-module-content clearfix">
+<div class="customdark-ms">
+<p style="text-align: justify;"><span style="font-size: 14pt;"><strong>Polgármesteri Hivatal</strong></span></p>
+<p style="text-align: justify;"><br/><span style="font-size: 12pt;">3152 Nemti, Kossuth út 28.</span><br/><span style="font-size: 12pt;">Telefonszám: 32-364-002</span><br/><span style="font-size: 12pt;">Faxszám: 32-364-002</span><br/><span style="font-size: 12pt;">e-mail: hivatal@nemti.hu</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><strong> </strong></span></p></div>
+</div></div></div><div class="jm-module dark-ms"><div class="jm-module-in"><div class="jm-module-content clearfix notitle"><ul class="nav dark-ms">
+<li class="item-184"><a data-review-original-href="/index.php/impresszum" href="#" tabindex="-1">Impresszum</a></li><li class="item-185"><a data-review-original-href="/index.php/cookie-ismerteto" href="#" tabindex="-1">Cookie ismertető</a></li><li class="item-187"><a data-review-original-href="/index.php/oldalterkep" href="#" tabindex="-1">Oldaltérkép</a></li></ul>
+</div></div></div></div><div class="span4" data-default="span4" data-mobile="span100 first-span" data-normal="span4" data-tablet="span100 first-span" data-wide="span4" data-xtablet="span6"><div class="jm-module dark-ms"><div class="jm-module-in"><h3 class="jm-title"><span>Ügyfélfogadás</span></h3><div class="jm-module-content clearfix">
+<div class="customdark-ms">
+<div class="jsn-modulecontent">
+<table border="0" cellpadding="1" style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td><b>Hétfő:</b></td>
+<td>0800 - 1600</td>
+</tr>
+<tr>
+<td><strong>Kedd:</strong></td>
+<td>Nincs ügyfélfogadás</td>
+</tr>
+<tr>
+<td><strong>Szerda:</strong></td>
+<td>0800 - 1600</td>
+</tr>
+<tr>
+<td><strong>Csütörtök:</strong></td>
+<td>0800 - 1600</td>
+</tr>
+<tr>
+<td><strong>Péntek: </strong></td>
+<td>Nincs ügyfélfogadás</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="1" style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td><strong> </strong></td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="text-align: justify;"><strong> </strong></p>
+<p> </p></div>
+</div></div></div></div><div class="span4" data-default="span4" data-mobile="span100 first-span" data-normal="span4" data-tablet="span100 first-span" data-wide="span4" data-xtablet="span12 first-span"><div class="jm-module dark-ms"><div class="jm-module-in"><h3 class="jm-title"><span>Legfrissebb</span> hírek</h3><div class="jm-module-content clearfix"><ul class="latestnewsdark-ms mod-list">
+<li itemscope="" itemtype="https://schema.org/Article">
+<a data-review-original-href="/index.php/orvosi-rendelok/8-magyar-statikus/337-meghivo-27" href="#" itemprop="url" tabindex="-1">
+<span itemprop="name">
+				Meghívó			</span>
+</a>
+</li>
+<li itemscope="" itemtype="https://schema.org/Article">
+<a data-review-original-href="/index.php/orvosi-rendelok/10-hirek/336-meghivo-428" href="#" itemprop="url" tabindex="-1">
+<span itemprop="name">
+				Meghívó			</span>
+</a>
+</li>
+<li itemscope="" itemtype="https://schema.org/Article">
+<a data-review-original-href="/index.php/orvosi-rendelok/10-hirek/335-vosz-rendezveny" href="#" itemprop="url" tabindex="-1">
+<span itemprop="name">
+				VOSZ rendezvény			</span>
+</a>
+</li>
+<li itemscope="" itemtype="https://schema.org/Article">
+<a data-review-original-href="/index.php/orvosi-rendelok/8-magyar-statikus/333-hirdetmeny-8" href="#" itemprop="url" tabindex="-1">
+<span itemprop="name">
+				Hirdetmény			</span>
+</a>
+</li>
+<li itemscope="" itemtype="https://schema.org/Article">
+<a data-review-original-href="/index.php/orvosi-rendelok/8-magyar-statikus/332-hirdetmeny-7" href="#" itemprop="url" tabindex="-1">
+<span itemprop="name">
+				Hirdetmény			</span>
+</a>
+</li>
+</ul>
+</div></div></div></div></div> </div>
+</div>
+</div>
+<footer id="jm-footer">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span6 text-right pull-right" id="jm-poweredby">
+				© <a data-review-original-href="http://www.galcsik-it.hu/" href="#" tabindex="-1" target="_blank" title="Galcsik-IT">Galcsik-IT</a> 2020
+			</div>
+<div id="jm-back-top">
+<a data-review-original-href="#top" href="#" tabindex="-1"><span> </span></a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<div id="redim-cookiehint-bottom"> <div id="redim-cookiehint"> <div class="cookiecontent">   Weboldalunk sütiket (cookie) használ működése folyamán, hogy a legjobb felhasználói élményt nyújthassa Önnek. A sütik használatát bármikor letilthatja! Bővebb információkat erről Adatkezelési tájékoztatónkban olvashat.    </div> <div class="cookiebuttons"> <a class="btn" data-review-original-href="https://nemti.hu/index.php/orvosi-rendelok?rCH=2" href="#" id="cookiehintsubmit" tabindex="-1">Elfogadom</a> <a class="btn" data-review-original-href="https://nemti.hu/index.php/orvosi-rendelok?rCH=-2" href="#" id="cookiehintsubmitno" tabindex="-1">Elutasítom</a> <div class="text-center" id="cookiehintinfo"> <a data-review-original-href="http://nemti.hu/2020/index.php/adatkezelesi-tajekoztato" href="#" tabindex="-1" target="_self">Adatkezelési tájékoztató</a> </div> </div> <div class="clr"></div> </div> </div> 
+</body>
+</html>
