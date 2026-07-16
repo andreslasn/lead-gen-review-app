@@ -112,18 +112,21 @@ function stateLabel(value) {
 function laneLabel(value) {
   return {
     needs_review: "Needs review",
-    no_email: "No email",
+    no_matched_email: "No matched email",
+    no_public_email: "No public email",
     all: "All",
   }[value] || value;
 }
 
-function confidencePool(lane) {
-  return lane === "no_email" ? "no_email" : "needs_review";
+function confidencePool(item, lane) {
+  if (lane !== "no_email") return "needs_review";
+  return item.status === "no_email" ? "no_public_email" : "no_matched_email";
 }
 
 function normalizedLaneSelection(value) {
   if (["review", "auto_confirm", "auto_suppress", "high_confidence", "low_confidence", "needs_review"].includes(value)) return "needs_review";
-  if (["no_email", "all"].includes(value)) return value;
+  if (["no_email", "no_matched_email"].includes(value)) return "no_matched_email";
+  if (["no_public_email", "all"].includes(value)) return value;
   return "needs_review";
 }
 
@@ -368,11 +371,12 @@ const App = {
     const preparedQueue = computed(() => queue.value.map((item) => {
       const localState = localStateByClinic.value[item.id];
       const lane = candidateLane(item);
+      const status = localState?.status || item.status;
       return {
         ...item,
         lane,
-        confidence_pool: confidencePool(lane),
-        status: localState?.status || item.status,
+        status,
+        confidence_pool: confidencePool({ ...item, status }, lane),
         reviewed_at: localState?.reviewed_at || item.reviewed_at,
         local_decision_count: (decisionsByClinic.value[item.id] || []).length,
       };
@@ -381,7 +385,11 @@ const App = {
       const needle = search.value.trim().toLowerCase();
       return preparedQueue.value
         .filter((item) => selectedLane.value === "all" || item.confidence_pool === selectedLane.value)
-        .filter((item) => !["confirmed", "no_email", "excluded"].includes(item.status) || selectedLane.value === "all")
+        .filter((item) => {
+          if (selectedLane.value === "all") return true;
+          if (selectedLane.value === "no_public_email") return item.status === "no_email";
+          return !["confirmed", "no_email", "excluded"].includes(item.status);
+        })
         .filter((item) => {
           if (!needle) return true;
           return [
@@ -398,7 +406,7 @@ const App = {
         .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
     });
     const laneCounts = computed(() => {
-      const counts = { needs_review: 0, no_email: 0, all: preparedQueue.value.length };
+      const counts = { needs_review: 0, no_matched_email: 0, no_public_email: 0, all: preparedQueue.value.length };
       for (const item of preparedQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
       return counts;
     });
@@ -1230,7 +1238,7 @@ const App = {
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
-          <button v-for="lane in ['needs_review','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
