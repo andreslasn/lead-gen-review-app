@@ -506,19 +506,32 @@ const App = {
       const frame = event?.target || archiveFrame.value;
       const document = frame?.contentDocument;
       const needle = String(selectedCandidate.value?.value || "").trim().toLowerCase();
-      if (!document || !needle) return;
+      if (!document) return;
       document.documentElement.style.setProperty("zoom", "1", "important");
       if (!document.getElementById("review-evidence-media-constraints")) {
         const style = document.createElement("style");
         style.id = "review-evidence-media-constraints";
         style.textContent = `
-          img, svg, video, canvas, object, embed {
-            max-inline-size: 100% !important;
-            max-block-size: 72vh !important;
-            object-fit: contain !important;
+          html, body {
+            background: #fff !important;
+            color: #000 !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 16px !important;
+            line-height: 1.5 !important;
           }
-          picture {
-            max-inline-size: 100% !important;
+          body *, body *::before, body *::after {
+            background-color: transparent !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            color: #000 !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 16px !important;
+            line-height: 1.5 !important;
+            text-shadow: none !important;
+            -webkit-text-fill-color: #000 !important;
+          }
+          img, picture, svg, video, canvas, object, embed, iframe {
+            display: none !important;
           }
         `;
         (document.head || document.documentElement).append(style);
@@ -527,6 +540,7 @@ const App = {
         element.style.setProperty("display", "none", "important");
       }
       document.querySelectorAll("[data-review-spotlight]").forEach((element) => element.remove());
+      if (!needle) return;
       let target = null;
       let matchedRange = null;
       if (document.body) {
