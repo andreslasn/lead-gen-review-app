@@ -371,13 +371,15 @@ const App = {
       requestAnimationFrame(() => requestAnimationFrame(() => {
         const sourceRect = matchedRange?.getBoundingClientRect() || target.getBoundingClientRect();
         const padding = 6;
-        const left = Math.max(8, sourceRect.left - padding);
-        const top = Math.max(8, sourceRect.top - padding);
-        const right = Math.min(document.documentElement.clientWidth - 8, sourceRect.right + padding);
-        const bottom = Math.min(document.documentElement.clientHeight - 8, sourceRect.bottom + padding);
+        const pageX = document.defaultView?.scrollX || document.documentElement.scrollLeft || 0;
+        const pageY = document.defaultView?.scrollY || document.documentElement.scrollTop || 0;
+        const left = Math.max(pageX + 8, sourceRect.left + pageX - padding);
+        const top = Math.max(pageY + 8, sourceRect.top + pageY - padding);
+        const width = Math.max(20, sourceRect.width + (padding * 2));
+        const height = Math.max(20, sourceRect.height + (padding * 2));
         const highlight = document.createElement("div");
         highlight.setAttribute("data-review-spotlight", "true");
-        highlight.style.cssText = `position:fixed!important;left:${left}px!important;top:${top}px!important;width:${Math.max(20, right - left)}px!important;height:${Math.max(20, bottom - top)}px!important;z-index:2147483646!important;pointer-events:none!important;border:3px solid #ff2d7d!important;border-radius:5px!important;box-shadow:0 2px 10px rgba(255,45,125,.35)!important;background:rgba(255,243,109,.28)!important;box-sizing:border-box!important;`;
+        highlight.style.cssText = `position:absolute!important;left:${left}px!important;top:${top}px!important;width:${width}px!important;height:${height}px!important;z-index:2147483646!important;pointer-events:none!important;border:3px solid #ff2d7d!important;border-radius:5px!important;box-shadow:0 2px 10px rgba(255,45,125,.35)!important;background:rgba(255,243,109,.28)!important;box-sizing:border-box!important;`;
         document.body.append(highlight);
       }));
     }
