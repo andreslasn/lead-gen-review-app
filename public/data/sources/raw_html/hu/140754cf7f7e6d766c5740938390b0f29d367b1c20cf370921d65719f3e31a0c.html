@@ -1,0 +1,1162 @@
+<!doctype html>
+<html lang="hu-HU"><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="LPvo4eT4p4h1GL0u8uqW9gxBmJ2SO26DBY3DQDqm" name="csrf-token"/>
+<title>    Háziorvos Sárbogárd - MUNIPOLIS 📢</title>
+<meta content="Egyedülálló kommunikációs portál a városok és települések számára" name="description"/>
+<meta content="Kommunikációs portál, MUNIPOLIS" name="keywords"/>
+<meta content="hu_HU" name="domain-locale"/>
+<style>
+        /* === Default Color Scheme CSS === */
+
+        /* CSS Custom Properties for dynamic color usage */
+        :root {
+            --app-color: #0136A6;
+            --app-color-25: #0136A625;
+            --app-button-text-color: #FFFFFF;
+            --paragraph-marker-color: #0136A6;
+        }
+
+        .nav-link.active, .sub-page-menu-link.active, .sub-page-menu-link-title.active, .tag, .job-offers-filters__active {
+            background-color: #0136A6 !important;
+            color: #FFFFFF !important;
+        }
+
+        /* Buttons */
+        .btn-info, .btn-success, .btn-danger, .btn-primary, .info-message {
+            background-color: #0136A6 !important;
+            border-color: #0136A6 !important;
+            color: #FFFFFF !important;
+        }
+
+        .btn-success-outline {
+            background-color: transparent !important;
+            border-color: #0136A6 !important;
+            color: #0136A6 !important;
+        }
+
+        .btn-success-outline:hover {
+            background-color: #0136A6  !important;
+            border-color: #0136A6  !important;
+            color: #FFFFFF  !important;
+        }
+
+        .filter-section--active .filter-section__header {
+            background-color: #0136A620 !important;
+        }
+
+        .filter-section__content::before, .filter-section__header::before {
+            background-color: #0136A6 !important;
+        }
+
+        .btn-info:hover, .btn-success:hover, .btn-danger:hover, .btn-primary:hover {
+            border-color: #0136A6 !important;
+            filter: brightness(115%);
+        }
+        .btn-info:focus, .btn-success:focus, .btn-danger:focus, .btn-primary:focus {
+            box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.2) !important;
+        }
+        .btn-bg-text-color {
+            background-color: #0136A6 !important;
+        }
+
+        .btn-bg-transparent {
+            background-color: #0136A607 !important;
+        }
+
+        .btn-bg-transparent:active, .btn-bg-transparent:focus, .btn-bg-transparent:hover {
+            background-color: #0136A617 !important;
+        }
+
+        .dropdown .dropdown-item:hover, .user-menu .dropdown-item:hover, .static-menu .dropdown-item:hover, .image-nav-dropdown .dropdown-item:hover, .image-nav-dropdown .dropdown-item.hovered, .dropdown-item.focused-third-level-item {
+            background-color: #0136A617 !important;
+        }
+
+        .notification-item-unread {
+          background-color: #0136A609 !important;
+        }
+
+        /* List */
+        .list-item-selected-bar {
+            box-shadow: inset 2px 0 0 #0136A6 !important;
+        }
+        /* Cards */
+        .card-green {
+            border-top-color: #0136A6 !important;
+        }
+
+        /* Text color */
+        .color-scheme-text-color {
+            color: #0136A6 !important;
+        }
+
+        .color-scheme-transparency-background-color {
+            background-color: #0136A615 !important;
+        }
+
+        /* Link color */
+        .rss-page-description a, .post-page-description a, .text-continue-reading {
+            color: #1d3998 !important;
+            text-decoration: none;
+        }
+
+        .rss-page-description a:hover, .post-page-description a:hover, .text-continue-reading:hover {
+            color: #1d3998 !important;
+            text-decoration: underline;
+        }
+
+        /* Background color */
+        .alert-info {
+            background-color: #0136A6 !important;
+        }
+
+        .btn-login:hover, .btn-login:active, .btn-login:focus {
+            color: #ffffff !important;
+            background-color: #0136A6 !important;
+            border: 1px solid #0136A6 !important;
+        }
+
+        .dropdown-item.focused-third-level-item {
+            background-color: #0136A615 !important;
+        }
+
+        #menu-more:focus, .focused-item:focus, .primary-page-menu .page-menu-link:focus-visible, .primary-page-menu .dropdown-menu.second-level:focus-visible, .primary-page-menu .dropdown-item.menu-second-level:focus-visible {
+            outline: 2px solid #0136A6 !important;
+        }
+
+        /*
+         * SVG icons:
+         * - Preferably apply 'color-scheme-icon' class for the SVG tag when it is possible
+         * - For complex icons apply 'color-scheme-icon-path' for selected paths in the SVG icon
+         */
+        svg.color-scheme-icon path, svg.color-scheme-icon g, .color-scheme-icon-path {
+            fill: #0136A6 !important;
+        }
+
+        svg.color-scheme-icon-stroke path, svg.color-scheme--stroke g, .color-scheme-icon-stroke-path {
+            stroke: #0136A6 !important;
+        }
+    </style>
+
+
+
+
+
+
+
+
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjeytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjnytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjfytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjkytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjgytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjhytlvdltor0s.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9c4kdnxmzdwfmod5vvkrjjytlvdlto.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvmojlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvk4jlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvm4jlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvlijlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvmijlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvmyjlazx3dgtp.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9e4kdnxmzdwfmod5vvl4jlazx3da.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkvesxf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkveqhf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkveshf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkverrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkvesrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkvesbf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnzkverhf6xl7glw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzesxf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzeqhf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzeshf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzerrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzesrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzesbf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnskzerhf6xl7glw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3esxf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3eqhf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3eshf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3errf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3esrf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3esbf6xl7gl3lx.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasansv17va9b4kdnxmzdwfmod5vnlk3erhf6xl7glw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufvtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufltrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufrtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufxtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufntrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufjtrelwfx5ija.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoheadfm8hsaqtfg18fervhsc9x-tarufbtrelwfx4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxouml0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumb0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumh0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumd0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumt0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoump0cjryhy8xea.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  size-adjust: 92%;
+  src: url(/fonts/ac549ffd1a/sfirasanscondensedv10weoseadfm8hsaqtfg18fervhsc9x-tarwqxoumr0cjryhy8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19-7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19a7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1967dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19g7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1927dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19y7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19k7dqk6yvm.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19-7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19a7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1967dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19g7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1927dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19y7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19k7dqk6yvm.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19-7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19a7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1967dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19g7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-1927dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19y7dqk6yvnkeg.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/dc2dec6936/srobotocondensedv27ievl2zhzi2ecn5jzbjeets9weq8-19k7dqk6yvm.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+
+
+
+
+<style>.v3dp__popout[data-v-65eb861b]{z-index:10;position:absolute;text-align:center;width:17.5em;background-color:var(--popout-bg-color);box-shadow:var(--box-shadow);border-radius:var(--border-radius);padding:8px 0 1em;color:var(--text-color)}.v3dp__popout *[data-v-65eb861b]{color:inherit;font-size:inherit;font-weight:inherit}.v3dp__popout[data-v-65eb861b] button{background:none;border:none;outline:none}.v3dp__popout[data-v-65eb861b] button:not(:disabled){cursor:pointer}.v3dp__heading[data-v-65eb861b]{width:100%;display:flex;height:var(--heading-size);line-height:var(--heading-size);font-weight:var(--heading-weight)}.v3dp__heading__button[data-v-65eb861b]{background:none;border:none;padding:0;display:flex;justify-content:center;align-items:center;width:var(--heading-size)}button.v3dp__heading__center[data-v-65eb861b]:hover,.v3dp__heading__button[data-v-65eb861b]:not(:disabled):hover{background-color:var(--heading-hover-color)}.v3dp__heading__center[data-v-65eb861b]{flex:1}.v3dp__heading__icon[data-v-65eb861b]{height:12px;stroke:var(--arrow-color)}.v3dp__heading__button:disabled .v3dp__heading__icon[data-v-65eb861b]{stroke:var(--elem-disabled-color)}.v3dp__subheading[data-v-65eb861b],.v3dp__elements[data-v-65eb861b]{display:grid;grid-template-columns:var(--popout-column-definition);font-size:var(--elem-font-size)}.v3dp__subheading[data-v-65eb861b]{margin-top:1em}.v3dp__divider[data-v-65eb861b]{border:1px solid var(--divider-color);border-radius:3px}.v3dp__elements[data-v-65eb861b] button:disabled{color:var(--elem-disabled-color)}.v3dp__elements[data-v-65eb861b] button{padding:.3em .6em}.v3dp__elements[data-v-65eb861b] button span{display:block;line-height:1.9em;height:1.8em;border-radius:var(--elem-border-radius)}.v3dp__elements[data-v-65eb861b] button:not(:disabled):hover span{background-color:var(--elem-hover-bg-color);color:var(--elem-hover-color)}.v3dp__elements[data-v-65eb861b] button.selected span{background-color:var(--elem-selected-bg-color);color:var(--elem-selected-color)}.v3dp__elements[data-v-65eb861b] button.current span{font-weight:var(--elem-current-font-weight);outline:1px solid var(--elem-current-outline-color)}.v3dp__column[data-v-81ac698d]{display:flex;flex-direction:column;overflow-y:auto;height:190px}.v3dp__datepicker{--popout-bg-color: var(--vdp-bg-color, #fff);--box-shadow: var( --vdp-box-shadow, 0 4px 10px 0 rgba(128, 144, 160, .1), 0 0 1px 0 rgba(128, 144, 160, .81) );--text-color: var(--vdp-text-color, #000000);--border-radius: var(--vdp-border-radius, 3px);--heading-size: var(--vdp-heading-size, 2.5em);--heading-weight: var(--vdp-heading-weight, bold);--heading-hover-color: var(--vdp-heading-hover-color, #eeeeee);--arrow-color: var(--vdp-arrow-color, currentColor);--elem-color: var(--vdp-elem-color, currentColor);--elem-disabled-color: var(--vdp-disabled-color, #d5d9e0);--elem-hover-color: var(--vdp-hover-color, #fff);--elem-hover-bg-color: var(--vdp-hover-bg-color, #0baf74);--elem-selected-color: var(--vdp-selected-color, #fff);--elem-selected-bg-color: var(--vdp-selected-bg-color, #0baf74);--elem-current-outline-color: var(--vdp-current-date-outline-color, #888);--elem-current-font-weight: var(--vdp-current-date-font-weight, bold);--elem-font-size: var(--vdp-elem-font-size, .8em);--elem-border-radius: var(--vdp-elem-border-radius, 3px);--divider-color: var(--vdp-divider-color, var(--elem-disabled-color));position:relative}.v3dp__clearable{display:inline;position:relative;left:-15px;cursor:pointer}</style><style>.mapdiv[data-v-d05fc6bc]{width:100%;height:100%}.custom-control-wrapper[data-v-d099a3a6]{display:none}.mapdiv .custom-control-wrapper[data-v-d099a3a6]{display:inline-block}.info-window-wrapper[data-v-cbe1707b]{display:none}.mapdiv .info-window-wrapper[data-v-cbe1707b]{display:inline-block}.custom-marker-wrapper[data-v-2d2d343a]{display:none}.mapdiv .custom-marker-wrapper[data-v-2d2d343a]{display:inline-block}</style><style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+
+<noscript>
+
+</noscript>
+<div class="page-container" data-v-app="" id="app"><header class="menu" data-v-cb3d7554="" hide-login-link="false"><nav class="navbar fixed-top blur" data-v-cb3d7554=""><div class="container navbar-container nav-container flex-nowrap" data-v-cb3d7554=""><div class="d-flex align-items-center navbar-brand-wrap" data-v-cb3d7554=""><a data-review-original-href="https://www.munipolis.hu" href="#" tabindex="-1" title="MUNIPOLIS"><div class="mb-0 lh-1"><img alt="MUNIPOLIS" class="navbar-mu-logo" height="30" width="162"/><div><svg class="icon-logo-symbol" height="19.995" viewbox="-11.75 -13.873 20 19.995" width="20" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path d="M-1.75-13.873c-5.523 0-10 4.477-10 10 0 4.362 2.791 8.067 6.686 9.438.4.144.824-.161.819-.59v-.019a.61.61 0 0 0-.41-.571c-3.405-1.201-5.843-4.443-5.843-8.253a8.748 8.748 0 0 1 8.88-8.748c4.662.067 8.5 3.857 8.614 8.52a8.746 8.746 0 0 1-5.838 8.481.61.61 0 0 0-.409.571v.019a.615.615 0 0 0 .818.59 10 10 0 0 0 6.682-9.433C8.25-9.396 3.773-13.873-1.75-13.873z"></path><path d="M-1.803-9.187c2.839-.029 5.229 2.223 5.362 5.057A5.301 5.301 0 0 1 1.049.641a.617.617 0 0 0-.295.529c0 .49.538.791.956.533a6.55 6.55 0 0 0 3.105-5.581 6.563 6.563 0 1 0-10.02 5.581.628.628 0 0 0 .958-.533.62.62 0 0 0-.295-.529 5.316 5.316 0 0 1-2.519-4.519 5.311 5.311 0 0 1 5.258-5.309z"></path><path d="M.75-3.873a2.5 2.5 0 1 0-3.124 2.419v6.952c0 .343.281.624.624.624s.624-.281.624-.624v-6.952A2.497 2.497 0 0 0 .75-3.873zm-2.5.934a.936.936 0 0 1-.938-.938.937.937 0 1 1 1.876 0 .937.937 0 0 1-.938.938z"></path></g></svg></div></div></a></div><div class="menu-search navbar-search-wrap" data-v-cb3d7554=""><div data-review-disabled-form="true"><div class="input-group"><div class="typeahead-control menu-search-typeahead form-control navbar-input"><div class="input-group input-group-sm"><span class="input-group-text"><span class="typeahead-icon-wrapper"><svg class="icon-small" fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg"><path class="color-scheme-icon-path color-scheme-icon-stroke-path" d="M9.97583 1.1C5.1497 1.1 1.22354 5.02616 1.22354 9.85229C1.22354 14.6787 5.1497 18.6046 9.97583 18.6046C14.8022 18.6046 18.7281 14.6787 18.7281 9.85229C18.7281 5.02617 14.8022 1.1 9.97583 1.1ZM9.97583 16.4896C6.31632 16.4896 3.33858 13.5118 3.33858 9.85233C3.33858 6.19282 6.31632 3.21504 9.97583 3.21504C13.6353 3.21504 16.6131 6.19278 16.6131 9.85229C16.6131 13.5118 13.6353 16.4896 9.97583 16.4896Z" fill="#1D3998" stroke="currentColor" stroke-width="0.55"></path><path class="color-scheme-icon-path color-scheme-icon-stroke-path" d="M16.2275 14.6077L20.7139 19.0941C20.7139 19.0941 20.7139 19.0941 20.714 19.0942C21.1271 19.507 21.1271 20.1768 20.714 20.5896L16.2275 14.6077ZM16.2275 14.6077C15.8144 14.1946 15.1453 14.1946 14.7322 14.6076L16.2275 14.6077ZM14.7321 14.6077C14.319 15.0205 14.319 15.6903 14.7321 16.1031C14.7321 16.1031 14.7321 16.1032 14.7322 16.1032L19.2186 20.5896C19.425 20.796 19.6959 20.8994 19.9663 20.8994C20.2363 20.8994 20.5074 20.796 20.7139 20.5897L14.7321 14.6077Z" fill="#1D3998" stroke="currentColor" stroke-width="0.55"></path></svg></span></span><input aria-autocomplete="list" aria-busy="false" aria-expanded="false" aria-label="Keresés a MUNIPOLIS-on..." aria-owns="suggestions-list" autocomplete="false" class="form-control form-control-sm form-control-input text-truncate pe-1" placeholder="Keresés a MUNIPOLIS-on..." role="combobox" type="text"/></div><div class="visually-hidden typeahead-results-description" tabindex="0"></div></div></div></div><div class="min-vh-100 menu-overlay" id="mobile-search"><div class="menu-overlay-head menu-overlay-head-search"><div data-review-disabled-form="true"><div class="typeahead-control menu-search-typeahead menu-search-typeahead-mobile form-control navbar-input"><div class="input-group input-group-sm"><span class="input-group-text"><span class="typeahead-icon-wrapper"><svg class="icon-small" fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg"><path class="color-scheme-icon-path color-scheme-icon-stroke-path" d="M9.97583 1.1C5.1497 1.1 1.22354 5.02616 1.22354 9.85229C1.22354 14.6787 5.1497 18.6046 9.97583 18.6046C14.8022 18.6046 18.7281 14.6787 18.7281 9.85229C18.7281 5.02617 14.8022 1.1 9.97583 1.1ZM9.97583 16.4896C6.31632 16.4896 3.33858 13.5118 3.33858 9.85233C3.33858 6.19282 6.31632 3.21504 9.97583 3.21504C13.6353 3.21504 16.6131 6.19278 16.6131 9.85229C16.6131 13.5118 13.6353 16.4896 9.97583 16.4896Z" fill="#1D3998" stroke="currentColor" stroke-width="0.55"></path><path class="color-scheme-icon-path color-scheme-icon-stroke-path" d="M16.2275 14.6077L20.7139 19.0941C20.7139 19.0941 20.7139 19.0941 20.714 19.0942C21.1271 19.507 21.1271 20.1768 20.714 20.5896L16.2275 14.6077ZM16.2275 14.6077C15.8144 14.1946 15.1453 14.1946 14.7322 14.6076L16.2275 14.6077ZM14.7321 14.6077C14.319 15.0205 14.319 15.6903 14.7321 16.1031C14.7321 16.1031 14.7321 16.1032 14.7322 16.1032L19.2186 20.5896C19.425 20.796 19.6959 20.8994 19.9663 20.8994C20.2363 20.8994 20.5074 20.796 20.7139 20.5897L14.7321 14.6077Z" fill="#1D3998" stroke="currentColor" stroke-width="0.55"></path></svg></span></span><input aria-autocomplete="list" aria-busy="false" aria-expanded="false" aria-label="Keresés a MUNIPOLIS-on..." aria-owns="suggestions-list" autocomplete="false" class="form-control form-control-sm form-control-input text-truncate pe-1" placeholder="Keresés a MUNIPOLIS-on..." role="combobox" type="text"/></div><div class="visually-hidden typeahead-results-description" tabindex="0"></div></div></div><a class="menu-overlay-close" data-review-original-href="" href="#" tabindex="-1"><svg class="icon-svg" height="40px" version="1.1" viewbox="0 0 40 40" width="40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>C064CB98-B370-4AEF-826B-D310F2E0574D@3x</title><desc>Created with sketchtool.</desc><defs></defs><g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g fill="#FFFFFF" id="mr-reg-web-notif-mobile-open" transform="translate(-320.000000, -15.000000)"><g id="mobile-close-icon" transform="translate(320.000000, 15.000000)"><path d="M20,2 C10.0588745,2 2,10.0588745 2,20 C2,29.9411255 10.0588745,38 20,38 C29.9411255,38 38,29.9411255 38,20 C38,10.0588745 29.9411255,2 20,2 Z M20,0 C31.045695,-2.02906125e-15 40,8.954305 40,20 C40,31.045695 31.045695,40 20,40 C8.954305,40 1.3527075e-15,31.045695 0,20 C-1.3527075e-15,8.954305 8.954305,2.02906125e-15 20,0 Z" fill-rule="nonzero" id="Rectangle"></path><g id="Group-2" transform="translate(13.000000, 13.000000)"><rect height="2" id="Rectangle-2-Copy-2" rx="1" transform="translate(7.000000, 7.000000) rotate(-315.000000) translate(-7.000000, -7.000000) " width="16" x="-1" y="6"></rect><rect height="2" id="Rectangle-2-Copy-3" rx="1" transform="translate(7.000000, 7.000000) scale(-1, 1) rotate(-315.000000) translate(-7.000000, -7.000000) " width="16" x="-1" y="6"></rect></g></g></g></g></svg></a></div></div></div><div class="navbar-right" data-v-cb3d7554=""><div class="dropdown menu-dropdown d-none d-md-block" data-v-cb3d7554=""><div class="d-flex align-items-stretch the-header__actions-gap" data-v-cb3d7554=""><div data-v-cb3d7554=""><button aria-expanded="false" aria-haspopup="true" aria-label="Bejelentkezés menü" class="d-none d-md-flex btn btn-link menu-btn-link btn-login-as dropdown-toggle btn-login btn-success ms-0" data-bs-toggle="dropdown" data-v-cb3d7554="" id="login-as"><span data-v-cb3d7554="">Bejelentkezés</span></button><div aria-labelledby="login-as" class="dropdown-menu dropdown-menu-end menu-dropdown login-as" data-v-cb3d7554=""><a class="dropdown-item login-as-wrapper" data-review-original-href="https://www.munipolis.hu/bejelentkezes" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg login-as-icon color-scheme-icon" data-v-cb3d7554="" fill="none" height="60" viewbox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg"><circle class="color-scheme-icon-path" cx="30" cy="30" fill="#1D3998" opacity="0.04" r="30"></circle><path class="color-scheme-icon-path" d="M36.0043 35.6424L32.82 34.0489C32.5197 33.8985 32.333 33.5962 32.333 33.2599V32.1319C32.4093 32.0385 32.4897 31.932 32.5727 31.8146C32.9857 31.2308 33.3167 30.5808 33.5573 29.8799C34.0277 29.664 34.333 29.1986 34.333 28.6731V27.3386C34.333 27.0173 34.213 26.706 33.9997 26.4628V24.6882C34.0183 24.5048 34.0917 23.4124 33.3023 22.5113C32.6177 21.7296 31.5067 21.3333 29.9997 21.3333C28.4927 21.3333 27.3817 21.7296 26.697 22.511C25.9077 23.4121 25.981 24.5048 25.9997 24.6882V26.4628C25.7863 26.706 25.6663 27.0173 25.6663 27.3386V28.6731C25.6663 29.0792 25.8507 29.4578 26.1653 29.7104C26.4707 30.9205 27.1097 31.8323 27.333 32.1249V33.2289C27.333 33.5518 27.157 33.8481 26.874 34.0029L23.9003 35.6263C22.9333 36.1545 22.333 37.1667 22.333 38.269V39.3493C22.333 40.9328 27.348 42.6666 29.9997 42.6666C32.6513 42.6666 37.6663 40.9328 37.6663 39.3493V38.3341C37.6663 37.1871 37.0293 36.1555 36.0043 35.6424Z" fill="#1D3998"></path><path class="color-scheme-icon-path" d="M30.3333 16.6667C32.0688 16.6667 33.7269 16.9983 35.2476 17.6016C34.9356 18.0796 34.6827 18.5991 34.4979 19.1498C33.206 18.6533 31.8015 18.381 30.3333 18.381C23.9163 18.381 18.7143 23.5831 18.7143 30.0001C18.7143 36.4171 23.9163 41.6191 30.3333 41.6191C36.7504 41.6191 41.9524 36.4171 41.9524 30.0001C41.9524 29.3681 41.9019 28.748 41.8048 28.1434C42.3865 28.0758 42.9458 27.935 43.4736 27.7308C43.6008 28.4679 43.6667 29.2263 43.6667 30.0001C43.6667 37.3639 37.6971 43.3334 30.3333 43.3334C22.9695 43.3334 17 37.3639 17 30.0001C17 22.6363 22.9695 16.6667 30.3333 16.6667Z" fill="#1D3998"></path><path class="color-scheme-icon-path" clip-rule="evenodd" d="M41.0003 16C43.9458 16 46.3337 18.3878 46.3337 21.3333C46.3337 24.2789 43.9458 26.6667 41.0003 26.6667C38.0548 26.6667 35.667 24.2789 35.667 21.3333C35.667 18.3878 38.0548 16 41.0003 16ZM41.667 18.6667H40.3337L40.3334 20.6664L38.3337 20.6667V22L40.3334 21.9992L40.3337 24H41.667L41.6662 21.9992L43.667 22V20.6667L41.6662 20.6664L41.667 18.6667Z" fill="#1D3998" fill-rule="evenodd" opacity="0.6"></path></svg></div><div class="d-flex flex-column" data-v-cb3d7554=""><span class="login-as-text" data-v-cb3d7554="">Bejelentkezés mint</span><span class="login-as-role" data-v-cb3d7554="">Felhasználó</span><a class="login-as-additional-link color-scheme-text-color" data-review-original-href="https://www.munipolis.hu/regisztracio" data-v-cb3d7554="" href="#" tabindex="-1">Új fiók létrehozása</a></div><div class="login-as-arrow" data-v-cb3d7554=""><svg class="icon-svg login-as-arrow-icon color-scheme-icon" data-v-cb3d7554="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a><a class="dropdown-item login-as-wrapper" data-review-original-href="https://www.munipolis.hu/admin/login" data-v-cb3d7554="" href="#" rel="noopener" tabindex="-1" target="_blank"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg login-as-icon color-scheme-icon" data-v-cb3d7554="" fill="none" height="60" viewbox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg"><circle class="color-scheme-icon-path" cx="30" cy="30" fill="#1D3998" opacity="0.04" r="30"></circle><path class="color-scheme-icon-path" clip-rule="evenodd" d="M42.4999 16H17.5C16.1218 16 15 17.1009 15 18.4546V35.6363C15 36.99 16.1218 38.0909 17.5 38.0909H26.2528C26.2265 39.0699 26.0361 40.6359 25.321 41.3754C25.0586 41.6462 24.7583 41.7727 24.375 41.7727C24.0295 41.7727 23.75 42.0472 23.75 42.3864C23.75 42.7255 24.0295 43 24.375 43H35.625C35.9704 43 36.25 42.7255 36.25 42.3864C36.25 42.0472 35.9704 41.7727 35.625 41.7727C35.2416 41.7727 34.9413 41.6468 34.6801 41.376C33.9668 40.6402 33.7752 39.0719 33.7479 38.0909H42.5C43.8782 38.0909 45 36.9901 45 35.6363V18.4546C44.9999 17.1009 43.8781 16 42.4999 16ZM30 36.8671C29.309 36.8671 28.7463 36.3146 28.7463 35.6363C28.7463 34.9579 29.309 34.4054 30 34.4054C30.6909 34.4054 31.2537 34.9579 31.2537 35.6363C31.2537 36.3146 30.6909 36.8671 30 36.8671ZM17.4999 18.4546V33.1818H42.501L42.4999 18.4546H17.4999Z" fill="#1D3998" fill-rule="evenodd"></path><rect class="color-scheme-icon-path" fill="#1D3998" height="4.5" opacity="0.6" width="4.5" x="21" y="20.5"></rect><rect class="color-scheme-icon-path" fill="#1D3998" height="4.5" opacity="0.6" width="4.5" x="21" y="26.5"></rect><rect class="color-scheme-icon-path" fill="#1D3998" height="4.5" opacity="0.6" width="10.5" x="28.5" y="26.5"></rect><rect class="color-scheme-icon-path" fill="#1D3998" height="1.5" opacity="0.6" width="6" x="28.5" y="20.5"></rect><rect class="color-scheme-icon-path" fill="#1D3998" height="1.5" opacity="0.6" width="10.5" x="28.5" y="23.5"></rect></svg></div><div class="d-flex flex-column" data-v-cb3d7554=""><span class="login-as-text" data-v-cb3d7554="">Bejelentkezés mint</span><span class="login-as-role" data-v-cb3d7554="">Adminisztrátor</span></div><div class="login-as-arrow" data-v-cb3d7554=""><svg class="icon-svg login-as-arrow-icon color-scheme-icon" data-v-cb3d7554="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a></div></div><div class="d-flex" data-v-cb3d7554=""><button aria-expanded="false" aria-haspopup="true" aria-label="Nyelvválasztás" class="btn btn-link menu-btn-link btn-language-menu dropdown-toggle color-scheme-text-color color-scheme-border-color rounded-button btn-bg-transparent" data-bs-toggle="dropdown" data-v-cb3d7554="" id="language-menu"><svg aria-hidden="true" class="iconify iconify--emojione language-icon menu-icon" data-v-cb3d7554="" height="800px" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 64 64" width="800px" xmlns="http://www.w3.org/2000/svg"><path d="M32 2C18.9 2 7.8 10.4 3.7 22h56.6C56.2 10.4 45.1 2 32 2z" fill="#D80027"></path><path d="M32 62c13.1 0 24.2-8.3 28.3-20H3.7C7.8 53.7 18.9 62 32 62z" fill="#6DA544"></path><path d="M3.7 22C2.6 25.1 2 28.5 2 32s.6 6.9 1.7 10h56.6c1.1-3.1 1.7-6.5 1.7-10s-.6-6.9-1.7-10H3.7z" fill="#f9f9f9"></path></svg></button><div aria-labelledby="language-menu" class="dropdown-menu dropdown-menu-end menu-dropdown language-menu" data-v-cb3d7554=""><a class="dropdown-item cs" data-review-original-href="" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg icon-small" data-v-cb3d7554="" viewbox="0 0 30.36 30.8" xmlns="http://www.w3.org/2000/svg"><path class="flag" d="M30.4 15.2a15.2 15.2 0 1 0-30.4 0z" fill="#f9f9f9"></path><path class="flag" d="M0 15.2a15.2 15.2 0 0 0 30.4.8v-.8z" fill="#ee1c25"></path><path class="flag" d="M4.3 4.6A15.1 15.1 0 0 0 0 15.2a15.1 15.1 0 0 0 4.3 11L15 15.4z" fill="#0b4ea2"></path></svg></div> Čeština</a><a class="dropdown-item sk" data-review-original-href="" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg icon-small" data-v-cb3d7554="" fill="none" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z" fill="#F0F0F0"></path><path d="M8 16C9.29045 16.0003 10.5618 15.6884 11.7056 15.0909C12.8494 14.4935 13.8317 13.6282 14.5687 12.5689C15.3057 11.5096 15.7755 10.2877 15.938 9.00755C16.1005 7.72738 15.9509 6.42689 15.502 5.21704H0.498003C0.0490892 6.42689 -0.100491 7.72738 0.0620263 9.00755C0.224543 10.2877 0.694332 11.5096 1.43131 12.5689C2.16829 13.6282 3.15059 14.4935 4.29439 15.0909C5.4382 15.6884 6.70956 16.0003 8 16Z" fill="#0052B4"></path><path d="M8 16C9.63343 15.9999 11.2277 15.5 12.5688 14.5674C13.9098 13.6348 14.9334 12.3142 15.502 10.783H0.498001C1.06663 12.3142 2.0902 13.6348 3.43124 14.5674C4.77228 15.5 6.36657 15.9999 8 16Z" fill="#D80027"></path><path d="M2.069 4.52197V8.51197C2.069 10.782 5.034 11.478 5.034 11.478C5.034 11.478 8 10.783 8 8.51297V4.52197H2.069Z" fill="#F0F0F0"></path><path d="M2.764 4.52197V8.51197C2.764 8.77897 2.824 9.03097 2.941 9.26697H7.128C7.245 9.03097 7.304 8.77897 7.304 8.51297V4.52197H2.764Z" fill="#D80027"></path><path d="M6.42601 7.30402H5.38201V6.61002H6.07801V5.91402H5.38201V5.21802H4.68701V5.91402H3.99001V6.61002H4.68601V7.30502H3.64301V8.00002H4.68701V8.69602H5.38201V8.00002H6.42601V7.30402Z" fill="#F0F0F0"></path><path d="M3.89 10.238C4.338 10.52 4.799 10.683 5.034 10.756C5.43595 10.6322 5.82066 10.4582 6.179 10.238C6.631 9.95401 6.948 9.62801 7.128 9.26701C6.98759 9.16739 6.82756 9.09884 6.65858 9.0659C6.4896 9.03297 6.31555 9.03641 6.148 9.07601C6.0529 8.85979 5.89693 8.67592 5.69912 8.54683C5.50131 8.41774 5.27021 8.349 5.034 8.349C4.7978 8.349 4.56669 8.41774 4.36888 8.54683C4.17107 8.67592 4.01511 8.85979 3.92 9.07601C3.75249 9.03672 3.57857 9.03334 3.40966 9.06609C3.24075 9.09884 3.08069 9.16697 2.94 9.26601C3.12 9.62901 3.438 9.95401 3.89 10.238Z" fill="#0052B4"></path></svg></div> Slovenčina</a><a class="dropdown-item de-DE" data-review-original-href="" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg icon-small" data-v-cb3d7554="" fill="none" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0.498047 10.7825C1.62839 13.8289 4.56073 15.9999 8.00045 15.9999C11.4402 15.9999 14.3725 13.8289 15.5029 10.7825L8.00045 10.0869L0.498047 10.7825Z" fill="#FFDA44"></path><path d="M8.00045 0C4.56073 0 1.62839 2.171 0.498047 5.21741L8.00045 5.91303L15.5029 5.21737C14.3725 2.171 11.4402 0 8.00045 0Z" fill="black"></path><path d="M0.497594 5.21741C0.176031 6.08406 0 7.02144 0 8C0 8.97856 0.176031 9.91594 0.497594 10.7826H15.5024C15.824 9.91594 16 8.97856 16 8C16 7.02144 15.824 6.08406 15.5024 5.21741H0.497594Z" fill="#D80027"></path></svg></div> Deutsch</a><a class="dropdown-item hu-HU" data-review-original-href="" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg aria-hidden="true" class="iconify iconify--emojione icon-svg icon-small" data-v-cb3d7554="" height="800px" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 64 64" width="800px" xmlns="http://www.w3.org/2000/svg"><path d="M32 2C18.9 2 7.8 10.4 3.7 22h56.6C56.2 10.4 45.1 2 32 2z" fill="#D80027"></path><path d="M32 62c13.1 0 24.2-8.3 28.3-20H3.7C7.8 53.7 18.9 62 32 62z" fill="#6DA544"></path><path d="M3.7 22C2.6 25.1 2 28.5 2 32s.6 6.9 1.7 10h56.6c1.1-3.1 1.7-6.5 1.7-10s-.6-6.9-1.7-10H3.7z" fill="#f9f9f9"></path></svg></div> Magyar</a><a class="dropdown-item pl-PL" data-review-original-href="" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg icon-small" data-v-cb3d7554="" height="256" viewbox="0 0 256 256" width="256" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"><path d="M45 90C20.147 90 0 69.853 0 45h90c0 24.853-20.147 45-45 45" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(220, 20, 60); fill-rule: nonzero; opacity: 1;" transform="translate(1.407 1.407)scale(2.81)"></path><path d="M45 0C20.147 0 0 20.147 0 45h90C90 20.147 69.853 0 45 0" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(243, 244, 245); fill-rule: nonzero; opacity: 1;" transform="translate(1.407 1.407)scale(2.81)"></path></g></svg></div> Polski</a><a class="dropdown-item en-US" data-review-original-href="" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg icon-small" data-v-cb3d7554="" fill="none" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z" fill="#F0F0F0"></path><path d="M1.654 3.13C1.01675 3.95804 0.548534 4.90331 0.276001 5.912H4.437L1.654 3.13ZM15.724 5.913C15.4517 4.90361 14.9835 3.95765 14.346 3.129L11.563 5.913H15.724ZM0.276001 10.087C0.548339 11.0964 1.01656 12.0423 1.654 12.871L4.437 10.087H0.276001ZM12.87 1.654C12.0419 1.01677 11.0967 0.548558 10.088 0.276001V4.437L12.872 1.654H12.87ZM3.13 14.346C3.95837 14.9833 4.90397 15.4515 5.913 15.724V11.563L3.13 14.346ZM5.913 0.276001C4.90362 0.548339 3.95767 1.01656 3.129 1.654L5.913 4.437V0.276001ZM10.087 15.724C11.0964 15.4517 12.0423 14.9834 12.871 14.346L10.087 11.563V15.724ZM11.563 10.087L14.346 12.871C14.9835 12.0424 15.4517 11.0964 15.724 10.087H11.563Z" fill="#0052B4"></path><path d="M15.932 6.95705H9.044V0.0670549C8.35126 -0.0231654 7.64974 -0.0231654 6.957 0.0670549V6.95705H0.0669975C-0.0231361 7.64947 -0.0231361 8.35064 0.0669975 9.04306H6.957V15.9331C7.64941 16.0232 8.35058 16.0232 9.043 15.9331V9.04306H15.933C16.0231 8.35064 16.0221 7.64947 15.932 6.95705Z" fill="#D80027"></path><path d="M10.087 10.087L13.657 13.657C13.821 13.4926 13.9779 13.3211 14.127 13.143L11.071 10.087H10.087ZM5.913 10.087L2.343 13.657C2.507 13.821 2.679 13.977 2.857 14.127L5.913 11.071V10.087ZM5.913 5.91305L2.343 2.34305C2.17897 2.50749 2.02215 2.67899 1.873 2.85705L4.929 5.91305H5.913ZM10.087 5.91305L13.657 2.34305C13.4926 2.179 13.3211 2.02219 13.143 1.87305L10.087 4.92905V5.91305Z" fill="#D80027"></path></svg></div> English</a><a class="dropdown-item uk-UA" data-review-original-href="" data-v-cb3d7554="" href="#" tabindex="-1"><div class="dropdown-icon-wrap" data-v-cb3d7554=""><svg class="icon-svg icon-small" data-v-cb3d7554="" fill="none" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z" fill="#FFDA44"></path><path d="M0 8C0 3.58175 3.58175 0 8 0C12.4183 0 16 3.58175 16 8" fill="#338AF3"></path></svg></div> Українська</a></div></div></div></div></div></div></nav></header><div class="main-content"><header role="banner"><div class="header header--keep header--overflowed"><img class="header__background" decoding="sync" fetchpriority="high" height="1080" loading="eager" style="content-visibility: auto; contain: paint;" width="1920"/><div class="container d-none d-md-block"><div class="row align-items-end"><div class="col-md-4"><div class="vignette"><div class="vignette-head"><div class="vignette-image border-0"><a data-review-original-href="/" href="#" tabindex="-1"><img alt="commmon.account_logo"/></a></div></div><div class="vignette-body"><a data-review-original-href="/" href="#" tabindex="-1" title="Ugrás a főoldalra"><div class="account-title h2">Sárbogárd</div></a><div class="text-note"><a class="btn btn-success btn-flex btn-sm" data-review-original-href="https://www.munipolis.hu/regisztracio/sarbogard" data-test="account-action-register" href="#" tabindex="-1"> Feliratkozás az információkra <svg class="icon-svg ms-2 icon-white" height="16px" version="1.1" viewbox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g id="MR_III_cela-cr-nastenka-102020-neprihlaseny" transform="translate(-538.000000, -310.000000)"><g id="Group-5" transform="translate(320.000000, 131.000000)"><g id="Group-15" transform="translate(20.000000, 169.000000)"><g id="Group-8" transform="translate(52.000000, 10.000000)"><g id="pridat-icon" transform="translate(154.000000, 8.000000) rotate(-360.000000) translate(-154.000000, -8.000000) translate(146.000000, 0.000000)"><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M9,4 L7,4 L7,7 L4,7 L4,9 L6.999,9 L7,12 L9,12 L8.999,9 L12,9 L12,7 L9,7 L9,4 Z" id="Combined-Shape"></path></g></g></g></g></g></g></svg></a></div></div></div></div></div></div></div><div class="container d-md-none mobile-dropdown-positioner"><div class="mobile-dropdown-wrapper mobile-dropdown-disabled"><div class="account-logo-wrapper"><img alt="" class="account-logo" title="A fiók még nem aktivált közvetlen kommunikációt a MUNIPOLIS-on keresztül"/></div><div class="mobile-dropdown ms-2"><div aria-label="Basic example" class="btn-group mobile-dropdown-buttons" role="group"><button aria-expanded="false" class="btn text-start primary-btn text-break" tabindex="0" type="button"><span class="text-bold f-22">Sárbogárd</span></button><button class="btn text-center additional-btn" style="max-width: 50px;" tabindex="0" type="button"><span class="additional-btn-inner"><svg class="icon-svg color-scheme-icon" height="16px" version="1.1" viewbox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"><g id="MR_III_cela-cr-nastenka-102020-neprihlaseny" transform="translate(-538.000000, -310.000000)"><g id="Group-5" transform="translate(320.000000, 131.000000)"><g id="Group-15" transform="translate(20.000000, 169.000000)"><g id="Group-8" transform="translate(52.000000, 10.000000)"><g id="pridat-icon" transform="translate(154.000000, 8.000000) rotate(-360.000000) translate(-154.000000, -8.000000) translate(146.000000, 0.000000)"><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M9,4 L7,4 L7,7 L4,7 L4,9 L6.999,9 L7,12 L9,12 L8.999,9 L12,9 L12,7 L9,7 L9,4 Z" id="Combined-Shape"></path></g></g></g></g></g></g></svg></span></button></div><div class="mobile-dropdown-list" style="transform: translate(0px, -4px); display: none;"></div></div></div></div></header><div class="container"><div class="row"><div class="col-md-4 d-none d-md-block"><div class="p-20 bg-white shadow-sm radius-sm mb-10"><h4 class="mb-3">Alapvető információk</h4><div class="mb-3"><div class="row mb-1"><div class="col-6 pe-1"><div class="stats-box color-scheme-transparency-background-color color-scheme-text-color"><div class="stats-box-counter"><svg class="icon-svg icon-small color-scheme-icon ico-fix-n1" height="39px" version="1.1" viewbox="0 0 39 39" width="39px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd" id="Bannery---Timeline---Koronavirus" stroke="none" stroke-width="1"><g fill="#888888" fill-rule="nonzero" id="MujMR_II_neprihlaseny-dotazy-koronavirus" transform="translate(-818.000000, -725.000000)"><g id="post-rss" transform="translate(647.000000, 690.000000)"><g id="content" transform="translate(140.000000, 0.000000)"><g id="Group-8" transform="translate(31.000000, 25.000000)"><g id="user-icon-post" transform="translate(0.000000, 10.000000)"><path d="M27.7151389,27.6730067 L23.0713194,25.3492652 C22.6333333,25.1298332 22.3611111,24.6890229 22.3611111,24.198585 L22.3611111,22.5535746 C22.4724306,22.4173419 22.5895833,22.2621338 22.710625,22.0908698 C23.3129167,21.2394152 23.795625,20.2916245 24.1465972,19.2693923 C24.8325,18.9545974 25.2777778,18.2758663 25.2777778,17.5095571 L25.2777778,15.563375 C25.2777778,15.0948317 25.1027778,14.6408847 24.7916667,14.286193 L24.7916667,11.6982574 C24.8188889,11.4306573 24.9258333,9.83770728 23.7747222,8.52354781 C22.77625,7.38357164 21.1560417,6.80555556 18.9583333,6.80555556 C16.760625,6.80555556 15.1404167,7.38357164 14.1419444,8.52306127 C12.9908333,9.83722073 13.0977778,11.4306573 13.125,11.6982574 L13.125,14.286193 C12.8138889,14.6408847 12.6388889,15.0948317 12.6388889,15.563375 L12.6388889,17.5095571 C12.6388889,18.1016831 12.9077083,18.6539122 13.3665972,19.0222272 C13.811875,20.7869278 14.74375,22.1166567 15.0694444,22.5433572 L15.0694444,24.1533363 C15.0694444,24.6243124 14.8127778,25.0563648 14.4000694,25.2821219 L10.0634722,27.6496525 C8.65326389,28.419854 7.77777778,29.8960332 7.77777778,31.5035796 L7.77777778,33.079014 C7.77777778,35.3881591 15.0913194,37.9166667 18.9583333,37.9166667 C22.8253472,37.9166667 30.1388889,35.3881591 30.1388889,33.079014 L30.1388889,31.598456 C30.1388889,29.9257124 29.2099306,28.4213137 27.7151389,27.6730067 Z" id="Combined-Shape"></path><path d="M19.4444444,36.3888889 C28.8026027,36.3888889 36.3888889,28.8026027 36.3888889,19.4444444 C36.3888889,10.0862862 28.8026027,2.5 19.4444444,2.5 C10.0862862,2.5 2.5,10.0862862 2.5,19.4444444 C2.5,28.8026027 10.0862862,36.3888889 19.4444444,36.3888889 Z M19.4444444,38.8888889 C8.70557431,38.8888889 0,30.1833146 0,19.4444444 C0,8.70557431 8.70557431,0 19.4444444,0 C30.1833146,0 38.8888889,8.70557431 38.8888889,19.4444444 C38.8888889,30.1833146 30.1833146,38.8888889 19.4444444,38.8888889 Z" id="Oval-5"></path></g></g></g></g></g></g></svg> 614 </div><div class="stats-box-title"> bejelentkezett felhasználók </div></div></div><div class="col-6 ps-0"><div class="stats-box color-scheme-transparency-background-color color-scheme-text-color"><div class="stats-box-counter"><svg class="icon-svg icon-small color-scheme-icon ico-fix-n1" height="16" viewbox="0 0 18 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.972.009a4.53 4.53 0 0 0-2.931 1.056c.059.076.117.152.174.231L9 2.175l-1.215-.88c.057-.079.115-.155.174-.231A4.532 4.532 0 0 0 5.028.009c-1.39 0-2.669.556-3.601 1.564C.508 2.57 0 3.932 0 5.408c0 1.519.567 2.91 1.785 4.376 1.09 1.313 2.656 2.645 4.469 4.188.619.526 1.321 1.123 2.051 1.76.191.168.439.26.695.26s.504-.092.695-.26c.729-.637 1.432-1.234 2.051-1.761 1.813-1.542 3.379-2.874 4.469-4.187C17.433 8.317 18 6.927 18 5.408c0-1.476-.508-2.838-1.428-3.835a4.843 4.843 0 0 0-3.6-1.564z" fill="none"></path><path d="M12.972.009a4.53 4.53 0 0 0-2.931 1.056c.059.076.117.152.174.231L9 2.175l-1.215-.88c.057-.079.115-.155.174-.231A4.534 4.534 0 0 0 5.028.009c-1.39 0-2.669.556-3.601 1.564C.507 2.57 0 3.932 0 5.408c0 1.519.567 2.91 1.785 4.376 1.09 1.313 2.656 2.645 4.469 4.188.619.526 1.321 1.123 2.05 1.76a1.055 1.055 0 0 0 1.391 0c.729-.637 1.432-1.234 2.051-1.761 1.813-1.542 3.379-2.874 4.469-4.187C17.433 8.317 18 6.927 18 5.408c0-1.476-.508-2.838-1.428-3.835a4.843 4.843 0 0 0-3.6-1.564zm2.089 8.808c-.84 1.011-1.764 1.856-4.286 4.002-.825.702-1.29 1.099-1.774 1.52-.488-.424-.958-.825-1.774-1.519C4.705 10.674 3.78 9.828 2.94 8.817 1.933 7.605 1.5 6.544 1.5 5.399c0-1.107.371-2.104 1.03-2.817A3.343 3.343 0 0 1 5.028 1.5c.706 0 1.335.217 1.912.662.307.237.59.532.845.884L9 4.723l1.215-1.677c.255-.352.539-.647.846-.884a3.031 3.031 0 0 1 1.911-.662c.974 0 1.852.382 2.499 1.082.658.713 1.029 1.71 1.029 2.817 0 1.145-.433 2.206-1.439 3.418z" fill="#888"></path></svg> 526 </div><div class="stats-box-title"> dicséret </div></div></div></div><div class="row"><div class="col-6 pe-1"><div class="stats-box color-scheme-transparency-background-color color-scheme-text-color"><div class="stats-box-counter"><svg class="icon-svg icon-small color-scheme-icon ico-fix-n1" height="16px" version="1.1" viewbox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="none" fill-rule="evenodd" id="07/2020---Pocasi,-Samosprava-page,-Intro-page" stroke="none" stroke-width="1"><g fill="#2AB574" id="MujMR_II_-samosprava-nastenka-072020" transform="translate(-335.000000, -485.000000)"><g id="INFOBOX-COUNTS-Copy" transform="translate(320.000000, 420.000000)"><g id="Group-29-Copy-2" transform="translate(0.000000, 55.000000)"><g id="map-menu-ico-copy-2" transform="translate(15.000000, 10.000000)"><path d="M12.6576161,4.75081507 C12.6576161,8.37540539 9.5594819,9.05518741 8.10241804,12.5384278 C7.98402764,12.8214704 7.57488591,12.8200312 7.45646033,12.5370571 C6.14206305,9.39648336 3.49353089,8.53525937 2.98679184,5.73745504 C2.4878634,2.9831351 4.44586114,0.285115289 7.30475174,0.0219130667 C10.2122651,-0.245778088 12.6576161,1.97439314 12.6576161,4.75081507 Z M10.3557057,4.75081507 C10.3557057,3.36520837 9.20244602,2.24194723 7.77975583,2.24194723 C6.35706564,2.24194723 5.20380596,3.36520837 5.20380596,4.75081507 C5.20380596,6.13645604 6.35706564,7.25968292 7.77975583,7.25968292 C9.20244602,7.25968292 10.3557057,6.13645604 10.3557057,4.75081507 Z" fill-rule="nonzero" id="Shape"></path><rect height="2.125" id="Rectangle-14" rx="1.0625" width="16" x="0" y="13.875"></rect><path d="M-2.22044605e-16,15.0553557 L-2.22044605e-16,14.3903197 C0.0321929155,14.3297986 0.0737863408,14.2729639 0.124780273,14.22197 L3.23712148,11.1096288 C3.51374286,10.8330074 3.96223472,10.8330074 4.23885609,11.1096288 C4.51547746,11.3862501 4.51547746,11.834742 4.23885609,12.1113634 L1.12651488,15.2237046 C0.849893506,15.5003259 0.401401646,15.5003259 0.124780273,15.2237046 C0.0737863423,15.1727106 0.032192918,15.115876 -2.22044605e-16,15.055354 Z" id="Combined-Shape"></path><path d="M10.9090909,14.7263589 L10.9090909,14.0613229 C10.9412838,14.0008017 10.9828772,13.9439671 11.0338712,13.8929732 L14.1462124,10.7806319 C14.4228338,10.5040106 14.8713256,10.5040106 15.147947,10.7806319 C15.4245684,11.0572533 15.4245684,11.5057452 15.147947,11.7823665 L12.0356058,14.8947078 C11.7589844,15.1713291 11.3104926,15.1713291 11.0338712,14.8947078 C10.9828773,14.8437138 10.9412838,14.7868792 10.9090909,14.7263572 Z" id="Combined-Shape-Copy-3" transform="translate(13.285649, 12.837670) scale(-1, 1) translate(-13.285649, -12.837670) "></path></g></g></g></g></g></svg> 0 </div><div class="stats-box-title"> megoldott bejelentések </div></div></div><div class="ps-0 col-6"><div class="stats-box color-scheme-transparency-background-color color-scheme-text-color"><div class="stats-box-counter"><svg class="icon-svg icon-small color-scheme-icon ico-fix-n1" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M1.238 0h17.524C19.446 0 20 .554 20 1.238v17.524c0 .684-.554 1.238-1.238 1.238H1.238A1.238 1.238 0 010 18.762V1.238C0 .554.554 0 1.238 0zm2.664 3.08a.702.702 0 00-.702.702v.184c0 .387.314.702.702.702h.95a.702.702 0 00.7-.702v-.184a.702.702 0 00-.7-.701h-.95zm3.858 0a.702.702 0 00-.701.702v.184c0 .387.314.702.701.702h8.432a.702.702 0 00.702-.702v-.184a.702.702 0 00-.702-.701H7.76zM3.902 6.256a.702.702 0 00-.702.701v.184c0 .387.314.702.702.702h8.102a.702.702 0 00.702-.702v-.184a.702.702 0 00-.702-.701H3.902zm0 4a.702.702 0 00-.702.701v6.184c0 .387.314.702.702.702h12.102a.702.702 0 00.702-.702v-6.184a.702.702 0 00-.702-.701H3.902z" fill="#FFF" fill-rule="evenodd"></path></svg> 26 859 </div><div class="stats-box-title"> olvasott üzenetek </div></div></div></div></div><dl><div class="d-flex"><dt class="me-2">Népesség:</dt><dd>11 913</dd></div><div class="d-flex"><dt class="me-2">Státusz:</dt><dd>Város</dd></div><div class="d-flex"><dt class="me-2">Vármegye:</dt><dd>Fejér</dd></div><div class="d-flex"><dt class="me-2">Web:</dt><dd><a class="municipality-link" data-review-original-href="https://www.sarbogard.hu" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"> www.sarbogard.hu </a><svg class="icon-svg icon-external icon-micro icon-gray ms-2" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path d="M15.01 0h-5.5a.987.987 0 0 0 0 1.972h3.12L7.425 7.176a.979.979 0 0 0-.289.697c0 .264.103.511.29.697a.979.979 0 0 0 .696.29.98.98 0 0 0 .698-.29l5.204-5.204v3.12a.987.987 0 0 0 1.972 0v-5.5A.987.987 0 0 0 15.01 0z"></path><path d="M11.332 14.305H1.69V4.664h7.251l1.69-1.69H.846A.845.845 0 0 0 0 3.819V15.15c0 .466.378.845.845.845h11.332a.845.845 0 0 0 .845-.845V5.364l-1.69 1.69v7.251z"></path></g></svg></dd></div></dl><div class="municipality-map"><img alt="Térkép" class="img-fluid"/></div></div><div class="py-3 d-none d-md-block d-lg-block"><p class="footer-links"><a class="link-inverse" data-review-original-href="https://www.sarbogard.hu/_user/browser/File/GDPR/T%C3%81J%C3%89KOZTAT%C3%81S%20MUNIPOLIS%20szem%C3%A9lyes%20adatok%20kezel%C3%A9s%C3%A9r%C5%91l.pdf" href="#" tabindex="-1" target="_blank">Tájékoztatás a személyes adatok kezeléséről – Sárbogárd</a><span class="mx-1">|</span><a class="link-inverse" data-review-original-href="https://info.munipolis.hu/adatvedelem" href="#" tabindex="-1" target="_blank">Tájékoztatás a személyes adatok kezeléséről – MUNIPOLIS sro</a><span class="mx-1">|</span><a class="link-inverse" data-review-original-href="https://files.munipolis.com/mr/legal/hu_HU/terms-and-conditions.pdf" href="#" tabindex="-1" target="_blank">Az üzenetek címzettjeire vonatkozó feltételek</a><span class="mx-1">|</span><a class="link-inverse" data-review-original-href="https://rolunk.munipolis.hu/felhasznalasi-feltetelek" href="#" tabindex="-1" target="_blank">Felhasználási feltételek</a><span class="mx-1">|</span><a class="link-inverse" data-review-original-href="https://info.munipolis.hu/hozzaferhetosegi-nyilatkozat/" href="#" tabindex="-1" target="_blank">Hozzáférhetőségi nyilatkozat</a><span class="mx-1">|</span><a class="link-inverse" data-review-original-href="https://info.munipolis.hu/a-munipolis-rol/" href="#" tabindex="-1" target="_blank">A MUNIPOLIS-ról</a> | <strong>MUNIPOLIS s.r.o.</strong> © 2026</p></div></div><div class="col-md-8"><main><div class="image-navigation-placeholder"><div aria-label="A megjelenítendő információk kiválasztása" class="primary-page-menu" data-v-9069de03=""><div class="position-relative" data-v-9069de03=""><div class="preview-items grid-columns" data-v-9069de03=""><a aria-current="false" class="nav-link page-menu-link preview-first-level" data-review-original-href="https://sarbogard.munipolis.hu" data-v-509619ee="" data-v-9069de03="" href="#" tabindex="-1" title="Ugrás az oldalra - "><div class="menu-icon-wrapper" data-v-509619ee=""><span class="icon-menu-item" data-v-509619ee="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>dashboard</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-57.000000, -63.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M36,10.2666667 L36,31.9666667 C36,32.5378244 35.5282734,33 34.9453125,33 L1.0546875,33 C0.471726562,33 0,32.5378244 0,31.9666667 L0,10.2666667 L36,10.2666667 Z M15.890625,26.8 L7.453125,26.8 C6.87016406,26.8 6.3984375,27.2621756 6.3984375,27.8333333 C6.3984375,28.4044911 6.87016406,28.8666667 7.453125,28.8666667 L15.890625,28.8666667 C16.4735859,28.8666667 16.9453125,28.4044911 16.9453125,27.8333333 C16.9453125,27.2621756 16.4735859,26.8 15.890625,26.8 Z M28.6171875,14.4 L20.109375,14.4 C19.5264141,14.4 19.0546875,14.8621756 19.0546875,15.4333333 L19.0546875,27.8333333 C19.0546875,28.4044911 19.5264141,28.8666667 20.109375,28.8666667 L28.6171875,28.8666667 C29.2001484,28.8666667 29.671875,28.4044911 29.671875,27.8333333 L29.671875,15.4333333 C29.671875,14.8621756 29.2001484,14.4 28.6171875,14.4 Z M15.890625,22.6666667 L7.453125,22.6666667 C6.87016406,22.6666667 6.3984375,23.1288422 6.3984375,23.7 C6.3984375,24.2711578 6.87016406,24.7333333 7.453125,24.7333333 L15.890625,24.7333333 C16.4735859,24.7333333 16.9453125,24.2711578 16.9453125,23.7 C16.9453125,23.1288422 16.4735859,22.6666667 15.890625,22.6666667 Z M15.890625,14.4 L7.453125,14.4 C6.87016406,14.4 6.3984375,14.8621756 6.3984375,15.4333333 L6.3984375,19.5666667 C6.3984375,20.1378244 6.87016406,20.6 7.453125,20.6 L15.890625,20.6 C16.4735859,20.6 16.9453125,20.1378244 16.9453125,19.5666667 L16.9453125,15.4333333 C16.9453125,14.8621756 16.4735859,14.4 15.890625,14.4 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M34.9453125,2 L1.0546875,2 C0.471726562,2 0,2.46217556 0,3.03333333 L0,10.2666667 L36,10.2666667 L36,3.03333333 C36,2.46217556 35.5282734,2 34.9453125,2 Z M5.34375,7.16666667 C4.76128125,7.16666667 4.2890625,6.70400889 4.2890625,6.13333333 C4.2890625,5.56252 4.76128125,5.1 5.34375,5.1 C5.92621875,5.1 6.3984375,5.56252 6.3984375,6.13333333 C6.3984375,6.70400889 5.92621875,7.16666667 5.34375,7.16666667 Z M9.5625,7.16666667 C8.98003125,7.16666667 8.5078125,6.70400889 8.5078125,6.13333333 C8.5078125,5.56252 8.98003125,5.1 9.5625,5.1 C10.1449688,5.1 10.6171875,5.56252 10.6171875,6.13333333 C10.6171875,6.70400889 10.1449688,7.16666667 9.5625,7.16666667 Z M13.78125,7.16666667 C13.1987812,7.16666667 12.7265625,6.70400889 12.7265625,6.13333333 C12.7265625,5.56252 13.1987812,5.1 13.78125,5.1 C14.3637187,5.1 14.8359375,5.56252 14.8359375,6.13333333 C14.8359375,6.70400889 14.3637187,7.16666667 13.78125,7.16666667 Z M30.7265625,7.16666667 L22.21875,7.16666667 C21.6357891,7.16666667 21.1640625,6.70449111 21.1640625,6.13333333 C21.1640625,5.56217556 21.6357891,5.1 22.21875,5.1 L30.7265625,5.1 C31.3095234,5.1 31.78125,5.56217556 31.78125,6.13333333 C31.78125,6.70449111 31.3095234,7.16666667 30.7265625,7.16666667 Z" fill="#0136A6" fill-opacity="0.4" fill-rule="nonzero" mask="url(#mask-2)"></path>
+</g>
+</g>
+</g>
+</svg></span></div><div class="page-menu-link-title" data-v-509619ee="">Hírek</div><div class="menu-dropdown" data-v-509619ee=""></div></a><a aria-current="false" class="nav-link page-menu-link active preview-first-level" data-review-original-href="https://sarbogard.munipolis.hu/p/egyeszsegugy" data-v-509619ee="" data-v-9069de03="" href="#" tabindex="-1" title="Ugrás az oldalra - "><div class="menu-icon-wrapper" data-v-509619ee=""><span class="icon-menu-item" data-v-509619ee="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>hospital</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-1672.000000, -193.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(1615.000000, 130.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M35.39881,12.3365806 L18.8999535,0.337476132 C18.3000193,-0.112492044 17.7000149,-0.112492044 17.1000808,0.337476132 L0.601224197,12.3365806 C-0.598714375,13.086551 0.151256021,15.0363897 1.50116055,15.0363897 L4.50097182,15.0363897 L4.50097182,31.5352462 C4.50097182,32.4351826 5.10090596,33.0351167 6.00084231,33.0351167 L29.9991216,33.0351167 C30.8990579,33.0351167 31.4989921,32.4351826 31.4989921,31.5352462 L31.4989921,15.0363897 L34.4988034,15.0363897 C35.8487782,15.0363897 36.5986783,13.086551 35.39881,12.3365806 Z M18.0000171,30.0353757 C13.0503672,30.0353757 9.00065358,25.9856622 9.00065358,21.0360122 C9.00065358,16.0863623 13.0503672,12.0366487 18.0000171,12.0366487 C22.949667,12.0366487 26.9993806,16.0863623 26.9993806,21.0360122 C26.9993806,25.9856622 22.949667,30.0353757 18.0000171,30.0353757 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<polygon fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6" points="20.249858 18.7861713 20.249858 14.2864896 15.7501762 14.2864896 15.7501762 18.7861713 11.2504945 18.7861713 11.2504945 23.2858531 15.7501762 23.2858531 15.7501762 27.7855349 20.249858 27.7855349 20.249858 23.2858531 24.7495397 23.2858531 24.7495397 18.7861713"></polygon>
+</g>
+</g>
+</g>
+</g>
+</svg></span></div><div class="page-menu-link-title" data-v-509619ee="">Egészségügy</div><div class="menu-dropdown" data-v-509619ee=""></div></a><a aria-current="false" class="nav-link page-menu-link preview-first-level" data-review-original-href="https://sarbogard.munipolis.hu/p/gyermeketkeztetes" data-v-509619ee="" data-v-9069de03="" href="#" tabindex="-1" title="Ugrás az oldalra - "><div class="menu-icon-wrapper" data-v-509619ee=""><span class="icon-menu-item" data-v-509619ee="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>restaurant</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-2242.000000, -323.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g id="restaurant" transform="translate(2185.000000, 260.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<g fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)">
+<g transform="translate(0.000000, 2.000000)">
+<path d="M25.1884674,8.79370201e-05 C24.7913846,0.00629497128 24.4742954,0.332821371 24.4797332,0.729915427 C24.4797332,1.36954268 24.3461287,1.69780784 24.161928,1.95895048 C23.9777273,2.22009319 23.7007819,2.43036155 23.3421024,2.68596557 C22.983423,2.94156959 22.5417704,3.24135405 22.1847844,3.73781711 C21.8277984,4.23428009 21.5997974,4.91338536 21.5997974,5.76980302 C21.5961253,6.02945509 21.7325447,6.27097042 21.9568179,6.40186808 C22.1810912,6.53276574 22.4584716,6.53276574 22.6827448,6.40186808 C22.9070181,6.27097042 23.0434375,6.02945509 23.0397653,5.76980302 C23.0397653,5.14701367 23.1717564,4.83323855 23.3547583,4.57873581 C23.5377602,4.32423308 23.8160916,4.11622641 24.1773961,3.85875187 C24.5387006,3.60127734 24.9817391,3.29302226 25.3375264,2.78861951 C25.6933137,2.28421676 25.9197011,1.59865453 25.9197011,0.729915427 C25.9223661,0.53530354 25.8461355,0.347901588 25.7083788,0.210409822 C25.5706221,0.0729180554 25.3830738,-0.00295163958 25.1884674,8.79370201e-05 L25.1884674,8.79370201e-05 Z M28.0684032,2.16003976 C27.6713204,2.1662468 27.3542312,2.4927732 27.359669,2.88986725 C27.359669,3.26822155 27.2811166,3.44152723 27.1599857,3.60844499 C27.0388557,3.77536276 26.838996,3.93640322 26.5707804,4.135777 C26.3025648,4.3351507 25.9658103,4.5707301 25.6806441,4.95279001 C25.3954772,5.33484985 25.1997172,5.86692741 25.1997172,6.48978696 C25.196045,6.74943903 25.3324644,6.99095436 25.5567376,7.12185202 C25.7810109,7.25274968 26.0583913,7.25274968 26.2826645,7.12185202 C26.5069378,6.99095436 26.6433572,6.74943903 26.639685,6.48978696 C26.639685,6.1309484 26.713919,5.97533971 26.833743,5.81480201 C26.9535678,5.65426395 27.1568013,5.49229982 27.4285736,5.29028248 C27.7003459,5.08826514 28.0404743,4.84474216 28.3243351,4.45358237 C28.6081953,4.06242259 28.7996369,3.52417037 28.7996369,2.88986725 C28.8023018,2.69525536 28.7260713,2.50785341 28.5883146,2.37036165 C28.4505579,2.23286988 28.2630096,2.15700018 28.0684032,2.16003976 Z M17.9998777,8.64973878 C17.6024466,8.64973878 17.2798938,8.9715716 17.2798938,9.36972272 L17.2798938,23.2476947 C17.2798938,24.2074333 17.4636135,25.1143316 17.7847264,25.9293534 L31.17474,25.9293534 C31.4454612,25.2428393 31.6106954,24.4881198 31.6584793,23.6934656 C32.4556304,23.526831 33.1421984,23.0880059 33.6665598,22.5052113 C34.3388916,21.7579551 34.7967337,20.7936215 35.1346517,19.7574595 C35.8104884,17.6851362 35.9994763,15.3016323 35.9994763,13.6896264 C35.9994763,12.5052744 35.0238764,11.5296745 33.8395244,11.5296745 L31.6795726,11.5296745 L31.6795726,9.36972272 C31.6795726,8.9715716 31.3570198,8.64973878 30.9595887,8.64973878 L17.9998777,8.64973878 Z M31.6795726,12.9696424 L33.8395244,12.9696424 C34.246337,12.9696424 34.5595084,13.2828138 34.5595084,13.6896264 C34.5595084,15.1821912 34.3622702,17.4788529 33.7649946,19.3102825 C33.4663575,20.225997 33.0666418,21.0193358 32.5964275,21.5419512 C32.3123593,21.857675 32.014962,22.0670139 31.6795726,22.1930306 L31.6795726,12.9696424 Z"></path>
+<path d="M0.720263145,27.3693213 C0.470428717,27.3693213 0.238188897,27.4986369 0.10715182,27.7110321 C-0.0238852576,27.9234274 -0.0353825011,28.1881345 0.0762150098,28.4113295 L0.894634256,30.0495738 C1.39286314,31.0453116 2.54492745,31.6892249 3.83081877,31.6892249 L32.1689371,31.6892249 C33.4541084,31.6892249 34.606892,31.0453116 35.1051209,30.0495738 L35.9235403,28.4113295 C36.0351378,28.1881345 36.0243604,27.9234274 35.8926033,27.7110321 C35.760847,27.4986369 35.5293268,27.3693213 35.2794923,27.3693213 L0.720263145,27.3693213 Z" opacity="0.6"></path>
+<path d="M13.3199821,10.8096906 C12.1190489,10.8096906 11.044439,11.4730205 10.4864515,12.480278 C9.67646954,12.1318065 8.6940853,12.1890898 7.92010256,12.6433997 C7.48307231,12.3870854 6.98772335,12.2496585 6.48013468,12.2496585 C5.11432514,12.2496585 3.96779571,13.2047618 3.67332228,14.4827333 C2.62934556,14.723208 1.81145504,15.5371052 1.54290103,16.5695621 L0.720263145,16.5695621 C0.322832009,16.5695621 0.00027920346,16.891395 0.00027920346,17.2895461 L0.00027920346,19.3834055 C0.00027920346,21.9235089 1.16830692,24.1877122 2.81131027,25.9293534 L16.2589789,25.9293534 C15.9911449,25.093452 15.8399259,24.1915937 15.8399259,23.2476947 L15.8399259,16.5695621 L3.0728669,16.5695621 C3.32270133,16.1390117 3.78811472,15.8495782 4.32018285,15.8495782 C4.71761399,15.8495782 5.04016679,15.5277454 5.04016679,15.1295943 C5.04016679,14.335452 5.68599239,13.6896264 6.48013468,13.6896264 C6.9272447,13.6896264 7.24697373,13.8937303 7.43776948,14.0650865 C7.71136337,14.311321 8.12884174,14.311321 8.40243564,14.0650865 C8.59323139,13.8937303 8.91296041,13.6896264 9.36007044,13.6896264 C9.72798224,13.6896264 10.0800205,13.8326109 10.3514545,14.0918051 C10.5415302,14.273961 10.8159456,14.3369704 11.06722,14.2563322 C11.3177745,14.176414 11.5054987,13.9656949 11.5551776,13.7065014 C11.717894,12.8619602 12.4603213,12.2496585 13.3199821,12.2496585 C14.0140466,12.2496585 14.65391,12.6594193 14.9483835,13.2958852 C15.0779806,13.5752389 15.3744117,13.7424329 15.6768049,13.7093136 L15.8399259,13.6896264 L15.8399259,12.0316949 C15.2329795,11.2742718 14.30996,10.8096906 13.3199821,10.8096906 Z"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg></span></div><div class="page-menu-link-title" data-v-509619ee="">Gyermekétkeztetés</div><div class="menu-dropdown" data-v-509619ee=""></div></a><a aria-current="false" class="nav-link page-menu-link preview-first-level" data-review-original-href="https://sarbogard.munipolis.hu/p/aramszunet-informaciok" data-v-509619ee="" data-v-9069de03="" href="#" tabindex="-1" title="Ugrás az oldalra - "><div class="menu-icon-wrapper" data-v-509619ee=""><span class="icon-menu-item" data-v-509619ee="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>pracovnik</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-1862.000000, -583.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(1805.000000, 520.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M34.7529049,27.5290708 C33.6421705,28.8315062 31.9760688,29.464931 30.352147,29.2656513 L25.4522615,34.9949435 C24.4118267,36.2048561 22.6051258,36.3471988 21.3959718,35.2867459 C20.2008778,34.2405274 20.0673085,32.3971899 21.1077433,31.1872773 L26.0076287,25.4579851 C25.5858308,23.8423959 25.9795089,22.0915812 27.0832133,20.8033801 C28.0111687,19.7144587 29.353892,19.0667996 30.7739449,19.0312139 C31.7932898,18.9742769 32.4751963,20.1984237 31.8003197,21.0809482 L30.8653344,22.4901406 C30.5981957,22.9456371 30.6895853,23.5648277 31.1184131,23.9420358 C31.5613009,24.3263609 32.1939978,24.2907753 32.5876758,23.9633872 L33.8108897,22.8388801 C34.5630959,22.0488784 35.8355195,22.5257263 35.9690889,23.579062 C36.1237481,25.02384 35.6949202,26.4259152 34.7529049,27.5290708 L34.7529049,27.5290708 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M27.5120412,9.00317337 L27.0199437,9.00317337 C26.8793444,5.39478689 24.7070852,2.30595113 21.6209307,0.889641638 C21.6139007,1.02486717 21.5998408,1.1600927 21.5717209,1.29531822 L20.4258367,6.49794252 C20.3344471,6.91785338 19.9196792,7.18830443 19.5049113,7.08866457 C19.0901434,6.99614184 18.8230047,6.57623099 18.9214242,6.15632013 L20.0673085,0.953695836 C20.165728,0.469730785 19.8282897,0 19.3151022,0 L16.355487,0 C15.8633895,0 15.4837714,0.462613652 15.6032808,0.953695836 L16.7491651,6.15632013 C16.8405546,6.57623099 16.5804459,6.99614184 16.165678,7.08866457 C15.7368501,7.17407017 15.3361421,6.90361911 15.2447526,6.49794252 L14.0988683,1.29531822 C14.0707485,1.1600927 14.0496586,1.02486717 14.0496586,0.889641638 C10.963504,2.30595113 8.79124491,5.39478689 8.65064561,9.00317337 L8.15854807,9.00317337 C7.72972022,9.00317337 7.38525195,9.3519129 7.38525195,9.78605802 C7.38525195,10.213086 7.72972022,10.5689427 8.15854807,10.5689427 L9.40988181,10.5689427 L9.40988181,14.8676911 C9.40988181,17.166525 11.2306427,19.2660793 13.1287332,20.9955427 L13.1287332,22.9669885 C13.1287332,23.899333 12.3484071,24.596812 11.4626315,24.6537491 C11.4415416,24.6537491 11.6735305,24.6252805 8.91778427,24.9242001 L8.91778427,29.8563734 L20.2149377,29.8563734 L24.362617,25.0167229 C24.348557,24.9028487 24.3344971,24.7818575 24.3344971,24.6679833 L24.2993473,24.6608662 C24.2712274,24.6537491 24.2431076,24.6537491 24.2149877,24.6537491 C23.3010923,24.6537491 22.548886,23.899333 22.548886,22.9669885 L22.548886,20.9955427 C24.4469765,19.2660793 26.2607075,17.166525 26.2607075,14.8676911 L26.2607075,10.5689427 L27.5190712,10.5689427 C27.947899,10.5689427 28.2923673,10.2202031 28.2923673,9.78605802 C28.2853373,9.3519129 27.940869,9.00317337 27.5120412,9.00317337 Z M22.8722644,25.9134816 C19.4908513,28.0343873 16.172708,28.0343873 12.7983248,25.9063645 C13.8949994,25.3939309 14.6612655,24.2623067 14.6612655,22.9598714 L14.6612655,22.3406808 C15.0268237,22.6467175 15.0479136,22.6680689 15.2236627,22.8175287 C15.6806104,23.2018539 16.2570675,23.4153679 16.8475846,23.4153679 L18.8019148,23.4153679 C19.3924318,23.4153679 19.968889,23.2018539 20.4258367,22.8175287 C21.2061628,22.1627525 20.9319941,22.3905007 20.9952638,22.3406808 L20.9952638,22.9669885 C21.0022938,24.2694239 21.7685599,25.3939309 22.8722644,25.9134816 Z M24.7141152,14.8605739 C24.7141152,17.3444534 21.3748819,19.9849098 19.4486716,21.6076161 C19.2729224,21.7570759 19.0409336,21.8424815 18.8089448,21.8424815 L16.8546145,21.8424815 C16.6226257,21.8424815 16.3976668,21.7570759 16.2148877,21.6076161 C14.2675875,19.9706755 10.9494441,17.3302191 10.9494441,14.8605739 L10.9494441,10.5618255 L24.7141152,10.5618255 L24.7141152,14.8605739 Z M34.8864743,35.9984592 L32.1658779,35.9984592 L30.9567239,32.4897126 C30.8372145,32.1409731 30.6684954,31.8207021 30.4646264,31.5360168 L31.0410835,30.8670063 C32.1658779,30.852772 33.2625524,30.5396181 34.2186276,29.9773646 C34.3803168,30.3474555 34.5068562,30.7317807 34.6123056,31.1303402 L35.6316505,35.0162949 C35.7652199,35.4931428 35.3996617,35.9984592 34.8864743,35.9984592 L34.8864743,35.9984592 Z M7.37119202,29.9844818 L7.37119202,25.1021285 C4.31315732,25.7284362 1.85266964,28.0486216 1.05125365,31.1161059 L0.0248787916,35.0091777 C-0.101660575,35.5287284 0.27092756,35.9984592 0.770055061,35.9984592 L3.52580127,35.9984592 L4.69980539,32.4897126 C5.14269317,31.2442143 6.1550081,30.3261042 7.37119202,29.9844818 L7.37119202,29.9844818 Z" fill="#0136A6" fill-opacity="0.6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M19.9267092,35.9984592 L5.17081303,35.9984592 L6.16203807,33.0163805 C6.49947638,32.0769189 7.37822198,31.4150255 8.55925607,31.4150255 L19.1885629,31.4150255 C18.9354841,32.0413332 18.8300347,32.7174609 18.8792444,33.4149399 C18.9495441,34.3757529 19.3151022,35.2725117 19.9267092,35.9984592 L19.9267092,35.9984592 Z M30.5278961,35.9984592 L26.6403256,35.9984592 L29.3960718,32.7743979 C29.543701,33.1017861 29.4171617,32.8099836 30.5278961,35.9984592 Z" fill="#0136A6" fill-opacity="0.4" fill-rule="nonzero" mask="url(#mask-2)"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></span></div><div class="page-menu-link-title" data-v-509619ee="">Áramszünet információ</div><div class="menu-dropdown" data-v-509619ee=""></div></a><a aria-current="false" class="nav-link page-menu-link preview-first-level" data-review-original-href="https://sarbogard.munipolis.hu/p/hulladekszallitas-hulladekudvar" data-v-509619ee="" data-v-9069de03="" href="#" tabindex="-1" title="Ugrás az oldalra - "><div class="menu-icon-wrapper" data-v-509619ee=""><span class="icon-menu-item" data-v-509619ee="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>delivery</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-247.000000, -583.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(190.000000, 520.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M24.3720703,6.23886139 C27.8834381,7.05476483 29.2266197,9.11076737 30.9106178,11.9405941 L24.3720703,11.9405941 L24.3720703,6.23886139 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+<path d="M21.9990234,6 L21.9990234,13.1287129 C21.9990234,13.7849629 22.5301781,14.3168317 23.1855469,14.3168317 L32.3245582,14.3168317 C32.3279572,14.3220916 36,14.5535272 36,18.039604 L36,25.1683168 C36,25.8245668 35.4688453,26.3564356 34.8134766,26.3564356 L32.7447853,26.3564356 C32.3196144,28.4535891 30.4690704,30 28.2875977,30 C26.1061249,30 24.2555809,28.4535891 23.83041,26.3564356 L16.2828712,26.3564356 C15.8577003,28.4535891 14.0071564,30 11.8256836,30 C9.64421082,30 7.79366686,28.4535891 7.36849596,26.3564356 L4.98339844,26.3564356 C4.32802965,26.3564356 3.796875,25.8245668 3.796875,25.1683168 L3.796875,21.6039604 L1.18652344,21.6039604 C0.531154652,21.6039604 0,21.0720916 0,20.4158416 C0,19.7595916 0.531154652,19.2277228 1.18652344,19.2277228 L11.8698693,19.2277228 C12.525238,19.2277228 13.0563927,18.6958539 13.0563927,18.039604 C13.0563927,17.3830446 12.526783,16.8514851 11.8652344,16.8514851 L1.18652344,16.8514851 C0.531154652,16.8514851 0,16.3196163 0,15.6633663 C0,15.0074257 0.531154652,14.4752475 1.18652344,14.4752475 L8.35479357,14.4752475 C9.00861742,14.473391 9.53791809,13.9421411 9.53791809,13.2871287 C9.53791809,12.5105198 9.03889845,12.1782178 8.35139465,12.1782178 L2.37304687,12.1782178 C1.71767809,12.1782178 1.18652344,11.646349 1.18652344,10.990099 C1.18652344,10.333849 1.71767809,9.8019802 2.37304687,9.8019802 L3.796875,9.8019802 L3.796875,7.18811881 C3.796875,6.53186883 4.32802965,6 4.98339844,6 L21.9990234,6 Z M29.8257522,23.9053218 C28.4593964,22.5371287 26.1123047,23.5105198 26.1123047,25.4455446 C26.1123047,27.3808787 28.4593964,28.3542698 29.8257522,26.9860768 C30.6751671,26.1355198 30.6751671,24.7558787 29.8257522,23.9053218 Z M13.3638382,23.9053218 C11.9974823,22.5371287 9.65039063,23.5105198 9.65039063,25.4455446 C9.65039063,27.3808787 11.9974823,28.3542698 13.3638382,26.9860768 C14.213253,26.1355198 14.213253,24.7558787 13.3638382,23.9053218 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></span></div><div class="page-menu-link-title" data-v-509619ee="">Hulladékszállítás, hulladékudvar</div><div class="menu-dropdown" data-v-509619ee=""></div></a><a aria-current="false" class="nav-link page-menu-link preview-first-level" data-review-original-href="https://sarbogard.munipolis.hu/p/kozlekedesi-informaciok" data-v-509619ee="" data-v-9069de03="" href="#" tabindex="-1" title="Ugrás az oldalra - "><div class="menu-icon-wrapper" data-v-509619ee=""><span class="icon-menu-item" data-v-509619ee="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>cross</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-437.000000, -193.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(380.000000, 130.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M4.21875,2 L8.4375,2 L8.4375,6.21875 L4.21875,6.21875 L4.21875,2 Z M27.5625,2 L31.78125,2 L31.78125,6.21875 L27.5625,6.21875 L27.5625,2 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.4"></path>
+<path d="M31.78125,18.875 L27.5625,18.875 L27.5625,23.09375 L8.4375,23.09375 L8.4375,18.875 L4.21875,18.875 L4.21875,31.53125 L2.109375,31.53125 L2.109375,33.640625 L10.546875,33.640625 L10.546875,31.53125 L8.4375,31.53125 L8.4375,27.3125 L27.5625,27.3125 L27.5625,31.53125 L25.453125,31.53125 L25.453125,33.640625 L33.890625,33.640625 L33.890625,31.53125 L31.78125,31.53125 L31.78125,18.875 Z M16.5086016,16.765625 L25.0164141,8.328125 L19.4913984,8.328125 L10.9835859,16.765625 L16.5086016,16.765625 Z M0,8.328125 L0,16.3289141 L8.00078906,8.328125 L0,8.328125 Z M27.9992109,16.765625 L36,16.765625 L36,8.76483594 L27.9992109,16.765625 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M8.00078906,16.765625 L16.5086016,8.328125 L10.9835859,8.328125 L2.54608594,16.765625 L8.00078906,16.765625 Z M19.4913984,16.765625 L25.0164141,16.765625 L33.4539141,8.328125 L27.9992109,8.328125 L19.4913984,16.765625 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></span></div><div class="page-menu-link-title" data-v-509619ee="">Közlekedési információk</div><div class="menu-dropdown" data-v-509619ee=""></div></a></div></div><button aria-expanded="false" aria-haspopup="true" aria-label="Menü megnyitása" class="bg-white" data-v-9069de03="" id="menu-more"><svg class="menu-more-icon color-scheme-icon" data-v-9069de03="" fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path class="color-scheme-icon-path" clip-rule="evenodd" d="M1.90222 0C0.851654 0 0 0.851653 0 1.90222V7.18869C0 8.23925 0.851653 9.09091 1.90222 9.09091H7.18869C8.23925 9.09091 9.09091 8.23926 9.09091 7.18869V1.90222C9.09091 0.851654 8.23926 0 7.18869 0H1.90222ZM2.47327 1.36364C1.86043 1.36364 1.36364 1.86044 1.36364 2.47327V6.61764C1.36364 7.23047 1.86044 7.72727 2.47327 7.72727H6.61764C7.23047 7.72727 7.72727 7.23047 7.72727 6.61764V2.47327C7.72727 1.86043 7.23047 1.36364 6.61764 1.36364H2.47327Z" fill="#1D3998" fill-rule="evenodd"></path><path class="color-scheme-icon-path" clip-rule="evenodd" d="M12.8113 0C11.7607 0 10.9091 0.851653 10.9091 1.90222V7.18869C10.9091 8.23925 11.7607 9.09091 12.8113 9.09091H18.0978C19.1483 9.09091 20 8.23926 20 7.18869V1.90222C20 0.851654 19.1483 0 18.0978 0H12.8113ZM13.3824 1.36364C12.7695 1.36364 12.2727 1.86044 12.2727 2.47327V6.61764C12.2727 7.23047 12.7695 7.72727 13.3824 7.72727H17.5267C18.1396 7.72727 18.6364 7.23047 18.6364 6.61764V2.47327C18.6364 1.86043 18.1396 1.36364 17.5267 1.36364H13.3824Z" fill="#1D3998" fill-rule="evenodd"></path><path class="color-scheme-icon-path" clip-rule="evenodd" d="M1.90222 10.9092C0.851654 10.9092 0 11.7608 0 12.8114V18.0979C0 19.1484 0.851653 20.0001 1.90222 20.0001H7.18869C8.23925 20.0001 9.09091 19.1484 9.09091 18.0979V12.8114C9.09091 11.7608 8.23926 10.9092 7.18869 10.9092H1.90222ZM2.47327 12.2728C1.86043 12.2728 1.36364 12.7696 1.36364 13.3824V17.5268C1.36364 18.1397 1.86044 18.6365 2.47327 18.6365H6.61764C7.23047 18.6365 7.72727 18.1397 7.72727 17.5268V13.3824C7.72727 12.7696 7.23047 12.2728 6.61764 12.2728H2.47327Z" fill="#1D3998" fill-rule="evenodd"></path><path class="color-scheme-icon-path" clip-rule="evenodd" d="M12.8113 10.9092C11.7607 10.9092 10.9091 11.7608 10.9091 12.8114V18.0979C10.9091 19.1484 11.7607 20.0001 12.8113 20.0001H18.0978C19.1483 20.0001 20 19.1484 20 18.0979V12.8114C20 11.7608 19.1483 10.9092 18.0978 10.9092H12.8113ZM13.3824 12.2728C12.7695 12.2728 12.2727 12.7696 12.2727 13.3824V17.5268C12.2727 18.1397 12.7695 18.6365 13.3824 18.6365H17.5267C18.1396 18.6365 18.6364 18.1397 18.6364 17.5268V13.3824C18.6364 12.7696 18.1396 12.2728 17.5267 12.2728H13.3824Z" fill="#1D3998" fill-rule="evenodd"></path></svg></button></div><div class="breadcrumb rounded-1 d-flex gap-3 my-3"><div class="breadcrumb-item-wrapper d-flex gap-3"><div class="breadcrumb-item text-nowrap"><a data-review-original-href="/" href="#" tabindex="-1">Sárbogárd</a><svg fill="none" height="9" viewbox="0 0 5 9" width="5" xmlns="http://www.w3.org/2000/svg"><path d="M1.02149 9C0.768532 9 0.515397 8.89811 0.31762 8.69316C-0.0911932 8.26878 -0.107496 7.56278 0.281074 7.1163L2.56663 4.49219L0.283402 1.88627C-0.1066 1.44136 -0.0922681 0.735363 0.31547 0.30942C0.723387 -0.116524 1.36993 -0.100683 1.75993 0.344426L4.71675 3.71853C5.09367 4.14878 5.09439 4.82642 4.71907 5.25803L1.76244 8.65326C1.56126 8.88344 1.292 9 1.02149 9Z" fill="#c3c3c3"></path></svg></div><div class="breadcrumb-item d-md-none"><span>…</span><svg fill="none" height="9" viewbox="0 0 5 9" width="5" xmlns="http://www.w3.org/2000/svg"><path d="M1.02149 9C0.768532 9 0.515397 8.89811 0.31762 8.69316C-0.0911932 8.26878 -0.107496 7.56278 0.281074 7.1163L2.56663 4.49219L0.283402 1.88627C-0.1066 1.44136 -0.0922681 0.735363 0.31547 0.30942C0.723387 -0.116524 1.36993 -0.100683 1.75993 0.344426L4.71675 3.71853C5.09367 4.14878 5.09439 4.82642 4.71907 5.25803L1.76244 8.65326C1.56126 8.88344 1.292 9 1.02149 9Z" fill="#c3c3c3"></path></svg></div><div class="breadcrumb-item d-none d-md-block"><a data-review-original-href="https://sarbogard.munipolis.hu/p/egyeszsegugy" href="#" tabindex="-1">Egészségügy</a><svg fill="none" height="9" viewbox="0 0 5 9" width="5" xmlns="http://www.w3.org/2000/svg"><path d="M1.02149 9C0.768532 9 0.515397 8.89811 0.31762 8.69316C-0.0911932 8.26878 -0.107496 7.56278 0.281074 7.1163L2.56663 4.49219L0.283402 1.88627C-0.1066 1.44136 -0.0922681 0.735363 0.31547 0.30942C0.723387 -0.116524 1.36993 -0.100683 1.75993 0.344426L4.71675 3.71853C5.09367 4.14878 5.09439 4.82642 4.71907 5.25803L1.76244 8.65326C1.56126 8.88344 1.292 9 1.02149 9Z" fill="#c3c3c3"></path></svg></div><div class="breadcrumb-item text-truncate"><span class="text-truncate cursor-default">Háziorvos</span></div></div><div class="d-flex gap-2"><a class="d-flex back-button rounded bg-white" data-review-original-href="https://sarbogard.munipolis.hu/p/egyeszsegugy" href="#" tabindex="-1"><svg aria-label="Vissza az előző oldalra" class="color-scheme-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M9.95536 11.4026C8.97262 11.9832 8.00225 12 7.89481 12H1.90778C1.34872 12 0.895466 11.5459 0.895466 10.9857C0.895466 10.4254 1.34872 9.97132 1.90778 9.97132H7.88667C7.92716 9.96985 8.47373 9.9441 8.9827 9.62105C9.64138 9.203 9.97533 8.43265 9.97533 7.33142C9.97533 6.22218 9.63608 5.43575 8.96704 4.99392C8.47405 4.66834 7.94828 4.61766 7.86856 4.61172H4.72412V6.28197C4.72412 6.68977 4.48038 7.05794 4.10542 7.21651C3.97841 7.27024 3.84467 7.29631 3.71204 7.29631C3.45315 7.29631 3.19845 7.19682 3.00564 7.00869L0.306108 4.37493C0.110406 4.18399 0 3.92189 0 3.64818C0 3.37446 0.110406 3.1124 0.306108 2.92142L3.00564 0.287619C3.29727 0.00316795 3.73055 -0.0787322 4.10546 0.0798377C4.48042 0.238408 4.72416 0.606542 4.72416 1.01438V2.58316L7.92095 2.58332C8.028 2.58609 8.9948 2.62769 9.97181 3.23012C10.897 3.8006 12 4.97522 12 7.33134C11.9999 9.69796 10.8881 10.8516 9.95536 11.4026Z" fill="#c3c3c3"></path></svg></a><div class="fulltext-search-trigger d-flex" data-v-c8d40abe=""><svg class="fulltext-search-trigger__icon" data-v-c8d40abe="" fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg"><path class="color-scheme-icon-path color-scheme-icon-stroke-path" d="M9.97583 1.1C5.1497 1.1 1.22354 5.02616 1.22354 9.85229C1.22354 14.6787 5.1497 18.6046 9.97583 18.6046C14.8022 18.6046 18.7281 14.6787 18.7281 9.85229C18.7281 5.02617 14.8022 1.1 9.97583 1.1ZM9.97583 16.4896C6.31632 16.4896 3.33858 13.5118 3.33858 9.85233C3.33858 6.19282 6.31632 3.21504 9.97583 3.21504C13.6353 3.21504 16.6131 6.19278 16.6131 9.85229C16.6131 13.5118 13.6353 16.4896 9.97583 16.4896Z" fill="#1D3998" stroke="currentColor" stroke-width="0.55"></path><path class="color-scheme-icon-path color-scheme-icon-stroke-path" d="M16.2275 14.6077L20.7139 19.0941C20.7139 19.0941 20.7139 19.0941 20.714 19.0942C21.1271 19.507 21.1271 20.1768 20.714 20.5896L16.2275 14.6077ZM16.2275 14.6077C15.8144 14.1946 15.1453 14.1946 14.7322 14.6076L16.2275 14.6077ZM14.7321 14.6077C14.319 15.0205 14.319 15.6903 14.7321 16.1031C14.7321 16.1031 14.7321 16.1032 14.7322 16.1032L19.2186 20.5896C19.425 20.796 19.6959 20.8994 19.9663 20.8994C20.2363 20.8994 20.5074 20.796 20.7139 20.5897L14.7321 14.6077Z" fill="#1D3998" stroke="currentColor" stroke-width="0.55"></path></svg></div></div></div><div class="submenu-image-nav-wrapper mb-3" data-v-9f5147ed=""><a class="sub-page-menu-link rounded" data-review-original-href="https://sarbogard.munipolis.hu/p/ugyelet" data-v-6d2e627b="" data-v-9f5147ed="" href="#" tabindex="-1"><div class="submenu-items w-100 d-flex align-items-center justify-content-between" data-v-6d2e627b=""><div class="d-flex align-items-center" data-v-6d2e627b=""><div class="sub-menu-item-icon justify-content-center align-items-center rounded-5" data-v-6d2e627b="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>ambulance</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-912.000000, -63.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(855.000000, 0.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M13.9999886,5.68932034 C13.9999886,4.75633447 13.2324774,4 12.2857043,4 C11.3389312,4 10.57142,4.75633447 10.57142,5.68932034 L10.57142,6.81553394 L13.9999886,6.81553394 L13.9999886,5.68932034 Z M7.71427945,24.553398 C5.34734673,24.553398 3.42856864,26.4442343 3.42856864,28.776699 C3.42856864,31.1091637 5.34734673,33 7.71427945,33 C10.0812122,33 11.9999902,31.1091637 11.9999902,28.776699 C11.9973135,26.4453278 10.0801025,24.5560358 7.71427945,24.553398 Z M7.71427945,30.4660194 C6.76750636,30.4660194 5.99999512,29.7096849 5.99999512,28.776699 C5.99999512,27.8437131 6.76750636,27.0873786 7.71427945,27.0873786 C8.66105253,27.0873786 9.42856377,27.8437131 9.42856377,28.776699 C9.42856377,29.7096849 8.66105253,30.4660194 7.71427945,30.4660194 L7.71427945,30.4660194 Z M29.4285475,24.553398 C27.0616148,24.553398 25.1428367,26.4442343 25.1428367,28.776699 C25.1428367,31.1091637 27.0616148,33 29.4285475,33 C31.7954802,33 33.7142583,31.1091637 33.7142583,28.776699 C33.7115816,26.4453278 31.7943706,24.5560358 29.4285475,24.553398 L29.4285475,24.553398 Z M29.4285475,30.4660194 C28.4817744,30.4660194 27.7142632,29.7096849 27.7142632,28.776699 C27.7142632,27.8437131 28.4817744,27.0873786 29.4285475,27.0873786 C30.3753206,27.0873786 31.1428318,27.8437131 31.1428318,28.776699 C31.1428318,29.7096849 30.3753206,30.4660194 29.4285475,30.4660194 L29.4285475,30.4660194 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+<path d="M35.0522572,21.0304611 L31.1642604,19.114631 C30.5003324,18.1035024 27.5309062,13.5918907 26.6809069,12.496648 C26.5187284,12.2876386 26.2669759,12.1650398 25.9999789,12.1650485 L21.9582679,12.1650485 L20.3833406,9.06092229 C19.9503355,8.2001184 19.0582921,7.65685261 18.0833424,7.6601788 L1.71428432,7.6601788 C0.767968118,7.66128019 0.001102108,8.41697886 0,9.34951452 L0,27.0873786 C0.00157460699,28.4862142 1.15191959,29.6198075 2.57142648,29.6213592 L2.64421214,29.6213592 C2.30132382,27.6343599 3.18585651,25.6359965 4.89696576,24.5318691 C6.60807501,23.4277417 8.82048388,23.4277417 10.5315931,24.5318691 C12.2427024,25.6359965 13.1272351,27.6343599 12.7843468,29.6213592 L24.3584802,29.6213592 C24.0200624,27.6637639 24.8730271,25.6917649 26.5404862,24.5767026 C28.2079454,23.4616404 30.3826308,23.4089912 32.1036436,24.4420185 C33.8246565,25.4750457 34.7748599,27.40339 34.5344005,29.375 C35.4291684,28.9541637 35.9991998,28.0643968 35.9999806,27.0873786 L35.9999806,22.5414175 C36.0021726,21.9009182 35.6346126,21.3149108 35.0522572,21.0304611 Z M16.8571292,17.2330097 C16.8571292,17.6995026 16.4733735,18.0776699 15.999987,18.0776699 L13.9999886,18.0776699 L13.9999886,20.0485437 C13.9999886,20.5150366 13.616233,20.8932039 13.1428465,20.8932039 L11.4285621,20.8932039 C10.9551756,20.8932039 10.57142,20.5150366 10.57142,20.0485437 L10.57142,18.0776699 L8.57142161,18.0776699 C8.09803506,18.0776699 7.71427945,17.6995026 7.71427945,17.2330097 L7.71427945,15.5436893 C7.71427945,15.0771963 8.09803506,14.6990291 8.57142161,14.6990291 L10.57142,14.6990291 L10.57142,12.7281553 C10.57142,12.2616624 10.9551756,11.8834951 11.4285621,11.8834951 L13.1428465,11.8834951 C13.616233,11.8834951 13.9999886,12.2616624 13.9999886,12.7281553 L13.9999886,14.6990291 L15.999987,14.6990291 C16.4733735,14.6990291 16.8571292,15.0771963 16.8571292,15.5436893 L16.8571292,17.2330097 Z M24.8571227,22.8640777 L23.785695,22.8640777 C23.3123084,22.8640777 22.9285528,22.4859104 22.9285528,22.0194175 C22.9285528,21.5529245 23.3123084,21.1747573 23.785695,21.1747573 L24.8571227,21.1747573 C25.3305092,21.1747573 25.7142648,21.5529245 25.7142648,22.0194175 C25.7142648,22.4859104 25.3305092,22.8640777 24.8571227,22.8640777 Z M29.3378333,19.2742719 L23.7142664,19.2742719 C23.2408799,19.2742719 22.8571243,18.8961046 22.8571243,18.4296116 L22.8571243,14.1359223 C22.8571243,13.6694294 23.2408799,13.2912621 23.7142664,13.2912621 L25.6642649,13.2912621 C25.94779,13.2912621 26.2129732,13.4294151 26.3726214,13.6603082 C27.4083349,15.1559903 28.9349765,17.4639539 29.6977616,18.6222645 C29.7832004,18.7521858 29.7896539,18.9177606 29.7145795,19.0537572 C29.6395052,19.1897538 29.494938,19.2743709 29.3378333,19.2742719 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></div><span class="sub-page-menu-link-title" data-v-6d2e627b="">Orvosi Ügyelet</span></div><svg class="color-scheme-icon right-icon" data-v-6d2e627b="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a><a class="active sub-page-menu-link rounded" data-review-original-href="https://sarbogard.munipolis.hu/p/haziorvos" data-v-6d2e627b="" data-v-9f5147ed="" href="#" tabindex="-1"><div class="submenu-items w-100 d-flex align-items-center justify-content-between" data-v-6d2e627b=""><div class="d-flex align-items-center" data-v-6d2e627b=""><div class="sub-menu-item-icon justify-content-center align-items-center rounded-5 active" data-v-6d2e627b="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>clinic</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-2432.000000, -63.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(2375.000000, 0.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M11.0720391,19.1112891 L16.8706406,19.1112891 L16.8706406,16.7393672 L13.4440313,16.7393672 L13.4440313,11.2033828 C13.4440313,8.72838281 11.4376641,6.72208594 8.96273438,6.72208594 L7.842375,6.72208594 L6.72201563,6.72208594 C4.24701563,6.72208594 2.24071875,8.72845313 2.24071875,11.2033828 L2.24071875,12.3893438 L11.0721094,12.3893438 L11.0721094,19.1112891 L11.0720391,19.1112891 Z M7.84230469,6.72201563 C9.69853805,6.72201563 11.2033125,5.21724117 11.2033125,3.36100781 C11.2033125,1.50477445 9.69853805,1.77635684e-15 7.84230469,1.77635684e-15 C5.98607133,1.77635684e-15 4.48129687,1.50477445 4.48129687,3.36100781 C4.48129687,5.21724117 5.98607133,6.72201563 7.84230469,6.72201563 Z M29.2779844,6.72201563 C31.7529141,6.72201563 33.7592812,8.7283125 33.7592812,11.2033125 L33.7592812,14.6299219 L27.0347344,14.6299219 L26.4745547,10.148625 L22.6819687,10.148625 C23.1563672,8.18282813 24.9257109,6.72201563 27.0372656,6.72201563 Z M24.6124687,12.258 L24.9089766,14.6299219 L19.5659297,14.6299219 L19.2694922,12.258 L24.6124687,12.258 Z M28.1576953,5.32907052e-15 C30.0139287,5.32907052e-15 31.5187031,1.50477445 31.5187031,3.36100781 C31.5187031,5.21724117 30.0139287,6.72201563 28.1576953,6.72201563 C26.301462,6.72201563 24.7966875,5.21724117 24.7966875,3.36100781 C24.7966875,1.50477445 26.301462,5.32907052e-15 28.1576953,5.32907052e-15 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M17.9253281,21.2206641 L11.0720391,21.2206641 L11.0720391,24.6473438 L15.6846797,24.6473438 L15.6846797,30.8838516 L19.1112891,30.8838516 L19.1112891,22.406625 C19.1112891,21.7526484 18.5792344,21.2206641 17.9253281,21.2206641 L17.9253281,21.2206641 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.4"></path>
+<path d="M18.9800156,19.2853828 C20.2812188,19.7263125 21.2206641,20.9583984 21.2206641,22.406625 L21.2206641,22.7568516 L23.3300391,22.7568516 L23.3300391,20.6474766 L25.4394141,20.6474766 L25.4394141,22.7568516 L27.5487891,22.7568516 L27.5487891,24.8662266 L25.4394141,24.8662266 L25.4394141,26.9756016 L23.3300391,26.9756016 L23.3300391,24.8662266 L21.2206641,24.8662266 L21.2206641,30.8837813 L36,30.8837813 L36,16.7392969 L18.9800156,16.7392969 L18.9800156,19.2853828 Z M8.96266406,14.4986484 L0,14.4986484 L0,30.8837812 L2.109375,30.8837812 L2.109375,24.6472734 L6.85328906,24.6472734 L6.85328906,30.8837812 L8.96266406,30.8837812 L8.96266406,14.4986484 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></div><span class="sub-page-menu-link-title active" data-v-6d2e627b="">Háziorvos</span></div></div></a><a class="sub-page-menu-link rounded" data-review-original-href="https://sarbogard.munipolis.hu/p/gyermekorvos" data-v-6d2e627b="" data-v-9f5147ed="" href="#" tabindex="-1"><div class="submenu-items w-100 d-flex align-items-center justify-content-between" data-v-6d2e627b=""><div class="d-flex align-items-center" data-v-6d2e627b=""><div class="sub-menu-item-icon justify-content-center align-items-center rounded-5" data-v-6d2e627b="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>clinic</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-2432.000000, -63.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(2375.000000, 0.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M11.0720391,19.1112891 L16.8706406,19.1112891 L16.8706406,16.7393672 L13.4440313,16.7393672 L13.4440313,11.2033828 C13.4440313,8.72838281 11.4376641,6.72208594 8.96273438,6.72208594 L7.842375,6.72208594 L6.72201563,6.72208594 C4.24701563,6.72208594 2.24071875,8.72845313 2.24071875,11.2033828 L2.24071875,12.3893438 L11.0721094,12.3893438 L11.0721094,19.1112891 L11.0720391,19.1112891 Z M7.84230469,6.72201563 C9.69853805,6.72201563 11.2033125,5.21724117 11.2033125,3.36100781 C11.2033125,1.50477445 9.69853805,1.77635684e-15 7.84230469,1.77635684e-15 C5.98607133,1.77635684e-15 4.48129687,1.50477445 4.48129687,3.36100781 C4.48129687,5.21724117 5.98607133,6.72201563 7.84230469,6.72201563 Z M29.2779844,6.72201563 C31.7529141,6.72201563 33.7592812,8.7283125 33.7592812,11.2033125 L33.7592812,14.6299219 L27.0347344,14.6299219 L26.4745547,10.148625 L22.6819687,10.148625 C23.1563672,8.18282813 24.9257109,6.72201563 27.0372656,6.72201563 Z M24.6124687,12.258 L24.9089766,14.6299219 L19.5659297,14.6299219 L19.2694922,12.258 L24.6124687,12.258 Z M28.1576953,5.32907052e-15 C30.0139287,5.32907052e-15 31.5187031,1.50477445 31.5187031,3.36100781 C31.5187031,5.21724117 30.0139287,6.72201563 28.1576953,6.72201563 C26.301462,6.72201563 24.7966875,5.21724117 24.7966875,3.36100781 C24.7966875,1.50477445 26.301462,5.32907052e-15 28.1576953,5.32907052e-15 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M17.9253281,21.2206641 L11.0720391,21.2206641 L11.0720391,24.6473438 L15.6846797,24.6473438 L15.6846797,30.8838516 L19.1112891,30.8838516 L19.1112891,22.406625 C19.1112891,21.7526484 18.5792344,21.2206641 17.9253281,21.2206641 L17.9253281,21.2206641 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.4"></path>
+<path d="M18.9800156,19.2853828 C20.2812188,19.7263125 21.2206641,20.9583984 21.2206641,22.406625 L21.2206641,22.7568516 L23.3300391,22.7568516 L23.3300391,20.6474766 L25.4394141,20.6474766 L25.4394141,22.7568516 L27.5487891,22.7568516 L27.5487891,24.8662266 L25.4394141,24.8662266 L25.4394141,26.9756016 L23.3300391,26.9756016 L23.3300391,24.8662266 L21.2206641,24.8662266 L21.2206641,30.8837813 L36,30.8837813 L36,16.7392969 L18.9800156,16.7392969 L18.9800156,19.2853828 Z M8.96266406,14.4986484 L0,14.4986484 L0,30.8837812 L2.109375,30.8837812 L2.109375,24.6472734 L6.85328906,24.6472734 L6.85328906,30.8837812 L8.96266406,30.8837812 L8.96266406,14.4986484 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></div><span class="sub-page-menu-link-title" data-v-6d2e627b="">Gyermekorvos</span></div><svg class="color-scheme-icon right-icon" data-v-6d2e627b="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a><a class="sub-page-menu-link rounded" data-review-original-href="https://sarbogard.munipolis.hu/p/fogaszat" data-v-6d2e627b="" data-v-9f5147ed="" href="#" tabindex="-1"><div class="submenu-items w-100 d-flex align-items-center justify-content-between" data-v-6d2e627b=""><div class="d-flex align-items-center" data-v-6d2e627b=""><div class="sub-menu-item-icon justify-content-center align-items-center rounded-5" data-v-6d2e627b="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>clinic</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-2432.000000, -63.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(2375.000000, 0.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M11.0720391,19.1112891 L16.8706406,19.1112891 L16.8706406,16.7393672 L13.4440313,16.7393672 L13.4440313,11.2033828 C13.4440313,8.72838281 11.4376641,6.72208594 8.96273438,6.72208594 L7.842375,6.72208594 L6.72201563,6.72208594 C4.24701563,6.72208594 2.24071875,8.72845313 2.24071875,11.2033828 L2.24071875,12.3893438 L11.0721094,12.3893438 L11.0721094,19.1112891 L11.0720391,19.1112891 Z M7.84230469,6.72201563 C9.69853805,6.72201563 11.2033125,5.21724117 11.2033125,3.36100781 C11.2033125,1.50477445 9.69853805,1.77635684e-15 7.84230469,1.77635684e-15 C5.98607133,1.77635684e-15 4.48129687,1.50477445 4.48129687,3.36100781 C4.48129687,5.21724117 5.98607133,6.72201563 7.84230469,6.72201563 Z M29.2779844,6.72201563 C31.7529141,6.72201563 33.7592812,8.7283125 33.7592812,11.2033125 L33.7592812,14.6299219 L27.0347344,14.6299219 L26.4745547,10.148625 L22.6819687,10.148625 C23.1563672,8.18282813 24.9257109,6.72201563 27.0372656,6.72201563 Z M24.6124687,12.258 L24.9089766,14.6299219 L19.5659297,14.6299219 L19.2694922,12.258 L24.6124687,12.258 Z M28.1576953,5.32907052e-15 C30.0139287,5.32907052e-15 31.5187031,1.50477445 31.5187031,3.36100781 C31.5187031,5.21724117 30.0139287,6.72201563 28.1576953,6.72201563 C26.301462,6.72201563 24.7966875,5.21724117 24.7966875,3.36100781 C24.7966875,1.50477445 26.301462,5.32907052e-15 28.1576953,5.32907052e-15 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M17.9253281,21.2206641 L11.0720391,21.2206641 L11.0720391,24.6473438 L15.6846797,24.6473438 L15.6846797,30.8838516 L19.1112891,30.8838516 L19.1112891,22.406625 C19.1112891,21.7526484 18.5792344,21.2206641 17.9253281,21.2206641 L17.9253281,21.2206641 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.4"></path>
+<path d="M18.9800156,19.2853828 C20.2812188,19.7263125 21.2206641,20.9583984 21.2206641,22.406625 L21.2206641,22.7568516 L23.3300391,22.7568516 L23.3300391,20.6474766 L25.4394141,20.6474766 L25.4394141,22.7568516 L27.5487891,22.7568516 L27.5487891,24.8662266 L25.4394141,24.8662266 L25.4394141,26.9756016 L23.3300391,26.9756016 L23.3300391,24.8662266 L21.2206641,24.8662266 L21.2206641,30.8837813 L36,30.8837813 L36,16.7392969 L18.9800156,16.7392969 L18.9800156,19.2853828 Z M8.96266406,14.4986484 L0,14.4986484 L0,30.8837812 L2.109375,30.8837812 L2.109375,24.6472734 L6.85328906,24.6472734 L6.85328906,30.8837812 L8.96266406,30.8837812 L8.96266406,14.4986484 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></div><span class="sub-page-menu-link-title" data-v-6d2e627b="">Fogászat</span></div><svg class="color-scheme-icon right-icon" data-v-6d2e627b="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a><a class="sub-page-menu-link rounded" data-review-original-href="https://sarbogard.munipolis.hu/p/rendelointezet" data-v-6d2e627b="" data-v-9f5147ed="" href="#" tabindex="-1"><div class="submenu-items w-100 d-flex align-items-center justify-content-between" data-v-6d2e627b=""><div class="d-flex align-items-center" data-v-6d2e627b=""><div class="sub-menu-item-icon justify-content-center align-items-center rounded-5" data-v-6d2e627b="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>hospital</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-1672.000000, -193.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(1615.000000, 130.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M35.39881,12.3365806 L18.8999535,0.337476132 C18.3000193,-0.112492044 17.7000149,-0.112492044 17.1000808,0.337476132 L0.601224197,12.3365806 C-0.598714375,13.086551 0.151256021,15.0363897 1.50116055,15.0363897 L4.50097182,15.0363897 L4.50097182,31.5352462 C4.50097182,32.4351826 5.10090596,33.0351167 6.00084231,33.0351167 L29.9991216,33.0351167 C30.8990579,33.0351167 31.4989921,32.4351826 31.4989921,31.5352462 L31.4989921,15.0363897 L34.4988034,15.0363897 C35.8487782,15.0363897 36.5986783,13.086551 35.39881,12.3365806 Z M18.0000171,30.0353757 C13.0503672,30.0353757 9.00065358,25.9856622 9.00065358,21.0360122 C9.00065358,16.0863623 13.0503672,12.0366487 18.0000171,12.0366487 C22.949667,12.0366487 26.9993806,16.0863623 26.9993806,21.0360122 C26.9993806,25.9856622 22.949667,30.0353757 18.0000171,30.0353757 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<polygon fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6" points="20.249858 18.7861713 20.249858 14.2864896 15.7501762 14.2864896 15.7501762 18.7861713 11.2504945 18.7861713 11.2504945 23.2858531 15.7501762 23.2858531 15.7501762 27.7855349 20.249858 27.7855349 20.249858 23.2858531 24.7495397 23.2858531 24.7495397 18.7861713"></polygon>
+</g>
+</g>
+</g>
+</g>
+</svg></div><span class="sub-page-menu-link-title" data-v-6d2e627b="">Rendelőintézet</span></div><svg class="color-scheme-icon right-icon" data-v-6d2e627b="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a><a class="sub-page-menu-link rounded" data-review-original-href="https://sarbogard.munipolis.hu/p/gyogyszertarak" data-v-6d2e627b="" data-v-9f5147ed="" href="#" tabindex="-1"><div class="submenu-items w-100 d-flex align-items-center justify-content-between" data-v-6d2e627b=""><div class="d-flex align-items-center" data-v-6d2e627b=""><div class="sub-menu-item-icon justify-content-center align-items-center rounded-5" data-v-6d2e627b="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>home</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-1482.000000, -193.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(1425.000000, 130.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M35.6009078,13.0504334 L25.8955707,5.23656549 C25.503791,4.92107453 24.9453713,4.92121515 24.5535916,5.23656549 L23.3186277,6.23071004 L29.7187277,11.3835415 C30.4794356,11.9958906 30.915723,12.9072074 30.915723,13.8838442 L30.915723,29.7305323 C30.915723,30.1055777 30.8504732,30.4656466 30.7317159,30.8005438 L34.9299886,30.8005438 C35.5208925,30.8005438 36,30.3214362 36,29.7305323 L36,13.8839145 C35.9998594,13.5599861 35.8531178,13.2534951 35.6009078,13.0504334 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.2"></path>
+<path d="M28.3766782,13.0504334 L18.6714114,5.23656549 C18.2796317,4.92107453 17.7210714,4.92121515 17.3294323,5.23656549 L16.0944684,6.23078035 L22.4945684,11.3835415 C23.2552763,11.9960313 23.6915637,12.907348 23.6915637,13.8839145 L23.6915637,29.7306026 C23.6915637,30.105648 23.626314,30.4657169 23.5075566,30.8006141 L27.7058293,30.8006141 C28.2966629,30.8006141 28.7757704,30.3215066 28.7757704,29.7306026 L28.7757704,13.8839145 C28.7756298,13.5599861 28.6288882,13.2535654 28.3766782,13.0504334 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+<path d="M21.1525189,13.0504334 L11.4471818,5.23656549 C11.0554021,4.92107453 10.4969824,4.92121515 10.1052027,5.23656549 L0.399021879,13.0504334 C0.146741614,13.2534951 0,13.5599861 0,13.8839145 L0,29.7306026 C0,30.3215066 0.479107503,30.8006141 1.07001145,30.8006141 L7.73392291,30.8006141 C8.32482686,30.8006141 8.80393436,30.3215066 8.80393436,29.7306026 L8.80393436,24.9559103 C8.80393436,23.8686724 9.68846215,22.9841446 10.7757001,22.9841446 C11.862938,22.9841446 12.7475361,23.8686724 12.7475361,24.9559103 L12.7475361,29.7306026 C12.7475361,30.3215066 13.2266436,30.8006141 13.8175476,30.8006141 L14.3881313,30.8006141 L15.5184003,30.8006141 L20.4814591,30.8006141 C21.072363,30.8006141 21.5514705,30.3215066 21.5514705,29.7306026 L21.5514705,13.8839145 C21.5514705,13.5599861 21.4047992,13.2535654 21.1525189,13.0504334 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></div><span class="sub-page-menu-link-title" data-v-6d2e627b="">Gyógyszertárak</span></div><svg class="color-scheme-icon right-icon" data-v-6d2e627b="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a><a class="sub-page-menu-link rounded" data-review-original-href="https://sarbogard.munipolis.hu/p/elektronikus-egeszsegugyi-szolg-ter" data-v-6d2e627b="" data-v-9f5147ed="" href="#" tabindex="-1"><div class="submenu-items w-100 d-flex align-items-center justify-content-between" data-v-6d2e627b=""><div class="d-flex align-items-center" data-v-6d2e627b=""><div class="sub-menu-item-icon justify-content-center align-items-center rounded-5" data-v-6d2e627b="">
+<svg height="36px" version="1.1" viewbox="0 0 36 36" width="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>tv</title>
+<defs>
+<rect height="36" width="36" x="0" y="0"></rect>
+</defs>
+<g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+<g transform="translate(-1102.000000, -453.000000)">
+<g transform="translate(57.000000, 63.000000)">
+<g transform="translate(1045.000000, 390.000000)">
+<mask fill="white">
+<use xlink:href="#path-1"></use>
+</mask>
+<use fill="#FFFFFF" fill-opacity="0" xlink:href="#path-1"></use>
+<path d="M0,4 C0,4 0.0156505281,4.00165828 0.0464258351,4.00482853 L0.127987043,4.01314163 C1.19285531,4.12068627 8.77318079,4.85198978 18,4.85198978 L18.4381084,4.85144244 C27.4658229,4.82893095 34.8240474,4.11897921 35.872013,4.01314163 L35.9535742,4.00482853 C35.9843495,4.00165828 36,4 36,4 L36,26.1973266 C36,26.1973266 27.9591064,25.3453369 18,25.3453369 L17.5618916,25.3458843 C7.80613563,25.3702112 0,26.1973266 0,26.1973266 Z M33,7 L3,7 L3,23 L33,23 L33,7 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)"></path>
+<path d="M22.6296387,27.5148621 C21.1522522,27.4772339 19.6001587,27.4547119 18,27.4547119 C16.4003906,27.4547119 14.8482971,27.4772339 13.3703613,27.5148621 L13.3703613,30.1117554 L4.50961305,30.1117554 L4.50961305,32.2211304 L31.4903869,32.2211304 L31.4903869,30.1117554 L22.6296387,30.1117554 L22.6296387,27.5148621 Z" fill="#0136A6" fill-rule="nonzero" mask="url(#mask-2)" opacity="0.6"></path>
+</g>
+</g>
+</g>
+</g>
+</svg></div><span class="sub-page-menu-link-title" data-v-6d2e627b="">EESZT</span></div><svg class="color-scheme-icon right-icon" data-v-6d2e627b="" fill="none" height="16" viewbox="0 0 15 16" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M7.58884 0.744141L6.41051 1.92247L11.6547 7.16664H0.333008V8.83331H11.6547L6.41051 14.0775L7.58884 15.2558L14.8447 7.99997L7.58884 0.744141Z" fill="#1D3998" fill-rule="evenodd"></path></svg></div></a></div></div><div class="text-gray"><div class="simple-description-wrapper"><div class="pb-row" data-color="#FFFFFF" style="margin-top: 10px; margin-bottom: 10px; margin-left: 0px; margin-right: 0px;
+ background-color: #FFFFFF;">
+<div class="pb-col-1 pb-col-top-decoration pb-col-bottom-decoration">
+<div class="pb-button-wrapper" style="display:flex;justify-content:center; background-color:#FFFFFF; padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;
+">
+<a class="pb-button" data-review-original-href="https://or.njt.hu/eli/727332/r/2017/12" href="#" rel="noopener noreferrer" style="color:#FFFFFF; background-color:#2AB574;" tabindex="-1" target="_blank">
+        Körzetek : utcák listája
+    </a>
+</div>
+<div class="pb-paragraph-wrapper" style="background-color:#FFFFFF; padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;
+">
+<div class="pb-paragraph">
+<h4><span style="color: #0000ff;"><span style="font-size: 12px;">1</span></span><span style="color: #0000ff;"><span style="font-size: 12px;">. körzet</span></span></h4>
+<div><strong><span style="font-size: small;"><span style="font-size: 14pt;">Dr. Prajda-Pop Ramona </span></span></strong><em><span style="font-size: small;">(helyettesítés)</span></em><br/><strong>7000 Sárbogárd, Tompa M. u. 2. <br/>Telefon (06) 25/460-013 </strong><br/>Rendelési idő <br/>Kedd 12.00 - 15.00 <br/>Csütörtök<span style="text-align: justify;"> 08.00 - 11.00<br/></span><em><span style="text-align: justify;">                               </span></em></div>
+<hr/>
+<div>
+<h3><span style="color: #0000ff;"><span style="font-size: 12px;">2. körzet</span></span></h3>
+<div><span style="font-size: 14pt;"><strong>dr. Csanádi József</strong></span> <br/><strong>7000 Sárbogárd, Ady Endre u. 79-83. <br/>Telefon (06) 25/462-641 </strong><br/>Rendelési idő <br/>Hétfő 08.00 - 12.00 <br/>Kedd 13.00-16.30  <br/><em>T<span data-mce-fragment="1" style="text-align: justify;">erhes-tanácsadás: </span><span style="text-align: justify;">9.30 - 10.30</span></em><br/>Szerda 08.00 - 10.30 Sárbogárd,<br/>          11.00-12.30  Nagyhörcsök<br/>Csütörtök 08.00 - 12.00 <br/>Péntek 08.00 - 12.00</div>
+<hr/>
+<div>
+<h4><span style="color: #0000ff;"><span style="font-size: 12px;">3. körzet</span></span></h4>
+<div> <span style="font-size: 14pt;"><strong data-mce-fragment="1">dr. Géber Anna</strong></span> <em>(helyettesítés)</em><br/><strong>7000 Sárbogárd, Szent István u. 96. <br/>Telefon (06) 25/466-597 </strong><br/>Rendelési idő<br/><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: none;">Hétfő      </span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none white-space-prewrap" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: none;">       </span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: none;">7.30-10.30<br/></span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: none;">Kedd             </span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none white-space-prewrap" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: none;"> </span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: none;">7.30-10.30<br/></span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: normal;">Csütörtök     </span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none white-space-prewrap" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: normal;"> </span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: normal; font-kerning: normal;">7.30-10.30<br/></span><span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: italic; font-kerning: normal;">                               10.30-11.30 <span class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none" data-mce-fragment="1" style="color: rgba(0,0,0,var(--o42jjq,1)); caret-color: #000000; --ys-xuq: none; font-weight: 400; font-style: italic; font-kerning: normal;">terhes tanácsadás</span></span></div>
+<hr/>
+<div>
+<h3><span style="color: #0000ff;"><span style="font-size: 12px;">4. körzet</span></span></h3>
+<div><span style="font-size: 14pt;"><strong>dr. Géber Anna</strong> </span><br/><strong>7003 Sárbogárd, Köztársaság u. 151.  <br/>Telefon (06) 25/467-339 </strong><br/>Rendelési idő  <br/>Hétfő          11.00-13.00<br/>Kedd           11.00-15.30<br/>Szerda       12.00-15.00<br/>                <em>              15.00-16.00 <span style="text-align: justify;"><em>Terh</em>es tanácsadás</span></em><br/><span style="text-align: justify;">Csütörtök    12.00-13.30</span><em> <br/></em></div>
+<hr/>
+<div>
+<h4><span style="color: #0000ff;"><span style="font-size: 12px;">5. körzet</span></span></h4>
+<div><strong><span style="font-size: small;">dr. Oroszlány László <br/></span></strong><strong>7000 Sárbogárd, Ady Endre u. 79-83. <br/>Telefon (06) 25/460-165 </strong><br/>Rendelési idő <br/>Hétfő 08.00 - 12.00 <br/>Kedd 08.00 - 12.00 <br/>Szerda 08.00 - 12.00  <br/>Csütörtök 08.00 - 11.00 <br/><em>                               11.00 - 13.00 (gondozóban)  Terhes tanácsadás</em><br/>Péntek 8.00 - 12.00</div>
+<hr/>
+<div>
+<h4><span style="color: #0000ff;"><span style="font-size: 12px;">6. körzet</span></span></h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><span style="font-size: 14pt;"><strong>dr. Géber Anna</strong></span><br/><strong>7018 Pusztaegres, Köztársaság tér 10. <br/>Telefon (06) 25/625-391 </strong><br/>Rendelési idő <br/><br/>Hétfő       13.30 - 15.30 <br/>Szerda       7.00-10.30 <br/><em><span style="text-align: justify;">                            10.30-11.30 Terhes tanácsadás<br/></span></em><span style="text-align: justify;">Csütörtök 14.00-15.30</span></p>
+</div>
+</div>
+</div>
+</div>
+</div></div></main></div></div></div></div><footer class="footer"><div class="container"><div class="row"><div class="col-md-6 text-center mb-2 mb-md-0 text-md-start"> Létrehozta: MUNIPOLIS s.r.o. ©2026 </div><div class="col-md-6 text-center text-md-end"> e-mail: <a data-review-original-href="mailto:info@munipolis.hu" href="#" tabindex="-1">info@munipolis.hu</a> | tel.: <a data-review-original-href="tel:+420533533355" href="#" tabindex="-1">+36 1 850 8375</a></div></div></div></footer><div aria-hidden="true" aria-labelledby="info-modal-label" class="modal fade" id="info-modal" tabindex="-1"><button aria-label="Bezárás" class="btn-close modal-close" data-dismiss="modal" type="button"></button><div class=""><div class="modal-content"><div class="modal-body p-0"></div></div></div></div><a aria-label="Ugrás az oldal tetejére" data-review-original-href="#app" href="#" id="scroll-to-top-btn" style="display: none;" tabindex="-1" title="Ugrás az oldal tetejére"><svg height="30" viewbox="0 0 512 512" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256m231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0" fill="#c2c2c2"></path></svg></a></div>
+<div id="modal-target"></div>
+</body></html>

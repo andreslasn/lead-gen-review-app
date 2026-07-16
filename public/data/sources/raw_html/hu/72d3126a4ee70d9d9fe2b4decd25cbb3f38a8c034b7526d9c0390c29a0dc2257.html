@@ -1,0 +1,717 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+
+
+<style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Noto+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 100;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QDcf2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 200;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QLce2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QGke2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QDce2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QAUe2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QOkZ2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QNAZ2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QLcZ2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 900;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QJ4Z2V7SzQ.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 100;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9Au9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 200;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyB9A-9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyCjA-9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyDPA-9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAjBO9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAaBO9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyB9BO9U6Vc.ttf) format('truetype');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 900;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyBUBO9U6Vc.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 100;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QDcf2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 200;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QLce2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QGke2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QDce2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QAUe2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QOkZ2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QNAZ2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QLcZ2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 900;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QJ4Z2V7Szg.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 100;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9Au9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 200;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyB9A-9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyCjA-9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyDPA-9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAjBO9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAaBO9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyB9BO9U6VQ.woff) format('woff');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 900;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyBUBO9U6VQ.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 100;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QDcf2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 200;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QLce2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QGke2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QDce2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QAUe2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QOkZ2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QNAZ2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QLcZ2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: italic;font-weight: 900;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0kIpQlx3QUlC5A4PNr4C5OaxRsfNNlKbCePevHtVtX57DGjDU1QJ4Z2V7SyA.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 100;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9Au9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 200;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyB9A-9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyCjA-9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyDPA-9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAjBO9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAaBO9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyB9BO9U6VI.woff2) format('woff2');}@font-face {font-family: 'Noto Sans';font-style: normal;font-weight: 900;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyBUBO9U6VI.woff2) format('woff2');}</style><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+
+
+<title>Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata - XVI. Kerület Kertvárosi Egészségügyi Szolgálata</title>
+
+<meta content="hu_HU" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata - XVI. Kerület Kertvárosi Egészségügyi Szolgálata" property="og:title"/>
+<meta content="https://www.szakrendelo16.hu/" property="og:url"/>
+<meta content="XVI. Kerület Kertvárosi Egészségügyi Szolgálata" property="og:site_name"/>
+<meta content="2026-03-26T08:49:21+00:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+
+
+
+
+
+
+
+
+<meta content="Divi Child v.1.0" name="generator"/><style id="font-awesome-svg-styles-default-inline-css" type="text/css">
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -.125em;
+}
+/*# sourceURL=font-awesome-svg-styles-default-inline-css */
+</style>
+
+<style id="font-awesome-svg-styles-inline-css" type="text/css">
+   .wp-block-font-awesome-icon svg::before,
+   .wp-rich-text-font-awesome-icon svg::before {content: unset;}
+/*# sourceURL=font-awesome-svg-styles-inline-css */
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:root { --wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+
+
+
+
+
+
+
+<style id="font-awesome-official-v4shim-inline-css" type="text/css">
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
+}
+/*# sourceURL=font-awesome-official-v4shim-inline-css */
+</style>
+
+
+
+
+<meta content="WordPress 6.9.4" name="generator"/>
+
+<style type="text/css">
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a{ background-color: #4054b2;	color: #ffffff;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay, #pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items.pojo-a11y-links{ border-color: #4054b2;}
+body.pojo-a11y-focusable a:focus{ outline-style: solid !important;	outline-width: 1px !important;	outline-color: #122f53 !important;}
+#pojo-a11y-toolbar{ top: 600px !important;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay{ background-color: #ffffff;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items li.pojo-a11y-toolbar-item a, #pojo-a11y-toolbar .pojo-a11y-toolbar-overlay p.pojo-a11y-toolbar-title{ color: #333333;}
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items li.pojo-a11y-toolbar-item a.active{ background-color: #4054b2;	color: #ffffff;}
+@media (max-width: 767px) { #pojo-a11y-toolbar { top: 400px !important; } }</style>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+
+
+<meta content="https://www.szakrendelo16.hu/wp-content/uploads/2019/11/cropped-redcross-270x270.png" name="msapplication-TileImage"/>
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="home wp-singular page-template-default page page-id-178 page-parent wp-theme-Divi wp-child-theme-divi-child et-tb-has-template et-tb-has-header et-tb-has-footer ally-default et_pb_button_helper_class et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+<div id="page-container">
+<div class="et-boc" id="et-boc">
+<header class="et-l et-l--header">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_1_tb_header et_pb_with_background et_section_regular" id="infofejlec">
+<div class="et_pb_row et_pb_row_0_tb_header">
+<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_header et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_0_tb_header et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_dark">
+<div class="et_pb_text_inner"><p><span>Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata</span></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_1_tb_header et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_header et_pb_text_align_right et_pb_text_align_center-tablet et_pb_bg_layout_dark">
+<div class="et_pb_text_inner"><p><span>Rendelési idők: </span><strong>H-P: 8:00-20:00 </strong>- <span>Tel: <strong>+36 1 401-1300</strong> - <strong><a data-review-original-href="https://fonixweb.szakrendelo16.hu/FonixWeb/" href="#" rel="noopener" tabindex="-1" target="_blank">Előjegyzés</a></strong></span></p></div>
+</div>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_3_tb_header et_section_regular et_pb_section--with-menu">
+<div class="et_pb_row et_pb_row_1_tb_header et_pb_row--with-menu">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_2_tb_header et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu">
+<div class="et_pb_module et_pb_code et_pb_code_0_tb_header">
+<div class="et_pb_code_inner">
+
+
+<div class="menu-container">
+<div style="display: inline-block; padding-right: 5px;"><a data-review-original-href="https://www.szakrendelo16.hu/" href="#" tabindex="-1"><img alt="XVI. Kerület Kertvárosi Egészségügyi Szolgálata" decoding="async" style="max-height: 85px;"/></a></div>
+<button class="menu-button">Menu</button>
+<div class="site-header-menu" id="site-header-menu">
+<nav aria-label="Primary Menu" class="main-navigation" id="site-navigation" role="navigation">
+<ul class="primary-menu" id="menu-main">
+<li class="menu-item menu-item-has-children"><a data-review-original-href="https://www.szakrendelo16.hu/" href="#" tabindex="-1">Magunkról</a>
+<ul class="sub-menu">
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/hirek/" href="#" tabindex="-1">Hírek</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/vezetseg/" href="#" tabindex="-1">Vezetőség</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/elerhetsegek/" href="#" tabindex="-1">Elérhetőségek</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/impresszum/" href="#" tabindex="-1">Impresszum</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/iso-minsites/" href="#" tabindex="-1">Minőségpolitika</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/szabalyzatok/" href="#" tabindex="-1">Szabályzatok</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/hazirend/" href="#" tabindex="-1">Házirend</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/beutalasi-rend/" href="#" tabindex="-1">Beutalási rend</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/betegjogikepviselo/" href="#" tabindex="-1">Betegjogi képviselő</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/xvi-keruelet-szakorovosi-alapitvany/" href="#" tabindex="-1">Szakorvosi Alapítvány</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/kepgaleria/" href="#" tabindex="-1">Képgaléria</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/palyazati-felhivas/" href="#" tabindex="-1">Pályázati felhívás</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/szakdolgozoi-allasok/" href="#" tabindex="-1">Szakdolgozói állások</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/egyeballasok/" href="#" tabindex="-1">Egyéb állások</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/orvosiallasok/" href="#" tabindex="-1">Orvosi állások</a></li>
+</ul></li>
+</ul>
+
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/szolgaltatasok/" href="#" tabindex="-1">Szolgáltatások</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/orvosok/" href="#" tabindex="-1">Orvosok</a></li>
+<li class="menu-item menu-item-has-children"><a data-review-original-href="https://www.szakrendelo16.hu/alapellatas-2/" href="#" tabindex="-1">Alapellátás</a>
+<ul class="sub-menu">
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/felnott-haziovosi-szolgalat/" href="#" tabindex="-1">Felnőtt háziorvosi szolgálat</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/gyermek-haziorvosi-szolgalat-6/" href="#" tabindex="-1">Gyermek háziorvosi szolgálat</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/fogorvosi-szolgalat/" href="#" tabindex="-1">Felnőtt fogorvosi szolgálat</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/gyermek-fogorvosi-szolgalat-5/" href="#" tabindex="-1">Gyermek fogorvosi szolgálat / Fogszabályozás</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/iskolaorvosi-szolgalat-4/" href="#" tabindex="-1">Iskolaorvosi szolgálat</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/teruleti-vedonoi-szolgalat/" href="#" tabindex="-1">Területi védőnői szolgálat</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/iskolavedonoi-szolgalat/" href="#" tabindex="-1">Iskolavédőnői szolgálat</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children"><a data-review-original-href="https://fonixweb.szakrendelo16.hu/FonixWeb/" href="#" tabindex="-1">Előjegyzés</a>
+<ul class="sub-menu">
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/elojegyzes-altalanos-informaicok/" href="#" tabindex="-1">Előjegyzés-általános információk</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/elojegyzesi-lehetosegek/" href="#" tabindex="-1">Előjegyzési lehetőségek</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children"><a data-review-original-href="https://www.szakrendelo16.hu/ugyeletek/" href="#" tabindex="-1">Ügyeletek</a>
+<ul class="sub-menu">
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/felnott-haziorvosi-ugyelet/" href="#" tabindex="-1">Egységes alapellátási ügyeleti rendszer</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/gyermekorvosi-ugyelet/" href="#" tabindex="-1">Kertvárosi sürgős ellátás</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/fogorvosi-uegyelet/" href="#" tabindex="-1">Fogorvosi ügyelet</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/fekvbeteg-ellatas/" href="#" tabindex="-1">Fekvőbeteg ellátás</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/uegyeletes-gyogyszertarak/" href="#" tabindex="-1">Ügyeletes gyógyszertárak</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/mikor-hivjunk-mentt/" href="#" tabindex="-1">Mikor hívjunk mentőt?</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-has-children"><a data-review-original-href="/" href="#" tabindex="-1">Egészségmegőrzés</a>
+<ul class="sub-menu">
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/szrvizsgalatok/" href="#" tabindex="-1">Térítésmentes szűrővizsgálatok</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/betegtajekoztatok/" href="#" tabindex="-1">Betegtájékoztatók</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/dobja-el-a-cigarettat/" href="#" tabindex="-1">Dobja el a cigarettát!</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/tugyujtesi-program/" href="#" tabindex="-1">Tűgyűjtési program a szakrendelőben</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/teriteses-szolgaltatasok/" href="#" tabindex="-1">Térítéses szolgáltatások</a></li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/tajekoztatok/" href="#" tabindex="-1">Tájékoztatók betegségekről</a></li>
+</ul>
+</li>
+<li class="menu-item"><a data-review-original-href="https://www.szakrendelo16.hu/kozerdeku-adatok/" href="#" tabindex="-1">Közérdekű adatok</a></li>
+
+</nav>
+</div>
+</div>
+</div>
+</div><div class="et_pb_module et_pb_code et_pb_code_1_tb_header">
+<div class="et_pb_code_inner">
+</div>
+</div><div class="et_pb_module et_pb_menu et_pb_menu_0_tb_header et_pb_bg_layout_light et_pb_text_align_left et_dropdown_animation_fade et_pb_menu--with-logo et_pb_menu--style-left_aligned">
+<div class="et_pb_menu_inner_container clearfix">
+<div class="et_pb_menu__logo-wrap">
+<div class="et_pb_menu__logo">
+<a data-review-original-href="https://www.szakrendelo16.hu/" href="#" tabindex="-1"><img alt="XVI. Kerület Kertvárosi Egészségügyi Szolgálat" class="wp-image-15626" decoding="async" fetchpriority="high" height="202" width="300"/></a>
+</div>
+</div>
+<div class="et_pb_menu__wrap">
+<div class="et_pb_menu__menu">
+<nav class="et-menu-nav"><ul class="et-menu nav downwards" id="menu-main-menu"><li class="et_pb_menu_page_id-16559 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16559"><a data-review-original-href="#" href="#" tabindex="-1">Magunkról</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-122 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10209"><a data-review-original-href="https://www.szakrendelo16.hu/hirek/" href="#" tabindex="-1">Hírek</a></li>
+<li class="et_pb_menu_page_id-1545 menu-item menu-item-type-post_type menu-item-object-page menu-item-2099"><a data-review-original-href="https://www.szakrendelo16.hu/vezetseg/" href="#" tabindex="-1">Vezetőség</a></li>
+<li class="et_pb_menu_page_id-1306 menu-item menu-item-type-post_type menu-item-object-page menu-item-2100"><a data-review-original-href="https://www.szakrendelo16.hu/elerhetsegek/" href="#" tabindex="-1">Elérhetőségek</a></li>
+<li class="et_pb_menu_page_id-5757 menu-item menu-item-type-post_type menu-item-object-page menu-item-5759"><a data-review-original-href="https://www.szakrendelo16.hu/impresszum/" href="#" tabindex="-1">Impresszum</a></li>
+<li class="et_pb_menu_page_id-1406 menu-item menu-item-type-post_type menu-item-object-page menu-item-2102"><a data-review-original-href="https://www.szakrendelo16.hu/iso-minsites/" href="#" tabindex="-1">Minőségpolitika</a></li>
+<li class="et_pb_menu_page_id-1586 menu-item menu-item-type-post_type menu-item-object-page menu-item-2103"><a data-review-original-href="https://www.szakrendelo16.hu/szabalyzatok/" href="#" tabindex="-1">Szabályzatok</a></li>
+<li class="et_pb_menu_page_id-1619 menu-item menu-item-type-post_type menu-item-object-page menu-item-2104"><a data-review-original-href="https://www.szakrendelo16.hu/hazirend/" href="#" tabindex="-1">Házirend</a></li>
+<li class="et_pb_menu_page_id-1665 menu-item menu-item-type-post_type menu-item-object-page menu-item-2105"><a data-review-original-href="https://www.szakrendelo16.hu/beutalasi-rend/" href="#" tabindex="-1">Beutalási rend</a></li>
+<li class="et_pb_menu_page_id-1660 menu-item menu-item-type-post_type menu-item-object-page menu-item-2106"><a data-review-original-href="https://www.szakrendelo16.hu/betegjogikepviselo/" href="#" tabindex="-1">Betegjogi képviselő</a></li>
+<li class="et_pb_menu_page_id-1403 menu-item menu-item-type-post_type menu-item-object-page menu-item-5226"><a data-review-original-href="https://www.szakrendelo16.hu/xvi-keruelet-szakorovosi-alapitvany/" href="#" tabindex="-1">Szakorvosi Alapítvány</a></li>
+<li class="et_pb_menu_page_id-11681 menu-item menu-item-type-post_type menu-item-object-page menu-item-11690"><a data-review-original-href="https://www.szakrendelo16.hu/kepgaleria/" href="#" tabindex="-1">Képgaléria</a></li>
+<li class="et_pb_menu_page_id-17820 menu-item menu-item-type-post_type menu-item-object-page menu-item-17824"><a data-review-original-href="https://www.szakrendelo16.hu/palyazati-felhivas/" href="#" tabindex="-1">Pályázati felhívás</a></li>
+<li class="et_pb_menu_page_id-2107 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2107"><a data-review-original-href="#" href="#" tabindex="-1">Álláslehetőségek</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-1657 menu-item menu-item-type-post_type menu-item-object-page menu-item-2111"><a data-review-original-href="https://www.szakrendelo16.hu/orvosiallasok/" href="#" tabindex="-1">Orvosi állások</a></li>
+<li class="et_pb_menu_page_id-1656 menu-item menu-item-type-post_type menu-item-object-page menu-item-2108"><a data-review-original-href="https://www.szakrendelo16.hu/szakdolgozoi-allasok/" href="#" tabindex="-1">Szakdolgozói állások</a></li>
+<li class="et_pb_menu_page_id-1731 menu-item menu-item-type-post_type menu-item-object-page menu-item-2110"><a data-review-original-href="https://www.szakrendelo16.hu/egyeballasok/" href="#" tabindex="-1">Egyéb állások</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-227 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10339"><a data-review-original-href="https://www.szakrendelo16.hu/szolgaltatasok/" href="#" tabindex="-1">Szolgáltatások</a></li>
+<li class="et_pb_menu_page_id-253 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11063"><a data-review-original-href="https://www.szakrendelo16.hu/orvosok/" href="#" tabindex="-1">Orvosok</a></li>
+<li class="et_pb_menu_page_id-3160 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3163"><a data-review-original-href="https://www.szakrendelo16.hu/alapellatas-2/" href="#" tabindex="-1">Alapellátás</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-3164 menu-item menu-item-type-post_type menu-item-object-page menu-item-3171"><a data-review-original-href="https://www.szakrendelo16.hu/felnott-haziovosi-szolgalat/" href="#" tabindex="-1">Felnőtt háziorvosi szolgálat</a></li>
+<li class="et_pb_menu_page_id-3165 menu-item menu-item-type-post_type menu-item-object-page menu-item-3172"><a data-review-original-href="https://www.szakrendelo16.hu/gyermek-haziorvosi-szolgalat-6/" href="#" tabindex="-1">Gyermek háziorvosi szolgálat</a></li>
+<li class="et_pb_menu_page_id-3167 menu-item menu-item-type-post_type menu-item-object-page menu-item-3173"><a data-review-original-href="https://www.szakrendelo16.hu/fogorvosi-szolgalat/" href="#" tabindex="-1">Felnőtt fogorvosi szolgálat</a></li>
+<li class="et_pb_menu_page_id-3393 menu-item menu-item-type-post_type menu-item-object-page menu-item-3396"><a data-review-original-href="https://www.szakrendelo16.hu/gyermek-fogorvosi-szolgalat-5/" href="#" tabindex="-1">Gyermek fogorvosi szolgálat / Fogszabályozás</a></li>
+<li class="et_pb_menu_page_id-3779 menu-item menu-item-type-post_type menu-item-object-page menu-item-3782"><a data-review-original-href="https://www.szakrendelo16.hu/iskolaorvosi-szolgalat-4/" href="#" tabindex="-1">Iskolaorvosi szolgálat</a></li>
+<li class="et_pb_menu_page_id-3344 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3347"><a data-review-original-href="https://www.szakrendelo16.hu/vedonoi-szolgalat/" href="#" tabindex="-1">Védőnői szolgálat</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-3722 menu-item menu-item-type-post_type menu-item-object-page menu-item-3727"><a data-review-original-href="https://www.szakrendelo16.hu/teruleti-vedonoi-szolgalat/" href="#" tabindex="-1">Területi védőnői szolgálat</a></li>
+<li class="et_pb_menu_page_id-3723 menu-item menu-item-type-post_type menu-item-object-page menu-item-3728"><a data-review-original-href="https://www.szakrendelo16.hu/iskolavedonoi-szolgalat/" href="#" tabindex="-1">Iskolavédőnői szolgálat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-2129 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2129"><a data-review-original-href="https://fonixweb.szakrendelo16.hu/FonixWeb/" href="#" tabindex="-1" target="_blank">Előjegyzés</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-3377 menu-item menu-item-type-post_type menu-item-object-page menu-item-3380"><a data-review-original-href="https://www.szakrendelo16.hu/elojegyzes-altalanos-informaicok/" href="#" tabindex="-1">Előjegyzés-általános információk</a></li>
+<li class="et_pb_menu_page_id-3119 menu-item menu-item-type-post_type menu-item-object-page menu-item-3124"><a data-review-original-href="https://www.szakrendelo16.hu/elojegyzesi-lehetosegek/" href="#" tabindex="-1">Előjegyzési lehetőségek</a></li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-239 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2114"><a data-review-original-href="https://www.szakrendelo16.hu/ugyeletek/" href="#" tabindex="-1">Ügyeletek</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-1329 menu-item menu-item-type-post_type menu-item-object-page menu-item-2121"><a data-review-original-href="https://www.szakrendelo16.hu/felnott-haziorvosi-ugyelet/" href="#" tabindex="-1">Egységes alapellátási ügyeleti rendszer</a></li>
+<li class="et_pb_menu_page_id-3120 menu-item menu-item-type-post_type menu-item-object-page menu-item-3125"><a data-review-original-href="https://www.szakrendelo16.hu/gyermekorvosi-ugyelet/" href="#" tabindex="-1">Kertvárosi sürgős ellátás</a></li>
+<li class="et_pb_menu_page_id-1587 menu-item menu-item-type-post_type menu-item-object-page menu-item-2122"><a data-review-original-href="https://www.szakrendelo16.hu/fogorvosi-uegyelet/" href="#" tabindex="-1">Fogorvosi ügyelet</a></li>
+<li class="et_pb_menu_page_id-1533 menu-item menu-item-type-post_type menu-item-object-page menu-item-2124"><a data-review-original-href="https://www.szakrendelo16.hu/fekvbeteg-ellatas/" href="#" tabindex="-1">Fekvőbeteg ellátás</a></li>
+<li class="et_pb_menu_page_id-1534 menu-item menu-item-type-post_type menu-item-object-page menu-item-2125"><a data-review-original-href="https://www.szakrendelo16.hu/uegyeletes-gyogyszertarak/" href="#" tabindex="-1">Ügyeletes gyógyszertárak</a></li>
+<li class="et_pb_menu_page_id-1535 menu-item menu-item-type-post_type menu-item-object-page menu-item-2126"><a data-review-original-href="https://www.szakrendelo16.hu/mikor-hivjunk-mentt/" href="#" tabindex="-1">Mikor hívjunk mentőt?</a></li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-190 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-190"><a data-review-original-href="#" href="#" tabindex="-1">Egészségmegőrzés</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-1601 menu-item menu-item-type-post_type menu-item-object-page menu-item-2134"><a data-review-original-href="https://www.szakrendelo16.hu/szrvizsgalatok/" href="#" tabindex="-1">Térítésmentes szűrővizsgálatok</a></li>
+<li class="et_pb_menu_page_id-4531 menu-item menu-item-type-post_type menu-item-object-page menu-item-4536"><a data-review-original-href="https://www.szakrendelo16.hu/betegtajekoztatok/" href="#" tabindex="-1">Betegtájékoztatók</a></li>
+<li class="et_pb_menu_page_id-1564 menu-item menu-item-type-post_type menu-item-object-page menu-item-2135"><a data-review-original-href="https://www.szakrendelo16.hu/dobja-el-a-cigarettat/" href="#" tabindex="-1">Dobja el a cigarettát!</a></li>
+<li class="et_pb_menu_page_id-1825 menu-item menu-item-type-post_type menu-item-object-page menu-item-4524"><a data-review-original-href="https://www.szakrendelo16.hu/tugyujtesi-program/" href="#" tabindex="-1">Tűgyűjtési program a szakrendelőben</a></li>
+<li class="et_pb_menu_page_id-261 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-11914"><a data-review-original-href="https://www.szakrendelo16.hu/teriteses-szolgaltatasok/" href="#" tabindex="-1">Térítéses szolgáltatások</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-11904 menu-item menu-item-type-post_type menu-item-object-post menu-item-11918"><a data-review-original-href="https://www.szakrendelo16.hu/?p=11904" href="#" tabindex="-1">Csecsemő és gyermek ultrahangos szűrővizsgálatok</a></li>
+<li class="et_pb_menu_page_id-11908 menu-item menu-item-type-post_type menu-item-object-post menu-item-11917"><a data-review-original-href="https://www.szakrendelo16.hu/panorama-rontgen/" href="#" tabindex="-1">Fogászati röntgen vizsgálat</a></li>
+<li class="et_pb_menu_page_id-11910 menu-item menu-item-type-post_type menu-item-object-post menu-item-11916"><a data-review-original-href="https://www.szakrendelo16.hu/eng-emg/" href="#" tabindex="-1">ENG-EMG</a></li>
+<li class="et_pb_menu_page_id-11912 menu-item menu-item-type-post_type menu-item-object-post menu-item-11915"><a data-review-original-href="https://www.szakrendelo16.hu/hallasvizsgalat/" href="#" tabindex="-1">Hallásvizsgálat</a></li>
+<li class="et_pb_menu_page_id-1649 menu-item menu-item-type-post_type menu-item-object-page menu-item-4381"><a data-review-original-href="https://www.szakrendelo16.hu/szerzodott-egeszsegpenztar/" href="#" tabindex="-1">Szerződött egészségpénztárak</a></li>
+<li class="et_pb_menu_page_id-3486 menu-item menu-item-type-post_type menu-item-object-page menu-item-3489"><a data-review-original-href="https://www.szakrendelo16.hu/teritesi-dijak/" href="#" tabindex="-1">Térítési díjak</a></li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-2139 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2139"><a data-review-original-href="#" href="#" tabindex="-1">Tájékoztatók betegségekről</a>
+<ul class="sub-menu">
+<li class="et_pb_menu_page_id-1604 menu-item menu-item-type-post_type menu-item-object-page menu-item-2138"><a data-review-original-href="https://www.szakrendelo16.hu/a-prosztata-betegsegei/" href="#" tabindex="-1">A prosztata betegségei</a></li>
+<li class="et_pb_menu_page_id-1612 menu-item menu-item-type-post_type menu-item-object-page menu-item-2137"><a data-review-original-href="https://www.szakrendelo16.hu/a-cukorbetegseg/" href="#" tabindex="-1">A cukorbetegség</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-242 menu-item menu-item-type-post_type menu-item-object-page menu-item-2073"><a data-review-original-href="https://www.szakrendelo16.hu/kozerdeku-adatok/" href="#" tabindex="-1">Közérdekű adatok</a></li>
+</ul></nav>
+</div>
+<div class="et_mobile_nav_menu">
+<div class="mobile_nav closed">
+<span class="mobile_menu_bar"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</header>
+<div id="et-main-area">
+<div id="main-content">
+<article class="post-178 page type-page status-publish hentry" id="post-178">
+<div class="entry-content">
+<div class="bialty-container"><div class="et-l et-l--post">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_section et_pb_section_0 et_pb_section_parallax et_pb_with_background et_section_regular" id="content">
+<span class="et_parallax_bg_wrap"><span class="et_parallax_bg" style="background-image: url(https://www.szakrendelo16.hu/wp-content/uploads/2021/10/fooldal-felul.jpg);"></span></span>
+<div class="et_pb_row et_pb_row_0 et_pb_equal_columns et_pb_gutters1">
+<div class="et_pb_column et_pb_column_2_5 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_0 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h1><i class="far fa-calendar-alt"></i>  Időpontfoglalás egyszerűen</h1></div>
+</div><div class="et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_1 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Elindítottuk online foglalási rendszerünket, ahol regisztrációt követően közvetlenül tud időpontot foglalni.</div>
+</div><div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" data-icon="I" data-review-original-href="https://fonixweb.szakrendelo16.hu/fonixweb/" href="#" tabindex="-1" target="_blank">Időpontfoglalás</a>
+</div><div class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><i class="fas fa-info-circle" style="color: #2a5db0;"></i> <a data-review-original-href="https://fonixweb.szakrendelo16.hu/fonixweb/Doc/User/Manual_4_Bejelentkezes_nelkul_elerheto_funkciok.aspx#4.2_Regisztr%C3%A1ci%C3%B3" href="#" rel="noopener" tabindex="-1" target="_blank"><strong>Segítség az időpontfoglaláshoz!</strong></a></div>
+</div><div class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><i class="fas fa-phone-square-alt"></i> +36 1 401-1300   </div>
+</div>
+</div><div class="et_pb_column et_pb_column_3_5 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1 et_section_regular">
+<div class="et_pb_row et_pb_row_1 et_pb_equal_columns et_pb_gutters3">
+<div class="et_pb_column et_pb_column_1_4 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_4 et_pb_text_align_center et_pb_bg_layout_light">
+</div><div class="et_pb_module et_pb_text et_pb_text_5 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2><a data-review-original-href="http://www.szakrendelo16.hu/xvi-keruelet-szakorovosi-alapitvany/" href="#" tabindex="-1">Segíts 1%-oddal</a></h2>
+<p>Kérjük,<strong> támogassa adója 1%-ával</strong> a XVI. kerület Szakorvosi Ellátásért Alapítványt</p>
+<p>Számlaszám: <strong>11716008-20148687</strong></p>
+<p>Adószám: <strong>18154960-1-42</strong></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_center et_pb_bg_layout_light">
+</div><div class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Szűrővizsgálatok</h2>
+<p>Az orvosi gondolkodásban egyre inkább előtérbe kerül a megelőzés. <strong>Célunk a betegségek kialakulásának megelőzése</strong> illetve korai felismerése, hogy elkerülhetőek legyenek a súlyos problémák.</p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_8 et_pb_text_align_center et_pb_bg_layout_light">
+</div><div class="et_pb_module et_pb_text et_pb_text_9 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Foglalkozás-egészségügyi ellátás</h2>
+<p>Teljes körű foglalkozás egészségügyi orvosi vizsgálat, az adott munkahelyi kockázatok kiemelt vizsgálatával. <strong>Ajánlatkérés, bejelentkezés: munkaeu[kukac]szakrendelo16.hu</strong></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_5 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_10 et_pb_text_align_center et_pb_bg_layout_light">
+</div><div class="et_pb_module et_pb_text et_pb_text_11 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Szakértelem</h2>
+<p><strong>Magasan képzett és motivált, idegen nyelveket beszélő szakorvosaink</strong> az ismeretek és eljárások folyamatos bővítésével és fejlesztésével elkötelezettek a gyógyítás iránt.</p></div>
+</div>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_2">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_6 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_12 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2><i class="fas fa-user-nurse"></i> Szakrendelések</h2></div>
+</div><div class="et_pb_module et_pb_divider et_pb_divider_1 et_pb_divider_position_ et_pb_space"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_13 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner">A szakrendelésekről elérhető részletes információkért kérjük <strong>kattintson a szakrendelés nevére!</strong></div>
+</div>
+</div>
+</div><div class="et_pb_row et_pb_row_3 et_pb_equal_columns et_pb_gutters2">
+<div class="et_pb_column et_pb_column_1_6 et_pb_column_7 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_1 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/addiktologia/" href="#" tabindex="-1">Addiktológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_2 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/dietas-tanacsadas/" href="#" tabindex="-1">Diétás tanácsadás</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_3 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/gyermek-fogorvosi-szolgalat-5/" href="#" tabindex="-1">Fogszabályozás</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_4_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_4 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/kardiologia-szakrendeles/" href="#" tabindex="-1">Kardiológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_5_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_5 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/onkologia/" href="#" tabindex="-1">Onkológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_6_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_6 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/szemeszet/" href="#" tabindex="-1">Szemészet</a>
+</div>
+</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_8 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_button_module_wrapper et_pb_button_7_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_7 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/egynapos-sebeszet/" href="#" tabindex="-1">Egynapos sebészet</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_8_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_8 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/ful-orr-gegegyogyaszat/" href="#" tabindex="-1">Fül-orr-gégészet</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_9_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_9 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/kepalkoto-diagnosztika/" href="#" tabindex="-1">Képalkotó diagnosztika</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_10_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_10 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/ortopedia/" href="#" tabindex="-1">Ortopédia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_11_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_11 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/tudogyogyaszat/" href="#" tabindex="-1">Tüdőgyógyászat</a>
+</div>
+</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_9 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_button_module_wrapper et_pb_button_12_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_12 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/belgyogyaszat/" href="#" tabindex="-1">Belgyógyászat-Angiológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_13_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_13 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/endokrinologia/" href="#" tabindex="-1">Endokrinológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_14_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_14 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/gasztroenterologia/" href="#" tabindex="-1">Gasztroenterológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_15_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_15 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/laboratorium/" href="#" tabindex="-1">Laboratórium</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_16_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_16 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/pszichiatria/" href="#" tabindex="-1">Pszichiátria</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_17_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_17 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/tudoszures/" href="#" tabindex="-1">Tüdőszűrés</a>
+</div>
+</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_10 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_button_module_wrapper et_pb_button_18_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_18 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/borgyogyaszat/" href="#" tabindex="-1">Bőrgyógyászat</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_19_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_19 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/ersebeszet/" href="#" tabindex="-1">Érsebészet</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_20_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_20 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/gyermek-fogorvosi-szolgalat-5/" href="#" tabindex="-1">Gyermekfogászat</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_21_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_21 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/kepalkoto-diagnosztika/" href="#" tabindex="-1">Mammográfia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_22_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_22 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/pszichologia/" href="#" tabindex="-1">Pszichológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_23_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_23 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/urologia/" href="#" tabindex="-1">Urológia</a>
+</div>
+</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_11 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_button_module_wrapper et_pb_button_24_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_24 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/csontsuruseg-meres/" href="#" tabindex="-1">Csontsűrűség mérés</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_25_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_25 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/fizikoterapia/" href="#" tabindex="-1">Fizikoterápia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_26_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_26 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/fizikoterapia/" href="#" tabindex="-1">Gyógymasszázs</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_27_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_27 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/neurologia/" href="#" tabindex="-1">Neurológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_28_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_28 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/reumatologia/" href="#" tabindex="-1">Reumatológia</a>
+</div>
+</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_12 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_button_module_wrapper et_pb_button_29_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_29 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/diabetologia/" href="#" tabindex="-1">Diabetológia</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_30_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_30 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/foglalkozas-egeszsegugy/" href="#" tabindex="-1">Foglalkozás-egészségügy</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_31_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_31 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/gyogytorna/" href="#" tabindex="-1">Gyógytorna</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_32_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_32 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/nogyogyaszat/" href="#" tabindex="-1">Nőgyógyászat</a>
+</div><div class="et_pb_button_module_wrapper et_pb_button_33_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_33 et_pb_bg_layout_light" data-review-original-href="https://www.szakrendelo16.hu/sebeszet/" href="#" tabindex="-1">Sebészet</a>
+</div>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_3 et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_4">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_13 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_14 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Hírek és Lakossági tájékoztatók a szakrendelő részéről</h2></div>
+</div><div class="et_pb_module et_pb_divider et_pb_divider_2 et_pb_divider_position_ et_pb_space"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_15 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner">Itt tekintheti meg a legújabb és<strong> legfontosabb híreinket.</strong></div>
+</div>
+</div>
+</div><div class="et_pb_row et_pb_row_5 et_pb_equal_columns et_pb_gutters2">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_14 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_with_border et_pb_module et_pb_blog_0 et_blog_grid_equal_height et_pb_blog_grid_wrapper et_pb_bg_layout_light">
+<div class="et_pb_blog_grid clearfix">
+<div class="et_pb_ajax_pagination_container">
+<div class="et_pb_salvattore_content" data-columns="">
+<article class="et_pb_post clearfix et_pb_blog_item_0_0 post-20237 post type-post status-publish format-standard has-post-thumbnail hentry category-hirek category-uncategorized" id="post-20237">
+<div class="et_pb_image_container"><a class="entry-featured-image-url" data-review-original-href="https://www.szakrendelo16.hu/semmelweisnap_2026/" href="#" tabindex="-1"><img alt="Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata" class="" decoding="async" height="250" loading="lazy" width="400"/></a></div>
+<h2 class="entry-title">
+<a data-review-original-href="https://www.szakrendelo16.hu/semmelweisnap_2026/" href="#" tabindex="-1">Semmelweis Nap 2026.</a>
+</h2>
+<p class="post-meta"><span class="published">2026.07.08.</span></p><div class="post-content"><div class="post-content-inner"><p>Akikre büszkék lehetünk... A hagyományoknak megfelelően, 2026. június 26-án a XVI. kerületi Önkormányzat szervezésében idén is megrendezésre került a Semmelweis napi ünnepség. A jeles napon dr....</p>
+</div></div>
+</article>
+<article class="et_pb_post clearfix et_pb_blog_item_0_1 post-19775 post type-post status-publish format-standard has-post-thumbnail hentry category-hirek" id="post-19775">
+<div class="et_pb_image_container"><a class="entry-featured-image-url" data-review-original-href="https://www.szakrendelo16.hu/egeszsegnap-2026-marcius-28/" href="#" tabindex="-1"><img alt="Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata" class="" decoding="async" height="250" loading="lazy" width="400"/></a></div>
+<h2 class="entry-title">
+<a data-review-original-href="https://www.szakrendelo16.hu/egeszsegnap-2026-marcius-28/" href="#" tabindex="-1">Egészségnap 2026. március 28.</a>
+</h2>
+<p class="post-meta"><span class="published">2026.03.18.</span></p><div class="post-content"><div class="post-content-inner"><p> A XVI. Kerület Önkormányzata és a XVI. Kerület Kertvárosi Egészségügyi Szolgálata közös szervezésében egészségnap kerül megrendezésre a kerületi lakosok...</p>
+</div></div>
+</article>
+<article class="et_pb_post clearfix et_pb_blog_item_0_2 post-18826 post type-post status-publish format-standard has-post-thumbnail hentry category-hirek" id="post-18826">
+<div class="et_pb_image_container"><a class="entry-featured-image-url" data-review-original-href="https://www.szakrendelo16.hu/semmelweis-nap-2025/" href="#" tabindex="-1"><img alt="Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata" class="" decoding="async" height="250" loading="lazy" width="400"/></a></div>
+<h2 class="entry-title">
+<a data-review-original-href="https://www.szakrendelo16.hu/semmelweis-nap-2025/" href="#" tabindex="-1">Semmelweis nap 2025.</a>
+</h2>
+<p class="post-meta"><span class="published">2025.07.02.</span></p><div class="post-content"><div class="post-content-inner"><p> A helyi önkormányzat szervezésében, ebben az esztendőben is méltóképpen emlékeztünk meg Semmelweis Ignác születésének érfordulójáról. Az idei év díjazottai: év...</p>
+</div></div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="et_pb_row et_pb_row_6">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_15 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_button_module_wrapper et_pb_button_34_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_34 kekgomb et_pb_bg_layout_light" data-icon="I" data-review-original-href="https://www.szakrendelo16.hu/hirek/" href="#" tabindex="-1">Az összes hírhez kattintson ide</a>
+</div>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_4 et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_7">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_16 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_16 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2><i class="fas fa-user-md"></i> Ismerje meg Orvosainkat</h2></div>
+</div><div class="et_pb_module et_pb_divider et_pb_divider_3 et_pb_divider_position_ et_pb_space"><div class="et_pb_divider_internal"></div></div><div class="et_pb_module et_pb_text et_pb_text_17 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><strong>A XVI. Kerület Kertvárosi Egészségügyi Szolgálata szakorvosai magasan képzettek és elhivatottak, itthon és külföldön egyaránt elismertek, keresettek.</strong> Nem a betegséget, hanem az embert gyógyítják, a „minden eset egyedi és kiemelt odafigyelést igényel” elv alapján.</div>
+</div>
+</div>
+</div><div class="et_pb_row et_pb_row_8 et_pb_equal_columns et_pb_gutters2">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_17 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_with_border et_pb_module et_pb_blog_1 et_blog_grid_equal_height et_pb_blog_grid_wrapper et_pb_bg_layout_light">
+<div class="et_pb_blog_grid clearfix">
+<div class="et_pb_ajax_pagination_container">
+<div class="et_pb_salvattore_content" data-columns="">
+<article class="et_pb_post clearfix et_pb_blog_item_1_0 post-14616 post type-post status-publish format-standard has-post-thumbnail hentry category-belgyogyaszat category-orvosok" id="post-14616">
+<div class="et_pb_image_container"><a class="entry-featured-image-url" data-review-original-href="https://www.szakrendelo16.hu/dr-hulitzer-katinka/" href="#" tabindex="-1"><img alt="Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata" class="" decoding="async" height="250" loading="lazy" width="400"/></a></div>
+<h2 class="entry-title">
+<a data-review-original-href="https://www.szakrendelo16.hu/dr-hulitzer-katinka/" href="#" tabindex="-1">Dr. Hülitzer Katinka angiológus</a>
+</h2>
+<p class="post-meta"><a data-review-original-href="https://www.szakrendelo16.hu/orvosok/belgyogyaszat/" href="#" rel="tag" tabindex="-1">Belgyógyászat</a>, <a data-review-original-href="https://www.szakrendelo16.hu/orvosok/" href="#" rel="tag" tabindex="-1">Orvosok</a></p><div class="post-content"><div class="post-content-inner et_multi_view_hidden"><p>belgyógyász-angiológus szakorvos 1990-ben végzett a Semmelweis Orvostudományi Egyetemen. 1990-től dolgozik folyamatosan a Flór Ferenc Kórházban belgyógyászaton, kardiológiai-angiológiai...</p>
+</div></div>
+</article>
+<article class="et_pb_post clearfix et_pb_blog_item_1_1 post-10570 post type-post status-publish format-standard has-post-thumbnail hentry category-ersebeszet category-sebeszet" id="post-10570">
+<div class="et_pb_image_container"><a class="entry-featured-image-url" data-review-original-href="https://www.szakrendelo16.hu/dr-berezvai-sandor/" href="#" tabindex="-1"><img alt="Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata" class="" decoding="async" height="250" loading="lazy" width="400"/></a></div>
+<h2 class="entry-title">
+<a data-review-original-href="https://www.szakrendelo16.hu/dr-berezvai-sandor/" href="#" tabindex="-1">Dr. Berezvai Sándor</a>
+</h2>
+<p class="post-meta"><a data-review-original-href="https://www.szakrendelo16.hu/orvosok/ersebeszet/" href="#" rel="tag" tabindex="-1">Érsebészet</a>, <a data-review-original-href="https://www.szakrendelo16.hu/orvosok/sebeszet/" href="#" rel="tag" tabindex="-1">Sebészet</a></p><div class="post-content"><div class="post-content-inner et_multi_view_hidden"><p>Sebész  és érsebész főorvos Egészségügyi szakmenedzser 1956-ban született, 4 gyermeke van , feleségével, Bánhegyi Zsuzsannával 1989 óta lakik Budapest, XVI. kerületében, Rákosszentmihályon....</p>
+</div></div>
+</article>
+<article class="et_pb_post clearfix et_pb_blog_item_1_2 post-10556 post type-post status-publish format-standard has-post-thumbnail hentry category-belgyogyaszat" id="post-10556">
+<div class="et_pb_image_container"><a class="entry-featured-image-url" data-review-original-href="https://www.szakrendelo16.hu/dr-salamon-monika/" href="#" tabindex="-1"><img alt="Üdvözli Önt a XVI. Kerület Kertvárosi Egészségügyi Szolgálata" class="" decoding="async" height="250" loading="lazy" width="400"/></a></div>
+<h2 class="entry-title">
+<a data-review-original-href="https://www.szakrendelo16.hu/dr-salamon-monika/" href="#" tabindex="-1">Dr. Salamon Mónika</a>
+</h2>
+<p class="post-meta"><a data-review-original-href="https://www.szakrendelo16.hu/orvosok/belgyogyaszat/" href="#" rel="tag" tabindex="-1">Belgyógyászat</a></p><div class="post-content"><div class="post-content-inner et_multi_view_hidden"><p>Főorvos 1999-ben végzett a szegedi Szent-Györgyi Albert orvostudományi Egyetem ÁOK szakán. Belgyógyász szakvizsgát, diabetológiai licence vizsgát tett. A Szent János Kórház II. Belgyógyászati...</p>
+</div></div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="et_pb_row et_pb_row_9">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_18 et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_button_module_wrapper et_pb_button_35_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_35 et_pb_bg_layout_light" data-icon="I" data-review-original-href="https://www.szakrendelo16.hu/orvosok/" href="#" tabindex="-1">Kattintson ide és ismerje meg összes orvosunkat</a>
+</div><div class="et_pb_module et_pb_code et_pb_code_0">
+<div class="et_pb_code_inner"></div>
+</div>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_5 et_pb_section_parallax et_pb_with_background et_section_regular">
+<span class="et_parallax_bg_wrap"><span class="et_parallax_bg" style="background-image: url(https://www.szakrendelo16.hu/wp-content/uploads/2021/10/fooldal-alul-sarga.jpg);"></span></span>
+<div class="et_pb_row et_pb_row_10">
+<div class="et_pb_column et_pb_column_1_4 et_pb_column_19 et_pb_css_mix_blend_mode_passthrough et_pb_column_empty">
+</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_20 et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_18 et_pb_text_align_center et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2><i class="far fa-images"></i> Képgaléria</h2></div>
+</div><div class="et_pb_button_module_wrapper et_pb_button_36_wrapper et_pb_button_alignment_center et_pb_module">
+<a class="et_pb_button et_pb_button_36 et_pb_bg_layout_light" data-icon="I" data-review-original-href="https://www.szakrendelo16.hu/kepgaleria/" href="#" tabindex="-1">Tekintse meg szakrendelőnket</a>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_21 et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</article>
+</div>
+<footer class="et-l et-l--footer">
+<div class="et_builder_inner_content et_pb_gutters3">
+<div class="et_pb_with_border et_pb_section et_pb_section_0_tb_footer footerrendelesek et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_0_tb_footer et_pb_gutters2">
+<div class="et_pb_column et_pb_column_1_4 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Szakrendelések</h2>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/addiktologia/" href="#" tabindex="-1">Addiktológia</a> </p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/belgyogyaszat/" href="#" tabindex="-1">Belgyógyászat-Angiológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/borgyogyaszat/" href="#" tabindex="-1">Bőrgyógyászat</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/diabetologia/" href="#" tabindex="-1">Diabetológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/endokrinologia/" href="#" tabindex="-1">Endokrinológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/ersebeszet/" href="#" tabindex="-1">Érsebészet</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/ful-orr-gegegyogyaszat/" href="#" tabindex="-1">Fül-orr-gégegyógyászat</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/gyermek-fogorvosi-szolgalat-5/" href="#" tabindex="-1">Fogszabályozás</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/gasztroenterologia/" href="#" tabindex="-1">Gasztroenterológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/gyermek-fogorvosi-szolgalat-5/" href="#" tabindex="-1">Gyermek fogorvosi szolgálat</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/kardiologia-szakrendeles/" href="#" tabindex="-1">Kardiológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/kepalkoto-diagnosztika/" href="#" tabindex="-1">Képalkotó diagnosztika</a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Szakrendelések</h2>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/laboratorium/" href="#" tabindex="-1">Laboratórium</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/kepalkoto-diagnosztika/" href="#" tabindex="-1">Mammográfia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/neurologia/" href="#" tabindex="-1">Neurológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/nogyogyaszat/" href="#" tabindex="-1">Nőgyógyászat</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/onkologia/" href="#" tabindex="-1">Onkológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/ortopedia/" href="#" tabindex="-1">Ortopédia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/pszichiatria/" href="#" tabindex="-1">Pszichiátria</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/reumatologia/" href="#" tabindex="-1">Reumatológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/sebeszet/" href="#" tabindex="-1">Sebészet</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/szemeszet/" href="#" tabindex="-1">Szemészet</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/tudogyogyaszat/" href="#" tabindex="-1">Tüdőgyógyászat</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/urologia/" href="#" tabindex="-1">Urológia</a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_2_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Egyéb szolgáltatások</h2>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/csontsuruseg-meres/" href="#" tabindex="-1">Csontsűrűség mérés</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/dietas-tanacsadas/" href="#" tabindex="-1">Diétás tanácsadás</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/egynapos-sebeszet/" href="#" tabindex="-1">Egynapos sebészet</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/fizikoterapia/" href="#" tabindex="-1">Fizikoterápia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/foglalkozas-egeszsegugy/" href="#" tabindex="-1">Foglalkozás-egészségügy</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/gyogytorna/" href="#" tabindex="-1">Gyógytorna</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/fizikoterapia/" href="#" tabindex="-1">Gyógymasszázs</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/pszichologia/" href="#" tabindex="-1">Pszichológia</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/tudoszures/" href="#" tabindex="-1">Tüdőszűrés</a></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_3_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h2>Fontos információk</h2>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/impresszum/" href="#" tabindex="-1">Impresszum</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/adatvedelmi-iranyelvek/" href="#" tabindex="-1">Adatvédelmi nyilatkozat</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/wp-content/uploads/2019/04/Betegt%C3%A1j%C3%A9koztat%C3%B3_20190314.pdf" href="#" tabindex="-1">Betegtájékoztató</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/wp-content/uploads/2019/04/2.-sz%C3%A1m%C3%BA-mell%C3%A9klet.pdf" href="#" tabindex="-1">Személyes adatai kezeléséről bővebben a linkre kattintva tájékozódhat</a></p>
+<p><a data-review-original-href="https://www.szakrendelo16.hu/akadalymenetesitesi-nyilatkozat/" href="#" tabindex="-1">Akadálymenetesítési nyilatkozat</a></p>
+<p><a data-review-original-href="https://e-egeszsegugy.gov.hu/lakossagi-szolgaltatasok" href="#" rel="noopener" tabindex="-1" target="_blank">EESZT információk</a></p>
+<p><a data-review-original-href="https://www.eeszt.gov.hu/oldalvalaszto.jsp" href="#" rel="noopener" tabindex="-1" target="_blank">EESZT bejelentkezés</a></p></div>
+</div>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_1_tb_footer footerkapcsolat et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_1_tb_footer et_pb_gutters2">
+<div class="et_pb_column et_pb_column_1_3 et_pb_column_4_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_4_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h3>  Kapcsolat</h3>
+<p><span>Központi telefonszám: </span><strong>+36 1 401 1300<br/></strong><span>Betegir.: (Jókai u.):</span><strong><span> </span>+36 1 401 1355<br/></strong><span>Betegir.: (Hunyadvár u.): </span><strong>+36 1 407 8070<br/></strong><span>Betegir.: (Baross G. u.): </span><strong>+36 1 401 0437<br/></strong><span>vagy </span><strong><span> </span>+36 1 401 0435<br/></strong><span>Igazgatói titkárság: </span><strong>+36 1 401-1342<br/></strong><span>Gyógyászati bolt: </span><strong>+36 1 401-1343<br/></strong><span>Betegjogi képviselő:<br/></span><span>Lengyel Ingrid: </span><strong>+36-20-4899-609</strong></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_5_tb_footer et_pb_css_mix_blend_mode_passthrough">
+<div class="et_pb_module et_pb_text et_pb_text_5_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><h3><i class="far fa-envelope"></i>  Írjon nekünk</h3>
+<p><strong>kapcsolat[kukac]szakrendelo16.hu</strong></p>
+<p>Fenti e-mail címről nem kérhető <a data-review-original-href="https://www.szakrendelo16.hu/elojegyzesi-lehetosegek/" href="#" tabindex="-1">előjegyzési időpont,</a> illetve orvosszakmai kérdésekre sem áll módunkban válaszolni.</p>
+<p><span style="color: #a60000;"><strong>A háziorvosi szolgálat illetve a fogorvosi szolgálat vonatkozásában csak a honlapon feltüntetett információk állnak rendelkezésre.</strong></span></p></div>
+</div>
+</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_6_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_with_border et_pb_module et_pb_search et_pb_search_0_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
+<div data-review-disabled-form="true">
+<div>
+<label class="screen-reader-text" for="s">Keresés erre:</label>
+<input class="et_pb_s" name="s" placeholder="Keresés az oldalon" type="text"/>
+<input name="et_pb_searchform_submit" type="hidden" value="et_search_proccess"/>
+<input name="et_pb_include_posts" type="hidden" value="yes"/>
+<input name="et_pb_include_pages" type="hidden" value="yes"/>
+<input class="et_pb_searchsubmit" type="submit" value="Keresés"/>
+</div>
+</div>
+</div><div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span class="et_pb_image_wrap"><img alt="" class="wp-image-15626" decoding="async" height="202" loading="lazy" title="logo_2023" width="300"/></span>
+</div>
+</div>
+</div>
+</div><div class="et_pb_section et_pb_section_2_tb_footer et_pb_with_background et_section_regular">
+<div class="et_pb_row et_pb_row_2_tb_footer et_pb_gutters2">
+<div class="et_pb_column et_pb_column_4_4 et_pb_column_7_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
+<div class="et_pb_module et_pb_text et_pb_text_6_tb_footer et_pb_text_align_right et_pb_text_align_center-tablet et_pb_bg_layout_light">
+<div class="et_pb_text_inner"><p>© Copyright 2024. XVI. Kerület Kertvárosi Egészségügyi Szolgálata</p></div>
+</div><div class="et_pb_module et_pb_code et_pb_code_0_tb_footer">
+<div class="et_pb_code_inner">
+
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</footer>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a accesskey="s" class="pojo-skip-link pojo-skip-content" data-review-original-href="#content" href="#" id="pojo-a11y-skip-content" tabindex="-1">Tartalomhoz ugrás</a>
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="hu"><head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="%7B%22modulePrefix%22%3A%22qubit%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22history%22%2C%22EmberENV%22%3A%7B%22EXTEND_PROTOTYPES%22%3Afalse%2C%22FEATURES%22%3A%7B%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_NO_IMPLICIT_ROUTE_MODEL%22%3Atrue%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%2C%22_USE_EMBER_MODULES%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22qubit%22%2C%22version%22%3A%220.0.0%2B55e02581%22%7D%2C%22fastboot%22%3A%7B%22hostWhitelist%22%3A%5B%22qubit.hu%22%5D%7D%2C%22metricsAdapters%22%3A%5B%7B%22name%22%3A%22GoogleTagManager%22%2C%22environments%22%3A%5B%22production%22%5D%2C%22config%22%3A%7B%22id%22%3A%22GTM-TCFFBPJ%22%7D%7D%2C%7B%22name%22%3A%22Remp%22%2C%22environments%22%3A%5B%22production%22%5D%2C%22config%22%3A%7B%22scriptUrl%22%3A%22https%3A%2F%2Fcdn.pmd.444.hu%2Fassets%2Flib%2Fjs%2Fheartbeat.js%22%2C%22host%22%3A%22https%3A%2F%2Fheartbeat.pmd.444.hu%22%2C%22token%22%3A%2250e0c0c8-69c6-43ed-a56e-115950f3439a%22%7D%7D%5D%2C%22ENGINES%22%3A%5B%7B%22name%22%3A%22author--author%22%2C%22type%22%3A%22author%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22qubit%22%5D%7D%7D%2C%7B%22name%22%3A%22kereses--search%22%2C%22type%22%3A%22search%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22qubit%22%5D%7D%7D%2C%7B%22name%22%3A%22--reader%22%2C%22type%22%3A%22reader%22%2C%22config%22%3A%7B%22buckets%22%3A%5B%22qubit%22%5D%7D%7D%5D%7D" name="qubit/config/environment"/>
+ <meta content="" name="ember-head-start"/>
+<meta content="Steffi Graph" name="author"/>
+<meta content="társadalom,egészségügy,orvoslás,egészség,gyermekorvos,orvos,magyarország,2025,társadalom,háziorvos,hiány,orvoshiány" name="keywords"/>
+<meta content="társadalom,egészségügy,orvoslás,egészség,gyermekorvos,orvos,magyarország,2025,társadalom,háziorvos,hiány,orvoshiány" name="news_keywords"/>
+<meta content="társadalom,egészségügy,orvoslás,egészség,gyermekorvos,orvos,magyarország,2025,társadalom,háziorvos,hiány,orvoshiány" itemprop="keywords"/>
+<meta content="summary_large_image" name="twitter:card"/>
+
+<meta content="https://qubit.hu/2025/02/21/mar-kozel-900-ezer-magyarnak-nincs-sajat-haziorvosa" property="og:url"/>
+<meta content="https://qubit.hu/2025/02/21/mar-kozel-900-ezer-magyarnak-nincs-sajat-haziorvosa" property="twitter:url"/>
+<meta content="Qubit" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="hu" property="og:locale"/>
+<title>Már közel 900 ezer magyarnak nincs saját háziorvosa</title>
+<meta content="Már közel 900 ezer magyarnak nincs saját háziorvosa" name="title"/>
+<meta content="Már közel 900 ezer magyarnak nincs saját háziorvosa" property="og:title"/>
+<meta content="Már közel 900 ezer magyarnak nincs saját háziorvosa" name="twitter:title"/>
+<meta content="A pénteken bemutatott, Társadalmi Riport 2024 című tanulmánykötetből az is kiderül, hogy 2010 óta nyolcszorosára nőtt a betöltetlen felnőtt háziorvosi, míg tízszeresére a betöltetlen gyermekorvosi praxisok száma, a háziorvosok medián életkora pedig már 61 év." name="description"/>
+<meta content="A pénteken bemutatott, Társadalmi Riport 2024 című tanulmánykötetből az is kiderül, hogy 2010 óta nyolcszorosára nőtt a betöltetlen felnőtt háziorvosi, míg tízszeresére a betöltetlen gyermekorvosi praxisok száma, a háziorvosok medián életkora pedig már 61 év." property="og:description"/>
+<meta content="A pénteken bemutatott, Társadalmi Riport 2024 című tanulmánykötetből az is kiderül, hogy 2010 óta nyolcszorosára nőtt a betöltetlen felnőtt háziorvosi, míg tízszeresére a betöltetlen gyermekorvosi praxisok száma, a háziorvosok medián életkora pedig már 61 év." name="twitter:description"/>
+<meta content="https://assets.4cdn.hu/kraken/7Xtk78fq51cO1PMvYs-lg.jpeg" property="og:image"/>
+<meta content="https://assets.4cdn.hu/kraken/7Xtk78fq51cO1PMvYs-lg.jpeg" name="twitter:image"/>
+<meta content="max-image-preview:large" name="robots"/>
+
+<meta content="2025-02-21T15:59:08+01:00" property="article:published_time"/>
+
+
+
+
+
+
+<meta content="" name="ember-head-end"/>
+<meta content="%7B%22modulePrefix%22%3A%22author%22%2C%22environment%22%3A%22production%22%7D" name="author/config/environment"/>
+
+<meta content="%7B%22modulePrefix%22%3A%22reader%22%2C%22environment%22%3A%22production%22%7D" name="reader/config/environment"/>
+<meta content="%7B%22modulePrefix%22%3A%22search%22%2C%22environment%22%3A%22production%22%7D" name="search/config/environment"/>
+<meta content="%GENERATED_ASSET_MANIFEST%" name="qubit/config/asset-manifest"/>
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+
+<div class="pdvp3x1 mno1hz0 _6lpnrc0 _1td35270 j1lo7h0 yxqj9c0 b2lkpx0 _9n4fd60 _16fti8f0 _1ckyqtu0 _1meo7bg0 _46z0ba0 nif08r0 jc5csr1 _8b6bxc9 _1dy6oyqid _15v9r4j0">
+
+
+
+<div class="wsxqsd0 _1chu0ywg p4kpu33i p4kpu38y">
+<div class="ehcymf0" id="ap-qubit-site-header-top"></div>
+<div></div>
+<header class="_17mn3jz4 _17mn3jz2 ta3a4cs0 ta3a4cwh _1chu0ywm _1chu0yw16 _1chu0ywg ta3a4c106 ta3a4c1j1 p4kpu31k p4kpu38y _1adv1h53 _1adv1h5h _8b6bx4h _1dy6oyqal">
+
+<span class="_17mn3jz7 ta3a4csl ta3a4cx2 _1dy6oyq17 _1chu0yw12">
+<a class="uwwrama uwwramg ta3a4c1i9 _1chu0ywf" data-review-original-href="/" href="#" rel="noopener" tabindex="-1">
+<svg style="height: inherit;" viewbox="0 0 115 44" xmlns="http://www.w3.org/2000/svg">
+<use fill="currentColor" href="/assets/logo-qubit.svg#logo"></use>
+</svg>
+</a>
+</span>
+<div class="_1chu0ywh p4kpu30 p4kpu377 _1dy6oyqb5">
+<div class="_1chu0ywg p4kpu31k">
+<div class="ehcymf0" id="ap-qubit-header-001"></div>
+<div class="ehcymf0" id="ap-qubit-header-002"></div>
+<div class="ehcymf0" id="ap-qubit-header-003"></div>
+<div class="ehcymf0" id="ap-qubit-header-004"></div>
+</div>
+
+ </div>
+</header>
+
+<div class="_1chu0ywg ta3a4c106 ta3a4c1fj _8b6bx8d">
+</div>
+<div class="_1chu0ywg p4kpu37z ta3a4c106">
+<div class="_1nu3jby1 _1nu3jby2 _1chu0yws _1chu0ywx ta3a4cjn ta3a4co4 ta3a4ct6 ta3a4cxn _1chu0ywg p4kpu34a p4kpu3d8">
+<a class="uwwrama _1nu3jby3 _1dy6oyq4x _1dy6oyq1l _1dy6oyq5v" data-review-original-href="https://qubit.hu/qplusz" href="#" rel="noopener" tabindex="-1">
+              A Qubit+ tartalmai
+            </a>
+<a class="uwwrama _1nu3jby3 _1dy6oyq4x _1dy6oyq1l _1dy6oyq5v" data-review-original-href="https://qubit.hu/2026/07/09/a-civilek-nelkul-viz-nelkul-maradna-a-fokozottan-vedett-homokhatsagi-laperdo" href="#" rel="noopener" tabindex="-1">
+              Dabasi vízőrzők
+            </a>
+<a class="uwwrama _1nu3jby3 _1dy6oyq4x _1dy6oyq1l _1dy6oyq5v" data-review-original-href="https://qubit.hu/2026/07/05/gaspar-most-ballagott-el-az-altalanosbol-de-mar-kutatokent-utazik-egy-rangos-san-francisco-i-ai-konferenciara" href="#" rel="noopener" tabindex="-1">
+              15 éves kecskeméti AI-tudós
+            </a>
+<a class="uwwrama _1nu3jby3 _1dy6oyq4x _1dy6oyq1l _1dy6oyq5v" data-review-original-href="https://qubit.hu/2026/07/09/nekunk-mohacs-kell-de-terepasztalon" href="#" rel="noopener" tabindex="-1">
+              Nekünk Mohács kell!
+            </a>
+<a class="uwwrama _1nu3jby3 _1dy6oyq4x _1dy6oyq1l _1dy6oyq5v" data-review-original-href="https://qubit.hu/2026/07/08/miert-fontosak-az-allatkiserletek-meg-a-21-szazadban-is" href="#" rel="noopener" tabindex="-1">
+              Állatkísérleti dilemmák
+            </a>
+<a class="uwwrama _1nu3jby3 _1dy6oyq4x _1dy6oyq1l _1dy6oyq5v" data-review-original-href="https://qubit.hu/2026/07/08/az-evrol-evre-sulyosabb-aszalyok-nem-ertek-el-az-orban-kormanyok-ingerkuszobet-de-a-tisza-sem-valtott-meg-paradigmat-a-vizgazdalkodasban" href="#" rel="noopener" tabindex="-1">
+              Aszály és politika
+            </a>
+<a class="uwwrama _1nu3jby3 _1dy6oyq4x _1dy6oyq1l _1dy6oyq5v" data-review-original-href="https://qubit.hu/2026/07/07/nagy-budossegi-verseny-kiprobaltuk-meddig-tart-a-96-oras-dezodor-hatasa" href="#" rel="noopener" tabindex="-1">
+              Nagy Büdösségi Verseny
+            </a>
+</div>
+</div>
+<div class="_1chu0ywg ta3a4c106 ta3a4c1fj _8b6bx8d">
+</div>
+<div class="ta3a4ckm ta3a4cp3 p4kpu35g">
+<article>
+<div class="_2tnqk35 _1chu0ywh p4kpu3e p4kpu3i3">
+<div class="ehcymf0 slotHeader" id="ap-page-header"></div>
+<h1 class="_1dy6oyqm _1dy6oyq9 _1chu0yw9 _2tnqk3f">
+          Már közel 900 ezer magyarnak nincs saját háziorvosa
+        </h1>
+<div class="_1chu0yw9 _2tnqk3d p4kpu3dm p4kpu3i3 _1chu0ywg p4kpu34h p4kpu31k">
+<div class="_1k2zpzi2 p4kpu3cn p4kpu3h4 _1chu0ywg p4kpu33w p4kpu34h p4kpu31k _1dy6oyq2k">
+<div class="_1chu0ywg">
+<div class="_1wsp8zg4 _1chu0ywu _1chu0ywz _1chu0ywk _8b6bx51 _1dy6oyqb5 _1chu0ywt _1chu0ywy _1wsp8zg2 _1k2zpzi4" style="--_1wsp8zg0:64" title="Steffi Graph">
+<img alt="" class="ta3a4c106 ta3a4c1fc _1chu0ywo" loading="lazy"/>
+</div>
+</div>
+<div>
+<div class="_1chu0ywg p4kpu34h p4kpu3c2">
+<span class="_1chu0ywk">
+<a class="_1dy6oyq5b _1dy6oyq5o" data-review-original-href="/author/stefigraf" href="#" tabindex="-1">Steffi Graph</a>
+
+</span>
+</div>
+<div class="_1k2zpzi9">
+                2025. február 21.
+              </div>
+<a class="_1dy6oyq5b _1dy6oyq5o _1dy6oyq4k" data-review-original-href="/category/tarsadalom" href="#" tabindex="-1">társadalom</a>
+</div>
+</div>
+<div class="_1k2zpzia p4kpu3cu p4kpu3hb _1chu0ywg p4kpu35g p4kpu38y">
+<div class="_1n6u2803 _1chu0ywe">
+<div class="_1n6u2804 _1chu0ywk">
+<button class="_1oiqrbrt p4kpu3c9 p4kpu3gq _1chu0yw6 _1chu0ywl ta3a4c1i2 p4kpu377 p4kpu31k p4kpu37z _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _1oiqrbr0 uwwram3 uwwramj _18ssces1 _18ssces5 _18ssces15 _18ssces7n _18sscesh3 _1dy6oyq5v _1dy6oyqam _1dy6oyqk2 diq4x0 _1oiqrbr6 _7oso933 _1chu0yw14 ta3a4css ta3a4cxn" type="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x" data-icon="share" style="--_15pnudm0:18;--_15pnudm2:0">
+</span>
+
+
+          Megosztás
+
+  </button>
+</div>
+
+<div class="_1n6u2805 _1chu0yw13 _1n6u2806 _1n6u2808 _1n6u280a" popover="auto">
+
+<div class="_25g4rm3 ta3a4cj2 ta3a4cnj _1chu0ywh p4kpu37l _1chu0ywu _8b6bx65 diq4xa _1chu0ywt _1chu0ywy _25g4rm1">
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="content_copy" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Link másolása
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_facebook" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Facebook
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_x" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            X (Twitter)
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_tumblr" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Tumblr
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_linkedin" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            LinkedIn
+
+    </span>
+ </button>
+</div>
+</div>
+</div>
+ </div>
+</div>
+<div class="_2tnqk35 _1chu0ywh p4kpu3e slotArticle _1chu0yw9 _2tnqk3h">
+<div class="ehcymf0 _1chu0yw9 _2tnqk3d" id="ap-qubit-article-top-001"></div>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    2010 januárjától 2024 júliusáig összesen 5,8-szorosára nőtt a betöltetlen háziorvosi praxisok száma Magyarországon. Ez az adat 8,3-szoros növekedést mutat a felnőtt háziorvosi praxisok esetén és még ennél is drámaibb, 10,9-szeres változást a házi gyermekorvosi praxisok terén, ráadásul a háziorvosi korfa elöregedése miatt a jövőben a háziorvoshiány borítékolhatóan tovább mélyül.
+  </p>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    Ez derül ki a TÁRKI kutatóintézet február 21-én bemutatott, Társadalmi Riport 2024 című tanulmánykötetéből, amelynek egyik fejezetében Kincses Gyula, a Magyar Orvosi Kamara korábbi elnöke elemezte az egészségügyi alapellátás helyzetét és lehetőségeit.
+  </p>
+<figure class="aupy7p0 _1chu0ywu _1chu0ywz ta3a4c8y ta3a4cdf _1chu0yw6 ta3a4c1aa _1dy6oyq4e _1k2zpzic _1chu0yw9 _2tnqk3d _1chu0yw9 _2tnqk3f _4ki5rp0 _4ki5rp1">
+<a class="uwwrama _1chu0ywg _8b6bx65" data-review-original-href="https://assets.4cdn.hu/kraken/89zWUBKbbucw1Kf1Kfs.jpeg" href="#" rel="nofollow" tabindex="-1">
+<img alt="" class="wwed4qd _1chu0ywo ta3a4c1ey ta3a4c1aa aupy7p4 ta3a4c1ey ta3a4czs" loading="lazy" sizes="auto" style="--wwed4q6:1.00;--wwed4q5:2560px 2560px"/>
+</a>
+<figcaption class="aupy7p6 ta3a4c1d _1dy6oyqb5">
+ <div class="aupy7p8 _1dy6oyq2r">
+              Grafika:
+                Qubit
+            </div>
+</figcaption>
+</figure>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    „Szakmai körökben ismert állítás, hogy egy adott ország egészségi állapotát populációs szinten nem az határozza meg, hogy hány szívsebészeti centrum van vagy hány szív-tüdő transzplantációt végeznek az országban, hanem az, hogy a lakosságközeli ellátások elég fejlettek-e, illetve általánosan elérhetők-e annak érdekében, hogy a költséges high-tech ellátásokra kevesebb embernek legyen szüksége” – írja Kincses.
+  </p>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    A háziorvosi rendszer bemutatásakor kifejtette, hogy egy felívelő szakasz után az elmúlt 10 évben egyre több problémával küzd, és mára a közbeszédet is elérte a rendszer fenntarthatatlanságának híre. 1992 után a praxisok száma növekedésnek indult, de a 2000-es évektől ez a tendencia megfordult, és 2015 után a háziorvosok számának csökkenése felgyorsult. A KSH adatai alapján 2023-ban mindössze 5604 háziorvos dolgozott Magyarországon, míg 1990-ben ez a szám 5957-et tett ki. Ebben mindkét esetben benne vannak a házi gyermekorvosok és felnőtt háziorvosok is.
+  </p>
+<figure class="aupy7p0 _1chu0ywu _1chu0ywz ta3a4c8y ta3a4cdf _1chu0yw6 ta3a4c1aa _1dy6oyq4e _1k2zpzic _1chu0yw9 _2tnqk3d _1chu0yw9 _2tnqk3f _4ki5rp0 _4ki5rp1">
+<a class="uwwrama _1chu0ywg _8b6bx65" data-review-original-href="https://assets.4cdn.hu/kraken/89zWV2zXYftp1Kf1Kfs.jpeg" href="#" rel="nofollow" tabindex="-1">
+<img alt="" class="wwed4qd _1chu0ywo ta3a4c1ey ta3a4c1aa aupy7p4 ta3a4c1ey ta3a4czs" loading="lazy" sizes="auto" style="--wwed4q6:1.00;--wwed4q5:2560px 2560px"/>
+</a>
+<figcaption class="aupy7p6 ta3a4c1d _1dy6oyqb5">
+ <div class="aupy7p8 _1dy6oyq2r">
+              Grafika:
+                Qubit
+            </div>
+</figcaption>
+</figure>
+<h2 class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp4">
+    Majdnem 900 ezer embernek nincs saját háziorvosa, pedig igény lenne rá
+  </h2>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    A TÁRKI tanulmánya szerint 2024 júliusában az engedélyezett háziorvosi praxisok 12,8 százaléka volt tartósan betöltetlen, és az összes betöltetlen praxisok száma 902, ami a praxisok 14 százalékát teszi ki. A betöltetlenségi arány praxistípusok szerint különböző. A felnőtt praxisok 8,7 százaléka, a gyermekorvosiak 20 százaléka, míg a vegyes praxisok 25 százaléka betöltetlen.
+  </p>
+<figure class="aupy7p0 _1chu0ywu _1chu0ywz ta3a4c8y ta3a4cdf _1chu0yw6 ta3a4c1aa _1dy6oyq4e _1k2zpzic _1chu0yw9 _2tnqk3d _1chu0yw9 _2tnqk3f _4ki5rp0 _4ki5rp1">
+<a class="uwwrama _1chu0ywg _8b6bx65" data-review-original-href="https://assets.4cdn.hu/kraken/89zWRfyVMg111Kf1Kfs.jpeg" href="#" rel="nofollow" tabindex="-1">
+<img alt="" class="wwed4qd _1chu0ywo ta3a4c1ey ta3a4c1aa aupy7p4 ta3a4c1ey ta3a4czs" loading="lazy" sizes="auto" style="--wwed4q6:1.00;--wwed4q5:2560px 2560px"/>
+</a>
+<figcaption class="aupy7p6 ta3a4c1d _1dy6oyqb5">
+ <div class="aupy7p8 _1dy6oyq2r">
+              Grafika:
+                Qubit
+            </div>
+</figcaption>
+</figure>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    A tanulmány megjegyzi, hogy a NEAK adatai alapján betöltetlen 902 praxis ellátási területéhez 1 245 256 lakos tartozik. Ez azonban nem jelenti azt, hogy 1,25 millió embernek nincs háziorvosa, mert az ellátatlan területeken lakók egy része átjelentkezett egy másik, közeli betöltött praxisba. Így összesen 895 333 lakosnak nincs saját háziorvosa, azaz ennyien tartoznak helyettessel ellátott praxishoz. Bár ezekben a praxisokban is van ellátás, ez nem egységes minőségű, sok esetben bizonytalan helyettesítéssel.
+  </p>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    A 902 betöltetlen praxist 779 praxistulajdonos orvos látja el helyettesítéssel. Mivel azonban a háziorvosi pálya iránt alacsony az érdeklődés, egyre kevesebb az új belépő, miközben a háziorvosok egyre jobban elöregednek, így ebben az aggasztó helyzetben kódolva van a közeljövőben a további romlás. Kincses megjegyzi, a helyzetet tovább rontja az, hogy a finanszírozási ösztönzők miatt ma – a betegeket kivéve – mind a háziorvosoknak, mind az önkormányzatoknak pénzügyi érdeke az, hogy a praxisok tartósan betöltetlenek maradjanak, ugyanis a helyettesítéssel fenntartott praxis után a NEAK többet fizet, mintha az üres praxist más, működő praxishoz csatolnák.
+  </p>
+<h2 class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp4">
+    Nógrád és Tolna vármegyék lakosai jártak a legrosszabbul
+  </h2>
+<figure class="aupy7p0 _1chu0ywu _1chu0ywz ta3a4c8y ta3a4cdf _1chu0yw6 ta3a4c1aa _1dy6oyq4e _1k2zpzic _1chu0yw9 _2tnqk3d _1chu0yw9 _2tnqk3f _4ki5rp0 _4ki5rp1">
+<a class="uwwrama _1chu0ywg _8b6bx65" data-review-original-href="https://assets.4cdn.hu/kraken/89zWTN5BSSgs1Kf1Kfs.jpeg" href="#" rel="nofollow" tabindex="-1">
+<img alt="" class="wwed4qd _1chu0ywo ta3a4c1ey ta3a4c1aa aupy7p4 ta3a4c1ey ta3a4czs" loading="lazy" sizes="auto" style="--wwed4q6:1.00;--wwed4q5:2560px 2560px"/>
+</a>
+<figcaption class="aupy7p6 ta3a4c1d _1dy6oyqb5">
+ <div class="aupy7p8 _1dy6oyq2r">
+              Grafika:
+                Qubit
+            </div>
+</figcaption>
+</figure>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    A betöltetlen praxisok esetén ráadásul földrajzi egyenlőtlenség is tapasztalható. A TÁRKI jelentése kifejti, hogy az egyes megyékben a praxisok megüresedése miatt lakosságszám-arányosan nem egyformán válnak ellátatlanná a lakosok, és az adatok szerint a legrosszabbul Nógrád és Tolna vármegyék lakosai jártak. Alapvetően itt is érvényesül az a főszabály, amely szerint egy terület ellátottsága az orvosmegtartó képességétől – elsődlegesen a gazdasági fejlettségétől – függ, azzal a kitétellel, hogy azokban a megyékben, ahol orvostudományi egyetem működik, ott jelentősen kisebb az ellátási hiány.
+  </p>
+<h2 class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp4">
+    Egyre jobban elöregszik a háziorvosi kar
+  </h2>
+<figure class="aupy7p0 _1chu0ywu _1chu0ywz ta3a4c8y ta3a4cdf _1chu0yw6 ta3a4c1aa _1dy6oyq4e _1k2zpzic _1chu0yw9 _2tnqk3d _1chu0yw9 _2tnqk3f _4ki5rp0 _4ki5rp1">
+<a class="uwwrama _1chu0ywg _8b6bx65" data-review-original-href="https://assets.4cdn.hu/kraken/89zWSY1PlScb1Kf1Kfs.jpeg" href="#" rel="nofollow" tabindex="-1">
+<img alt="" class="wwed4qd _1chu0ywo ta3a4c1ey ta3a4c1aa aupy7p4 ta3a4c1ey ta3a4czs" loading="lazy" sizes="auto" style="--wwed4q6:1.00;--wwed4q5:2560px 2560px"/>
+</a>
+<figcaption class="aupy7p6 ta3a4c1d _1dy6oyqb5">
+ <div class="aupy7p8 _1dy6oyq2r">
+              Grafika:
+                Qubit
+            </div>
+</figcaption>
+</figure>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+    A tanulmány szerint a NEAK adatai egyértelműen mutatják a háziorvosi kar elöregedését. A medián életkor 61 év, és 184-gyel több 60 évesnél idősebb vezet praxist, mint 60 év alatti. A legsúlyosabb a házi gyermekorvosok helyzete, ahol 63 év a medián életkor. Míg összesen csak 126 fő 35 évesnél fiatalabb háziorvos szerepel ebben az adatbázisban, addig a 70 év felettiek száma 980.
+  </p>
+<p class="_1k2zpzic _1chu0yw9 _2tnqk3d _4ki5rp0 _4ki5rp1">
+<i>Kapcsolódó cikkek a Qubiten:</i>
+</p>
+<figure class="_1k2zpzic _1chu0yw9 _2tnqk3d _1chu0yw9 _2tnqk3f">
+<article class="_1chu0ywg p4kpu3dm">
+<a data-review-original-href="/2025/02/13/magyarorszagon-a-legmagasabb-a-rak-miatti-halalozasok-aranya-az-eu-ban" href="#" tabindex="-1" title="Magyarországon a legmagasabb a rák miatti halálozások aránya az EU-ban">
+<img alt="Magyarországon a legmagasabb a rák miatti halálozások aránya az EU-ban" class="wwed4qd _1chu0ywo ta3a4c1ey ta3a4c1aa _8pam4d1 ta3a4c1ke ta3a4c1fc" loading="lazy" sizes="auto" style="--wwed4q6:3/2;--wwed4q5:2560px 1707px"/>
+</a>
+<div class="ta3a4c106">
+<h1 class="_1dy6oyqm">
+<a data-review-original-href="/2025/02/13/magyarorszagon-a-legmagasabb-a-rak-miatti-halalozasok-aranya-az-eu-ban" href="#" tabindex="-1" title="Magyarországon a legmagasabb a rák miatti halálozások aránya az EU-ban">
+            Magyarországon a legmagasabb a rák miatti halálozások aránya az EU-ban
+          </a>
+</h1>
+<div class="ktf4w40 _1chu0ywg p4kpu34h ta3a4c16">
+<span>
+<a class="_1dy6oyq4x _1dy6oyq5b _1dy6oyq5o" data-review-original-href="/author/stefigraf" href="#" tabindex="-1">Steffi Graph</a> </span>
+<span class="_1chu0ywk _1dy6oyq4k">
+<a class="_1dy6oyq4x _1dy6oyq5b _1dy6oyq5o" data-review-original-href="/category/egeszsegugy" href="#" tabindex="-1">Egészségügy</a>
+</span>
+<span class="ktf4w43">
+      2025. február 13.
+    </span>
+</div>
+<p class="ta3a4c1r _1dy6oyq3q">
+          A magyarok túlsúlyosak, sokat isznak és dohányoznak, keveset mozognak, kevés zöldséget esznek és egyre ritkábban járnak szűrővizsgálatokra – derül ki az Európai Bizottság által február elején közzétett, Magyarországra vonatkozó rákügyi országprofil-jelentésből.
+      </p>
+</div>
+</article>
+ </figure>
+<figure class="_1k2zpzic _1chu0yw9 _2tnqk3d _1chu0yw9 _2tnqk3f">
+<article class="_1chu0ywg p4kpu3dm">
+<a data-review-original-href="/2024/11/28/a-magyarok-jarnak-a-legtobbet-orvoshoz-europaban-megsem-latszik-meg-az-egeszsegukon" href="#" tabindex="-1" title="A magyarok járnak a legtöbbet orvoshoz Európában, mégsem látszik meg az egészségükön">
+<img alt="A magyarok járnak a legtöbbet orvoshoz Európában, mégsem látszik meg az egészségükön" class="wwed4qd _1chu0ywo ta3a4c1ey ta3a4c1aa _8pam4d1 ta3a4c1ke ta3a4c1fc" loading="lazy" sizes="auto" style="--wwed4q6:3/2;--wwed4q5:2560px 1707px"/>
+</a>
+<div class="ta3a4c106">
+<h1 class="_1dy6oyqm">
+<a data-review-original-href="/2024/11/28/a-magyarok-jarnak-a-legtobbet-orvoshoz-europaban-megsem-latszik-meg-az-egeszsegukon" href="#" tabindex="-1" title="A magyarok járnak a legtöbbet orvoshoz Európában, mégsem látszik meg az egészségükön">
+<svg fill="none" role="presentation" style="height: 0.75em;" viewbox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+<circle cx="48" cy="48" fill="var(--bg-color, #C4A5F3)" r="48"></circle>
+<path d="M18.0449 39.4675H37.5955V18.406H58.4042V39.4675H77.9547V56.0263H58.4042V77.2331H37.5955V56.0263H18.0449V39.4675Z" fill="var(--fg-color, #1F003D)"></path>
+</svg>
+
+            A magyarok járnak a legtöbbet orvoshoz Európában, mégsem látszik meg az egészségükön
+          </a>
+</h1>
+<div class="ktf4w40 _1chu0ywg p4kpu34h ta3a4c16">
+<span>
+<a class="_1dy6oyq4x _1dy6oyq5b _1dy6oyq5o" data-review-original-href="/author/stefigraf" href="#" tabindex="-1">Steffi Graph</a> </span>
+<span class="_1chu0ywk _1dy6oyq4k">
+<a class="_1dy6oyq4x _1dy6oyq5b _1dy6oyq5o" data-review-original-href="/category/tudomany" href="#" tabindex="-1">tudomány</a>
+</span>
+<span class="ktf4w43">
+      2024. november 28.
+    </span>
+</div>
+<p class="ta3a4c1r _1dy6oyq3q">
+          Az OECD friss egészségügyi jelentése szerint Magyarország évek óta vezeti a rákhalálozás listáját, magas az öngyilkossági ráta és az egészséges életéveink is mindössze néhány hónappal növekedtek 2000 óta.
+      </p>
+</div>
+</article>
+ </figure>
+<div class="ehcymf0 _1k2zpzic _1chu0yw9 _2tnqk3d" id="ap-qubit-pr-box-donation"></div>
+<div class="ehcymf0 _1chu0yw9 _2tnqk3d" id="ap-qubit-article-bottom-001"></div>
+</div>
+
+<footer class="_1chu0ywg p4kpu33i p4kpu3i3 _1chu0yw9 _2tnqk3d">
+<div class="_1chu0ywg p4kpu34h p4kpu3c9 p4kpu3hb">
+
+
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/egeszsegugy" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    egészségügy
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/orvoslas" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    orvoslás
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/egeszseg" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    egészség
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/gyermekorvos" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    gyermekorvos
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/orvos" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    orvos
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/magyarorszag" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    magyarország
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/2025" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    2025
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/tarsadalom" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    társadalom
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/haziorvos" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    háziorvos
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/hiany" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    hiány
+
+
+    </span>
+ </a>
+<a class="_189c837e _189c8375 _1chu0yw6 _1chu0ywl ta3a4c1ho p4kpu377 p4kpu3c9 p4kpu31k _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _189c8370 uwwram3 uwwramj _189c8373 _7oso933 _1chu0yw14 _189c837g _189c837i _189c837k _189c837m ta3a4cx9 _189c8378 diq4x0 _18ssces1 _18ssces5 _18ssces2 _18ssces15 _18ssces7n _18ssces7k _18sscesh3 _189c8379 _1dy6oyqam _1dy6oyqk2 ta3a4css _1dy6oyq4k" data-group="" data-review-original-href="/tag/orvoshiany" href="#" role="button" tabindex="-1">
+
+<span class="_1chu0ywu _1chu0ywz _1dy6oyq4g">
+
+
+    orvoshiány
+
+
+    </span>
+ </a>
+</div>
+<div class="_1k2zpzia p4kpu3cu p4kpu3hb _1chu0ywg p4kpu35g p4kpu38y">
+<div class="_1n6u2803 _1chu0ywe">
+<div class="_1n6u2804 _1chu0ywk">
+<button class="_1oiqrbrt p4kpu3c9 p4kpu3gq _1chu0yw6 _1chu0ywl ta3a4c1i2 p4kpu377 p4kpu31k p4kpu37z _1dy6oyq4x uwwrama _1dy6oyq1s _1chu0ywt _1chu0ywy _1oiqrbr0 uwwram3 uwwramj _18ssces1 _18ssces5 _18ssces15 _18ssces7n _18sscesh3 _1dy6oyq5v _1dy6oyqam _1dy6oyqk2 diq4x0 _1oiqrbr6 _7oso933 _1chu0yw14 ta3a4css ta3a4cxn" type="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x" data-icon="share" style="--_15pnudm0:18;--_15pnudm2:0">
+</span>
+
+
+          Megosztás
+
+  </button>
+</div>
+
+<div class="_1n6u2805 _1chu0yw13 _1n6u2806 _1n6u2808 _1n6u280a" popover="auto">
+
+<div class="_25g4rm3 ta3a4cj2 ta3a4cnj _1chu0ywh p4kpu37l _1chu0ywu _8b6bx65 diq4xa _1chu0ywt _1chu0ywy _25g4rm1">
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="content_copy" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Link másolása
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_facebook" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Facebook
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_x" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            X (Twitter)
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_tumblr" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            Tumblr
+
+    </span>
+ </button>
+<button class="_25g4rm9 _25g4rm4 ta3a4csl ta3a4cx2 _1chu0ywh p4kpu35n p4kpu377 ta3a4c1ig p4kpu31k uwwrama _1dy6oyq1s _1dy6oyqal _1dy6oyqk2 _25g4rm5 _7oso933 _1chu0yw14 uwwram3 uwwramj _25g4rmb" role="button">
+<span class="_15pnudm3 _1chu0ywj _1dy6oyq4j _1dy6oyq4x ta3a4cf6 _1dy6oyqb5" data-icon="logo_linkedin" role="presentation" style="--_15pnudm0:24;--_15pnudm2:0">
+</span>
+<span class="_25g4rmf _1chu0ywu _1dy6oyq4x">
+
+            LinkedIn
+
+    </span>
+ </button>
+</div>
+</div>
+</div>
+ </div>
+</footer>
+</div>
+</article>
+</div>
+<div class="_1chu0ywg ta3a4c106 ta3a4c1fj _8b6bx8d">
+</div>
+<footer class="_1chu0ywg p4kpu33i p4kpu3hb p4kpu31k _1dy6oyq1s">
+<div class="_1chu0ywg p4kpu31k p4kpu33w 0px ol80paa p4kpu37z ta3a4ck8 ta3a4cxn ta3a4cop ta3a4ct6 p4kpu34h">
+<a class="uwwrama ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="/impresszum" href="#" rel="noopener" tabindex="-1">
+        Impresszum
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="uwwrama ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="/szerzoi-jogok" href="#" rel="noopener" tabindex="-1">
+        Szerzői jogok
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="uwwrama ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="/adatvedelmi-nyilatkozat" href="#" rel="noopener" tabindex="-1">
+        Adatvédelmi nyilatkozat
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="" href="#" tabindex="-1">
+        Sütibeállítások
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="uwwrama ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="/mediaajanlat" href="#" rel="noopener" tabindex="-1">
+        Médiaajánlat
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="https://4cdn.hu/kraken/raw/upload/80zzaFFxL3rs.pdf" href="#" tabindex="-1">
+        Hirdetői ÁSZF
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="uwwrama ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="/tamogatasi-feltetelek" href="#" rel="noopener" tabindex="-1">
+        Támogatói ÁSZF
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="https://qubit.hu/feed" href="#" tabindex="-1">
+        RSS
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="uwwrama ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="/cikkiras" href="#" rel="noopener" tabindex="-1">
+        Szerzőinknek
+      </a>
+<span class="_5r2qd63 ta3a4cz ta3a4c5g ta3a4cab ta3a4ces"></span>
+<a class="ta3a4cj9 ta3a4cnq uwwrama _1dy6oyq4x" data-review-original-href="mailto:szerk@qubit.hu" href="#" tabindex="-1">
+        Írj nekünk
+      </a>
+</div>
+<div class="ta3a4c1hh">
+<svg style="height: inherit;" viewbox="0 0 115 44" xmlns="http://www.w3.org/2000/svg">
+<use fill="currentColor" href="/assets/logo-qubit.svg#logo"></use>
+</svg>
+</div>
+<div class="_1chu0ywg p4kpu31k p4kpu33w 0px ol80paa p4kpu37z ta3a4ck8 ta3a4cxn ta3a4cop ta3a4ct6 p4kpu34h">
+      ©
+      2026
+      Magyar Jeti Zrt.
+    </div>
+</footer>
+</div>
+
+</div>
+
+
+
+
+</body></html>
