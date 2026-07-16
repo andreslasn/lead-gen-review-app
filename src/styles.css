@@ -40,6 +40,14 @@
 }
 
 * { box-sizing: border-box; }
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+#app {
+  display: flow-root;
+}
 body {
   margin: 0;
   background: linear-gradient(180deg, var(--lake-20), #fff 38%);
@@ -77,9 +85,10 @@ kbd {
 .app-shell {
   width: min(1540px, calc(100% - 32px));
   height: calc(100vh - 20px);
+  height: calc(100dvh - 20px);
   margin: 10px auto;
-  display: grid;
-  grid-template-rows: auto auto 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -155,12 +164,16 @@ input, textarea {
 }
 
 .review-layout {
+  flex: 1 1 auto;
+  height: 100%;
   min-height: 0;
   display: grid;
   grid-template-columns: minmax(400px, 38%) minmax(0, 62%);
+  align-items: stretch;
   gap: 10px;
 }
 .decision-pane, .evidence-pane, .empty-state {
+  height: 100%;
   min-height: 0;
   overflow: hidden;
   border: 1px solid var(--concrete-100);
@@ -703,6 +716,7 @@ li span {
 @media (max-width: 1050px) {
   .app-shell {
     height: auto;
+    min-height: calc(100dvh - 20px);
   }
   .queue-bar {
     grid-template-columns: 1fr;
@@ -711,9 +725,12 @@ li span {
     justify-content: flex-start;
   }
   .review-layout {
+    flex: 0 0 auto;
+    height: auto;
     grid-template-columns: 1fr;
   }
   .decision-pane, .evidence-pane {
+    height: auto;
     overflow: visible;
   }
 }

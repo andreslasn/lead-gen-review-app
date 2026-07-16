@@ -111,24 +111,20 @@ function stateLabel(value) {
 
 function laneLabel(value) {
   return {
-    high_confidence: "High confidence",
-    low_confidence: "Low confidence",
+    needs_review: "Needs review",
     no_email: "No email",
     all: "All",
   }[value] || value;
 }
 
 function confidencePool(lane) {
-  if (["review", "auto_confirm"].includes(lane)) return "high_confidence";
-  if (lane === "auto_suppress") return "low_confidence";
-  return lane;
+  return lane === "no_email" ? "no_email" : "needs_review";
 }
 
 function normalizedLaneSelection(value) {
-  if (["review", "auto_confirm", "high_confidence"].includes(value)) return "high_confidence";
-  if (["auto_suppress", "low_confidence"].includes(value)) return "low_confidence";
+  if (["review", "auto_confirm", "auto_suppress", "high_confidence", "low_confidence", "needs_review"].includes(value)) return "needs_review";
   if (["no_email", "all"].includes(value)) return value;
-  return "high_confidence";
+  return "needs_review";
 }
 
 function candidateLane(item) {
@@ -160,7 +156,7 @@ function candidateLane(item) {
 }
 
 function lanePriority(lane) {
-  return { review: 4, auto_confirm: 3, no_email: 2, auto_suppress: 1 }[lane] || 0;
+  return { review: 4, auto_confirm: 3, auto_suppress: 2, no_email: 1 }[lane] || 0;
 }
 
 function escapeHtml(value) {
@@ -385,7 +381,7 @@ const App = {
       const needle = search.value.trim().toLowerCase();
       return preparedQueue.value
         .filter((item) => selectedLane.value === "all" || item.confidence_pool === selectedLane.value)
-        .filter((item) => item.status === "needs_review" || selectedLane.value === "all")
+        .filter((item) => !["confirmed", "no_email", "excluded"].includes(item.status) || selectedLane.value === "all")
         .filter((item) => {
           if (!needle) return true;
           return [
@@ -402,7 +398,7 @@ const App = {
         .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
     });
     const laneCounts = computed(() => {
-      const counts = { high_confidence: 0, low_confidence: 0, no_email: 0, all: preparedQueue.value.length };
+      const counts = { needs_review: 0, no_email: 0, all: preparedQueue.value.length };
       for (const item of preparedQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
       return counts;
     });
@@ -1234,7 +1230,7 @@ const App = {
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="lane-tabs">
-          <button v-for="lane in ['high_confidence','low_confidence','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['needs_review','no_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>

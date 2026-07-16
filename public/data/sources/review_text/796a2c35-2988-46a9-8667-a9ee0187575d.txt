@@ -1,0 +1,85 @@
+ImplantátumRegiszter
+·
+Köszöntő
+2026. július. 14., Kedd - 22
+:
+25
+-1
+Regisztráció
+Letölthető anyagok
+GY.I.K.
+Kapcsolat
+0
+Bejelentkezés
+Belépési név:
+Jelszó:
+Elfelejtett jelszó
+Tisztelt Felhasználók!
+Tájékoztatjuk Önöket, hogy 2024. június 20-tól a Központi Implantátumregiszterben az
+orvos szerepkörű felhasználók belépési pecsétszáma 6 karakterre módosul
+.
+A felületre történő belépés érdekében az 5 jegyű pecsétszámuk elé egy 0 (nulla) számjegyet szükséges írni (például: 12345 helyett 012345).
+Szíves együttműködésüket és megértésüket előre is köszönjük.
+EESZT magánszolgáltatói csatlakozás 2018.
+Az Elektronikus Egészségügyi Szolgáltatási Térrel kapcsolatos részletes szabályokról szóló 39/2016. (XII. 21.) EMMI rendelet 22. § (1) b) pontja, valamint az egészségügyi és a hozzájuk kapcsolódó személyes adatok kezeléséről és védelméről szóló 1997. évi XLVII. törvény 35/B. § (1) bekezdés a) pontja alapján a
+Központi Implantátumregiszterbe vagy a Nemzeti Protézis Regiszterbe adatszolgáltatásra kötelezett nem közfinanszírozott
+egészségügyi ellátást nyújtó egészségügyi szolgáltatóknak
+2018. november 1-jétől kötelező az EESZT használata.
+Tovább
+Felhívjuk figyelmét, hogy az EESZT-hez történő csatlakozás kizárólag akkreditált egészségügyi szoftverrel lehetséges. Javasoljuk, hogy érdeklődjön rendszerszállítójánál az akkreditáció meglétéről, és vegye fel a kapcsolatot az EESZT munkatársaival az alábbi linkre kattintva:
+Előzetes adatbekérés
+-
+https://e-egeszsegugy.gov.hu/elozetes-adatbekeres
+Amennyiben rendelkezik EESZT akkreditált medikai szoftverrel, az EESZT-hez történő csatlakozást az alábbi linken tudja megkezdeni:
+EESZT csatlakozás
+https://e-egeszsegugy.gov.hu/ekapu
+Az EESZT-hez történő 2018-as kötelező magánszolgáltatói csatlakozás nem jelenti a Központi Implantátumregiszterbe és a Nemzeti Protézis Regiszterbe történő adatszolgáltatás folyamatának változását,
+az adatszolgáltatás változatlan formában történik.
+A Központi Implantátumregiszterbe valamint a Nemzeti Protézis Regiszterbe történő adatszolgáltatási kötelezettség azonban együtt jár azzal, hogy a kapcsolódó ellátási eseményekről az EESZT részére szintén adatszolgáltatást kell teljesíteni:
+a Központi eseménykatalógus
+az Egészségügyi dokumentáció nyilvántartás
+szabályai szerint.
+Az EESZT-be történő kötelező adatszolgáltatás részleteiről itt talál részletesebb információkat:
+https://e-egeszsegugy.gov.hu/maganszolgaltatoi-csatlakozasi-kotelezettseg
+Amennyiben további kérdése merül fel, az Állami Egészségügyi Ellátó Központ kollégái az alábbi elérhetőségeken készséggel állnak rendelkezésére:
+Email: csatlakozas.eeszt@aeek.hu
+Telefon: +36 1 920 1050
+Tájékoztató a Központi Implantátumregiszter változásáról
+2015. január 15-től hatályos az orvostechnikai eszközökről szóló 4/2009 EüM rendelet 17. melléklete, amely szerint az A) listában felsorolt eszközöket nem kell regisztrálni a rendszerben, a B) listában felsorolt eszközöket pedig gyártási/sorozatszám nélkül kell regisztrálni. Kérjük ennek figyelembe vételével módosítsák gyakorlatukat. Tájékoztatjuk továbbá, hogy a műerek kategória a Központi Implantátumregiszter a VIII. főcsoportban a korábbi I18/0004 alcsoportra és a beletartozó alkategóriákra terjed ki (Graftok, benne 01501 Aorta stent-graftok, Perifériás graftok, Egyéb). Kérjük a még mindig regisztrálandó főcsoportok azonosítására tekintsék át a Letölthető anyagok/A tömeges importhoz szükséges import fájlok formátuma dokumentumot.
+Tisztelt Felhasználó! Üdvözöljük a Központi Implantátumregiszter honlapján!
+Kérjük, hogy olvassák el a tájékoztatóinkat, melyek a Letölthető anyagok menüpont alatt találhatóak.
+Tájékoztatjuk a Tisztelt Szolgáltatókat, hogy az egészségügyről szóló 1997. évi CLIV. törvény (Eü. tv.): 101/B és 101/C pontjai alapján az Implantátumregiszterrel kapcsolatban felmerülő esetleges kérdések és észrevételek kezelését az Országos Gyógyszerészeti és Élelmezés-egészségügyi Intézet végzi. (Postacím: 1051 Budapest, Zrínyi utca 3., e-mail:
+implantatum@ogyei.gov.hu
+)
+A Központi Implantátum regiszter célja
+Az Eü. tv. 101/C. § alapján a Központi Implantátumregiszter célja az implantátum beültetéséről, kivételéről és cseréjéről nyilvántartás vezetése a betegellátás biztonságosságának javítása érdekében.
+Jogszabályi háttér
+Az egyes egészségügyi és egészségbiztosítási tárgyú törvények módosításáról szóló 2013. évi CXXVII. törvény megteremtette a Központi Implantátumregiszter létrehozásának jogszabályi alapját.
+Az egészségügyről szóló 1997. évi CLIV. törvény 2014. január hó 1. napján hatályba lépő 101/C. § alapján az egészségügyi szolgáltató az implantátum beültetéséről, kivételéről és cseréjéről a Nemzeti Egészségbiztosítási Alapkezelő (NEAK) által működtetett informatikai felület alkalmazásával nyilvántartást köteles vezetni.
+A Központi Implantátumregiszterbe rögzítendő adatok
+A nyilvántartásban az
+alábbi adatokat szükséges rögzíteni:
+az egészségügyi és a hozzájuk kapcsolódó személyes adatok kezeléséről és védelméről szóló törvényben meghatározott személyazonosító adatok közül a beavatkozással érintett személy családi és utónevét, születési nevét, születési dátumát, anyja születési nevét, lakóhelyét vagy tartózkodási helyét, egyéb elérhetőségét,
+a beültetés, eltávolítás vagy csere időpontját,
+a beültetés, eltávolítás vagy csere okát,
+a beültetett vagy eltávolított implantátummal kapcsolatban
+az implantátum nevét, típusát, gyártási tételszámát - ha rendelkezésre áll – a sorozatszám megjelölésével,
+a gyártó nevét,
+a forgalmazó nevét, székhelyét, akitől az implantátumot az egészségügyi szolgáltató beszerezte,
+a beültetést végző orvos nevét, pecsétszámát,
+a beültetést végző egészségügyi szolgáltató nevét, működési engedélye számát.
+A nyilvántartásba a fenti adatokat legkésőbb a beavatkozással érintett személy egészségügyi szolgáltatótól
+történő elbocsátásának időpontjáig, vagy az egészségügyi szolgáltatások Egészségbiztosítási Alapból történő
+finanszírozásának részletes szabályairól szóló kormányrendeletben foglalt finanszírozási jelentéstétel napján kell
+felvinni.
+Az egészségügyi szolgáltató a fenti adatokat a NEAK által működtetett informatikai felület alkalmazásával, az adatfelvitellel egyidejűleg, elektronikusan továbbítja a Központi Implantátumregiszter részére.
+A kapcsolati kód fogalma
+Az egészségügyi és a hozzájuk kapcsolódó személyes adatok kezeléséről és védelméről szóló 1997. évi XLVII. törvény 2014. január hó 1. napján hatályba lépő 22/B. §-a értelmében, a Nemzeti Egészségbiztosítási Alapkezelő (NEAK) a Központi Implantátumregiszter részére történő adattovábbítást követően a személyazonosító adatok tekintetében kapcsolati kódot képez.
+A NEAK kapcsolati kódot az általa működtetett informatikai alkalmazás útján megküldi a nyilvántartást vezető egészségügyi szolgáltatónak. A kapcsolati kódot fel kell tüntetni az egészségügyi dokumentációban.
+A NEAK a Központi Implantátumregiszterben tárolt adatokról az egészségügyi szolgáltató részére a betegdokumentációban feltüntetett kapcsolati kódot tartalmazó kérelme esetén nyújt tájékoztatást az egészségügyi szolgáltató által kezelt személyen korábban végzett, implantátumot érintő beavatkozással kapcsolatban.
+Ellenőrzés
+Az egészségügyről szóló 1997. évi CLIV. törvény 101/B. § alapján az Országos Gyógyszerészeti és Élelmezés-egészségügyi Intézet (OGYÉI) ellenőrzi az egészségügyi szolgáltatók nyilvántartással kapcsolatos kötelezettségeinek teljesítését. A Központi Implantátumregiszterrel kapcsolatos hatósági feladatok ellátására az OGYÉI jogosult, így a nyilvántartási kötelezettségek megszegése esetén 50 000 forinttól 400 000 forintig terjedő pénzbírságot is kiszabhat.
+|
+TECHNIKAI ajánlás
+© 2017 NEAK
+DEBUG

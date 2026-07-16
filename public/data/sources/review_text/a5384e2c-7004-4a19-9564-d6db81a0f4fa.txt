@@ -1,0 +1,128 @@
+Menü
+Bemutatkozás
+Rendelési idők
+Hirdetmények
+Díjtételek
+Információk
+Általános információk
+Ügyelet, kórház
+Jogszabályok
+Reumatológia
+Kapcsolat
+Elérhetőségeink
+Erodium belépés
+Dr. Ferkó Attila
+Háziorvos, Salgótarján
+A rendeléseket színkódok azonosítják. A csíkozott rendelésekre már nincs foglalható szabad időpont. Új időpont foglalásához kattintson egy rendelésre!
+Háziorvosi ellátás
+Csak asszisztensi ellátás
+Prevenciós rendelés (
+csak foglalt időponttal!
+)
+Adminisztratív rendelés
+7:00
+9:00
+11:00
+13:00
+15:00
+2026-07-14
+Kedd
+2026-07-15
+Szerda
+2026-07-16
+Csütörtök
+2026-07-17
+Péntek
+2026-07-18
+Szombat
+2026-07-19
+Vasárnap
+2026-07-20
+Hétfő
+2026-07-21
+2026-07-22
+2026-07-23
+2026-07-24
+2026-07-25
+2026-07-26
+2026-07-27
+2026-07-28
+2026-07-29
+2026-07-30
+2026-07-31
+2026-08-01
+2026-08-02
+2026-08-03
+2026-08-04
+2026-08-05
+2026-08-06
+2026-08-07
+2026-08-08
+2026-08-09
+2026-08-10
+2026-08-11
+2026-08-12
+2026-07-14 Kedd
+09:00 - 13:00
+08:00 - 14:00
+Prevenciós rendelés
+09:00 - 10:00
+2026-07-15 Szerda
+- 9 szabad időpont
+- 11 szabad időpont
+- 3 szabad időpont
+2026-07-16 Csütörtök
+- 13 szabad időpont
+- 12 szabad időpont
+2026-07-17 Péntek
+2026-07-18 Szombat
+2026-07-19 Vasárnap
+2026-07-20 Hétfő
+09:00 - 11:00
+- 5 szabad időpont
+09:00 - 14:00
+- 15 szabad időpont
+08:00 - 09:00
+2026-07-21 Kedd
+13:00 - 15:00
+- 10 szabad időpont
+2026-07-22 Szerda
+10:00 - 11:00
+10:00 - 14:00
+2026-07-23 Csütörtök
+2026-07-24 Péntek
+2026-07-25 Szombat
+2026-07-26 Vasárnap
+2026-07-27 Hétfő
+2026-07-28 Kedd
+2026-07-29 Szerda
+2026-07-30 Csütörtök
+2026-07-31 Péntek
+2026-08-01 Szombat
+2026-08-02 Vasárnap
+2026-08-03 Hétfő
+2026-08-04 Kedd
+- 4 szabad időpont
+2026-08-05 Szerda
+2026-08-06 Csütörtök
+2026-08-07 Péntek
+2026-08-08 Szombat
+2026-08-09 Vasárnap
+2026-08-10 Hétfő
+2026-08-11 Kedd
+2026-08-12 Szerda
+Dr. Ferkó Attila György - Felnőtt Háziorvosi Praxis
+Mobil telefonszám:
++36-30-967-1058
+E-mail cím:
+ferko.attila@erodium.hu
+Weboldal:
+www.drferkoattila.hu
+Cím:
+3100 Salgótarján, Úttörők útja 3/A
+Telefon:
++36-32-783-335
+Copyright Dr. Ferkó Attila 2026.
+Az oldalt az
+Erodium Orvosi Betegirányító Rendszer
+működteti.
