@@ -209,6 +209,7 @@ const App = {
     const currentIndex = ref(0);
     const selectedCandidateIndex = ref(0);
     const evidenceTab = ref("snapshot");
+    const archiveFrame = ref(null);
     const saveStatus = ref("Loading");
     const error = ref("");
     const pendingReject = ref(false);
@@ -277,6 +278,57 @@ const App = {
     const snapshotTitle = computed(() => selectedEvidence.value?.title || selectedEvidence.value?.source_url || selectedCandidate.value?.source_url || "Cached evidence");
     const evidenceBody = computed(() => evidenceHtml(selectedEvidence.value, selectedCandidate.value?.evidence || ""));
 
+    function artifactUrl(path) {
+      if (!path) return null;
+      const clean = String(path).replace(/^\/+/, "");
+      return `data/${clean}`;
+    }
+
+    function focusedHtmlUrl(path, value) {
+      const url = artifactUrl(path);
+      if (!url) return null;
+      const needle = String(value || "").trim();
+      return needle ? `${url}#:~:text=${encodeURIComponent(needle)}` : url;
+    }
+
+    function focusArchivedEvidence(event) {
+      const frame = event?.target || archiveFrame.value;
+      const document = frame?.contentDocument;
+      const needle = String(selectedCandidate.value?.value || "").trim().toLowerCase();
+      if (!document || !needle) return;
+      for (const element of document.querySelectorAll("[class*='cookie' i], [id*='cookie' i], [class*='consent' i], [id*='consent' i]")) {
+        element.style.setProperty("display", "none", "important");
+      }
+      let target = [...document.querySelectorAll("a[href^='mailto:' i]")].find((element) =>
+        `${element.textContent || ""} ${element.getAttribute("href") || ""}`.toLowerCase().includes(needle)
+      );
+      if (!target) {
+        target = [...document.querySelectorAll("*")].find((element) =>
+          [...element.attributes].some((attribute) => String(attribute.value || "").toLowerCase().includes(needle))
+        );
+      }
+      if (!target && document.body) {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (String(node.nodeValue || "").toLowerCase().includes(needle)) {
+            target = node.parentElement;
+            break;
+          }
+        }
+      }
+      if (!target) return;
+      target.style.setProperty("background", "#fff36d", "important");
+      target.style.setProperty("color", "#111", "important");
+      target.style.setProperty("outline", "5px solid #ff2d7d", "important");
+      target.style.setProperty("outline-offset", "4px", "important");
+      const badge = document.createElement("div");
+      badge.textContent = `Email evidence: ${selectedCandidate.value?.value || ""}`;
+      badge.style.cssText = "display:block!important;margin:10px 0!important;padding:10px 12px!important;background:#ff2d7d!important;color:white!important;font:700 16px/1.25 sans-serif!important;border-radius:6px!important;";
+      target.insertAdjacentElement("afterend", badge);
+      requestAnimationFrame(() => target.scrollIntoView({ block: "center", inline: "nearest" }));
+    }
+
     async function init() {
       try {
         db.value = await openDb();
@@ -331,8 +383,8 @@ const App = {
       editMode.value = false;
       note.value = "";
       selectedCandidateIndex.value = 0;
-      evidenceTab.value = "snapshot";
       clinic.value = await loadClinic(item.id);
+      evidenceTab.value = selectedEvidence.value?.raw_html_path ? "archive" : "snapshot";
       editValue.value = selectedCandidate.value?.value || "";
       itemStartedAt.value = Date.now();
       if (updateHash) window.history.replaceState(null, "", `#/clinics/${encodeURIComponent(item.id)}`);
@@ -358,6 +410,7 @@ const App = {
       selectedCandidateIndex.value = clamp(index, 0, Math.max(candidates.value.length - 1, 0));
       editValue.value = selectedCandidate.value?.value || "";
       pendingReject.value = false;
+      evidenceTab.value = selectedEvidence.value?.raw_html_path ? "archive" : "snapshot";
       nextTick(scrollEvidenceToHighlight);
     }
 
@@ -647,6 +700,7 @@ const App = {
       selectedEvidence,
       evidenceBody,
       evidencePane,
+      archiveFrame,
       evidenceTab,
       snapshotTitle,
       currentClinicState,
@@ -663,6 +717,9 @@ const App = {
       candidateRoleLabel,
       candidateSourceLabel,
       candidateEvidenceCount,
+      artifactUrl,
+      focusedHtmlUrl,
+      focusArchivedEvidence,
       stateLabel,
       visibleBackupReminder,
       selectCandidate,
@@ -717,6 +774,14 @@ const App = {
             </div>
             <p v-else class="muted">No email candidate packaged for this clinic.</p>
             <p class="candidate-reason">{{ selectedCandidate?.reason || selectedCandidate?.evidence || 'No machine reason recorded.' }}</p>
+            <div v-if="selectedCandidate?.triage" class="triage-summary" :class="'triage-' + selectedCandidate.triage.decision">
+              <div class="triage-heading">
+                <span class="pill">Machine triage: {{ selectedCandidate.triage.decision }}</span>
+                <strong>{{ selectedCandidate.triage.ownership_class }} · {{ Math.round(Number(selectedCandidate.triage.confidence || 0) * 100) }}%</strong>
+              </div>
+              <p>{{ selectedCandidate.triage.reason }}</p>
+              <blockquote v-if="selectedCandidate.triage.exact_quote">{{ selectedCandidate.triage.exact_quote }}</blockquote>
+            </div>
           </section>
 
           <section class="excerpt-card">
@@ -758,20 +823,42 @@ const App = {
               <p class="eyebrow">Captured evidence</p>
               <h2>{{ snapshotTitle }}</h2>
             </div>
-            <a v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open live site ↗</a>
+            <div class="evidence-links">
+              <a v-if="selectedEvidence?.raw_html_path" :href="focusedHtmlUrl(selectedEvidence.raw_html_path, selectedCandidate?.value)" target="_blank" rel="noreferrer">Centered HTML ↗</a>
+              <a v-if="selectedEvidence?.raw_html_path" :href="artifactUrl(selectedEvidence.raw_html_path)" target="_blank" rel="noreferrer">Raw HTML ↗</a>
+              <a v-if="selectedEvidence?.screenshot_path" :href="artifactUrl(selectedEvidence.screenshot_path)" target="_blank" rel="noreferrer">Screenshot ↗</a>
+              <a v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open live site ↗</a>
+            </div>
           </div>
           <nav class="evidence-tabs">
+            <button v-if="selectedEvidence?.raw_html_path" :class="{active:evidenceTab==='archive'}" @click="evidenceTab='archive'">Archived HTML</button>
             <button :class="{active:evidenceTab==='snapshot'}" @click="evidenceTab='snapshot'">Snapshot</button>
             <button :class="{active:evidenceTab==='live'}" @click="evidenceTab='live'">Live</button>
             <button :class="{active:evidenceTab==='sources'}" @click="evidenceTab='sources'">Sources</button>
           </nav>
 
-          <div v-if="evidenceTab==='snapshot'" ref="evidencePane" class="snapshot-pane">
+          <div v-if="evidenceTab==='archive'" class="archive-pane">
+            <p class="archive-note">Archived source, positioned at <strong>{{ selectedCandidate?.value }}</strong>. Scripts and forms are disabled.</p>
+            <iframe
+              class="archive-frame"
+              :src="focusedHtmlUrl(selectedEvidence?.raw_html_path, selectedCandidate?.value)"
+              :title="'Archived evidence for ' + (selectedCandidate?.value || 'email')"
+              sandbox="allow-same-origin"
+              referrerpolicy="no-referrer"
+              ref="archiveFrame"
+              @load="focusArchivedEvidence"
+            ></iframe>
+          </div>
+
+          <div v-else-if="evidenceTab==='snapshot'" ref="evidencePane" class="snapshot-pane">
             <div class="snapshot-meta">
               <span>{{ selectedEvidence?.evidence_kind || 'evidence' }}</span>
               <span>{{ selectedEvidence?.observed_at || selectedCandidate?.observed_at || 'unknown time' }}</span>
               <span>{{ selectedCandidate?.source_url || selectedEvidence?.source_url || 'unknown source' }}</span>
             </div>
+            <a v-if="selectedEvidence?.screenshot_path" :href="artifactUrl(selectedEvidence.screenshot_path)" target="_blank" rel="noreferrer">
+              <img class="evidence-screenshot" :src="artifactUrl(selectedEvidence.screenshot_path)" alt="Saved full-page evidence screenshot" />
+            </a>
             <pre class="snapshot-text" v-html="evidenceBody"></pre>
           </div>
 
@@ -789,6 +876,7 @@ const App = {
                 <div><dt>Role</dt><dd>{{ selectedCandidate?.contact_role || selectedCandidate?.associated_role || '—' }}</dd></div>
                 <div><dt>Association</dt><dd>{{ selectedCandidate?.association_type || '—' }}</dd></div>
                 <div><dt>Deliverability</dt><dd>{{ selectedCandidate?.syntax_status || '—' }} · {{ selectedCandidate?.mx_status || '—' }} · {{ selectedCandidate?.deliverability_status || '—' }}</dd></div>
+                <div v-if="selectedCandidate?.triage"><dt>Triage</dt><dd>{{ selectedCandidate.triage.method }} · {{ selectedCandidate.triage.decision }} · {{ selectedCandidate.triage.ownership_class }}</dd></div>
               </dl>
             </details>
             <details>
