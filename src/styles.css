@@ -149,6 +149,25 @@ input, textarea {
 .lane-tabs strong {
   color: inherit;
 }
+.evidence-subfilters {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+.evidence-subfilters button {
+  padding: 0.34rem 0.52rem;
+  border: 1px solid var(--concrete-100);
+  background: white;
+  color: var(--black-60);
+  font-size: 0.7rem;
+}
+.evidence-subfilters button.active {
+  border-color: var(--primary);
+  background: var(--blue-10);
+  color: var(--primary);
+}
 
 .alert {
   padding: 8px 12px;

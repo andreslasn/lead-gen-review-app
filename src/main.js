@@ -346,6 +346,7 @@ const App = {
     const reviewer = ref(localStorage.getItem("review.reviewer") || "reviewer");
     const search = ref(localStorage.getItem("review.filter.search") || "");
     const selectedLane = ref(normalizedLaneSelection(localStorage.getItem("review.filter.lane")));
+    const noMatchedEvidenceFilter = ref(localStorage.getItem("review.filter.noMatchedEvidence") || "all");
     const currentIndex = ref(0);
     const selectedCandidateIndex = ref(0);
     const evidenceTab = ref("snapshot");
@@ -399,6 +400,10 @@ const App = {
           return !["confirmed", "no_email", "excluded"].includes(item.status);
         })
         .filter((item) => {
+          if (selectedLane.value !== "no_matched_email" || noMatchedEvidenceFilter.value === "all") return true;
+          return item.evidence_availability === noMatchedEvidenceFilter.value;
+        })
+        .filter((item) => {
           if (!needle) return true;
           return [
             item.name,
@@ -422,7 +427,43 @@ const App = {
     const candidates = computed(() => {
       const raw = clinic.value?.candidates || [];
       const validEmails = raw.filter((candidate) => String(candidate?.value || "").includes("@"));
-      return validEmails.length ? validEmails : raw;
+      const source = validEmails.length ? validEmails : raw;
+      const grouped = new Map();
+      for (const candidate of source) {
+        const key = String(candidate?.value || "").trim().toLowerCase();
+        if (!key) continue;
+        if (!grouped.has(key)) grouped.set(key, []);
+        grouped.get(key).push(candidate);
+      }
+      return [...grouped.values()].map((duplicates) => {
+        const preferred = [...duplicates].sort((a, b) => {
+          const aDecision = candidateDecision(a);
+          const bDecision = candidateDecision(b);
+          const aScore = Number(["confirmed", "edited_confirmed"].includes(aDecision?.decision)) * 16
+            + Number(a.classification === "reviewer_validated") * 8
+            + Number(Boolean(a.usable_contact)) * 4
+            + Number(a.verification_status === "reviewer_confirmed") * 2
+            + Number(a.evidence_links?.length || 0);
+          const bScore = Number(["confirmed", "edited_confirmed"].includes(bDecision?.decision)) * 16
+            + Number(b.classification === "reviewer_validated") * 8
+            + Number(Boolean(b.usable_contact)) * 4
+            + Number(b.verification_status === "reviewer_confirmed") * 2
+            + Number(b.evidence_links?.length || 0);
+          return bScore - aScore || Number(b.confidence || 0) - Number(a.confidence || 0);
+        })[0];
+        const evidenceByKey = new Map();
+        for (const candidate of duplicates) {
+          for (const link of candidate.evidence_links || []) {
+            const evidenceKey = link.id || [link.source_url, link.exact_quote, link.raw_html_path, link.screenshot_path].join("|");
+            if (!evidenceByKey.has(evidenceKey)) evidenceByKey.set(evidenceKey, link);
+          }
+        }
+        return {
+          ...preferred,
+          evidence_links: [...evidenceByKey.values()],
+          duplicate_contact_ids: duplicates.map((candidate) => candidate.id).filter(Boolean),
+        };
+      });
     });
     const candidateGroups = computed(() => {
       const groups = { primary: [], other: [], invalid: [] };
@@ -440,7 +481,13 @@ const App = {
       return candidateGroups.value.primary[0]?.candidate || null;
     });
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
-    const selectedDocument = computed(() => (clinic.value?.documents || []).find((document) => document.id === selectedEvidence.value?.source_document_id) || null);
+    const selectedDocument = computed(() => {
+      const documents = clinic.value?.documents || [];
+      return documents.find((document) => document.id === selectedEvidence.value?.source_document_id)
+        || documents.find((document) => document.raw_html_path)
+        || documents.find((document) => document.screenshot_path || document.review_text_path)
+        || null;
+    });
     const selectedEvidencePresentation = computed(() => evidencePresentation(selectedEvidence.value, selectedDocument.value));
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
@@ -1159,6 +1206,10 @@ const App = {
       localStorage.setItem("review.filter.lane", value);
       setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
+    watch(noMatchedEvidenceFilter, (value) => {
+      localStorage.setItem("review.filter.noMatchedEvidence", value);
+      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+    });
     watch(reviewer, (value) => localStorage.setItem("review.reviewer", value));
     watch(evidenceTab, () => nextTick(scrollEvidenceToHighlight));
     watch(
@@ -1182,6 +1233,7 @@ const App = {
       filteredQueue,
       laneCounts,
       selectedLane,
+      noMatchedEvidenceFilter,
       laneLabel,
       reviewer,
       search,
@@ -1248,6 +1300,16 @@ const App = {
         <div class="lane-tabs">
           <button v-for="lane in ['accepted','not_accepted','needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
+          </button>
+        </div>
+        <div v-if="selectedLane === 'no_matched_email'" class="evidence-subfilters">
+          <button v-for="option in [
+            {value:'all',label:'All evidence'},
+            {value:'html',label:'Archived HTML'},
+            {value:'fallback',label:'Fallback capture'},
+            {value:'none',label:'No captured page'}
+          ]" :key="option.value" :class="{active:noMatchedEvidenceFilter===option.value}" @click="noMatchedEvidenceFilter=option.value">
+            {{ option.label }}
           </button>
         </div>
       </section>
