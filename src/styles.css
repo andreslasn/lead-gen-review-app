@@ -165,7 +165,7 @@ input, textarea {
 .review-layout {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(430px, 42%) minmax(0, 58%);
+  grid-template-columns: minmax(400px, 38%) minmax(0, 62%);
   gap: 10px;
 }
 .decision-pane, .evidence-pane, .empty-state {
@@ -276,6 +276,16 @@ input, textarea {
   max-width: 100%;
   font: 750 0.8rem/1.2 var(--font-body);
   letter-spacing: -0.02em;
+}
+.candidate-role-select {
+  width: 100%;
+  min-width: 7.5rem;
+  padding: 0.3rem 1.4rem 0.3rem 0.4rem;
+  border: 1px solid var(--concrete-100);
+  border-radius: 0.4rem;
+  background: white;
+  color: var(--black-100);
+  font-size: 0.72rem;
 }
 .candidate-table tr.decided {
   color: var(--black-60);

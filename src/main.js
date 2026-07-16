@@ -14,6 +14,13 @@ const DECISION_REASON_CODES = [
   { key: "i", code: "invalid", label: "Invalid" },
   { key: "x", code: "other", label: "Other" },
 ];
+const ROLE_OPTIONS = [
+  { value: "clinic_contact", label: "Clinic contact" },
+  { value: "doctor_staff", label: "Doctor/staff" },
+  { value: "prescription_refill", label: "Prescription/refill" },
+  { value: "not_clinic_owned", label: "Not clinic-owned" },
+  { value: "unclear", label: "Unclear" },
+];
 const PREFETCH_COUNT = 3;
 
 function openDb() {
@@ -183,6 +190,11 @@ function candidateRoleLabel(candidate) {
   return "Unclear";
 }
 
+function candidateRoleCode(candidate) {
+  const label = candidateRoleLabel(candidate);
+  return ROLE_OPTIONS.find((option) => option.label === label)?.value || "unclear";
+}
+
 function candidateSourceLabel(candidate, item) {
   const source = normalizeHost(candidate?.source_url || candidate?.evidence_links?.[0]?.source_url || item?.website || "");
   if (item?.source_coverage_status === "verified_official") return source ? `Official · ${source}` : "Official";
@@ -194,6 +206,20 @@ function candidateEvidenceCount(candidate) {
   return count ? `${count} evidence` : "Evidence";
 }
 
+function candidateReasonWithoutTriageDuplication(candidate) {
+  const triageReason = String(candidate?.triage?.reason || "").trim();
+  let reason = String(candidate?.reason || candidate?.evidence || "").trim();
+  reason = reason
+    .replace(/^Contact was retained for review but not marked usable because its source or surrounding evidence could not be matched to the target registry clinic\.\s*/i, "")
+    .replace(/^Triage (?:suppressed|promoted):\s*/i, "")
+    .trim();
+  if (triageReason && reason.localeCompare(triageReason, undefined, { sensitivity: "base" }) === 0) return "";
+  if (triageReason && reason.toLowerCase().endsWith(triageReason.toLowerCase())) {
+    reason = reason.slice(0, -triageReason.length).trim().replace(/[.:;,-]+$/, "").trim();
+  }
+  return reason;
+}
+
 const App = {
   setup() {
     const db = ref(null);
@@ -203,6 +229,7 @@ const App = {
     const clinicCache = ref({});
     const decisions = ref([]);
     const localStates = ref([]);
+    const roleOverrides = ref([]);
     const reviewer = ref(localStorage.getItem("review.reviewer") || "reviewer");
     const search = ref(localStorage.getItem("review.filter.search") || "");
     const selectedLane = ref(localStorage.getItem("review.filter.lane") || "review");
@@ -275,6 +302,7 @@ const App = {
     const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
+    const roleOverrideByContact = computed(() => Object.fromEntries(roleOverrides.value.map((item) => [item.contact_point_id, item])));
     const snapshotTitle = computed(() => selectedEvidence.value?.title || selectedEvidence.value?.source_url || selectedCandidate.value?.source_url || "Cached evidence");
     const evidenceBody = computed(() => evidenceHtml(selectedEvidence.value, selectedCandidate.value?.evidence || ""));
 
@@ -307,6 +335,7 @@ const App = {
       const document = frame?.contentDocument;
       const needle = String(selectedCandidate.value?.value || "").trim().toLowerCase();
       if (!document || !needle) return;
+      document.documentElement.style.setProperty("zoom", "1", "important");
       for (const element of document.querySelectorAll("[class*='cookie' i], [id*='cookie' i], [class*='consent' i], [id*='consent' i]")) {
         element.style.setProperty("display", "none", "important");
       }
@@ -338,22 +367,18 @@ const App = {
         );
       }
       if (!target) return;
-      target.scrollIntoView({ block: "center", inline: "center" });
+      target.scrollIntoView({ block: "center", inline: "nearest" });
       requestAnimationFrame(() => requestAnimationFrame(() => {
         const sourceRect = matchedRange?.getBoundingClientRect() || target.getBoundingClientRect();
-        const padding = 12;
+        const padding = 6;
         const left = Math.max(8, sourceRect.left - padding);
         const top = Math.max(8, sourceRect.top - padding);
         const right = Math.min(document.documentElement.clientWidth - 8, sourceRect.right + padding);
         const bottom = Math.min(document.documentElement.clientHeight - 8, sourceRect.bottom + padding);
-        const spotlight = document.createElement("div");
-        spotlight.setAttribute("data-review-spotlight", "true");
-        spotlight.style.cssText = `position:fixed!important;left:${left}px!important;top:${top}px!important;width:${Math.max(24, right - left)}px!important;height:${Math.max(24, bottom - top)}px!important;z-index:2147483646!important;pointer-events:none!important;border:4px solid #ff2d7d!important;border-radius:8px!important;box-shadow:0 0 0 100vmax rgba(0,0,0,.72),0 0 28px rgba(255,45,125,.8)!important;background:rgba(255,243,109,.18)!important;box-sizing:border-box!important;`;
-        const badge = document.createElement("div");
-        badge.setAttribute("data-review-spotlight", "true");
-        badge.textContent = selectedCandidate.value?.value || "Email found here";
-        badge.style.cssText = `position:fixed!important;left:${left}px!important;top:${Math.max(8, top - 38)}px!important;z-index:2147483647!important;pointer-events:none!important;padding:7px 10px!important;background:#ff2d7d!important;color:#fff!important;font:700 14px/1.2 sans-serif!important;border-radius:6px!important;box-shadow:0 4px 18px rgba(0,0,0,.35)!important;`;
-        document.body.append(spotlight, badge);
+        const highlight = document.createElement("div");
+        highlight.setAttribute("data-review-spotlight", "true");
+        highlight.style.cssText = `position:fixed!important;left:${left}px!important;top:${top}px!important;width:${Math.max(20, right - left)}px!important;height:${Math.max(20, bottom - top)}px!important;z-index:2147483646!important;pointer-events:none!important;border:3px solid #ff2d7d!important;border-radius:5px!important;box-shadow:0 2px 10px rgba(255,45,125,.35)!important;background:rgba(255,243,109,.28)!important;box-sizing:border-box!important;`;
+        document.body.append(highlight);
       }));
     }
 
@@ -388,6 +413,40 @@ const App = {
     async function hydrateLocal() {
       decisions.value = await getAll(db.value, "decisions");
       localStates.value = await getAll(db.value, "clinic_states");
+      roleOverrides.value = (await getAll(db.value, "meta"))
+        .filter((item) => String(item.key || "").startsWith("role_override:"))
+        .map((item) => item.value);
+    }
+
+    function displayedCandidateRole(candidate) {
+      return roleOverrideByContact.value[candidate?.id]?.role || candidateRoleCode(candidate);
+    }
+
+    async function updateCandidateRole(candidate, role) {
+      if (!candidate?.id || !clinic.value?.clinic?.id || !ROLE_OPTIONS.some((option) => option.value === role)) return;
+      const override = {
+        clinic_id: clinic.value.clinic.id,
+        contact_point_id: candidate.id,
+        role,
+        original_role: candidate.contact_role || candidateRoleCode(candidate),
+        reviewer_id: reviewer.value || "reviewer",
+        updated_at: nowIso(),
+      };
+      await put(db.value, "meta", { key: `role_override:${candidate.id}`, value: override });
+      roleOverrides.value = [
+        ...roleOverrides.value.filter((item) => item.contact_point_id !== candidate.id),
+        override,
+      ];
+      await put(db.value, "audit_events", {
+        id: uuid(),
+        event: "role_override",
+        clinic_id: override.clinic_id,
+        contact_point_id: override.contact_point_id,
+        role,
+        reviewer_id: override.reviewer_id,
+        created_at: override.updated_at,
+      });
+      saveStatus.value = `Role updated · ${ROLE_OPTIONS.find((option) => option.value === role)?.label || role}`;
     }
 
     async function loadClinic(clinicId) {
@@ -621,11 +680,13 @@ const App = {
         app_build: manifest.value?.source_commit || null,
         decisions: await getAll(db.value, "decisions"),
         clinic_states: await getAll(db.value, "clinic_states"),
+        role_overrides: roleOverrides.value,
         audit_events: await getAll(db.value, "audit_events"),
       };
       payload.checksum = await sha256(JSON.stringify({
         decisions: payload.decisions,
         clinic_states: payload.clinic_states,
+        role_overrides: payload.role_overrides,
         audit_events: payload.audit_events,
       }));
       const date = exportedAt.replaceAll(":", "").slice(0, 15);
@@ -677,6 +738,7 @@ const App = {
         created_at: nowIso(),
         decisions: await getAll(db.value, "decisions"),
         clinic_states: await getAll(db.value, "clinic_states"),
+        role_overrides: roleOverrides.value,
         audit_events: await getAll(db.value, "audit_events"),
       });
       for (const decision of payload.decisions || []) {
@@ -687,6 +749,13 @@ const App = {
         const existing = await get(db.value, "clinic_states", state.clinic_id);
         if (!existing || String(existing.updated_at || "") <= String(state.updated_at || "")) await put(db.value, "clinic_states", state);
       }
+      for (const override of payload.role_overrides || []) {
+        const key = `role_override:${override.contact_point_id}`;
+        const existing = await get(db.value, "meta", key);
+        if (!existing || String(existing.value?.updated_at || "") <= String(override.updated_at || "")) {
+          await put(db.value, "meta", { key, value: override });
+        }
+      }
       for (const auditEvent of payload.audit_events || []) {
         if (!(await get(db.value, "audit_events", auditEvent.id))) await put(db.value, "audit_events", auditEvent);
       }
@@ -696,6 +765,7 @@ const App = {
       if (payload.format !== REVIEW_FORMAT) throw new Error("Not a lead-gen review export.");
       if (payload.schema_version !== SCHEMA_VERSION) throw new Error("Unsupported review schema version.");
       if (!Array.isArray(payload.decisions) || !Array.isArray(payload.clinic_states)) throw new Error("Invalid review export shape.");
+      if (payload.role_overrides != null && !Array.isArray(payload.role_overrides)) throw new Error("Invalid role overrides.");
     }
 
     function visibleBackupReminder() {
@@ -777,10 +847,14 @@ const App = {
       error,
       lastExportAt,
       DECISION_REASON_CODES,
+      ROLE_OPTIONS,
       safeText,
       candidateRoleLabel,
       candidateSourceLabel,
       candidateEvidenceCount,
+      candidateReasonWithoutTriageDuplication,
+      displayedCandidateRole,
+      updateCandidateRole,
       candidateDecision,
       candidateDecisionLabel,
       artifactUrl,
@@ -835,7 +909,11 @@ const App = {
                   <tr v-for="(candidate, index) in candidates" :key="candidate.id || candidate.value || index" :class="{selected:index===selectedCandidateIndex, decided: candidateDecision(candidate)}" @mouseenter="previewCandidate(index)" @click="selectCandidate(index)">
                     <td class="candidate-radio">{{ index === selectedCandidateIndex ? '●' : '○' }}</td>
                     <td><span class="candidate-email">{{ candidate.value }}</span><small v-if="candidateDecision(candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(candidate) }}</small></td>
-                    <td>{{ candidateRoleLabel(candidate) }}</td>
+                    <td>
+                      <select class="candidate-role-select" :value="displayedCandidateRole(candidate)" @click.stop @change.stop="updateCandidateRole(candidate, $event.target.value)">
+                        <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
+                      </select>
+                    </td>
                     <td><span>{{ candidateSourceLabel(candidate, currentItem) }}</span><small>{{ candidateEvidenceCount(candidate) }}</small></td>
                     <td class="candidate-actions">
                       <button class="candidate-confirm" @click.stop="selectCandidate(index); saveDecision('confirmed')">Confirm</button>
@@ -846,7 +924,7 @@ const App = {
               </table>
             </div>
             <p v-else class="muted">No email candidate packaged for this clinic.</p>
-            <p class="candidate-reason">{{ selectedCandidate?.reason || selectedCandidate?.evidence || 'No machine reason recorded.' }}</p>
+            <p v-if="candidateReasonWithoutTriageDuplication(selectedCandidate)" class="candidate-reason">{{ candidateReasonWithoutTriageDuplication(selectedCandidate) }}</p>
             <div v-if="selectedCandidate?.triage" class="triage-summary" :class="'triage-' + selectedCandidate.triage.decision">
               <div class="triage-heading">
                 <span class="pill">Machine triage: {{ selectedCandidate.triage.decision }}</span>
