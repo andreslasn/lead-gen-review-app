@@ -1,0 +1,330 @@
+<!doctype html>
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<html>
+
+
+
+
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<title>Elérhetőségeink</title><meta content="Elérhetőségeink..." name="description"/><meta content="" name="keywords"/>
+ 
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="hu" http-equiv="content-language"/>
+
+<style>
+ body {font-family: arial, verdana; font-size: 12;  color: #000000; text-decoration: none; }
+ td {font-family: arial, verdana; font-size: 12;  color: #000000; text-decoration: none;}
+ a {font-family: arial, verdana; /*font-size: 12;*/  color: #2222FF; text-decoration: none;}
+ a:hover {font-family: arial, verdana; /*font-size: 12; */ color: orange; }
+ h1 {font-family: arial, verdana; font-size: 20;  color: #990000; text-decoration: none;}
+ .grayinput {font-family: arial, verdana;font-size: 11px; background-color: #EEEEEE; height: 18px; padding: 1px 1px;padding-bottom:2px; margin: 0px; color: #333333; border-left:1px solid #bbbbbb; border-right:1px solid #bbbbbb; border-bottom:1px solid #bbbbbb; border-top:1px solid #bbbbbb;}
+ .graytextarea {font-family: arial, verdana;font-size: 11px; background-color: #EEEEEE; padding: 1px 1px;padding-bottom:2px; margin: 0px; color: #333333; border-left:1px solid #bbbbbb; border-right:1px solid #bbbbbb; border-bottom:1px solid #bbbbbb; border-top:1px solid #bbbbbb;}
+
+ .box {
+	border: 5px solid #FF695E;
+	margin-bottom: 5px;
+	background-color: white;
+}
+
+#menu a {
+	display: block;
+	padding: 5px 0 5px 25px;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: white;
+	background: #FF695E;
+}
+.overflow{
+	overflow: hidden;
+	width: 100%;
+        text-overflow: ellipsis;
+}
+
+.lcdstyle{ /*Example CSS to create LCD countdown look*/
+background-color:white;
+color:#ff4400;
+font: 30px Impact;
+padding: 3px;
+}
+
+.lcdstyle sup{ /*Example CSS to create LCD countdown look*/
+font-size: 80%
+}
+
+</style>
+<style>
+#fix /*,#fix2*/
+{
+height:20px;
+background:#eee;
+color:black;
+text-align:right;
+padding-right:50px;
+padding-top:1px;
+padding-bottom:5px;
+position:fixed;
+width:100%;
+z-index:9999;
+top:0px;
+left:0px;
+border-bottom:1px solid #777;
+-webkit-box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+}
+
+/*#fix2
+{
+padding-top:4px;
+border-top:1px solid #777;
+border-bottom:0px solid #777;
+text-align:center;
+position:fixed;
+top:100%;
+margin-top:-25px;
+-webkit-box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+}
+*/
+/*
+#fix #ljelent a
+{
+padding:1px;
+padding-left:1px;
+padding-right:1px;
+margin-right:2px;
+background:#cccccc;
+border:1px outset #bbb;
+color:white;
+cursor:pointer;
+font-weight:bold;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+}
+*/
+a#ljelent
+{
+padding:2px;
+padding-left:5px;
+padding-right:5px;
+background:#ccc;
+border:1px outset gray;
+margin-right:10px;
+color:white;
+cursor:pointer;
+font-weight:bold;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+}
+
+
+#ljelent:hover
+{
+background:red;
+}
+/*
+#fix #ljelent a:hover
+{
+background:#777;
+}
+*/
+#alsobox
+{
+display:none;
+width:200px;
+border:1px solid #ccc;
+border-top:1px solid #aaa;
+border-left:1px solid #aaa;
+background:rgba(255,255,255,0.76);
+bottom:4px;
+right:200px;
+padding:0px;
+margin-bottom:-204px;
+margin-right:200px;
+-webkit-box-shadow:8px 8px 8px rgba(0, 0, 0, 0.8);
+-moz-box-shadow:8px 8px 10px rgba(0, 0, 0, 0.8);
+box-shadow:8px 8px 10px rgba(0, 0, 0, 0.8);
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;		
+}
+
+#alsobox {position: absolute; right: 2px; bottom: 4px;}
+body > div#alsobox {position: fixed;}
+
+#feje
+{
+background:#990000;
+padding:2px;
+text-align:center;
+color:white;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;		
+}
+#fixfuggo
+{
+display:none;
+width:125px;
+padding:3px;
+background:white;
+position:absolute;
+z-index:1000;
+top:40px;
+right:10px;
+
+border:1px solid #777;
+-webkit-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-webkit-border-radius: .5em;
+-moz-border-radius: .5em;
+}
+body > div#fixfuggo { position: fixed;  }
+p
+{
+margin:0px;
+}
+</style>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+
+<body leftmargin="0" rightmargin="0" topmargin="0"><div id="fix"><table border="0" style="width:100%"><tr><td style="width:200px;"><style>
+#fix,.addthis_toolbox addthis_default_style
+{
+background:black;
+}
+#fix a
+{
+color:yellow;
+}
+#fix a:hover
+{
+color:orange;
+}
+. addthis_toolbox addthis_default_style a{text-decoration:none;float:left;margin-right:1px;padding:0;}
+.addthis_toolbox addthis_default_style img{width:23px;border:0;background:#EEEEEE;margin:0;}
+</style>
+</td><td>
+<div style="width:90%;text-align:center;"><p><a data-review-original-href="http://shp.hu" href="#" style="text-decoration: none; color: #000099;" tabindex="-1" target="_blank"><img/></a></p></div></td><td style="width:50px;"><a data-review-original-href="" href="#" id="ljelent" tabindex="-1">Bejelentés</a></td></tr></table></div><br/><br/>
+<div id="header_bg">
+<div id="header">
+<img alt="fejléc kép" id="fkep" style="height:109px; float:left;margin:8px"/> <div id="logo">
+<h1><a data-review-original-href="#" href="#" tabindex="-1">Oroszlányi Szociális Szolgá</a></h1>
+<h2><a data-review-original-href="#" href="#" id="metamorph" tabindex="-1">
+Nappali melegedő és Esti menedékhely</a></h2>
+</div>
+</div>
+</div>
+
+<div id="content">
+<div id="main">
+<div id="right">
+<div class="bor">
+<h4>
+											Elérhetőségeink										</h4>
+<div id="tartalom" style="padding:10px;">
+<br/> </div>
+</div>
+</div>
+<div id="left">
+<div class="bor">
+<div class="categories">
+<h3>Menü</h3>
+<ul><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=QRxpuT_4i3" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Főoldal</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=jI1sd40UCW" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Rólunk</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=YPBYiaWkcZ" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Munkatársaink</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=k2ZdrqAolf" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Népkonyha</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=bUHzleogZy" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Hírek</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=t23C41Oawy" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Esetkezelői beosztás</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=o_Qymkirvr" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Tervezett programok</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=Zj_ECzqIyo" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Letölthető nyomtatványok</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=Abtdf004dq" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Állások</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=RpLa_89ZZA" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Képgaléria</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=jQZQGd6X7y" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Elérhetőségeink</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=tM7B_IgerV" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Pályázatok</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=JPpT765LhO" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Háziorvosok rendelési ideje</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=59H0SNp_WV" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Szakellátási rendelési idők</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=seON1jTmie" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Önéletrajzi minták</a></li><li id="button1">
+<a data-review-original-href="web.php?a=hajlas&amp;o=fTXFBUx60r" href="#" style="border-right: 1px solid #ffffff;" tabindex="-1">Hasznos linkek</a></li></ul> </div>
+</div>
+<div class="bor">
+<h3>Hirdetés</h3>
+<div class="company" style="text-align:center">
+
+<style type="text/css">
+				#content_popup {top: 50%; transform: translateY(-50%);}
+			
+			</style>
+
+<noscript>
+
+<br/><br/>
+
+<br/><br/><br/><br/><br/><br/>
+</noscript>
+<a data-review-original-href="https://www.vip.onlineangol.com" href="#" tabindex="-1" target="_blank">Ingyenes Angol online nyelvtanfolyam kezdőknek és újrakezdőknek.
+Ráadásul most megkapod  ajándékba A Hatékony Angol Tanulás Titkai tanulmányom. </a>
+<br/><br/><br/><br/><br/><br/>
+
+<br/>
+<br/>
+
+<br/> </div>
+</div>
+<div class="bor">
+<h3>Oldalelemek</h3>
+<div class="company">
+<br/> </div>
+</div>
+</div>
+</div>
+</div>
+<div id="alsobox">
+<div id="feje">Hirdetés   <span style="margin-left:2px;font-size:1.1em">10</span></div>
+<div align="center" style="padding:3px;margin:0 auto">
+<a data-review-original-href="http://angolnyelvtanulas.shp.hu" href="#" tabindex="-1" target="_blank">
+<div style="margin: 5px; padding: 2px; background: white; color: black; text-align: center; border: 3px solid gray;">
+<center>
+<div style="color:#ff4400;font-size:14px;padding:6px;border-style:solid;border-color:#DDDDDD;border-width:1px;width:">
+<span style="color:#0000ff;">
+<strong>
+<span style="font-size:smaller;">Végre értem amit angolul mondanak nekem, és megértik amit mondok. 
+		</span></strong>
+</span>
+<strong><br/>
+<br/>
+<span style="color:#FF6600;">KÖSZÖNÖM NOÉMI!
+		</span></strong>
+
+
+</div>
+</center>
+</div>
+</a>
+<br/> </div>
+</div>
+<div id="footer" style="text-align:center">
+<div class="lentlink"><a data-review-original-href="http://www.5mp.eu" href="#" style="width:200px" tabindex="-1" target="_blank">ingyenes honlapkészítő</a></div><div class="lentlink"><a data-review-original-href="http://www.shp.hu" href="#" style="width:200px" tabindex="-1" target="_blank">Profi, üzleti honlapkészítő</a></div><div class="lentlink" style="float:right;"><a data-review-original-href="http://www.5mp.eu" href="#" style="width:200px" tabindex="-1" target="_blank"> Ingyenes honlap</a></div>
+
+<div id="somediv" style="display:none"></div>
+</div>
+
+</body>
+</html>

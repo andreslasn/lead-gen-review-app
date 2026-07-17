@@ -12,6 +12,7 @@ const ROLE_OPTIONS = [
   { value: "not_relevant", label: "Not relevant" },
 ];
 const PREFETCH_COUNT = 3;
+const REVIEW_SYNC_CONFIG = "review-sync.json";
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -72,6 +73,26 @@ function uuid() {
 
 function nowIso() {
   return new Date().toISOString();
+}
+
+function utf8ToBase64(value) {
+  const bytes = new TextEncoder().encode(value);
+  let binary = "";
+  for (const byte of bytes) binary += String.fromCharCode(byte);
+  return btoa(binary);
+}
+
+function base64ToUtf8(value) {
+  const binary = atob(String(value || "").replace(/\s+/g, ""));
+  return new TextDecoder().decode(Uint8Array.from(binary, (character) => character.charCodeAt(0)));
+}
+
+function safeReviewPathPart(value) {
+  return String(value || "reviewer")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9._-]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "reviewer";
 }
 
 async function sha256(text) {
@@ -350,6 +371,7 @@ const App = {
     const roleOverrides = ref([]);
     const reviewer = ref(localStorage.getItem("review.reviewer") || "reviewer");
     const search = ref(localStorage.getItem("review.filter.search") || "");
+    const selectedRegion = ref(localStorage.getItem("review.filter.region") || "");
     const selectedLane = ref(normalizedLaneSelection(localStorage.getItem("review.filter.lane")));
     const noMatchedEvidenceFilter = ref(normalizedNoMatchedEvidenceFilter(localStorage.getItem("review.filter.noMatchedEvidence")));
     const currentIndex = ref(0);
@@ -372,7 +394,14 @@ const App = {
     const itemStartedAt = ref(Date.now());
     const evidencePane = ref(null);
     const fullEvidenceText = ref("");
+    const syncConfig = ref(null);
+    const syncPanelOpen = ref(false);
+    const githubToken = ref(sessionStorage.getItem("review.githubToken") || "");
+    const syncStatus = ref("Local only");
+    const remoteReviewSha = ref(null);
+    const remoteReviewLoaded = ref(false);
     let evidenceTextRequest = 0;
+    let syncTimer = null;
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
     const decisionsByClinic = computed(() => {
@@ -393,9 +422,19 @@ const App = {
         local_decision_count: (decisionsByClinic.value[item.id] || []).length,
       };
     }));
+    const regionOptions = computed(() => [...new Set(
+      preparedQueue.value.map((item) => String(item.region || "").trim()).filter(Boolean),
+    )].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })));
+    const regionFilterLabel = computed(() => manifest.value?.country === "HU" ? "All counties" : "All regions");
+    const syncButtonLabel = computed(() => githubToken.value
+      ? (syncStatus.value || "Sync review")
+      : "Connect sync");
+    const locationFilteredQueue = computed(() => selectedRegion.value
+      ? preparedQueue.value.filter((item) => item.region === selectedRegion.value)
+      : preparedQueue.value);
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
-      return preparedQueue.value
+      return locationFilteredQueue.value
         .filter((item) => selectedLane.value === "all" || item.confidence_pool === selectedLane.value)
         .filter((item) => {
           if (selectedLane.value === "all") return true;
@@ -425,12 +464,12 @@ const App = {
         .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
     });
     const laneCounts = computed(() => {
-      const counts = { accepted: 0, not_accepted: 0, needs_review: 0, no_matched_email: 0, no_public_email: 0, all: preparedQueue.value.length };
-      for (const item of preparedQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
+      const counts = { accepted: 0, not_accepted: 0, needs_review: 0, no_matched_email: 0, no_public_email: 0, all: locationFilteredQueue.value.length };
+      for (const item of locationFilteredQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
       return counts;
     });
     const noMatchedEvidenceCounts = computed(() => {
-      const items = preparedQueue.value.filter((item) => (
+      const items = locationFilteredQueue.value.filter((item) => (
         item.confidence_pool === "no_matched_email"
         && !["confirmed", "no_email", "excluded"].includes(item.status)
       ));
@@ -493,6 +532,29 @@ const App = {
       return groups;
     });
     const displayedCandidateRows = computed(() => {
+      if (currentItem.value?.confidence_pool === "accepted") {
+        const primaryDecisionId = currentClinicState.value?.primary_review_decision_id;
+        const confirmedDecision = currentClinicDecisions.value.find((decision) => (
+          decision.id === primaryDecisionId
+          || ["confirmed", "edited_confirmed"].includes(decision.decision)
+        ));
+        const confirmedValue = String(confirmedDecision?.reviewed_value || clinic.value?.clinic?.email || "")
+          .trim()
+          .toLowerCase();
+        const confirmedContactIds = new Set(
+          currentClinicDecisions.value
+            .filter((decision) => ["confirmed", "edited_confirmed"].includes(decision.decision))
+            .map((decision) => decision.contact_point_id)
+            .filter(Boolean),
+        );
+        return candidates.value
+          .map((candidate, index) => ({ type: "candidate", candidate, index }))
+          .filter(({ candidate }) => (
+            confirmedContactIds.has(candidate.id)
+            || candidate.classification === "reviewer_validated"
+            || (confirmedValue && String(candidate.value || "").trim().toLowerCase() === confirmedValue)
+          ));
+      }
       if (isNoMatchArchivedHtml.value) {
         const documents = clinic.value?.documents || [];
         const archivedDocumentIds = new Set(
@@ -522,25 +584,36 @@ const App = {
     });
     const selectedEvidence = computed(() => {
       const links = selectedCandidate.value?.evidence_links || [];
-      if (isNoMatchArchivedHtml.value) {
-        const archivedDocumentIds = new Set(
-          (clinic.value?.documents || [])
-            .filter((document) => document.raw_html_path)
-            .map((document) => document.id),
-        );
-        return links.find((link) => link.raw_html_path)
-          || links.find((link) => archivedDocumentIds.has(link.source_document_id))
-          || links[0]
-          || null;
-      }
-      return links[0] || null;
+      const archivedDocumentIds = new Set(
+        (clinic.value?.documents || [])
+          .filter((document) => document.raw_html_path)
+          .map((document) => document.id),
+      );
+      return links.find((link) => link.raw_html_path)
+        || links.find((link) => archivedDocumentIds.has(link.source_document_id))
+        || links[0]
+        || null;
     });
     const selectedDocument = computed(() => {
       const documents = clinic.value?.documents || [];
-      return documents.find((document) => document.id === selectedEvidence.value?.source_document_id)
-        || documents.find((document) => document.raw_html_path)
-        || documents.find((document) => document.screenshot_path || document.review_text_path)
-        || null;
+      const sourceUrl = selectedEvidence.value?.source_url || selectedCandidate.value?.source_url || "";
+      const sourceDocument = documents.find((document) => (
+        document.id === selectedEvidence.value?.source_document_id
+      ));
+      if (sourceDocument) return sourceDocument;
+      if (sourceUrl) {
+        const normalizedSource = sourceUrl.split("#", 1)[0].replace(/\/$/, "");
+        const matchedSource = documents.find((document) => [document.source_url, document.final_url]
+          .filter(Boolean)
+          .some((value) => value.split("#", 1)[0].replace(/\/$/, "") === normalizedSource));
+        if (matchedSource) return matchedSource;
+      }
+      if (isNoMatchArchivedHtml.value) {
+        return documents.find((document) => document.raw_html_path)
+          || documents.find((document) => document.screenshot_path || document.review_text_path)
+          || null;
+      }
+      return null;
     });
     const selectedEvidencePresentation = computed(() => evidencePresentation(selectedEvidence.value, selectedDocument.value));
     const livePageUrl = computed(() => (
@@ -826,6 +899,7 @@ const App = {
         await hydrateLocal();
         await mergeCanonicalState();
         await hydrateLocal();
+        if (syncConfig.value && githubToken.value) await loadRemoteReview();
         const routeId = routeClinicId();
         const routeIndex = routeId ? filteredQueue.value.findIndex((item) => item.id === decodeURIComponent(routeId)) : -1;
         await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
@@ -848,6 +922,17 @@ const App = {
       queue.value = payload.items || [];
       const indexPayload = await clinicIndexResponse.json();
       clinicIndex.value = indexPayload.items || [];
+      try {
+        const syncResponse = await fetch(REVIEW_SYNC_CONFIG, { cache: "no-cache" });
+        if (syncResponse.ok) {
+          const config = await syncResponse.json();
+          if (config?.provider === "github" && config.owner && config.repo && config.branch) {
+            syncConfig.value = config;
+          }
+        }
+      } catch (_) {
+        syncConfig.value = null;
+      }
     }
 
     async function hydrateLocal() {
@@ -887,6 +972,7 @@ const App = {
         created_at: override.updated_at,
       });
       saveStatus.value = `Role updated · ${ROLE_OPTIONS.find((option) => option.value === role)?.label || role}`;
+      scheduleRemoteSync();
     }
 
     async function loadClinic(clinicId) {
@@ -1110,6 +1196,7 @@ const App = {
         audit_event_id: event.id,
       };
       await hydrateLocal();
+      scheduleRemoteSync();
     }
 
     async function undoLastAction() {
@@ -1123,6 +1210,7 @@ const App = {
       const index = filteredQueue.value.findIndex((item) => item.id === lastAction.value.state_clinic_id);
       lastAction.value = null;
       if (index >= 0) await setIndex(index);
+      scheduleRemoteSync();
     }
 
     async function markNoPublicEmail() {
@@ -1138,7 +1226,7 @@ const App = {
       await setIndex(currentIndex.value);
     }
 
-    async function exportProgress() {
+    async function buildReviewPayload() {
       const exportedAt = nowIso();
       const payload = {
         format: REVIEW_FORMAT,
@@ -1160,6 +1248,12 @@ const App = {
         role_overrides: payload.role_overrides,
         audit_events: payload.audit_events,
       }));
+      return payload;
+    }
+
+    async function exportProgress() {
+      const payload = await buildReviewPayload();
+      const exportedAt = payload.exported_at;
       const date = exportedAt.replaceAll(":", "").slice(0, 15);
       const filename = `clinic-review-${payload.dataset_id}-${payload.reviewer.id}-${date}.json`;
       const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
@@ -1173,6 +1267,136 @@ const App = {
       saveStatus.value = `Exported ${payload.decisions.length} decisions`;
     }
 
+    function githubReviewPath() {
+      const prefix = String(syncConfig.value?.path_prefix || "reviews").replace(/^\/+|\/+$/g, "");
+      return `${prefix}/${safeReviewPathPart(reviewer.value)}.json`;
+    }
+
+    function githubContentUrl() {
+      if (!syncConfig.value) return null;
+      const path = githubReviewPath().split("/").map(encodeURIComponent).join("/");
+      return `https://api.github.com/repos/${encodeURIComponent(syncConfig.value.owner)}/${encodeURIComponent(syncConfig.value.repo)}/contents/${path}`;
+    }
+
+    function githubHeaders() {
+      const headers = {
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+      };
+      if (githubToken.value) headers.Authorization = `Bearer ${githubToken.value.trim()}`;
+      return headers;
+    }
+
+    async function fetchRemoteReview() {
+      const url = githubContentUrl();
+      if (!url) return null;
+      const response = await fetch(`${url}?ref=${encodeURIComponent(syncConfig.value.branch)}`, {
+        headers: githubHeaders(),
+        cache: "no-store",
+      });
+      if (response.status === 404) return null;
+      if (!response.ok) throw new Error(`GitHub sync read failed (${response.status}).`);
+      const remote = await response.json();
+      return {
+        sha: remote.sha || null,
+        payload: JSON.parse(base64ToUtf8(remote.content || "")),
+      };
+    }
+
+    async function loadRemoteReview({ force = false } = {}) {
+      if (!syncConfig.value || !githubToken.value || (remoteReviewLoaded.value && !force)) return true;
+      try {
+        syncStatus.value = "Loading shared review…";
+        const remote = await fetchRemoteReview();
+        if (remote?.payload) {
+          await mergeImport(remote.payload, { silent: true });
+          await hydrateLocal();
+        }
+        remoteReviewSha.value = remote?.sha || null;
+        remoteReviewLoaded.value = true;
+        syncStatus.value = "Synced";
+        return true;
+      } catch (err) {
+        remoteReviewLoaded.value = false;
+        syncStatus.value = "Sync failed · local saved";
+        error.value = err?.message || String(err);
+        return false;
+      }
+    }
+
+    async function syncReview() {
+      if (!syncConfig.value || !githubToken.value) return;
+      try {
+        if (!remoteReviewLoaded.value && !(await loadRemoteReview())) return;
+        syncStatus.value = "Syncing…";
+        const putPayload = async (payload) => {
+          const body = {
+            message: `Sync clinic review for ${safeReviewPathPart(reviewer.value)}`,
+            content: utf8ToBase64(`${JSON.stringify(payload, null, 2)}\n`),
+            branch: syncConfig.value.branch,
+          };
+          if (remoteReviewSha.value) body.sha = remoteReviewSha.value;
+          return fetch(githubContentUrl(), {
+            method: "PUT",
+            headers: {
+              ...githubHeaders(),
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+          });
+        };
+        let payload = await buildReviewPayload();
+        let response = await putPayload(payload);
+        if (response.status === 409 || response.status === 422) {
+          remoteReviewLoaded.value = false;
+          if (!(await loadRemoteReview({ force: true }))) return;
+          payload = await buildReviewPayload();
+          response = await putPayload(payload);
+        }
+        if (!response.ok) throw new Error(`GitHub sync write failed (${response.status}).`);
+        const result = await response.json();
+        remoteReviewSha.value = result.content?.sha || remoteReviewSha.value;
+        syncStatus.value = "Synced";
+        saveStatus.value = `Synced ${payload.decisions.length} decisions`;
+      } catch (err) {
+        syncStatus.value = "Sync failed · local saved";
+        error.value = err?.message || String(err);
+      }
+    }
+
+    function scheduleRemoteSync() {
+      if (!syncConfig.value || !githubToken.value) return;
+      clearTimeout(syncTimer);
+      syncStatus.value = "Local saved · syncing…";
+      syncTimer = setTimeout(() => syncReview(), 1200);
+    }
+
+    async function connectReviewSync() {
+      error.value = "";
+      if (!syncConfig.value) {
+        error.value = "Shared review sync is not configured for this deployment.";
+        return;
+      }
+      if (!githubToken.value.trim()) {
+        error.value = "Enter a fine-grained GitHub token with Contents write access to this repository.";
+        return;
+      }
+      sessionStorage.setItem("review.githubToken", githubToken.value.trim());
+      remoteReviewLoaded.value = false;
+      remoteReviewSha.value = null;
+      await loadRemoteReview({ force: true });
+      await syncReview();
+    }
+
+    function disconnectReviewSync() {
+      clearTimeout(syncTimer);
+      githubToken.value = "";
+      sessionStorage.removeItem("review.githubToken");
+      remoteReviewLoaded.value = false;
+      remoteReviewSha.value = null;
+      syncStatus.value = "Local only";
+    }
+
     async function importProgress(event) {
       const file = event.target.files?.[0];
       if (!file) return;
@@ -1181,6 +1405,7 @@ const App = {
         await mergeImport(payload);
         await hydrateLocal();
         saveStatus.value = `Imported ${payload.decisions?.length || 0} decisions`;
+        scheduleRemoteSync();
       } catch (err) {
         error.value = err?.message || String(err);
       } finally {
@@ -1240,6 +1465,7 @@ const App = {
     }
 
     function visibleBackupReminder() {
+      if (githubToken.value && syncStatus.value === "Synced") return false;
       const completed = decisions.value.length + localStates.value.filter((item) => ["confirmed", "no_email", "excluded"].includes(item.status)).length;
       if (completed < 25) return false;
       if (!lastExportAt.value) return true;
@@ -1263,6 +1489,10 @@ const App = {
       localStorage.setItem("review.filter.search", value);
       setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
+    watch(selectedRegion, (value) => {
+      localStorage.setItem("review.filter.region", value);
+      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+    });
     watch(selectedLane, (value) => {
       localStorage.setItem("review.filter.lane", value);
       setIndex(0).catch((err) => { error.value = err?.message || String(err); });
@@ -1271,7 +1501,12 @@ const App = {
       localStorage.setItem("review.filter.noMatchedEvidence", value);
       setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
-    watch(reviewer, (value) => localStorage.setItem("review.reviewer", value));
+    watch(reviewer, (value) => {
+      localStorage.setItem("review.reviewer", value);
+      remoteReviewLoaded.value = false;
+      remoteReviewSha.value = null;
+      syncStatus.value = githubToken.value ? "Reconnect sync" : "Local only";
+    });
     watch(evidenceTab, () => nextTick(scrollEvidenceToHighlight));
     watch(
       () => [selectedEvidence.value?.review_text_path, selectedEvidence.value?.source_document_id, selectedCandidate.value?.value],
@@ -1285,6 +1520,7 @@ const App = {
 
     onUnmounted(() => {
       window.removeEventListener("keydown", onKey);
+      clearTimeout(syncTimer);
     });
 
     return {
@@ -1296,6 +1532,14 @@ const App = {
       noMatchedEvidenceCounts,
       isNoMatchArchivedHtml,
       selectedLane,
+      selectedRegion,
+      regionOptions,
+      regionFilterLabel,
+      syncConfig,
+      syncPanelOpen,
+      githubToken,
+      syncStatus,
+      syncButtonLabel,
       noMatchedEvidenceFilter,
       laneLabel,
       reviewer,
@@ -1355,12 +1599,19 @@ const App = {
       undoLastAction,
       exportProgress,
       importProgress,
+      connectReviewSync,
+      disconnectReviewSync,
+      syncReview,
     };
   },
   template: `
     <div class="app-shell">
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
+        <select v-model="selectedRegion" class="region-filter" :aria-label="regionFilterLabel">
+          <option value="">{{ regionFilterLabel }}</option>
+          <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
+        </select>
         <div class="lane-tabs">
           <button v-for="lane in ['accepted','not_accepted','needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
@@ -1482,6 +1733,26 @@ const App = {
         <p>Change the lane filter or search query.</p>
       </main>
 
+      <section v-if="syncPanelOpen" class="sync-panel">
+        <div class="sync-panel-heading">
+          <div>
+            <strong>GitHub review sync</strong>
+            <small>Decisions remain in this browser and are also saved to the dedicated review-data branch when connected.</small>
+          </div>
+          <button class="quiet" @click="syncPanelOpen=false">Close</button>
+        </div>
+        <label>Reviewer ID<input v-model="reviewer" autocomplete="username" /></label>
+        <label>Fine-grained GitHub token<input v-model="githubToken" type="password" autocomplete="off" placeholder="Contents: read and write" /></label>
+        <p class="sync-note">The token is kept only for this browser session and is never included in exports or commits.</p>
+        <div class="sync-panel-actions">
+          <button class="candidate-confirm" @click="connectReviewSync">Connect and sync</button>
+          <button v-if="githubToken" class="quiet" @click="syncReview">Sync now</button>
+          <button v-if="githubToken" class="quiet" @click="disconnectReviewSync">Disconnect</button>
+        </div>
+        <p class="muted">{{ syncStatus }}</p>
+      </section>
+
+      <button v-if="syncConfig" class="floating-sync" @click="syncPanelOpen=!syncPanelOpen" :title="syncStatus">{{ syncButtonLabel }}</button>
       <button class="floating-export" @click="exportProgress" :title="saveStatus">Export .json</button>
     </div>
   `,

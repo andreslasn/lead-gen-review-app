@@ -17,7 +17,8 @@ The app is optimized for fast one-lead-at-a-time validation:
 
 - left pane: clinic identity, one selected email candidate, compact evidence excerpt, alternates, decision buttons;
 - right pane: captured evidence snapshot by default, plus Live and Sources tabs;
-- lane filter: review lane, auto-confirm audit lane, auto-suppress lane, no-email lane, or all records.
+- lane and county/region filters for splitting reviewer workloads;
+- optional GitHub-backed decision sync, with IndexedDB and JSON export retained as fallbacks.
 
 Primary keyboard shortcuts:
 
@@ -29,6 +30,12 @@ Primary keyboard shortcuts:
 - `U` undo last local decision.
 
 Review exports include browser-side timing and evidence-view metadata for audit and UI throughput analysis.
+
+## Shared review persistence
+
+`public/review-sync.json` points the app at the dedicated `review-data` branch. A reviewer can connect with a fine-grained GitHub token granting **Contents: read and write** for this repository. The token is held in session storage only; it is not written into review exports, application data, commits, or the packaged evidence.
+
+Each reviewer is stored separately under `reviews/<reviewer-id>.json`. Local decisions continue to work if sync is unavailable, and **Export .json** remains available as an independent backup.
 
 ## Refresh packaged data
 

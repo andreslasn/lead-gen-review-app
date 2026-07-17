@@ -56,7 +56,7 @@ body {
 }
 a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
-button, input, textarea {
+button, input, textarea, select {
   font: inherit;
 }
 button {
@@ -67,7 +67,7 @@ button {
   transition: background 150ms ease, border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
 }
 button:hover { transform: translateY(-1px); }
-button:focus-visible, input:focus-visible, textarea:focus-visible {
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
@@ -116,7 +116,7 @@ input, textarea {
 }
 .queue-bar {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) auto;
+  grid-template-columns: minmax(220px, 1fr) minmax(150px, 220px) auto;
   gap: 8px;
   align-items: center;
   padding: 8px;
@@ -124,6 +124,15 @@ input, textarea {
 .search {
   min-height: 2.35rem;
   padding: 0.55rem 0.75rem;
+}
+.region-filter {
+  min-height: 2.35rem;
+  width: 100%;
+  border: 1px solid var(--concrete-100);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--black-80);
+  padding: 0.55rem 2rem 0.55rem 0.75rem;
 }
 .lane-tabs {
   display: flex;
@@ -695,6 +704,71 @@ details {
 }
 .floating-export:hover {
   background: var(--primary);
+}
+.floating-sync {
+  position: fixed;
+  right: 132px;
+  bottom: 18px;
+  z-index: 20;
+  max-width: 190px;
+  padding: 0.72rem 0.95rem;
+  overflow: hidden;
+  border: 1px solid var(--concrete-100);
+  border-radius: 999px;
+  background: white;
+  color: var(--primary);
+  box-shadow: var(--shadow-elevated);
+  font-size: 0.82rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sync-panel {
+  position: fixed;
+  right: 18px;
+  bottom: 70px;
+  z-index: 30;
+  display: grid;
+  width: min(420px, calc(100vw - 36px));
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--concrete-100);
+  border-radius: 1rem;
+  background: white;
+  box-shadow: var(--shadow-elevated);
+}
+.sync-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.sync-panel-heading div {
+  display: grid;
+  gap: 3px;
+}
+.sync-panel-heading small,
+.sync-note {
+  color: var(--black-60);
+  font-size: 0.74rem;
+}
+.sync-panel label {
+  display: grid;
+  gap: 4px;
+  color: var(--black-80);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+.sync-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.sync-panel-actions button {
+  min-height: 2.25rem;
+  padding: 0.5rem 0.7rem;
+}
+.sync-panel p {
+  margin: 0;
 }
 summary {
   cursor: pointer;

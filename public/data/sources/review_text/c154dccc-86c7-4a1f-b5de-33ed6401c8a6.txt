@@ -1,0 +1,357 @@
+.
+:
+E
+V
+K
+Töltődik. Szíves türelmét kérjük...
+H-2500 Esztergom, Petőfi Sándor u. 26-28
+titkarsag@vaszary.hu
+ORVOSAINK
+Orvos neve
+Osztály
+Összes osztály
+Ápolási Osztály (Dorog)
+Belgyógyászat I. osztály
+Belgyógyászat II. osztály
+Belgyógyászat szakrendelés
+Belgyógyászat szakrendelés (Dorog)
+Bőr és nemibeteg szakrendelés és gondozó
+Bőr és nemibeteg szakrendelés és gondozó (Dorog)
+CT diagnosztika
+Diabetológia szekrendelés
+EEG szakrendelés
+EMG diagnosztika szakrendeléls
+Epilepsia és fejfájás szakrendelés
+Érsebészet szakrendelés (Dorog)
+Fejfájás, alvás szakrendelés
+Fül-orr-gége szakrendelés
+Gasztroenterológia szakrendelés
+Gasztroenterológiai szakrendelés (Dorog)
+Geriátriai szakrendelés (Dorog)
+Gyermek ambulancia és gyermek sürgősségi osztály
+Gyermek endokrinológiai és diabetológiai szakrendelés
+Gyermek gasztroenterológiai szakrendelés
+Gyermek neurológiai szakrendelés
+Gyermek pulmonológia szakrendelés
+Gyermek tüdőgyógyászat szakrendelés (Dorog)
+Haematológia szakrendelés
+Hiperbárikus oxigénterápiás központ
+Hospice Ápolási osztály
+Ideggyógyászati szakrendelés (Dorog)
+Kardiológia szakrendelés
+Koraszülött és újszülött utógondozó
+Központi Anaesthesiológiai és Intenzív Betegellátó Osztály
+Központi laboratórium
+Központi Műtőszolgálat
+Krónikus Belgyógyászat (Dorog)
+Krónikus Belgyógyászati osztály
+Krónikus Pszichiátriai osztály
+Laboratórium (Dorog)
+Mozgásszervi rehabilitációs ambulancia
+Mozgásszervi rehabilitációs osztály
+Nephrológia szakrendelés
+Neurológia stroke szakrendelés
+Neurológiai osztály
+Neurológiai szakrendelés
+Nőgyógyászati szakrendelés (Dorog)
+Onkológiai szakrendelés (Dorog)
+Ortopédia szakrendelés
+Ortopédiai szakrendelés (Dorog)
+Patológiai osztály
+Pszichiátriai gondozó
+Pszichiátriai osztály
+Pszichiátriai szakrendelés
+Pszichiátriai szakrendelés (Dorog)
+Reumatológiai osztály
+Rheumatológia arthritis szakambulancia
+Rheumatológia és osteoporozis szakrendelés (Dorog)
+Rheumatológia nappali ellátás (Dorog)
+Rheumatológia szakrendelés
+Röntgen és ultrahang (Dorog)
+Röntgen és ultrahang rendelés
+Sclerosis multiplex szakrendelés
+Sebészet és proctológia szakrendelés (Dorog)
+Sebészet és proktológia szakrendelés
+Sebészeti osztály
+Sürgősségi Betegellátó osztály
+Szemészet szakrendelés
+Szemészet szakrendelés (Dorog)
+Szemészeti ambulancia
+Szemészeti osztály
+Szülészet-nőgyógyászat osztály
+Szülészet-nőgyógyászat szakrendelés
+Transzfúziológia
+Traumatológia osztály
+Traumatológia szakrendelés
+Traumatológia szakrendelés (Dorog)
+Tüdőgyógyászat és tüdőszűrés (Dorog)
+Tüdőgyógyászat szakrendelés, gondozó és tüdőszűrés
+Urológia szakrendelés
+Urológia szakrendelés (Dorog)
+Keresés
+Dr. Aichert Gabriella
+----------
+Szakterület:
+belgyógyászat
+Osztályok:
+Dr. Ali Mohammad
+szakorvos
+szülészet-nőgyógyászat
+Dr. Altigani Ali Salih A
+osztályos orvos
+traumatológia
+Dr. Ámon György
+osztályvezető főorvos
+belgyógyászat, kardiológia
+,
+Dr. Arató Géza
+főorvos
+pszichiátria
+Dr. Arató Sára
+Dr. Balázs Gergő
+aneszteziológia és intenzív terápia
+Dr. Baradács István
+szakorvos jelölt
+Dr. Bárdi Tibor
+traumatológia, ortopédia
+Dr. Bató Ferenc
+Dr. Bérces Magdolna
+reumatológia
+Dr. Béres Júlia
+Dr. Béres Mariann
+adjunktus
+Dr. Blága Imre
+Dr. Bodor Márton
+-------------
+Dr. Bohár László PHD
+radiológia
+Dr. Boldizsár Hanna Katalin
+szemészet
+Dr. Borbély Gábor
+oxiológus, sürgősségi szakorvos
+Dr. Carlos Alfaro Cooper
+bőrgyógyászat
+Dr. Cserkuti Milán
+----
+----------------
+Dr. Cserveni Zsolt
+Dr. Csibrei Ágnes
+Dr. Csontos Edit
+Laboratóriumi vizsgálatok szakorvosa
+Dr. Csuport Tibor
+Dr. Czifra György
+neurológia, SM
+Dr. Dávid Dezső
+Dr. Deme József
+Dr. Dinnyés Emília
+---
+fül-orr-gégészet
+Dr. Dobány Eszter
+Dr. Dombi Péter
+belgyógyászat, haematológia
+Dr. Dombi Szilvia
+belgyógyászat, diabetológia
+Dr. Duka Ede Botond
+Dr. Élő György
+ortopédia
+Dr. Emődi Karolin
+Dr. Faragó Tamara
+sebészet
+Dr. Fehér Zoltán
+Dr. Fetter Teréz
+Dr. Findt Mónika
+Dr. Finta Judit Éva
+Dr. Gajdos Gergely Gábor
+Dr. Gál Mariann
+Dr. Gánti Botond
+Dr. Géczi Ildikó
+tüdőgyógyászat
+Dr. Gégény Anna
+-----------
+Dr. Gloviczki Eszter
+Dr. Gombai Enikő
+Dr. Gombos József
+Dr. Győri Csilla
+Dr. Gyurika Zoltán
+Dr. Hábel Gerda
+Dr. Hadházi Ádám
+Dr. Hámory Zsolt Ferenc
+traumatológia, sebészet
+Dr. Hamvas József
+Dr. Hegyközi Éva
+Dr. Hengán Kolos
+Dr. Herczegh Zsolt
+Dr. Hernádi Miklós
+Dr. Herold Rita
+Dr. Horánszky Zoltán
+sebészet, érsebészet
+Dr. Horváth Bernadett
+csecsemő és gyermekgyógyászat, gyermek tüdőgyógyászat
+Dr. Horváth Gabriella
+---------
+Dr. Horváth Judit Éva
+Dr. Horváth Magdolna
+szülészet-nőgyógyászat, gyermeknőgyógyászat
+Dr. Ivánfi Mercédesz
+belgyógyászat, gasztroenterológia
+Dr. Jankó Ágnes
+Dr. Juhász Györgyi
+Dr. Juhász Márk
+Dr. Kalmár Eszter
+rezidens
+Dr. Kanász Gábor Imre
+központvezető főorvos
+aneszteziológia és intenzív terápia, hiperbár
+Dr. Kárász Hajnalka
+Dr. Kaszás Ilona
+Dr. Keller Judit
+Dr. Király Andrea
+Dr. Kiss Gyöngyi
+részlegvezető főorvos
+Dr. Kiszely Csaba
+Dr. Kocsubej Péter
+Dr. Koiss Róbert
+Dr. Kosztolánszky Hanna
+Dr. Kovács Éva
+Dr. Kovács István
+Dr. Kovács Judit
+Dr. Kovács Péter
+Dr. Laczkó Hajnalka
+Dr. Láposi Ildikó
+megbízott osztályvezető főorvos
+Dr. Lászlóczky Ágnes
+belgyógyászat, diabetológia, infektológia
+Dr. Lehota Eszter
+Dr. Magyar László
+Dr. Major Lajos
+Dr. Marinova Ilieva Ruzsa
+Dr. Mátai Katalin
+Dr. Máté Kinga
+Dr. Mátyus Balázs
+Dr. Molnár Katalin
+neurológia, pszichiátria
+Dr. Morva Eszter
+aneszteziológia
+Dr. Mrázik Krisztina
+Dr. Nagy Ferenc
+urológia
+Dr. Nagy Margit
+Dr. Nagy Márton
+Dr. Nagy Pál
+Dr. Nagy Péter János
+Dr. Naszádos Gyula
+Dr. Nemes Sándor János
+Dr. Németh Ferenc
+osztályvezető helyettes főorvos
+Dr. Novák András
+Dr. Nyisztor Mónika
+Dr. Őri Zsolt
+Dr. Orosz Rita
+Dr. Osvai András
+Dr. Osvai László
+Dr. Pádi Éva
+Dr. Pák Gábor
+Dr. Pák Péter
+Dr. Pál Magdolna
+Dr. Papp Tamás
+neurológia
+Dr. Pataky László
+Dr. Pathó Krisztina
+Dr. Péceli Adrienn
+Dr. Péter Éva
+Dr. Pócza Károly
+------------
+Dr. Pomoucz Gábor
+Dr. Poór Laura
+Dr. Puchner Krisztina
+Dr. Pukoli Dániel
+Dr. Püspöki Mária
+sebészet, kézsebészet, traumatológia
+Dr. Rátkai Márton
+Dr. Répás Réka
+Dr. Rosario Susai Vijayaraj
+Dr. Rostási László Bence
+Dr. Salamon Ferenc
+Dr. Sárdi Kata
+Dr. Schmidt Márta
+Dr. Sipos Dudás Eszter
+Dr. Sipos Károly
+Dr. Sirály Enikő PhD
+részleg vezető főorvos
+Dr. Sólyom Olimpia
+fül-orr-gégészet, foniátria
+Dr. Somorjai Attila
+Dr. Szabó Balázs
+Dr. Szabó Bence
+Dr. Szalay Miklós
+Dr. Szalma Ildikó
+Dr. Széll János
+a
+Dr. Szentgyörgyvölgyi Renáta
+Dr. Szepesi Borbála
+Dr. Szervánszky Noémi
+Dr. Szikriszt Péter
+Dr. Szőke Annamária
+Dr. Szőke-Tasi Katalin
+Dr. Szöllősi Csaba
+Dr. Szövérfi Zsófia Lídia
+Dr. Tegzes Andrea
+Dr. Telegdi Dávid
+Dr. Teleki Balázs
+Dr. Thierné Dr. Papdi Gyöngyvér Enikő
+Dr. Török Zsolt
+Dr. Tóth Géza
+Dr. Tóth Katarzyna Natalia
+Dr. Tóth Marianna
+Dr. Turcsik Vera
+Dr. Uhlyarik Andrea
+onkológia
+Dr. Vaday Enikő
+Dr. Válent Hajnalka
+Dr. Valikovics Anikó
+Dr. Valovics Ferenc
+Dr. Varga Anita Katalin
+Dr. Varga Győző
+Dr. Varga Luca
+Dr. Varga Vanda
+Dr. Várszegi Dávid
+kardiológia
+Rendelési idő
+cropped-kislogo.png
+Dr. Wilcsek Zsuzsanna
+belgyógyászat, geriátria
+Dr. Zubek Krisztina
+Központi telefonszám:
++36 33 542300
+HÍREK
+ÁLLÁS AJÁNLATOK
+TELEFONKÖNYV
+GALÉRIA
+LINK AJÁNLÓ
+AKADÁLYMENTESSÉGI NYILATKOZAT
+Sajtókapcsolat
++36 30 381 9404
+kommunikacio@vaszary.hu
+Weboldalunk fejlesztés alatt!                                                                                                                                       Copyright © EVKK all rights reserved.
+Cookie beállítást
+A weboldal sütiket (cookie-kat) használ, hogy biztonságos böngészés mellett a legjobb felhasználói élményt nyújtsa.
+Alapműködést biztosító sütik
+Always active
+A működéshez szükséges sütik a weboldal használatát segítik azzal, hogy alapvető funkciókat aktiválnak. A weboldal nem tud helyesen működni ezen sütik nélkül.
+Preferences
+The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.
+Statisztikai célú sütik
+A statisztikai süti visszajelzést nyújtanak a weboldal tulajdonosának, hogy átlássa, a látogatók milyen tartalmat kedvelnek a weboldalon. Az adatok nem kapcsolódnak konkrét személyhez. Oldalunkon a Google webanalitikai rendszer sütijeit használjuk.
+The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.
+Marketing
+The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.
+Manage options
+Manage services
+Manage {vendor_count} vendors
+Read more about these purposes
+Elfogadom
+Elutasítom
+Beállítások
+Beállítás mentés
+{title}
+Cookie beállítás

@@ -1,0 +1,7 @@
+{
+  "provider": "github",
+  "owner": "andreslasn",
+  "repo": "lead-gen-review-app",
+  "branch": "review-data",
+  "path_prefix": "reviews"
+}
