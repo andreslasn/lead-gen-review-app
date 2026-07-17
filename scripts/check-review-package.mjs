@@ -151,8 +151,12 @@ const clinicFiles = await filesUnder("clinics", ".json");
 const evidenceFiles = await filesUnder("sources");
 const clinicTree = await treeSummary(clinicFiles);
 const evidenceTree = await treeSummary(evidenceFiles);
-if (JSON.stringify(clinicTree) !== JSON.stringify(integrity.trees?.clinics)) fail("clinic payload tree drift");
-if (JSON.stringify(evidenceTree) !== JSON.stringify(integrity.trees?.evidence)) fail("evidence artifact tree drift");
+if (JSON.stringify(clinicTree) !== JSON.stringify(integrity.trees?.clinics)) {
+  fail(`clinic payload tree drift; expected ${JSON.stringify(integrity.trees?.clinics)}, received ${JSON.stringify(clinicTree)}`);
+}
+if (JSON.stringify(evidenceTree) !== JSON.stringify(integrity.trees?.evidence)) {
+  fail(`evidence artifact tree drift; expected ${JSON.stringify(integrity.trees?.evidence)}, received ${JSON.stringify(evidenceTree)}`);
+}
 
 for (const file of [...clinicFiles, ...evidenceFiles, ...requiredFiles.map((name) => path.join(root, name))]) {
   await scanSecrets(file);
