@@ -64,7 +64,11 @@ async function filesUnder(relative, suffix = null) {
     }
   }
   await walk(directory);
-  return output.sort((a, b) => path.relative(root, a).localeCompare(path.relative(root, b)));
+  return output.sort((a, b) => {
+    const left = path.relative(root, a).split(path.sep).join("/");
+    const right = path.relative(root, b).split(path.sep).join("/");
+    return left < right ? -1 : left > right ? 1 : 0;
+  });
 }
 
 async function treeSummary(paths) {
