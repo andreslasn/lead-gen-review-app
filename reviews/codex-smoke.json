@@ -1,0 +1,17 @@
+{
+  "format": "lead-gen-clinic-review",
+  "schema_version": 1,
+  "dataset_id": "hu-review-20260717T081522Z",
+  "dataset_version": "2026-07-17T08:15:24.086184+00:00",
+  "base_data_hash": "sha256:c8e1c430e77b086184cf8c28bbfba09ecf566ce297343665839b1b418970e434",
+  "reviewer": {
+    "id": "codex-smoke"
+  },
+  "exported_at": "2026-07-17T08:26:05.159Z",
+  "app_build": "d7b1904c7ff7",
+  "decisions": [],
+  "clinic_states": [],
+  "role_overrides": [],
+  "audit_events": [],
+  "checksum": "sha256:f1f6021bbc1500652fa5ec005e15f5fc57249267f01e67c6de92b336211a91c4"
+}
