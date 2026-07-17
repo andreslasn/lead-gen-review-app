@@ -11,6 +11,10 @@ npm install
 npm run build
 ```
 
+`npm run build` first validates the generated package contract, clinic/evidence
+tree hashes, required files, and common exposed-secret formats. Do not hand-edit
+`public/data`; regenerate it from the pipeline repository.
+
 ## Reviewer workflow
 
 The app is optimized for fast one-lead-at-a-time validation:
@@ -39,8 +43,14 @@ Each reviewer is stored separately under `reviews/<reviewer-id>.json`. Local dec
 
 ## Refresh packaged data
 
-From the private `lead-gen` repository:
+From the private `lead-gen` repository, for any configured country:
 
 ```bash
-.venv/bin/lead-gen review package --country HU --output ../lead-gen-review-app/public/data
+.venv/bin/lead-gen review prepare-market --country <CC> \
+  --review-app-output ../lead-gen-review-app/public/data
+.venv/bin/lead-gen review check-package --path ../lead-gen-review-app/public/data
 ```
+
+The app reads the market name, admin-area filter label, reviewer contact types,
+type aliases, evidence defaults, country-pack version, and dataset identity from
+the generated manifest. A country-specific UI branch should not be necessary.

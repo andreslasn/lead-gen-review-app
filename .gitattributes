@@ -1,1 +1,1 @@
-public/data/sources/raw_html/** -whitespace
+public/data/** -text whitespace=-trailing-space,-space-before-tab

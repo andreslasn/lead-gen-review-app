@@ -5,12 +5,22 @@ const DB_NAME = "lead-gen-clinic-review";
 const DB_VERSION = 1;
 const REVIEW_FORMAT = "lead-gen-clinic-review";
 const SCHEMA_VERSION = 1;
+const PACKAGE_FORMAT = "lead-gen-review-package";
+const PACKAGE_SCHEMA_VERSION = 1;
 const STATES = ["needs_review", "confirmed", "no_email", "not_processed", "excluded"];
-const ROLE_OPTIONS = [
+const DEFAULT_ROLE_OPTIONS = [
   { value: "clinic_contact", label: "Generic contact" },
   { value: "doctor_staff", label: "Doctor/staff" },
   { value: "not_relevant", label: "Not relevant" },
 ];
+const DEFAULT_ROLE_ALIASES = {
+  covering_provider: "doctor_staff",
+  prescription_refill: "clinic_contact",
+  not_clinic_owned: "not_relevant",
+  unclear: "not_relevant",
+  other_provider: "not_relevant",
+  source_operator: "not_relevant",
+};
 const PREFETCH_COUNT = 3;
 const REVIEW_SYNC_CONFIG = "review-sync.json";
 
@@ -256,7 +266,7 @@ function evidencePresentation(link, document) {
   };
 }
 
-function candidateRoleLabel(candidate) {
+function candidateRoleLabel(candidate, reviewPolicy = {}) {
   const text = [
     candidate?.value,
     candidate?.reason,
@@ -266,28 +276,32 @@ function candidateRoleLabel(candidate) {
   ].join(" ").toLowerCase();
   const classification = String(candidate?.classification || "").toLowerCase();
   const contactRole = String(candidate?.contact_role || "").toLowerCase();
-  if (/(recept|prescription|rx|repeat)/i.test(text) || contactRole.includes("prescription")) return "Generic contact";
-  if (classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
+  const genericTerms = reviewPolicy.generic_contact_terms || ["prescription", "refill", "repeat", "rx"];
+  const staffTerms = reviewPolicy.staff_contact_terms || ["doctor", "physician", "staff"];
+  if (genericTerms.some((term) => term && text.includes(String(term).toLowerCase())) || contactRole.includes("prescription")) return "Generic contact";
+  if (staffTerms.some((term) => term && text.includes(String(term).toLowerCase())) || classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
   if (classification.includes("clinic") || contactRole.includes("clinic")) return "Generic contact";
   if (classification.includes("generic")) return "Generic contact";
   if (classification.includes("third") || classification.includes("directory") || classification.includes("webmaster")) return "Not relevant";
   return "Not relevant";
 }
 
-function candidateRoleCode(candidate) {
+function candidateRoleCode(candidate, roleOptions = DEFAULT_ROLE_OPTIONS, reviewPolicy = {}) {
   const ownershipClass = candidate?.triage?.ownership_class;
   if (["target_person", "same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "doctor_staff";
   if (ownershipClass === "target_practice") return "clinic_contact";
   if (["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_relevant";
-  const label = candidateRoleLabel(candidate);
-  return ROLE_OPTIONS.find((option) => option.label === label)?.value || "not_relevant";
+  const label = candidateRoleLabel(candidate, reviewPolicy);
+  return roleOptions.find((option) => option.label === label)?.value || "not_relevant";
 }
 
-function normalizedRoleCode(role) {
-  if (role === "covering_provider") return "doctor_staff";
-  if (role === "prescription_refill") return "clinic_contact";
-  if (["not_clinic_owned", "unclear", "other_provider", "source_operator"].includes(role)) return "not_relevant";
-  return ROLE_OPTIONS.some((option) => option.value === role) ? role : "not_relevant";
+function normalizedRoleCode(
+  role,
+  roleOptions = DEFAULT_ROLE_OPTIONS,
+  aliases = DEFAULT_ROLE_ALIASES,
+) {
+  const normalized = aliases[role] || role;
+  return roleOptions.some((option) => option.value === normalized) ? normalized : "not_relevant";
 }
 
 function candidateEvidenceCount(candidate) {
@@ -325,22 +339,27 @@ function candidateEvidenceText(candidate) {
   ].filter(Boolean).join(" "));
 }
 
-function candidateMatchesTarget(candidate, clinic) {
+function candidateMatchesTarget(candidate, clinic, reviewPolicy = {}) {
+  const stopwords = new Set(
+    (reviewPolicy.target_name_stopwords || ["dr", "clinic", "practice", "medical", "health", "center", "centre"])
+      .map((item) => normalizedMatchText(item)),
+  );
   const targetTokens = normalizedMatchText(clinic?.name)
-    .replace(/\b(?:dr|haziorvosi|praxis|rendelo|rendeles)\b/g, " ")
     .split(/[^a-z0-9]+/)
-    .filter((token) => token.length >= 4);
+    .filter((token) => token.length >= 4 && !stopwords.has(token));
   if (!targetTokens.length) return false;
   const evidence = candidateEvidenceText(candidate);
   return targetTokens.every((token) => evidence.includes(token));
 }
 
-function candidatePresentationGroup(candidate, clinic) {
+function candidatePresentationGroup(candidate, clinic, reviewPolicy = {}) {
   const ownershipClass = candidate?.triage?.ownership_class;
+  const artifactSuffixes = reviewPolicy.email_artifact_suffixes || [];
+  const email = String(candidate?.value || "").toLowerCase();
   if (
     candidate?.classification === "invalid"
     || candidate?.syntax_status === "invalid"
-    || /\.(?:at|biz|co|com|de|eu|hu|info|io|net|org|ro|sk)-(?:ba|ban|be|ben|bol|ert|hez|hoz|nak|nek|ra|re|rol|tol|val|vel)$/i.test(candidate?.value || "")
+    || artifactSuffixes.some((suffix) => email.endsWith(`-${String(suffix).toLowerCase()}`))
   ) return "invalid";
   if (
     candidate?.triage?.decision === "suppress"
@@ -353,7 +372,7 @@ function candidatePresentationGroup(candidate, clinic) {
     candidate?.usable_contact
     || candidate?.triage?.decision === "promote"
     || ["direct", "practice_contact_for_person", "clinic_contact"].includes(candidate?.association_type)
-    || candidateMatchesTarget(candidate, clinic)
+    || candidateMatchesTarget(candidate, clinic, reviewPolicy)
   ) return "primary";
   return "primary";
 }
@@ -425,7 +444,16 @@ const App = {
     const regionOptions = computed(() => [...new Set(
       preparedQueue.value.map((item) => String(item.region || "").trim()).filter(Boolean),
     )].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })));
-    const regionFilterLabel = computed(() => manifest.value?.country === "HU" ? "All counties" : "All regions");
+    const regionFilterLabel = computed(() => manifest.value?.review_ui?.region_filter_label || "All regions");
+    const roleOptions = computed(() => {
+      const configured = manifest.value?.review_ui?.contact_types;
+      return Array.isArray(configured) && configured.length ? configured : DEFAULT_ROLE_OPTIONS;
+    });
+    const roleAliases = computed(() => ({
+      ...DEFAULT_ROLE_ALIASES,
+      ...(manifest.value?.review_ui?.contact_type_aliases || {}),
+    }));
+    const reviewPolicy = computed(() => manifest.value?.review_policy || {});
     const syncButtonLabel = computed(() => githubToken.value
       ? (syncStatus.value || "Sync review")
       : "Connect sync");
@@ -527,7 +555,7 @@ const App = {
     const candidateGroups = computed(() => {
       const groups = { primary: [], other: [], invalid: [] };
       candidates.value.forEach((candidate, index) => {
-        groups[candidatePresentationGroup(candidate, clinic.value?.clinic)].push({ candidate, index });
+        groups[candidatePresentationGroup(candidate, clinic.value?.clinic, reviewPolicy.value)].push({ candidate, index });
       });
       return groups;
     });
@@ -911,13 +939,21 @@ const App = {
     }
 
     async function loadStaticData() {
-      const [manifestResponse, queueResponse, clinicIndexResponse] = await Promise.all([
+      const [manifestResponse, queueResponse, clinicIndexResponse, integrityResponse] = await Promise.all([
         fetch("data/manifest.json", { cache: "no-cache" }),
         fetch("data/queue.json", { cache: "no-cache" }),
         fetch("data/clinic-index.json", { cache: "no-cache" }),
+        fetch("data/package-integrity.json", { cache: "no-cache" }),
       ]);
-      if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok) throw new Error("Review dataset is missing. Run lead-gen review package first.");
+      if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok || !integrityResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
       manifest.value = await manifestResponse.json();
+      const integrity = await integrityResponse.json();
+      if (manifest.value?.format !== PACKAGE_FORMAT || manifest.value?.schema_version !== PACKAGE_SCHEMA_VERSION) {
+        throw new Error("Unsupported review package contract. Refresh the app and regenerate the dataset.");
+      }
+      if (integrity?.dataset_id !== manifest.value?.dataset_id || integrity?.country !== manifest.value?.country) {
+        throw new Error("Review package drift detected. Regenerate the dataset before reviewing.");
+      }
       const payload = await queueResponse.json();
       queue.value = payload.items || [];
       const indexPayload = await clinicIndexResponse.json();
@@ -944,16 +980,24 @@ const App = {
     }
 
     function displayedCandidateRole(candidate) {
-      return normalizedRoleCode(roleOverrideByContact.value[candidate?.id]?.role || candidateRoleCode(candidate));
+      return normalizedRoleCode(
+        roleOverrideByContact.value[candidate?.id]?.role || candidateRoleCode(candidate, roleOptions.value, reviewPolicy.value),
+        roleOptions.value,
+        roleAliases.value,
+      );
     }
 
     async function updateCandidateRole(candidate, role) {
-      if (!candidate?.id || !clinic.value?.clinic?.id || !ROLE_OPTIONS.some((option) => option.value === role)) return;
+      if (!candidate?.id || !clinic.value?.clinic?.id || !roleOptions.value.some((option) => option.value === role)) return;
       const override = {
         clinic_id: clinic.value.clinic.id,
         contact_point_id: candidate.id,
         role,
-        original_role: normalizedRoleCode(candidate.contact_role || candidateRoleCode(candidate)),
+        original_role: normalizedRoleCode(
+          candidate.contact_role || candidateRoleCode(candidate, roleOptions.value, reviewPolicy.value),
+          roleOptions.value,
+          roleAliases.value,
+        ),
         reviewer_id: reviewer.value || "reviewer",
         updated_at: nowIso(),
       };
@@ -971,7 +1015,7 @@ const App = {
         reviewer_id: override.reviewer_id,
         created_at: override.updated_at,
       });
-      saveStatus.value = `Role updated · ${ROLE_OPTIONS.find((option) => option.value === role)?.label || role}`;
+      saveStatus.value = `Role updated · ${roleOptions.value.find((option) => option.value === role)?.label || role}`;
       scheduleRemoteSync();
     }
 
@@ -1112,12 +1156,12 @@ const App = {
         decision_duration_ms: Date.now() - itemStartedAt.value,
         queue_lane: currentItem.value?.lane || null,
         selected_candidate_rank: selectedCandidateIndex.value + 1,
-        selected_candidate_role_guess: candidateRoleLabel(candidate || {}),
+        selected_candidate_role_guess: candidateRoleLabel(candidate || {}, reviewPolicy.value),
         candidate_options: candidates.value.map((option, index) => ({
           id: option.id || null,
           value: option.value || "",
           rank: index + 1,
-          role_guess: candidateRoleLabel(option),
+          role_guess: candidateRoleLabel(option, reviewPolicy.value),
           source_url: option.source_url || option.evidence_links?.[0]?.source_url || null,
           selected: index === selectedCandidateIndex.value,
         })),
@@ -1564,7 +1608,7 @@ const App = {
       saveStatus,
       error,
       lastExportAt,
-      ROLE_OPTIONS,
+      roleOptions,
       candidateGroups,
       displayedCandidateRows,
       showOtherCandidates,
@@ -1650,7 +1694,7 @@ const App = {
                     <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
                     <td>
                       <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
-                        <option v-for="option in ROLE_OPTIONS" :key="option.value" :value="option.value">{{ option.label }}</option>
+                        <option v-for="option in roleOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
                       </select>
                     </td>
                     <td class="candidate-actions">

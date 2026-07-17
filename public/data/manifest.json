@@ -2,12 +2,136 @@
   "format": "lead-gen-review-package",
   "schema_version": 1,
   "dataset_id": "hu-review-20260717T081522Z",
-  "dataset_version": "2026-07-17T08:15:24.086184+00:00",
+  "dataset_version": "2026-07-17T09:15:02.692760+00:00",
   "base_data_hash": "sha256:c8e1c430e77b086184cf8c28bbfba09ecf566ce297343665839b1b418970e434",
   "country": "HU",
   "scope": "all_clinics",
-  "generated_at": "2026-07-17T08:15:24.086184+00:00",
-  "source_commit": "d7b1904c7ff7",
+  "generated_at": "2026-07-17T09:15:02.692760+00:00",
+  "source_commit": "e8c0c57eb288",
+  "country_pack": {
+    "version": "country-pack-loader-v1:4cf23fdd1136",
+    "config_hash": "4cf23fdd113652718630a8fa9b877fdcd88638b52bc92257e497f91ffe1542c5"
+  },
+  "contract": {
+    "integrity_file": "package-integrity.json",
+    "review_export_schema_version": 1
+  },
+  "market": {
+    "country_code": "HU",
+    "country_name": "Hungary",
+    "languages": [
+      "hu"
+    ],
+    "admin_area_level": "county",
+    "admin_area_label": "County",
+    "admin_area_label_plural": "Counties"
+  },
+  "review_ui": {
+    "region_filter_label": "All counties",
+    "contact_types": [
+      {
+        "value": "clinic_contact",
+        "label": "Generic contact"
+      },
+      {
+        "value": "doctor_staff",
+        "label": "Doctor/staff"
+      },
+      {
+        "value": "not_relevant",
+        "label": "Not relevant"
+      }
+    ],
+    "contact_type_aliases": {
+      "covering_provider": "doctor_staff",
+      "prescription_refill": "clinic_contact",
+      "not_clinic_owned": "not_relevant",
+      "unclear": "not_relevant",
+      "other_provider": "not_relevant",
+      "source_operator": "not_relevant"
+    }
+  },
+  "review_policy": {
+    "admin_area_label": null,
+    "admin_area_label_plural": null,
+    "contact_types": [
+      {
+        "value": "clinic_contact",
+        "label": "Generic contact"
+      },
+      {
+        "value": "doctor_staff",
+        "label": "Doctor/staff"
+      },
+      {
+        "value": "not_relevant",
+        "label": "Not relevant"
+      }
+    ],
+    "contact_type_aliases": {
+      "covering_provider": "doctor_staff",
+      "prescription_refill": "clinic_contact",
+      "not_clinic_owned": "not_relevant",
+      "unclear": "not_relevant",
+      "other_provider": "not_relevant",
+      "source_operator": "not_relevant"
+    },
+    "generic_contact_terms": [
+      "recept",
+      "receptfelírás",
+      "vény",
+      "e-recept",
+      "prescription",
+      "refill"
+    ],
+    "staff_contact_terms": [
+      "orvos",
+      "doktor",
+      "asszisztens",
+      "ápoló",
+      "nővér",
+      "doctor",
+      "staff"
+    ],
+    "target_name_stopwords": [
+      "dr",
+      "háziorvosi",
+      "praxis",
+      "rendelő",
+      "rendelés",
+      "orvos",
+      "clinic",
+      "practice"
+    ],
+    "email_artifact_suffixes": [
+      "ba",
+      "ban",
+      "be",
+      "ben",
+      "ból",
+      "bol",
+      "ért",
+      "hez",
+      "hoz",
+      "nak",
+      "nek",
+      "ra",
+      "re",
+      "ról",
+      "rol",
+      "tól",
+      "tol",
+      "val",
+      "vel"
+    ],
+    "capture_html": true,
+    "capture_screenshot": true,
+    "screenshot_fallback_only": true,
+    "reconcile_shared_pages": true,
+    "llm_ambiguity_review": true,
+    "default_recovery_crawl_profile": "deep",
+    "min_no_public_email_sources": 2
+  },
   "counts": {
     "clinics": 6366,
     "candidate_emails": 22594,
@@ -26,12 +150,14 @@
     "evidence_artifacts": "sources/**"
   },
   "evidence_policy": {
+    "capture_html_by_default": true,
+    "capture_screenshot_by_default": true,
     "html": "sanitized archived HTML when available",
     "screenshot": "JPEG fallback only when archived HTML is unavailable",
     "screenshot_max_bytes": 1000000,
     "text": "explicitly labelled extracted-text fallback"
   },
-  "evidence_artifacts_copied": 162,
+  "evidence_artifacts_copied": 35,
   "stale_clinic_payloads_pruned": 0,
-  "stale_evidence_artifacts_pruned": 1
+  "stale_evidence_artifacts_pruned": 0
 }

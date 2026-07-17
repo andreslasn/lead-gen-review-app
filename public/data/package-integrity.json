@@ -1,0 +1,29 @@
+{
+  "format": "lead-gen-review-package-integrity",
+  "schema_version": 1,
+  "dataset_id": "hu-review-20260717T081522Z",
+  "country": "HU",
+  "country_pack": {
+    "version": "country-pack-loader-v1:4cf23fdd1136",
+    "config_hash": "4cf23fdd113652718630a8fa9b877fdcd88638b52bc92257e497f91ffe1542c5"
+  },
+  "required_files": {
+    "manifest.json": "sha256:6ea9b0126ee3f5fb3f867e0520cc4071ce89ee1e87254e17926620b500b8f29f",
+    "queue.json": "sha256:ff495bb35ab7845467f7a75d13998c20c8b4497b0ac62f95e5ef9d4db688635d",
+    "clinic-index.json": "sha256:c3c314f83c3b56be3cf43035e3eb5418d60fc22a69a83adc0f95f9959196baab",
+    "canonical-review-state.json": "sha256:52eb281dffc58e5a9550f5cdad392e56c98bdc017836e469b2ffd02073a31466"
+  },
+  "trees": {
+    "clinics": {
+      "file_count": 6366,
+      "byte_size": 139596743,
+      "sha256": "sha256:745d6e29281984a594b26e506d0b614774a6299565db4b5abe921f2bb6645b0e"
+    },
+    "evidence": {
+      "file_count": 6886,
+      "byte_size": 399690935,
+      "sha256": "sha256:0ea99e6bbe0a316d2bb124e7bb3231946665fb7c12aac2e3e1a99e39195f5ac4"
+    }
+  },
+  "package_fingerprint": "sha256:d434a146351986b0b3cfb31073ddfc7f083efa9f632e38f091698d2853c213f1"
+}
