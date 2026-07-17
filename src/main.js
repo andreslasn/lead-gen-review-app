@@ -136,6 +136,11 @@ function normalizedLaneSelection(value) {
   return "needs_review";
 }
 
+function normalizedNoMatchedEvidenceFilter(value) {
+  if (["html", "none"].includes(value)) return value;
+  return value === "no_html" ? "none" : "html";
+}
+
 function candidateLane(item) {
   const candidate = item.best_candidate || {};
   const confidence = Number(candidate.confidence || 0);
@@ -346,7 +351,7 @@ const App = {
     const reviewer = ref(localStorage.getItem("review.reviewer") || "reviewer");
     const search = ref(localStorage.getItem("review.filter.search") || "");
     const selectedLane = ref(normalizedLaneSelection(localStorage.getItem("review.filter.lane")));
-    const noMatchedEvidenceFilter = ref(localStorage.getItem("review.filter.noMatchedEvidence") || "all");
+    const noMatchedEvidenceFilter = ref(normalizedNoMatchedEvidenceFilter(localStorage.getItem("review.filter.noMatchedEvidence")));
     const currentIndex = ref(0);
     const selectedCandidateIndex = ref(0);
     const evidenceTab = ref("snapshot");
@@ -401,6 +406,7 @@ const App = {
         })
         .filter((item) => {
           if (selectedLane.value !== "no_matched_email" || noMatchedEvidenceFilter.value === "all") return true;
+          if (noMatchedEvidenceFilter.value === "none") return item.evidence_availability !== "html";
           return item.evidence_availability === noMatchedEvidenceFilter.value;
         })
         .filter((item) => {
@@ -423,7 +429,21 @@ const App = {
       for (const item of preparedQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
       return counts;
     });
+    const noMatchedEvidenceCounts = computed(() => {
+      const items = preparedQueue.value.filter((item) => (
+        item.confidence_pool === "no_matched_email"
+        && !["confirmed", "no_email", "excluded"].includes(item.status)
+      ));
+      return {
+        html: items.filter((item) => item.evidence_availability === "html").length,
+        none: items.filter((item) => item.evidence_availability !== "html").length,
+      };
+    });
     const currentItem = computed(() => filteredQueue.value[currentIndex.value] || null);
+    const isNoMatchArchivedHtml = computed(() => (
+      currentItem.value?.confidence_pool === "no_matched_email"
+      && currentItem.value?.evidence_availability === "html"
+    ));
     const candidates = computed(() => {
       const raw = clinic.value?.candidates || [];
       const validEmails = raw.filter((candidate) => String(candidate?.value || "").includes("@"));
@@ -473,14 +493,40 @@ const App = {
       return groups;
     });
     const displayedCandidateRows = computed(() => {
+      if (isNoMatchArchivedHtml.value) {
+        const documents = clinic.value?.documents || [];
+        const archivedDocumentIds = new Set(
+          documents.filter((document) => document.raw_html_path).map((document) => document.id),
+        );
+        return candidates.value
+          .map((candidate, index) => ({ type: "candidate", candidate, index }))
+          .filter(({ candidate }) => (
+            candidatePresentationGroup(candidate, clinic.value?.clinic) !== "invalid"
+            && (candidate.evidence_links || []).some((link) => (
+              Boolean(link.raw_html_path)
+              || archivedDocumentIds.has(link.source_document_id)
+            ))
+          ));
+      }
       return candidateGroups.value.primary.map((row) => ({ type: "candidate", ...row }));
     });
     const selectedCandidate = computed(() => {
       const selected = candidates.value[selectedCandidateIndex.value];
+      if (
+        isNoMatchArchivedHtml.value
+        && selected
+        && displayedCandidateRows.value.some((row) => row.index === selectedCandidateIndex.value)
+      ) return selected;
       if (selected && candidatePresentationGroup(selected, clinic.value?.clinic) === "primary") return selected;
-      return candidateGroups.value.primary[0]?.candidate || null;
+      return displayedCandidateRows.value[0]?.candidate || null;
     });
-    const selectedEvidence = computed(() => selectedCandidate.value?.evidence_links?.[0] || null);
+    const selectedEvidence = computed(() => {
+      const links = selectedCandidate.value?.evidence_links || [];
+      if (isNoMatchArchivedHtml.value) {
+        return links.find((link) => link.raw_html_path) || links[0] || null;
+      }
+      return links[0] || null;
+    });
     const selectedDocument = computed(() => {
       const documents = clinic.value?.documents || [];
       return documents.find((document) => document.id === selectedEvidence.value?.source_document_id)
@@ -489,6 +535,13 @@ const App = {
         || null;
     });
     const selectedEvidencePresentation = computed(() => evidencePresentation(selectedEvidence.value, selectedDocument.value));
+    const livePageUrl = computed(() => (
+      selectedEvidence.value?.open_url
+      || selectedCandidate.value?.source_url
+      || selectedDocument.value?.final_url
+      || selectedDocument.value?.source_url
+      || null
+    ));
     const currentClinicState = computed(() => clinic.value ? localStateByClinic.value[clinic.value.clinic.id] || clinic.value.state : null);
     const currentClinicDecisions = computed(() => clinic.value ? decisionsByClinic.value[clinic.value.clinic.id] || [] : []);
     const roleOverrideByContact = computed(() => Object.fromEntries(roleOverrides.value.map((item) => [item.contact_point_id, item])));
@@ -850,7 +903,7 @@ const App = {
       reassignSearch.value = "";
       note.value = "";
       clinic.value = await loadClinic(item.id);
-      selectedCandidateIndex.value = candidateGroups.value.primary[0]?.index ?? 0;
+      selectedCandidateIndex.value = displayedCandidateRows.value[0]?.index ?? 0;
       showOtherCandidates.value = false;
       showInvalidCandidates.value = false;
       evidenceTab.value = selectedEvidencePresentation.value.kind;
@@ -913,7 +966,7 @@ const App = {
     }
 
     function moveCandidate(delta) {
-      const indices = candidateGroups.value.primary.map((row) => row.index);
+      const indices = displayedCandidateRows.value.map((row) => row.index);
       if (!indices.length) return;
       const currentPosition = Math.max(0, indices.indexOf(selectedCandidateIndex.value));
       const nextPosition = clamp(currentPosition + delta, 0, indices.length - 1);
@@ -976,7 +1029,7 @@ const App = {
         })),
       };
       const terminalNegativeDecision = ["rejected", "reassigned"].includes(decisionType);
-      const targetCandidates = candidateGroups.value.primary.map((row) => row.candidate);
+      const targetCandidates = displayedCandidateRows.value.map((row) => row.candidate);
       const allCandidatesRejected = terminalNegativeDecision && targetCandidates.every((item) =>
         item.id === candidate?.id || ["rejected", "reassigned"].includes(candidateDecision(item)?.decision)
       );
@@ -996,7 +1049,7 @@ const App = {
       if (terminalNegativeDecision) {
         const decidedIds = new Set(currentClinicDecisions.value.map((item) => item.contact_point_id));
         decidedIds.add(candidate?.id);
-        const remainingIndices = candidateGroups.value.primary
+        const remainingIndices = displayedCandidateRows.value
           .map(({ candidate: item, index }) => ({ item, index }))
           .filter(({ item }) => !decidedIds.has(item.id))
           .map(({ index }) => index);
@@ -1232,6 +1285,8 @@ const App = {
       currentItem,
       filteredQueue,
       laneCounts,
+      noMatchedEvidenceCounts,
+      isNoMatchArchivedHtml,
       selectedLane,
       noMatchedEvidenceFilter,
       laneLabel,
@@ -1242,6 +1297,7 @@ const App = {
       selectedCandidateIndex,
       selectedEvidence,
       selectedEvidencePresentation,
+      livePageUrl,
       evidenceBody,
       fullEvidenceBody,
       evidencePane,
@@ -1304,12 +1360,10 @@ const App = {
         </div>
         <div v-if="selectedLane === 'no_matched_email'" class="evidence-subfilters">
           <button v-for="option in [
-            {value:'all',label:'All evidence'},
             {value:'html',label:'Archived HTML'},
-            {value:'fallback',label:'Fallback capture'},
             {value:'none',label:'No captured page'}
           ]" :key="option.value" :class="{active:noMatchedEvidenceFilter===option.value}" @click="noMatchedEvidenceFilter=option.value">
-            {{ option.label }}
+            {{ option.label }} <strong>{{ noMatchedEvidenceCounts[option.value] || 0 }}</strong>
           </button>
         </div>
       </section>
@@ -1329,7 +1383,7 @@ const App = {
 
           <section class="candidate-card">
             <p class="label">Email candidates</p>
-            <div v-if="candidateGroups.primary.length" class="candidate-table-wrap">
+            <div v-if="displayedCandidateRows.length" class="candidate-table-wrap">
               <table class="candidate-table">
                 <thead><tr><th>Email</th><th>Type</th><th>Decision</th></tr></thead>
                 <tbody>
@@ -1348,7 +1402,7 @@ const App = {
                 </tbody>
               </table>
             </div>
-            <p v-else class="muted">No likely target-clinic email remains after machine ownership filtering.</p>
+            <p v-else class="muted">{{ isNoMatchArchivedHtml ? 'No extracted email was retained from the archived page.' : 'No likely target-clinic email remains after machine ownership filtering.' }}</p>
             <p v-if="candidateReasonWithoutTriageDuplication(selectedCandidate)" class="candidate-reason">{{ candidateReasonWithoutTriageDuplication(selectedCandidate) }}</p>
             <div v-if="selectedCandidate?.triage" class="triage-summary" :class="'triage-' + selectedCandidate.triage.decision">
               <div class="triage-heading">
@@ -1386,11 +1440,11 @@ const App = {
 
         <section class="evidence-pane">
           <div class="evidence-toolbar">
-            <div class="evidence-provenance" :class="'evidence-' + selectedEvidencePresentation.kind">
+            <div v-if="selectedEvidencePresentation.kind !== 'screenshot'" class="evidence-provenance" :class="'evidence-' + selectedEvidencePresentation.kind">
               <strong>{{ selectedEvidencePresentation.label }}</strong>
               <span>{{ selectedEvidencePresentation.detail }}</span>
             </div>
-            <a v-if="selectedEvidence?.open_url || selectedCandidate?.source_url" :href="selectedEvidence?.open_url || selectedCandidate?.source_url" target="_blank" rel="noreferrer">Open live page ↗</a>
+            <a v-if="livePageUrl" :href="livePageUrl" target="_blank" rel="noreferrer">Open live page ↗</a>
           </div>
 
           <div v-if="selectedEvidencePresentation.kind === 'html'" class="archive-pane">
