@@ -1,0 +1,946 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html dir="  ltr  " lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Erzsébetváros " name="title"/>
+<meta content="Erzsébetváros, Budapest VII. kerületének hivatalos weboldala. " name="description"/>
+<meta content="7, kerület, erzsebetvaros, erzsébetváros, Erzsébetváros, budapest, Budapest, " name="keywords"/>
+<meta content="elsecolor" name="author"/>
+<meta content="655863155312198 " property="fb:app_id"/>
+<meta content="Erzsébetváros " property="og:title"/>
+<meta content="https://erzsebetvaros.hu/page/hivatal-elerhetosegei " property="og:url"/>
+<meta content="Erzsébetváros, Budapest VII. kerületének hivatalos weboldala. " property="og:description"/>
+<meta content="" property="og:image"/>
+<meta content="" itemprop="image"/>
+<meta content="website" property="og:type"/>
+
+<meta content="VrG8VjAEUqe5K25JPDyey4ouwvCaH7NMWxqnhFSV" name="csrf-token"/>
+
+<title>
+                    Erzsébetváros.hu: Hivatal elérhetőségei            </title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<noscript><img height="1" style="display:none" width="1"/></noscript>
+
+
+<style>
+
+        .desktop-view {
+            display: block;
+        }
+
+        .scrollmenu2 {
+            display: none;
+        }
+
+        .mobile-view {
+            display: none;
+        }
+
+        @media  only screen and (max-width: 600px) {
+            #main_menu_id_2 {
+                padding-top: 10px;
+            }
+        }
+
+        #ugyintezes:before {
+            content: none;
+        }
+
+        @media  only screen and (max-width: 600px) {
+            #szechenyiImage {
+                width: 200px !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .th-nav > div > ul > li {
+                padding: 0 0 2px 0;
+                font-size: 14px;
+            }
+        }
+
+        .th-nav a {
+            color: black !important;
+        }
+
+        @media (max-width: 767px) {
+
+            .th-nav > div > ul > li {
+                padding: 0 0 2px 0;
+                font-size: 14px;
+            }
+
+            .desktop-view {
+                display: none;
+            }
+
+            .scrollmenu2 {
+                display: block;
+            }
+
+            .mobile-view {
+                display: flex;
+            }
+
+            .th-nav > div > ul li.active {
+                background-color: transparent;
+                border: none;
+            }
+
+            .th-nav > div > ul > li.inactive {
+                border-bottom: none;
+            }
+
+            .popup-container {
+                padding: 5px;
+                background-color: #00C0F6;
+            }
+            #popup-content
+            {
+                max-width: 90%!important;
+                margin-top: 30px!important;
+            }
+        }
+
+        .th-nav > div > ul > li.inactive:hover {
+            color: black !important;
+        }
+
+        /* SCROLL MENU */
+        div.scrollmenu {
+            overflow: auto;
+            white-space: nowrap;
+            background-color: #00C0F6;
+            border-radius: 0 0 10px 10px;
+        }
+
+        div.scrollmenu2 {
+            overflow: auto;
+            white-space: nowrap;
+        }
+
+        div.scrollmenu a {
+            display: inline-block;
+            text-align: center;
+            color: black !important;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        div.scrollmenu a:hover, .scrollmenu2 a:hover {
+            background-color: #192c4c;
+            color: white !important;
+        }
+
+        .scrollmenu2 > div {
+            border-bottom: 10px solid #00c0f6;
+        }
+
+
+        #mymap-canvas .text-marker {
+        }
+
+        .map-generator {
+            max-width: 100%;
+            max-height: 100%;
+            background: none;
+        }
+
+        #th-btnsearch {
+            background-color: #192c4c;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        #search_input {
+            border: 1px solid silver;
+        }
+
+        .th-btnsearch span {
+            background: url(/uploads/img/general/search_white.png) no-repeat;
+        }
+
+        .cd-text-replace {
+            color: white;
+        }
+
+        .cd-main-search {
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            right: 10px;
+            min-width: 400px;
+            background-color: #192c4c;
+            padding: 1px 10px 10px 10px;
+            left: -310px;
+            border-radius: 5px;
+            border: 1px solid #19b9ed;
+            display: inline-table;
+        }
+
+        .th-search {
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        #search form {
+            width: calc(100% - 10px);
+            height: 100%;
+        }
+
+        #search_tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            overflow: hidden;
+        }
+
+        .search_tag {
+            margin: 2px 5px;
+            cursor: pointer;
+        }
+
+        .search_tag a {
+            border-radius: 5px;
+            color: white;
+            background-color: #19b9ed;
+            padding: 2px 5px;
+            font-size: 11px;
+            color: white;
+        }
+
+        #search_input {
+            position: absolute;
+            left: 10px;
+            border: 1px solid silver;
+            height: 100%;
+        }
+
+
+        .bg-abstract-top {
+            background-image: url('/uploads/img/general/abstracts/white-top-left.png');
+            background-position-x: left;
+            background-position-y: bottom;
+            background-repeat: no-repeat;
+            background-size: 20%;
+        }
+
+
+        .bg-abstract-bottom {
+            background-image: url('/uploads/img/general/abstracts/white-bottom-right.png');
+            background-position-x: right;
+            background-position-y: bottom;
+            background-repeat: no-repeat;
+            background-size: 20%;
+        }
+
+        .th-navbarheader button {
+            background-color: #29a6de;
+            color: white;
+        }
+
+
+        #mth-navigation {
+            top: 85px;
+        }
+
+
+        /*content url fix*/
+        .th-main a, section a {
+            color: #19b9ed !important;
+            text-decoration: underline !important;
+        }
+
+        .th-main a:hover {
+            color: #19b9ed !important;
+        }
+
+        .th-main a:visited {
+            color: #1e657c !important;
+        }
+
+        a:has(> .admincat-box) {
+            text-decoration: none !important;
+        }
+
+    </style>
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="th-home-v1">
+
+<div class="th-wrapper th-haslayout" id="th-wrapper">
+<div class="cd-main-search" id="search">
+<div class="th-search">
+<div data-review-disabled-form="true">
+<input name="_token" type="hidden" value="VrG8VjAEUqe5K25JPDyey4ouwvCaH7NMWxqnhFSV"/> <input id="search_input" name="search" placeholder="Keresés..." type="search"/>
+</div>
+<a class="btn close cd-text-replace fas fa-times" data-review-original-href="javascript:void(0);" href="#" tabindex="-1"></a>
+</div>
+<p style="font-size: 10px; color: silver; margin: 2px;">Gyakori kulcsszavak:</p>
+<div id="search_tags"></div>
+</div>
+<header class="th-header th-haslayout" id="th-header">
+<div class="container">
+<div class="row col-sm-12">
+<div class="col-sm-9" style="font-size: 16px; color: #192c4c; padding: 10px;">
+<span>+36-1-462-3100</span> |
+                                                                                                <span>1073 Budapest Erzsébet Krt. 6.</span> |
+                                                                                                <span><a class="__cf_email__" data-cfemail="e48d8a828ba481969e97818681909285968b97ca8c91" data-review-original-href="/cdn-cgi/l/email-protection" href="#" tabindex="-1">[email protected]</a></span> |
+                                                            </div>
+<div class="col-sm-3" style="font-size: 16px; color: #6f6f6f; padding: 5px;">
+<div style="margin: 5px; float: left;">
+<a data-review-original-href="https://www.facebook.com/Erzsebetvaros.hu" href="#" style="color:#4267B2;" tabindex="-1">
+<em><i class="fab fa-facebook-f" style="font-size: 30px;"></i></em>
+</a>
+</div>
+<div style="margin: 5px; float: left;">
+<a data-review-original-href="https://www.instagram.com/erzsebetvaros.hu/" href="#" style="color:#c13584;" tabindex="-1">
+<em><i class="fab fa-instagram" style="font-size: 30px;"></i></em>
+</a>
+</div>
+<div style="margin: 5px; float: left;">
+<a class="th-addnavbtn" data-review-original-href="https://wai.erzsebetvaros.hu/" href="#" tabindex="-1">
+<img alt="WAI" style="background-color: black; width: 30px; border-radius: 20%"/>
+</a>
+</div>
+<div class="cd-main-header animate-search" style="margin: 5px; float: right">
+<a class="th-btnsearch cd-search-trigger cd-text-replace hithere" data-review-original-href="#search" href="#" id="th-btnsearch" tabindex="-1" title="Keresés"><span></span></a>
+<a class="cd-nav-trigger cd-text-replace" data-review-original-href="javascript:void(0);" href="#" tabindex="-1"><span></span></a>
+</div>
+</div>
+</div>
+</div>
+<div class="row" style="background-color: #192c4c !important; padding: 20px; margin-bottom: 20px;">
+<a data-review-original-href="https://erzsebetvaros.hu" href="#" tabindex="-1">
+<img alt="logo" class="center-block" style="text-align: center; height: 100px; margin: 0 auto; "/>
+</a>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="th-navigation desktop-view">
+<nav class="th-nav" id="th-nav">
+<div class="navbar-header th-navbarheader">
+<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#th-navigation" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="th-navigation collapse navbar-collapse desktop-view" id="th-navigation">
+<ul>
+<li class="th-dropdown inactive" id="main_menu_id_2">
+<a data-review-original-href="#" href="#" id="ugyintezes" tabindex="-1">ÜGYINTÉZÉS</a>
+</li>
+<li class="th-dropdown inactive" id="main_menu_id_3">
+<a data-review-original-href="#" href="#" tabindex="-1">VÁROSHÁZA</a>
+</li>
+<li class="th-dropdown inactive" id="main_menu_id_5">
+<a data-review-original-href="#" href="#" id="intezmenyek" tabindex="-1">INTÉZMÉNYEK</a>
+</li>
+<li class="th-dropdown inactive" id="main_menu_id_6">
+<a data-review-original-href="#" href="#" id="nyilvanossag" tabindex="-1">NYILVÁNOSSÁG</a>
+</li>
+<li class="th-dropdown inactive" id="main_menu_id_7">
+<a data-review-original-href="#" href="#" tabindex="-1">KAPCSOLAT</a>
+</li>
+<li class="th-dropdown inactive" id="main_menu_id_72">
+<a data-review-original-href="#" href="#" tabindex="-1">ERZSÉBETVÁROS</a>
+</li>
+</ul>
+</div>
+</nav>
+<div style="position: relative; height: 39px"> </div>
+<div id="hidden_menus">
+<div class="scrollmenu active" id="nav_bar_id_2" style="display: none; margin-left: 3px;">
+<a data-review-original-href="
+                                                                                                                    https://idopont.erzsebetvaros.hu/
+                                                                                                                " href="#" tabindex="-1">
+                                                Időpontfoglalás
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/elektronikus-ugyintezes
+                                                                                                                " href="#" tabindex="-1">
+                                                E-ügyintézés
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/letoeltheto-nyomtatvanyok
+                                                                                                                " href="#" tabindex="-1">
+                                                Letölthető nyomtatványok
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://www.kormanyhivatalok.hu/
+                                                                                                                " href="#" tabindex="-1">
+                                                Kormányhivatal
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://kk.gov.hu/belsopest
+                                                                                                                " href="#" tabindex="-1">
+                                                Belső-Pesti tankerület
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://palyazatkezelo.erzsebetvaros.hu/
+                                                                                                                " href="#" tabindex="-1">
+                                                e-Pályázatkezelő
+                                            </a>
+</div>
+<div class="scrollmenu active" id="nav_bar_id_3" style="display: none; margin-left: 3px;">
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/submenu/50
+                                                                                                                " href="#" tabindex="-1">
+                                                Hirdetőtábla
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/submenu/38
+                                                                                                                " href="#" tabindex="-1">
+                                                Közösség
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/submenu/45
+                                                                                                                " href="#" tabindex="-1">
+                                                Önkormányzat
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/polgarmesteri-hivatal
+                                                                                                                " href="#" tabindex="-1">
+                                                Polgármesteri Hivatal
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/valasztasi-informaciok
+                                                                                                                " href="#" tabindex="-1">
+                                                Választási információk
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/submenu/10
+                                                                                                                " href="#" tabindex="-1">
+                                                Nemzetiségi Önkormányzatok
+                                            </a>
+</div>
+<div class="scrollmenu active" id="nav_bar_id_5" style="display: none; margin-left: 3px;">
+</div>
+<div class="scrollmenu active" id="nav_bar_id_6" style="display: none; margin-left: 3px;">
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/atlathato/
+                                                                                                                " href="#" tabindex="-1">
+                                                Átlátható költségvetés
+                                            </a>
+</div>
+<div class="scrollmenu active" id="nav_bar_id_7" style="display: none; margin-left: 3px;">
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/hatosagi-es-uegyfelszolgalati-iroda-2
+                                                                                                                " href="#" tabindex="-1">
+                                                Hatósági és Ügyfélszolgálati Iroda
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/humanszolgaltato-iroda
+                                                                                                                " href="#" tabindex="-1">
+                                                Humánszolgáltató Iroda
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/intezmenyek-elerhetosegei
+                                                                                                                " href="#" tabindex="-1">
+                                                Intézmények elérhetőségei
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/kiemelt-telefonszamok
+                                                                                                                " href="#" tabindex="-1">
+                                                Kiemelt telefonszámok
+                                            </a>
+<a data-review-original-href="
+                                                                                                                    https://erzsebetvaros.hu/page/segelyvonalak
+                                                                                                                " href="#" tabindex="-1">
+                                                Segélyvonalak
+                                            </a>
+</div>
+</div>
+</div>
+<nav>
+<div class="scrollmenu2" style="display: flex; flex-direction: row; justify-items: start; gap: 20px">
+<div class="inactive" id="mobile_menu_id_2">
+<a data-review-original-href="#" href="#" id="ugyintezes_mobile" tabindex="-1">ÜGYINTÉZÉS</a>
+</div>
+<div class="th-dropdown inactive" id="mobile_menu_id_3">
+<a data-review-original-href="#" href="#" tabindex="-1">VÁROSHÁZA</a>
+</div>
+<div class="inactive" id="mobile_menu_id_5">
+<a data-review-original-href="#" href="#" id="intezmenyek_mobile" tabindex="-1">INTÉZMÉNYEK</a>
+</div>
+<div class="inactive" id="mobile_menu_id_6">
+<a data-review-original-href="#" href="#" id="nyilvanossag_mobile" tabindex="-1">NYILVÁNOSSÁG</a>
+</div>
+<div class="th-dropdown inactive" id="mobile_menu_id_7">
+<a data-review-original-href="#" href="#" tabindex="-1">KAPCSOLAT</a>
+</div>
+<div class="th-dropdown inactive" id="mobile_menu_id_72">
+<a data-review-original-href="#" href="#" tabindex="-1">ERZSÉBETVÁROS</a>
+</div>
+</div>
+<nav class="th-nav mobile-view" id="th-nav">
+<div class="navbar-header th-navbarheader" style="margin-top: 1rem;">
+<button aria-expanded="false" class="navbar-toggle collapsed mobile-toggler" data-target="#mth-navigation" data-toggle="collapse" style="margin-right: 1rem;" type="button">
+<div style="display: flex; flex-direction: row; justify-items: center; align-items: center;">
+<div style="margin-right: 5px;">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</div>
+<div>
+<span style="color: black; background-color: unset;">Válasszon a menüpontok közül</span>
+</div>
+</div>
+</button>
+</div>
+<div style="margin-top: 1rem;">
+</div>
+<div class="th-navigation collapse navbar-collapse" id="mth-navigation">
+<ul>
+<li class="mob_nav_bar_id_2" href="https://idopont.erzsebetvaros.hu/" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://idopont.erzsebetvaros.hu/" href="#" style="color: black;" tabindex="-1">
+                                                        Időpontfoglalás
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_2" href="https://erzsebetvaros.hu/page/elektronikus-ugyintezes" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/elektronikus-ugyintezes" href="#" style="color: black;" tabindex="-1">
+                                                        E-ügyintézés
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_2" href="https://erzsebetvaros.hu/page/letoeltheto-nyomtatvanyok" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/letoeltheto-nyomtatvanyok" href="#" style="color: black;" tabindex="-1">
+                                                        Letölthető nyomtatványok
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_2" href="https://www.kormanyhivatalok.hu/" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://www.kormanyhivatalok.hu/" href="#" style="color: black;" tabindex="-1">
+                                                        Kormányhivatal
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_2" href="https://kk.gov.hu/belsopest" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://kk.gov.hu/belsopest" href="#" style="color: black;" tabindex="-1">
+                                                        Belső-Pesti tankerület
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_2" href="https://palyazatkezelo.erzsebetvaros.hu/" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://palyazatkezelo.erzsebetvaros.hu/" href="#" style="color: black;" tabindex="-1">
+                                                        e-Pályázatkezelő
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_3" href="https://erzsebetvaros.hu/submenu/50" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/submenu/50" href="#" style="color: black;" tabindex="-1">
+                                                        Hirdetőtábla
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_3" href="https://erzsebetvaros.hu/submenu/38" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/submenu/38" href="#" style="color: black;" tabindex="-1">
+                                                        Közösség
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_3" href="https://erzsebetvaros.hu/submenu/45" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/submenu/45" href="#" style="color: black;" tabindex="-1">
+                                                        Önkormányzat
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_3" href="https://erzsebetvaros.hu/page/polgarmesteri-hivatal" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/polgarmesteri-hivatal" href="#" style="color: black;" tabindex="-1">
+                                                        Polgármesteri Hivatal
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_3" href="https://erzsebetvaros.hu/page/valasztasi-informaciok" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/valasztasi-informaciok" href="#" style="color: black;" tabindex="-1">
+                                                        Választási információk
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_3" href="https://erzsebetvaros.hu/submenu/10" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/submenu/10" href="#" style="color: black;" tabindex="-1">
+                                                        Nemzetiségi Önkormányzatok
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_6" href="https://erzsebetvaros.hu/atlathato/" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/atlathato/" href="#" style="color: black;" tabindex="-1">
+                                                        Átlátható költségvetés
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_7" href="https://erzsebetvaros.hu/page/hatosagi-es-uegyfelszolgalati-iroda-2" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/hatosagi-es-uegyfelszolgalati-iroda-2" href="#" style="color: black;" tabindex="-1">
+                                                        Hatósági és Ügyfélszolgálati Iroda
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_7" href="https://erzsebetvaros.hu/page/humanszolgaltato-iroda" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/humanszolgaltato-iroda" href="#" style="color: black;" tabindex="-1">
+                                                        Humánszolgáltató Iroda
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_7" href="https://erzsebetvaros.hu/page/intezmenyek-elerhetosegei" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/intezmenyek-elerhetosegei" href="#" style="color: black;" tabindex="-1">
+                                                        Intézmények elérhetőségei
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_7" href="https://erzsebetvaros.hu/page/kiemelt-telefonszamok" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/kiemelt-telefonszamok" href="#" style="color: black;" tabindex="-1">
+                                                        Kiemelt telefonszámok
+                                                    </a>
+</li>
+<li class="mob_nav_bar_id_7" href="https://erzsebetvaros.hu/page/segelyvonalak" style="display: none; color: black; background-color: #19b9ed ">
+<a data-review-original-href="https://erzsebetvaros.hu/page/segelyvonalak" href="#" style="color: black;" tabindex="-1">
+                                                        Segélyvonalak
+                                                    </a>
+</li>
+</ul>
+</div>
+</nav>
+</nav>
+</div>
+</div>
+</div>
+</header>
+
+<main class="th-main th-haslayout bg-abstract-bottom" id="th-main">
+
+<main class="th-main th-haslayout" id="th-main">
+<div class="container">
+<div class="row">
+<div class="th-single-detailv2">
+<div class="col-sm-12">
+<div>
+<h2>Hivatal elérhetőségei</h2>
+<section class="blog-single-section section">
+<div class="container">
+<div class="row">
+<div class="col-md-12 col-lg-12">
+<div class="blog-single-inner">
+<p><strong>1073 Budapest, Erzsébet krt. 6.</strong></p><p>Telefon: 462-3100</p><p><strong>1076 Budapest, Garay u. 5.</strong></p><p>Telefon: 462-3100</p><p> </p><p><strong>Általános ügyfélfogadási idő:</strong><br/><strong>(Minden osztályra vonatkozik!)</strong></p><p>Hétfő:  −<br/>Kedd:  8:00 - 12:00<br/>Szerda: 8:00 − 12:00 , 13:00 - 18:00<br/>Csütörtök:  13:00 - 16:00<br/>Péntek:  −<br/> </p><p><a data-review-original-href="https://erzsebetvaros.hu/page/polgarmester" href="#" tabindex="-1"><span style="color:blue;">Polgármester</span></a></p><p><a data-review-original-href="https://erzsebetvaros.hu/page/alpolgarmesterek" href="#" tabindex="-1"><span style="color:blue;">Alpolgármesterek</span></a></p><p><a data-review-original-href="https://erzsebetvaros.hu/page/jegyzo" href="#" tabindex="-1"><span style="color:blue;">Jegyző</span></a></p><p><a data-review-original-href="https://erzsebetvaros.hu/page/aljegyzo" href="#" tabindex="-1"><span style="color:blue;">Aljegyző</span></a></p><p> </p><p><strong>Jegyző</strong><br/>Tóth János<br/>Cím: 1073 Budapest, Erzsébet krt. 6. III/300.<br/>Telefon: (+36 1) 462-3206<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#bbd1dedcc2c1d4fbdec9c1c8ded9decfcddac9d4c895d3ce" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="8ce6e9ebf5f6e3cce9fef6ffe9eee9f8faedfee3ffa2e4f9">[email protected]</span></span></a></p><p><strong>Aljegyző</strong><br/>dr. Mészáros-Rajczi Andrea<br/>Cím: 1073 Budapest Erzsébet krt. 6. III. emelet<br/>Telefon: (+36 1) 462-3192<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#4f252a28363520260f2a3d353c2a2d2a3b392e3d203c61273a" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="72131e1817150b081d3217000801171017060413001d015c1a07">[email protected]</span></span></a></p><p><strong>Jegyzői Titkárság</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6. III/300.<br/>Telefon: (+36 1) 462-3192<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#3e545b594744517e5b4c444d5b5c5b4a485f4c514d10564b" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="58323d3f212237183d2a222b3d3a3d2c2e392a372b76302d">[email protected]</span></span></a></p><hr/><p><br/><strong>Jogi és Ügyviteli Főosztály</strong><br/>Főosztályvezető: dr. Mészáros-Rajczi Andrea<br/>Cím: 1073 Budapest Erzsébet krt. 6. III. emelet<br/>Telefon: (+36 1) 462-3192<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#f9939c9e80839690b99c8b838a9c9b9c8d8f988b968ad7918c" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="fd9c9197989a848792bd988f878e989f98898b9c8f928ed39588">[email protected]</span></span></a></p><p><strong>Személyügyi és szervezési Osztály</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6.<br/>Osztályvezető: <br/>Telefon: <br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#31424b545c545d484456487154434b42545354454750435e421f5944" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="87f4fde2eae2ebfef2e0fec7e2f5fdf4e2e5e2f3f1e6f5e8f4a9eff2">[email protected]</span></a></p><p><strong>Jogi és Testületi Osztály</strong><br/>Cím: 1073 Budapest Erzsébet krt. 6. I. 111-117.<br/>Osztályvezető: Oleárné dr. Kádas Marianna<br/>Telefon: (+36 1) 462-3263<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#7a101f1d030015133a1f0800091f181f0e0c1b08150954120f" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="254f40425c5f4a4c6540575f56404740515344574a560b4d50">[email protected]</span></a></p><p><strong>Informatikai és Ügyviteli Osztály</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6.<br/>Osztályvezető: Maár Balázs<br/>Telefon: (+36 1) 462-3100<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#ee878088819c838f9a87858f8b9d9b899798879a8b82ae8b9c949d8b8c8b9a988f9c819dc0869b" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="741d1a121b061915001d1f15110701130d021d0011183411060e07111611000215061b075a1c01">[email protected]</span></a></p><hr/><p><strong>Humánszolgáltatói és Igazgatási Főosztály</strong><br/>Cím: 1076 Budapest, Garay utca 5<br/>Főosztályvezető: Gyuris Gabriella<br/>Telefon: (+36 1) 462-3327<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#eb839e868a85ab8e9991988e898e9f9d8a998498c5839e" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="7b130e161a153b1e0901081e191e0f0d1a09140855130e">[email protected]</span></a></p><p><strong>Szociális és Egészségügyi Osztály</strong><br/>Cím: 1076 Budapest, Garay utca 5<br/>Osztályvezető: Szegény Ákos<br/>Telefon: (+36 1) 462-3414<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#591832362a770a233c3e3c3720193c2b232a3c3b3c2d2f382b362a77312c" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="9edff5f1edb0cde4fbf9fbf0e7defbece4edfbfcfbeae8ffecf1edb0f6eb">[email protected]</span></a><br/> </p><p><strong>Közművelődési és Oktatási Osztály</strong><br/>Cím: 1076 Budapest, Garay utca 5.<br/>Osztályvezető: Greffné Kállai Tünde<br/>Telefon: (+36 1) 462-3322<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#fdba8f989b9b9398b69c91919c94d3a988939998bd988f878e989f98898b9c8f928ed39588" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="dc9baeb9babab2b997bdb0b0bdb5f288a9b2b8b99cb9aea6afb9beb9a8aabdaeb3aff2b4a9">[email protected]</span></a></p><p><u>Ifjú, idős és nagykorú polgárok köszöntése, PHD hallgatók támogatása, civil pályázatokkal kapcsolatos ügyintézés:</u></p><p>Dr. Molnár-Csomós Ilona<br/>művelődési és sport referens<br/>Telefon: (+36 1) 462-3339<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#1f527073717e6d325c6c7072706c31567370717e5f7a6d656c7a7d7a6b697e6d706c31776a" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="a6ebc9cac8c7d48be5d5c9cbc9d588efcac9c8c7e6c3d4dcd5c3c4c3d2d0c7d4c9d588ced3">[email protected]</span></a></p><p><u>Önkormányzati díjakkal, civil és egyházi szervezetek támogatásával, gyermekek üdültetésével kapcsolatos ügyintézés:</u></p><p>Prógli Katalin<br/>oktatási és támogatási referens<br/>Telefon: (+36 1) 462-3399<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#1242607d757e7b3c597366737e7b7c5277606861777077666473607d613c7a67" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="37674558505b5e197c5643565b5e597752454d44525552434156455844195f42">[email protected]</span></a></p><p><u>Kapcsolattartás az önkormányzati köznevelési intézményekkel:</u></p><p>Tóth Tímea<br/>köznevelési referens<br/>Telefon: (+36 1) 462-3342<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#9cc8f3e8f4b2c8f5f1f9fddcf9eee6eff9fef9e8eafdeef3efb2f4e9" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="471328332f69132e2a22260722353d34222522333126352834692f32">[email protected]</span></a></p><p><u>Fiatalok közlekedésének támogatásával, művészeti és sporttámogatásával kapcsolatos ügyintézés:</u></p><p>Nánási Nikoletta<br/>pénzügyi és támogatási referens<br/>Telefon: (+36 1) 462-3412<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#cea0afa0afbda7e0a0a7a5a1a2abbabaaf8eabbcb4bdabacabbab8afbca1bde0a6bb" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="b9d7d8d7d8cad097d7d0d2d6d5dccdcdd8f9dccbc3cadcdbdccdcfd8cbd6ca97d1cc">[email protected]</span></a></p><p><u>Az Erzsébetvárosi Értéktár Bizottság működésével kapcsolatos ügyintézés, a  Minden gyermek jusson el színházba! program koordinálása:</u></p><p>Tóth Evelin<br/>művelődési és támogatási referens<br/>Telefon: (+36 1) 462-3343<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#ebbf849f83c5ae9d8e878285ab8e9991988e898e9f9d8a998498c5839e" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="75211a011d5b300310191c1b3510070f06101710010314071a065b1d00">[email protected]</span></a></p><p><strong>Hatósági Osztály</strong><br/>Cím: 1076 Budapest, Garay utca 5.<br/>Osztályvezető: Csüllög Szilvia Márta<br/>Telefon: (+36 1) 462-3172<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#b2dad3c6ddc1d3d5dbf2d7c0c8c1d7d0d7c6c4d3c0ddc19cdac7" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="bad2dbced5c9dbddd3fadfc8c0c9dfd8dfceccdbc8d5c994d2cf">[email protected]</span></a></p><p><strong>Anyakönyvi és Hagyatéki Osztály</strong><br/>Cím: 1073 Budapest, Erzsébet körút 6.<br/>Osztályvezető:<strong> </strong>Balogh István<br/>Telefon: (+36 1) 462-3120<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#b8d1d6ded7f8ddcac2cbdddaddccced9cad7cb96d0cd" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="f49d9a929bb491868e87919691808295869b87da9c81">[email protected]</span></a>; <a data-review-original-href="/cdn-cgi/l/email-protection#d7a2b0aeb1b2bba4adb8bbb0b6bbb6a397b2a5ada4b2b5b2a3a1b6a5b8a4f9bfa2" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="cebba9b7a8aba2bdb4a1a2a9afa2afba8eabbcb4bdabacabbab8afbca1bde0a6bb">[email protected]</span></a></p><p><strong><u>Ügyfélfogadási idő:</u></strong></p><figure class="table"><table><tbody><tr><td style="padding:0cm 5.4pt;vertical-align:top;width:4.0cm;">Kedd:</td><td style="padding:0cm 5.4pt;vertical-align:top;width:163.05pt;">8:00 – 12:00</td></tr><tr><td style="padding:0cm 5.4pt;vertical-align:top;width:4.0cm;">Szerda:</td><td style="padding:0cm 5.4pt;vertical-align:top;width:163.05pt;">8:00 – 12:00;  13:00 -18:00</td></tr><tr><td style="padding:0cm 5.4pt;vertical-align:top;width:4.0cm;">Csütörtök:</td><td style="padding:0cm 5.4pt;vertical-align:top;width:163.05pt;">13:00 – 16:00</td></tr></tbody></table></figure><p><strong><u>Ügyfélszolgálati ügyintézők:</u></strong></p><figure class="table"><table><tbody><tr><td style="padding:0cm 5.4pt;width:163.05pt;">Turi Gáborné (Garay utca)</td><td style="padding:0cm 5.4pt;width:106.3pt;">(+36 1) 462-3141<br/>(+36 1) 462-3305</td><td style="padding:0cm 5.4pt;width:184.25pt;"><a data-review-original-href="/cdn-cgi/l/email-protection#e39796918acd8482818c918d86a386919990868186979582918c90cd8b96" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="86f2f3f4efa8e1e7e4e9f4e8e3c6e3f4fcf5e3e4e3f2f0e7f4e9f5a8eef3">[email protected]</span></span></a></td></tr><tr><td style="padding:0cm 5.4pt;width:163.05pt;">Zöld Tünde (Erzsébet körút)</td><td style="padding:0cm 5.4pt;width:106.3pt;">(+36 1) 462-3120</td><td style="padding:0cm 5.4pt;width:184.25pt;"><a data-review-original-href="/cdn-cgi/l/email-protection#a0dacfccc48ed4d5cec4c5e0c5d2dad3c5c2c5d4d6c1d2cfd38ec8d5" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="81fbeeede5aff5f4efe5e4c1e4f3fbf2e4e3e4f5f7e0f3eef2afe9f4">[email protected]</span></span></a></td></tr></tbody></table></figure><p><strong><u>Hagyatéki ügyek:</u></strong></p><figure class="table"><table><tbody><tr><td style="padding:0cm 5.4pt;vertical-align:top;width:127.35pt;">Kozma Andrea</td><td style="padding:0cm 5.4pt;vertical-align:top;width:142.0pt;">(+36 1) 462-3348</td><td style="padding:0cm 5.4pt;vertical-align:top;width:183.75pt;"><a data-review-original-href="/cdn-cgi/l/email-protection#5932362334387738373d2b3c38193c2b232a3c3b3c2d2f382b362a77312c" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="6b000411060a450a050f190e0a2b0e1911180e090e1f1d0a19041845031e">[email protected]</span></span></a></td></tr><tr><td style="padding:0cm 5.4pt;vertical-align:top;width:127.35pt;">Nagyné Benczey Viola</td><td style="padding:0cm 5.4pt;vertical-align:top;width:142.0pt;">(+36 1) 462-3211</td><td style="padding:0cm 5.4pt;vertical-align:top;width:183.75pt;"><a data-review-original-href="/cdn-cgi/l/email-protection#2c4e49424f564955025a4543404d6c495e565f494e49585a4d5e435f024459" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="9cfef9f2ffe6f9e5b2eaf5f3f0fddcf9eee6eff9fef9e8eafdeef3efb2f4e9">[email protected]</span></span></a></td></tr><tr><td style="padding:0cm 5.4pt;vertical-align:top;width:127.35pt;">Sunyál Kornélia</td><td style="padding:0cm 5.4pt;vertical-align:top;width:142.0pt;">(+36 1) 462-3158</td><td style="padding:0cm 5.4pt;vertical-align:top;width:183.75pt;"><a data-review-original-href="/cdn-cgi/l/email-protection#592a2c372038357732362b379af0353038193c2b232a3c3b3c2d2f382b362a77312c" href="#" tabindex="-1"><span style="color:blue;">sunyal.korné<span class="__cf_email__" data-cfemail="d4b8bdb594b1a6aea7b1b6b1a0a2b5a6bba7fabca1">[email protected]</span></span></a></td></tr></tbody></table></figure><p><strong><u>Anyakönyvi ügyek:</u></strong></p><p><strong>E-mail:</strong> <a data-review-original-href="/cdn-cgi/l/email-protection#24454a5d454f4b4a5d526441565e57414641505245564b570a4c51" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="f2939c8b93999d9c8b84b297808881979097868493809d81dc9a87">[email protected]</span></span></a><br/><strong>Online időpontfoglalás:</strong> <a data-review-original-href="https://idopont.erzsebetvaros.hu" href="#" tabindex="-1"><span style="color:blue;">https://idopont.erzsebetvaros.hu</span></a><br/><br/><u>Anyakönyvi ügyekben információk, időpont foglalás:</u><br/>Szászfainé Csupor Anita                (+36 1) 462-3246                      <a data-review-original-href="/cdn-cgi/l/email-protection#4928273028222627303f092c3b333a2c2b2c3d3f283b263a67213c" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="1879766179737776616e587d6a626b7d7a7d6c6e796a776b36706d">[email protected]</span></span></a><br/>Juhász Judit Gabriella                    (+36 1) 462-3182                       <a data-review-original-href="/cdn-cgi/l/email-protection#74151a0d151f1b1a0d023411060e07111611000215061b075a1c01" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="e889869189838786919ea88d9a929b8d8a8d9c9e899a879bc6809d">[email protected]</span></span></a><br/>(+3630) 590-6514<br/>(+3630) 593-8049<br/>(+3630) 227-4652</p><p><br/><u>Újszülöttek anyakönyvezése, apai elismerő nyilatkozat ügyintézése:</u><br/>Kolosi-Őz Andrea (+36 1) 462-3346 / (+3630) 593-8049 <a data-review-original-href="/cdn-cgi/l/email-protection#9cf3e6b2fdf2f8eef9fddcf9eee6eff9fef9e8eafdeef3efb2f4e9" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="3857421659565c4a5d59785d4a424b5d5a5d4c4e594a574b16504d">[email protected]</span></span></a>               </p><p><u>Halálesettel kapcsolatos ügyintézés (hagyatéki ügyek kivételével):</u><br/>Rédecsi Orsolya (+36 1) 462-3123 / (+3630) 593-8049 <a data-review-original-href="/cdn-cgi/l/email-protection#6b190e0f0e081802450419180407120a2b0e1911180e090e1f1d0a19041845031e" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="562433323335253f78392425393a2f371633242c25333433222037243925783e23">[email protected]</span></span></a></p><p>Barkóczi Éva Katalin (+36 1) 462-3133 <a data-review-original-href="/cdn-cgi/l/email-protection#5d3f3c2f36323e273473382b3c1d382f272e383f38292b3c2f322e733528" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="197b786b72767a6370377c6f78597c6b636a7c7b7c6d6f786b766a37716c">[email protected]</span></span></a><br/><br/><u>Házasságkötéssel kapcsolatos ügyintézés:</u> <br/>Kovács Karolina (+36 1) 462-3149 / (+3630) 227-4652 <a data-review-original-href="/cdn-cgi/l/email-protection#1d76726b7c7e6e33767c6f727174737c5d786f676e787f78696b7c6f726e337568" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="a8c3c7dec9cbdb86c3c9dac7c4c1c6c9e8cddad2dbcdcacddcdec9dac7db86c0dd">[email protected]</span></span></a></p><p><strong><u>Folyamatban lévő anyakönyvi kivonatok kérelmével kapcsolatos ügyintézés:</u></strong></p><p>Kazi Erika (+36 1) 462-3181 <a data-review-original-href="/cdn-cgi/l/email-protection#b9d2d8c3d097dccbd0d2d8f9dccbc3cadcdbdccdcfd8cbd6ca97d1cc" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="d7bcb6adbef9b2a5bebcb697b2a5ada4b2b5b2a3a1b6a5b8a4f9bfa2">[email protected]</span></a></p><p>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#25444b5c444e4a4b5c536540575f56404740515344574a560b4d50" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="8dece3f4ece6e2e3f4fbcde8fff7fee8efe8f9fbecffe2fea3e5f8">[email protected]</span></span></a> <br/><br/>Ezúton tájékoztatjuk Tisztelt Ügyfeleinket, hogy az anyakönyvi ügyintézők a fenti elérhetőségeken állnak rendelkezésükre, azonban ügyfélfogadási<br/>időben, továbbá az anyakönyvi szakrendszerekben történő rögzítés alatt, amennyiben a kollégák nem tudják a hívást fogadni, kérjük szíves türelmüket<br/>és megértésüket. Amennyiben hívása nem jár sikerrel, a mobiltelefon híváskijelzőjén jelzett számon a kollégák visszahívják Önt.</p><hr/><p><strong>Városfejlesztési és Üzemeltetési Főosztály</strong></p><p>Főosztályvezető: dr. Jávori Péter<br/>Főtájépítész: Dr. Takács Dániel PhD<br/>Cím: 1073 Budapest, Erzsébet krt. 6. II. emelet<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#1b6d7a6974686e617e767e776f7e6f7e685b7e6961687e797e6f6d7a69746835736e" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="b9cfd8cbd6caccc3dcd4dcd5cddccddccaf9dccbc3cadcdbdccdcfd8cbd6ca97d1cc">[email protected]</span></a><br/>Telefon: (+36 1) 462-3215</p><p><strong>Beszerzési Osztály</strong><br/>Osztályvezető: <br/>Cím: 1073 Budapest, Erzsébet krt. 6. II. emelet<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#5d3f382e27382f27382e1d382f272e383f38292b3c2f322e733528" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="650700161f00171f00162500171f16000700111304170a164b0d10">[email protected]</span></a><br/>Telefon: (+36 1) 462-3276</p><p><strong>Kerületfejlesztési és Főépítészi Osztály</strong><br/>Osztályvezető: Törőcsik Attila<br/>Főépítész: Sólyom Benedek<br/>Cím: 1076 Budapest, Garay u. 5. II.<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#badcd5dfcad3cedfc9c0fadfc8c0c9dfd8dfceccdbc8d5c994d2cf" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="89efe6ecf9e0fdecfaf3c9ecfbf3faecebecfdffe8fbe6faa7e1fc">[email protected]</span></a><br/>Telefon: (+361) 462-3368</p><p><strong>Városüzemeltetési Osztály</strong><br/>Osztályvezető: dr. Tánczos Viktória<br/>Cím: 1073 Budapest, Erzsébet krt. 6. II. emelet<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#d5a3b4a7baa6a0afb0b8b0b9a1b0a1b0a695b0a7afa6b0b7b0a1a3b4a7baa6fbbda0" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="a0d6c1d2cfd3d5dac5cdc5ccd4c5d4c5d3e0c5d2dad3c5c2c5d4d6c1d2cfd38ec8d5">[email protected]</span></a><br/>Telefon: (+36 1) 462-3215</p><hr/><p><strong>Gazdasági Főosztály</strong><br/><strong>Főosztályvezető: Nemes Erzsébet</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6. IV. emelet<br/>Telefon: (+36 1) 462-3234<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#6212070c1817051b2207101811070007161403100d114c0a17" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="bcccd9d2c6c9dbc5fcd9cec6cfd9ded9c8caddced3cf92d4c9">[email protected]</span></a></p><p><strong>Pénzügyi Osztály</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6. IV. emelet<br/><strong>Osztályvezető: Dobrovitzky Anna </strong><br/>Telefon: (+36 1) 462-3195<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#a6d6c3c8dcd3c1dfe6c3d4dcd5c3c4c3d2d0c7d4c9d588ced3" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="5b2b3e35212e3c221b3e2921283e393e2f2d3a29342875332e">[email protected]</span></span></a></p><p><strong>Adóügyi Osztály</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6.<br/>Osztályvezető: Macherné Dr. Sebők Irén<br/>Telefon: (+36 1) 462-3100<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#cfaeaba0baa8b68faabdb5bcaaadaabbb9aebda0bce1a7ba" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="81e0e5eef4e6f8c1e4f3fbf2e4e3e4f5f7e0f3eef2afe9f4">[email protected]</span></a></p><p><strong>Vagyonkezelési Osztály:</strong><br/>Cím: 1073 Budapest, Erzsébet Krt. 6.<br/>Osztályvezető: dr. Veninger Gyula Nándor<br/>telefon: (+361) 462-3254<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#4a3c2b2d3325242d2b302e2b2621252e2b390a2f3830392f282f3e3c2b38253964223f" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="b2c4d3d5cbdddcd5d3c8d6d3ded9ddd6d3c1f2d7c0c8c1d7d0d7c6c4d3c0ddc19cdac7">[email protected]</span></a></p><hr/><p><strong>Kabinet</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6.<br/>Kabinetvezető: Nagy Nóra<br/>Telefon: (+36 1) 462-3270<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#751b14120c5b1b1a07143510070f06101710010314071a065b1d00" href="#" tabindex="-1"><span class="__cf_email__" data-cfemail="dfb1beb8a6f1b1b0adbe9fbaada5acbabdbaaba9beadb0acf1b7aa">[email protected]</span></a><br/> </p><p><strong>Polgármesteri Titkárság</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6. III/304.<br/>Telefon: (+36 1) 462-3204<br/>Telefon: (+36 1) 462-3205<br/><strong>E-mail: <a class="__cf_email__" data-cfemail="394956555e584b545c4a4d5c4b795c4b434a5c5b5c4d4f584b564a17514c" data-review-original-href="/cdn-cgi/l/email-protection" href="#" tabindex="-1">[email protected]</a></strong></p><p><strong>Sajtókapcsolatok</strong></p><p><strong>Kommunikáció</strong><br/>Cím: 1073 Budapest, Erzsébet krt. 6.<br/>Vezető: Kövesdi Péter<br/>Telefon: (+36 1) 462-3183<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#dfb4b0b2b2aab1b6b4bebcb6b09fbaada5acbabdbaaba9beadb0acf1b7aa" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="4a212527273f2423212b2923250a2f3830392f282f3e3c2b38253964223f">[email protected]</span></span></a></p><p>Sajtófőnök: Gyarmati Tímea<br/>Telefon: +36 20 466 8334<br/>E-mail: <a data-review-original-href="https://erzsebetvaros.net/admin/page/24/kommunikacio@erzsebetvaros.hu" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="4b202426263e2522202a2822240b2e3931382e292e3f3d2a39243865233e">[email protected]</span></span></a> </p><p><strong>Újság:</strong><br/>Főszerkesztő: Barát József<br/>Mobil: +36 30 370 5319<br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#6d0f0c1f0c19430702171e080b2d081f171e080f08191b0c1f021e430518" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="0361627162772d696c797066654366717970666166777562716c702d6b76">[email protected]</span></span></a></p><p><strong>Belső Ellenőrzés</strong><br/>E-mail: <a data-review-original-href="/cdn-cgi/l/email-protection#385a5d544b575d54545d56574a425d4b785d4a424b5d5a5d4c4e594a574b16504d" href="#" tabindex="-1"><span style="color:blue;"><span class="__cf_email__" data-cfemail="ec8e89809f838980808982839e96899fac899e969f898e89989a8d9e839fc28499">[email protected]</span></span></a></p> </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</main>
+<footer class="th-footer th-haslayout" id="th-footer">
+<div class="partners">
+<div class="container">
+<div class="row col-sm-8 col-sm-offset-2">
+<div class="col-lg-4 col-md-6 text-center">
+<a data-review-original-href="https://www.palyazat.gov.hu" href="#" tabindex="-1" target="_blank">
+<img/>
+</a>
+</div>
+<div class="col-lg-4 col-md-6 text-center partner-mobile">
+<a data-review-original-href="#" href="#" tabindex="-1" target="_blank">
+<img/>
+</a>
+</div>
+<div class="col-lg-4 col-md-6 text-center">
+<a data-review-original-href="https://www.kormany.hu" href="#" tabindex="-1" target="_blank">
+<img/>
+</a>
+</div>
+<div class="col-lg-4 col-md-6 text-center partner-mobile">
+<a data-review-original-href="https://valasztas.hu" href="#" tabindex="-1" target="_blank">
+<img/>
+</a>
+</div>
+<div class="col-lg-4 col-md-6 text-center">
+<a data-review-original-href="https://magyarorszag.hu/" href="#" tabindex="-1" target="_blank">
+<img/>
+</a>
+</div>
+<div class="col-lg-4 col-md-6 text-center partner-mobile">
+<a data-review-original-href="https://www.kozadattar.hu" href="#" tabindex="-1" target="_blank">
+<img/>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12 col-md-12 text-center partner-mobile" style="padding: 20px;
+                background: #f4f4f4;">
+<a data-review-original-href="https://erzsebetvaros.hu/page/egeszseges-utcak" href="#" tabindex="-1" target="_blank">
+<img style="width: 20%;"/></a>
+</div>
+<div style="border-bottom: 1px solid #353535;">
+<div class="container">
+<div class="row">
+<div class="th-footerthreecolumns">
+<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="th-footercol">
+<div class="th-footertitle">
+<h3>KAPCSOLAT</h3>
+</div>
+<div class="th-description">
+<p>
+<i class="fas fa-at"></i>
+<b>Email:</b>
+<span><a class="__cf_email__" data-cfemail="4f262129200f2a3d353c2a2d2a3b392e3d203c61273a" data-review-original-href="/cdn-cgi/l/email-protection" href="#" tabindex="-1">[email protected]</a></span>
+</p>
+</div>
+<div style="text-decoration:none; overflow:hidden;max-width:100%;width:370px;height:193px;">
+<div id="mymap-canvas" style="height:100%; width:100%;max-width:100%;">
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="th-footercol">
+<div class="th-widget th-mostpopularpost">
+<div class="th-footertitle">
+<h3>LEGFRISSEBB TARTALMAK</h3>
+</div>
+<ul>
+<li>
+<figure>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/fokuszban-a-megelozes-szemleletvaltas-es-megujulas-a-bischitz-koezpontban" href="#" tabindex="-1">
+<img alt="image description" style="width: 71px;"/>
+</a>
+</figure>
+<div class="th-contentbox">
+<ul class="th-postmatadata">
+<li>                                                                Erzsébetváros Újság
+                                                            </li>
+<li>
+<time datetime="2016-02-20">
+<a data-review-original-href="https://erzsebetvaros.hu/articles/fokuszban-a-megelozes-szemleletvaltas-es-megujulas-a-bischitz-koezpontban" href="#" tabindex="-1">
+                                                                    2026. július. 16. csütörtök
+                                                                </a>
+</time>
+</li>
+</ul>
+<div class="th-posttitle">
+<h4>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/fokuszban-a-megelozes-szemleletvaltas-es-megujulas-a-bischitz-koezpontban" href="#" tabindex="-1">
+                                                                Fókuszban a megelőzés – szemléletváltás és megújulás a Bischitz Központban
+                                                            </a>
+</h4>
+</div>
+</div>
+</li>
+<li>
+<figure>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/2026-evi-igazgatasi-szuenet" href="#" tabindex="-1">
+<img alt="image description" style="width: 71px;"/>
+</a>
+</figure>
+<div class="th-contentbox">
+<ul class="th-postmatadata">
+<li>                                                                Erzsébetváros Önkormányzata
+                                                            </li>
+<li>
+<time datetime="2016-02-20">
+<a data-review-original-href="https://erzsebetvaros.hu/articles/2026-evi-igazgatasi-szuenet" href="#" tabindex="-1">
+                                                                    2026. július. 15. szerda
+                                                                </a>
+</time>
+</li>
+</ul>
+<div class="th-posttitle">
+<h4>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/2026-evi-igazgatasi-szuenet" href="#" tabindex="-1">
+                                                                2026. évi igazgatási szünet
+                                                            </a>
+</h4>
+</div>
+</div>
+</li>
+<li>
+<figure>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/zoeld-oazis-a-belvaros-koezepen" href="#" tabindex="-1">
+<img alt="image description" style="width: 71px;"/>
+</a>
+</figure>
+<div class="th-contentbox">
+<ul class="th-postmatadata">
+<li>                                                                Erzsébetváros Újság
+                                                            </li>
+<li>
+<time datetime="2016-02-20">
+<a data-review-original-href="https://erzsebetvaros.hu/articles/zoeld-oazis-a-belvaros-koezepen" href="#" tabindex="-1">
+                                                                    2026. július. 14. kedd
+                                                                </a>
+</time>
+</li>
+</ul>
+<div class="th-posttitle">
+<h4>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/zoeld-oazis-a-belvaros-koezepen" href="#" tabindex="-1">
+                                                                Zöld Oázis a belváros közepén
+                                                            </a>
+</h4>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="th-footercol">
+<div class="th-widget th-popularlinks">
+<div class="th-footertitle">
+<h3>HÍR KATEGÓRIÁK</h3>
+</div>
+<ul>
+<li>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/category/hirek" href="#" tabindex="-1"><span>Hírek</span><span>1757</span></a>
+</li>
+<li>
+<a data-review-original-href="https://erzsebetvaros.hu/articles/category/fejlesztesek" href="#" tabindex="-1"><span>Fejlesztések</span><span>21</span></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="background: #f4f4f4;">
+<div class="container">
+<div class="row">
+<div class="th-socialwidgets">
+<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="th-footercol">
+<div class="th-widget th-widget-newsletter">
+<div class="th-footertitle">
+<h3>HÍRLEVÉL</h3>
+</div>
+<p>Ne maradjon le semmiről! Hírlevél feliratkozás</p>
+<div data-review-disabled-form="true">
+<fieldset>
+<a class="th-btn" data-review-original-href="https://erzsebetvaros.hu/newsletter" href="#" tabindex="-1" type="button">Feliratkozás</a>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="th-footercol">
+<div class="th-widget th-widget-instagram">
+<div class="th-footertitle">
+<h3>#ERZSEBETVAROS</h3>
+</div>
+<ul class="th-instagram">
+<li style="width: 33%">
+<a data-review-original-href="https://www.instagram.com/p/B-wSg6BqcdR/" href="#" tabindex="-1">
+<img alt="image description" style="height: 8vh"/>
+</a>
+</li>
+<li style="width: 33%">
+<a data-review-original-href="https://www.instagram.com/p/CL91m6rh-4a/" href="#" tabindex="-1">
+<img alt="image description" style="height: 8vh"/>
+</a>
+</li>
+<li style="width: 33%">
+<a data-review-original-href="https://www.instagram.com/p/CP81v2PhYvv" href="#" tabindex="-1">
+<img alt="image description" style="height: 8vh"/>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<div class="th-footercol">
+<div class="th-widget th-widget-instagram">
+<div class="th-footertitle">
+<h3>KÖVESSEN MINKET</h3>
+</div>
+<div class="col-md-1 col-xs-2" style="padding-left: 20%;">
+<a data-review-original-href="https://www.facebook.com/Erzsebetvaros.hu" href="#" style="color:#4267B2;" tabindex="-1">
+<em><i class="fab fa-facebook-f" style="font-size: 30px;"></i></em>
+</a>
+</div>
+<div class="col-md-1 col-xs-2" style="padding-left: 20%;">
+<a data-review-original-href="https://www.instagram.com/erzsebetvaros.hu/" href="#" style="color:#c13584;" tabindex="-1">
+<em><i class="fab fa-instagram" style="font-size: 30px;"></i></em>
+</a>
+</div>
+</div>
+</div>
+</div>
+<img alt="nonfiguratív" class="hidden-xs design col-md-1"/>
+</div>
+</div>
+</div>
+</div>
+<div class="th-footerbar">
+<div class="container">
+<div class="col-sm-6">
+<span class="th-copyright">
+                        Szerzői Jog ©
+                                                    Erzsébetváros
+                         -
+						
+</span>
+</div>
+<div class="col-sm-6">
+<nav class="th-footernav" style="float: left;">
+<ul>
+<li><a data-review-original-href="/page/hivatal-elerhetosegei" href="#" style="color: white" tabindex="-1">Kapcsolat</a></li>
+<li><a data-review-original-href="/page/adatvedelem" href="#" style="color: white" tabindex="-1">Adatvédelmi tájékoztató</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="alert alert-warning js-cookie-consent cookie-consent text-center" style="margin: 0; position: fixed; bottom: 0; z-index: 9999; width: 100%">
+    A megfelelő élmény biztosításához sütikre van szükség.
+    <button class="btn btn-warning js-cookie-consent-agree cookie-consent__agree">Sütik engedélyezése</button>
+</div>
+
+</div>
+</footer>
+</div>
+<a data-review-original-href="https://erzsebetvaros.hu/page/egeszseges-utcak" href="#" tabindex="-1">
+<img alt="kohezios_alap" id="szechenyiImage" style="position: fixed; bottom: 0; right: 0; z-index: 999; width: 350px"/>
+</a>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

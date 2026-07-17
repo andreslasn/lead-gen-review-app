@@ -1,0 +1,868 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Rendelések a következő négy hétben - Erodium - Orvosi Betegirányító Rendszer</title>
+
+
+
+
+
+
+
+<style type="text/css">
+		/* ============ desktop view ============ */
+		@media all and (min-width: 992px) {
+
+			.dropdown-menu li{
+				position: relative;
+			}
+			.dropdown-menu .submenu{ 
+				display: none;
+				position: absolute;
+				left:100%; top:-7px;
+			}
+			.dropdown-menu .submenu-left{ 
+				right:100%; left:auto;
+			}
+
+			.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+			.dropdown-menu > li:hover > .submenu{
+				display: block;
+			}
+		}	
+		/* ============ desktop view .end// ============ */
+
+		/* ============ small devices ============ */
+		@media (max-width: 991px) {
+
+		.dropdown-menu .dropdown-menu{
+				margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+		}
+        
+        @media(max-width: 768px) {
+            .btn {
+                width: 100%;  
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        }
+
+		}	
+		/* ============ small devices .end// ============ */
+
+	</style>
+
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+	  
+	  .print-only {
+        display: none;
+	  }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  @media print
+      {    
+        .no-print, .no-print *
+          {
+             display: none !important;
+          }
+		.print-only {
+          display: initial;
+        }
+      }
+	  
+	      </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="Dr. Pénzes Erzsébet - Vegyes Háziorvosi Praxis, Földeák" property="og:title"/>
+<meta content="6922 Földeák, Vásárhelyi utca 12. " property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://erodium.hu/info/rendelesek/foldeak/dr.penzes.erzsebet" property="og:url"/>
+<meta content="https://erodium.hu/images/banner_720p.png" property="og:image"/>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body class="d-flex flex-column min-vh-100">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top no-print">
+<div class="container-fluid">
+<div class="navbar-brand">
+<i class="fa fa-arrow-left white hand d-lg-none" id="generated_back"> </i>  
+       
+            <a class="navbar-brand" data-review-original-href="/info" href="#" tabindex="-1">
+<i class="fa fa-info-circle"></i> Erodium            </a>
+</div>
+<button aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarsExampleDefault" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+<ul class="navbar-nav me-auto mb-2 mb-md-0">
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-review-original-href="#" href="#" tabindex="-1">Pácienseknek</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" data-review-original-href="/paciens" href="#" tabindex="-1" title="">Kezdőlap</a></li><li><a class="dropdown-item" data-review-original-href="/info/paciens/rendelesek" href="#" tabindex="-1" title="">Rendelési idők</a></li>
+<li>
+<a class="dropdown-item" data-review-original-href="/info/paciens" href="#" tabindex="-1"> Segítség » </a>
+<ul class="submenu dropdown-menu">
+<li><a class="dropdown-item" data-review-original-href="/info/paciens" href="#" tabindex="-1" title="">Bevezetés</a></li><li><a class="dropdown-item" data-review-original-href="/info/paciens/hasznalat" href="#" tabindex="-1" title="">Használati utasítás</a></li><li><a class="dropdown-item" data-review-original-href="/info/paciens/hasznalat#hogyan-kaphatok-kartyat" href="#" tabindex="-1" title="">Erodium kártya igénylése</a></li><li><a class="dropdown-item" data-review-original-href="/info/paciens/hasznalat#elveszett-kartya" href="#" tabindex="-1" title="">Elveszett kártya pótlása</a></li><li><a class="dropdown-item" data-review-original-href="/info/paciens/paciens-statisztika" href="#" tabindex="-1" title="">Páciens visszajelzések</a></li><li><a class="dropdown-item" data-review-original-href="/info/paciens/adatkezeles" href="#" tabindex="-1" title="">Adatkezelési elveink</a></li>
+</ul>
+</li>
+<li><a class="dropdown-item" data-review-original-href="/info/paciens/kapcsolat" href="#" tabindex="-1" title="">Kapcsolat</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-review-original-href="#" href="#" tabindex="-1">Orvosoknak</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" data-review-original-href="/orvos" href="#" tabindex="-1" title="">Kezdőlap</a></li>
+<li>
+<a class="dropdown-item" data-review-original-href="/info/orvos" href="#" tabindex="-1"> Tájékoztató orvosoknak » </a>
+<ul class="submenu dropdown-menu">
+<li><a class="dropdown-item" data-review-original-href="/info/orvos" href="#" tabindex="-1" title="">Tájékoztató orvosoknak</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/felepites" href="#" tabindex="-1" title="">Hogyan működik?</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/miben-mas" href="#" tabindex="-1" title="">Miben más az Erodium?</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/sajat-rendszer" href="#" tabindex="-1" title="">Költségek és bevételek</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/gyik" href="#" tabindex="-1" title="">Gyakran ismételt kérdések</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/kartyak" href="#" tabindex="-1" title="">Kártya minták</a></li>
+</ul>
+</li>
+<li>
+<a class="dropdown-item" data-review-original-href="/info/orvos/velemenyek" href="#" tabindex="-1"> Vélemények » </a>
+<ul class="submenu dropdown-menu">
+<li><a class="dropdown-item" data-review-original-href="/info/orvos/rendelesek" href="#" tabindex="-1" title="">Csatlakozott rendelők</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/velemenyek" href="#" tabindex="-1" title="">Mit mondanak az orvosok?</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/paciens-statisztika" href="#" tabindex="-1" title="">Mit mondanak a páciensek?</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/ajanlasok" href="#" tabindex="-1" title="">Ajánlásaink</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/honlapok" href="#" tabindex="-1" title="">Orvosi honlapok</a></li>
+</ul>
+</li>
+<li><a class="dropdown-item" data-review-original-href="/info/orvos/kalkulator" href="#" tabindex="-1" title="">Árajánlat kalkulátor</a></li><li><a class="dropdown-item" data-review-original-href="/info/orvos/kapcsolat" href="#" tabindex="-1" title="">Kapcsolat</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-review-original-href="#" href="#" tabindex="-1">Hirdetőknek</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" data-review-original-href="/hirdeto" href="#" tabindex="-1" title="">Kezdőlap</a></li><li><a class="dropdown-item" data-review-original-href="/info/hirdeto/lehetosegek" href="#" tabindex="-1" title="">Hirdetési lehetőségek</a></li><li><a class="dropdown-item" data-review-original-href="/info/hirdeto/rendelesek" href="#" tabindex="-1" title="">Rendelések</a></li><li><a class="dropdown-item" data-review-original-href="/info/hirdeto/kapcsolat" href="#" tabindex="-1" title="">Kapcsolat</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="d-flex d-none d-lg-block">
+<a data-review-original-href="https://erodium.hu" href="#" tabindex="-1" target="_blank">
+<img style="height:30px"/>
+</a>
+</div>
+</div>
+
+</nav>
+<main class="container" id="main-container">
+<div class="row row-cols-1 row-cols-md-2 mb-3">
+<div class="col-md-4">
+<h1>Dr. Pénzes Erzsébet</h1>
+<p>
+<b>Dr. Pénzes Erzsébet - Vegyes Háziorvosi Praxis</b><br/><b>Mobil telefonszám:</b> +36-70-932-9787<br/><b>E-mail cím: </b><a data-review-original-href="mailto:penzes555@gmail.com" href="#" tabindex="-1">penzes555@gmail.com</a><br/><b>Weboldal:</b> <a data-review-original-href="https://drpenzeserzsebet.netdoktor.hu/" href="#" tabindex="-1">https://drpenzeserzsebet.netdoktor.hu/</a><br/> <b>Cím: </b>6922 Földeák, Vásárhelyi utca 12. <br/><b>Telefon:</b> +36-62-295-004<br/><center><a data-review-original-href="https://maps.google.com?q=46.3208902,20.4908141" href="#" tabindex="-1" target="_blank"><img style="max-width:100%"/></a></center>
+</p></div>
+<div class="col-md-8">
+<h3>Rendelések a következő négy hétben</h3>
+<style>
+				#rendelesi_tablazat_szeles {	display:none;	}
+				#rendelesi_tablazat_keskeny {	display:block;	}
+				
+				@media (min-width:730px){
+					#rendelesi_tablazat_szeles {	display:block;	}
+					#rendelesi_tablazat_keskeny {	display:none;	}
+				}
+			</style>
+<div class="dense" id="rendelesi_tablazat_szeles" style="position:relative">
+<p>A rendeléseket színkódok azonosítják. A csíkozott rendelésekre már nincs foglalható szabad időpont. Új időpont foglalásához kattintson egy rendelésre!</p>
+
+<table style="width:100%; table-layout: fixed;"><tr>
+<td style="width:40px; border:0px; padding:0px;">
+<div class="sample color1"> </div>
+<td style="border:0px; padding:0px;">
+					Háziorvosi ellátás
+				<td style="width:40px; border:0px; padding:0px;">
+<div class="sample color0"> </div>
+<td style="border:0px; padding:0px;">
+					Csak asszisztensi ellátás<tr></tr></td></td></td></td></tr></table><div id="rendelesi_idok_tablazat" style="position:relative; width:750px; margin-top:0px;"><div class="ora" style="left:93px; width:126px; height:100%; padding-left:1px;">7:00<br/> </div>
+<div class="ora" style="left:219px; width:126px; height:100%; padding-left:1px;">9:00<br/> </div>
+<div class="ora" style="left:345px; width:126px; height:100%; padding-left:1px;">11:00<br/> </div>
+<div class="ora" style="left:471px; width:126px; height:100%; padding-left:1px;">13:00<br/> </div>
+<div class="ora" style="left:597px; width:126px; height:100%; padding-left:1px;">15:00<br/> </div>
+<div id="ora_placeholder" style="width:100%; height:14px;"> </div><div class="nap munkanap hover_show_base" id="nap_sor_2026-07-17" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:1000;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-17" tabindex="-1">
+						2026-07-17
+						<br/>
+						Péntek
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-17/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965376" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-17/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965377" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-17" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-07-18" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:999;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-18" tabindex="-1">
+						2026-07-18
+						<br/>
+						Szombat
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-18" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-07-19" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:998;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-19" tabindex="-1">
+						2026-07-19
+						<br/>
+						Vasárnap
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-19" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-20" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:997;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-20" tabindex="-1">
+						2026-07-20
+						<br/>
+						Hétfő
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-20/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965358" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-20/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965359" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-20" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-21" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:996;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-21" tabindex="-1">
+						2026-07-21
+						<br/>
+						Kedd
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-21/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965378" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-21/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965379" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-21" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-22" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:995;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-22" tabindex="-1">
+						2026-07-22
+						<br/>
+						Szerda
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-22/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965424" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-22/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965425" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-22" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-23" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:994;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-23" tabindex="-1">
+						2026-07-23
+						<br/>
+						Csütörtök
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-23/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965380" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-23/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965381" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-23" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-24" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:993;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-24" tabindex="-1">
+						2026-07-24
+						<br/>
+						Péntek
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-24/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965382" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-24/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965383" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-24" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-07-25" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:992;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-25" tabindex="-1">
+						2026-07-25
+						<br/>
+						Szombat
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-25" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-07-26" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:991;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-26" tabindex="-1">
+						2026-07-26
+						<br/>
+						Vasárnap
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-26" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-27" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:990;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-27" tabindex="-1">
+						2026-07-27
+						<br/>
+						Hétfő
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-27/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965360" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-27/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965361" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-27" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-28" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:989;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-28" tabindex="-1">
+						2026-07-28
+						<br/>
+						Kedd
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-28/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965384" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-28/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965385" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-28" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-29" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:988;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-29" tabindex="-1">
+						2026-07-29
+						<br/>
+						Szerda
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-29/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965426" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-29/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965427" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-29" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-30" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:987;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-30" tabindex="-1">
+						2026-07-30
+						<br/>
+						Csütörtök
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-30/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965386" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-30/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965387" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-30" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-07-31" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:986;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-07-31" tabindex="-1">
+						2026-07-31
+						<br/>
+						Péntek
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-07-31/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965388" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-07-31/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965389" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-07-31" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-08-01" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:985;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-01" tabindex="-1">
+						2026-08-01
+						<br/>
+						Szombat
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-01" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-08-02" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:984;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-02" tabindex="-1">
+						2026-08-02
+						<br/>
+						Vasárnap
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-02" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-03" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:983;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-03" tabindex="-1">
+						2026-08-03
+						<br/>
+						Hétfő
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-03/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965362" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-03/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965363" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-03" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-04" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:982;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-04" tabindex="-1">
+						2026-08-04
+						<br/>
+						Kedd
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-04/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965390" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-04/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965391" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-04" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-05" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:981;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-05" tabindex="-1">
+						2026-08-05
+						<br/>
+						Szerda
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-05/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965428" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-05/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965429" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-05" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-06" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:980;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-06" tabindex="-1">
+						2026-08-06
+						<br/>
+						Csütörtök
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-06/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965392" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-06/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965393" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-06" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-07" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:979;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-07" tabindex="-1">
+						2026-08-07
+						<br/>
+						Péntek
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-07/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965394" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-07/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965395" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-07" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-08" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:978;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-08" tabindex="-1">
+						2026-08-08
+						<br/>
+						Szombat
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-08" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-08-09" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:977;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-09" tabindex="-1">
+						2026-08-09
+						<br/>
+						Vasárnap
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-09" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-10" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:976;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-10" tabindex="-1">
+						2026-08-10
+						<br/>
+						Hétfő
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-10/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965364" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-10/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965365" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-10" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-11" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:975;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-11" tabindex="-1">
+						2026-08-11
+						<br/>
+						Kedd
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-11/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965396" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-11/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965397" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-11" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-12" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:974;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-12" tabindex="-1">
+						2026-08-12
+						<br/>
+						Szerda
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-12/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965430" style="position:absolute;top: 7px;	left: 468px;	width: 189px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-12/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965431" style="position:absolute;top: 27px;	left: 468px;	width: 189px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-12" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-13" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:973;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-13" tabindex="-1">
+						2026-08-13
+						<br/>
+						Csütörtök
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-13/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965398" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-13/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965399" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-13" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap munkanap hover_show_base" id="nap_sor_2026-08-14" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:972;
+						 background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-14" tabindex="-1">
+						2026-08-14
+						<br/>
+						Péntek
+					</a>
+</div>
+<a data-review-original-href="/paciens/rendelesek/2026-08-14/orvos" href="#" tabindex="-1">
+<div class="elem color1" id="rendeles_112965400" style="position:absolute;top: 7px;	left: 153px;	width: 252px; z-index:100; "></div></a><a data-review-original-href="/paciens/rendelesek/2026-08-14/asszisztens" href="#" tabindex="-1">
+<div class="elem color0" id="rendeles_112965401" style="position:absolute;top: 27px;	left: 153px;	width: 252px; z-index:100; "></div></a>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-14" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+<div class="nap hetvege hover_show_base" id="nap_sor_2026-08-15" style="
+						padding-left:5px;
+						margin-top: 10px;
+						height:48px;
+						width: 744px;
+						position:relative;
+						z-index:971;
+						 background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;">
+<div style="float:left;">
+<a data-review-original-href="" href="#" id="nap_2026-08-15" tabindex="-1">
+						2026-08-15
+						<br/>
+						Szombat
+					</a>
+</div>
+</div>
+<div class="text-end napi-megjegyzes-2026-08-15" style="padding-right:5px;" title="Google Naptárból importált megjegyzés"></div>
+</div></div>
+<div id="rendelesi_tablazat_keskeny">
+<table style="width:100%; border-collapse:collapse">
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-17" tabindex="-1">2026-07-17 Péntek</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-17/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-17/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-17/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-17/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-18" tabindex="-1">2026-07-18 Szombat</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-19" tabindex="-1">2026-07-19 Vasárnap</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-20" tabindex="-1">2026-07-20 Hétfő</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-20/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-20/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 13 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-20/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-20/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-21" tabindex="-1">2026-07-21 Kedd</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-21/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-21/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-21/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-21/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-22" tabindex="-1">2026-07-22 Szerda</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-22/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-22/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 14 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-22/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-22/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-23" tabindex="-1">2026-07-23 Csütörtök</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-23/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-23/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-23/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-23/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-24" tabindex="-1">2026-07-24 Péntek</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-24/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-24/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-24/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-24/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-25" tabindex="-1">2026-07-25 Szombat</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-26" tabindex="-1">2026-07-26 Vasárnap</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-27" tabindex="-1">2026-07-27 Hétfő</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-27/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-27/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 14 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-27/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-27/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-28" tabindex="-1">2026-07-28 Kedd</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-28/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-28/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-28/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-28/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-29" tabindex="-1">2026-07-29 Szerda</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-29/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-29/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 14 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-29/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-29/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-30" tabindex="-1">2026-07-30 Csütörtök</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-30/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-30/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-30/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-30/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-07-31" tabindex="-1">2026-07-31 Péntek</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-07-31/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-31/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-07-31/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-07-31/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-01" tabindex="-1">2026-08-01 Szombat</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-02" tabindex="-1">2026-08-02 Vasárnap</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-03" tabindex="-1">2026-08-03 Hétfő</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-03/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-03/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 14 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-03/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-03/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-04" tabindex="-1">2026-08-04 Kedd</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-04/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-04/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-04/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-04/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-05" tabindex="-1">2026-08-05 Szerda</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-05/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-05/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 14 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-05/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-05/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-06" tabindex="-1">2026-08-06 Csütörtök</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-06/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-06/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-06/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-06/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-07" tabindex="-1">2026-08-07 Péntek</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-07/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-07/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-07/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-07/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-08" tabindex="-1">2026-08-08 Szombat</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-09" tabindex="-1">2026-08-09 Vasárnap</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-10" tabindex="-1">2026-08-10 Hétfő</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-10/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-10/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 14 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-10/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-10/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-11" tabindex="-1">2026-08-11 Kedd</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-11/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-11/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-11/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-11/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-12" tabindex="-1">2026-08-12 Szerda</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-12/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-12/orvos" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 14 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-12/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-12/asszisztens" href="#" tabindex="-1">13:00 - 16:00 <span class="green"><i>- 33 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-13" tabindex="-1">2026-08-13 Csütörtök</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-13/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-13/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-13/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-13/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(200,200,200,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-14" tabindex="-1">2026-08-14 Péntek</a></td><td class="top" style=""><a data-review-original-href="/paciens/rendelesek/2026-08-14/orvos" href="#" tabindex="-1"><b>Háziorvosi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-14/orvos" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 20 szabad időpont</i></span><br/></a><a data-review-original-href="/paciens/rendelesek/2026-08-14/asszisztens" href="#" tabindex="-1"><b>Csak asszisztensi ellátás</b></a><br/><a data-review-original-href="/paciens/rendelesek/2026-08-14/asszisztens" href="#" tabindex="-1">08:00 - 12:00 <span class="green"><i>- 45 szabad időpont</i></span><br/></a><p class="right pe-1"></p></td>
+<tr style=" background-color:rgba(100,100,100,0.5); ; border-left:3px solid transparent;; border-bottom:1px solid rgba(100,100,100,0.5); border-top:1px solid rgba(100,100,100,0.5);"><td class="top" style="width:100px;"><a data-review-original-href="" href="#" id="nap_2026-08-15" tabindex="-1">2026-08-15 Szombat</a></td><td class="top" style=""><p class="right pe-1"></p></td>
+</tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></tr></table>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto text-center text-muted no-print small d-none d-md-block">
+<p>
+<a data-review-original-href="https://erodium.hu" href="#" tabindex="-1">Erodium Orvosi Betegirányító Rendszer</a>
+<br/>
+<a class="no-print" data-review-original-href="https://erodium.hu/info/kapcsolat" href="#" tabindex="-1">Kapcsolat</a>
+<span class="no-print">-</span>
+<a class="no-print" data-review-original-href="https://erodium.hu/info/aszf" href="#" tabindex="-1">Általános szerződési feltételek</a>
+<span class="no-print">-</span>
+<a class="no-print" data-review-original-href="https://erodium.hu/info/adatkezeles" href="#" tabindex="-1">Adatkezelési szabályzat</a>
+</p>
+</footer>
+</body>
+</html>

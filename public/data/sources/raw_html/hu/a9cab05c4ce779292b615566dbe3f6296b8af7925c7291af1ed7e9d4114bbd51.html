@@ -1,0 +1,519 @@
+<!doctype html>
+
+
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<style id="debugbar_dynamic_style"></style><style class="kint-rich-style">.kint-rich{font-size:13px;overflow-x:auto;white-space:nowrap;background:rgba(255,255,255,0.9)}.kint-rich.kint-folder{position:fixed;bottom:0;left:0;right:0;z-index:999999;width:100%;margin:0;display:block}.kint-rich.kint-folder dd.kint-foldout{max-height:calc(100vh - 100px);padding-right:8px;overflow-y:scroll;display:none}.kint-rich.kint-folder dd.kint-foldout.kint-show{display:block}.kint-rich::selection,.kint-rich::-moz-selection,.kint-rich::-webkit-selection{background:#aaa;color:#1d1e1e}.kint-rich .kint-focused{box-shadow:0 0 3px 2px red}.kint-rich,.kint-rich::before,.kint-rich::after,.kint-rich *,.kint-rich *::before,.kint-rich *::after{box-sizing:border-box;border-radius:0;color:#1d1e1e;float:none !important;font-family:Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;line-height:15px;margin:0;padding:0;text-align:left}.kint-rich{margin:8px 0}.kint-rich dt,.kint-rich dl{width:auto}.kint-rich dt,.kint-rich div.access-path{background:#f8f8f8;border:1px solid #d7d7d7;color:#1d1e1e;display:block;font-weight:bold;list-style:none outside none;overflow:auto;padding:4px}.kint-rich dt:hover,.kint-rich div.access-path:hover{border-color:#aaa}.kint-rich>dl dl{padding:0 0 0 12px}.kint-rich dt.kint-parent>nav,.kint-rich>footer>nav{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAxNTAiPjxwYXRoIGQ9Ik02IDdoMThsLTkgMTV6bTAgMzBoMThsLTkgMTV6bTAgNDVoMThsLTktMTV6bTAgMzBoMThsLTktMTV6bTAgMTJsMTggMThtLTE4IDBsMTgtMTgiIGZpbGw9IiM1NTUiLz48cGF0aCBkPSJNNiAxMjZsMTggMThtLTE4IDBsMTgtMTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSIjNTU1Ii8+PC9zdmc+") no-repeat scroll 0 0/15px 75px transparent;cursor:pointer;display:inline-block;height:15px;width:15px;margin-right:3px;vertical-align:middle}.kint-rich dt.kint-parent:hover>nav,.kint-rich>footer>nav:hover{background-position:0 25%}.kint-rich dt.kint-parent.kint-show>nav,.kint-rich>footer.kint-show>nav{background-position:0 50%}.kint-rich dt.kint-parent.kint-show:hover>nav,.kint-rich>footer.kint-show>nav:hover{background-position:0 75%}.kint-rich dt.kint-parent.kint-locked>nav{background-position:0 100%}.kint-rich dt.kint-parent+dd{display:none;border-left:1px dashed #d7d7d7}.kint-rich dt.kint-parent.kint-show+dd{display:block}.kint-rich var,.kint-rich var a{color:#06f;font-style:normal}.kint-rich dt:hover var,.kint-rich dt:hover var a{color:red}.kint-rich dfn{font-style:normal;font-family:monospace;color:#1d1e1e}.kint-rich pre{color:#1d1e1e;margin:0 0 0 12px;padding:5px;overflow-y:hidden;border-top:0;border:1px solid #d7d7d7;background:#f8f8f8;display:block;word-break:normal}.kint-rich .kint-popup-trigger,.kint-rich .kint-access-path-trigger,.kint-rich .kint-search-trigger{background:rgba(29,30,30,0.8);border-radius:3px;height:16px;font-size:16px;margin-left:5px;font-weight:bold;width:16px;text-align:center;float:right !important;cursor:pointer;color:#f8f8f8;position:relative;overflow:hidden;line-height:17.6px}.kint-rich .kint-popup-trigger:hover,.kint-rich .kint-access-path-trigger:hover,.kint-rich .kint-search-trigger:hover{color:#1d1e1e;background:#f8f8f8}.kint-rich dt.kint-parent>.kint-popup-trigger{line-height:19.2px}.kint-rich .kint-search-trigger{font-size:20px}.kint-rich input.kint-search{display:none;border:1px solid #d7d7d7;border-top-width:0;border-bottom-width:0;padding:4px;float:right !important;margin:-4px 0;color:#1d1e1e;background:#f8f8f8;height:24px;width:160px;position:relative;z-index:100}.kint-rich input.kint-search.kint-show{display:block}.kint-rich .kint-search-root ul.kint-tabs>li:not(.kint-search-match){background:#f8f8f8;opacity:0.5}.kint-rich .kint-search-root dl:not(.kint-search-match){opacity:0.5}.kint-rich .kint-search-root dl:not(.kint-search-match)>dt{background:#f8f8f8}.kint-rich .kint-search-root dl:not(.kint-search-match) dl,.kint-rich .kint-search-root dl:not(.kint-search-match) ul.kint-tabs>li:not(.kint-search-match){opacity:1}.kint-rich div.access-path{background:#f8f8f8;display:none;margin-top:5px;padding:4px;white-space:pre}.kint-rich div.access-path.kint-show{display:block}.kint-rich footer{padding:0 3px 3px;font-size:9px;background:transparent}.kint-rich footer>.kint-popup-trigger{background:transparent;color:#1d1e1e}.kint-rich footer nav{height:10px;width:10px;background-size:10px 50px}.kint-rich footer>ol{display:none;margin-left:32px}.kint-rich footer.kint-show>ol{display:block}.kint-rich a{color:#1d1e1e;text-shadow:none;text-decoration:underline}.kint-rich a:hover{color:#1d1e1e;border-bottom:1px dotted #1d1e1e}.kint-rich ul{list-style:none;padding-left:12px}.kint-rich ul:not(.kint-tabs) li{border-left:1px dashed #d7d7d7}.kint-rich ul:not(.kint-tabs) li>dl{border-left:none}.kint-rich ul.kint-tabs{margin:0 0 0 12px;padding-left:0;background:#f8f8f8;border:1px solid #d7d7d7;border-top:0}.kint-rich ul.kint-tabs>li{background:#f8f8f8;border:1px solid #d7d7d7;cursor:pointer;display:inline-block;height:24px;margin:2px;padding:0 12px;vertical-align:top}.kint-rich ul.kint-tabs>li:hover,.kint-rich ul.kint-tabs>li.kint-active-tab:hover{border-color:#aaa;color:red}.kint-rich ul.kint-tabs>li.kint-active-tab{background:#f8f8f8;border-top:0;margin-top:-1px;height:27px;line-height:24px}.kint-rich ul.kint-tabs>li:not(.kint-active-tab){line-height:20px}.kint-rich ul.kint-tabs li+li{margin-left:0}.kint-rich ul.kint-tab-contents>li{display:none}.kint-rich ul.kint-tab-contents>li.kint-show{display:block}.kint-rich dt:hover+dd>ul>li.kint-active-tab{border-color:#aaa;color:red}.kint-rich dt>.kint-color-preview{width:16px;height:16px;display:inline-block;vertical-align:middle;margin-left:10px;border:1px solid #d7d7d7;background-color:#ccc;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="%23FFF" d="M0 0h1v2h1V1H0z"/></svg>');background-size:100%}.kint-rich dt>.kint-color-preview:hover{border-color:#aaa}.kint-rich dt>.kint-color-preview>div{width:100%;height:100%}.kint-rich table{border-collapse:collapse;empty-cells:show;border-spacing:0}.kint-rich table *{font-size:12px}.kint-rich table dt{background:none;padding:2px}.kint-rich table dt .kint-parent{min-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.kint-rich table td,.kint-rich table th{border:1px solid #d7d7d7;padding:2px;vertical-align:center}.kint-rich table th{cursor:alias}.kint-rich table td:first-child,.kint-rich table th{font-weight:bold;background:#f8f8f8;color:#1d1e1e}.kint-rich table td{background:#f8f8f8;white-space:pre}.kint-rich table td>dl{padding:0}.kint-rich table pre{border-top:0;border-right:0}.kint-rich table thead th:first-child{background:none;border:0}.kint-rich table tr:hover>td{box-shadow:0 0 1px 0 #aaa inset}.kint-rich table tr:hover var{color:red}.kint-rich table ul.kint-tabs li.kint-active-tab{height:20px;line-height:17px}.kint-rich pre.kint-source{margin-left:-1px}.kint-rich pre.kint-source[data-kint-filename]:before{display:block;content:attr(data-kint-filename);margin-bottom:4px;padding-bottom:4px;border-bottom:1px solid #f8f8f8}.kint-rich pre.kint-source>div:before{display:inline-block;content:counter(kint-l);counter-increment:kint-l;border-right:1px solid #aaa;padding-right:8px;margin-right:8px}.kint-rich pre.kint-source>div.kint-highlight{background:#f8f8f8}.kint-rich .kint-microtime-lap{text-shadow:-1px 0 #aaa,0 1px #aaa,1px 0 #aaa,0 -1px #aaa;color:#f8f8f8;font-weight:bold}input.kint-note-input{width:100%}.kint-rich .kint-focused{box-shadow:0 0 3px 2px red}.kint-rich dt{font-weight:normal}.kint-rich dt.kint-parent{margin-top:4px}.kint-rich dl dl{margin-top:4px;padding-left:25px;border-left:none}.kint-rich>dl>dt{background:#f8f8f8}.kint-rich ul{margin:0;padding-left:0}.kint-rich ul:not(.kint-tabs)>li{border-left:0}.kint-rich ul.kint-tabs{background:#f8f8f8;border:1px solid #d7d7d7;border-width:0 1px 1px 1px;padding:4px 0 0 12px;margin-left:-1px;margin-top:-1px}.kint-rich ul.kint-tabs li,.kint-rich ul.kint-tabs li+li{margin:0 0 0 4px}.kint-rich ul.kint-tabs li{border-bottom-width:0;height:25px}.kint-rich ul.kint-tabs li:first-child{margin-left:0}.kint-rich ul.kint-tabs li.kint-active-tab{border-top:1px solid #d7d7d7;background:#fff;font-weight:bold;padding-top:0;border-bottom:1px solid #fff !important;margin-bottom:-1px}.kint-rich ul.kint-tabs li.kint-active-tab:hover{border-bottom:1px solid #fff}.kint-rich ul>li>pre{border:1px solid #d7d7d7}.kint-rich dt:hover+dd>ul{border-color:#aaa}.kint-rich pre{background:#fff;margin-top:4px;margin-left:25px}.kint-rich .kint-source{margin-left:-1px}.kint-rich .kint-source .kint-highlight{background:#cfc}.kint-rich .kint-parent.kint-show>.kint-search{border-bottom-width:1px}.kint-rich table td{background:#fff}.kint-rich table td>dl{padding:0;margin:0}.kint-rich table td>dl>dt.kint-parent{margin:0}.kint-rich table td:first-child,.kint-rich table td,.kint-rich table th{padding:2px 4px}.kint-rich table dd,.kint-rich table dt{background:#fff}.kint-rich table tr:hover>td{box-shadow:none;background:#cfc}
+</style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+
+
+
+<title>hbinvest - Elérhetőség</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="#ffffff" name="msapplication-TileColor"/>
+<meta content="https://hbinvest.hu/ms-icon-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+
+
+<section class="bg_green">
+<div class="container">
+<div class="row">
+<div class="col-12 p-0">
+<nav class="navbar navbar-dark navbar-expand-xl d-xxl-flex align-items-xxl-center topsectionzindex p-0">
+<div class="container p-0">
+<a class="d-flex align-items-center text-light col-lg-3 col-8" data-review-original-href="https://hbinvest.hu/" href="#" tabindex="-1">
+<img class="w-75 p-2 bg-light"/>
+</a>
+<button class="navbar-toggler bg-dark" data-bs-target="#navcol-2" data-bs-toggle="collapse">
+<span class="visually-hidden">Toggle navigation</span>
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navcol-2">
+
+<ul class="navbar-nav ms-auto">
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=43" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Befektetőknek</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/?page_id=34" href="#" id="navbarDropdownSubmenu2" tabindex="-1">
+<span style="color: #212529;">Hajdú-Bihar megye bemutatása</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu2" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=103" href="#" tabindex="-1" target="_self">Települések</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=462" href="#" tabindex="-1" target="_self">Járások</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=107" href="#" tabindex="-1" target="_self">Demográfia</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=111" href="#" tabindex="-1" target="_self">Vállalkozások</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=113" href="#" tabindex="-1" target="_self">Elérhetőség</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=115" href="#" tabindex="-1" target="_self">Munkaerőtartalék</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=117" href="#" tabindex="-1" target="_self">Kisgyermeknevelési intézmények</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=119" href="#" tabindex="-1" target="_self">Oktatás-Szakképzés</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=121" href="#" tabindex="-1" target="_self">Egészségügy</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=123" href="#" tabindex="-1" target="_self">Fejlesztések</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=125" href="#" tabindex="-1" target="_self">Agrárium</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/page-id-127" href="#" tabindex="-1" target="_self">Védett területek</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=129" href="#" tabindex="-1" target="_self">Fürdők</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=131" href="#" tabindex="-1" target="_self">Intézményi ellátottság</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=133" href="#" tabindex="-1" target="_self">Adók</a>
+</li>
+</ul>
+</li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=149" href="#" tabindex="-1" target="_self">Befektetésre alkalmas ipari területek/ipari parkok</a></li><li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/" href="#" id="navbarDropdownSubmenu25" tabindex="-1">
+<span style="color: #212529;">Munkaerőpiaci információk</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu25" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=153" href="#" tabindex="-1" target="_self">Munkaerőpiaci struktúra bemutatása</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=159" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei képzési Jegyzék</a>
+</li>
+</ul>
+</li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=161" href="#" tabindex="-1" target="_self">Hajdú-Bihar megye TOP 100 vállalata</a></li> </ul>
+</li>
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=165" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Munkavállalóknak</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=168" href="#" tabindex="-1" target="_self">Betöltetlen állások</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=170" href="#" tabindex="-1" target="_self">Lakóingatlan kereső</a></li><li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/?page_id=172" href="#" id="navbarDropdownSubmenu31" tabindex="-1">
+<span style="color: #212529;">Képzések</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu31" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=159" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei képzési Jegyzék</a>
+</li>
+</ul>
+</li> </ul>
+</li>
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=186" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Intézmények</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/?page_id=189" href="#" id="navbarDropdownSubmenu33" tabindex="-1">
+<span style="color: #212529;">Hajdú-Bihar megyei Önkormányzat</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu33" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=199" href="#" tabindex="-1" target="_self">Paktumiroda</a>
+</li>
+</ul>
+</li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=191" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei Kormányhivatal</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=193" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei Kereskedelmi és Iparkamara</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=195" href="#" tabindex="-1" target="_self">Nemzeti Agrárgazdasági kamara</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/page-id-197" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei Fejlesztési Ügynökség Nonprofit Kft.</a></li> </ul>
+</li>
+<li class="nav-item" role="presentation">
+<a class="nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/kapcsolati-oldal" href="#" tabindex="-1" target="_self">Kapcsolat                </a>
+</li>
+<li class="nav-item" role="presentation">
+<a class="nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/page-id-1862" href="#" tabindex="-1" target="_self">Galéria                </a>
+</li>
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=210" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Hasznos információk</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=215" href="#" tabindex="-1" target="_self">Dokumentumtár/hasznos linkek</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/page-id-217" href="#" tabindex="-1" target="_self">Helyi termékek katasztere</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=221" href="#" tabindex="-1" target="_self">Adók-kedvezmények</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=208" href="#" tabindex="-1" target="_self">Adatvédelmi tájékoztató</a></li> </ul>
+</li>
+</ul>
+
+</div>
+</div>
+</nav>
+</div>
+<div class="col-12 p-0">
+<div class="row g-0 d-flex">
+<div class="col-12 justify-content-end align-items-sm-center justify-content-xxl-start pt-1 pb-1 ps-1 d-none d-sm-block">
+<div class="mb-0 text-dark bg-light">
+<div class="row align-items-center">
+<div class="col-sm-6 col-md-4 col-xl-3 col-xxl-4">
+<div class="d-flex align-items-center justify-content-md-start justify-content-xl-end">
+<div class="ps-1">
+<svg class="bi bi-geo-alt me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
+<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+</svg>
+</div>
+<p class="mb-0 me-2">4024 Debrecen, Piac u. 54.</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-4 col-xl-2 col-xxl-2">
+<div class="d-flex align-items-center justify-content-md-center justify-content-xl-end">
+<div class="ps-1">
+<svg class="bi bi-telephone me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+</svg>
+</div>
+<p class="mb-0 me-2">+36 52 507 539</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-4 col-xl-2 col-xxl-2">
+<div class="d-flex align-items-center justify-content-md-end justify-content-xl-end">
+<div class="ps-1">
+<svg class="bi bi-envelope me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="mb-0 me-3"><a data-review-original-href="mailto:info@hbmfu.hu" href="#" tabindex="-1">info@hbmfu.hu</a></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-xl-3 col-xxl-2 mt-sm-2 mt-xl-0">
+<div>
+<p class="mb-0 bg_greenblue text-white p-2">
+                                           Ahol jó élni, ahol jó lenni!                                        </p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-xl-2 col-xxl-2 mt-sm-2 mt-xl-0">
+<div class="d-flex align-items-center justify-content-md-end justify-content-xl-end">
+<a class="ms-2" data-review-original-href="https://hbinvest.hu/" href="#" tabindex="-1">
+<img/>
+</a>
+<a class="ms-2" data-review-original-href="https://hbinvest.hu/en" href="#" tabindex="-1">
+<img/>
+</a>
+<button class="btn shadow ms-2 bggreen" data-bs-target="#modal-1" data-bs-toggle="modal" type="button">
+<svg class="bi bi-search" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<section class="pb-5 bg-light" data-bss-parallax-bg="true">
+<div class="container">
+<div class="row pt-lg-5 bg-white">
+<div class="col text-start bg-white">
+<div class="ps-2 mb-2">
+<p class="w-lg-50 mb-1 text-dark mt-2">hbinvest.hu</p>
+<h1 class="display-6 fw-lighter text-dark"> Elérhetőség</h1>
+</div>
+<div class="p-2">
+
+<p style="text-align: justify;">A megye adottságai közt első helyen a fekvése emelendő ki, mivel az ország keleti felén a határ mentén, lényegében sík vidéken, extrém időjárási vagy domborzati szélsőségektől mentesen helyezkedik el. Bár természetes vizek vannak a megyében, akár ipari célú hasznosításra alkalmasan, de a létesítményeket fenyegető árvizektől nem kell tartani. A megye megközelíthetősége regionális összehasonlításban is kiváló, hiszen közvetlen kapcsolat van az európai autópályahálózathoz (és egyre bővül a hossz, javul az elérhetősége a településeknek), a legfőbb vasúti vonal a TEN hálózat része (miközben számos településhez vezet vasútvonal), és légi úton is kiemelkedően jól megközelíthetik a potenciális befektetők a megyét a Debrecen Airporton landoló egyre bővülő számú menetrendszerinti járatokon. A közúthálózat főbb vonalainak minősége a folyamatos karbantartások révén egyre jobb, bár a kisebb településekre vezető utak állapota több helyen megújításra vár.</p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table without_header" id="wp_datatable_45" style="width:100%"><tbody></tbody></table></div></p>
+<div class="wow-container">
+<div class="wow-element">
+<p style="text-align: center;">Forrás: MK Nonprofit Kft., 2018.12.31.</p>
+<p style="text-align: center;">Önkormányzati úthálózat</p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table without_header" id="wp_datatable_46" style="width:100%"><tbody></tbody></table></div></p>
+<p style="text-align: center;">Forrás: MK Nonprofit Kft., 2017.</p>
+<p>Repülőtér</p>
+<p style="text-align: justify;">A Debrecen nemzetközi repülőtér Kelet-Magyarország legfontosabb és egyben legnagyobb forgalmú nemzetközi repülőtere, Magyarország öt nemzetközi repülőterének egyike; a Budapest Liszt Ferenc nemzetközi repülőtér után a második legforgalmasabb. 2001 óta a nemzetközi utazóközönség előtt is nyitott légikikötő. A város központjától 7 km-re, a <a data-review-original-href="https://hu.wikipedia.org/wiki/Debrecen_vas%C3%BAt%C3%A1llom%C3%A1s" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank">Nagyállomástól</a> (a debreceni vasúti főpályaudvartól) 5 km-re délre található.</p>
+<p style="text-align: justify;"><a data-review-original-href="https://www.google.com/search?rlz=1C1GCEU_huHU819HU819&amp;q=debrecen+airport+c%C3%ADm&amp;stick=H4sIAAAAAAAAAOPgE-LUz9U3MMvLKMjQks1OttLPyU9OLMnMz4MzrBJTUopSi4sXsYqmpCYVpSan5ikkZhYV5BeVKCQfXpsLAI7KutJEAAAA&amp;ludocid=8720959141698032935&amp;sa=X&amp;ved=2ahUKEwiOt6Wl5KTjAhUMtosKHdoaBCsQ6BMwEXoECBAQBg" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"><strong>Cím</strong></a><strong>: </strong>Debrecen, Mikepércsi út, 4030</p>
+<p style="text-align: justify;"><a data-review-original-href="https://www.debrecenairport.com/" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank">https://www.debrecenairport.com/</a></p>
+<p style="text-align: justify;"><a data-review-original-href="https://www.google.com/search?rlz=1C1GCEU_huHU819HU819&amp;q=debrecen+airport+telefonsz%C3%A1m&amp;ludocid=8720959141698032935&amp;sa=X&amp;ved=2ahUKEwiOt6Wl5KTjAhUMtosKHdoaBCsQ6BMwFHoECBAQDw" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"><strong>Telefonszám</strong></a><strong>: </strong>(20) 467 9899</p>
+<p style="text-align: justify;"><a data-review-original-href="https://www.google.com/search?rlz=1C1GCEU_huHU819HU819&amp;q=debrecen+airport+utasforgalom&amp;sa=X&amp;ved=2ahUKEwiOt6Wl5KTjAhUMtosKHdoaBCsQ6BMoADAVegQIEBAT" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"><strong>Utasforgalom</strong></a><strong>: </strong>381 391 (2018)</p>
+<p style="text-align: justify;">Hajdú-Bihar megye székhelye, <a data-review-original-href="https://hu.wikipedia.org/wiki/Debrecen" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank">Debrecen</a> városa felismerte a repülőtérben rejlő gazdasági lehetőségeket, és már 1994-ben megfogalmazta koncepció szintjén, hogy a repülőteret fejleszteni kell. A reptér átfogó fejlesztése 2001-ben indult meg, amikor a Debreceni Vagyonkezelő Vállalat megvásárolta a repülőteret üzemeltető Airport-Debrecen KFT-t, így 2001. május 29-én nyilvános, nem kereskedelmi, a nemzetközi forgalom számára megnyitott légikikötővé válhatott.</p>
+<p style="text-align: justify;">A fejlesztési program alapját a bajor ASTA cég és magyar szakemberek közreműködésével készítették el, a fejlesztési tervet az illetékes minisztérium is elfogadta. A fejlesztési program keretében a vidéki repülőterek közül elsőként Debrecenben épült ki az ISO 9001:2001 környezetközpontú-minőségirányítási rendszer, és ezzel 2002. december 29-én nyilvános, kereskedelmi, a nemzetközi forgalom számára megnyitott repülőtérré vált.</p>
+<p>2004. április 22-én nemzetközi légi határátkelőhelyet létesítettek és vámúttá nyilvánították, ezzel a repülőtér hatósági szinten egyenrangúvá vált <a data-review-original-href="https://hu.wikipedia.org/wiki/Budapest_Liszt_Ferenc_nemzetk%C3%B6zi_rep%C3%BCl%C5%91t%C3%A9r" href="#" tabindex="-1">Budapest Liszt Ferenc nemzetközi repülőtérrel</a>.</p>
+<p style="text-align: justify;">Egyéb polgári célú repülőtér van Hajdúszoboszlón és Berettyóújfaluban, emellett Biharkeresztes településen folyamatban van a jelenlegi földutas kifutópálya fejlesztése (2 km hosszú kifutó, betonozott terület), BiharAirPort. Hrsz.: 0197/2.</p>
+<p style="text-align: center;">Utasforgalom:</p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table without_header" id="wp_datatable_80" style="width:100%"><tbody></tbody></table></div></p>
+<p><span id="wow-shortcode"><html><head><style>#map12 {
+			width: 100%;
+			height: 800px;
+}
+
+.leaflet-legend {
+	    	position:absolute;
+	    	bottom:20px;
+	    	right:10px;
+	    	line-height: 18px;
+	    	color: #555;
+	    	border-radius: 10px;
+	    	background: rgba(255,255,255,0.8);
+	    	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	    	border-radius: 5px;
+	    	padding:10px;
+	    	width:200px;
+	    	font: 14px/16px Arial, Helvetica, sans-serif;
+	    	line-height: 18px;
+	    	color: #555;
+	    	}
+.ui-autocomplete { position: absolute; cursor: default;z-index:3000 !important;}  
+
+.autopalya-img{
+	width:20px;
+  background-repeat:no-repeat;
+	background-position:center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAEImlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjIwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTAiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iMjAiCiAgIHRpZmY6SW1hZ2VMZW5ndGg9IjEwIgogICB0aWZmOlJlc29sdXRpb25Vbml0PSIyIgogICB0aWZmOlhSZXNvbHV0aW9uPSIzMDAuMCIKICAgdGlmZjpZUmVzb2x1dGlvbj0iMzAwLjAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTA2LTIzVDEwOjU2OjMwKzAyOjAwIgogICB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA2LTIzVDEwOjU2OjMwKzAyOjAwIj4KICAgPHhtcE1NOkhpc3Rvcnk+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpCiAgICAgIHN0RXZ0OmFjdGlvbj0icHJvZHVjZWQiCiAgICAgIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFmZmluaXR5IFBob3RvIChKdW4gMTYgMjAxOSkiCiAgICAgIHN0RXZ0OndoZW49IjIwMTktMDYtMjNUMTA6NTY6MzArMDI6MDAiLz4KICAgIDwvcmRmOlNlcT4KICAgPC94bXBNTTpIaXN0b3J5PgogIDwvcmRmOkRlc2NyaXB0aW9uPgogPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0iciI/PrstAO4AAAGCaUNDUHNSR0IgSUVDNjE5NjYtMi4xAAAokXWRy0tCQRSHP7UyyigoqEULCWuVYQVRmyAlKpAQM+i10esrULvcq4S0DdoKBVGbXov6C2obtA6CogiiTZvWRW1KbuemoESe4cz55jdzDjNnwBpKKWm9zgPpTFYLTnmdC4tLTvsLDXTSyAiusKKrE4GAn5r2eY/FjLdus1btc/9aczSmK2BpFB5XVC0rPC3sX8+qJu8IdyjJcFT4TLhfkwsK35l6pMSvJidK/G2yFgr6wNom7ExUcaSKlaSWFpaX40qnckr5PuZLHLHM/JzEHvFudIJM4cXJDJP4pCeDjMk8gpshBmRFjXzPb/4sa5KryKySR2OVBEmy9Iuak+oxiXHRYzJS5M3+/+2rHh8eKlV3eKH+2TDee8G+DcWCYXwdGUbxGGxPcJmp5K8dwuiH6IWK5jqA1k04v6pokV242IKuRzWshX8lm7g1Hoe3U2hZhPYbaFou9ay8z8kDhDbkq65hbx/65Hzryg+Iimf1xQGGGgAAAAlwSFlzAAAuIwAALiMBeKU/dgAAABdJREFUKJFjfDFpEQO5gIlsnaOaR4xmAB1HAjBkKwHCAAAAAElFTkSuQmCC');
+}
+
+.foutvonal-img{
+	width:20px;
+  background-repeat:no-repeat;
+	background-position:center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAEGWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjIwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTAiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iMjAiCiAgIHRpZmY6SW1hZ2VMZW5ndGg9IjEwIgogICB0aWZmOlJlc29sdXRpb25Vbml0PSIyIgogICB0aWZmOlhSZXNvbHV0aW9uPSIzMDAuMCIKICAgdGlmZjpZUmVzb2x1dGlvbj0iMzAwLjAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTA2LTIzVDExOjAyKzAyOjAwIgogICB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA2LTIzVDExOjAyKzAyOjAwIj4KICAgPHhtcE1NOkhpc3Rvcnk+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpCiAgICAgIHN0RXZ0OmFjdGlvbj0icHJvZHVjZWQiCiAgICAgIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFmZmluaXR5IFBob3RvIChKdW4gMTYgMjAxOSkiCiAgICAgIHN0RXZ0OndoZW49IjIwMTktMDYtMjNUMTE6MDIrMDI6MDAiLz4KICAgIDwvcmRmOlNlcT4KICAgPC94bXBNTTpIaXN0b3J5PgogIDwvcmRmOkRlc2NyaXB0aW9uPgogPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0iciI/Pq6eVswAAAGCaUNDUHNSR0IgSUVDNjE5NjYtMi4xAAAokXWRy0tCQRSHP7UyyigoqEULCWuVYQVRmyAlKpAQM+i10esrULvcq4S0DdoKBVGbXov6C2obtA6CogiiTZvWRW1KbuemoESe4cz55jdzDjNnwBpKKWm9zgPpTFYLTnmdC4tLTvsLDXTSyAiusKKrE4GAn5r2eY/FjLdus1btc/9aczSmK2BpFB5XVC0rPC3sX8+qJu8IdyjJcFT4TLhfkwsK35l6pMSvJidK/G2yFgr6wNom7ExUcaSKlaSWFpaX40qnckr5PuZLHLHM/JzEHvFudIJM4cXJDJP4pCeDjMk8gpshBmRFjXzPb/4sa5KryKySR2OVBEmy9Iuak+oxiXHRYzJS5M3+/+2rHh8eKlV3eKH+2TDee8G+DcWCYXwdGUbxGGxPcJmp5K8dwuiH6IWK5jqA1k04v6pokV242IKuRzWshX8lm7g1Hoe3U2hZhPYbaFou9ay8z8kDhDbkq65hbx/65Hzryg+Iimf1xQGGGgAAAAlwSFlzAAAuIwAALiMBeKU/dgAAABdJREFUKJFj/HNtCQO5gIlsnaOaR4xmAPMZAoq3ucXxAAAAAElFTkSuQmCC');
+}
+
+.kerekparut-img{
+	width:20px;
+  background-repeat:no-repeat;
+	background-position:center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAEImlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjIwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTAiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iMjAiCiAgIHRpZmY6SW1hZ2VMZW5ndGg9IjEwIgogICB0aWZmOlJlc29sdXRpb25Vbml0PSIyIgogICB0aWZmOlhSZXNvbHV0aW9uPSIzMDAuMCIKICAgdGlmZjpZUmVzb2x1dGlvbj0iMzAwLjAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTA2LTIzVDExOjAzOjU3KzAyOjAwIgogICB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA2LTIzVDExOjAzOjU3KzAyOjAwIj4KICAgPHhtcE1NOkhpc3Rvcnk+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpCiAgICAgIHN0RXZ0OmFjdGlvbj0icHJvZHVjZWQiCiAgICAgIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFmZmluaXR5IFBob3RvIChKdW4gMTYgMjAxOSkiCiAgICAgIHN0RXZ0OndoZW49IjIwMTktMDYtMjNUMTE6MDM6NTcrMDI6MDAiLz4KICAgIDwvcmRmOlNlcT4KICAgPC94bXBNTTpIaXN0b3J5PgogIDwvcmRmOkRlc2NyaXB0aW9uPgogPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0iciI/PqMuTkUAAAGCaUNDUHNSR0IgSUVDNjE5NjYtMi4xAAAokXWRy0tCQRSHP7UyyigoqEULCWuVYQVRmyAlKpAQM+i10esrULvcq4S0DdoKBVGbXov6C2obtA6CogiiTZvWRW1KbuemoESe4cz55jdzDjNnwBpKKWm9zgPpTFYLTnmdC4tLTvsLDXTSyAiusKKrE4GAn5r2eY/FjLdus1btc/9aczSmK2BpFB5XVC0rPC3sX8+qJu8IdyjJcFT4TLhfkwsK35l6pMSvJidK/G2yFgr6wNom7ExUcaSKlaSWFpaX40qnckr5PuZLHLHM/JzEHvFudIJM4cXJDJP4pCeDjMk8gpshBmRFjXzPb/4sa5KryKySR2OVBEmy9Iuak+oxiXHRYzJS5M3+/+2rHh8eKlV3eKH+2TDee8G+DcWCYXwdGUbxGGxPcJmp5K8dwuiH6IWK5jqA1k04v6pokV242IKuRzWshX8lm7g1Hoe3U2hZhPYbaFou9ay8z8kDhDbkq65hbx/65Hzryg+Iimf1xQGGGgAAAAlwSFlzAAAuIwAALiMBeKU/dgAAABdJREFUKJFj/P/amoFcwES2zlHNI0YzADMlAjnMER3aAAAAAElFTkSuQmCC');
+}
+
+.tervezettvas-img{
+	width:25px;
+  background-repeat:no-repeat;
+	background-position:center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAKCAIAAAAsFXl4AAAEImlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjMwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTAiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iMzAiCiAgIHRpZmY6SW1hZ2VMZW5ndGg9IjEwIgogICB0aWZmOlJlc29sdXRpb25Vbml0PSIyIgogICB0aWZmOlhSZXNvbHV0aW9uPSIzMDAuMCIKICAgdGlmZjpZUmVzb2x1dGlvbj0iMzAwLjAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTA2LTIzVDExOjA4OjQwKzAyOjAwIgogICB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA2LTIzVDExOjA4OjQwKzAyOjAwIj4KICAgPHhtcE1NOkhpc3Rvcnk+CiAgICA8cmRmOlNlcT4KICAgICA8cmRmOmxpCiAgICAgIHN0RXZ0OmFjdGlvbj0icHJvZHVjZWQiCiAgICAgIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFmZmluaXR5IFBob3RvIChKdW4gMTYgMjAxOSkiCiAgICAgIHN0RXZ0OndoZW49IjIwMTktMDYtMjNUMTE6MDg6NDArMDI6MDAiLz4KICAgIDwvcmRmOlNlcT4KICAgPC94bXBNTTpIaXN0b3J5PgogIDwvcmRmOkRlc2NyaXB0aW9uPgogPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KPD94cGFja2V0IGVuZD0iciI/Pu5UlmsAAAGCaUNDUHNSR0IgSUVDNjE5NjYtMi4xAAAokXWRy0tCQRSHP7UyyigoqEULCWuVYQVRmyAlKpAQM+i10esrULvcq4S0DdoKBVGbXov6C2obtA6CogiiTZvWRW1KbuemoESe4cz55jdzDjNnwBpKKWm9zgPpTFYLTnmdC4tLTvsLDXTSyAiusKKrE4GAn5r2eY/FjLdus1btc/9aczSmK2BpFB5XVC0rPC3sX8+qJu8IdyjJcFT4TLhfkwsK35l6pMSvJidK/G2yFgr6wNom7ExUcaSKlaSWFpaX40qnckr5PuZLHLHM/JzEHvFudIJM4cXJDJP4pCeDjMk8gpshBmRFjXzPb/4sa5KryKySR2OVBEmy9Iuak+oxiXHRYzJS5M3+/+2rHh8eKlV3eKH+2TDee8G+DcWCYXwdGUbxGGxPcJmp5K8dwuiH6IWK5jqA1k04v6pokV242IKuRzWshX8lm7g1Hoe3U2hZhPYbaFou9ay8z8kDhDbkq65hbx/65Hzryg+Iimf1xQGGGgAAAAlwSFlzAAAuIwAALiMBeKU/dgAAACVJREFUKJFjYKAZYETj/39tTViP6FFitDCR7SiCYNToUaMHDAAAswcFNehA4sMAAAAASUVORK5CYII=');
+}
+
+.vasut1-img{
+	width:25px;
+  background-repeat:no-repeat;
+	background-position:center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAICAIAAABh3dhzAAAEIGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjMwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iOCIKICAgdGlmZjpJbWFnZVdpZHRoPSIzMCIKICAgdGlmZjpJbWFnZUxlbmd0aD0iOCIKICAgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIKICAgdGlmZjpYUmVzb2x1dGlvbj0iMzAwLjAiCiAgIHRpZmY6WVJlc29sdXRpb249IjMwMC4wIgogICB4bXA6TW9kaWZ5RGF0ZT0iMjAxOS0wNi0yM1QxMTozMTozMyswMjowMCIKICAgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOS0wNi0yM1QxMTozMTozMyswMjowMCI+CiAgIDx4bXBNTTpIaXN0b3J5PgogICAgPHJkZjpTZXE+CiAgICAgPHJkZjpsaQogICAgICBzdEV2dDphY3Rpb249InByb2R1Y2VkIgogICAgICBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZmZpbml0eSBQaG90byAoSnVuIDE2IDIwMTkpIgogICAgICBzdEV2dDp3aGVuPSIyMDE5LTA2LTIzVDExOjMxOjMzKzAyOjAwIi8+CiAgICA8L3JkZjpTZXE+CiAgIDwveG1wTU06SGlzdG9yeT4KICA8L3JkZjpEZXNjcmlwdGlvbj4KIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InIiPz4Nuz4wAAABgmlDQ1BzUkdCIElFQzYxOTY2LTIuMQAAKJF1kctLQkEUhz+1MsooKKhFCwlrlWEFUZsgJSqQEDPotdHrK1C73KuEtA3aCgVRm16L+gtqG7QOgqIIok2b1kVtSm7npqBEnuHM+eY3cw4zZ8AaSilpvc4D6UxWC055nQuLS077Cw100sgIrrCiqxOBgJ+a9nmPxYy3brNW7XP/WnM0pitgaRQeV1QtKzwt7F/PqibvCHcoyXBU+Ey4X5MLCt+ZeqTEryYnSvxtshYK+sDaJuxMVHGkipWklhaWl+NKp3JK+T7mSxyxzPycxB7xbnSCTOHFyQyT+KQng4zJPIKbIQZkRY18z2/+LGuSq8iskkdjlQRJsvSLmpPqMYlx0WMyUuTN/v/tqx4fHipVd3ih/tkw3nvBvg3FgmF8HRlG8RhsT3CZqeSvHcLoh+iFiuY6gNZNOL+qaJFduNiCrkc1rIV/JZu4NR6Ht1NoWYT2G2haLvWsvM/JA4Q25KuuYW8f+uR868oPiIpn9cUBhhoAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAmSURBVCiRY2CgGWBE4////5+wHkYUXbi0MJHtKIJg1Gj6GU1DAAD8OQYJynlbogAAAABJRU5ErkJggg==');}
+.vasut2-img{
+	width:25px;
+  background-repeat:no-repeat;
+	background-position:center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAGCAIAAABb17kDAAAEIGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjMwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iNiIKICAgdGlmZjpJbWFnZVdpZHRoPSIzMCIKICAgdGlmZjpJbWFnZUxlbmd0aD0iNiIKICAgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIKICAgdGlmZjpYUmVzb2x1dGlvbj0iMzAwLjAiCiAgIHRpZmY6WVJlc29sdXRpb249IjMwMC4wIgogICB4bXA6TW9kaWZ5RGF0ZT0iMjAxOS0wNi0yM1QxMTozMTo1NiswMjowMCIKICAgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOS0wNi0yM1QxMTozMTo1NiswMjowMCI+CiAgIDx4bXBNTTpIaXN0b3J5PgogICAgPHJkZjpTZXE+CiAgICAgPHJkZjpsaQogICAgICBzdEV2dDphY3Rpb249InByb2R1Y2VkIgogICAgICBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZmZpbml0eSBQaG90byAoSnVuIDE2IDIwMTkpIgogICAgICBzdEV2dDp3aGVuPSIyMDE5LTA2LTIzVDExOjMxOjU2KzAyOjAwIi8+CiAgICA8L3JkZjpTZXE+CiAgIDwveG1wTU06SGlzdG9yeT4KICA8L3JkZjpEZXNjcmlwdGlvbj4KIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InIiPz5Qvqp6AAABgmlDQ1BzUkdCIElFQzYxOTY2LTIuMQAAKJF1kctLQkEUhz+1MsooKKhFCwlrlWEFUZsgJSqQEDPotdHrK1C73KuEtA3aCgVRm16L+gtqG7QOgqIIok2b1kVtSm7npqBEnuHM+eY3cw4zZ8AaSilpvc4D6UxWC055nQuLS077Cw100sgIrrCiqxOBgJ+a9nmPxYy3brNW7XP/WnM0pitgaRQeV1QtKzwt7F/PqibvCHcoyXBU+Ey4X5MLCt+ZeqTEryYnSvxtshYK+sDaJuxMVHGkipWklhaWl+NKp3JK+T7mSxyxzPycxB7xbnSCTOHFyQyT+KQng4zJPIKbIQZkRY18z2/+LGuSq8iskkdjlQRJsvSLmpPqMYlx0WMyUuTN/v/tqx4fHipVd3ih/tkw3nvBvg3FgmF8HRlG8RhsT3CZqeSvHcLoh+iFiuY6gNZNOL+qaJFduNiCrkc1rIV/JZu4NR6Ht1NoWYT2G2haLvWsvM/JA4Q25KuuYW8f+uR868oPiIpn9cUBhhoAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAkSURBVCiRY2CgGWBE4////5+wHkYUXbi0MJHtKIJgaBpNQwAAsOEGBTm3aKEAAAAASUVORK5CYII=');}
+.vasut3-img{
+	width:25px;
+  background-repeat:no-repeat;
+	background-position:center;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAECAIAAAAWHxgIAAAEIGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjMwIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iNCIKICAgdGlmZjpJbWFnZVdpZHRoPSIzMCIKICAgdGlmZjpJbWFnZUxlbmd0aD0iNCIKICAgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIKICAgdGlmZjpYUmVzb2x1dGlvbj0iMzAwLjAiCiAgIHRpZmY6WVJlc29sdXRpb249IjMwMC4wIgogICB4bXA6TW9kaWZ5RGF0ZT0iMjAxOS0wNi0yM1QxMTozMjoxOCswMjowMCIKICAgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOS0wNi0yM1QxMTozMjoxOCswMjowMCI+CiAgIDx4bXBNTTpIaXN0b3J5PgogICAgPHJkZjpTZXE+CiAgICAgPHJkZjpsaQogICAgICBzdEV2dDphY3Rpb249InByb2R1Y2VkIgogICAgICBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZmZpbml0eSBQaG90byAoSnVuIDE2IDIwMTkpIgogICAgICBzdEV2dDp3aGVuPSIyMDE5LTA2LTIzVDExOjMyOjE4KzAyOjAwIi8+CiAgICA8L3JkZjpTZXE+CiAgIDwveG1wTU06SGlzdG9yeT4KICA8L3JkZjpEZXNjcmlwdGlvbj4KIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InIiPz7IUuwBAAABgmlDQ1BzUkdCIElFQzYxOTY2LTIuMQAAKJF1kctLQkEUhz+1MsooKKhFCwlrlWEFUZsgJSqQEDPotdHrK1C73KuEtA3aCgVRm16L+gtqG7QOgqIIok2b1kVtSm7npqBEnuHM+eY3cw4zZ8AaSilpvc4D6UxWC055nQuLS077Cw100sgIrrCiqxOBgJ+a9nmPxYy3brNW7XP/WnM0pitgaRQeV1QtKzwt7F/PqibvCHcoyXBU+Ey4X5MLCt+ZeqTEryYnSvxtshYK+sDaJuxMVHGkipWklhaWl+NKp3JK+T7mSxyxzPycxB7xbnSCTOHFyQyT+KQng4zJPIKbIQZkRY18z2/+LGuSq8iskkdjlQRJsvSLmpPqMYlx0WMyUuTN/v/tqx4fHipVd3ih/tkw3nvBvg3FgmF8HRlG8RhsT3CZqeSvHcLoh+iFiuY6gNZNOL+qaJFduNiCrkc1rIV/JZu4NR6Ht1NoWYT2G2haLvWsvM/JA4Q25KuuYW8f+uR868oPiIpn9cUBhhoAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAfSURBVBiVY2CgGWBE4////5+wHkYUXbi0MJHtqIEEAGhhBgHUK0ErAAAAAElFTkSuQmCC');}</style></head><body><div style="margin:20px 0px 20px 0px;">
+<input id="citysearch" placeholder="Település keresése" style="font-size:24px;" type="text"/>
+</div>
+<div id="map12"></div> </body></html></span></p>
+<p> </p>
+<p><img alt="" class="alignright wp-image-1390" height="629" width="445"/><img alt="" class="alignleft wp-image-1394" height="636" width="450"/></p>
+<p><img alt="" class="alignright wp-image-1391" height="636" width="450"/></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><img alt="" class="alignleft wp-image-1396" height="636" width="450"/></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p style="text-align: center;">Idő szerinti optimalizálás esetén a leggyorsabb út hossza kilométerben és percben</p>
+</div>
+</div>
+<p> </p>
+<div class="wow-container">
+<div class="wow-element">
+<p style="text-align: center;"><div class="table-responsive"><table class="display table" id="wp_datatable_127" style="width:100%"><thead></thead><tbody></tbody></table></div></p>
+<p style="text-align: center;">Forrás: KSH GeoX adatbázis, 2018</p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table" id="wp_datatable_76" style="width:100%"><thead></thead><tbody></tbody></table></div></p>
+<p style="text-align: center;">Forrás:(TeIR)|GEOX</p>
+<p style="text-align: center;">Úthálózat, állami közutak hossza, kerékpárút, közös gyalogút hossza</p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table" id="wp_datatable_63" style="width:100%"><thead></thead><tbody></tbody></table></div></p>
+<p style="text-align: center;">Forrás:(TeIR)|KSH-TSTAR (2017)</p>
+<p style="text-align: justify;">Autópályák </p>
+<p style="text-align: justify;">A Kormány 1982/2017. (XII. 19.) Korm. határozata tartalmazza Magyarország rövid- és középtávú közútfejlesztéséhez kapcsolódó infrastrukturális beruházások összehangolásával és azok 2022-ig történő megvalósításával összefüggő legfrissebb információkat és feladatokat. A kormányhatározat alapján kiemelt fontosságú cél a megyei jogú városok gyorsforgalmi úthálózatba való bekötése, valamint az  autópályák országhatárig történő meghosszabbítása.</p>
+<p style="text-align: center;"><em>Az alábbiakban a megyét érintő, napainkban zajló, vagy a jövőben megvalósítani tervezett közútfejlesztéseket szerepeltetjük:</em></p>
+<p style="text-align: center;"><strong>IKOP 1. prioritása terhére megvalósítani tervezett, Hajdú-Bihar megyét érintő, a jövőben megvalósítani tervezett közútfejlesztések</strong></p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table without_header" id="wp_datatable_81" style="width:100%"><tbody></tbody></table></div></p>
+<p style="text-align: center;"><strong>IKOP 4. prioritása terhére megvalósítani tervezett, HB megyét érintő közútfejlesztések</strong></p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table without_header" id="wp_datatable_82" style="width:100%"><tbody></tbody></table></div></p>
+<p style="text-align: center;"><strong>Európai Hálózatfejlesztési Eszköz terhére megvalósítani tervezett, HB megyét érintő közútfejlesztések </strong></p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table without_header" id="wp_datatable_83" style="width:100%"><tbody></tbody></table></div></p>
+<p style="text-align: center;">Hajdú-Bihar megyében meglévő vasútvonalak</p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table without_header" id="wp_datatable_64" style="width:100%"><tbody></tbody></table></div></p>
+<p style="text-align: center;">Forrás: MÁV</p>
+<p style="text-align: center;">Hajdú-Bihar megye vasúthálózata</p>
+<p><img alt="" class="wp-image-1160 aligncenter" height="477" width="431"/></p>
+<p style="text-align: center;">Forrás: MÁV</p>
+<p style="text-align: center;">Hajdú- Bihar megye városainak vasúti elérhetőségi adatai (2018-ban)</p>
+<p style="text-align: center;">A megyeszékhely elérhetősége (percben)</p>
+<p style="text-align: center;"><div class="table-responsive"><table class="display table" id="wp_datatable_65" style="width:100%"><thead></thead><tbody></tbody></table></div></p>
+<p style="text-align: center;">Forrás: MÁV Start</p>
+<p style="text-align: center;"> </p>
+</div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<div id="eu_logo"><img alt="eu 2020 logo" class="fixed-bottom"/></div>
+<footer class="text-white bg-dark pb-3 bg-dark" id="kapcsolat">
+<div class="container pt-5">
+<h2 class="display-4 fw-lighter text-start mb-5">
+            Kapcsolat        </h2>
+<div class="row justify-content-start">
+<div class="col-sm-4 text-center text-lg-start d-flex flex-column mb-4 item">
+<h5 class="fw-lighter mb-3 text-uppercase">
+                    Cégadatok                </h5>
+<hr class="mt-2 mb-4 w-50"/>
+<h3 class="fs-6 fw-normal text-white">Név: HBMFÜ Nonprofit Kft.</h3> <h3 class="fs-6 fw-normal text-white">Székhely: 4024 Debrecen, Piac u. 54.</h3> <h3 class="fs-6 fw-normal text-white">Adószám: 20345279-2-09</h3> <h3 class="fs-6 fw-normal text-white">Cégjegyzékszám: 09-09-017102</h3> <p class="fw-lighter mt-5">Minden jog fenntartva! © 2022 </p> </div>
+<div class="col-sm-4 text-center text-lg-start d-flex flex-column mb-4 item">
+<h5 class="fw-lighter mb-3 text-uppercase">
+                    Egyéb dokumentumok                </h5>
+<hr class="mt-2 mb-4 w-50"/>
+
+<ul class="footerMenu">
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=208" href="#" tabindex="-1" target="_self">Adatvédelmi tájékoztató            </a>
+</li>
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=3" href="#" tabindex="-1" target="_self">Adatvédelmi irányelvek            </a>
+</li>
+</ul>
+
+</div>
+<div class="col-sm-4 text-center text-lg-start d-flex flex-column mb-4 item">
+<h5 class="fw-lighter mb-3 text-uppercase">
+                    Egyéb dokumentumok                </h5>
+<hr class="mt-2 mb-4 w-50"/>
+
+<ul class="footerMenu">
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=215" href="#" tabindex="-1" target="_self">Dokumentumtár            </a>
+</li>
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=113" href="#" tabindex="-1" target="_self">Elérhetőség            </a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="modal fade modalposition" id="modal-1" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<div data-review-disabled-form="true">
+<div class="input-group">
+<span class="input-group-text"><i class="fa fa-search"></i></span>
+<input class="form-control" name="search-attr" type="text"/>
+<button class="btn btn-light" type="submit">
+                                Keresés                            </button>
+</div>
+<div style="display:none"><label>Fill This Field</label><input name="honeypot" type="text" value=""/></div></div>
+</div>
+<div class="modal-footer d-xxl-flex justify-content-xxl-center">
+<button class="btn btn-primary bg_green" data-bs-dismiss="modal" type="button">
+<svg class="bi bi-x-circle me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+</svg>
+                        Bezár                    </button>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,483 @@
+<!doctype html>
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<html>
+
+
+
+
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<title>Pályázatok</title><meta content="  Abádszalóki diákok Lengyelországban „Polak, Wegier, dwa bratanki, i do szabli, i do szklanki, oba zuchy, oba zwawi, niech im pan bóg blogoslawi!”, azaz:  „Lengyel, magyar k..." name="description"/><meta content="lengyel,magyar,című,valamint,infrastrukturális," name="keywords"/>
+ 
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="hu" http-equiv="content-language"/>
+
+<style>
+ body {font-family: arial, verdana; font-size: 12;  color: #000000; text-decoration: none; }
+ td {font-family: arial, verdana; font-size: 12;  color: #000000; text-decoration: none;}
+ a {font-family: arial, verdana; /*font-size: 12;*/  color: #2222FF; text-decoration: none;}
+ a:hover {font-family: arial, verdana; /*font-size: 12; */ color: orange; }
+ h1 {font-family: arial, verdana; font-size: 20;  color: #990000; text-decoration: none;}
+ .grayinput {font-family: arial, verdana;font-size: 11px; background-color: #EEEEEE; height: 18px; padding: 1px 1px;padding-bottom:2px; margin: 0px; color: #333333; border-left:1px solid #bbbbbb; border-right:1px solid #bbbbbb; border-bottom:1px solid #bbbbbb; border-top:1px solid #bbbbbb;}
+ .graytextarea {font-family: arial, verdana;font-size: 11px; background-color: #EEEEEE; padding: 1px 1px;padding-bottom:2px; margin: 0px; color: #333333; border-left:1px solid #bbbbbb; border-right:1px solid #bbbbbb; border-bottom:1px solid #bbbbbb; border-top:1px solid #bbbbbb;}
+
+ .box {
+	border: 5px solid #FF695E;
+	margin-bottom: 5px;
+	background-color: white;
+}
+
+#menu a {
+	display: block;
+	padding: 5px 0 5px 25px;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: white;
+	background: #FF695E;
+}
+.overflow{
+	overflow: hidden;
+	width: 100%;
+        text-overflow: ellipsis;
+}
+
+.lcdstyle{ /*Example CSS to create LCD countdown look*/
+background-color:white;
+color:#ff4400;
+font: 30px Impact;
+padding: 3px;
+}
+
+.lcdstyle sup{ /*Example CSS to create LCD countdown look*/
+font-size: 80%
+}
+
+</style>
+<style>
+#fix /*,#fix2*/
+{
+height:20px;
+background:#eee;
+color:black;
+text-align:right;
+padding-right:50px;
+padding-top:1px;
+padding-bottom:5px;
+position:fixed;
+width:100%;
+z-index:9999;
+top:0px;
+left:0px;
+border-bottom:1px solid #777;
+-webkit-box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:0 5px 10px rgba(51, 51, 51, 0.7);
+}
+
+/*#fix2
+{
+padding-top:4px;
+border-top:1px solid #777;
+border-bottom:0px solid #777;
+text-align:center;
+position:fixed;
+top:100%;
+margin-top:-25px;
+-webkit-box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:0 -5px 10px rgba(51, 51, 51, 0.7);
+}
+*/
+/*
+#fix #ljelent a
+{
+padding:1px;
+padding-left:1px;
+padding-right:1px;
+margin-right:2px;
+background:#cccccc;
+border:1px outset #bbb;
+color:white;
+cursor:pointer;
+font-weight:bold;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+}
+*/
+a#ljelent
+{
+padding:2px;
+padding-left:5px;
+padding-right:5px;
+background:#ccc;
+border:1px outset gray;
+margin-right:10px;
+color:white;
+cursor:pointer;
+font-weight:bold;
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+}
+
+
+#ljelent:hover
+{
+background:red;
+}
+/*
+#fix #ljelent a:hover
+{
+background:#777;
+}
+*/
+#alsobox
+{
+display:none;
+width:200px;
+border:1px solid #ccc;
+border-top:1px solid #aaa;
+border-left:1px solid #aaa;
+background:rgba(255,255,255,0.76);
+bottom:4px;
+right:200px;
+padding:0px;
+margin-bottom:-204px;
+margin-right:200px;
+-webkit-box-shadow:8px 8px 8px rgba(0, 0, 0, 0.8);
+-moz-box-shadow:8px 8px 10px rgba(0, 0, 0, 0.8);
+box-shadow:8px 8px 10px rgba(0, 0, 0, 0.8);
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;		
+}
+
+#alsobox {position: absolute; right: 2px; bottom: 4px;}
+body > div#alsobox {position: fixed;}
+
+#feje
+{
+background:#990000;
+padding:2px;
+text-align:center;
+color:white;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;		
+}
+#fixfuggo
+{
+display:none;
+width:125px;
+padding:3px;
+background:white;
+position:absolute;
+z-index:1000;
+top:40px;
+right:10px;
+
+border:1px solid #777;
+-webkit-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-webkit-border-radius: .5em;
+-moz-border-radius: .5em;
+}
+body > div#fixfuggo { position: fixed;  }
+p
+{
+margin:0px;
+}
+</style>
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+
+<body bgcolor="#EEEEEE" topmargin="0">
+<div id="fix"><table border="0" style="width:100%"><tr><td style="width:200px;"><style>
+. addthis_toolbox addthis_default_style a{text-decoration:none;float:left;margin-right:1px;padding:0;}
+.addthis_toolbox addthis_default_style img{width:23px;border:0;background:#EEEEEE;margin:0;}
+
+</style>
+</td><td>
+<div style="width:90%;text-align:center;"> 
+
+</div></td><td style="width:50px;"><a data-review-original-href="" href="#" id="ljelent" tabindex="-1">Bejelentés</a></td></tr></table></div><br/><br/>
+<center>
+<style>
+#wsab1
+{
+border-bottom:1px solid #777;
+-webkit-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-moz-box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+box-shadow:5px 5px 10px rgba(51, 51, 51, 0.7);
+-webkit-border-radius: .5em;
+-moz-border-radius: .5em;
+}
+</style>
+<br/><table border="0" cellpadding="0" cellspacing="0" id="wsab1" width="860">
+<tr><td background="elemek/3g/bf.gif" height="20" width="20"></td><td bgcolor="white" width="820"></td><td background="elemek/3g/jf.gif" height="20" width="20"></td></tr>
+<tr><td bgcolor="white" width="20"></td><td bgcolor="white">
+<table border="1" cellpadding="0" cellspacing="0" width="820">
+<tr><td background="fejlec_1/km-iskola.jpg" height="148" width="300">
+</td>
+<td bgcolor="white" width="1"></td>
+<td bgcolor="#4a929f" width="519">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td height="74" valign="top"><div style="padding:10"><font color="#FFFFFF" size="4"><b>Kovács Mihály Általános Iskola</b></font></div></td></tr>
+<tr><td align="right" height="74" valign="bottom"><div style="padding:10"><font color="#FFFFFF" size="2"><b>„…a gyermekeknek két dolgot kell adnunk: gyökereket és szárnyakat.</b></font></div></td></tr>
+</table></td></tr></table>
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td valign="top" width="180"><br/><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td bgcolor="#007762" height="21"><b><div style="color:white;padding-left:4">MENÜ</div></b></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=Gm3gSqFZtg" href="#" tabindex="-1"><font color="#FFFFFF">Köszöntő</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=isYg4a_BjK" href="#" tabindex="-1"><font color="#FFFFFF">Főoldal</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=OOrVouFRTH" href="#" tabindex="-1"><font color="#FFFFFF">Elérhetőségeink</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=5ar0nAqwrA" href="#" tabindex="-1"><font color="#FFFFFF">Iskolánkról</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=8vu8AKZyJd" href="#" tabindex="-1"><font color="#FFFFFF">Hírek</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=pRwZhIysZt" href="#" tabindex="-1"><font color="#FFFFFF">Dokumentumok</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#007762" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=pt0H84XAoI" href="#" tabindex="-1"><font color="#FFFFFF">Pályázatok</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=i0sJRfq_Ys" href="#" tabindex="-1"><font color="#FFFFFF">Események</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=_LLlyQ5_jc" href="#" tabindex="-1"><font color="#FFFFFF">Versenyeredmények</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=Q4Ynnm6vU5" href="#" tabindex="-1"><font color="#FFFFFF">Pályaválasztás</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=Ia2QBCSvAE" href="#" tabindex="-1"><font color="#FFFFFF">Órarend, csengetési rend</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=2J6UnAJgXT" href="#" tabindex="-1"><font color="#FFFFFF">Kapcsolataink</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=jY7Jedkh16" href="#" tabindex="-1"><font color="#FFFFFF">Közzétételi listák</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+<tr><td bgcolor="#93c4d9" height="21" width="200"><div style="padding-left:3"><img/>
+<a data-review-original-href="web.php?a=km-iskola&amp;o=ZSzwxKWCOY" href="#" tabindex="-1"><font color="#FFFFFF">OKM mérések eredményei</font></a></div></td></tr>
+<tr><td bgcolor="#007762" height="1"></td></tr>
+</table>
+<br/><center>
+
+<style type="text/css">
+				#content_popup {top: 50%; transform: translateY(-50%);}
+			
+			</style>
+<noscript>
+</noscript>
+
+
+<br/><br/><hr/>
+<br/>
+
+
+
+</center><br/><center><table border="0" cellpadding="0" cellspacing="0" width="95%"><tr><td><div style="border-color:#4a929f;border-style:solid;border-width:1px"><div style="padding:3;background:#4a929f;color:#FFFFFF;text-align:right"><b>Hírek</b></div><div style="padding:5;background:white;color:#444444;text-align:left"><b>Halloween - parti</b><br/><br/>Hagyományos Halloween - partink október 25-én kerül megrendezésre<br/><p align="right"><a data-review-original-href="web.php?a=km-iskola&amp;o=8vu8AKZyJd" href="#" tabindex="-1">tovább &gt;&gt;</a></p><hr color="#CCCCCC" size="1"/><b>OKM mérések</b><br/><br/>A 2018. évi OKM mérések eredményei megtekinthetők honlapunkon.<br/><p align="right"><a data-review-original-href="web.php?a=km-iskola&amp;o=ZSzwxKWCOY" href="#" tabindex="-1">tovább &gt;&gt;</a></p><hr color="#CCCCCC" size="1"/><b>Munkanap áthelyezés</b><br/><br/>2018. október 13-én (szombaton) tanítás lesz iskolánkban. Az október 22-i napot dolgozzuk le.
+Hétfői órarend szerint tanulunk.<br/><hr color="#CCCCCC" size="1"/><b>Fogadó óra</b><br/><br/>2018. január 8-án (hétfőn) 17 és 18 óra között fogadó órára várjuk a szülőket<br/><p align="right"><a data-review-original-href="web.php?a=km-iskola&amp;o=8vu8AKZyJd" href="#" tabindex="-1">tovább &gt;&gt;</a></p><hr color="#CCCCCC" size="1"/><b>Karácsonyi Játszóház</b><br/><br/>Hagyományainkhoz híven ismét szervezünk Karácsonyi Játszóházat. Várunk minden gyermeket, aki sajátkézzel szeretne ajándékot készíteni szüleinek, testvéreinek.<br/><p align="right"><a data-review-original-href="web.php?a=km-iskola&amp;o=8vu8AKZyJd" href="#" tabindex="-1">tovább &gt;&gt;</a></p><hr color="#CCCCCC" size="1"/><b>Adventi műsor a tornateremben</b><br/><br/>Készüljünk együtt a karácsonyi ünnepekre! A Tisza-tavi Ami Abádszalóki Tagozatának apraja - nagyja fellép az  adventi műsorban.<br/><p align="right"><a data-review-original-href="web.php?a=km-iskola&amp;o=8vu8AKZyJd" href="#" tabindex="-1">tovább &gt;&gt;</a></p></div></div></td></tr></table></center><br/><br/><center><table border="0" cellpadding="0" cellspacing="0" width="95%"><tr><td><div style="border-color:#4a929f;border-style:solid;border-width:1px"><div style="padding:3;background:#4a929f;color:#FFFFFF;text-align:right"><b>Linkek</b></div><div style="padding:5;background:white;color:#444444;text-align:left"><br/><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/meghivo_abadszalok_www.5mp.eu_.pdf" href="#" rel="nofollow" tabindex="-1" target="_blank">Meghívó</a><br/><br/><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/meghivo_abadszalok_www.5mp.eu_.pdf" href="#" rel="nofollow" tabindex="-1" target="_blank">Sajtóközlemény</a><br/><br/><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/abadszalok_projektnyito_sajtokozlemeny_javitott_www.5mp.eu_.pdf" href="#" rel="nofollow" tabindex="-1" target="_blank">Projektindító</a><br/><br/></div></div></td></tr></table></center> </td> <td width="3"></td> <td bgcolor="white" id="tartalom" style="padding-left:10px;" valign="top" width="480"><font size="5"><b></b></font><br/><br/><p><span style="color: #0000ff; font-size: large;"> </span></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal" style="text-align: left;"> </p>
+<p class="MsoNormal" style="text-align: center; line-height: 150%;"><img border="0" height="248" width="470"/></p>
+<p class="MsoNormal" style="text-align: center; line-height: 150%;"> </p>
+<p class="MsoNormal" style="text-align: center; line-height: 150%;"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 12.0pt; line-height: 150%;">Abádszalóki diákok Lengyelországban</span></strong></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">„Polak, Wegier, dwa bratanki, i do szabli, i do szklanki, oba zuchy, oba zwawi, niech im pan bóg blogoslawi!”, azaz: </span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">„Lengyel, magyar két jó barát, együtt harcol, s issza borát, vitéz, s bátor mindkettője, áldás szálljon mindkettőre!”</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">2001 óta Abádszalók városának testvértelepülése a dél-lengyelországi </span><span style="font-size: 12.0pt; line-height: 150%;">Rzepiennik Strzyżewski. 2019 nyarán a <em><span style="background: white; mso-bidi-font-weight: bold;">Wacław Felczak</span></em><span style="background: white;"> Alapítvány által kiírt, </span>a lengyel-magyar testvértelepülési, testvériskolai programok megvalósítását támogató pályázaton a Kovács Mihály Általános Iskola 3 pedagógusa (Sáfár Lászlóné, Pálfi Veronika és Tóth Tibor) eredményesen pályázott. Nagy segítségünkre volt Bali István, aki nagy tapasztalatokkal rendelkezik a lengyel-magyar barátság, együttműködés tekintetében, valamint saját könyvében is ír <span style="background: white;">Szolnok és a megyénk lengyel kapcsolatairól. István tolmácsunk volt az utunk során, akitől számos helyi szokásról, hagyományról is hallhattunk. </span></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">2019. november 26-án (kedden) indultunk útra Lengyelországba, ahol a Polgármesteri Hivatalnál köszöntöttek bennünket. A fogadóbizottság tagjai között találhattuk a lengyel városka polgármesterét, a Művelődési Ház igazgatónőjét és munkatársaikat. Még ezen a napon a Művelődési Házban a helyi gyermekekkel lehetőségük volt a diákjainknak közös csocsózásra, billiárdozásra, pingpongozásra, valamint Just Dance táncversenyre. A szálláshelyünk Bajkolas </span><span style="font-size: 12.0pt; line-height: 150%;">Gyermekek Nyaralójában Kołkówce-ban volt. Este két lengyel dalocskát tanultunk meg, amelyet meglepetésnek szántunk a vendéglátóink számára. </span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">Szerdán délelőtt a Városháza előtti téren ünnepélyes keretek között került sor a testvértelepülési kapcsolatunkat jelképező kopjafa felállítására, amelyet Czupp Pál népi iparművész készített. Az ünnepségen felcsendült a lengyel és a magyar himnusz, mazsoretteseink és néptáncosaink adtak ünnepi műsort. A kopjafaavató beszédben hallhattunk a két település közötti kapcsolat tartalmi elemeiről, a lengyel-magyar közös múltról, kiemelkedő lenyel és magyar tudósokról, és kiemelten szó esett a kopjafán található jelképekről, azok jelentéséről. Mind a testvértelepülésünk, mind a Tarnow megye elöljáróságai, többek között a megyei közgyűlés elnöke is méltatta a két település együttműködését jelképező kopjafát, a testvértelepülési együttműködést. Megemlékezés virágait helyeztük el, és a kopjafánál minden év márciusában megünneplik a lengyel-magyar barátság napját testvértelepülésünk iskolásai.<span style="color: red;"> </span>Csoportunk a délutánt Tarnowban töltötte. </span><span style="font-size: 12.0pt; line-height: 150%;">Tarnów azon lengyel városok közé tartozik, amelyek sok szállal kötődnek hazánkhoz. <span style="border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-bidi-font-style: italic;">Itt a főteret kerestük fel, amely éppen felújítás alatt állt. </span>A várost egykor két fontos kereskedelmi útvonal kereszteződésében alapították, melyek közül az egyik, a Dunajec völgyében haladó ún. „Magyar ösvény” a Balti-tengert kötötte össze Magyarországgal. Tarnów őrizte ezt az útvonalat, egyszersmind a Kárpátok felé induló, vagy onnan érkező kereskedőktől beszedte a várost megillető vámokat és adókat. A Piactéren körben sokszínű, gazdagon díszített, reneszánsz kori polgárházakat, ún. lábas házakat láttunk. A tarnówi gótikus székesegyház XV. században épült, három hajós, vörös téglás épületét csak kívülről tudtuk megcsodálni, mert éppen mise zajlott a templomban. Egy kis parkban található Bem apó 1985-ben felavatott szobra, felirata magyarul: „Bem József tábornok, Tarnów szülötte, lengyel és magyar hős”. Sajnos ez a műemlék is restaurálás alatt állt ott jártunkkor. Bem hamvait egy városi parkban felépített impozáns mauzóleumban helyezték el, ami a park északi részén fekvő tóban kialakított mesterséges szigeten található. <span style="border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-bidi-font-style: italic;">A</span>z Írott Szó alapítvány és Sepsiszentgyörgy város által 2001-ben Tarnównak ajándékozott székely kaput is felkerestük. A kapu Bem apó és Petőfi nevét viseli, rajta a magyar és a lengyel címer is látható. Visszatérve testvértelepülésünkre, este kulturális program keretében csempésztük be Rzepiennik Strzyżewski életébe a magyar virtust: mazsorettel, néptánccal, citerazenével hoztuk közelebb a lengyelekhez a magyar kultúra elemeit. A gasztronómia is belopakodott a programba, hiszen egy lengyel sós sütemény elkészítésénél is tevékenykedhettek diákjaink. Az est végén elénekeltük vendéglátóinknak a megtanult két lengyel dalt. Megható volt, amikor a közönség soraiban üldögélő lengyelek is felpattantak a színpadra, és egy hatalmas közös éneklés kerekedett harmonikaszó kíséretével. </span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">Csütörtökön a több mint 1 millió lakossal büszkélkedő lengyel kultúra városában, Krakkóban töltöttük a napunkat. Rynek Glówny<strong style="mso-bidi-font-weight: normal;"> </strong>egykor <span style="border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm;">Európa legnagyobb főtere volt. Innen a középkori egyetemvárosba látogattunk el, ahol az egyetem életében fontos szerepet játszó személyeket ábrázoló figurák körjátékát néztük meg. A </span>Wawel a királyok és hercegnők székhelye. Itt a <span style="color: #222222; background: white; mso-bidi-font-weight: bold;">Szent Szaniszló és Szent Vencel- </span>székesegyházat kerestük fel. A lengyel történelem nagy uralkodóinak a nyughelyeit láthattuk, köztük az 1576 – 1586 között lengyel uralkodó erdélyi fejedelmünkét, Báthory Istvánét. A hagyományokat követve elénekeltük ezen a helyen a nemzetünk himnuszát. Következő célunk a<span style="border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm;"> főtér d</span><span style="background: white;">omináns pontja a piros, kéttornyú <span style="border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm;">Mária-templom</span> (Kościół Mariacki) volt. A főtéren a piacon, a karácsonyi vásárban is eltölthettünk egy kis időt. Este Rzepiennik Biskupi általános iskolájába vártak bennünket. Az András-napi vigadalomba csöppentünk. A varázsszobában a lengyel gyerekek az e jeles naphoz kapcsolódó lengyel hagyományokkal, népi jóslatokkal ismertettek meg minket, közös táncházban táncoltunk, majd a tornateremben került sor a lengyel-magyar barátságos focimeccsre. A program zárásaként került sor az ünnepélyes testvériskolai megállapodás aláírására. Ennek keretében megköszöntük a vendéglátást, a szívélyes fogadtatást, valamint meghívtuk az immáron testvériskolánk diákjait városunkba is. </span></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">December 29-én hazafelé tartó utunkat Gorlicénél szakítottuk meg, ahol az I. világháborús katonai emlékhelyen tisztelegtünk az első világégés hősi halottainak emléke előtt.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">A négy nap során megtapasztalhattuk a lengyel vendégszeretetet. A lengyel konyha néhány ételével kedveskedtek nekünk. Így például megkóstoltuk </span><span style="font-size: 12.0pt; line-height: 150%;">a p<span style="background: white;">ierogit, ami a lengyelek tészta étele, sós és édes változatban is</span></span><span style="font-size: 10.5pt; line-height: 150%;"> </span><span style="font-size: 12.0pt; line-height: 150%;">készítik. Mi a burgonyás-hagymás változatát ízleltük meg. Ettünk savanyú uborkalevest, káposztalevest, de az obwarzanek </span><span style="font-size: 12.0pt; line-height: 150%;">pereckülönlegességet is kipróbáltuk. </span><span style="font-size: 12.0pt; line-height: 150%;"><span style="mso-spacerun: yes;"> </span>A lengyel édességek közül a krówka (tejkaramella) és a sliwki w czekoladzie (szilvás desszert) ízlett legjobban mindannyiunknak.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">Intézményvezetőként és történelem szakos tanárként nagyszerű érzés volt átélni azt, hogy aláírhatom a két iskola közötti testvériskolai együttműködési megállapodást. Könnyeimmel küzködtem, amikor a kopjafaavatáson diákjaink magyar táncokat lejtettek, a magyar származású nagy lengyel király sírjánál énekeltük a Himnuszt, valamint a Szózatot a gorlicei katonatemetőben. A DWA BRATANKI pályázatnak köszönhetően a lengyel kultúrából, hagyományokból kaphattunk egy kis ízelítőt. A gyermekek többsége először járt külföldön, és nagyon jó érzés, hogy először testvértelepülésünkre juthattak el. A négy nap látnivalókban, élményekben gazdagon, vidáman telt el. Bízunk benne, hogy a jövőben mi láthatjuk vendégül testvériskolánk delegációját Abádszalókon. Végül, de nem utolsó sorban szeretném megköszönni kollégáim (Sáfár Lászlóné, Pálfi Veronika, Tóth Tibor), tolmácsunk (Bali István) és autóbuszvezetőnk (Kozma Csaba) munkáját, hogy hozzájárultak a pályázatunk maradéktalan megvalósulásához.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;">Parázsó Katalin – intézményvezető</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"> </p>
+<p class="MsoNormal" style="text-align: justify; line-height: 150%;"><span style="font-size: 12.0pt; line-height: 150%;"><img border="0" height="350" width="470"/><br/></span></p>
+<p> </p>
+<p class="MsoNormal" style="text-align: left;"> </p>
+<p class="MsoNormal" style="text-align: left;"> </p>
+<p class="MsoNormal" style="text-align: left;"><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/tabori_beszamolo_abadszalok_www.5mp.eu_.pdf" href="#" tabindex="-1">Tábori beszámolók - 2019. június</a></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: center;"> </p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: center;"> </p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: center;"><img border="0" height="732" width="470"/></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: center;"> </p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: center;"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 12.0pt; line-height: 115%;">Pályázati tevékenységek a Kovács Mihály Általános Iskolában</span></strong></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: justify;"><span style="font-size: 12.0pt; line-height: 115%;">A 2017-2018-as tanév több új pályázatot hozott iskolánk életébe, ebben a tanévben ezen pályázataink továbbfutnak, de lesz olyan program is, amelybe ebben a tanévben kapcsolódunk be. </span></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: justify;"><span style="font-size: 12.0pt; line-height: 115%;">Az infrastrukturális megújulást jelentő <strong style="mso-bidi-font-weight: normal;"><em style="mso-bidi-font-style: normal;">EFOP-4.1.3</em></strong> pályázat építkezési munkálatai befejeződtek. Kialakításra került egy tornaszoba, az ereszcsatorna és a gázkazánok cseréje is megvalósult, valamint a természettudományos eszközparkunk bővült olyan eszközökkel, amelyek szemléletesebbé, élményszerűbbé teszik a természettudományok oktatását. </span></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: justify;"><span style="font-size: 12.0pt; line-height: 115%;">Az <strong style="mso-bidi-font-weight: normal;"><em style="mso-bidi-font-style: normal;"><span style="letter-spacing: -.75pt;">EFOP-3.2.4-16 Digitális kompetencia fejlesztése</span></em> </strong>pályázat eredményeként tanulói tableteket használhatnak a diákok a tanórákon, pedagógusaink pedig tanári laptopokat kaptak tanórai munkájukhoz. A pályázatnak köszönhető, hogy iskolánk 2 interaktív táblával gazdagodik. Pedagógusaink online informatikai továbbképzésen vesznek részt a tanév során.</span></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: justify;"><span style="font-size: 12.0pt; line-height: 115%;"><span style="mso-spacerun: yes;"> </span>Az <strong style="mso-bidi-font-weight: normal;"><em style="mso-bidi-font-style: normal;"><span style="background: white;">„Együtt, egymásért!”</span></em></strong><span style="background: white;"> szakmai programok és jó gyakorlatok alkalmazása és elterjesztése című </span>Klebelsberg Központ belső pályázata az egészségnevelés témakörében számtalan programot hoz, amelyben partnerként számítunk a szülők munkájára is. <span style="background: white;">Változatos, mind a gyermekek, mind a szülők érdeklődésének megfelelő egészségvédő, egészségfejlesztő programok, interaktív előadások szervezésével érhetünk el eredményeket. A munkatervbe betervezett programjaink 96 %-ban megvalósultak. Szerveztünk sportprogramokat, így kerékpártúrákat, futóversenyeket, sportfesztivált, zumba partit, aerobikot. Az egészséges életmódra nevelést szolgáló rendezvényeink: elsősegélynyújtás, gyógynövényekkel való ismerkedés, mézes reggeli, Dr. Matus Mária különböző témákban tartott előadásai, Buj József dietetikus bemutatói, zöldség-gyümölcs szobrászat, „boszorkánykonyha”, azaz zöldség- és gyümölcssalátákat készítettünk, megtartottuk az érzékszervek vetélkedőjét, finom szendvicseket készítettünk, reklámoztuk az iskolabüfé kínálatát, fogászati vetélkedőt tartottunk, a Happy-hét során a vízfogyasztást népszerűsítettük.</span></span></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: justify;"><strong style="mso-bidi-font-weight: normal;"><em style="mso-bidi-font-style: normal;"><span style="font-size: 12.0pt; line-height: 115%;">EFOP 3.1.7 Esélyteremtés a köznevelésben</span></em></strong><span style="font-size: 12.0pt; line-height: 115%;"> pályázat alapvető célja a befogadó nevelés támogatása, a végzettség nélküli iskolaelhagyás és lemorzsolódás kezelésében történő részvétel, a hátrányos helyzetű tanulók oktatási és munkaerő-piaci esélyeinek növelése, társadalmi beilleszkedésének elősegítése és ezáltal a köznevelési rendszer méltányosságának, valamit a gazdaság versenyképességének növelése. A pályázat megvalósulása során a Surranópálya program során rendhagyó angol órájuk volt a diákoknak, két finn lány látogatott el az iskolánkba. Egy interaktív színházi foglalkozásba is bekapcsolódhattak a diákjaink. Egy pszichológus látogatott el intézményünkbe kb havi rendszerességgel, akihez a problémás esetekkel fordulhattunk tanácsért, illetve a kiégés témakörében tartott tréninget a nevelőtestületnek.</span></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: justify;"><strong style="mso-bidi-font-weight: normal;"><em style="mso-bidi-font-style: normal;"><span style="font-size: 12.0pt; line-height: 115%;">Az EFOP-3.2.10-16-0001</span></em></strong><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 12.0pt; line-height: 115%;"> <em style="mso-bidi-font-style: normal;">számú „Tehetséggondozás sport által” című pályázatunk </em></span></strong><span style="font-size: 12.0pt; line-height: 115%;">elsődleges célja, hogy az iskolai sport és a tehetséggondozás vonatkozásában hangsúlyosan jelenjenek meg az egészség- és személyiségfejlesztési szempontok, amelyek segítik a tanulók motivált részvételét a testmozgásprogramokban, legyen szó akár tehetséggondozásról, akár rekreációs sportról. Ennek segítségével szeretnénk ösztönözni az iskolarendszer szereplőit, a tanulókat és szülőket, a pedagógusokat, az iskolához kapcsolódóan ellátást, szolgáltatást nyújtó külső partnereket, az egészségtudatos iskolai kultúra, a sportos iskola kialakítására, az aktív részvételre. Pályázatunk pilot évében a minőségi testnevelés érdekében módszertani képzésen vettek részt testnevelőink, tanítóink a nyár folyamán. Tanórai és tanórán kívüli programjainkban kap főszerepet a játékosság, az aktív órakezdés, a sportfesztivál. A diákönkénteseink feladata lesz társaik mozgósítása a sportrendezvényekre, önálló versenyek szervezése.<span style="mso-spacerun: yes;"> </span>A pályázatnak köszönhetően az aktív órakezdés mind az alsó, mind a felső tagozatos testnevelés órákon megjelent. Sportrendezvényeink a fesztivál hangulatban kaptak új köntöst. A tanév során a diákönkéntességet irányító pedagógus és a diákönkéntesek szervezésében 4 kirándulás valósult meg. Debrecenben korcsolyázni, Mártafüreden szánkózni, Kisújszálláson fürdőzni, Szilvásváradon túrázni voltunk a gyerekekkel.</span></p>
+<p class="MsoNormal" style="mso-margin-bottom-alt: auto; text-align: justify;"><span style="font-size: 12.0pt; line-height: 115%;">Az <strong style="mso-bidi-font-weight: normal;"><em style="mso-bidi-font-style: normal;">EFOP 3.3.5. pályázat</em></strong> keretében 2019. június 3-4. hetében környezetvédelmi, sport, idegen nyelvi és nemzeti identitás-anyanyelvi kultúra témájú táboraink valósulnak meg itt, helyben Abádszalókon, valamint Telkibányán. A pályázat rengeteg programot, játékos ismeretszerzés kínál a tanulóknak, egynapos kiránduláson vehetnek részt Karcagon és Sárospatak-Sátoraljaújhelyen.</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; background: white;"><strong style="mso-bidi-font-weight: normal;"><em style="mso-bidi-font-style: normal;"><span style="font-size: 12.0pt; line-height: 115%;">EFOP<span style="background: white;"> 1.8.0.-VEKOP-17-2017-00001</span></span></em></strong><span style="font-size: 12.0pt; line-height: 115%;"> „Egészségügyi ellátórendszer szakmai módszertani fejlesztése” című kiemelt projekt <span style="mso-bidi-font-weight: bold;">„Egészségtudatosság fejlesztése 7-18 éves korosztály részére”</span> témakörében.</span><span style="font-size: 9.5pt; line-height: 115%;"> </span><span style="font-size: 12.0pt; line-height: 115%;">A Karcagi Tankerület Központ ajánlásával</span><span style="font-size: 12.0pt; line-height: 115%;"> <span style="mso-bidi-font-weight: bold;">mintaiskolaként</span> kerültünk be a <span style="mso-bidi-font-weight: bold;">modellprogramba</span>, amely egy <span style="mso-bidi-font-weight: bold;">holisztikus tananyag</span> kipróbálását, tesztelését foglalja magában. A gyakorlatban ez azt jelenti, hogy iskolánk <span style="mso-bidi-font-weight: bold;">2019. február 1-től egy féléven keresztül </span>kipróbálhattuk, tesztelhettük a tananyagot, és megadott szempontrendszer alapján visszajelzést is adhat róla.</span><span style="font-size: 9.5pt; line-height: 115%;"> </span><span style="font-size: 12.0pt; line-height: 115%;">A tananyagfejlesztés a következő témákkal összefüggésben készül: Mozgás</span><span style="font-size: 12.0pt; line-height: 115%;">, </span><span style="font-size: 12.0pt; line-height: 115%;">Táplálkozás</span><span style="font-size: 12.0pt; line-height: 115%;">, </span><span style="font-size: 12.0pt; line-height: 115%;">Egészséges környezet</span><span style="font-size: 12.0pt; line-height: 115%;">, </span><span style="font-size: 12.0pt; line-height: 115%;">Társas kapcsolatok</span><span style="font-size: 12.0pt; line-height: 115%;">, </span><span style="font-size: 12.0pt; line-height: 115%;">Digitális világ, Egészségügyi szolgáltatások</span><span style="font-size: 12.0pt; line-height: 115%;">, </span><span style="font-size: 12.0pt; line-height: 115%;">Káros szenvedélyek (5-12. évfolyamban)</span><span style="font-size: 12.0pt; line-height: 115%;">, </span><span style="font-size: 12.0pt; line-height: 115%;">Egészséges jövőkép (8-12. évfolyamban). </span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white;"><span style="font-size: 12.0pt;"> </span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; background: white;"><span style="font-size: 12.0pt; line-height: 115%;">Mint látható sokféle tevékenység jelenik meg a pályázatokban. Van, amelyik infrastrukturális megújulást eredményez, míg mások szakmai megújulást jelentenek a nevelőtestületünk számára, de akadnak olyanok is, amelyek célközönsége közvetlenül iskolánk tanulóközössége. Bízom benne, hogy a tanév értékelésekor olyan eredményekről számolhatok majd be, amik minőségi előremozdulást jelenthetnek.</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white;"><span style="font-size: 12.0pt;"> </span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white;"><span style="font-size: 12.0pt;"> </span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white;"><span style="font-size: 12.0pt;">Parázsó Katalin</span></p>
+<p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white;"><span style="font-size: 12.0pt;">intézményvezető</span></p>
+<p> </p>
+ 
+<p> </p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"><span style="font-size: large; color: #0000ff;"><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/sajtokozlemeny___abadszaloki_kovacs_mihaly_altalanos_iskola_infrastrukturalis_fejlesztese_cimu_efop___4.1.3_17_2017_00293_azonosito_szamu_projekt_zarasarol_www.5mp.eu_.pdf" href="#" tabindex="-1" target="_blank">Sajtóközlemény - "Abádszalóki Kovács Mihály Általános Iskola infrastrukturális fejlesztése" című EFOP - 4.1.3-17-2017-00293 azonosító számú projekt zárásáról</a></span></p>
+<p class="MsoNormal"><span style="font-size: large; color: #0000ff;"><br/></span></p>
+<p class="MsoNormal"><span style="font-size: large; color: #0000ff;"><a data-review-original-href="https://www.szoljon.hu/kozelet/helyi-kozelet/harom-felujitott-altalanos-iskolat-is-atadtak-a-megyeben-1483534/?fbclid=IwAR1__Z4Wx29kKeCQOEi5Apk_G5ixiZ2Glq4ijN5zOE_lWB601zM0712TmKk" href="#" tabindex="-1">Újságcikk</a></span></p>
+<p class="MsoNormal"><span style="font-size: large; color: #0000ff;"><br/></span></p>
+<p><img border="0" height="313" width="470"/></p>
+<p class="MsoNormal"> </p>
+<p class="MsoNormal"><span style="font-size: large; color: #0000ff;"> </span></p>
+<p class="normal-header" style="margin-right: 1.2pt; text-align: left; text-indent: 0cm;"><img border="0" height="350" width="470"/></p>
+<p class="normal-header" style="margin-right: 1.2pt; text-align: left; text-indent: 0cm;"> </p>
+<p class="normal-header" style="margin-right: 1.2pt; text-align: left; text-indent: 0cm;"><span style="font-size: medium;">2019. január25.</span></p>
+<p class="Sajtkzlemny" style="text-align: left; text-indent: 0cm; tab-stops: 35.4pt;"><span style="font-size: medium;"><span style="mso-bidi-font-size: 16.0pt; line-height: 125%; mso-ansi-language: HU; mso-fareast-language: HU;">Sajtóközlemény</span><span style="mso-bidi-font-size: 16.0pt; line-height: 125%; color: windowtext; mso-ansi-language: HU; mso-fareast-language: HU;"><span style="mso-tab-count: 1;"> </span></span></span></p>
+<p class="Sajtkzlemny" style="text-align: left; text-indent: 0cm; tab-stops: 35.4pt;"><span style="font-size: 10.0pt; line-height: 125%; color: windowtext; mso-ansi-language: HU; mso-fareast-language: HU;"> </span></p>
+<p class="Sajtkzlemny" style="text-indent: 0cm; tab-stops: 35.4pt;"><span lang="EN-US" style="font-size: 12.0pt; mso-bidi-font-size: 16.0pt; line-height: 125%;">Tájékoztató "Az abádszalóki Kovács Mihály Általános Iskola infrastrukturális fejlesztése” című, EFOP-4.1.3-17-2017-00293 </span><span style="font-size: large; color: #0000ff;"><span lang="EN-US" style="font-size: 12.0pt; mso-bidi-font-size: 16.0pt; line-height: 125%;"><span style="color: #000000;">azonosító számú projekt zárásáról</span><span style="mso-tab-count: 1;"> </span></span></span></p>
+<p> </p>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+<div>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;">A     Karcagi Tankerületi Központ <strong style="mso-bidi-font-weight: normal;">69,9 millió     Ft</strong> vissza nem térítendő európai uniós támogatást nyert az <strong style="mso-bidi-font-weight: normal;">EFOP-4.1.3-17 – Az állami fenntartású     köznevelési intézmények tanulást segítő tereinek infrastrukturális     fejlesztése </strong>című konstrukció keretein belül. </span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+<div>
+<p class="normal-header" style="text-indent: 0cm;"><span style="line-height: 125%; color: windowtext; font-size: large;">A beruházás     az Abádszalók városának központjában található impozáns, a város arculatát     meghatározó épület, a <strong style="mso-bidi-font-weight: normal;">Kovács Mihály     Általános Iskola</strong> felújítására és fejlesztésére irányult.</span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="MsoNormal"><span style="color: #0000ff; font-size: large;"><span style="color: windowtext;">A     projektben tervezett kivitelezési munkálatok befejeződtek, jelenleg a     projekt pénzügyi zárása zajlik. Az épület nyilvános átadása 2019. január     24. napon valósult meg.</span></span><span style="font-size: large;"><span style="color: #0000ff;"> <span lang="EN-US" style="line-height: 125%;"><span style="mso-tab-count: 1;"> </span></span></span><span style="color: #0000ff;"><span style="line-height: 125%; color: windowtext;"><span style="mso-tab-count: 1;"> </span></span></span></span><span style="font-size: large; color: #0000ff;"> </span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext;"> </span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;">A <strong style="mso-bidi-font-weight: normal;">projekt Abádszalók, István király utca 1.</strong> szám alatt található <strong style="mso-bidi-font-weight: normal;">Kovács Mihály Általános Iskola</strong> felújítását és fejlesztését tűzte ki céljául. A beruházás szükségességét indokolta az épület állagának romlása, melyet energetikai szempontok és jogszabályi előírások is elengedhetetlenné tettek. A terveknek megfelelően nem csak az <strong style="mso-bidi-font-weight: normal;">épület felújítása</strong>, de a diákok természettudományos érdeklődésének felkeltése céljából, a természettudományos tárgyak oktatását segítő eszközpark kialakításához, <strong style="mso-bidi-font-weight: normal;">eszközök beszerzése</strong> is megvalósulhatott.</span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;"> </span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;">Az ingatlan felújítási munkálatainak elvégzése során elkészült többek között a <strong style="mso-bidi-font-weight: normal;">tornaszoba kialakítása és felszerelése, az épület ereszcsatornájának cseréje</strong>. A fűtéskorszerűsítés jegyében energiatakarékos <strong style="mso-bidi-font-weight: normal;">kondenzációs kazánok</strong> kerülhettek az elavult gázkazánok helyére. A beszerzett eszközöktől a tanulási nehézségekkel küzdő tanulók esetében is nagyobb eredményeket várnak a pedagógusok, hiszen számukra még fontosabb az empirikus úton történő ismeretszerzés.</span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;"> </span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;">A fentiek eredményeként egy modern, a mai jogszabályoknak megfelelő intézmény került kialakításra, mely komfortszintjének növelésével hozzájárul a tanulók motivációjának, az iskolába járási és ott tartózkodási kedvének növeléséhez, valamint az ingatlan fenntartási költségeinek csökkenéséhez.</span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;"> </span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;">Az infrastrukturális beruházásnak köszönhetően, a pályázati célok elérésével valóra válik a minőségi, méltányos, inkluzív oktatás-nevelés feltételeinek biztosítása, az esélyegyenlőségek mérséklése.</span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="color: windowtext; font-size: large;"> </span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="font-size: large;"><em style="mso-bidi-font-style: normal;"><span style="color: windowtext;">A projektről további információ a </span></em><a data-review-original-href="http://www.kk.gov.hu" href="#" tabindex="-1"><em style="mso-bidi-font-style: normal;">www.kk.gov.hu</em></a><em style="mso-bidi-font-style: normal;"><span style="color: windowtext;">oldalon olvasható.</span></em></span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="font-size: large;"><em style="mso-bidi-font-style: normal;"><span style="color: #00b050; background: yellow; mso-highlight: yellow;"> </span></em></span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="font-size: large;"><em style="mso-bidi-font-style: normal;"><span style="color: windowtext;">További információ kérhető:</span></em></span></p>
+<p class="normal-header" style="text-indent: 0cm;"><span style="font-size: large;"><a data-review-original-href="mailto:karcag@kk.gov.hu" href="#" tabindex="-1">karcag@kk.gov.hu</a> e-mail címen</span></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/sajtokozlemeny_3__efop_3_3_5_17_2017_00031_www.5mp.eu_.pdf" href="#" tabindex="-1"><span style="font-size: small;">Sajtóközlemény - EFOP-3.3.5-17-2017-00031</span><br/></a></p>
+<p><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/sajtokozlemeny_3__efop_3_3_5_17_2017_00031_www.5mp.eu_.pdf" href="#" tabindex="-1"><span style="font-size: medium;"> </span></a></p>
+<p><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/sajtokozlemeny_3__efop_3_3_5_17_2017_00031_www.5mp.eu_.pdf" href="#" tabindex="-1"> </a></p>
+<p> </p>
+<p><span style="font-family: times new roman, times; font-size: medium; color: #666699;">EGY BARÁTSÁG NYOMÁBAN - Határtalanul pályázat</span></p>
+<p><span style="font-family: times new roman, times; font-size: medium; color: #666699;"> </span></p>
+<p><span style="color: #666699; font-size: small;">Arany és Petőfi.</span></p>
+<p><span style="color: #666699; font-size: small;"> Két nagy, 19. századi költőnk, aki tanúbizonyságot tett az élethosszig tartó barátság területén. Az Országgyűlés és a MTA a 2017-es évet - a Toldi írójának 200. születésnapja alkalmából - Arany Emlékévvé nyilvánította. Az abádszalóki Kovács Mihály Általános Iskola két 7. osztálya ez előtt a barátság előtt tisztelegve vett részt a Határtalanul! Tanulmányi kirándulás hetedikeseknek című pályázat keretében egy 5 napos erdélyi tanulmányi úton.</span></p>
+<p><span style="color: #666699; font-size: small;">A gyermekek osztályfőnökeikkel közösen kezdtek neki az előkészületi munkáknak. A kirándulást megelőzően Erdély földrajzával, népességével, etnikai összetételével, rövid történelmével ismerkedhettek meg a diákjaink. Mindenkinek megvolt a maga feladata: kiselőadásokkal készültek a nebulók a programra, leforgatták a bemutatkozó kisfilmjüket, és a testvértelepülésünkön, Backamadarason megrendezésre került kulturális délutánra Arany versekkel illetve egy vidám színdarabbal készültek.</span></p>
+<p><span style="color: #666699; font-size: small;">2018. április 16-án korán indult útra a 30 tanulóból és 3 kísérő pedagógusból álló csapatunk. Az előttünk álló több száz kilométeres utunkat Nagyváradon és a Tordai-hasadéknál szakítottuk meg. A gyönyörű természeti képződmény elkápráztatta az alföldi tájhoz szokott szemünket. Izgalmas volt láncokba kapaszkodva a sziklákba vájt lépcsőfokokon lépkedni, de szerencsére egy négylábú idegenvezetőnk (egy helyi eb) meggyőzött bennünket arról, hogy tényleg kutyadolog végiggyalogolni a függőhidakkal övezett túraútvonalon. Este kicsit fáradtan, éhesen érkeztünk a nyárádszentlászlói Pásztortűz Panzióba, a szálláshelyünkre. Birtokba vettük a kis táborunkat, minden esténk közös játékkal, nagy nevetéssel telt.</span></p>
+<p><span style="color: #666699; font-size: small;">Kirándulásunk 2. napjának délelőttjén Backamadarassal ismerkedtünk meg. Bepillantottunk nemcsak az általános iskolában, hanem a polgármesteri hivatalban folyó munkába, megtekintettük a helytörténeti kiállítás tárlatát, valamint a település három felekezetének templomát is. A délutánt Marosvásárhelyen töltöttük. Bejártuk a város főterét, a Teleki Téka több száz éves könyvei között sétáltunk, a Kultúrpalotában pedig egy zenekari próbába is belehallgathattunk. A késő délutánunk kézműveskedéssel telt. Ízelítőt kaptunk a fafaragás mesterségéből, kis faliszőnyeget szőttünk, a háncsfonás fortélyait is elsajátítottuk, az üvegfestés technikáját is kipróbáltuk, és végül a saját vacsoránk desszertjét, az erdélyi kürtőskalácsot is megsüthettük.</span></p>
+<p><span style="color: #666699; font-size: small;">A harmadik napunk egy szép székelyföldi kirándulással telt. Szejkefürdő, Farkaslaka, Korond, Parajd és Szováta voltak az úticéljaink. Sok érdekességet tudtunk meg a csontbáróról, Orbán Balázsról, Erdély Kossuth-díjas magyar írójáról, Tamási Áronról. A parajdi sóbányában mindannyian parányi emberkének érezhettük magunkat a hatalmas sótermekben. Szovátán nemcsak a Medve-tó partján időzhettünk, hanem a Vörös- és a Zöld-tavat is megpillantottuk.</span></p>
+<p><span style="color: #666699; font-size: small;">A következő napon a Szász szék egykori központját, Segesvárt kerestük fel. A város történelmi központjában barangolva a vár bástyáit, a 14. században épült Óratornyot a híres zenélő órájával néztük meg. A Várhegyre a 178 fokból álló un. Schülertreppe-n, azaz diáklépcsőn vezetett fel az utunk a híres szász evangélikus gimnáziumhoz, valamint a Szent Miklósnak szentelt gótikus stílusú szász templomhoz. Utunkat Fehéregyháza irányába folytattuk, ahol a Petőfi Sándor Múzeum gondnokától szabályos történelem és irodalom órát kaptunk. Délután a backamadarasi gyermekekkel együtt egy közös kulturális műsoron vettünk részt. Itt felcsendültek Arany János versei, de helyet kapott a rögtönzött tantermi kis színpadon a <em>Walesi bárdok, ahogy a 7.a anno 6-ban megtanulta</em> című minikomédia. A lányok zumba koreográfiákat adtak elő. Ezek után a sporté és a játéké volt a főszerep. Foci és kosármeccsek voltak, ahol nem a győzelem, hanem a jókedv, a közös élmény volt a lényeg.</span></p>
+<p><span style="color: #666699; font-size: small;">Az utolsó napunkon Mátyás király szülővárosába, Kolozsvárra látogattunk el, majd végül Arany János szülővárosát, Nagyszalontát kerestük fel. Itt a Csonka-toronyban a frissen átadott Arany Múzeumban jártunk, majd Arany János szülőházát is megtekintettük.</span></p>
+<p><span style="color: #666699; font-size: small;">A kirándulás alatt az erdélyi magyar emberek hétköznapjaival, ételeivel, népviseletével is megismerkedtek a gyermekek. A sok tudomány, ismeretanyag mellé a szórakozás, a jó hangulat is társult. Erről, a minden nap többször is elhangzott különféle székelyviccek is gondoskodtak a pedagógusok előadásában. Köszönöm Pálfi Veronika és Godó József osztályfőnökök munkáját, hogy tartalmassá és felejthetetlenné tették 30 abádszalóki 7. osztályos gyermek egy hetét.</span></p>
+<p> </p>
+<p><span style="color: #666699; font-size: small;">Parázsó Katalin</span></p>
+<p><span style="color: #666699; font-size: small;"><br/></span></p>
+ 
+<p><img border="0"/><img border="0"/></p>
+<p> </p>
+<p><span style="font-family: times new roman, times; font-size: medium; color: #666699;"><br/></span></p>
+<p> </p>
+<p> </p>
+<p><span style="color: #333399; font-family: times new roman,times; font-size: medium;">ABÁDSZALÓKI KOVÁCS MIHÁLY ÁLTALÁNOS ISKOLA INFRASTRUKTURÁLIS FEJLESZTÉSE - EFOP-4.1.3-17-2017-00293</span></p>
+<p><span style="font-family: times new roman,times; font-size: medium;"><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/sajtokozlemeny_abadszalok_javitott_www.5mp.eu_.pdf" href="#" tabindex="-1">Sajtóközlemény</a></span></p>
+<p><span style="color: #0000ff; font-size: small;"><a data-review-original-href="https://www.szoljon.hu/jasz-nagykun-szolnok/kozelet-jasz-nagykun-szolnok/program-indult-fiatalok-mozgasgazdag-eletmodjaert-abadszalokon-galeria-921413/" href="#" tabindex="-1">Újságcikk</a></span><span style="color: #333399; font-family: times new roman,times; font-size: medium;"><br/></span></p>
+<p><span style="color: #333399; font-family: times new roman,times; font-size: medium;"><a data-review-original-href="http://www.5mp.eu/fajlok2/km-iskola/meghivo_abadszalok_www.5mp.eu_.pdf" href="#" tabindex="-1"></a><a data-review-original-href="https://www.szoljon.hu/jasz-nagykun-szolnok/kozelet-jasz-nagykun-szolnok/program-indult-fiatalok-mozgasgazdag-eletmodjaert-abadszalokon-galeria-921413/" href="#" tabindex="-1"></a><br/></span></p>
+<p> </p>
+<p><span style="color: #333399; font-family: times new roman,times; font-size: medium;">Az állami fenntartású köznevelési intézmények tanulást segítő tereinek infrastrukturális fejlesztése" pályázati program keretében „Abádszalóki Kovács Mihály Általános Iskola infrastrukturális fejlesztése" című, EFOP-4.1.3-17-2017-00293 azonosító számú projekt</span></p>
+<p><span style="color: #333399; font-family: times new roman,times; font-size: medium;"><br/></span></p>
+<p><span style="color: #333399; font-family: times new roman,times; font-size: medium;"><span style="text-decoration: underline;"><span style="color: #666699;"><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/meghivo_abadszalok_www.5mp.eu_.pdf" href="#" tabindex="-1">Meghívó</a></span></span></span></p>
+<p><span style="color: #333399; font-family: times new roman,times; font-size: medium;"><span style="text-decoration: underline;"><span style="color: #666699;"><a data-review-original-href="http://5mp.eu/fajlok2/km-iskola/abadszalok_projektnyito_sajtokozlemeny_javitott_www.5mp.eu_.pdf" href="#" tabindex="-1">Projektindító sajtóközlemény</a><br/></span></span></span></p><br/><br/><center><table border="0" cellpadding="0" cellspacing="0" width="90%"><tr><td><div style="border-color:#4a929f;border-style:solid;border-width:1px"><div style="padding:3;background:#4a929f;color:#FFFFFF;text-align:left;font-size:20px"><b>Képgaléria</b></div><table border="0" width="100%"><tr><td align="center" valign="center"><div style="padding:3;width:133;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=20180417_101937.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="133"/></a></div></td><td align="center" valign="center"><div style="padding:3;width:140;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=alapitvany.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="74" width="140"/></a></div></td><td align="center" valign="center"><div style="padding:3;width:133;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=20180419_161743.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="133"/></a></div></td></tr><tr><td align="center" valign="center"><div style="padding:3;width:134;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=nevtelen.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="134"/></a></div></td><td align="center" valign="center"><div style="padding:3;width:134;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=nevtelen.png" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="134"/></a></div></td><td align="center" valign="center"><div style="padding:3;width:140;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=50466405_2150909514952664_1166647949501923328_o.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="93" width="140"/></a></div></td></tr><tr><td align="center" valign="center"><div style="padding:3;width:64;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=img007.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="64"/></a></div></td><td align="center" valign="center"><div style="padding:3;width:133;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=20180416_144449.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="133"/></a></div></td><td align="center" valign="center"><div style="padding:3;width:133;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=20180418_112813.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="133"/></a></div></td></tr><tr><td align="center" valign="center"><div style="padding:3;width:75;background:#DDDDDD;border-color:#BBBBBB;border-style:solid;border-width:1px"><a data-review-original-href="kepgaleria_nagyitas.php?azonosito=km-iskola&amp;oldalkod=pt0H84XAoI&amp;kepkonyvtar=2&amp;kep=20180419_091107.jpg" href="#" tabindex="-1" target="_blank"><img border="0" height="100" width="75"/></a></div></td></tr></table></div></td></tr></table> </center></td><td width="3">
+</td>
+<td id="joszlop" valign="top" width="120">
+<br/><br/>
+
+
+<p>
+<br/><br/>
+
+<center><table border="0" cellpadding="0" cellspacing="0" width="95%"><tr><td><div style="border-color:#4a929f;border-style:solid;border-width:1px"><div style="padding:3;background:#4a929f;color:#FFFFFF;text-align:left"><b>Keresés a honlapon</b></div><div style="padding:5;background:white;color:#444444;text-align:center"><div data-review-disabled-form="true"><input name="a" type="hidden" value="km-iskola"/><input name="muvelet" type="hidden" value="kereses"/><input class="grayinput" maxlength="60" name="szovegresz" type="text"/><br/><input type="submit" value="Keresés"/></div></div></div></td></tr></table><br/><br/></center><center><table border="0" cellpadding="0" cellspacing="0" width="95%"><tr><td><div style="border-color:#4a929f;border-style:solid;border-width:1px"><div style="padding:3;background:#4a929f;color:#FFFFFF;text-align:left"><b>Üzenőfal</b></div><div style="padding:0;background:white;color:#444444;text-align:left"><br/><br/></div><div style="padding:4;background:white;color:#444444;text-align:left"><div data-review-disabled-form="true"><input name="azonosito" type="hidden" value="km-iskola"/>Név:<br/><input class="grayinput" maxlength="20" name="nev" size="15" type="text"/><br/>Üzenet:<br/><textarea class="graytextarea" cols="25" name="ujuzenet" rows="5"></textarea><br/><input type="submit" value="Mehet"/></div></div></div></td></tr></table><br/><br/></center></p></td>
+</tr>
+</table><br/><td bgcolor="white"></td><tr><td bgcolor="white" height="20" width="20"></td><td align="center" bgcolor="#93c4d9" width="720"><div id="fix2">
+
+<br/><br/><div></div></div></td><td bgcolor="white" height="20" width="20"></td></tr><tr><td background="elemek/3g/ba.gif" height="20" width="20"></td><td bgcolor="white" width="720"></td><td background="elemek/3g/ja.gif" height="20" width="20"></td></tr><br/><br/><a data-review-original-href="http://www.5mp.eu" href="#" tabindex="-1" target="_blank"><div style="width:200;height:20;padding:3;background:white;color:navy">Ingyenes honlapkészítő</div></a><a data-review-original-href="http://www.shp.hu" href="#" tabindex="-1" target="_blank"><div style="width:200;height:20;padding:3;background:white;color:navy">Profi, üzleti honlapkészítő</div></a></center>
+
+<div id="somediv" style="display:none"></div></body>
+<div id="alsobox">
+<div id="feje">Hirdetés   <span style="margin-left:2px;font-size:1.1em">10</span></div>
+<div align="center" style="padding:3px;margin:0 auto">
+<a data-review-original-href="http://angolnyelvtanulas.shp.hu" href="#" tabindex="-1" target="_blank">
+<div style="margin: 5px; padding: 2px; background: white; color: black; text-align: center; border: 3px solid gray;">
+<center>
+<div style="color:#ff4400;font-size:14px;padding:6px;border-style:solid;border-color:#DDDDDD;border-width:1px;width:">
+<span style="color:#0000ff;">
+<strong>
+<span style="font-size:smaller;">Végre értem amit angolul mondanak nekem, és megértik amit mondok. 
+		</span></strong>
+</span>
+<strong><br/>
+<br/>
+<span style="color:#FF6600;">KÖSZÖNÖM NOÉMI!
+		</span></strong>
+
+
+</div>
+</center>
+</div>
+</a>
+<br/> </div>
+</div>
+</html>

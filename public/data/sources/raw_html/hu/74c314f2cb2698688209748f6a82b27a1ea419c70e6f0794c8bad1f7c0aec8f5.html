@@ -1,0 +1,790 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+
+<title>Kistarcsa</title>
+
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Kistarcsa Önkormányzat" name="author"/>
+<meta content="Orvosi ügyelet" property="og:title"/>
+<meta content="https://www.kistarcsa.hu/kistarcsa.jpg" property="og:image"/>
+<meta content="Orvosi ügyelet" property="og:image:alt"/>
+<meta content="https://www.kistarcsa.hu/intezmenyrendszer/egeszsegugy/orvosi_ugyelet/orvosi_ugyelet" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content=" ..." property="og:description"/>
+
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+<div id="popup">
+<div id="popup_ablak">
+<div id="popup_cim"></div>
+<div id="popup_close"></div>
+<div id="popup_tartalom_keret">
+<div id="popup_tartalom"></div>
+</div>
+</div>
+</div>
+<div id="searchFrame">
+<div class="searchBox">
+<input id="searchField" name="searchField" placeholder="keresett kifejezés" type="text" value=""/>
+<button><i class="fa-light fa-magnifying-glass"></i></button>
+</div>
+</div>
+<section class="TopMenu">
+<div class="Logo">
+            KISTARCSA<br/>város honlapja
+        </div>
+<a data-review-original-href="ugyintezes/ugyfelfogadas" href="#" tabindex="-1"><i class="fa-light fa-users"></i><span>Ügyfélfogadás</span></a>
+<a data-review-original-href="hivatal/polgarmesteri_hivatal/irodak_ugyosztalyok" href="#" tabindex="-1"><i class="fa-light fa-phone-office"></i><span>Telefonkönyv</span></a>
+<a data-review-original-href="ugyintezes/nyomtatvanyok" href="#" tabindex="-1"><i class="fa-light fa-folder-open"></i><span>Nyomtatványok</span></a>
+<a data-review-original-href="kozerdeku_adatok/kozerdeku_adatok" href="#" tabindex="-1"><i class="fa-light fa-circle-info"></i><span>Közérdekű adatok</span></a>
+<a data-review-original-href="javascript:void(0);" href="#" tabindex="-1"><i class="fa-light fa-magnifying-glass"></i><span>Keresés</span></a>
+<a class="MobileMenu" data-review-original-href="javascript:void(0);" href="#" tabindex="-1"><i class="fa-light fa-bars"></i></a>
+</section>
+<section class="Navigation">
+<div class="MainMenu">
+<div class="Logo">
+<a data-review-original-href="https://www.kistarcsa.hu" href="#" tabindex="-1"><img/></a>
+</div>
+<ul class="MainMenu">
+<li><a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Település</a></li><li><a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Önkormányzat</a></li><li><a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Hivatal</a></li><li><a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Ügyintézés</a></li><li><a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Intézményrendszer</a></li><li><a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Közérdekű adatok</a></li><li><a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Választási információk</a></li> </ul>
+<div class="MegaMenuBlur">
+<div class="MegaMenu" id="telepules">
+<span class="Close"><i class="fa-light fa-xmark"></i></span>
+<h2>Település</h2>
+<div class="Lead">
+</div>
+<div class="SubCategories">
+<div class="MegaBlock">
+<h3><a data-review-original-href="telepules/kistarcsa" href="#" tabindex="-1">Kistarcsa</a></h3>
+<ul>
+<li><a data-review-original-href="telepules/kistarcsa/telepulestortenet" href="#" tabindex="-1">Településtörténet</a></li>
+<li><a data-review-original-href="telepules/kistarcsa/telepulesstatisztika" href="#" tabindex="-1">Településstatisztika</a></li>
+<li><a data-review-original-href="telepules/kistarcsa/ertektar" href="#" tabindex="-1">Értéktár</a></li>
+<li><a data-review-original-href="telepules/kistarcsa/hires_szulotteink__dijazottaink" href="#" tabindex="-1">Híres szülötteink, díjazottaink</a></li>
+<li><a data-review-original-href="telepules/kistarcsa/testvertelepuleseink" href="#" tabindex="-1">Testvértelepüléseink</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="telepules/kikapcsolodas" href="#" tabindex="-1">Kikapcsolódás</a></h3>
+<ul>
+<li><a data-review-original-href="telepules/kikapcsolodas/latnivalok__turautvonalak__kerekparutak" href="#" tabindex="-1">Látnivalók, túraútvonalak, kerékpárutak</a></li>
+<li><a data-review-original-href="telepules/kikapcsolodas/kultura" href="#" tabindex="-1">Kultúra</a></li>
+<li><a data-review-original-href="telepules/kikapcsolodas/wifi-eleresek" href="#" tabindex="-1">Wifi-elérések</a></li>
+<li><a data-review-original-href="telepules/kikapcsolodas/sportolasi_lehetosegek__jatszoterek" href="#" tabindex="-1">Sportolási lehetőségek, játszóterek</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="telepules/hirek" href="#" tabindex="-1">Hírek</a></h3>
+<ul>
+<li><a data-review-original-href="telepules/hirek/onkormanyzati_hirek" href="#" tabindex="-1">Önkormányzati hírek</a></li>
+<li><a data-review-original-href="telepules/hirek/galeria" href="#" tabindex="-1">Galéria</a></li>
+<li><a data-review-original-href="telepules/hirek/videotar" href="#" tabindex="-1">Videótár</a></li>
+<li><a data-review-original-href="telepules/hirek/kistarcsai_hirado" href="#" tabindex="-1">Kistarcsai Híradó</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="telepules/kozossegeink" href="#" tabindex="-1">Közösségeink</a></h3>
+<ul>
+<li><a data-review-original-href="telepules/kozossegeink/civilszervezetek" href="#" tabindex="-1">Civil szervezetek</a></li>
+<li><a data-review-original-href="telepules/kozossegeink/nemzetisegek" href="#" tabindex="-1">Nemzetiségek</a></li>
+<li><a data-review-original-href="telepules/kozossegeink/egyhazak" href="#" tabindex="-1">Egyházak</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="telepules/fejlesztes" href="#" tabindex="-1">Fejlesztés</a></h3>
+<ul>
+<li><a data-review-original-href="telepules/fejlesztes/top_plusz_palyazatok" href="#" tabindex="-1">TOP Plusz Pályázatok</a></li>
+<li><a data-review-original-href="telepules/fejlesztes/korabbi_palyazatok" href="#" tabindex="-1">Korábbi pályázatok</a></li>
+<li><a data-review-original-href="telepules/fejlesztes/telepulesrendezes_fejlesztes" href="#" tabindex="-1">Településrendezés és fejlesztés</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="telepules/kozlekedes" href="#" tabindex="-1">Közlekedés</a></h3>
+<ul>
+<li><a data-review-original-href="telepules/kozlekedes/igy_juthat_el_hozzank" href="#" tabindex="-1">Így juthat el hozzánk</a></li>
+<li><a data-review-original-href="telepules/kozlekedes/helyi_buszjarat" href="#" tabindex="-1">Helyi buszjárat</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="MegaMenu" id="onkormanyzat">
+<span class="Close"><i class="fa-light fa-xmark"></i></span>
+<h2>Önkormányzat</h2>
+<div class="Lead">
+</div>
+<div class="SubCategories">
+<div class="MegaBlock">
+<h3><a data-review-original-href="onkormanyzat/vezetok" href="#" tabindex="-1">Vezetők</a></h3>
+<ul>
+<li><a data-review-original-href="onkormanyzat/vezetok/polgarmester" href="#" tabindex="-1">Polgármester</a></li>
+<li><a data-review-original-href="onkormanyzat/vezetok/alpolgarmesterek" href="#" tabindex="-1">Alpolgármesterek</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="onkormanyzat/kepviselo-testulet" href="#" tabindex="-1">Képviselő-testület</a></h3>
+<ul>
+<li><a data-review-original-href="onkormanyzat/kepviselo-testulet/kepviselo-testulet_tagjai" href="#" tabindex="-1">Képviselő-testület tagjai</a></li>
+<li><a data-review-original-href="onkormanyzat/kepviselo-testulet/ulesek__napirendek" href="#" tabindex="-1">Ülések, napirendek</a></li>
+<li><a data-review-original-href="onkormanyzat/kepviselo-testulet/jegyzokonyvek" href="#" tabindex="-1">Jegyzőkönyvek</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="onkormanyzat/onkormanyzati_mukodes" href="#" tabindex="-1">Önkormányzati működés</a></h3>
+<ul>
+<li><a data-review-original-href="onkormanyzat/onkormanyzati_mukodes/az_onkormanyzat_feladatai" href="#" tabindex="-1">Az önkormányzat feladatai</a></li>
+<li><a data-review-original-href="onkormanyzat/onkormanyzati_mukodes/onkormanyzat_felugyeleti_szerve" href="#" tabindex="-1">Önkormányzat felügyeleti szerve</a></li>
+<li><a data-review-original-href="onkormanyzat/onkormanyzati_mukodes/jogszabalyi_kornyezet" href="#" tabindex="-1">Jogszabályi környezet</a></li>
+<li><a data-review-original-href="onkormanyzat/onkormanyzati_mukodes/kozszolgaltatasok" href="#" tabindex="-1">Közszolgáltatások</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="onkormanyzat/bizottsagok" href="#" tabindex="-1">Bizottságok</a></h3>
+<ul>
+<li><a data-review-original-href="onkormanyzat/bizottsagok/a_bizottsagok_tagjai" href="#" tabindex="-1">A bizottságok tagjai</a></li>
+<li><a data-review-original-href="onkormanyzat/bizottsagok/ulesek__napirendek" href="#" tabindex="-1">Ülések, napirendek</a></li>
+<li><a data-review-original-href="onkormanyzat/bizottsagok/jegyzokonyvek" href="#" tabindex="-1">Jegyzőkönyvek</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="onkormanyzat/donteshozatal" href="#" tabindex="-1">Döntéshozatal</a></h3>
+<ul>
+<li><a data-review-original-href="onkormanyzat/donteshozatal/eloterjesztesek" href="#" tabindex="-1">Előterjesztések</a></li>
+<li><a data-review-original-href="onkormanyzat/donteshozatal/tervezetek_velemenyezese" href="#" tabindex="-1">Tervezetek véleményezése</a></li>
+<li><a data-review-original-href="onkormanyzat/donteshozatal/koncepciok__strategiak" href="#" tabindex="-1">Koncepciók, stratégiák</a></li>
+<li><a data-review-original-href="onkormanyzat/donteshozatal/rendeletek" href="#" tabindex="-1">Rendeletek</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="onkormanyzat/nemzetisegi_onkormanyzatok" href="#" tabindex="-1">Nemzetiségi önkormányzatok</a></h3>
+<ul>
+<li><a data-review-original-href="onkormanyzat/nemzetisegi_onkormanyzatok/nemzetisegi_onkormanyzatok" href="#" tabindex="-1">Nemzetiségi önkormányzatok</a></li>
+<li><a data-review-original-href="onkormanyzat/nemzetisegi_onkormanyzatok/nemzetisegi_onkormanyzatok_dokumentumai" href="#" tabindex="-1">Nemzetiségi önkormányzatok dokumentumai</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="MegaMenu" id="hivatal">
+<span class="Close"><i class="fa-light fa-xmark"></i></span>
+<h2>Hivatal</h2>
+<div class="Lead">
+</div>
+<div class="SubCategories">
+<div class="MegaBlock">
+<h3><a data-review-original-href="hivatal/polgarmesteri_hivatal" href="#" tabindex="-1">Polgármesteri Hivatal</a></h3>
+<ul>
+<li><a data-review-original-href="hivatal/polgarmesteri_hivatal/jegyzo" href="#" tabindex="-1">Jegyző</a></li>
+<li><a data-review-original-href="hivatal/polgarmesteri_hivatal/aljegyzo" href="#" tabindex="-1">Aljegyző</a></li>
+<li><a data-review-original-href="hivatal/polgarmesteri_hivatal/irodak_ugyosztalyok" href="#" tabindex="-1">Irodák, ügyosztályok</a></li>
+<li><a data-review-original-href="hivatal/polgarmesteri_hivatal/felugyeleti_szerv" href="#" tabindex="-1">Felügyeleti szerv</a></li>
+<li><a data-review-original-href="hivatal/polgarmesteri_hivatal/jogszabalyi_kornyezet" href="#" tabindex="-1">Jogszabályi környezet</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="hivatal/felhivasok_hirdetmenyek_tajekoztatok" href="#" tabindex="-1">Felhívások, hivatalos hirdetmények, tájékoztatók</a></h3>
+<ul>
+<li><a data-review-original-href="hivatal/felhivasok_hirdetmenyek_tajekoztatok/felhivasok" href="#" tabindex="-1">Felhívások</a></li>
+<li><a data-review-original-href="hivatal/felhivasok_hirdetmenyek_tajekoztatok/hirdetmenyek" href="#" tabindex="-1">Hirdetmények</a></li>
+<li><a data-review-original-href="hivatal/felhivasok_hirdetmenyek_tajekoztatok/tajekoztatok" href="#" tabindex="-1">Tájékoztatók</a></li>
+<li><a data-review-original-href="hivatal/felhivasok_hirdetmenyek_tajekoztatok/cimvaltozas_hirdetmenyek" href="#" tabindex="-1">Címváltozás hirdetmények</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="MegaMenu" id="ugyintezes">
+<span class="Close"><i class="fa-light fa-xmark"></i></span>
+<h2>Ügyintézés</h2>
+<div class="Lead">
+</div>
+<div class="SubCategories">
+<div class="MegaBlock">
+<h3><a data-review-original-href="ugyintezes/ugyfelfogadas" href="#" tabindex="-1">Ügyfélfogadás</a></h3>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="ugyintezes/nyomtatvanyok" href="#" tabindex="-1">Nyomtatványok</a></h3>
+<ul>
+<li><a data-review-original-href="ugyintezes/nyomtatvanyok/adatvedelem" href="#" tabindex="-1">Adatkezelési tájékoztatók</a></li>
+<li><a data-review-original-href="ugyintezes/nyomtatvanyok/adougyek" href="#" tabindex="-1">Adóügyek</a></li>
+<li><a data-review-original-href="ugyintezes/nyomtatvanyok/altalanos_igazgatas_engedelyezes_szocialis" href="#" tabindex="-1">Általános igazgatás, engedélyezés, szociális ügyek</a></li>
+<li><a data-review-original-href="ugyintezes/nyomtatvanyok/varosuzemeltetesi_foepiteszi_ugyek" href="#" tabindex="-1">Városüzemeltetési, Főépítészi ügyek</a></li>
+<li><a data-review-original-href="ugyintezes/nyomtatvanyok/vallalkozas_kereskedelem" href="#" tabindex="-1">Vállalkozás, kereskedelem</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="ugyintezes/adougyi_bankszamlaszamok" href="#" tabindex="-1">Adóügyi bankszámlaszámok</a></h3>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="ugyintezes/bejelentesek" href="#" tabindex="-1">Bejelentések</a></h3>
+</div>
+</div>
+</div>
+<div class="MegaMenu" id="intezmenyrendszer">
+<span class="Close"><i class="fa-light fa-xmark"></i></span>
+<h2>Intézményrendszer</h2>
+<div class="Lead">
+</div>
+<div class="SubCategories">
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/kozneveles" href="#" tabindex="-1">Köznevelés</a></h3>
+<ul>
+<li><a data-review-original-href="intezmenyrendszer/kozneveles/iskolai_ellatas" href="#" tabindex="-1">Iskolai ellátás</a></li>
+<li><a data-review-original-href="intezmenyrendszer/kozneveles/ovodai_ellatas" href="#" tabindex="-1">Óvodai ellátás</a></li>
+<li><a data-review-original-href="intezmenyrendszer/kozneveles/bolcsodei_ellatas" href="#" tabindex="-1">Bölcsődei ellátás</a></li>
+<li><a data-review-original-href="intezmenyrendszer/kozneveles/etlapok" href="#" tabindex="-1">Étlapok</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/egeszsegugy" href="#" tabindex="-1">Egészségügy</a></h3>
+<ul>
+<li><a data-review-original-href="intezmenyrendszer/egeszsegugy/haziorvosok" href="#" tabindex="-1">Háziorvosok</a></li>
+<li><a data-review-original-href="intezmenyrendszer/egeszsegugy/fogorvosok" href="#" tabindex="-1">Fogorvosok</a></li>
+<li><a data-review-original-href="intezmenyrendszer/egeszsegugy/orvosi_ugyelet" href="#" tabindex="-1">Orvosi ügyelet</a></li>
+<li><a data-review-original-href="intezmenyrendszer/egeszsegugy/gyogyszertarak" href="#" tabindex="-1">Gyógyszertárak</a></li>
+<li><a data-review-original-href="intezmenyrendszer/egeszsegugy/vedonok" href="#" tabindex="-1">Védőnők</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/kultura" href="#" tabindex="-1">Kultúra</a></h3>
+<ul>
+<li><a data-review-original-href="intezmenyrendszer/kultura/kulturalis_szinterek" href="#" tabindex="-1">Kulturális színterek</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/szocialis_ellatas" href="#" tabindex="-1">Szociális ellátás</a></h3>
+<ul>
+<li><a data-review-original-href="intezmenyrendszer/szocialis_ellatas/szocialis_intezmenyek" href="#" tabindex="-1">Szociális intézmények</a></li>
+<li><a data-review-original-href="intezmenyrendszer/szocialis_ellatas/kozfoglalkoztatas" href="#" tabindex="-1">Közfoglalkoztatás</a></li>
+<li><a data-review-original-href="intezmenyrendszer/szocialis_ellatas/etlap" href="#" tabindex="-1">Étlap</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/gyermekvedelem" href="#" tabindex="-1">Gyermekvédelem</a></h3>
+<ul>
+<li><a data-review-original-href="intezmenyrendszer/gyermekvedelem/gyermekvedelmi_es_joleti_szolgaltatasok" href="#" tabindex="-1">Gyermekvédelmi és jóléti szolgáltatások</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/telepulesuzemeltetes" href="#" tabindex="-1">Településüzemeltetés</a></h3>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/rendvedelem" href="#" tabindex="-1">Rendvédelem</a></h3>
+<ul>
+<li><a data-review-original-href="intezmenyrendszer/rendvedelem/rendorseg__polgari_vedelem" href="#" tabindex="-1">Rendőrség, polgári védelem</a></li>
+<li><a data-review-original-href="intezmenyrendszer/rendvedelem/katasztrofavedelem" href="#" tabindex="-1">Katasztrófavédelem</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="intezmenyrendszer/kobor_allatok_befogasa" href="#" tabindex="-1">Kóbor állatok befogása</a></h3>
+</div>
+</div>
+</div>
+<div class="MegaMenu" id="kozerdeku_adatok">
+<span class="Close"><i class="fa-light fa-xmark"></i></span>
+<h2>Közérdekű adatok</h2>
+<div class="Lead">
+</div>
+<div class="SubCategories">
+<div class="MegaBlock">
+<h3><a data-review-original-href="kozerdeku_adatok/kozerdeku_adatok" href="#" tabindex="-1">Közérdekű adatok</a></h3>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="kozerdeku_adatok/kozerdeku_adatok_igenylese" href="#" tabindex="-1">Közérdekű adatok igénylése</a></h3>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="kozerdeku_adatok/nyilvanossag" href="#" tabindex="-1">Nyilvánosság</a></h3>
+<ul>
+<li><a data-review-original-href="kozerdeku_adatok/nyilvanossag/elszallitott_gepjarmuvek" href="#" tabindex="-1">Elszállított gépjárművek</a></li>
+<li><a data-review-original-href="kozerdeku_adatok/nyilvanossag/terfigyelo_kamerak" href="#" tabindex="-1">Térfigyelő kamerák</a></li>
+<li><a data-review-original-href="kozerdeku_adatok/nyilvanossag/uvegzseb" href="#" tabindex="-1">Üvegzseb</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="MegaMenu" id="valasztasi_informaciok">
+<span class="Close"><i class="fa-light fa-xmark"></i></span>
+<h2>Választási információk</h2>
+<div class="Lead">
+</div>
+<div class="SubCategories">
+<div class="MegaBlock">
+<h3><a data-review-original-href="valasztasi_informaciok/valasztasi_szervek" href="#" tabindex="-1">Választási szervek</a></h3>
+<ul>
+<li><a data-review-original-href="valasztasi_informaciok/valasztasi_szervek/valasztasi_iroda" href="#" tabindex="-1">Választási iroda</a></li>
+<li><a data-review-original-href="valasztasi_informaciok/valasztasi_szervek/valasztasi_bizottsag" href="#" tabindex="-1">Választási bizottság</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="valasztasi_informaciok/valasztasi_ugyintezes" href="#" tabindex="-1">Választási ügyintézés</a></h3>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="valasztasi_informaciok/2026_evi_valasztas" href="#" tabindex="-1">2026. évi választás</a></h3>
+<ul>
+<li><a data-review-original-href="valasztasi_informaciok/2026_evi_valasztas/jelolteknek" href="#" tabindex="-1">Jelölteknek</a></li>
+<li><a data-review-original-href="valasztasi_informaciok/2026_evi_valasztas/valasztopolgaroknak" href="#" tabindex="-1">Választópolgároknak</a></li>
+<li><a data-review-original-href="valasztasi_informaciok/2026_evi_valasztas/valasztasi_hirek" href="#" tabindex="-1">Választási hírek</a></li>
+<li><a data-review-original-href="valasztasi_informaciok/2026_evi_valasztas/valasztasi_eredmenyek" href="#" tabindex="-1">Választási eredmények</a></li>
+</ul>
+</div>
+<div class="MegaBlock">
+<h3><a data-review-original-href="valasztasi_informaciok/korabbi_valasztasok" href="#" tabindex="-1">Korábbi választások</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="Contacts">
+<i class="fa-light fa-location-dot"></i>2143 Kistarcsa, Szabadság út 48.
+            <br/>
+<i class="fa-light fa-phone-rotary"></i>+36 28 470 711
+            <br/>
+<i class="fa-light fa-envelope"></i>hivatal@kistarcsa.hu
+        </div>
+</div>
+</section>
+<div class="SiteNavigation">
+<details>
+<summary>Település</summary>
+<details>
+<summary>Kistarcsa</summary>
+<details>
+<summary>Településtörténet</summary>
+</details>
+<details>
+<summary>Településstatisztika</summary>
+</details>
+<details>
+<summary>Értéktár</summary>
+</details>
+<details>
+<summary>Híres szülötteink, díjazottaink</summary>
+</details>
+<details>
+<summary>Testvértelepüléseink</summary>
+</details>
+</details>
+<details>
+<summary>Kikapcsolódás</summary>
+<details>
+<summary>Látnivalók, túraútvonalak, kerékpárutak</summary>
+</details>
+<details>
+<summary>Kultúra</summary>
+</details>
+<details>
+<summary>Wifi-elérések</summary>
+</details>
+<details>
+<summary>Sportolási lehetőségek, játszóterek</summary>
+</details>
+</details>
+<details>
+<summary>Hírek</summary>
+<details>
+<summary>Önkormányzati hírek</summary>
+</details>
+<details>
+<summary>Galéria</summary>
+</details>
+<details>
+<summary>Videótár</summary>
+</details>
+<details>
+<summary>Kistarcsai Híradó</summary>
+</details>
+</details>
+<details>
+<summary>Közösségeink</summary>
+<details>
+<summary>Civil szervezetek</summary>
+</details>
+<details>
+<summary>Nemzetiségek</summary>
+</details>
+<details>
+<summary>Egyházak</summary>
+</details>
+</details>
+<details>
+<summary>Fejlesztés</summary>
+<details>
+<summary>TOP Plusz Pályázatok</summary>
+</details>
+<details>
+<summary>Korábbi pályázatok</summary>
+</details>
+<details>
+<summary>Településrendezés és fejlesztés</summary>
+</details>
+</details>
+<details>
+<summary>Közlekedés</summary>
+<details>
+<summary>Így juthat el hozzánk</summary>
+</details>
+<details>
+<summary>Helyi buszjárat</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>Önkormányzat</summary>
+<details>
+<summary>Vezetők</summary>
+<details>
+<summary>Polgármester</summary>
+</details>
+<details>
+<summary>Alpolgármesterek</summary>
+</details>
+</details>
+<details>
+<summary>Képviselő-testület</summary>
+<details>
+<summary>Képviselő-testület tagjai</summary>
+</details>
+<details>
+<summary>Ülések, napirendek</summary>
+</details>
+<details>
+<summary>Jegyzőkönyvek</summary>
+</details>
+</details>
+<details>
+<summary>Önkormányzati működés</summary>
+<details>
+<summary>Az önkormányzat feladatai</summary>
+</details>
+<details>
+<summary>Önkormányzat felügyeleti szerve</summary>
+</details>
+<details>
+<summary>Jogszabályi környezet</summary>
+</details>
+<details>
+<summary>Közszolgáltatások</summary>
+</details>
+</details>
+<details>
+<summary>Bizottságok</summary>
+<details>
+<summary>A bizottságok tagjai</summary>
+</details>
+<details>
+<summary>Ülések, napirendek</summary>
+</details>
+<details>
+<summary>Jegyzőkönyvek</summary>
+</details>
+</details>
+<details>
+<summary>Döntéshozatal</summary>
+<details>
+<summary>Előterjesztések</summary>
+</details>
+<details>
+<summary>Tervezetek véleményezése</summary>
+</details>
+<details>
+<summary>Koncepciók, stratégiák</summary>
+</details>
+<details>
+<summary>Rendeletek</summary>
+</details>
+</details>
+<details>
+<summary>Nemzetiségi önkormányzatok</summary>
+<details>
+<summary>Nemzetiségi önkormányzatok</summary>
+</details>
+<details>
+<summary>Nemzetiségi önkormányzatok dokumentumai</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>Hivatal</summary>
+<details>
+<summary>Polgármesteri Hivatal</summary>
+<details>
+<summary>Jegyző</summary>
+</details>
+<details>
+<summary>Aljegyző</summary>
+</details>
+<details>
+<summary>Irodák, ügyosztályok</summary>
+</details>
+<details>
+<summary>Felügyeleti szerv</summary>
+</details>
+<details>
+<summary>Jogszabályi környezet</summary>
+</details>
+</details>
+<details>
+<summary>Felhívások, hivatalos hirdetmények, tájékoztatók</summary>
+<details>
+<summary>Felhívások</summary>
+</details>
+<details>
+<summary>Hirdetmények</summary>
+</details>
+<details>
+<summary>Tájékoztatók</summary>
+</details>
+<details>
+<summary>Címváltozás hirdetmények</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>Ügyintézés</summary>
+<details>
+<summary>Ügyfélfogadás</summary>
+</details>
+<details>
+<summary>Nyomtatványok</summary>
+<details>
+<summary>Adatkezelési tájékoztatók</summary>
+</details>
+<details>
+<summary>Adóügyek</summary>
+</details>
+<details>
+<summary>Általános igazgatás, engedélyezés, szociális ügyek</summary>
+</details>
+<details>
+<summary>Városüzemeltetési, Főépítészi ügyek</summary>
+</details>
+<details>
+<summary>Vállalkozás, kereskedelem</summary>
+</details>
+</details>
+<details>
+<summary>Adóügyi bankszámlaszámok</summary>
+</details>
+<details>
+<summary>Bejelentések</summary>
+</details>
+</details>
+<details>
+<summary>Intézményrendszer</summary>
+<details>
+<summary>Köznevelés</summary>
+<details>
+<summary>Iskolai ellátás</summary>
+</details>
+<details>
+<summary>Óvodai ellátás</summary>
+</details>
+<details>
+<summary>Bölcsődei ellátás</summary>
+</details>
+<details>
+<summary>Étlapok</summary>
+</details>
+</details>
+<details>
+<summary>Egészségügy</summary>
+<details>
+<summary>Háziorvosok</summary>
+</details>
+<details>
+<summary>Fogorvosok</summary>
+</details>
+<details>
+<summary>Orvosi ügyelet</summary>
+</details>
+<details>
+<summary>Gyógyszertárak</summary>
+</details>
+<details>
+<summary>Védőnők</summary>
+</details>
+</details>
+<details>
+<summary>Kultúra</summary>
+<details>
+<summary>Kulturális színterek</summary>
+</details>
+</details>
+<details>
+<summary>Szociális ellátás</summary>
+<details>
+<summary>Szociális intézmények</summary>
+</details>
+<details>
+<summary>Közfoglalkoztatás</summary>
+</details>
+<details>
+<summary>Étlap</summary>
+</details>
+</details>
+<details>
+<summary>Gyermekvédelem</summary>
+<details>
+<summary>Gyermekvédelmi és jóléti szolgáltatások</summary>
+</details>
+</details>
+<details>
+<summary>Településüzemeltetés</summary>
+</details>
+<details>
+<summary>Rendvédelem</summary>
+<details>
+<summary>Rendőrség, polgári védelem</summary>
+</details>
+<details>
+<summary>Katasztrófavédelem</summary>
+</details>
+</details>
+<details>
+<summary>Kóbor állatok befogása</summary>
+</details>
+</details>
+<details>
+<summary>Közérdekű adatok</summary>
+<details>
+<summary>Közérdekű adatok</summary>
+</details>
+<details>
+<summary>Közérdekű adatok igénylése</summary>
+</details>
+<details>
+<summary>Nyilvánosság</summary>
+<details>
+<summary>Elszállított gépjárművek</summary>
+</details>
+<details>
+<summary>Térfigyelő kamerák</summary>
+</details>
+<details>
+<summary>Üvegzseb</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>Választási információk</summary>
+<details>
+<summary>Választási szervek</summary>
+<details>
+<summary>Választási iroda</summary>
+</details>
+<details>
+<summary>Választási bizottság</summary>
+</details>
+</details>
+<details>
+<summary>Választási ügyintézés</summary>
+</details>
+<details>
+<summary>2026. évi választás</summary>
+<details>
+<summary>Jelölteknek</summary>
+</details>
+<details>
+<summary>Választópolgároknak</summary>
+</details>
+<details>
+<summary>Választási hírek</summary>
+</details>
+<details>
+<summary>Választási eredmények</summary>
+</details>
+</details>
+<details>
+<summary>Korábbi választások</summary>
+</details>
+</details>
+</div>
+<section class="PageBanner">
+<div id="PageBanner1" style="background-image: url(files/images/banner/3074/ktarcsa_szlovakhaz_2-2.JPG);"></div>
+<div id="PageBanner2" style="background-image: url(files/images/banner/3073/ifjusag_ter_2024.JPG);"></div>
+<div id="PageBanner3" style="background-image: url(files/images/banner/3072/kt_jatszoter_d33f.JPG);"></div>
+<div id="PageBanner4" style="background-image: url(files/images/banner/2907/kistarcsa_csigahaz_fh.JPG);"></div>
+<div id="PageBanner5" style="background-image: url(files/images/banner/2906/pan8.png);"></div>
+<div id="PageBanner6" style="background-image: url(files/images/banner/2905/homlokzat_muskatlis.JPG);"></div>
+<div id="PageBanner7" style="background-image: url(files/images/banner/2892/kistarcsa_sztimre_ter_fh.JPG);"></div>
+<div id="PageBanner8" style="background-image: url(files/images/banner/2893/002.png);"></div>
+<div id="PageBanner9" style="background-image: url(files/images/banner/2894/003.png);"></div>
+<span class="MainBanner"><a data-review-original-href="https://ohp-20.asp.lgov.hu/nyitolap" href="#" tabindex="-1" target="_blank"><img/></a></span>
+</section>
+<section class="Content">
+<div class="Useful">
+<div class="ContentNavigation"><a data-review-original-href="https://www.kistarcsa.hu" href="#" tabindex="-1">Nyitólap</a><a data-review-original-href="https://www.kistarcsa.hu/intezmenyrendszer" href="#" tabindex="-1">Intézményrendszer</a><a data-review-original-href="https://www.kistarcsa.hu/intezmenyrendszer/egeszsegugy" href="#" tabindex="-1">Egészségügy</a><a data-review-original-href="https://www.kistarcsa.hu/intezmenyrendszer/egeszsegugy/orvosi_ugyelet" href="#" tabindex="-1">Orvosi ügyelet</a></div><div class="Entry">
+<h2>Orvosi ügyelet</h2>
+<div class="EntryContent"><p><img alt="990x1445_img_20240202_080023.jpg" style="display: block; margin: 0 auto;"/></p></div></div>
+</div>
+</section>
+<section class="Partners">
+<h3>Önkormányzati társaságok és intézmények</h3>
+<div class="carousel">
+<div class="carousel-track" id="Organizations">
+<img alt="Kistarcsai Közterület-fenntartó Kft"/><img alt="Kistarcsai Városi Művelődési, Sportközpont és Könyvtár"/><img alt="Kistarcsai Gesztenyés Óvoda"/><img alt="Alapszolgáltatási Központ"/><img alt="Kistarcsai Tipegő Bölcsőde"/><img alt="Zöld Híd Bigg Nkft."/><img alt="DPMV Zrt."/><img alt="Zöld Híd Társulás"/><img alt="FAÖT - Fővárosi Agglomeráció Önkormányzati Társulás"/><img alt="Kistarcsai Közterület-fenntartó Kft"/><img alt="Kistarcsai Városi Művelődési, Sportközpont és Könyvtár"/><img alt="Kistarcsai Gesztenyés Óvoda"/><img alt="Alapszolgáltatási Központ"/><img alt="Kistarcsai Tipegő Bölcsőde"/><img alt="Zöld Híd Bigg Nkft."/><img alt="DPMV Zrt."/><img alt="Zöld Híd Társulás"/><img alt="FAÖT - Fővárosi Agglomeráció Önkormányzati Társulás"/> </div>
+</div></section> <section class="Footer">
+<div class="Footer">
+<div>
+<img/>
+<p>
+                    Tisztelettel köszöntjük honlapunkon a városunk iránt érdeklődő, az ide utazó, vagy ide utazni szándékozó kedves vendégeinket, városunk polgárait! Településünk híven őrzi több évszázados múltjából fakadó hagyományait, melyre méltán büszkék vagyunk. Ezen hagyományokat és városunk sokféle arcát szeretnénk bemutatni az érdeklődőknek azzal a nemes céllal, hogy minél többen legyenek kíváncsiak ránk, legyenek vendégeink, keressék fel személyesen is Kistarcsát!
+                </p>
+<i class="fa-light fa-location-dot"></i>2143 Kistarcsa, Szabadság út 48.
+                <br/>
+<i class="fa-light fa-phone-rotary"></i>+36 28 470 711
+                <br/>
+<i class="fa-light fa-envelope"></i>hivatal@kistarcsa.hu
+                <br/>
+</div>
+<div>
+<h4>Közérdekű elérhetőségek</h4>
+<i class="fa-light fa-siren-on"></i>Rendőrség:<ul>+36 20 559 8909</ul>
+<i class="fa-light fa-shield-check"></i>Polgárőrség:<ul>2143 Kistarcsa, Széchenyi utca 33.</ul>
+<i class="fa-light fa-car-building"></i>Közterületfelügyelet:<ul>+36 28 470 711/131 mellék</ul>
+<i class="fa-light fa-dog-leashed"></i>Kóbor állatok befogása (08:00 - 20:00):<ul>+36 70 276 1764</ul>
+<i class="fa-light fa-lightbulb-on"></i>Közvilágítási hibabejelentés:<ul>+36 30 685 9865<br/><a data-review-original-href="https://kozvilhiba.hu/hibabejelentes" href="#" tabindex="-1" target="_blank">https://kozvilhiba.hu/hibabejelentes</a></ul>
+</div>
+<div>
+<h4>Nyomtatványok</h4>
+<a data-review-original-href="ugyintezes/nyomtatvanyok/adatvedelem" href="#" tabindex="-1"><i class="fa-light fa-files"></i>Adatkezelési tájékoztatók</a><a data-review-original-href="ugyintezes/nyomtatvanyok/adougyek" href="#" tabindex="-1"><i class="fa-light fa-files"></i>Adóügyek</a><a data-review-original-href="ugyintezes/nyomtatvanyok/altalanos_igazgatas_engedelyezes_szocialis" href="#" tabindex="-1"><i class="fa-light fa-files"></i>Általános igazgatás, engedélyezés, szociális ügyek</a><a data-review-original-href="ugyintezes/nyomtatvanyok/varosuzemeltetesi_foepiteszi_ugyek" href="#" tabindex="-1"><i class="fa-light fa-files"></i>Városüzemeltetési, Főépítészi ügyek</a><a data-review-original-href="ugyintezes/nyomtatvanyok/vallalkozas_kereskedelem" href="#" tabindex="-1"><i class="fa-light fa-files"></i>Vállalkozás, kereskedelem</a> <h4>Hivatali kapu</h4>
+<i class="fa-light fa-laptop"></i>Önkormányzati ügyek: KISTARCSA
+                <br/>
+<i></i>KRID azonosító: 202181166
+                <br/>
+<i class="fa-light fa-laptop"></i>Hivatali és egyéb ügyek: KTPMH
+                <br/>
+<i></i>KRID azonosító: 340917161
+            </div>
+</div>
+</section>
+<section class="SiteEnd">
+<a data-review-original-href="adatvedelmi_tajekoztato" href="#" tabindex="-1">Adatvédelmi tájékoztató</a>
+<a data-review-original-href="javascript:void(0);" href="#" tabindex="-1">Oldaltérkép</a>
+<a data-review-original-href="impresszum" href="#" tabindex="-1">Impresszum</a>
+</section>
+<div class="BlurLayer"></div>
+<a data-review-original-href="telepules/fejlesztes/top_plusz_palyazatok" href="#" tabindex="-1"><img id="FixedBanner"/></a>
+
+
+
+
+
+</body>
+</html>

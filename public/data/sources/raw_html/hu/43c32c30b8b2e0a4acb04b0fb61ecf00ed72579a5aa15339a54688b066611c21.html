@@ -1,0 +1,225 @@
+<!doctype html>
+
+<!DOCTYPE html>
+
+<html>
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<title>Időpontfoglalás</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="#006174" name="theme-color"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+<div class="myDesign_loading myDesign_loading_overlay"></div>
+<img class="myDesign_loading myDesign_loading_icon" id="loadingIcon"/>
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbarDIV" role="banner">
+<div class="container-fluid">
+<div class="navbar-header">
+<div class="navbar-brand brand_icon">
+<div>
+<a data-review-original-href="/" href="#" style="display:inline-block" tabindex="-1">
+<img class="myDesign_navLogo"/>
+</a>
+</div>
+</div>
+<button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+<span class="sr-only"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="main-menu">
+<ul class="nav navbar-nav navbar-right loginDrop" id="main-menu-right">
+<li>
+<div class="dropdown">
+<a class="dropdown-toggle" data-review-original-href="#" data-toggle="dropdown" href="#" id="dropdown_Culture" tabindex="-1">
+<span class="myDesign_icon_box">
+<span>HUN</span>
+<span class="glyphicon glyphicon-menu-down"></span>
+</span>
+</a>
+<ul aria-labelledby="dropdown_listRes" class="dropdown-menu myDesign_cultureMenu">
+<li><a data-review-original-href="/Account/SetCulture?culture=en&amp;returnUrl=%2F" href="#" tabindex="-1">ENG</a></li>
+<li><a data-review-original-href="/Account/SetCulture?culture=de-DE&amp;returnUrl=%2F" href="#" tabindex="-1">GER</a></li>
+<li><a data-review-original-href="/Account/SetCulture?culture=yo-NG&amp;returnUrl=%2F" href="#" tabindex="-1">HUN</a></li>
+<li><a data-review-original-href="/Account/SetCulture?culture=sk&amp;returnUrl=%2F" href="#" tabindex="-1">SK</a></li>
+</ul>
+</div>
+</li>
+<li>
+<div class="dropdown">
+<a class="dropdown-toggle" data-review-original-href="#" data-toggle="dropdown" href="#" style="padding: 0px;" tabindex="-1">
+<span class="myDesign_icon_box">
+<span aria-hidden="true" class="icon-user myDesign_icon"></span>
+<span class="myDesign_icon_text">Bejelentkezés</span>
+</span>
+</a>
+<div class="dropdown-menu myDesign_LoginBox">
+<p>
+                Bejelentkezéshez írja be az adatait!
+                <a class="myDesign_link myDesign_link_loginDrop" data-review-original-href="/Account/Register?returnUrl=%2F" href="#" id="registerLinkLoginBox" tabindex="-1">Regisztráljon</a>, ha nincs felhasználói fiókja!
+            </p>
+<div data-review-disabled-form="true"> <div class="editor-field" style="margin:15px 0;">
+<input class="myDesign_textbox myDesign_textbox_login" data-val="true" data-val-required="Kérjük, töltse ki ezt a mezőt a továbblépéshez!" id="UserName" name="UserName" placeholder="E-mail cím" type="text" value=""/>
+<span class="myDesign_warning field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+</div>
+<div class="editor-field">
+<input class="myDesign_textbox myDesign_textbox_login" data-val="true" data-val-required="Kérjük, töltse ki ezt a mezőt a továbblépéshez!" id="Password" name="Password" placeholder="Jelszó" type="password"/>
+<span class="myDesign_warning field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+</div>
+<div class="staySignedInContainer">
+<div class="myDesign_inline-block"><input data-val="true" data-val-required="The Maradjak bejelentkezve field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true"/><label class="myDesign_label" for="RememberMe">Maradjak bejelentkezve</label></div>
+</div>
+<p style="margin: 10px 0 5px;">
+<button class="btnDefault myDesign_btnDefault myDesign_btn_login" id="CalendarLogin" type="submit">
+                        Bejelentkezés
+                    </button>
+</p>
+<p style="margin: 10px 0 0;">
+<a class="myDesign_link" data-review-original-href="/Account/ForgotPassword" href="#" tabindex="-1">Elfelejtette a jelszavát?</a>
+</p>
+<input name="RememberMe" type="hidden" value="false"/></div> </div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+</nav>
+<div id="leftBodyDiv">
+<div class="leftBodyContent">
+<div id="leftBodyTitleDiv">
+<table style="max-width: 275px">
+<tr>
+<td class="leftBodyTitleClass">
+<span id="leftBodyTitleCName">Dr. Lelkesi Anita</span>
+<br/>
+<span class="leftBodyTitleReservation">időpontfoglalás</span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="middleLeftDiv">
+<p class="myDesign_pageTitle">Üdvözli a(z) Dr. Lelkesi Anita időpontfoglaló rendszer.</p>
+<hr class="myDesign_hrStyle"/>
+<div class="companyDescriptionClass">
+<img class="serviceImgClass" id="actServImg" style="margin-top: 30px"/>
+<div id="actServDescriptionWhole">
+<div class="serviceDescriptionClass" id="actServDescripton"><p><span style="font-size: 11pt;">Kedves Páciensem!</span></p>
+<p><span style="font-size: 11pt;">Nagyon örülök, hogy használja időpontfoglaló oldalamat!   </span></p>
+<p><span style="font-size: 11pt;"><strong>Magánrendelésünk</strong> specialitása a cukorbetegség, inzulinrezisztencia, fogyókúra. Általános belgyógyászati probléma esetén is szívesen segítek. Munkanapokon hétfőtől csütörtökig délután 14 és 15 óra között a  </span><span style="font-size: 11pt;">06-20-570-85-96-os számon is foglalhat időpontot, amennyiben az internetes foglalás nehézséget okoz!  </span></p>
+<p><span style="font-size: 11pt;">Néhány egyszerű lépés során telefonhívás nélkül is be tud jelentkezni hozzám. Foglalás közben figyeljen a szolgáltatás időtartamára, mert annál kisebb időre nem tudja behúzni a vizsgálatot!  1 zöld téglalap 5 perc időt takar! A foglalás csak abban az esetben válik érvényessé, ha azt visszaigazolom az Ön által megadott e-mail címen!! </span></p>
+<p><span style="font-size: 11pt;">Magánrendelésünkön bankkártyával is fizethet!       Köszönettel          Dr. Lelkesi Anita</span></p></div>
+</div>
+</div>
+<div class="serviceClearBoth">
+<p class="myDesign_pageBlockTitle">Naptár választása</p>
+<hr class="myDesign_hrStyle"/>
+<p class="myDesign_adminInfo" style="margin-bottom: 20px">A foglalás megkezdéséhez, válasszon az alábbi naptárak közül!</p>
+<div class="container-fluid noPadding">
+<div class="row" id="btn-group">
+<div class="col-lg-6">
+<button &#xfa;jrakezd&#x151;k,="" class="btnDefault myDesign_btnDefault myDesign_homeBtn btn-calendar-click" data-link="/Calendar/Calendar/1" data-locid="1" guna="" kezel&#xe9;s="" type="button" value="Kontrollvizsgálatok,">
+<span>Kontrollvizsgálatok, újrakezdők, GUNA kezelés</span>
+<div class="freeslot-div" data-locid="1" data-mintimereserve="24">
+<span class="freeslot-text">Első szabad időpont:</span>
+<b class="freeslot-value">Ismeretlen</b>
+<span class="glyphicon glyphicon-refresh spinning"></span>
+</div>
+</button>
+</div>
+<div class="col-lg-6">
+<button class="btnDefault myDesign_btnDefault myDesign_homeBtn btn-calendar-click" data-link="/Calendar/Calendar/4" data-locid="4" diabetol&#xf3;gus="" type="button" value="Karosszékből">
+<span>Karosszékből diabetológus</span>
+<div class="freeslot-div" data-locid="4" data-mintimereserve="72">
+<span class="freeslot-text">Első szabad időpont:</span>
+<b class="freeslot-value">Ismeretlen</b>
+<span class="glyphicon glyphicon-refresh spinning"></span>
+</div>
+</button>
+</div>
+<div class="col-lg-6">
+<button class="btnDefault myDesign_btnDefault myDesign_homeBtn btn-calendar-click" data-link="/Calendar/Calendar/5" data-locid="5" p&#xe1;ciensek="" type="button" value="Új">
+<span>Új páciensek</span>
+<div class="freeslot-div" data-locid="5" data-mintimereserve="24">
+<span class="freeslot-text">Első szabad időpont:</span>
+<b class="freeslot-value">Ismeretlen</b>
+<span class="glyphicon glyphicon-refresh spinning"></span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<nav class="navbar navbar-fixed-bottom myDesign_footer hidden-xs hidden-sm" id="footerDIV">
+<div class="wrap">
+<p class="myDesign_footerText" style="text-align: center">
+<img class="myDesign_footerImage"/>
+<a data-review-original-href="https://booked4.us/" href="#" tabindex="-1" target="_blank">
+                    Megtetszett az időpontfoglalónk? Alakítsa ki saját vállalkozásához!
+                </a>
+</p>
+</div>
+</nav>
+<div id="cookie-consent" style="display:none">
+<div id="cookie-description">
+<span data-langkey="cookieConsentMessage" id="cookie-consent-message">
+            Honlapunk a jobb felhasználói élmény érdekében sütiket használ. Az „Elfogadom” gombra kattintva hozzájárul, hogy oldalunk sütiket használjon a böngészési élmény javítása, a forgalom elemzése és hirdetések optimalizálása érdekében. 
+        </span>
+<a data-langkey="cookieConsentLink" data-link="dataHandling" data-review-original-href="https://booked4.us/content/booked4.us/privacyhtml\Privacy-HU.html" href="#" id="cookie-link" rel="noopener noreferrer nofollow" tabindex="-1" target="_blank">
+            További részletek...
+        </a>
+</div>
+<div id="cookie-consent-button-wrapper">
+<button class="btnDefault btnHollowBlue button-cookie-consent" data-langkey="cookieConsentDecline" id="decline-cookie">
+            Elutasítom
+        </button>
+<button class="btnDefault button-cookie-consent" data-langkey="cookieConsentAccept" id="accept-cookie">
+            Elfogadom
+        </button>
+</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,756 @@
+<!doctype html>
+
+<!DOCTYPE html>
+
+<html dir="ltr" lang="hu-hu" xml:lang="hu-hu" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="Super User" name="author"/>
+<meta content="Dr. Török Sándor Egészségügyi Központ Balatonboglár" name="description"/>
+<meta content="Joomla! - Open Source Content Management" name="generator"/>
+<title>Háziorvosok - Dr. Török Sándor Egészségügyi Központ Balatonboglár</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+.row-fluid 															{max-width:1180px}.wrap_inner 															{max-width:1180px}.holder															    {max-width:1180px}.top .view										                   {border-color:!important}P.btn.btn-mini a, .btn, .btn .btn-mini, .pl-inner .btn A, .slideshow .btn A, .btn:hover, .btn .btn-mini:hover, .pl-inner .btn A:hover, .slideshow .btn A:hover											   {background-color:!important}.plusl-panel, #slide_panel_button #trigger-overlay     	   {background-color:!important}.search_nav .search INPUT													{border-color:!important}.crate_mainbody .dcm_h3 H3,.crate_mainbody H1 A, .crate_mainbody H2 A, .crate_mainbody H3 A, .crate_mainbody H4 A, .crate_mainbody H5 A, .crate_mainbody					H6 A, .crate_mainbody H1, .crate_mainbody H2, .crate_mainbody H3, .crate_mainbody H4, .crate_mainbody H5, .crate_mainbody H6, .crate H3, .plustab-title, .crate_notitle H3, .plusl-content-block H3,																				.plus-accordion-basic > .plus-toggler, #layerslider H1
+																												{text-transform:none}#hor_nav LI A                        						{text-transform:none}.crate_mainbody .dcm_h3 H3,.crate_mainbody H1 A, .crate_mainbody H2 A, .crate_mainbody H3 A, .crate_mainbody H4 A, .crate_mainbody H5 A, .crate_mainbody					H6 A, .crate_mainbody H1, .crate_mainbody H2, .crate_mainbody H3, .crate_mainbody H4, .crate_mainbody H5, .crate_mainbody H6, .accordion-heading, .nav-tabs, .crate H3, .plustab-title, .plus-accordion-basic > .plus-toggler 
+																					   {font-weight:bold}#hor_nav LI	    				   {font-weight:normal}BODY															{font-size:95%}#hor_nav LI A                           						{font-size:125%}.crate_mainbody .dcm_h3 H3,.crate_mainbody H1 A, .crate_mainbody H2 A, .crate_mainbody H3 A, .crate_mainbody H4 A, .crate_mainbody H5 A, .crate_mainbody					H6 A, .crate_mainbody H1, .crate_mainbody H2, .crate_mainbody H3, .crate_mainbody H4, .crate_mainbody H5, .crate_mainbody H6												{font-size:125%}.view H3, .crate H3, .crate_notitle H3, .plustab-title, .plus-accordion-basic > .plus-toggler, .tabs_buttons, #breadcrumbs, .plusl-content-block H3, span.plus-title									{font-size:200%}BODY		{color:#998965}.head, .plusl-panel span, #slide_panel_button #trigger-overlay			{color:#e0ded9!important}.shifting, .shifting H3		{color:#ad7e1a}#slidepanel .crate, #slidepanel .crate H3		{color:#ffffff}#hor_nav SELECT, #hor_nav LI A, #breadcrumbs A, .breadcrumb LI.active, .search_nav .search INPUT			{color:#807049}.head A			{color:#807049}.side_bar A		{color:#fffefc}#slidepanel .crate A		{color:#ffffff}BODY				{background-color:rgba(255,255,255,0.6)}.main	{background-color:rgba(235,229,217,1.0)}
+#breadcrumbs,
+#hor_nav #current A, 
+#hor_nav .menu UL, 
+#hor_nav .menu > LI > A:hover, 
+#hor_nav .menu UL LI > A:hover, 
+#hor_nav .menu UL LI > .active > A, 
+#hor_nav UL LI.active > A, 
+#hor_nav A:hover, 
+#hor_nav A:focus, 
+#subMenusContainer A:focus, 
+#subMenusContainer A:hover, 
+#hor_nav A.mainMenuParentBtnFocused, 
+#subMenusContainer A.subMenuParentBtnFocused, 
+#hor_nav LI A:hover, 
+#hor_nav LI A:focus, 
+#hor_nav OL, 
+#hor_nav UL, 
+#subMenusContainer UL, 
+#subMenusContainer OL,
+#subMenusContainer A, #hor_nav LI LI A
+			{background-color:#b3a481}nav.navv, #hor_nav, #hor_nav SELECT				{background-color:rgba(194,181,151,0.7)}.head				{background-color:rgba(252,251,247,0.0)}.side_bar .crate		{background-color:rgba(252,251,247,1.0)}.crate_mainbody		{background-color:rgba(252,251,247,1.0)}#top .crate, .view-tenth .mask			{background-color:rgba(252,251,247,1.0)}#shifting .crate		{background-color:rgba(235,229,217,1.0)}#bottom .crate, .view-tenth .mask		{background-color:rgba(173,126,26,1.0)}.foot		{background-color:rgba(173,126,26,0.0)}#slidepanel, .overlay	{background-color:rgba(255,255,255,0.4)}.slideshow		        {background-color:rgba(252,251,247,0.0)}#layerslider				{max-height:300px}BODY									{font-family:Verdana, Geneva, sans-serif}@media (max-width: 767px)				{#layerslider H1, #slideshow .crate	{display: none}}.crate IMG:hover, .crate_mainbody IMG:hover {-webkit-transform: scale(1.1); transform: scale(1.1); -webkit-transition: all 0.7s ease; transition: all 0.7s ease;}.crate IMG, .crate_mainbody IMG {-webkit-transform: scale(1); transform: scale(1);}
+.largeredbtn	    {background-color: }
+
+.video_bg {
+position:relative !important;
+z-index: 0 !important;
+background-color: !important;
+background-size: cover !important;
+background-attachment: fixed !important;
+background-position:  !important;
+background-repeat: no-repeat !important;
+}
+
+	</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+.view H3, .crate H3, .crate_notitle H3, .crate_mainbody H1, .crate_mainbody H2, .crate_mainbody H3, .crate_mainbody H4, .crate_mainbody H5, .crate_mainbody H6,.breadcrumb,
+#slide_panel_button #trigger-overlay, .nivo-caption, .nivo-caption P, #hor_nav, .plustab-title, .plus-accordion-basic > .plus-toggler, .plusl-content-block H3, #plusl .plusl-panel > SPAN, #login_register_module fieldset label, #plus-logout-panel, .btn-mini, .btn, #newsletter_button .button, .largeredbtn, #layerslider H1, #slideshow .crate, #slideshow .dcm_content, #subMenusContainer A
+{
+font-family: 'Oswald', sans-serif;
+}
+</style>
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+
+<body>
+<div class="video_bg">
+<div id="video_bg">
+<div class="wrap_all"> 
+
+<header role="banner">
+<div class="head">
+<div class="wrap_inner">
+<section>
+<div id="search_login_panel">
+<div class="row-fluid">
+<div class="span12"><a class="wow bounceInUp" data-review-original-href="/" data-wow-duration="1s" href="#" id="logo" tabindex="-1">
+<img alt="Dr. Török Sándor Egészségügyi Központ Balatonboglár"/></a></div>
+<div class="clear"></div>
+<div id="color-toolbar-outer">
+<div id="color-toolbar">
+<ul class="color-toolbar-color">
+<li>
+<img alt="default" id="ict-tool-default" style="cursor: pointer;" title="default"/>
+</li>
+<li>
+<img alt="style1" id="ict-tool-style1" style="cursor: pointer;" title="style1"/>
+</li>
+<li>
+<img alt="style2" id="ict-tool-style2" style="cursor: pointer;" title="style2"/>
+</li>
+<li>
+<img alt="style3" id="ict-tool-style3" style="cursor: pointer;" title="style3"/>
+</li>
+<li>
+<img alt="style4" id="ict-tool-style4" style="cursor: pointer;" title="style4"/>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</section></div>
+</div>
+</header>
+
+
+<nav class="navv" role="navigation">
+<div class="wrap_inner">
+<nav role="navigation">
+<div id="hor_nav">
+<div>
+<ul class="menu" id="moomenu">
+<li class="item-124 deeper first parent"><a data-review-original-href="/index.php" href="#" tabindex="-1">Hírek, információk</a><ul class="sub-menu"><li class="item-146 last"><a data-review-original-href="/index.php/hirek/hasznos-tanacsok-felhivasok" href="#" tabindex="-1">Hasznos tanácsok</a></li></ul></li><li class="item-101 deeper parent"><a data-review-original-href="/index.php/home" href="#" tabindex="-1">Társadalombiztosító (OEP) által finanszírozott szolgáltatások</a><ul class="sub-menu"><li class="item-102"><a data-review-original-href="/index.php/home/audiologia" href="#" tabindex="-1"><img alt="Audiológia"/><span class="image-title">Audiológia</span></a></li><li class="item-103"><a data-review-original-href="/index.php/home/belgyogyaszat" href="#" tabindex="-1"><img alt="Belgyógyászat"/><span class="image-title">Belgyógyászat</span></a></li><li class="item-104"><a data-review-original-href="/index.php/home/borgyogyaszat" href="#" tabindex="-1"><img alt="Bőrgyógyászat"/><span class="image-title">Bőrgyógyászat</span></a></li><li class="item-147"><a data-review-original-href="/index.php/home/ersebeszet" href="#" tabindex="-1"><img alt="Érsebészet"/><span class="image-title">Érsebészet</span></a></li><li class="item-105"><a data-review-original-href="/index.php/home/fizikoterapia" href="#" tabindex="-1"><img alt="Fizikoterápia"/><span class="image-title">Fizikoterápia</span></a></li><li class="item-106"><a data-review-original-href="/index.php/home/ful-orr-gegeszet" href="#" tabindex="-1"><img alt="Fül-orr-gégészet"/><span class="image-title">Fül-orr-gégészet</span></a></li><li class="item-108"><a data-review-original-href="/index.php/home/gyermek-tudogyogyaszat" href="#" tabindex="-1"><img alt="Gyermek-tüdőgyógyászat"/><span class="image-title">Gyermek-tüdőgyógyászat</span></a></li><li class="item-109"><a data-review-original-href="/index.php/home/ideggyogyaszat" href="#" tabindex="-1"><img alt="Ideggyógyászat"/><span class="image-title">Ideggyógyászat</span></a></li><li class="item-110"><a data-review-original-href="/index.php/home/laboratorium" href="#" tabindex="-1"><img alt="Laboratórium"/><span class="image-title">Laboratórium</span></a></li><li class="item-111"><a data-review-original-href="/index.php/home/nogyogyaszat" href="#" tabindex="-1"><img alt="Nőgyógyászat"/><span class="image-title">Nőgyógyászat</span></a></li><li class="item-112"><a data-review-original-href="/index.php/home/ortopedia" href="#" tabindex="-1"><img alt="Ortopédia"/><span class="image-title">Ortopédia</span></a></li><li class="item-113"><a data-review-original-href="/index.php/home/pszihiatria" href="#" tabindex="-1"><img alt="Pszichiátria"/><span class="image-title">Pszichiátria</span></a></li><li class="item-114"><a data-review-original-href="/index.php/home/reumatologia" href="#" tabindex="-1"><img alt="Reumatológia"/><span class="image-title">Reumatológia</span></a></li><li class="item-116"><a data-review-original-href="/index.php/home/rontgen-es-ultrahang-diagnosztika" href="#" tabindex="-1"><img alt="Röntgen és ultrahang diagnosztika"/><span class="image-title">Röntgen és ultrahang diagnosztika</span></a></li><li class="item-117"><a data-review-original-href="/index.php/home/sebeszet" href="#" tabindex="-1"><img alt="Sebészet"/><span class="image-title">Sebészet</span></a></li><li class="item-118"><a data-review-original-href="/index.php/home/szemeszet" href="#" tabindex="-1"><img alt="Szemészet"/><span class="image-title">Szemészet</span></a></li><li class="item-120"><a data-review-original-href="/index.php/home/urologia" href="#" tabindex="-1"><img alt="Urológia"/><span class="image-title">Urológia</span></a></li><li class="item-121"><a data-review-original-href="/index.php/home/gyogymasszazs" href="#" tabindex="-1"><img alt="Gyógymasszázs"/><span class="image-title">Gyógymasszázs</span></a></li><li class="item-122"><a data-review-original-href="/index.php/home/gyogytorna" href="#" tabindex="-1"><img alt="Gyógytorna"/><span class="image-title">Gyógytorna</span></a></li><li class="item-123 last"><a data-review-original-href="/index.php/home/nappali-ellatas" href="#" tabindex="-1"><img alt="Nappali ellátás"/><span class="image-title">Nappali ellátás</span></a></li></ul></li><li class="item-131"><a data-review-original-href="/index.php/maganrendelesek-fizetos-szolgaltatasok" href="#" tabindex="-1">Magánrendelések / szolgáltatások</a></li><li class="item-148 last"><a data-review-original-href="/index.php/kozerdekuadatok" href="#" tabindex="-1">Közérdekű adatok</a></li></ul>
+</div><div class="search_nav"></div>
+<div class="clear"></div>
+</div>
+</nav></div>
+</nav>
+
+<div class="slideshow">
+<div class="wrap_inner">
+<section>
+<div id="slideshow">
+
+<div id="slider-wrapper">
+<div id="layerslider" style="width:100%;height:300px;">
+
+<div class="ls-slide" data-ls="slidedelay: 6000; transition2d: 85;">
+<img alt="" class="ls-bg"/>
+ <h5 class="ls-l" data-ls="offsetxin:0;easingin:easeOutQuart;scalexin:0;scaleyin:0;offsetxout:0;delayin:500;durationout:500;
+easingout:easeInQuart;scalexout:3;scaleyout:3;" style="top:75%;left:17%;text-align: left; font-weight: normal;width:200px;height:auto;line-height:auto;background-color: transparent;border-radius:0px;white-space: wrap;">
+</h5>
+ <h5 class="ls-l" data-ls="offsetxin:0;easingin:easeOutQuart;scalexin:0;scaleyin:0;offsetxout:0;delayin:1000;durationout:1000;
+easingout:easeInQuart;scalexout:3;scaleyout:3;" style="top:75%;left:50%;text-align: left; font-weight: normal;width:200px;height:auto;line-height:auto;background-color: transparent;border-radius:0px;white-space: wrap;">
+</h5>
+ <h5 class="ls-l" data-ls="offsetxin:0;easingin:easeOutQuart;scalexin:0;scaleyin:0;offsetxout:0;delayin:1500;durationout:1500;
+easingout:easeInQuart;scalexout:3;scaleyout:3;" style="top:75%;left:83%;text-align: left; font-weight: normal;width:200px;height:auto;line-height:auto;background-color: transparent;border-radius:0px;white-space: wrap;">
+</h5>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+
+<main role="main">
+<div class="main">
+<div class="top">
+<div class="wrap_inner">
+
+</div>
+</div>
+<div class="content_main">
+<div class="wrap_inner">
+
+<section>
+<div id="content">
+<div class="row-fluid">
+<div class="span9">
+<div class="wow bounceInUp" data-wow-duration="1s"><div class="crate_mainbody"><div id="system-message-container">
+</div>
+<div class="item-page" itemscope="" itemtype="https://schema.org/Article">
+<meta content="hu-HU" itemprop="inLanguage"/>
+<div class="page-header">
+<h2 itemprop="headline">
+			Háziorvosok, valamint házi gyermekorvos  rendelkezésre állási ideje és elérhetőségei 		</h2>
+</div>
+<div itemprop="articleBody">
+<p style="text-align: center;"><span style="color: #000080; font-size: 12pt;"><strong>Háziorvosok, házi gyermekorvos rendelkezésre állási ideje, elérhetőségei és sürgősségi betegellátás </strong></span></p>
+<p style="text-align: center;"><span style="color: #0000ff; font-size: 12pt;"><strong><span style="color: #000080;">(munkanapokon 8.00 és 16.00 óra között)</span> </strong></span></p>
+<p> </p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-color: #2579f7; margin-left: auto; margin-right: auto;" width="100%">
+<tbody>
+<tr>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p style="text-align: center;"><strong>Háziorvosok körzetének száma,</strong></p>
+<p style="text-align: center;"><strong>háziorvos neve</strong></p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="30%">
+<p><strong>Rendelési idő</strong></p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="24%">
+<p><strong>Rendelés helye</strong></p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p><strong>Elérhetőség rendelési időn kívül 16.00 óráig</strong><em>:</em></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p style="text-align: center;">I.</p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong>Dr. Jankovics György</strong></p>
+<p> </p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="30%">
+<p>H: 10.00 - 14.00</p>
+<p>K: 10.00 - 14.00</p>
+<p>SZ: 10.00 - 14.00 </p>
+<p>Cs: 10.00 - 16.00</p>
+<p>P: 10.00-14.00</p>
+<p>(naptári év első hónap első hetének, valamint ezután minden rákövetkező negyedik hetének péntekén 14.00-16.00-ig)</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="24%">
+<p>Szabadság u. 5.</p>
+<p>85/350-776</p>
+<p>30/528-2119</p>
+<p> </p>
+<p>Vikár B. u. 4.</p>
+<p>85/450-742</p>
+<p>30/528-2119</p>
+<p> </p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p>H-K-SZ: 8.00-16.00</p>
+<p>Szabadság u. 5.</p>
+<p>30/528-2119</p>
+<p> </p>
+<p>CS-P:</p>
+<p>8.00-16.00</p>
+<p>Vikár B. u. 4.</p>
+<p>85/450-742</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p style="text-align: center;">II.</p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong>Dr. Regős Péter/Dr. Jankovics Bálint</strong></p>
+<p> </p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="30%">
+<p>H-P: 9.00 - 13.00</p>
+<p>Prevenciós rendelés</p>
+<p>H- P: 12:00-13:00</p>
+<p> </p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="24%">
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Vikár B. u. 4.</p>
+<p>85/352-383</p>
+<p>30/122-9985</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p>H-P: 08.00-16.00</p>
+<p>Vikár B. u. 4.</p>
+<p>30/122-9985</p>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p style="text-align: center;">III.</p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong>Dr. Retih Ibolya</strong></p>
+<p style="text-align: center;"> </p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="30%">
+<p>Balatonboglár:</p>
+<p>H:14.00-16.00</p>
+<p>K:8.00 - 12.00</p>
+<p>SZ:8.00 - 12.00</p>
+<p>CS:14.00-16.00</p>
+<p>P: 8.00-12.00</p>
+<p>(naptári év első hónap harmadik hetének, valamint ezután minden rákövetkező negyedik hetének péntekén 14.00-16.00-ig)</p>
+<p>Szőlőskislak:</p>
+<p>H: 11.00 – 13.00</p>
+<p>Cs: 11.00 – 13.00</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="24%">
+<p>Vikár B u. 4.</p>
+<p>30/558-4474</p>
+<p>85/550-464/21</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Fő u. 2.</p>
+<p>30/558-4474</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p>H-P: 8.00-16.00</p>
+<p>Vikár B. u. 4.</p>
+<p>30/558-4474</p>
+<p>85/550-464/21</p>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p style="text-align: center;">IV.</p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"><strong>Dr. Fritz Izabella</strong></p>
+<p> </p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="30%">
+<p>H-P: 9.30 - 13.30</p>
+<p>Prevenciós rendelés</p>
+<p>K és CS: 9:30-11:30</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="24%">
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Vikár B. u. 4.</p>
+<p>85/950-712</p>
+<p>30/373-5214</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p> </p>
+<p>H-P: 8.00-16.00</p>
+<p>Vikár B. u. 4.</p>
+<p>85/950-712</p>
+<p>30/373-5214</p>
+<p> </p>
+</td>
+</tr>
+<tr>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p style="text-align: center;"><strong>Gyermekorvos</strong></p>
+<p style="text-align: center;"><strong> </strong></p>
+<p style="text-align: center;"><strong>Dr. Kovács Franciska</strong></p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="30%">
+<p>H-P: 8.00 - 12.00</p>
+<p>Prevenciós tanácsadás</p>
+<p>H és CS 10.00-12.00</p>
+<p>Iskola- és ifjúságegészségügyi orvos:</p>
+<p>H és CS: 12.00-12.30</p>
+<p><em>Csecsemő tanácsadás:</em></p>
+<p>SZ:10.00 - 12.00</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="24%">
+<p>Vikár B. u. 4.</p>
+<p>85/351-513</p>
+<p>20/238-7288</p>
+</td>
+<td style="text-align: left; vertical-align: top;" width="22%">
+<p>Rendelés H-P: 8:00-12:00</p>
+<p><strong>Sürgős esetben a balatonboglári lakosok és a balatonbogláron nyaralók esetén </strong></p>
+<p>H-P:</p>
+<p>8.00-16.00</p>
+<p>Vikár B. u. 4.</p>
+<p>85/351-513</p>
+<p>20/238-7288</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><u>Napközbeni sürgősségi betegellátást a családorvosok végzik <br/>a fent leírt ellátási rendben.<br/><br/></u></strong></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><u>Ügyeleti ellátás:</u></strong></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Működtető: <strong>Országos Mentőszolgálat</strong></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Telefonszám: <strong>1830</strong></span></p>
+<p><span style="font-size: 12pt;"> </span></p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-color: #215085; width: 85%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td width="129">
+<p> </p>
+</td>
+<td width="144">
+<p>felnőtt ellátás</p>
+</td>
+<td width="153">
+<p>gyermek ellátás</p>
+</td>
+<td width="140">
+<p>éjszakai ügyelet (felnőtt, gyermek)</p>
+</td>
+</tr>
+<tr>
+<td width="129">
+<p>Helye</p>
+</td>
+<td width="144">
+<p>Balatonboglár, Vikár B. u. 4.</p>
+</td>
+<td width="153">
+<p>Balatonboglár, Vikár B. u. 4./</p>
+<p>Kaposvár,Tallián Gy. u. 20-32.</p>
+</td>
+<td width="140">
+<p>Kaposvár, Nagyatád, Marcali, Siófok</p>
+<p>Kórház</p>
+</td>
+</tr>
+<tr>
+<td width="129">
+<p>Munkanapokon</p>
+</td>
+<td width="144">
+<p>16:00 – 22:00</p>
+</td>
+<td width="153">
+<p>16:00 – 22:00</p>
+</td>
+<td width="140">
+<p>22:00-8:00</p>
+</td>
+</tr>
+<tr>
+<td width="129">
+<p>Munkaszüneti napokon</p>
+</td>
+<td width="144">
+<p>8:00 – 14:00</p>
+</td>
+<td width="153">
+<p>8:00 – 20:00</p>
+</td>
+<td width="140">
+<p>14:00/20:00-8:00</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><u>Fogorvosi ellátás:</u></strong> </span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Dr. Kovács Ildikó </span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Telefonszám: 06/70/ 607-2323</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Rendelés helye: 8630 Balatonboglár, Vikár B. u. 4.</span></p>
+<p> </p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-color: #114dad; width: 85%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td width="159">
+<p>Ideje:</p>
+</td>
+<td width="199">
+<p>június 15. - augusztus 31.</p>
+</td>
+<td width="207">
+<p>szeptember 1. - június 14.</p>
+</td>
+</tr>
+<tr>
+<td width="159">
+<p>Hétfő</p>
+</td>
+<td width="199">
+<p>7:30 – 14:30</p>
+</td>
+<td width="207">
+<p>11:00 – 17:00</p>
+</td>
+</tr>
+<tr>
+<td width="159">
+<p>Kedd</p>
+</td>
+<td width="199">
+<p>7:30 – 14:30</p>
+</td>
+<td width="207">
+<p>8:00 – 14:00</p>
+</td>
+</tr>
+<tr>
+<td width="159">
+<p>Szerda</p>
+</td>
+<td width="199">
+<p>7:30 – 14:30</p>
+</td>
+<td width="207">
+<p>10:00 – 16:00</p>
+</td>
+</tr>
+<tr>
+<td width="159">
+<p>Csütörtök</p>
+</td>
+<td width="199">
+<p>7:30 – 14:30</p>
+</td>
+<td width="207">
+<p>8:00 – 14:00</p>
+</td>
+</tr>
+<tr>
+<td width="159">
+<p>Péntek</p>
+</td>
+<td width="199">
+<p>7:30 – 9:30</p>
+</td>
+<td width="207">
+<p>iskolafogászat</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><u>Védőnői ellátás:</u></strong></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Működtető: <strong>Somogy Vármegyei Kaposi Mór Oktató Kórház</strong></span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;"> </span></p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-color: #6468de; width: 85%; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="vertical-align: middle;" width="165">
+<p> </p>
+</td>
+<td style="vertical-align: middle;" width="200">
+<p>I. körzet: Meireiszné Veszner Szilvia</p>
+</td>
+<td style="vertical-align: middle;" width="201">
+<p>II. körzet: Mikáczó Anikó Mirtill</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle;" width="165">
+<p>Elérhetőség</p>
+</td>
+<td style="vertical-align: middle;" width="200">
+<p>06-20/778-83-64</p>
+</td>
+<td style="vertical-align: middle;" width="201">
+<p>06-20/778-83-94</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle;" width="165">
+<p>Várandós tanácsadás</p>
+</td>
+<td style="vertical-align: middle;" width="200">
+<p>Hétfő: 10:00-12:00</p>
+</td>
+<td style="vertical-align: middle;" width="201">
+<p>Kedd: 10:00-12:00</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle;" width="165">
+<p>Önálló védőnői tanácsadás</p>
+</td>
+<td style="vertical-align: middle;" width="200">
+<p>Hétfő: 08:00-10:00</p>
+</td>
+<td style="vertical-align: middle;" width="201">
+<p>Kedd: 08:00-10:00</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle;" width="165">
+<p>Ifjúsági tanácsadás / fogadóóra</p>
+</td>
+<td style="vertical-align: middle;" width="200">
+<p>Hétfő: 12:00-14:00</p>
+</td>
+<td style="vertical-align: middle;" width="201">
+<p>Hétfő: 12:00-14:00</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle;" width="165">
+<p>Csecsemő szaktanácsadás</p>
+</td>
+<td style="vertical-align: middle;" width="200">
+<p>Kedd: 13:00-15:00</p>
+</td>
+<td style="vertical-align: middle;" width="201">
+<p>Kedd: 13:00-15:00</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p style="text-align: center;"><span style="font-size: 12pt;"><strong><u>Üzemorvosi ellátás: </u></strong>  </span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Dr. Regős Péter</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Telefonszám: 85/353-788 06/30 979-3116</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Rendelés helye: Sétáló u. 1.</span></p>
+<p style="text-align: center;"><span style="font-size: 12pt;">Rendelési idő:  Csütörtök 11:30-12:30 Szombat (telefonos bejelentkezés alapján): 9.00 - 11.00</span></p>
+<p style="text-align: center;"> </p>
+<p> </p>
+<p style="text-align: center;"> <a data-review-original-href="/images/lakossagi_tajekoztato/OMSZ_UGYELETI_SZOLGALAT_HIRDETES_SOMOGY_231016.pdf" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"><img alt=""/></a></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;">&gt;&gt;&gt; <a data-review-original-href="http://www.mentok.hu/ugyelet" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank">mentok.hu/ugyelet</a> &lt;&lt;&lt;</p> </div>
+</div>
+</div></div></div>
+<div class="span3"><div class="wow bounceInUp" data-wow-duration="1s"><div class="side_bar"><div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/a-nevado-dr-torok-sandor" href="#" tabindex="-1"><img alt="" height="217" width="155"/></a></p>
+<p style="text-align: center;">Dr. Török Sándor<br/>névadó</p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/szakrendelesek" href="#" tabindex="-1"><img height="85" width="200"/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/haziorvosok" href="#" tabindex="-1"><img alt=""/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/kozponti-haziorvosi-ugyelet" href="#" tabindex="-1"><img alt=""/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p><a data-review-original-href="/index.php/kozerdekuadatok" href="#" tabindex="-1"><img alt="" style="display: block; margin-left: auto; margin-right: auto;"/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/gdpr" href="#" tabindex="-1"><img alt=""/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p><a data-review-original-href="/index.php/eeszt" href="#" tabindex="-1"><img alt="" style="display: block; margin-left: auto; margin-right: auto;"/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/tamop-6-2-4-b-14" href="#" tabindex="-1"><img alt=""/></a></p>
+<p style="text-align: center;"><a data-review-original-href="/index.php/tamop-6-2-4-a-11" href="#" tabindex="-1"><img alt=""/></a></p>
+<p style="text-align: center;"><a data-review-original-href="/index.php/ddop-3-1-3" href="#" tabindex="-1"><img alt=""/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/home" href="#" tabindex="-1"><img alt=""/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="https://www.facebook.com/eletmodklub.balatonboglar" href="#" rel="noopener noreferrer" tabindex="-1" target="_blank"><img alt=""/></a></p></div>
+<div class="clear"></div>
+</div>
+<div class="crate moduletable">
+<div class="custom">
+<p style="text-align: center;"><a data-review-original-href="/index.php/hasznos-tanacsok" href="#" tabindex="-1"><img alt=""/></a></p></div>
+<div class="clear"></div>
+</div>
+</div></div></div>
+<div class="clear"></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class="bottom">
+<div class="wrap_inner">
+
+</div>
+</div>
+<div class="shifting">
+<div class="wrap_inner">
+
+</div>
+</div>
+</div>
+</main>
+
+
+<footer role="contentinfo">
+<div class="foot">
+<div class="wrap_inner">
+
+<section>
+<div class="wow bounceInUp" data-wow-duration="1s" id="footer">
+<div class="row-fluid">
+<div class="footer">
+<div id="toTop"></div>
+<div id="footer-menu">
+<ul class="menu">
+<li class="item-125 current active first"><a data-review-original-href="/index.php/haziorvosok" href="#" tabindex="-1">Háziorvosok</a></li><li class="item-126 first"><a data-review-original-href="/index.php/kozponti-haziorvosi-ugyelet" href="#" tabindex="-1">Központi Ügyelet</a></li><li class="item-141 first"><a data-review-original-href="/index.php/szakrendelesek" href="#" tabindex="-1">Szakrendelések</a></li><li class="item-134 first"><a data-review-original-href="/index.php/vbedonoi-ellatas" href="#" tabindex="-1">Védőnői ellátás</a></li><li class="item-135 first"><a data-review-original-href="/index.php/beszamolok" href="#" tabindex="-1">Beszámolók</a></li><li class="item-136 first"><a data-review-original-href="/index.php/hasznos-tanacsok" href="#" tabindex="-1">Hasznos tanácsok</a></li><li class="item-127 first"><a data-review-original-href="/index.php/ddop-3-1-3" href="#" tabindex="-1">DDOP-3.1.3.</a></li><li class="item-128 first"><a data-review-original-href="/index.php/tamop-6-2-4-a-11" href="#" tabindex="-1">TÁMOP-6.2.4.A-11</a></li><li class="item-132 first"><a data-review-original-href="/index.php/tamop-6-2-4-b-14" href="#" tabindex="-1">TÁMOP 6.2.4.B-14</a></li><li class="item-130 first"><a data-review-original-href="/index.php/a-nevado-dr-torok-sandor" href="#" tabindex="-1">A névadó Dr. Török Sándor</a></li><li class="item-137 first"><a data-review-original-href="/index.php/gdpr" href="#" tabindex="-1">GDPR</a></li><li class="item-138 first"><a data-review-original-href="/index.php/eeszt" href="#" tabindex="-1">EESZT</a></li><li class="item-133 first last"><a data-review-original-href="/index.php/admin" href="#" tabindex="-1" target="_blank">Admin</a></li></ul>
+</div><div id="footer-copyright">
+<div class="custom">
+<p style="text-align: center;">■ Dr. Török Sándor Egészségügyi Központ ■ 8630 Balatonboglár, Vikár B. u. 4. ■ Telefon/Fax: 85/550-464 ■ E-mail: <span id="cloak4e222f71ea2e21110a65e91cdd42059e"></span>eukozpontbb@gmail.com ■</p></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</footer>
+
+</div> 
+
+
+</div>
+</div>
+
+<div class="wow bounceInUp" data-wow-duration="1s" id="social_bm_outer">
+<ul id="social_bm_nav">
+<li class="item_facebook"><a data-review-original-href="https://www.facebook.com/eletmodklub.balatonboglar" href="#" tabindex="-1" target="_blank" title="Facebook"></a></li>
+</ul>
+<div class="clearfix">
+</div></div></body>
+</html>
+
+
+
+
+

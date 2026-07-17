@@ -1,0 +1,103 @@
+Menü
+Önkormányzat
+Képviselő-testület
+Bizottságok
+Önkormányzati bizottságok
+Bizottsági ülések jegyzőkönyvei
+Testületi ülések jegyzőkönyvei
+Dokumentumtár
+Egészségügy
+I.sz. felnőtt háziorvosi rendelő
+II.sz. felnőtt háziorvosi rendelő
+Gyermekorvosi rendelő
+Fogorvosi rendelő
+Gyógyszertár
+Védőnői szolgálat
+Állatorvosi szolgálat
+Orvosi ügyelet
+Intézmények
+Tündérrózsa Óvoda
+Pejtsik Béla Könyvtár
+Gondozási központ
+Árpád fejedelem Közösségi Tér
+Család- és Gyermekjóléti Szolgálat
+CNÖ
+Közérdekű adatok
+Közérdekű adatok, szerződések
+Egységes közadatkereső rendszer
+Hirdetmények
+Központi címregiszter
+Külső védelmi terv
+Önkormányzati rendeletek
+Képviselő-testület határozatai
+Pályázatok
+Nyertes pályázatok
+Polgármesteri, Alpolgármesteri és Jegyző fogadóóra
+Hivatal
+Tiszaalpári Polgármesteri Hivatal nyitvatartása
+Munkatársak
+SzMSz
+Településünk
+Tiszaalpár térképe
+Programnaptár
+Hírek
+Választási információk
+Választási szervek
+Helyi választási iroda
+Helyi választási bizottság
+Választási ügyintézés
+2026. évi választás
+Választási felhívások
+Kapcsolat
+MVM Ügyfélszolgálat
+DTKH Nonprofit Kft.
+Bácsvíz Zrt.
+MOHU Mol Hulladékgazdálkodási Zrt.
+Magyar Államkincstár
+Vezetők
+Ágoston Béla
+polgármester
+polgarmester@tiszaalpar.hu
+Kőrös Lajosné
+alpolgármester
+alpolgarmester@tiszaalpar.hu
+Székely Edina
+jegyző
+jegyzo@tiszaalpar.hu
+Igazgatási csoport
+titkárság, anyakönyvi feladatok, hatósági ügyek, termőföldek haszonbérleti és adásvételi szerződések hirdetményi úton történő bevezetése, ipar-és kereskedelem, hagyatéki ügyek, szociális- és gyámügyi feladatok, iktatási és irattározási feladatok
+Rozmánné Túri Anita
+anyakönyvvezető, gyámügy, szociális ügyintéző, hagyatéki ügyintéző
+igazgatas@tiszaalpar.hu
+Papp Emese
+kereskedelmi ügyintéző, hírdetmények, igazgatási ügyintéző
+pappemese@tiszaalpar.hu
+Demeter Terézia
+adminisztrátor, irattár, titkársági ügyintéző
+titkarsag@tiszaalpar.hu
+Pénzügyi csoport
+költségvetéssel és intézmények működésével kapcsolatos feladatok, munka-és személyügyi feladatok
+Bálint Katalin
+pénzügyi csoportvezető
+penzugy@tiszaalpar.hu
+Kovács Annamária
+főkönyvi könyvelő
+kovacsannamaria@tiszaalpar.hu
+Feketéné Szabó Judit
+munka- és személyügyi munkatárs
+munkaugy@tiszaalpar.hu
+Festő-Hegedűs Istvánné
+analitikus könyvelő
+festo-hegedusne@tiszaalpar.hu
+Almási Csilla
+pénztáros
+kelemennecsilla@tiszaalpar.hu
+Adó csoport
+adóügyek, cím nyilvántartás
+Bukovenszki Réka
+adóügyi ügyintéző, méh nyilvántartás
+ado@tiszaalpar.hu
+Informatikai csoport
+Csonka Zsolt
+IT üzemeltetés, rendszergazda
+informatika@tiszaalpar.hu

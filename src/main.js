@@ -405,7 +405,7 @@ const App = {
           return !["confirmed", "no_email", "excluded"].includes(item.status);
         })
         .filter((item) => {
-          if (selectedLane.value !== "no_matched_email" || noMatchedEvidenceFilter.value === "all") return true;
+          if (selectedLane.value !== "no_matched_email") return true;
           if (noMatchedEvidenceFilter.value === "none") return item.evidence_availability !== "html";
           return item.evidence_availability === noMatchedEvidenceFilter.value;
         })
@@ -523,7 +523,15 @@ const App = {
     const selectedEvidence = computed(() => {
       const links = selectedCandidate.value?.evidence_links || [];
       if (isNoMatchArchivedHtml.value) {
-        return links.find((link) => link.raw_html_path) || links[0] || null;
+        const archivedDocumentIds = new Set(
+          (clinic.value?.documents || [])
+            .filter((document) => document.raw_html_path)
+            .map((document) => document.id),
+        );
+        return links.find((link) => link.raw_html_path)
+          || links.find((link) => archivedDocumentIds.has(link.source_document_id))
+          || links[0]
+          || null;
       }
       return links[0] || null;
     });

@@ -1,0 +1,420 @@
+<!doctype html>
+
+
+<!DOCTYPE html>
+
+<html lang="hu">
+<head><meta charset="utf-8"/><meta content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; font-src data:; form-action 'none'; base-uri 'none'; frame-ancestors 'self'" http-equiv="Content-Security-Policy"/>
+<style id="debugbar_dynamic_style"></style><style class="kint-rich-style">.kint-rich{font-size:13px;overflow-x:auto;white-space:nowrap;background:rgba(255,255,255,0.9)}.kint-rich.kint-folder{position:fixed;bottom:0;left:0;right:0;z-index:999999;width:100%;margin:0;display:block}.kint-rich.kint-folder dd.kint-foldout{max-height:calc(100vh - 100px);padding-right:8px;overflow-y:scroll;display:none}.kint-rich.kint-folder dd.kint-foldout.kint-show{display:block}.kint-rich::selection,.kint-rich::-moz-selection,.kint-rich::-webkit-selection{background:#aaa;color:#1d1e1e}.kint-rich .kint-focused{box-shadow:0 0 3px 2px red}.kint-rich,.kint-rich::before,.kint-rich::after,.kint-rich *,.kint-rich *::before,.kint-rich *::after{box-sizing:border-box;border-radius:0;color:#1d1e1e;float:none !important;font-family:Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;line-height:15px;margin:0;padding:0;text-align:left}.kint-rich{margin:8px 0}.kint-rich dt,.kint-rich dl{width:auto}.kint-rich dt,.kint-rich div.access-path{background:#f8f8f8;border:1px solid #d7d7d7;color:#1d1e1e;display:block;font-weight:bold;list-style:none outside none;overflow:auto;padding:4px}.kint-rich dt:hover,.kint-rich div.access-path:hover{border-color:#aaa}.kint-rich>dl dl{padding:0 0 0 12px}.kint-rich dt.kint-parent>nav,.kint-rich>footer>nav{background:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAxNTAiPjxwYXRoIGQ9Ik02IDdoMThsLTkgMTV6bTAgMzBoMThsLTkgMTV6bTAgNDVoMThsLTktMTV6bTAgMzBoMThsLTktMTV6bTAgMTJsMTggMThtLTE4IDBsMTgtMTgiIGZpbGw9IiM1NTUiLz48cGF0aCBkPSJNNiAxMjZsMTggMThtLTE4IDBsMTgtMTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSIjNTU1Ii8+PC9zdmc+") no-repeat scroll 0 0/15px 75px transparent;cursor:pointer;display:inline-block;height:15px;width:15px;margin-right:3px;vertical-align:middle}.kint-rich dt.kint-parent:hover>nav,.kint-rich>footer>nav:hover{background-position:0 25%}.kint-rich dt.kint-parent.kint-show>nav,.kint-rich>footer.kint-show>nav{background-position:0 50%}.kint-rich dt.kint-parent.kint-show:hover>nav,.kint-rich>footer.kint-show>nav:hover{background-position:0 75%}.kint-rich dt.kint-parent.kint-locked>nav{background-position:0 100%}.kint-rich dt.kint-parent+dd{display:none;border-left:1px dashed #d7d7d7}.kint-rich dt.kint-parent.kint-show+dd{display:block}.kint-rich var,.kint-rich var a{color:#06f;font-style:normal}.kint-rich dt:hover var,.kint-rich dt:hover var a{color:red}.kint-rich dfn{font-style:normal;font-family:monospace;color:#1d1e1e}.kint-rich pre{color:#1d1e1e;margin:0 0 0 12px;padding:5px;overflow-y:hidden;border-top:0;border:1px solid #d7d7d7;background:#f8f8f8;display:block;word-break:normal}.kint-rich .kint-popup-trigger,.kint-rich .kint-access-path-trigger,.kint-rich .kint-search-trigger{background:rgba(29,30,30,0.8);border-radius:3px;height:16px;font-size:16px;margin-left:5px;font-weight:bold;width:16px;text-align:center;float:right !important;cursor:pointer;color:#f8f8f8;position:relative;overflow:hidden;line-height:17.6px}.kint-rich .kint-popup-trigger:hover,.kint-rich .kint-access-path-trigger:hover,.kint-rich .kint-search-trigger:hover{color:#1d1e1e;background:#f8f8f8}.kint-rich dt.kint-parent>.kint-popup-trigger{line-height:19.2px}.kint-rich .kint-search-trigger{font-size:20px}.kint-rich input.kint-search{display:none;border:1px solid #d7d7d7;border-top-width:0;border-bottom-width:0;padding:4px;float:right !important;margin:-4px 0;color:#1d1e1e;background:#f8f8f8;height:24px;width:160px;position:relative;z-index:100}.kint-rich input.kint-search.kint-show{display:block}.kint-rich .kint-search-root ul.kint-tabs>li:not(.kint-search-match){background:#f8f8f8;opacity:0.5}.kint-rich .kint-search-root dl:not(.kint-search-match){opacity:0.5}.kint-rich .kint-search-root dl:not(.kint-search-match)>dt{background:#f8f8f8}.kint-rich .kint-search-root dl:not(.kint-search-match) dl,.kint-rich .kint-search-root dl:not(.kint-search-match) ul.kint-tabs>li:not(.kint-search-match){opacity:1}.kint-rich div.access-path{background:#f8f8f8;display:none;margin-top:5px;padding:4px;white-space:pre}.kint-rich div.access-path.kint-show{display:block}.kint-rich footer{padding:0 3px 3px;font-size:9px;background:transparent}.kint-rich footer>.kint-popup-trigger{background:transparent;color:#1d1e1e}.kint-rich footer nav{height:10px;width:10px;background-size:10px 50px}.kint-rich footer>ol{display:none;margin-left:32px}.kint-rich footer.kint-show>ol{display:block}.kint-rich a{color:#1d1e1e;text-shadow:none;text-decoration:underline}.kint-rich a:hover{color:#1d1e1e;border-bottom:1px dotted #1d1e1e}.kint-rich ul{list-style:none;padding-left:12px}.kint-rich ul:not(.kint-tabs) li{border-left:1px dashed #d7d7d7}.kint-rich ul:not(.kint-tabs) li>dl{border-left:none}.kint-rich ul.kint-tabs{margin:0 0 0 12px;padding-left:0;background:#f8f8f8;border:1px solid #d7d7d7;border-top:0}.kint-rich ul.kint-tabs>li{background:#f8f8f8;border:1px solid #d7d7d7;cursor:pointer;display:inline-block;height:24px;margin:2px;padding:0 12px;vertical-align:top}.kint-rich ul.kint-tabs>li:hover,.kint-rich ul.kint-tabs>li.kint-active-tab:hover{border-color:#aaa;color:red}.kint-rich ul.kint-tabs>li.kint-active-tab{background:#f8f8f8;border-top:0;margin-top:-1px;height:27px;line-height:24px}.kint-rich ul.kint-tabs>li:not(.kint-active-tab){line-height:20px}.kint-rich ul.kint-tabs li+li{margin-left:0}.kint-rich ul.kint-tab-contents>li{display:none}.kint-rich ul.kint-tab-contents>li.kint-show{display:block}.kint-rich dt:hover+dd>ul>li.kint-active-tab{border-color:#aaa;color:red}.kint-rich dt>.kint-color-preview{width:16px;height:16px;display:inline-block;vertical-align:middle;margin-left:10px;border:1px solid #d7d7d7;background-color:#ccc;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="%23FFF" d="M0 0h1v2h1V1H0z"/></svg>');background-size:100%}.kint-rich dt>.kint-color-preview:hover{border-color:#aaa}.kint-rich dt>.kint-color-preview>div{width:100%;height:100%}.kint-rich table{border-collapse:collapse;empty-cells:show;border-spacing:0}.kint-rich table *{font-size:12px}.kint-rich table dt{background:none;padding:2px}.kint-rich table dt .kint-parent{min-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.kint-rich table td,.kint-rich table th{border:1px solid #d7d7d7;padding:2px;vertical-align:center}.kint-rich table th{cursor:alias}.kint-rich table td:first-child,.kint-rich table th{font-weight:bold;background:#f8f8f8;color:#1d1e1e}.kint-rich table td{background:#f8f8f8;white-space:pre}.kint-rich table td>dl{padding:0}.kint-rich table pre{border-top:0;border-right:0}.kint-rich table thead th:first-child{background:none;border:0}.kint-rich table tr:hover>td{box-shadow:0 0 1px 0 #aaa inset}.kint-rich table tr:hover var{color:red}.kint-rich table ul.kint-tabs li.kint-active-tab{height:20px;line-height:17px}.kint-rich pre.kint-source{margin-left:-1px}.kint-rich pre.kint-source[data-kint-filename]:before{display:block;content:attr(data-kint-filename);margin-bottom:4px;padding-bottom:4px;border-bottom:1px solid #f8f8f8}.kint-rich pre.kint-source>div:before{display:inline-block;content:counter(kint-l);counter-increment:kint-l;border-right:1px solid #aaa;padding-right:8px;margin-right:8px}.kint-rich pre.kint-source>div.kint-highlight{background:#f8f8f8}.kint-rich .kint-microtime-lap{text-shadow:-1px 0 #aaa,0 1px #aaa,1px 0 #aaa,0 -1px #aaa;color:#f8f8f8;font-weight:bold}input.kint-note-input{width:100%}.kint-rich .kint-focused{box-shadow:0 0 3px 2px red}.kint-rich dt{font-weight:normal}.kint-rich dt.kint-parent{margin-top:4px}.kint-rich dl dl{margin-top:4px;padding-left:25px;border-left:none}.kint-rich>dl>dt{background:#f8f8f8}.kint-rich ul{margin:0;padding-left:0}.kint-rich ul:not(.kint-tabs)>li{border-left:0}.kint-rich ul.kint-tabs{background:#f8f8f8;border:1px solid #d7d7d7;border-width:0 1px 1px 1px;padding:4px 0 0 12px;margin-left:-1px;margin-top:-1px}.kint-rich ul.kint-tabs li,.kint-rich ul.kint-tabs li+li{margin:0 0 0 4px}.kint-rich ul.kint-tabs li{border-bottom-width:0;height:25px}.kint-rich ul.kint-tabs li:first-child{margin-left:0}.kint-rich ul.kint-tabs li.kint-active-tab{border-top:1px solid #d7d7d7;background:#fff;font-weight:bold;padding-top:0;border-bottom:1px solid #fff !important;margin-bottom:-1px}.kint-rich ul.kint-tabs li.kint-active-tab:hover{border-bottom:1px solid #fff}.kint-rich ul>li>pre{border:1px solid #d7d7d7}.kint-rich dt:hover+dd>ul{border-color:#aaa}.kint-rich pre{background:#fff;margin-top:4px;margin-left:25px}.kint-rich .kint-source{margin-left:-1px}.kint-rich .kint-source .kint-highlight{background:#cfc}.kint-rich .kint-parent.kint-show>.kint-search{border-bottom-width:1px}.kint-rich table td{background:#fff}.kint-rich table td>dl{padding:0;margin:0}.kint-rich table td>dl>dt.kint-parent{margin:0}.kint-rich table td:first-child,.kint-rich table td,.kint-rich table th{padding:2px 4px}.kint-rich table dd,.kint-rich table dt{background:#fff}.kint-rich table tr:hover>td{box-shadow:none;background:#cfc}
+</style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/>
+
+
+
+<title>hbinvest - Egészségügy</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta content="#ffffff" name="msapplication-TileColor"/>
+<meta content="https://hbinvest.hu/ms-icon-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+      html { scroll-behavior: auto !important; }
+      body { min-height: 100vh; overflow: auto !important; opacity: 1 !important; visibility: visible !important; }
+      .spinner, .loader, .preloader, [class*='loading-overlay'], [class*='loader-overlay'] { display: none !important; }
+      a, button, input, select, textarea, [role='button'] { pointer-events: none !important; }
+      [data-review-disabled-form='true'] { display: contents; }
+    </style></head>
+<body>
+
+
+<section class="bg_green">
+<div class="container">
+<div class="row">
+<div class="col-12 p-0">
+<nav class="navbar navbar-dark navbar-expand-xl d-xxl-flex align-items-xxl-center topsectionzindex p-0">
+<div class="container p-0">
+<a class="d-flex align-items-center text-light col-lg-3 col-8" data-review-original-href="https://hbinvest.hu/" href="#" tabindex="-1">
+<img class="w-75 p-2 bg-light"/>
+</a>
+<button class="navbar-toggler bg-dark" data-bs-target="#navcol-2" data-bs-toggle="collapse">
+<span class="visually-hidden">Toggle navigation</span>
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navcol-2">
+
+<ul class="navbar-nav ms-auto">
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=43" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Befektetőknek</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/?page_id=34" href="#" id="navbarDropdownSubmenu2" tabindex="-1">
+<span style="color: #212529;">Hajdú-Bihar megye bemutatása</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu2" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=103" href="#" tabindex="-1" target="_self">Települések</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=462" href="#" tabindex="-1" target="_self">Járások</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=107" href="#" tabindex="-1" target="_self">Demográfia</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=111" href="#" tabindex="-1" target="_self">Vállalkozások</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=113" href="#" tabindex="-1" target="_self">Elérhetőség</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=115" href="#" tabindex="-1" target="_self">Munkaerőtartalék</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=117" href="#" tabindex="-1" target="_self">Kisgyermeknevelési intézmények</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=119" href="#" tabindex="-1" target="_self">Oktatás-Szakképzés</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=121" href="#" tabindex="-1" target="_self">Egészségügy</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=123" href="#" tabindex="-1" target="_self">Fejlesztések</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=125" href="#" tabindex="-1" target="_self">Agrárium</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/page-id-127" href="#" tabindex="-1" target="_self">Védett területek</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=129" href="#" tabindex="-1" target="_self">Fürdők</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=131" href="#" tabindex="-1" target="_self">Intézményi ellátottság</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=133" href="#" tabindex="-1" target="_self">Adók</a>
+</li>
+</ul>
+</li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=149" href="#" tabindex="-1" target="_self">Befektetésre alkalmas ipari területek/ipari parkok</a></li><li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/" href="#" id="navbarDropdownSubmenu25" tabindex="-1">
+<span style="color: #212529;">Munkaerőpiaci információk</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu25" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=153" href="#" tabindex="-1" target="_self">Munkaerőpiaci struktúra bemutatása</a>
+</li><li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=159" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei képzési Jegyzék</a>
+</li>
+</ul>
+</li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=161" href="#" tabindex="-1" target="_self">Hajdú-Bihar megye TOP 100 vállalata</a></li> </ul>
+</li>
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=165" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Munkavállalóknak</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=168" href="#" tabindex="-1" target="_self">Betöltetlen állások</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=170" href="#" tabindex="-1" target="_self">Lakóingatlan kereső</a></li><li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/?page_id=172" href="#" id="navbarDropdownSubmenu31" tabindex="-1">
+<span style="color: #212529;">Képzések</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu31" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=159" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei képzési Jegyzék</a>
+</li>
+</ul>
+</li> </ul>
+</li>
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=186" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Intézmények</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="dropdown-submenu">
+<a aria-expanded="false" class="dropdown-item dropdown-toggle" data-review-original-href="https://hbinvest.hu/?page_id=189" href="#" id="navbarDropdownSubmenu33" tabindex="-1">
+<span style="color: #212529;">Hajdú-Bihar megyei Önkormányzat</span> 
+                                </a>
+<ul aria-labelledby="navbarDropdownSubmenu33" class="dropdown-menu">
+<li class="nav-item">
+<a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=199" href="#" tabindex="-1" target="_self">Paktumiroda</a>
+</li>
+</ul>
+</li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=191" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei Kormányhivatal</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=193" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei Kereskedelmi és Iparkamara</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=195" href="#" tabindex="-1" target="_self">Nemzeti Agrárgazdasági kamara</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/page-id-197" href="#" tabindex="-1" target="_self">Hajdú-Bihar megyei Fejlesztési Ügynökség Nonprofit Kft.</a></li> </ul>
+</li>
+<li class="nav-item" role="presentation">
+<a class="nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/kapcsolati-oldal" href="#" tabindex="-1" target="_self">Kapcsolat                </a>
+</li>
+<li class="nav-item" role="presentation">
+<a class="nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/page-id-1862" href="#" tabindex="-1" target="_self">Galéria                </a>
+</li>
+<li class="nav-item dropdown me-2">
+<a aria-expanded="false" class="dropdown-toggle nav-link link-light mb-0 ms-1 menutextmeret text-uppercase" data-review-original-href="https://hbinvest.hu/?page_id=210" href="#" tabindex="-1">
+<span style="color: rgb(248, 249, 250);">Hasznos információk</span> 
+                </a>
+<ul class="dropdown-menu">
+<li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=215" href="#" tabindex="-1" target="_self">Dokumentumtár/hasznos linkek</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/page-id-217" href="#" tabindex="-1" target="_self">Helyi termékek katasztere</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=221" href="#" tabindex="-1" target="_self">Adók-kedvezmények</a></li><li class="nav-item"><a class="dropdown-item" data-review-original-href="https://hbinvest.hu/?page_id=208" href="#" tabindex="-1" target="_self">Adatvédelmi tájékoztató</a></li> </ul>
+</li>
+</ul>
+
+</div>
+</div>
+</nav>
+</div>
+<div class="col-12 p-0">
+<div class="row g-0 d-flex">
+<div class="col-12 justify-content-end align-items-sm-center justify-content-xxl-start pt-1 pb-1 ps-1 d-none d-sm-block">
+<div class="mb-0 text-dark bg-light">
+<div class="row align-items-center">
+<div class="col-sm-6 col-md-4 col-xl-3 col-xxl-4">
+<div class="d-flex align-items-center justify-content-md-start justify-content-xl-end">
+<div class="ps-1">
+<svg class="bi bi-geo-alt me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
+<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+</svg>
+</div>
+<p class="mb-0 me-2">4024 Debrecen, Piac u. 54.</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-4 col-xl-2 col-xxl-2">
+<div class="d-flex align-items-center justify-content-md-center justify-content-xl-end">
+<div class="ps-1">
+<svg class="bi bi-telephone me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+</svg>
+</div>
+<p class="mb-0 me-2">+36 52 507 539</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-4 col-xl-2 col-xxl-2">
+<div class="d-flex align-items-center justify-content-md-end justify-content-xl-end">
+<div class="ps-1">
+<svg class="bi bi-envelope me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="mb-0 me-3"><a data-review-original-href="mailto:info@hbmfu.hu" href="#" tabindex="-1">info@hbmfu.hu</a></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-xl-3 col-xxl-2 mt-sm-2 mt-xl-0">
+<div>
+<p class="mb-0 bg_greenblue text-white p-2">
+                                           Ahol jó élni, ahol jó lenni!                                        </p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-xl-2 col-xxl-2 mt-sm-2 mt-xl-0">
+<div class="d-flex align-items-center justify-content-md-end justify-content-xl-end">
+<a class="ms-2" data-review-original-href="https://hbinvest.hu/" href="#" tabindex="-1">
+<img/>
+</a>
+<a class="ms-2" data-review-original-href="https://hbinvest.hu/en" href="#" tabindex="-1">
+<img/>
+</a>
+<button class="btn shadow ms-2 bggreen" data-bs-target="#modal-1" data-bs-toggle="modal" type="button">
+<svg class="bi bi-search" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<section class="pb-5 bg-light" data-bss-parallax-bg="true">
+<div class="container">
+<div class="row pt-lg-5 bg-white">
+<div class="col text-start bg-white">
+<div class="ps-2 mb-2">
+<p class="w-lg-50 mb-1 text-dark mt-2">hbinvest.hu</p>
+<h1 class="display-6 fw-lighter text-dark"> Egészségügy</h1>
+</div>
+<div class="p-2">
+
+<h2><strong>HB megye lakosságának 2018. évre jellemző egészségi állapota</strong></h2>
+<h3>Demográfia</h3>
+<p align="justify">Hajdú-Bihar megye lakosságát 2000-ben és 2018-ban is a szabálytalan kormegoszlást kifejező korfa jellemezte (1. ábra), mely szerint a gyermekkorú (0-10 évesek), a fiatal középkorú (30-35 évesek), valamint a 80 évesnél idősebb népesség létszáma volt alacsony. A vizsgált időszakban a népesség korösszetételében nőtt az idősek és csökkent a fiatalok aránya. A megye népességének korcsoport szerinti megoszlása alapján a fiatalkorúak (0-14 évesek) és az idősek (65 év felettiek) részaránya megközelítőleg azonos mértékű (15%, illetve 17,7%). A munkaképes korosztály (15-64 évesek) részaránya a legnagyobb (67,3%).</p>
+<p align="center" lang="x-none"><strong>1<span style="font-family: Arial, serif;">. ábra: Hajdú-Bihar megye népességének száma nemek és életkor szerint 2000. és 2018. január 1-jén</span></strong></p>
+<p style="text-align: justify;"><img alt="" class="wp-image-883 aligncenter" height="391" width="689"/></p>
+<p align="justify">A népesség nagyságát a születésen és halálozáson kívül a belföldi és nemzetközi vándorlás is befolyásolja. A természetes szaporodás arányát a 2. ábra szemlélteti. Magyarországon 2017-ben a nők esetében 78,99 év, a férfiak esetében 72,4 év volt a születéskor várható átlagos élettartam. Hajdú-Bihar megyében a férfiak és a nők esetében is hosszabb (nőknél 79,8 év, férfiaknál 72,9 év) a várható átlagos élettartam az országos átlagnál. Magyarországon és Hajdú-Bihar megyében is emelkedő tendencia figyelhető meg a várható élettartamot tekintve.</p>
+<p align="center" lang="x-none"><strong>2<span style="font-family: Arial, serif;">. ábra: A természetes szaporodás/fogyás arányszáma Hajdú-Bihar megyében, az Észak-alföldi régióban, Magyarországon (2003-2017 között) és az EU15 országok átlagában (2003-2015 között)</span></strong></p>
+<p style="text-align: justify;"><img alt="" class="wp-image-884 aligncenter" height="419" width="767"/><strong>Egészségügyi ellátás</strong></p>
+<p align="justify" style="text-align: justify;">Hajdú-Bihar megye lakosságának egészségügyi ellátását összesen 721 szolgáltató egység biztosítja. A megye illetékességi területén a háziorvosi ellátásban a betöltetlen praxisok száma 14, amely tartós helyettesítéssel kerül ellátásra. A Berettyóújfalui Járási Hivatal Népegészségügyi Osztály illetékességi területén 5 db vegyes háziorvosi praxis (Mezősas, Körösszakál, Újiráz, Gáborján és Hencida) betöltetlen. Komádiban betöltésre került 2 felnőtt háziorvosi praxis. A Hajdúszoboszlói Járási Hivatal Népegészségügyi Osztály illetékességi területén 2 db vegyes háziorvosi praxis (Sáp és Szerep) betöltetlen és 2 db gyermek háziorvosi körzet (Püspökladány) van tartós helyettesítéssel ellátva. A Balmazújvárosi Járási Hivatal Népegészségügyi Osztály területén 3 db gyermek háziorvosi praxis (Nyíradony, Hajdúhadház, Tiszacsege), valamint 1 db felnőtt háziorvosi praxis (Tiszacsege) és 1 db vegyes háziorvosi praxis betöltetlen (Kokad). 2019-ben a 2017. február óta betöltetlen gyermek háziorvosi praxis betöltése Hajdúhadházon folyamatban van. A Debreceni Járási Hivatal és a Hajdúböszörményi Járási Hivatal illetékességi területén betöltetlen praxis nincs.</p>
+<p align="justify" style="text-align: justify;">Hajdú-Bihar megyében 161 közfinanszírozott fogászati alapellátást nyújtó egészségügyi szolgáltató egység működik, a fogászati ügyeletet a Debreceni Egyetem Kenézy Gyula Egyetemi Kórház biztosítja.</p>
+<p align="justify" style="text-align: justify;">A „Magyar Védőnői Szolgálat, mint nemzetközileg is egyedülálló, tradicionális ellátási rendszer” 2015. április 23. óta a Hungarikumok Gyűjteményének eleme. A megyében 2018. évben a területi védőnői állások száma: 221. Az előző évhez képest eggyel csökkent a státuszok száma (a hajdúböszörményi járásban - a védőnők általi gondozott létszám csökkenése miatt körzetösszevonás történt). A betöltött állások száma 198. Valamennyi betöltetlen státusz ellátása helyettesítéssel biztosított.</p>
+<p align="justify" style="text-align: justify;">Népegészségügyi szempontból kiemelkedő szerepe van a megyében 5 tanácsadóban működő Családvédelmi Szolgálatnak, ahol a terhesség-megszakítással kapcsolatos hatósági feladatot látják el a családvédő védőnők.</p>
+<p align="justify" style="text-align: justify;">Hajdú-Bihar megye 3 fekvőbeteg ellátó intézménye integrált járóbeteg-ellátást is működtet, amelyek által felhasználható járóbeteg óraszám-kapacitás a megye rendelkezésére álló teljes kapacitás meghatározó hányadát teszi ki (a Debreceni Egyetem Kenézy Gyula Egyetemi Kórház 45,6%-ot, a Debreceni Egyetem Klinikai Központ 30%-ot, a Gróf Tisza István Kórház 5,2%-ot). A 2017-ben végzett ellenőrzések tapasztalatai alapján a járóbeteg ellátás megfelelő tárgyi, személyi és szakmai körülmények között működött a megyében.</p>
+<p align="justify" style="text-align: justify;">Az otthoni szakápolásra akkor van lehetőség, ha a beteg egészségügyi állapota – orvosi végzettséghez nem kötött – kórházi szakápolást igényel, azonban az helyettesíthető otthoni szakápolás körében nyújtható ellátásokkal is. Hajdú-Bihar megyében rendszeres orvosi ellátásra már nem szoruló, de állandó ápolást igénylő betegek ellátása 3 intézményben történhet a fenti fekvőbeteg szakellátó intézményeken kívül: a hajdúnánási Hospit Ápolási Intézetben, a „GONDTALANUL” Szolgáltató Nonprofit Korlátolt Felelősségű Társaság által működtetett Ápolási Osztályon 50-50 ágyon, továbbá a 10 férőhelyes Fordulópont Szenvedélybetegek Rehabilitációs Intézményben, amely az Észak-alföldi régióból önként jelentkező szenvedélybeteg férfiak számára nyújt rehabilitációs ellátást.</p>
+<p style="text-align: justify;"><strong>A lakosságot érintő környezeti tényezők</strong></p>
+<p align="justify" style="text-align: justify;">A lakosságot érintő környezeti tényezők közül elsőként a vizet, az ivóvizet vizsgálva elmondható, hogy a megye településeinek közműves ivóvízellátása mennyiségi szempontból megfelelő. Hajdú-Bihar megyében 2018. évben 84 közüzemi ivóvízellátó rendszer működött. A szolgáltatott ivóvíz a vízforrás jellegét tekintve elsősorban rétegvíz, ugyanakkor a Keleti Főcsatorna Felszínivíz Tisztítómű a Keleti Főcsatornából – mint felszíni vízfolyásból – ivóvízkivételt tesz lehetővé. Hajdú-Bihar megyében 4 település(rész) ivóvízellátása történik kizárólag felszíni vízzel (Balmazújváros-Nagyhát, Debrecen-Nagymacs, Debrecen-Ondód, Nagyhegyes). Debrecen város és településrészei (Debrecen-Nagymacs és Debrecen-Ondód kivételével) ellátása kevert vízzel – felszíni és rétegvíz – biztosított. A többi település ivóvíz ellátása mélyfúrású kutakból származó rétegvízzel történik. A megfelelő minőségben és mennyiségben rendelkezésre álló ivóvíz nemzeti érték. Az emberi fogyasztásra szánt ivóvíz nem tartalmazhat egészségre veszélyes kémiai, fizikai, mikrobiológiai szennyező anyagokat, ugyanakkor tartalmaznia kell az emberi szervezet számára szükséges összetevőket. Hajdú-Bihar megyében az elmúlt években ivóvízzel kapcsolatba hozható megbetegedés, járvány nem fordult elő.</p>
+<p align="justify" style="text-align: justify;">A szezonálisan működő közfürdőkben a nyitás előtt, a folyamatosan működő közfürdőkben az év során szükséges hatósági vizsgálatok megtörténtek. A medencés közfürdőkben az alapvető személyi és tárgyi feltételek rendelkezésre állnak, a medencék és kiszolgáló helyiségek műszaki-higiénés állapota megfelelő. A medencés közfürdők esetében súlyos közegészségügyi hiányosság nem merült fel. Fürdővíz eredetű megbetegedés, illetve annak gyanúja nem fordult elő.</p>
+<p align="justify" style="text-align: justify;">Hajdú-Bihar megye egyetlen természetes fürdője a Látóképi Tófürdő, amely működési szezonjában szennyezés nem történt.</p>
+<p align="justify" style="text-align: justify;">A Népegészségügyi Főosztály az allergiás megbetegedések miatt kiemelt feladatként kezeli a biológiai eredetű légköri allergének monitorozását. A mérőállomásokon több mint 30 növény és 2 gomba légköri pollen- illetve spóra koncentrációja kerül monitorozásra. Az allergének (parlagfű, pázsitfűfélék, üröm) közül jelentős a parlagfű pollenszórása.</p>
+<p align="justify" style="text-align: justify;">Az életkorhoz kötött kötelező védőoltások tekintetében a fegyelem nem változott, továbbra is 99-100 % közötti. magas átoltottsági arány biztosítja, hogy a védőoltással megelőzhető, jelentősebb gyermekkori fertőző betegségek évek óta nem fordultak elő Hajdú-Bihar megyében. 2017. június 24. napjától nemzetközi oltóhely működik Hajdú-Bihar megyében (Debrecenben). 2018. évben 113 fő igényelte ezt az egészségügyi szolgáltatást.</p>
+<p style="text-align: justify;"><strong>Szűrővizsgálatok</strong></p>
+<p align="justify">A betegségek és a betegségmegelőző állapotok korai felismerése a szűrővizsgálatokkal oldható meg. A daganatos betegségek felismerésére, a halálozás csökkentésére legmegfelelőbb eszköz a szervezett, célzott szűrővizsgálat.</p>
+<p align="justify">Az emlőszűrés rendszere 2002 óta működik az országban. A megyében 2 akkreditált mammográfiás szűrőállomás végzi a célzott lakosság vizsgálatát 2 éves ciklusban, behívásos alapon.</p>
+<p>A méhnyakrák szűrés 2003 óta működik folyamatosan az országban. A 25-65 év közötti nők részére a szűrési ciklus 3 év. A szűrés két formában történik, szakorvosi és védőnői szűrés keretében.</p>
+<p align="justify">A vastagbél szűrés 2009 óta modellprogramként működik. Az 50-70 év közötti lakosságot 2 éves ciklusban tervezik szűrni. A szűrést egy továbbképzés sikeres elvégzését követően háziorvosok végzik.</p>
+<p align="justify">A lakosság egészségi állapotát számos külső tényező befolyásolja, azonban az egyén életmódjával közvetlenül és meghatározó módon összefügg. Ismert kockázati tényezők a dohányzás, az alkoholfogyasztás, az egészségtelen táplálkozás, a mozgásszegény életmód, vagy a tartós stressz.</p>
+<p style="text-align: center;"><em>Az adott ikonra kattintva az intézmény megnevezését és honlapjának elérhetőségét találja. </em></p>
+<p>
+</p>
+<p><html><head><style>#map7 {
+			width: 100%;
+			height: 800px;
+}
+
+.e_valaszto{
+	  transform: scale(1.8);
+}
+
+.ui-autocomplete { position: absolute; cursor: default;z-index:3000 !important;}  </style></head><body><div style="margin: 20px auto 10px auto; text-align: center;">
+<div class="checkbox" data-toggle="tooltip" style="display: inline-block; margin: 0px 10px;" title="Fekvőbeteg ellátást nyújtó intézmények">
+<label style="padding-left: 0px; display: flex;align-items:center;">
+<input checked="" class="e_valaszto" style="margin-right: 10px;" type="checkbox" value="f"/>
+<img width="42"/>
+<span id="fekvob" style="margin-left: 10px;"> Fekvőbeteg ellátást nyújtó intézmények</span>
+</label>
+</div>
+<div class="checkbox" data-toggle="tooltip" style="display: inline-block; margin: 0px 10px;" title="Járóbeteg szakellátó intézmények">
+<label style="padding-left: 0px; display: flex;align-items:center;">
+<input checked="" class="e_valaszto" style="margin-right: 10px;" type="checkbox" value="j"/>
+<img width="42"/>
+<span id="jarob" style="margin-left: 10px;"> Járóbeteg szakellátó intézmények</span>
+</label>
+</div>
+</div>
+<div style="margin:20px 0px 20px 0px;">
+<input id="citysearch" placeholder="Település keresése" style="font-size:24px;" type="text"/>
+</div>
+<div id="map7"></div> </body></html></p>
+<p></p> </div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<div id="eu_logo"><img alt="eu 2020 logo" class="fixed-bottom"/></div>
+<footer class="text-white bg-dark pb-3 bg-dark" id="kapcsolat">
+<div class="container pt-5">
+<h2 class="display-4 fw-lighter text-start mb-5">
+            Kapcsolat        </h2>
+<div class="row justify-content-start">
+<div class="col-sm-4 text-center text-lg-start d-flex flex-column mb-4 item">
+<h5 class="fw-lighter mb-3 text-uppercase">
+                    Cégadatok                </h5>
+<hr class="mt-2 mb-4 w-50"/>
+<h3 class="fs-6 fw-normal text-white">Név: HBMFÜ Nonprofit Kft.</h3> <h3 class="fs-6 fw-normal text-white">Székhely: 4024 Debrecen, Piac u. 54.</h3> <h3 class="fs-6 fw-normal text-white">Adószám: 20345279-2-09</h3> <h3 class="fs-6 fw-normal text-white">Cégjegyzékszám: 09-09-017102</h3> <p class="fw-lighter mt-5">Minden jog fenntartva! © 2022 </p> </div>
+<div class="col-sm-4 text-center text-lg-start d-flex flex-column mb-4 item">
+<h5 class="fw-lighter mb-3 text-uppercase">
+                    Egyéb dokumentumok                </h5>
+<hr class="mt-2 mb-4 w-50"/>
+
+<ul class="footerMenu">
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=208" href="#" tabindex="-1" target="_self">Adatvédelmi tájékoztató            </a>
+</li>
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=3" href="#" tabindex="-1" target="_self">Adatvédelmi irányelvek            </a>
+</li>
+</ul>
+
+</div>
+<div class="col-sm-4 text-center text-lg-start d-flex flex-column mb-4 item">
+<h5 class="fw-lighter mb-3 text-uppercase">
+                    Egyéb dokumentumok                </h5>
+<hr class="mt-2 mb-4 w-50"/>
+
+<ul class="footerMenu">
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=215" href="#" tabindex="-1" target="_self">Dokumentumtár            </a>
+</li>
+<li>
+<a class="fs-6 fw-normal text-white" data-review-original-href="https://hbinvest.hu/?page_id=113" href="#" tabindex="-1" target="_self">Elérhetőség            </a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="modal fade modalposition" id="modal-1" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<div data-review-disabled-form="true">
+<div class="input-group">
+<span class="input-group-text"><i class="fa fa-search"></i></span>
+<input class="form-control" name="search-attr" type="text"/>
+<button class="btn btn-light" type="submit">
+                                Keresés                            </button>
+</div>
+<div style="display:none"><label>Fill This Field</label><input name="honeypot" type="text" value=""/></div></div>
+</div>
+<div class="modal-footer d-xxl-flex justify-content-xxl-center">
+<button class="btn btn-primary bg_green" data-bs-dismiss="modal" type="button">
+<svg class="bi bi-x-circle me-2" fill="currentColor" height="1em" viewbox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+</svg>
+                        Bezár                    </button>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
