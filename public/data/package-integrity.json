@@ -1,29 +1,29 @@
 {
   "format": "lead-gen-review-package-integrity",
   "schema_version": 1,
-  "dataset_id": "hu-review-20260729T084114Z",
+  "dataset_id": "hu-review-20260729T090512Z",
   "country": "HU",
   "country_pack": {
     "version": "country-pack-loader-v1:4cf23fdd1136",
     "config_hash": "4cf23fdd113652718630a8fa9b877fdcd88638b52bc92257e497f91ffe1542c5"
   },
   "required_files": {
-    "manifest.json": "sha256:5442da55ce8b3558ca2bb7e849ea7e36b3437d483b5f936682034fc09b747f57",
-    "queue.json": "sha256:e9dc41f6ce6acd5f48d2330ef95c686ed67e5c2d3511da387a0999f5fbbe6eb3",
-    "clinic-index.json": "sha256:af271cd2f7f2e51ac2e6a88d8799b8eddd7ba527907840ba2268f5a0e2d8d587",
-    "canonical-review-state.json": "sha256:fcab915ba10f69846d1730f9ceb74ab6157365625c0e431f627b33a14d967b4f"
+    "manifest.json": "sha256:2edef62323c466d7e71c696ab26c006ba924550202d10f7e9ebc3eba19aebdc2",
+    "queue.json": "sha256:22e7ca5b2b9c712db7ee688c88c11e222f6e50487b0adc44c3dd82d35644c96c",
+    "clinic-index.json": "sha256:efb63af91fe609bc4c528b904d48b766463573c746892b3e3276bba82a88203a",
+    "canonical-review-state.json": "sha256:92fac8bc783148163fdd314c397da36c5a28602248b6cf3ef85140ad30994264"
   },
   "trees": {
     "clinics": {
-      "file_count": 6440,
-      "byte_size": 143384597,
-      "sha256": "sha256:c8a6cfc5499d2f1521d2081a87e0f15d3d122cef54c6348b80d4dc038921b661"
+      "file_count": 6445,
+      "byte_size": 152156347,
+      "sha256": "sha256:ac8a488f1ae62fa13e5865125a440863d75adf6743b6055ac150e1f0f7403333"
     },
     "evidence": {
-      "file_count": 6973,
-      "byte_size": 402835406,
-      "sha256": "sha256:ec1c5ed21a7d9cab6fb8720be96f7cf52dfd7acf4b5e998ee98f88068a058a75"
+      "file_count": 7534,
+      "byte_size": 430226134,
+      "sha256": "sha256:2d493ce6459722a17845d8cdcdae3508956101213d1fc5eaff2c2ef4200b0a47"
     }
   },
-  "package_fingerprint": "sha256:3ed6f97f44c06592c757ce1af2f2f37f60a389dbf78ee9af8feee20dd636fe7f"
+  "package_fingerprint": "sha256:7499b33d127c47d708b228bd2d3759cdbd8271ed917deae0c0d2158b916bfe21"
 }

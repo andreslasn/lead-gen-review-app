@@ -1,12 +1,12 @@
 {
   "format": "lead-gen-review-package",
   "schema_version": 1,
-  "dataset_id": "hu-review-20260729T084114Z",
-  "dataset_version": "2026-07-29T08:41:14.375579+00:00",
-  "base_data_hash": "sha256:f8dcb5148c966b5176920e2595f6e8bc0d1d33d67a32f31e5388b7dfafbe7b11",
+  "dataset_id": "hu-review-20260729T090512Z",
+  "dataset_version": "2026-07-29T09:05:12.317922+00:00",
+  "base_data_hash": "sha256:13219c8c54a0b758929202373026702ac8fe9715bf3b670b0ce67dfb3c0aa523",
   "country": "HU",
   "scope": "all_clinics",
-  "generated_at": "2026-07-29T08:41:14.375579+00:00",
+  "generated_at": "2026-07-29T09:05:12.317922+00:00",
   "source_commit": "e8c0c57eb288",
   "country_pack": {
     "version": "country-pack-loader-v1:4cf23fdd1136",
@@ -133,13 +133,13 @@
     "min_no_public_email_sources": 2
   },
   "counts": {
-    "clinics": 6440,
-    "candidate_emails": 23813,
+    "clinics": 6445,
+    "candidate_emails": 26676,
     "states": {
-      "needs_review": 4993,
-      "not_processed": 7,
-      "confirmed": 1314,
-      "no_email": 126
+      "needs_review": 2291,
+      "confirmed": 4101,
+      "not_processed": 5,
+      "no_email": 48
     }
   },
   "files": {
@@ -157,7 +157,7 @@
     "screenshot_max_bytes": 1000000,
     "text": "explicitly labelled extracted-text fallback"
   },
-  "evidence_artifacts_copied": 122,
+  "evidence_artifacts_copied": 596,
   "stale_clinic_payloads_pruned": 0,
   "stale_evidence_artifacts_pruned": 0
 }
