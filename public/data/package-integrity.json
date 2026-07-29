@@ -1,29 +1,29 @@
 {
   "format": "lead-gen-review-package-integrity",
   "schema_version": 1,
-  "dataset_id": "hu-review-20260729T090512Z",
+  "dataset_id": "hu-review-20260729T094757Z",
   "country": "HU",
   "country_pack": {
     "version": "country-pack-loader-v1:4cf23fdd1136",
     "config_hash": "4cf23fdd113652718630a8fa9b877fdcd88638b52bc92257e497f91ffe1542c5"
   },
   "required_files": {
-    "manifest.json": "sha256:2edef62323c466d7e71c696ab26c006ba924550202d10f7e9ebc3eba19aebdc2",
-    "queue.json": "sha256:22e7ca5b2b9c712db7ee688c88c11e222f6e50487b0adc44c3dd82d35644c96c",
-    "clinic-index.json": "sha256:efb63af91fe609bc4c528b904d48b766463573c746892b3e3276bba82a88203a",
-    "canonical-review-state.json": "sha256:92fac8bc783148163fdd314c397da36c5a28602248b6cf3ef85140ad30994264"
+    "manifest.json": "sha256:818c3fb748b4512b9bd05992e35ee377633429d694c802de05f2e40a351f776f",
+    "queue.json": "sha256:07cfd6e487f7d822a15fec744e4207fc1738cb5d34c628733211dbfd9601d40f",
+    "clinic-index.json": "sha256:53cc4264ebdd3de59d848b8b6816600c9d06eca44b3d8c226cb33b924103a127",
+    "canonical-review-state.json": "sha256:d78f9c07207a625a7d1b95c9895799d319e5585fd0df7c09c58493783dc2a7df"
   },
   "trees": {
     "clinics": {
-      "file_count": 6445,
-      "byte_size": 152156347,
-      "sha256": "sha256:ac8a488f1ae62fa13e5865125a440863d75adf6743b6055ac150e1f0f7403333"
+      "file_count": 6440,
+      "byte_size": 143980054,
+      "sha256": "sha256:dc282d7371644c142f6eed32a64eb5fbe8913769b938e281c1e38c4396abe8b4"
     },
     "evidence": {
-      "file_count": 7534,
-      "byte_size": 430226134,
-      "sha256": "sha256:2d493ce6459722a17845d8cdcdae3508956101213d1fc5eaff2c2ef4200b0a47"
+      "file_count": 7001,
+      "byte_size": 405604263,
+      "sha256": "sha256:4ef31c94e1abe665727d0b9814184d6ad276a614078e7eb4264f9accada4fc04"
     }
   },
-  "package_fingerprint": "sha256:7499b33d127c47d708b228bd2d3759cdbd8271ed917deae0c0d2158b916bfe21"
+  "package_fingerprint": "sha256:726f40e5a2c7d4616d35c16b2c0685f6da10f99545f48ce2d15fc04731cb9929"
 }

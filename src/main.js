@@ -143,6 +143,8 @@ function stateLabel(value) {
 function laneLabel(value) {
   return {
     accepted: "Accepted",
+    shared_email_review: "Shared email",
+    weak_join_review: "Weak join",
     not_accepted: "Not accepted",
     needs_review: "Needs review",
     no_matched_email: "No matched email",
@@ -151,15 +153,29 @@ function laneLabel(value) {
   }[value] || value;
 }
 
+function reasonLabel(value) {
+  return {
+    accepted_registry_id: "Registry-ID accepted",
+    accepted_no_proof: "Registry-ID accepted, proof missing",
+    review_shared_email: "Shared email needs review",
+    review_weak_join: "Weak clinic/email join",
+    external_reviewer_validated: "Reviewer validated",
+  }[value] || value || "";
+}
+
 function confidencePool(item, lane) {
   if (item.status === "confirmed") return "accepted";
   if (item.status === "excluded") return "not_accepted";
+  if (item.review_reason_code === "review_shared_email") return "shared_email_review";
+  if (item.review_reason_code === "review_weak_join") return "weak_join_review";
   if (lane !== "no_email") return "needs_review";
   return item.status === "no_email" ? "no_public_email" : "no_matched_email";
 }
 
 function normalizedLaneSelection(value) {
   if (["accepted", "confirmed"].includes(value)) return "accepted";
+  if (value === "shared_email_review") return "shared_email_review";
+  if (value === "weak_join_review") return "weak_join_review";
   if (["not_accepted", "excluded"].includes(value)) return "not_accepted";
   if (["review", "auto_confirm", "auto_suppress", "high_confidence", "low_confidence", "needs_review"].includes(value)) return "needs_review";
   if (["no_email", "no_matched_email"].includes(value)) return "no_matched_email";
@@ -436,7 +452,13 @@ const App = {
         ...item,
         lane,
         status,
-        confidence_pool: confidencePool({ ...item, status }, lane),
+        review_reason_code: localState?.reason_code || item.review_reason_code || null,
+        review_note: localState?.note || item.review_note || null,
+        confidence_pool: confidencePool({
+          ...item,
+          status,
+          review_reason_code: localState?.reason_code || item.review_reason_code || null,
+        }, lane),
         reviewed_at: localState?.reviewed_at || item.reviewed_at,
         local_decision_count: (decisionsByClinic.value[item.id] || []).length,
       };
@@ -492,7 +514,16 @@ const App = {
         .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
     });
     const laneCounts = computed(() => {
-      const counts = { accepted: 0, not_accepted: 0, needs_review: 0, no_matched_email: 0, no_public_email: 0, all: locationFilteredQueue.value.length };
+      const counts = {
+        accepted: 0,
+        shared_email_review: 0,
+        weak_join_review: 0,
+        not_accepted: 0,
+        needs_review: 0,
+        no_matched_email: 0,
+        no_public_email: 0,
+        all: locationFilteredQueue.value.length,
+      };
       for (const item of locationFilteredQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
       return counts;
     });
@@ -1586,6 +1617,7 @@ const App = {
       syncButtonLabel,
       noMatchedEvidenceFilter,
       laneLabel,
+      reasonLabel,
       reviewer,
       search,
       candidates,
@@ -1657,7 +1689,7 @@ const App = {
           <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
         </select>
         <div class="lane-tabs">
-          <button v-for="lane in ['accepted','not_accepted','needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['accepted','shared_email_review','weak_join_review','not_accepted','needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
@@ -1678,9 +1710,11 @@ const App = {
         <section class="decision-pane">
           <div class="clinic-meta">
             <span class="pill lane">{{ laneLabel(currentItem.confidence_pool) }}</span>
+            <span v-if="currentItem.review_reason_code" class="pill reason">{{ reasonLabel(currentItem.review_reason_code) }}</span>
             <span class="muted">{{ currentItem.city }} · {{ currentItem.registry_id }}</span>
             <button v-if="currentItem.status !== 'excluded'" class="clinic-not-accepted" @click="excludeCurrent">Not accepted</button>
           </div>
+          <p v-if="currentItem.review_note" class="review-note">{{ currentItem.review_note }}</p>
           <h2>{{ clinic.clinic.name }}</h2>
           <p class="clinic-address">{{ clinic.clinic.address }}</p>
 

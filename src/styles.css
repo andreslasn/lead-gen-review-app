@@ -221,6 +221,7 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .clinic-not-accepted {
@@ -246,8 +247,21 @@ input, textarea {
   font-size: 0.75rem;
   font-weight: 850;
 }
+.pill.reason {
+  background: #fff4d6;
+  color: #7a4e00;
+}
 .muted {
   color: var(--black-60);
+}
+.review-note {
+  margin: -2px 0 2px;
+  padding: 7px 9px;
+  border: 1px solid #f1d288;
+  border-radius: 0.65rem;
+  background: #fffaf0;
+  color: #604400;
+  font-size: 0.78rem;
 }
 .decision-pane h2, .evidence-toolbar h2 {
   margin: 0;
