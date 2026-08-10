@@ -27,7 +27,7 @@ const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-6";
+const DATA_DEPLOY_VERSION = "email-global-20260810-7";
 const DB_OPEN_TIMEOUT_MS = 2500;
 
 function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
@@ -44,7 +44,7 @@ function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
       callback(value);
     };
     const timer = setTimeout(() => {
-      finish(reject, new Error("Browser storage is taking too long to open. Close other review-app tabs and refresh before saving review work."));
+      finish(reject, new Error("Browser storage unavailable."));
     }, timeoutMs);
     const request = indexedDB.open(DB_NAME, DB_VERSION);
     request.onupgradeneeded = () => {
@@ -57,7 +57,7 @@ function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
       if (!db.objectStoreNames.contains("email_validations")) db.createObjectStore("email_validations", { keyPath: "email" });
     };
     request.onblocked = () => {
-      finish(reject, new Error("Browser storage upgrade is blocked by another open review-app tab. Close other tabs with this app and refresh before saving review work."));
+      finish(reject, new Error("Browser storage unavailable."));
     };
     request.onerror = () => finish(reject, request.error);
     request.onsuccess = () => finish(resolve, request.result);
@@ -182,6 +182,7 @@ function stateLabel(value) {
 function laneLabel(value) {
   return {
     unreviewed: "Unreviewed",
+    reviewed: "Reviewed",
     valid: "Valid",
     invalid: "Invalid",
     unsure: "Unsure",
@@ -216,11 +217,16 @@ function confidencePool(item, lane) {
 }
 
 function normalizedLaneSelection(value) {
-  if (["unreviewed", "valid", "invalid", "unsure"].includes(value)) return value;
-  if (["accepted", "confirmed"].includes(value)) return "valid";
-  if (["not_accepted", "excluded"].includes(value)) return "invalid";
+  if (["unreviewed", "reviewed", "valid", "invalid", "unsure"].includes(value)) return value;
+  if (["accepted", "confirmed", "not_accepted", "excluded"].includes(value)) return "reviewed";
   if (value === "all") return value;
   return "unreviewed";
+}
+
+function matchesLaneStatus(item, lane) {
+  if (lane === "all") return true;
+  if (lane === "reviewed") return item.status !== "unreviewed";
+  return item.status === lane;
 }
 
 function emailStatusLabel(value) {
@@ -494,7 +500,6 @@ const App = {
     const saveStatus = ref("Loading");
     const loading = ref(true);
     const error = ref("");
-    const storageWarning = ref("");
     const editMode = ref(false);
     const editValue = ref("");
     const note = ref("");
@@ -562,7 +567,7 @@ const App = {
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
       return locationFilteredQueue.value
-        .filter((item) => selectedLane.value === "all" || item.status === selectedLane.value)
+        .filter((item) => matchesLaneStatus(item, selectedLane.value))
         .filter((item) => {
           if (!needle) return true;
           return [
@@ -585,12 +590,16 @@ const App = {
     const laneCounts = computed(() => {
       const counts = {
         unreviewed: 0,
+        reviewed: 0,
         valid: 0,
         invalid: 0,
         unsure: 0,
         all: locationFilteredQueue.value.length,
       };
-      for (const item of locationFilteredQueue.value) counts[item.status] = (counts[item.status] || 0) + 1;
+      for (const item of locationFilteredQueue.value) {
+        counts[item.status] = (counts[item.status] || 0) + 1;
+        if (item.status !== "unreviewed") counts.reviewed += 1;
+      }
       return counts;
     });
     const noMatchedEvidenceCounts = computed(() => {
@@ -1014,11 +1023,10 @@ const App = {
         dbOpenPromise = openDb({ timeoutMs })
           .then((connection) => {
             db.value = connection;
-            storageWarning.value = "";
             connection.onversionchange = () => {
               connection.close();
               if (db.value === connection) db.value = null;
-              storageWarning.value = "Browser storage was updated in another tab. Refresh before saving more review work.";
+              saveStatus.value = "Refresh before saving more review work";
             };
             return connection;
           })
@@ -1037,8 +1045,7 @@ const App = {
           await hydrateEmailValidations();
           await refreshBackgroundState();
         })
-        .catch((err) => {
-          storageWarning.value = err?.message || String(err);
+        .catch(() => {
           saveStatus.value = "Read-only until browser storage is available";
         });
     }
@@ -1249,8 +1256,8 @@ const App = {
       try {
         selectCandidate(index);
         await saveEmailValidation("valid");
-      } catch (err) {
-        storageWarning.value = err?.message || String(err);
+      } catch (_) {
+        saveStatus.value = "Read-only until browser storage is available";
       }
     }
 
@@ -1258,8 +1265,8 @@ const App = {
       try {
         selectCandidate(index);
         await saveEmailValidation("invalid");
-      } catch (err) {
-        storageWarning.value = err?.message || String(err);
+      } catch (_) {
+        saveStatus.value = "Read-only until browser storage is available";
       }
     }
 
@@ -1267,8 +1274,8 @@ const App = {
       try {
         selectCandidate(index);
         await saveEmailValidation("unsure");
-      } catch (err) {
-        storageWarning.value = err?.message || String(err);
+      } catch (_) {
+        saveStatus.value = "Read-only until browser storage is available";
       }
     }
 
@@ -1477,8 +1484,8 @@ const App = {
         lastAction.value = null;
         if (index >= 0) await setIndex(index);
         scheduleRemoteSync();
-      } catch (err) {
-        storageWarning.value = err?.message || String(err);
+      } catch (_) {
+        saveStatus.value = "Read-only until browser storage is available";
       }
     }
 
@@ -1539,8 +1546,8 @@ const App = {
         lastExportAt.value = exportedAt;
         localStorage.setItem("review.lastExportAt", exportedAt);
         saveStatus.value = `Exported ${payload.email_validations?.length || 0} email validations`;
-      } catch (err) {
-        storageWarning.value = err?.message || String(err);
+      } catch (_) {
+        saveStatus.value = "Read-only until browser storage is available";
       }
     }
 
@@ -1923,7 +1930,6 @@ const App = {
       saveStatus,
       loading,
       error,
-      storageWarning,
       lastExportAt,
       roleOptions,
       candidateGroups,
@@ -1972,14 +1978,13 @@ const App = {
           <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
         </select>
         <div class="lane-tabs">
-          <button v-for="lane in ['unreviewed','valid','invalid','unsure','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['unreviewed','reviewed','valid','invalid','unsure','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
       </section>
 
       <div v-if="error" class="alert error">{{ error }}</div>
-      <div v-if="storageWarning" class="alert">{{ storageWarning }}</div>
       <div v-if="visibleBackupReminder()" class="alert">Export a backup soon. Browser storage is local to this browser profile.</div>
 
       <main v-if="loading" class="empty-state">
