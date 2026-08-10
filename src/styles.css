@@ -261,11 +261,6 @@ input, textarea {
   background: #ffe9e9;
   color: #9c1d26;
 }
-.pill.email-status-unsure,
-.email-status-pill.email-status-unsure {
-  background: #fff4d6;
-  color: #7a4e00;
-}
 .pill.email-status-unreviewed,
 .email-status-pill.email-status-unreviewed {
   background: var(--concrete-60);
@@ -414,12 +409,6 @@ input, textarea {
   background: #ffe9e9;
   color: #9c1d26;
   border: 1px solid #f3b1b5;
-}
-.candidate-unsure {
-  margin-top: 4px;
-  background: #fff4d6;
-  color: #7a4e00;
-  border: 1px solid #f1d288;
 }
 .candidate-table small {
   display: block;

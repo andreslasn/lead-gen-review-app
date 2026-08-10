@@ -28,7 +28,6 @@ Primary keyboard shortcuts:
 
 - `1` mark selected email valid globally;
 - `2` mark selected email invalid globally;
-- `3` mark selected email unsure;
 - `J` / `K` cycle retained occurrences for the selected email;
 - `←` / `→` move between leads;
 - `U` undo last local decision.

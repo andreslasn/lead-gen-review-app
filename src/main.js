@@ -26,8 +26,8 @@ const REVIEW_SYNC_CONFIG = "review-sync.json";
 const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
-const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-7";
+const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
+const DATA_DEPLOY_VERSION = "email-global-20260810-8";
 const DB_OPEN_TIMEOUT_MS = 2500;
 
 function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
@@ -185,7 +185,6 @@ function laneLabel(value) {
     reviewed: "Reviewed",
     valid: "Valid",
     invalid: "Invalid",
-    unsure: "Unsure",
     accepted: "Accepted",
     shared_email_review: "Shared email",
     weak_join_review: "Weak join",
@@ -217,7 +216,7 @@ function confidencePool(item, lane) {
 }
 
 function normalizedLaneSelection(value) {
-  if (["unreviewed", "reviewed", "valid", "invalid", "unsure"].includes(value)) return value;
+  if (["unreviewed", "reviewed", "valid", "invalid"].includes(value)) return value;
   if (["accepted", "confirmed", "not_accepted", "excluded"].includes(value)) return "reviewed";
   if (value === "all") return value;
   return "unreviewed";
@@ -234,12 +233,25 @@ function emailStatusLabel(value) {
     unreviewed: "Unreviewed",
     valid: "Valid",
     invalid: "Invalid",
-    unsure: "Unsure",
   }[value] || "Unreviewed";
 }
 
 function normalizedEmailStatus(value) {
   return EMAIL_STATUSES.includes(value) ? value : "unreviewed";
+}
+
+function itemRegions(item) {
+  const regions = Array.isArray(item?.regions) && item.regions.length
+    ? item.regions
+    : [
+      item?.region,
+      ...(item?.occurrences || []).map((occurrence) => occurrence.region),
+    ];
+  return [...new Set(regions.map((region) => String(region || "").trim()).filter(Boolean))];
+}
+
+function itemMatchesRegion(item, region) {
+  return !region || itemRegions(item).includes(region);
 }
 
 function mergedEmailValidationList(...lists) {
@@ -546,7 +558,7 @@ const App = {
       };
     }));
     const regionOptions = computed(() => [...new Set(
-      preparedQueue.value.map((item) => String(item.region || "").trim()).filter(Boolean),
+      preparedQueue.value.flatMap((item) => itemRegions(item)),
     )].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })));
     const regionFilterLabel = computed(() => manifest.value?.review_ui?.region_filter_label || "All regions");
     const roleOptions = computed(() => {
@@ -561,9 +573,7 @@ const App = {
     const syncButtonLabel = computed(() => githubToken.value
       ? (syncStatus.value || "Sync review")
       : "Connect sync");
-    const locationFilteredQueue = computed(() => selectedRegion.value
-      ? preparedQueue.value.filter((item) => item.region === selectedRegion.value)
-      : preparedQueue.value);
+    const locationFilteredQueue = computed(() => preparedQueue.value.filter((item) => itemMatchesRegion(item, selectedRegion.value)));
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
       return locationFilteredQueue.value
@@ -593,7 +603,6 @@ const App = {
         reviewed: 0,
         valid: 0,
         invalid: 0,
-        unsure: 0,
         all: locationFilteredQueue.value.length,
       };
       for (const item of locationFilteredQueue.value) {
@@ -695,7 +704,14 @@ const App = {
       ? emailValidationByValue.value[currentItem.value.email] || null
       : null);
     const currentEmailStatus = computed(() => normalizedEmailStatus(currentEmailValidation.value?.status));
-    const currentEmailOccurrences = computed(() => currentItem.value?.occurrences || []);
+    const currentEmailOccurrences = computed(() => {
+      const occurrences = currentItem.value?.occurrences || [];
+      if (!selectedRegion.value) return occurrences;
+      return [...occurrences].sort((a, b) => (
+        Number(b.region === selectedRegion.value) - Number(a.region === selectedRegion.value)
+        || String(a.clinic_name || "").localeCompare(String(b.clinic_name || ""), undefined, { sensitivity: "base" })
+      ));
+    });
     const selectedCandidate = computed(() => {
       const selected = candidates.value[selectedCandidateIndex.value];
       if (
@@ -790,7 +806,6 @@ const App = {
       const validation = emailValidationByValue.value[normalizeEmailValue(candidate?.value)];
       if (validation?.status === "valid") return { ...validation, decision: "confirmed", reviewed_value: validation.display_value || validation.email };
       if (validation?.status === "invalid") return { ...validation, decision: "rejected", reviewed_value: validation.display_value || validation.email };
-      if (validation?.status === "unsure") return { ...validation, decision: "unsure", reviewed_value: validation.display_value || validation.email };
       return [...currentClinicDecisions.value]
         .filter((decision) => decision.contact_point_id && decision.contact_point_id === candidate?.id)
         .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")))[0] || null;
@@ -799,7 +814,6 @@ const App = {
     function candidateDecisionLabel(candidate) {
       const decision = candidateDecision(candidate);
       if (!decision) return "";
-      if (decision.decision === "unsure") return "Unsure";
       if (decision.decision === "rejected") return "Rejected";
       if (decision.decision === "reassigned") {
         return `Reassigned → ${decision.target_clinic_name || decision.target_registry_id || decision.target_clinic_id || "other clinic"}`;
@@ -1187,6 +1201,14 @@ const App = {
       return payload;
     }
 
+    function selectedRegionOccurrence(item) {
+      if (!item?.occurrences?.length) return null;
+      if (selectedRegion.value) {
+        return item.occurrences.find((occurrence) => occurrence.region === selectedRegion.value) || null;
+      }
+      return null;
+    }
+
     async function setIndex(index, { updateHash = true } = {}) {
       if (!filteredQueue.value.length) {
         clinic.value = null;
@@ -1194,11 +1216,12 @@ const App = {
       }
       currentIndex.value = clamp(index, 0, filteredQueue.value.length - 1);
       const item = filteredQueue.value[currentIndex.value];
+      const occurrence = selectedRegionOccurrence(item);
       editMode.value = false;
       note.value = "";
-      clinic.value = await loadClinic(item.clinic_id || item.occurrences?.[0]?.clinic_id);
+      clinic.value = await loadClinic(occurrence?.clinic_id || item.clinic_id || item.occurrences?.[0]?.clinic_id);
       const matchingIndex = candidates.value.findIndex((candidate) => (
-        candidate.id === item.contact_point_id
+        candidate.id === (occurrence?.contact_point_id || item.contact_point_id)
         || normalizeEmailValue(candidate.value) === item.email
       ));
       selectedCandidateIndex.value = matchingIndex >= 0 ? matchingIndex : (displayedCandidateRows.value[0]?.index ?? 0);
@@ -1216,7 +1239,8 @@ const App = {
     function prefetchUpcoming() {
       for (let offset = 1; offset <= PREFETCH_COUNT; offset += 1) {
         const next = filteredQueue.value[currentIndex.value + offset];
-        const clinicId = next?.clinic_id || next?.occurrences?.[0]?.clinic_id;
+        const occurrence = selectedRegionOccurrence(next);
+        const clinicId = occurrence?.clinic_id || next?.clinic_id || next?.occurrences?.[0]?.clinic_id;
         if (clinicId && !clinicCache.value[clinicId]) loadClinic(clinicId).catch(() => {});
       }
     }
@@ -1265,15 +1289,6 @@ const App = {
       try {
         selectCandidate(index);
         await saveEmailValidation("invalid");
-      } catch (_) {
-        saveStatus.value = "Read-only until browser storage is available";
-      }
-    }
-
-    async function markEmailUnsure(index = selectedCandidateIndex.value) {
-      try {
-        selectCandidate(index);
-        await saveEmailValidation("unsure");
       } catch (_) {
         saveStatus.value = "Read-only until browser storage is available";
       }
@@ -1839,7 +1854,6 @@ const App = {
       if (event.key === "1") confirmCandidate();
       if (key === "enter") confirmCandidate();
       if (event.key === "2") invalidateCandidate();
-      if (event.key === "3") markEmailUnsure();
       if (key === "j") moveCandidate(1);
       if (key === "k") moveCandidate(-1);
       if (key === "u") undoLastAction();
@@ -1955,7 +1969,6 @@ const App = {
       previewCandidate,
       confirmCandidate,
       invalidateCandidate,
-      markEmailUnsure,
       saveDecision,
       markNoPublicEmail,
       excludeCurrent,
@@ -1978,7 +1991,7 @@ const App = {
           <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
         </select>
         <div class="lane-tabs">
-          <button v-for="lane in ['unreviewed','reviewed','valid','invalid','unsure','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['unreviewed','reviewed','valid','invalid','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
@@ -2019,7 +2032,6 @@ const App = {
                     <td class="candidate-actions">
                       <button class="candidate-confirm" @click.stop="confirmCandidate(row.index)">Valid</button>
                       <button class="candidate-invalid" @click.stop="invalidateCandidate(row.index)">Invalid</button>
-                      <button class="candidate-unsure" @click.stop="markEmailUnsure(row.index)">Unsure</button>
                     </td>
                   </tr>
                 </tbody>
