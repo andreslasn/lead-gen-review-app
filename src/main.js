@@ -2022,10 +2022,9 @@ const App = {
             <p class="label">Email validation</p>
             <div v-if="displayedCandidateRows.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th>Email</th><th>Type</th><th>Actions</th></tr></thead>
+                <thead><tr><th>Type</th><th>Actions</th></tr></thead>
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
-                    <td><span class="candidate-email">{{ row.candidate.value }}</span></td>
                     <td class="candidate-role-actions">
                       <button
                         v-for="option in roleOptions"
@@ -2058,6 +2057,10 @@ const App = {
             <button @click="saveDecision('edited_confirmed', { reviewedValue: editValue })">Save edited email</button>
           </section>
 
+          <div class="decision-footer-actions">
+            <a v-if="livePageUrl" :href="livePageUrl" target="_blank" rel="noreferrer">Open live page ↗</a>
+            <button @click="exportProgress" :title="saveStatus">Export .json</button>
+          </div>
         </section>
 
         <section class="evidence-pane">
@@ -2066,7 +2069,6 @@ const App = {
               <strong>{{ selectedEvidencePresentation.label }}</strong>
               <span>{{ selectedEvidencePresentation.detail }}</span>
             </div>
-            <a v-if="livePageUrl" :href="livePageUrl" target="_blank" rel="noreferrer">Open live page ↗</a>
           </div>
 
           <div v-if="selectedEvidencePresentation.kind === 'html'" class="archive-pane">
@@ -2115,7 +2117,6 @@ const App = {
         <p class="muted">{{ syncStatus }}</p>
       </section>
 
-      <button class="floating-export" @click="exportProgress" :title="saveStatus">Export .json</button>
     </div>
   `,
 };
