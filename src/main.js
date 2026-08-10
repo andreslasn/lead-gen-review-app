@@ -27,10 +27,25 @@ const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-5";
+const DATA_DEPLOY_VERSION = "email-global-20260810-6";
+const DB_OPEN_TIMEOUT_MS = 2500;
 
-function openDb() {
+function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
   return new Promise((resolve, reject) => {
+    if (!window.indexedDB) {
+      reject(new Error("Browser storage is unavailable. The packaged queue can be viewed, but review actions need browser storage."));
+      return;
+    }
+    let settled = false;
+    const finish = (callback, value) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      callback(value);
+    };
+    const timer = setTimeout(() => {
+      finish(reject, new Error("Browser storage is taking too long to open. Close other review-app tabs and refresh before saving review work."));
+    }, timeoutMs);
     const request = indexedDB.open(DB_NAME, DB_VERSION);
     request.onupgradeneeded = () => {
       const db = request.result;
@@ -41,8 +56,11 @@ function openDb() {
       if (!db.objectStoreNames.contains("backups")) db.createObjectStore("backups", { keyPath: "id" });
       if (!db.objectStoreNames.contains("email_validations")) db.createObjectStore("email_validations", { keyPath: "email" });
     };
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result);
+    request.onblocked = () => {
+      finish(reject, new Error("Browser storage upgrade is blocked by another open review-app tab. Close other tabs with this app and refresh before saving review work."));
+    };
+    request.onerror = () => finish(reject, request.error);
+    request.onsuccess = () => finish(resolve, request.result);
   });
 }
 
@@ -476,6 +494,7 @@ const App = {
     const saveStatus = ref("Loading");
     const loading = ref(true);
     const error = ref("");
+    const storageWarning = ref("");
     const editMode = ref(false);
     const editValue = ref("");
     const note = ref("");
@@ -496,6 +515,7 @@ const App = {
     const remoteReviewLoaded = ref(false);
     let evidenceTextRequest = 0;
     let syncTimer = null;
+    let dbOpenPromise = null;
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
     const emailValidationByValue = computed(() => Object.fromEntries(
@@ -968,10 +988,8 @@ const App = {
 
     async function init() {
       try {
-        db.value = await openDb();
         await loadStaticData();
         sanitizeSavedFilters();
-        await hydrateEmailValidations();
         const routeEmail = routeEmailValue();
         const routeClinic = routeClinicId();
         const routeIndex = routeEmail
@@ -981,13 +999,48 @@ const App = {
             : -1;
         await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
         saveStatus.value = "Ready";
-        refreshBackgroundState();
+        connectStorageInBackground();
         if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
       } catch (err) {
         error.value = err?.message || String(err);
       } finally {
         loading.value = false;
       }
+    }
+
+    async function ensureDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
+      if (db.value) return db.value;
+      if (!dbOpenPromise) {
+        dbOpenPromise = openDb({ timeoutMs })
+          .then((connection) => {
+            db.value = connection;
+            storageWarning.value = "";
+            connection.onversionchange = () => {
+              connection.close();
+              if (db.value === connection) db.value = null;
+              storageWarning.value = "Browser storage was updated in another tab. Refresh before saving more review work.";
+            };
+            return connection;
+          })
+          .catch((err) => {
+            dbOpenPromise = null;
+            throw err;
+          });
+      }
+      return dbOpenPromise;
+    }
+
+    function connectStorageInBackground() {
+      Promise.resolve()
+        .then(async () => {
+          await ensureDb();
+          await hydrateEmailValidations();
+          await refreshBackgroundState();
+        })
+        .catch((err) => {
+          storageWarning.value = err?.message || String(err);
+          saveStatus.value = "Read-only until browser storage is available";
+        });
     }
 
     async function loadStaticData() {
@@ -1036,15 +1089,17 @@ const App = {
     }
 
     async function hydrateEmailValidations() {
-      emailValidations.value = await getAll(db.value, "email_validations");
+      const connection = await ensureDb();
+      emailValidations.value = await getAll(connection, "email_validations");
     }
 
     async function hydrateLocal() {
+      const connection = await ensureDb();
       const [storedDecisions, storedStates, storedEmailValidations, storedMeta] = await Promise.all([
-        getAll(db.value, "decisions"),
-        getAll(db.value, "clinic_states"),
-        getAll(db.value, "email_validations"),
-        getAll(db.value, "meta"),
+        getAll(connection, "decisions"),
+        getAll(connection, "clinic_states"),
+        getAll(connection, "email_validations"),
+        getAll(connection, "meta"),
       ]);
       decisions.value = storedDecisions;
       localStates.value = storedStates;
@@ -1084,6 +1139,7 @@ const App = {
 
     async function updateCandidateRole(candidate, role) {
       if (!candidate?.id || !clinic.value?.clinic?.id || !roleOptions.value.some((option) => option.value === role)) return;
+      const connection = await ensureDb();
       const override = {
         clinic_id: clinic.value.clinic.id,
         contact_point_id: candidate.id,
@@ -1096,12 +1152,12 @@ const App = {
         reviewer_id: reviewer.value || "reviewer",
         updated_at: nowIso(),
       };
-      await put(db.value, "meta", { key: `role_override:${candidate.id}`, value: override });
+      await put(connection, "meta", { key: `role_override:${candidate.id}`, value: override });
       roleOverrides.value = [
         ...roleOverrides.value.filter((item) => item.contact_point_id !== candidate.id),
         override,
       ];
-      await put(db.value, "audit_events", {
+      await put(connection, "audit_events", {
         id: uuid(),
         event: "role_override",
         clinic_id: override.clinic_id,
@@ -1190,21 +1246,34 @@ const App = {
     }
 
     async function confirmCandidate(index = selectedCandidateIndex.value) {
-      selectCandidate(index);
-      await saveEmailValidation("valid");
+      try {
+        selectCandidate(index);
+        await saveEmailValidation("valid");
+      } catch (err) {
+        storageWarning.value = err?.message || String(err);
+      }
     }
 
     async function invalidateCandidate(index = selectedCandidateIndex.value) {
-      selectCandidate(index);
-      await saveEmailValidation("invalid");
+      try {
+        selectCandidate(index);
+        await saveEmailValidation("invalid");
+      } catch (err) {
+        storageWarning.value = err?.message || String(err);
+      }
     }
 
     async function markEmailUnsure(index = selectedCandidateIndex.value) {
-      selectCandidate(index);
-      await saveEmailValidation("unsure");
+      try {
+        selectCandidate(index);
+        await saveEmailValidation("unsure");
+      } catch (err) {
+        storageWarning.value = err?.message || String(err);
+      }
     }
 
     async function saveEmailValidation(status, { reviewedValue = null, reasonCode = null } = {}) {
+      const connection = await ensureDb();
       const candidate = selectedCandidate.value;
       const value = reviewedValue || candidate?.value || currentItem.value?.email || "";
       const email = normalizeEmailValue(value);
@@ -1230,7 +1299,7 @@ const App = {
         occurrence_count: currentItem.value?.occurrence_count || null,
         audit_flags: currentEmailValidation.value?.audit_flags || [],
       };
-      await put(db.value, "email_validations", validation);
+      await put(connection, "email_validations", validation);
       const event = {
         id: uuid(),
         clinic_id: validation.clinic_id,
@@ -1242,7 +1311,7 @@ const App = {
         evidence_viewed: evidenceTab.value,
         decision_duration_ms: Date.now() - itemStartedAt.value,
       };
-      await put(db.value, "audit_events", event);
+      await put(connection, "audit_events", event);
       lastAction.value = {
         email_validation_email: email,
         previous_email_validation: previousValidation,
@@ -1352,9 +1421,10 @@ const App = {
     }
 
     async function persistDecisionAndState(decision, status, primaryDecisionId = null, reason = null, previousState = null) {
+      const connection = await ensureDb();
       error.value = "";
       const timestamp = nowIso();
-      if (decision) await put(db.value, "decisions", decision);
+      if (decision) await put(connection, "decisions", decision);
       const existing = previousState || currentClinicState.value || {};
       const state = {
         clinic_id: clinic.value.clinic.id,
@@ -1377,8 +1447,8 @@ const App = {
         evidence_viewed: evidenceTab.value,
         decision_duration_ms: Date.now() - itemStartedAt.value,
       };
-      await put(db.value, "clinic_states", state);
-      await put(db.value, "audit_events", event);
+      await put(connection, "clinic_states", state);
+      await put(connection, "audit_events", event);
       lastAction.value = {
         decision_id: decision?.id || null,
         state_clinic_id: state.clinic_id,
@@ -1390,21 +1460,26 @@ const App = {
     }
 
     async function undoLastAction() {
-      if (!lastAction.value || !db.value) return;
-      if (lastAction.value.decision_id) await deleteValue(db.value, "decisions", lastAction.value.decision_id);
-      if (lastAction.value.email_validation_email) {
-        if (lastAction.value.previous_email_validation) await put(db.value, "email_validations", lastAction.value.previous_email_validation);
-        else await deleteValue(db.value, "email_validations", lastAction.value.email_validation_email);
+      try {
+        if (!lastAction.value) return;
+        const connection = await ensureDb();
+        if (lastAction.value.decision_id) await deleteValue(connection, "decisions", lastAction.value.decision_id);
+        if (lastAction.value.email_validation_email) {
+          if (lastAction.value.previous_email_validation) await put(connection, "email_validations", lastAction.value.previous_email_validation);
+          else await deleteValue(connection, "email_validations", lastAction.value.email_validation_email);
+        }
+        if (lastAction.value.audit_event_id) await deleteValue(connection, "audit_events", lastAction.value.audit_event_id);
+        if (lastAction.value.previous_state) await put(connection, "clinic_states", lastAction.value.previous_state);
+        else await deleteValue(connection, "clinic_states", lastAction.value.state_clinic_id);
+        await hydrateLocal();
+        saveStatus.value = "Undone";
+        const index = filteredQueue.value.findIndex((item) => item.id === lastAction.value.state_clinic_id);
+        lastAction.value = null;
+        if (index >= 0) await setIndex(index);
+        scheduleRemoteSync();
+      } catch (err) {
+        storageWarning.value = err?.message || String(err);
       }
-      if (lastAction.value.audit_event_id) await deleteValue(db.value, "audit_events", lastAction.value.audit_event_id);
-      if (lastAction.value.previous_state) await put(db.value, "clinic_states", lastAction.value.previous_state);
-      else await deleteValue(db.value, "clinic_states", lastAction.value.state_clinic_id);
-      await hydrateLocal();
-      saveStatus.value = "Undone";
-      const index = filteredQueue.value.findIndex((item) => item.id === lastAction.value.state_clinic_id);
-      lastAction.value = null;
-      if (index >= 0) await setIndex(index);
-      scheduleRemoteSync();
     }
 
     async function markNoPublicEmail() {
@@ -1422,7 +1497,8 @@ const App = {
 
     async function buildReviewPayload() {
       const exportedAt = nowIso();
-      const storedEmailValidations = await getAll(db.value, "email_validations");
+      const connection = await ensureDb();
+      const storedEmailValidations = await getAll(connection, "email_validations");
       const payload = {
         format: REVIEW_FORMAT,
         schema_version: SCHEMA_VERSION,
@@ -1432,11 +1508,11 @@ const App = {
         reviewer: { id: reviewer.value || "reviewer" },
         exported_at: exportedAt,
         app_build: manifest.value?.source_commit || null,
-        decisions: await getAll(db.value, "decisions"),
-        clinic_states: await getAll(db.value, "clinic_states"),
+        decisions: await getAll(connection, "decisions"),
+        clinic_states: await getAll(connection, "clinic_states"),
         email_validations: mergedEmailValidationList(staticEmailValidations.value, storedEmailValidations),
         role_overrides: roleOverrides.value,
-        audit_events: await getAll(db.value, "audit_events"),
+        audit_events: await getAll(connection, "audit_events"),
       };
       payload.checksum = await sha256(JSON.stringify({
         decisions: payload.decisions,
@@ -1449,19 +1525,23 @@ const App = {
     }
 
     async function exportProgress() {
-      const payload = await buildReviewPayload();
-      const exportedAt = payload.exported_at;
-      const date = exportedAt.replaceAll(":", "").slice(0, 15);
-      const filename = `clinic-review-${payload.dataset_id}-${payload.reviewer.id}-${date}.json`;
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = filename;
-      link.click();
-      URL.revokeObjectURL(link.href);
-      lastExportAt.value = exportedAt;
-      localStorage.setItem("review.lastExportAt", exportedAt);
-      saveStatus.value = `Exported ${payload.email_validations?.length || 0} email validations`;
+      try {
+        const payload = await buildReviewPayload();
+        const exportedAt = payload.exported_at;
+        const date = exportedAt.replaceAll(":", "").slice(0, 15);
+        const filename = `clinic-review-${payload.dataset_id}-${payload.reviewer.id}-${date}.json`;
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(link.href);
+        lastExportAt.value = exportedAt;
+        localStorage.setItem("review.lastExportAt", exportedAt);
+        saveStatus.value = `Exported ${payload.email_validations?.length || 0} email validations`;
+      } catch (err) {
+        storageWarning.value = err?.message || String(err);
+      }
     }
 
     function githubReviewPath() {
@@ -1659,6 +1739,7 @@ const App = {
     }
 
     async function putEmailValidationIfNewer(validation) {
+      const connection = await ensureDb();
       const email = normalizeEmailValue(validation?.email || validation?.display_value);
       if (!email || !email.includes("@")) return;
       const normalized = {
@@ -1669,9 +1750,9 @@ const App = {
         reviewed_at: validation.reviewed_at || validation.updated_at || nowIso(),
         updated_at: validation.updated_at || validation.reviewed_at || nowIso(),
       };
-      const existing = await get(db.value, "email_validations", email);
+      const existing = await get(connection, "email_validations", email);
       if (!existing || String(existing.updated_at || existing.reviewed_at || "") <= String(normalized.updated_at || normalized.reviewed_at || "")) {
-        await put(db.value, "email_validations", normalized);
+        await put(connection, "email_validations", normalized);
       }
     }
 
@@ -1683,45 +1764,47 @@ const App = {
     }
 
     async function migrateStoredDecisionsToEmailValidations() {
-      await migrateDecisionsToEmailValidations(await getAll(db.value, "decisions"));
+      const connection = await ensureDb();
+      await migrateDecisionsToEmailValidations(await getAll(connection, "decisions"));
     }
 
     async function mergeImport(payload, { silent = false } = {}) {
+      const connection = await ensureDb();
       validatePayload(payload);
       if (!silent && manifest.value?.dataset_id && payload.dataset_id !== manifest.value.dataset_id) {
         const ok = confirm(`This export is for dataset ${payload.dataset_id}, current dataset is ${manifest.value.dataset_id}. Import anyway?`);
         if (!ok) return;
       }
-      await put(db.value, "backups", {
+      await put(connection, "backups", {
         id: uuid(),
         created_at: nowIso(),
-        decisions: await getAll(db.value, "decisions"),
-        clinic_states: await getAll(db.value, "clinic_states"),
-        email_validations: await getAll(db.value, "email_validations"),
+        decisions: await getAll(connection, "decisions"),
+        clinic_states: await getAll(connection, "clinic_states"),
+        email_validations: await getAll(connection, "email_validations"),
         role_overrides: roleOverrides.value,
-        audit_events: await getAll(db.value, "audit_events"),
+        audit_events: await getAll(connection, "audit_events"),
       });
       for (const decision of payload.decisions || []) {
-        const existing = await get(db.value, "decisions", decision.id);
-        if (!existing || String(existing.created_at || "") <= String(decision.created_at || "")) await put(db.value, "decisions", decision);
+        const existing = await get(connection, "decisions", decision.id);
+        if (!existing || String(existing.created_at || "") <= String(decision.created_at || "")) await put(connection, "decisions", decision);
       }
       await migrateDecisionsToEmailValidations(payload.decisions || []);
       for (const validation of payload.email_validations || []) {
         await putEmailValidationIfNewer(validation);
       }
       for (const state of payload.clinic_states || []) {
-        const existing = await get(db.value, "clinic_states", state.clinic_id);
-        if (!existing || String(existing.updated_at || "") <= String(state.updated_at || "")) await put(db.value, "clinic_states", state);
+        const existing = await get(connection, "clinic_states", state.clinic_id);
+        if (!existing || String(existing.updated_at || "") <= String(state.updated_at || "")) await put(connection, "clinic_states", state);
       }
       for (const override of payload.role_overrides || []) {
         const key = `role_override:${override.contact_point_id}`;
-        const existing = await get(db.value, "meta", key);
+        const existing = await get(connection, "meta", key);
         if (!existing || String(existing.value?.updated_at || "") <= String(override.updated_at || "")) {
-          await put(db.value, "meta", { key, value: override });
+          await put(connection, "meta", { key, value: override });
         }
       }
       for (const auditEvent of payload.audit_events || []) {
-        if (!(await get(db.value, "audit_events", auditEvent.id))) await put(db.value, "audit_events", auditEvent);
+        if (!(await get(connection, "audit_events", auditEvent.id))) await put(connection, "audit_events", auditEvent);
       }
     }
 
@@ -1840,6 +1923,7 @@ const App = {
       saveStatus,
       loading,
       error,
+      storageWarning,
       lastExportAt,
       roleOptions,
       candidateGroups,
@@ -1895,6 +1979,7 @@ const App = {
       </section>
 
       <div v-if="error" class="alert error">{{ error }}</div>
+      <div v-if="storageWarning" class="alert">{{ storageWarning }}</div>
       <div v-if="visibleBackupReminder()" class="alert">Export a backup soon. Browser storage is local to this browser profile.</div>
 
       <main v-if="loading" class="empty-state">
