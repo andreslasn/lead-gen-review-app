@@ -281,120 +281,95 @@ input, textarea {
   background: transparent;
   padding: 10px 0 0;
 }
-.candidate-table-wrap {
-  max-height: 12rem;
-  overflow: auto;
-  border-top: 1px solid var(--concrete-100);
-  border-bottom: 1px solid var(--concrete-100);
+.validation-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--concrete-40);
 }
-.candidate-group-toggle td {
-  padding: 0 !important;
-  background: var(--blue-10);
+.validation-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
-.candidate-group-toggle button {
-  width: 100%;
-  padding: 0.55rem 0.65rem;
-  border-radius: 0;
-  background: transparent;
-  color: var(--primary);
-  text-align: left;
-  font-size: 0.74rem;
-  font-weight: 800;
+.validation-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 auto;
+  min-width: 140px;
 }
-.candidate-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.78rem;
-}
-.candidate-table th,
-.candidate-table td {
-  padding: 0.42rem 0.5rem;
-  border-bottom: 1px solid var(--concrete-60);
-  text-align: left;
-  vertical-align: top;
-}
-.candidate-table th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background: white;
+.validation-group-label {
   color: var(--black-60);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.candidate-table tr {
-  cursor: pointer;
+.validation-buttons {
+  display: flex;
+  gap: 6px;
 }
-.candidate-table tr:hover,
-.candidate-table tr.selected {
-  background: var(--blue-10);
-}
-.candidate-table tr.selected {
-  box-shadow: inset 3px 0 0 var(--primary);
-}
-.candidate-role-actions,
-.candidate-actions {
-  min-width: 8rem;
-}
-.candidate-role-button,
-.candidate-actions button {
-  display: block;
-  width: 100%;
-  padding: 0.54rem 0.68rem;
-  border-radius: 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-align: left;
-}
-.candidate-role-button + .candidate-role-button,
-.candidate-actions button + button {
-  margin-top: 4px;
-}
-.candidate-role-button {
+.validation-btn {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
   border: 1px solid var(--concrete-100);
+  border-radius: 0.5rem;
   background: white;
   color: var(--black-80);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
 }
-.candidate-role-button.active {
+.validation-btn:hover {
+  border-color: var(--blue-40);
+  background: var(--blue-10);
+}
+.validation-btn.active {
   border-color: var(--primary);
   background: var(--blue-10);
   color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
 }
-.candidate-actions button.active {
-  box-shadow: 0 0 0 2px var(--blue-40);
+.validation-btn.valid-btn.active {
+  border-color: var(--success);
+  background: #e8f5f2;
+  color: var(--success);
+  box-shadow: 0 0 0 1px var(--success);
 }
-.candidate-table tr.decided {
+.validation-btn.invalid-btn.active {
+  border-color: var(--error);
+  background: #fff0ef;
+  color: var(--error);
+  box-shadow: 0 0 0 1px var(--error);
+}
+.confirm-btn {
+  width: 100%;
+  min-height: 2.6rem;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-card);
+}
+.confirm-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-elevated);
+}
+.confirm-btn:disabled {
+  cursor: not-allowed;
+  background: var(--concrete-100);
   color: var(--black-60);
+  box-shadow: none;
 }
+
 .candidate-confirm {
   background: var(--black-100);
   color: white;
-}
-.candidate-invalid {
-  background: #ffe9e9;
-  color: #9c1d26;
-  border: 1px solid #f3b1b5;
-}
-.candidate-confirm-row {
-  display: flex;
-  justify-content: stretch;
-  padding: 10px 0 0;
-}
-.candidate-final-confirm {
-  width: 100%;
-  min-height: 2.55rem;
-  padding: 0.62rem 0.9rem;
-  border-radius: 0.45rem;
-  background: var(--black-100);
-  color: white;
-  font-size: 0.82rem;
-  font-weight: 850;
-}
-.candidate-final-confirm:disabled {
-  cursor: not-allowed;
-  background: var(--concrete-100);
-  color: var(--black-40);
 }
 .decision-footer-actions {
   display: flex;

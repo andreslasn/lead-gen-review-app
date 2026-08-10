@@ -2020,33 +2020,32 @@ const App = {
 
           <section class="candidate-card">
             <p class="label">Email validation</p>
-            <div v-if="displayedCandidateRows.length" class="candidate-table-wrap">
-              <table class="candidate-table">
-                <thead><tr><th>Type</th><th>Actions</th></tr></thead>
-                <tbody>
-                  <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
-                    <td class="candidate-role-actions">
-                      <button
-                        v-for="option in roleOptions"
-                        :key="option.value"
-                        type="button"
-                        class="candidate-role-button"
-                        :class="{active: displayedCandidateRole(row.candidate) === option.value}"
-                        @click.stop="updateCandidateRole(row.candidate, option.value)"
-                      >
-                        {{ option.label }}
-                      </button>
-                    </td>
-                    <td class="candidate-actions">
-                      <button class="candidate-confirm" :class="{active: row.index===selectedCandidateIndex && pendingEmailStatus==='valid'}" @click.stop="selectCandidateValidation('valid', row.index)">Valid</button>
-                      <button class="candidate-invalid" :class="{active: row.index===selectedCandidateIndex && pendingEmailStatus==='invalid'}" @click.stop="invalidateCandidate(row.index)">Invalid</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="candidate-confirm-row">
-                <button class="candidate-final-confirm" :disabled="!pendingValidationReady" @click="confirmCandidate()">Confirm</button>
+            <div v-if="displayedCandidateRows.length" class="validation-controls">
+              <div class="validation-row">
+                <div class="validation-group">
+                  <span class="validation-group-label">Email type</span>
+                  <div class="validation-buttons">
+                    <button
+                      v-for="option in roleOptions"
+                      :key="option.value"
+                      type="button"
+                      class="validation-btn"
+                      :class="{active: displayedCandidateRole(displayedCandidateRows[0].candidate) === option.value}"
+                      @click="updateCandidateRole(displayedCandidateRows[0].candidate, option.value)"
+                    >
+                      {{ option.label }}
+                    </button>
+                  </div>
+                </div>
+                <div class="validation-group">
+                  <span class="validation-group-label">Status</span>
+                  <div class="validation-buttons">
+                    <button class="validation-btn valid-btn" :class="{active: pendingEmailStatus==='valid'}" @click="selectCandidateValidation('valid')">Valid</button>
+                    <button class="validation-btn invalid-btn" :class="{active: pendingEmailStatus==='invalid'}" @click="invalidateCandidate()">Invalid</button>
+                  </div>
+                </div>
               </div>
+              <button class="confirm-btn" :disabled="!pendingValidationReady" @click="confirmCandidate()">Confirm</button>
             </div>
             <p v-else class="muted">No retained candidate row was found for this email occurrence.</p>
           </section>
