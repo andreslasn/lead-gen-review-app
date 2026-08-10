@@ -263,10 +263,33 @@ input, textarea {
   color: #604400;
   font-size: 0.78rem;
 }
+.email-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .decision-pane h2, .evidence-toolbar h2 {
   margin: 0;
   font: 400 clamp(1.1rem, 1.5vw + 0.6rem, 1.55rem)/1.08 var(--font-display);
   letter-spacing: -0.03em;
+}
+.copy-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--concrete-100);
+  border-radius: 6px;
+  background: white;
+  color: var(--black-60);
+}
+.copy-btn:hover {
+  border-color: var(--blue-40);
+  background: var(--blue-10);
+  color: var(--primary);
 }
 .clinic-address {
   margin: -4px 0 0;

@@ -1984,7 +1984,19 @@ const App = {
       connectReviewSync,
       disconnectReviewSync,
       syncReview,
+      copyEmail,
     };
+
+    async function copyEmail() {
+      const email = currentItem.value?.display_value || currentItem.value?.email || "";
+      if (!email) return;
+      try {
+        await navigator.clipboard.writeText(email);
+        saveStatus.value = "Copied to clipboard";
+      } catch {
+        saveStatus.value = "Copy failed";
+      }
+    }
   },
   template: `
     <div class="app-shell">
@@ -2015,7 +2027,12 @@ const App = {
             <span v-if="currentItem.audit_flags?.length" class="pill reason">{{ currentItem.audit_flags.join(', ') }}</span>
             <span class="muted">{{ currentItem.occurrence_count }} occurrence{{ currentItem.occurrence_count === 1 ? '' : 's' }}</span>
           </div>
-          <h2>{{ currentItem.display_value || currentItem.email }}</h2>
+          <div class="email-title-row">
+            <h2>{{ currentItem.display_value || currentItem.email }}</h2>
+            <button class="copy-btn" @click="copyEmail" title="Copy email">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
           <p class="clinic-address">{{ clinic.clinic.name }} · {{ clinic.clinic.address }}</p>
 
           <section class="candidate-card">
