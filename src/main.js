@@ -2,7 +2,7 @@ import { createApp, computed, nextTick, onMounted, onUnmounted, ref, watch } fro
 import "./styles.css";
 
 const DB_NAME = "lead-gen-clinic-review";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 const REVIEW_FORMAT = "lead-gen-clinic-review";
 const SCHEMA_VERSION = 1;
 const PACKAGE_FORMAT = "lead-gen-review-package";
@@ -23,6 +23,9 @@ const DEFAULT_ROLE_ALIASES = {
 };
 const PREFETCH_COUNT = 3;
 const REVIEW_SYNC_CONFIG = "review-sync.json";
+const EMAIL_INDEX_PATH = "data/email-index.json";
+const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
+const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -34,6 +37,7 @@ function openDb() {
       if (!db.objectStoreNames.contains("audit_events")) db.createObjectStore("audit_events", { keyPath: "id" });
       if (!db.objectStoreNames.contains("meta")) db.createObjectStore("meta", { keyPath: "key" });
       if (!db.objectStoreNames.contains("backups")) db.createObjectStore("backups", { keyPath: "id" });
+      if (!db.objectStoreNames.contains("email_validations")) db.createObjectStore("email_validations", { keyPath: "email" });
     };
     request.onerror = () => reject(request.error);
     request.onsuccess = () => resolve(request.result);
@@ -114,8 +118,18 @@ function safeText(value) {
   return value == null || value === "" ? "—" : String(value);
 }
 
+function normalizeEmailValue(value) {
+  const text = String(value || "").trim().toLowerCase();
+  const match = text.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i);
+  return match ? match[0].toLowerCase() : text;
+}
+
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
+}
+
+function routeEmailValue() {
+  return (window.location.hash || "").match(/^#\/emails\/([^/?]+)/)?.[1] || null;
 }
 
 function routeClinicId() {
@@ -142,6 +156,10 @@ function stateLabel(value) {
 
 function laneLabel(value) {
   return {
+    unreviewed: "Unreviewed",
+    valid: "Valid",
+    invalid: "Invalid",
+    unsure: "Unsure",
     accepted: "Accepted",
     shared_email_review: "Shared email",
     weak_join_review: "Weak join",
@@ -173,14 +191,24 @@ function confidencePool(item, lane) {
 }
 
 function normalizedLaneSelection(value) {
-  if (["accepted", "confirmed"].includes(value)) return "accepted";
-  if (value === "shared_email_review") return "shared_email_review";
-  if (value === "weak_join_review") return "weak_join_review";
-  if (["not_accepted", "excluded"].includes(value)) return "not_accepted";
-  if (["review", "auto_confirm", "auto_suppress", "high_confidence", "low_confidence", "needs_review"].includes(value)) return "needs_review";
-  if (["no_email", "no_matched_email"].includes(value)) return "no_matched_email";
-  if (["no_public_email", "all"].includes(value)) return value;
-  return "needs_review";
+  if (["unreviewed", "valid", "invalid", "unsure"].includes(value)) return value;
+  if (["accepted", "confirmed"].includes(value)) return "valid";
+  if (["not_accepted", "excluded"].includes(value)) return "invalid";
+  if (value === "all") return value;
+  return "unreviewed";
+}
+
+function emailStatusLabel(value) {
+  return {
+    unreviewed: "Unreviewed",
+    valid: "Valid",
+    invalid: "Invalid",
+    unsure: "Unsure",
+  }[value] || "Unreviewed";
+}
+
+function normalizedEmailStatus(value) {
+  return EMAIL_STATUSES.includes(value) ? value : "unreviewed";
 }
 
 function normalizedNoMatchedEvidenceFilter(value) {
@@ -328,6 +356,7 @@ function candidateEvidenceCount(candidate) {
 function candidateReasonWithoutTriageDuplication(candidate) {
   const triageReason = String(candidate?.triage?.reason || "").trim();
   let reason = String(candidate?.reason || candidate?.evidence || "").trim();
+  if (/^Triage\s+llm-/i.test(reason) || /LLM classification retained/i.test(reason)) return "";
   reason = reason
     .replace(/^Contact was retained for review but not marked usable because its source or surrounding evidence could not be matched to the target registry clinic\.\s*/i, "")
     .replace(/^Triage (?:suppressed|promoted):\s*/i, "")
@@ -398,11 +427,13 @@ const App = {
     const db = ref(null);
     const manifest = ref(null);
     const queue = ref([]);
+    const emailIndex = ref([]);
     const clinicIndex = ref([]);
     const clinic = ref(null);
     const clinicCache = ref({});
     const decisions = ref([]);
     const localStates = ref([]);
+    const emailValidations = ref([]);
     const roleOverrides = ref([]);
     const reviewer = ref(localStorage.getItem("review.reviewer") || "reviewer");
     const search = ref(localStorage.getItem("review.filter.search") || "");
@@ -420,8 +451,6 @@ const App = {
     const note = ref("");
     const showOtherCandidates = ref(false);
     const showInvalidCandidates = ref(false);
-    const reassignMode = ref(false);
-    const reassignSearch = ref("");
     const lastExportAt = ref(localStorage.getItem("review.lastExportAt") || "");
     const lastAction = ref(null);
     const sessionStartedAt = ref(Date.now());
@@ -439,32 +468,28 @@ const App = {
     let syncTimer = null;
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
+    const emailValidationByValue = computed(() => Object.fromEntries(emailValidations.value.map((item) => [item.email, item])));
     const decisionsByClinic = computed(() => {
       const grouped = {};
       for (const decision of decisions.value) (grouped[decision.clinic_id] ||= []).push(decision);
       return grouped;
     });
-    const preparedQueue = computed(() => queue.value.map((item) => {
-      const localState = localStateByClinic.value[item.id];
-      const lane = candidateLane(item);
-      const status = localState?.status || item.status;
+    const preparedQueue = computed(() => emailIndex.value.map((item) => {
+      const validation = emailValidationByValue.value[item.email] || null;
+      const status = normalizedEmailStatus(validation?.status);
       return {
         ...item,
-        lane,
+        id: item.email,
+        lane: status,
         status,
-        review_reason_code: localState?.reason_code || item.review_reason_code || null,
-        review_note: localState?.note || item.review_note || null,
-        confidence_pool: confidencePool({
-          ...item,
-          status,
-          review_reason_code: localState?.reason_code || item.review_reason_code || null,
-        }, lane),
-        reviewed_at: localState?.reviewed_at || item.reviewed_at,
-        local_decision_count: (decisionsByClinic.value[item.id] || []).length,
+        confidence_pool: status,
+        reviewed_at: validation?.reviewed_at || null,
+        reviewer_id: validation?.reviewed_by || null,
+        audit_flags: validation?.audit_flags || [],
       };
     }));
     const regionOptions = computed(() => [...new Set(
-      preparedQueue.value.map((item) => String(item.region || "").trim()).filter(Boolean),
+      preparedQueue.value.flatMap((item) => (item.occurrences || []).map((occurrence) => String(occurrence.region || "").trim())).filter(Boolean),
     )].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })));
     const regionFilterLabel = computed(() => manifest.value?.review_ui?.region_filter_label || "All regions");
     const roleOptions = computed(() => {
@@ -480,62 +505,53 @@ const App = {
       ? (syncStatus.value || "Sync review")
       : "Connect sync");
     const locationFilteredQueue = computed(() => selectedRegion.value
-      ? preparedQueue.value.filter((item) => item.region === selectedRegion.value)
+      ? preparedQueue.value.filter((item) => (item.occurrences || []).some((occurrence) => occurrence.region === selectedRegion.value))
       : preparedQueue.value);
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
       return locationFilteredQueue.value
-        .filter((item) => selectedLane.value === "all" || item.confidence_pool === selectedLane.value)
-        .filter((item) => {
-          if (selectedLane.value === "all") return true;
-          if (selectedLane.value === "accepted") return item.status === "confirmed";
-          if (selectedLane.value === "not_accepted") return item.status === "excluded";
-          if (selectedLane.value === "no_public_email") return item.status === "no_email";
-          return !["confirmed", "no_email", "excluded"].includes(item.status);
-        })
-        .filter((item) => {
-          if (selectedLane.value !== "no_matched_email") return true;
-          if (noMatchedEvidenceFilter.value === "none") return item.evidence_availability !== "html";
-          return item.evidence_availability === noMatchedEvidenceFilter.value;
-        })
+        .filter((item) => selectedLane.value === "all" || item.status === selectedLane.value)
         .filter((item) => {
           if (!needle) return true;
           return [
+            item.email,
+            item.display_value,
             item.name,
             item.registry_id,
             item.city,
             item.region,
             item.address,
-            item.domain,
-            item.website,
-            item.best_candidate?.value,
+            item.source_url,
+            ...(item.occurrences || []).flatMap((occurrence) => [
+              occurrence.clinic_name,
+              occurrence.registry_id,
+              occurrence.city,
+              occurrence.region,
+              occurrence.address,
+              occurrence.source_url,
+              occurrence.display_value,
+            ]),
           ].some((value) => String(value || "").toLowerCase().includes(needle));
         })
-        .sort((a, b) => lanePriority(b.lane) - lanePriority(a.lane) || (b.priority || 0) - (a.priority || 0));
+        .sort((a, b) => (
+          Number(a.status !== "unreviewed") - Number(b.status !== "unreviewed")
+          || b.occurrence_count - a.occurrence_count
+          || a.email.localeCompare(b.email)
+        ));
     });
     const laneCounts = computed(() => {
       const counts = {
-        accepted: 0,
-        shared_email_review: 0,
-        weak_join_review: 0,
-        not_accepted: 0,
-        needs_review: 0,
-        no_matched_email: 0,
-        no_public_email: 0,
+        unreviewed: 0,
+        valid: 0,
+        invalid: 0,
+        unsure: 0,
         all: locationFilteredQueue.value.length,
       };
-      for (const item of locationFilteredQueue.value) counts[item.confidence_pool] = (counts[item.confidence_pool] || 0) + 1;
+      for (const item of locationFilteredQueue.value) counts[item.status] = (counts[item.status] || 0) + 1;
       return counts;
     });
     const noMatchedEvidenceCounts = computed(() => {
-      const items = locationFilteredQueue.value.filter((item) => (
-        item.confidence_pool === "no_matched_email"
-        && !["confirmed", "no_email", "excluded"].includes(item.status)
-      ));
-      return {
-        html: items.filter((item) => item.evidence_availability === "html").length,
-        none: items.filter((item) => item.evidence_availability !== "html").length,
-      };
+      return { html: 0, none: 0 };
     });
     const currentItem = computed(() => filteredQueue.value[currentIndex.value] || null);
     const isNoMatchArchivedHtml = computed(() => (
@@ -591,27 +607,19 @@ const App = {
       return groups;
     });
     const displayedCandidateRows = computed(() => {
-      if (currentItem.value?.confidence_pool === "accepted") {
-        const primaryDecisionId = currentClinicState.value?.primary_review_decision_id;
-        const confirmedDecision = currentClinicDecisions.value.find((decision) => (
-          decision.id === primaryDecisionId
-          || ["confirmed", "edited_confirmed"].includes(decision.decision)
-        ));
-        const confirmedValue = String(confirmedDecision?.reviewed_value || clinic.value?.clinic?.email || "")
-          .trim()
-          .toLowerCase();
-        const confirmedContactIds = new Set(
-          currentClinicDecisions.value
-            .filter((decision) => ["confirmed", "edited_confirmed"].includes(decision.decision))
-            .map((decision) => decision.contact_point_id)
+      if (currentItem.value?.email) {
+        const email = currentItem.value.email;
+        const occurrenceIds = new Set(
+          (currentItem.value.occurrences || [])
+            .filter((occurrence) => occurrence.clinic_id === clinic.value?.clinic?.id)
+            .map((occurrence) => occurrence.contact_point_id)
             .filter(Boolean),
         );
         return candidates.value
           .map((candidate, index) => ({ type: "candidate", candidate, index }))
           .filter(({ candidate }) => (
-            confirmedContactIds.has(candidate.id)
-            || candidate.classification === "reviewer_validated"
-            || (confirmedValue && String(candidate.value || "").trim().toLowerCase() === confirmedValue)
+            occurrenceIds.has(candidate.id)
+            || normalizeEmailValue(candidate.value) === email
           ));
       }
       if (isNoMatchArchivedHtml.value) {
@@ -631,6 +639,11 @@ const App = {
       }
       return candidateGroups.value.primary.map((row) => ({ type: "candidate", ...row }));
     });
+    const currentEmailValidation = computed(() => currentItem.value?.email
+      ? emailValidationByValue.value[currentItem.value.email] || null
+      : null);
+    const currentEmailStatus = computed(() => normalizedEmailStatus(currentEmailValidation.value?.status));
+    const currentEmailOccurrences = computed(() => currentItem.value?.occurrences || []);
     const selectedCandidate = computed(() => {
       const selected = candidates.value[selectedCandidateIndex.value];
       if (
@@ -690,32 +703,6 @@ const App = {
     const fullEvidenceBody = computed(() => fullEvidenceText.value
       ? fullEvidenceHtml(fullEvidenceText.value, selectedCandidate.value?.value)
       : evidenceBody.value);
-    const reassignMatches = computed(() => {
-      const currentClinicId = clinic.value?.clinic?.id;
-      const tokens = normalizedMatchText(reassignSearch.value)
-        .split(/[^a-z0-9]+/)
-        .filter((token) => token.length >= 2);
-      if (!tokens.length) return [];
-      return clinicIndex.value
-        .filter((item) => item.id !== currentClinicId)
-        .map((item) => {
-          const haystack = normalizedMatchText([
-            item.name,
-            item.registry_id,
-            item.city,
-            item.region,
-            item.address,
-          ].filter(Boolean).join(" "));
-          const matched = tokens.filter((token) => haystack.includes(token)).length;
-          const exactRegistry = String(item.registry_id || "").toLowerCase() === reassignSearch.value.trim().toLowerCase();
-          return { item, score: matched + (exactRegistry ? 10 : 0) };
-        })
-        .filter((row) => row.score > 0 && row.score >= tokens.length)
-        .sort((a, b) => b.score - a.score || String(a.item.name || "").localeCompare(String(b.item.name || "")))
-        .slice(0, 12)
-        .map((row) => row.item);
-    });
-
     function artifactUrl(path) {
       if (!path) return null;
       const clean = String(path).replace(/^\/+/, "");
@@ -748,6 +735,10 @@ const App = {
     }
 
     function candidateDecision(candidate) {
+      const validation = emailValidationByValue.value[normalizeEmailValue(candidate?.value)];
+      if (validation?.status === "valid") return { ...validation, decision: "confirmed", reviewed_value: validation.display_value || validation.email };
+      if (validation?.status === "invalid") return { ...validation, decision: "rejected", reviewed_value: validation.display_value || validation.email };
+      if (validation?.status === "unsure") return { ...validation, decision: "unsure", reviewed_value: validation.display_value || validation.email };
       return [...currentClinicDecisions.value]
         .filter((decision) => decision.contact_point_id && decision.contact_point_id === candidate?.id)
         .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")))[0] || null;
@@ -756,11 +747,12 @@ const App = {
     function candidateDecisionLabel(candidate) {
       const decision = candidateDecision(candidate);
       if (!decision) return "";
+      if (decision.decision === "unsure") return "Unsure";
       if (decision.decision === "rejected") return "Rejected";
       if (decision.decision === "reassigned") {
         return `Reassigned → ${decision.target_clinic_name || decision.target_registry_id || decision.target_clinic_id || "other clinic"}`;
       }
-      return "Confirmed";
+      return "Valid";
     }
 
     function focusArchivedEvidence(event) {
@@ -957,10 +949,17 @@ const App = {
         await loadStaticData();
         await hydrateLocal();
         await mergeCanonicalState();
+        await mergeEmailValidationSeed();
+        await migrateStoredDecisionsToEmailValidations();
         await hydrateLocal();
         if (syncConfig.value && githubToken.value) await loadRemoteReview();
-        const routeId = routeClinicId();
-        const routeIndex = routeId ? filteredQueue.value.findIndex((item) => item.id === decodeURIComponent(routeId)) : -1;
+        const routeEmail = routeEmailValue();
+        const routeClinic = routeClinicId();
+        const routeIndex = routeEmail
+          ? filteredQueue.value.findIndex((item) => item.email === normalizeEmailValue(decodeURIComponent(routeEmail)))
+          : routeClinic
+            ? filteredQueue.value.findIndex((item) => item.clinic_id === decodeURIComponent(routeClinic))
+            : -1;
         await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
         saveStatus.value = "Ready";
         if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
@@ -970,13 +969,14 @@ const App = {
     }
 
     async function loadStaticData() {
-      const [manifestResponse, queueResponse, clinicIndexResponse, integrityResponse] = await Promise.all([
+      const [manifestResponse, queueResponse, clinicIndexResponse, integrityResponse, emailIndexResponse] = await Promise.all([
         fetch("data/manifest.json", { cache: "no-cache" }),
         fetch("data/queue.json", { cache: "no-cache" }),
         fetch("data/clinic-index.json", { cache: "no-cache" }),
         fetch("data/package-integrity.json", { cache: "no-cache" }),
+        fetch(EMAIL_INDEX_PATH, { cache: "no-cache" }),
       ]);
-      if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok || !integrityResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
+      if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok || !integrityResponse.ok || !emailIndexResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
       manifest.value = await manifestResponse.json();
       const integrity = await integrityResponse.json();
       if (manifest.value?.format !== PACKAGE_FORMAT || manifest.value?.schema_version !== PACKAGE_SCHEMA_VERSION) {
@@ -987,6 +987,8 @@ const App = {
       }
       const payload = await queueResponse.json();
       queue.value = payload.items || [];
+      const emailPayload = await emailIndexResponse.json();
+      emailIndex.value = emailPayload.items || [];
       const indexPayload = await clinicIndexResponse.json();
       clinicIndex.value = indexPayload.items || [];
       try {
@@ -1005,6 +1007,7 @@ const App = {
     async function hydrateLocal() {
       decisions.value = await getAll(db.value, "decisions");
       localStates.value = await getAll(db.value, "clinic_states");
+      emailValidations.value = await getAll(db.value, "email_validations");
       roleOverrides.value = (await getAll(db.value, "meta"))
         .filter((item) => String(item.key || "").startsWith("role_override:"))
         .map((item) => item.value);
@@ -1068,17 +1071,19 @@ const App = {
       currentIndex.value = clamp(index, 0, filteredQueue.value.length - 1);
       const item = filteredQueue.value[currentIndex.value];
       editMode.value = false;
-      reassignMode.value = false;
-      reassignSearch.value = "";
       note.value = "";
-      clinic.value = await loadClinic(item.id);
-      selectedCandidateIndex.value = displayedCandidateRows.value[0]?.index ?? 0;
+      clinic.value = await loadClinic(item.clinic_id || item.occurrences?.[0]?.clinic_id);
+      const matchingIndex = candidates.value.findIndex((candidate) => (
+        candidate.id === item.contact_point_id
+        || normalizeEmailValue(candidate.value) === item.email
+      ));
+      selectedCandidateIndex.value = matchingIndex >= 0 ? matchingIndex : (displayedCandidateRows.value[0]?.index ?? 0);
       showOtherCandidates.value = false;
       showInvalidCandidates.value = false;
       evidenceTab.value = selectedEvidencePresentation.value.kind;
       editValue.value = selectedCandidate.value?.value || "";
       itemStartedAt.value = Date.now();
-      if (updateHash) window.history.replaceState(null, "", `#/clinics/${encodeURIComponent(item.id)}`);
+      if (updateHash) window.history.replaceState(null, "", `#/emails/${encodeURIComponent(item.email)}`);
       await nextTick();
       scrollEvidenceToHighlight();
       prefetchUpcoming();
@@ -1087,8 +1092,19 @@ const App = {
     function prefetchUpcoming() {
       for (let offset = 1; offset <= PREFETCH_COUNT; offset += 1) {
         const next = filteredQueue.value[currentIndex.value + offset];
-        if (next && !clinicCache.value[next.id]) loadClinic(next.id).catch(() => {});
+        const clinicId = next?.clinic_id || next?.occurrences?.[0]?.clinic_id;
+        if (clinicId && !clinicCache.value[clinicId]) loadClinic(clinicId).catch(() => {});
       }
+    }
+
+    async function selectOccurrence(occurrence) {
+      if (!occurrence?.clinic_id) return;
+      clinic.value = await loadClinic(occurrence.clinic_id);
+      const index = candidates.value.findIndex((candidate) => (
+        candidate.id === occurrence.contact_point_id
+        || normalizeEmailValue(candidate.value) === currentItem.value?.email
+      ));
+      selectCandidate(index >= 0 ? index : 0);
     }
 
     function scrollEvidenceToHighlight() {
@@ -1114,24 +1130,68 @@ const App = {
 
     async function confirmCandidate(index = selectedCandidateIndex.value) {
       selectCandidate(index);
-      const candidate = candidates.value[index];
-      if (displayedCandidateRole(candidate) === "not_relevant") {
-        await saveDecision("rejected", { reasonCode: "not_relevant" });
+      await saveEmailValidation("valid");
+    }
+
+    async function invalidateCandidate(index = selectedCandidateIndex.value) {
+      selectCandidate(index);
+      await saveEmailValidation("invalid");
+    }
+
+    async function markEmailUnsure(index = selectedCandidateIndex.value) {
+      selectCandidate(index);
+      await saveEmailValidation("unsure");
+    }
+
+    async function saveEmailValidation(status, { reviewedValue = null, reasonCode = null } = {}) {
+      const candidate = selectedCandidate.value;
+      const value = reviewedValue || candidate?.value || currentItem.value?.email || "";
+      const email = normalizeEmailValue(value);
+      if (!email || !email.includes("@")) {
+        error.value = "Email validation needs an email value.";
         return;
       }
-      await saveDecision("confirmed");
-    }
-
-    function startReassign(index) {
-      selectCandidate(index);
-      reassignMode.value = true;
-      reassignSearch.value = "";
-      nextTick(() => document.querySelector(".reassign-search")?.focus());
-    }
-
-    function cancelReassign() {
-      reassignMode.value = false;
-      reassignSearch.value = "";
+      const previousValidation = emailValidationByValue.value[email] ? { ...emailValidationByValue.value[email] } : null;
+      const timestamp = nowIso();
+      const validation = {
+        email,
+        display_value: value,
+        status: normalizedEmailStatus(status),
+        reason_code: reasonCode || null,
+        note: note.value || null,
+        reviewed_by: reviewer.value || "reviewer",
+        reviewed_at: timestamp,
+        updated_at: timestamp,
+        source: "manual",
+        clinic_id: clinic.value?.clinic?.id || currentItem.value?.clinic_id || null,
+        contact_point_id: candidate?.id || currentItem.value?.contact_point_id || null,
+        evidence_link_id: selectedEvidence.value?.id || null,
+        occurrence_count: currentItem.value?.occurrence_count || null,
+        audit_flags: currentEmailValidation.value?.audit_flags || [],
+      };
+      await put(db.value, "email_validations", validation);
+      const event = {
+        id: uuid(),
+        clinic_id: validation.clinic_id,
+        contact_point_id: validation.contact_point_id,
+        email,
+        type: `email:${validation.status}`,
+        created_at: timestamp,
+        reviewer_id: reviewer.value || "reviewer",
+        evidence_viewed: evidenceTab.value,
+        decision_duration_ms: Date.now() - itemStartedAt.value,
+      };
+      await put(db.value, "audit_events", event);
+      lastAction.value = {
+        email_validation_email: email,
+        previous_email_validation: previousValidation,
+        audit_event_id: event.id,
+      };
+      sessionDecisionCount.value += 1;
+      saveStatus.value = `${emailStatusLabel(validation.status)} · press U to undo`;
+      await hydrateLocal();
+      scheduleRemoteSync();
+      await setIndex(currentIndex.value);
     }
 
     function moveCandidate(delta) {
@@ -1211,8 +1271,6 @@ const App = {
             : "confirmed";
       await persistDecisionAndState(decision, status, decision?.is_primary ? decision.id : null, reasonCode, previousState);
       editMode.value = false;
-      reassignMode.value = false;
-      reassignSearch.value = "";
       sessionDecisionCount.value += 1;
       saveStatus.value = `${stateLabel(status)} · press U to undo`;
       if (terminalNegativeDecision) {
@@ -1230,10 +1288,6 @@ const App = {
       } else {
         await setIndex(currentIndex.value);
       }
-    }
-
-    async function reassignCandidate(targetClinic) {
-      await saveDecision("reassigned", { targetClinic });
     }
 
     async function persistDecisionAndState(decision, status, primaryDecisionId = null, reason = null, previousState = null) {
@@ -1277,6 +1331,10 @@ const App = {
     async function undoLastAction() {
       if (!lastAction.value || !db.value) return;
       if (lastAction.value.decision_id) await deleteValue(db.value, "decisions", lastAction.value.decision_id);
+      if (lastAction.value.email_validation_email) {
+        if (lastAction.value.previous_email_validation) await put(db.value, "email_validations", lastAction.value.previous_email_validation);
+        else await deleteValue(db.value, "email_validations", lastAction.value.email_validation_email);
+      }
       if (lastAction.value.audit_event_id) await deleteValue(db.value, "audit_events", lastAction.value.audit_event_id);
       if (lastAction.value.previous_state) await put(db.value, "clinic_states", lastAction.value.previous_state);
       else await deleteValue(db.value, "clinic_states", lastAction.value.state_clinic_id);
@@ -1314,12 +1372,14 @@ const App = {
         app_build: manifest.value?.source_commit || null,
         decisions: await getAll(db.value, "decisions"),
         clinic_states: await getAll(db.value, "clinic_states"),
+        email_validations: await getAll(db.value, "email_validations"),
         role_overrides: roleOverrides.value,
         audit_events: await getAll(db.value, "audit_events"),
       };
       payload.checksum = await sha256(JSON.stringify({
         decisions: payload.decisions,
         clinic_states: payload.clinic_states,
+        email_validations: payload.email_validations,
         role_overrides: payload.role_overrides,
         audit_events: payload.audit_events,
       }));
@@ -1339,7 +1399,7 @@ const App = {
       URL.revokeObjectURL(link.href);
       lastExportAt.value = exportedAt;
       localStorage.setItem("review.lastExportAt", exportedAt);
-      saveStatus.value = `Exported ${payload.decisions.length} decisions`;
+      saveStatus.value = `Exported ${payload.email_validations?.length || 0} email validations`;
     }
 
     function githubReviewPath() {
@@ -1432,7 +1492,7 @@ const App = {
         const result = await response.json();
         remoteReviewSha.value = result.content?.sha || remoteReviewSha.value;
         syncStatus.value = "Synced";
-        saveStatus.value = `Synced ${payload.decisions.length} decisions`;
+        saveStatus.value = `Synced ${payload.email_validations?.length || 0} email validations`;
       } catch (err) {
         syncStatus.value = "Sync failed · local saved";
         error.value = err?.message || String(err);
@@ -1479,7 +1539,7 @@ const App = {
         const payload = JSON.parse(await file.text());
         await mergeImport(payload);
         await hydrateLocal();
-        saveStatus.value = `Imported ${payload.decisions?.length || 0} decisions`;
+        saveStatus.value = `Imported ${payload.email_validations?.length || payload.decisions?.length || 0} email validations`;
         scheduleRemoteSync();
       } catch (err) {
         error.value = err?.message || String(err);
@@ -1498,6 +1558,72 @@ const App = {
       }
     }
 
+    async function mergeEmailValidationSeed() {
+      try {
+        const response = await fetch(EMAIL_VALIDATION_SEED_PATH, { cache: "no-cache" });
+        if (!response.ok) return;
+        const payload = await response.json();
+        if (payload.format !== "lead-gen-email-validation-seed" || payload.schema_version !== 1) return;
+        for (const validation of payload.validations || []) await putEmailValidationIfNewer(validation);
+      } catch (_) {
+        return;
+      }
+    }
+
+    function emailValidationFromDecision(decision) {
+      const email = normalizeEmailValue(decision.reviewed_value || decision.original_value);
+      if (!email || !email.includes("@")) return null;
+      const status = ["confirmed", "edited_confirmed"].includes(decision.decision)
+        ? "valid"
+        : decision.decision === "rejected"
+          ? "invalid"
+          : null;
+      if (!status) return null;
+      return {
+        email,
+        display_value: decision.reviewed_value || decision.original_value || email,
+        status,
+        reason_code: decision.reason_code || null,
+        note: decision.note || null,
+        reviewed_by: decision.reviewer_id || "reviewer",
+        reviewed_at: decision.created_at || nowIso(),
+        updated_at: decision.created_at || nowIso(),
+        source: "legacy-decision",
+        clinic_id: decision.clinic_id || null,
+        contact_point_id: decision.contact_point_id || null,
+        source_decision_ids: decision.id ? [decision.id] : [],
+        audit_flags: [],
+      };
+    }
+
+    async function putEmailValidationIfNewer(validation) {
+      const email = normalizeEmailValue(validation?.email || validation?.display_value);
+      if (!email || !email.includes("@")) return;
+      const normalized = {
+        ...validation,
+        email,
+        display_value: validation.display_value || email,
+        status: normalizedEmailStatus(validation.status),
+        reviewed_at: validation.reviewed_at || validation.updated_at || nowIso(),
+        updated_at: validation.updated_at || validation.reviewed_at || nowIso(),
+      };
+      const existing = await get(db.value, "email_validations", email);
+      if (!existing || String(existing.updated_at || existing.reviewed_at || "") <= String(normalized.updated_at || normalized.reviewed_at || "")) {
+        await put(db.value, "email_validations", normalized);
+      }
+    }
+
+    async function migrateDecisionsToEmailValidations(sourceDecisions) {
+      for (const decision of sourceDecisions || []) {
+        const validation = emailValidationFromDecision(decision);
+        if (validation) await putEmailValidationIfNewer(validation);
+      }
+    }
+
+    async function migrateStoredDecisionsToEmailValidations() {
+      await migrateDecisionsToEmailValidations(await getAll(db.value, "decisions"));
+    }
+
     async function mergeImport(payload, { silent = false } = {}) {
       validatePayload(payload);
       if (!silent && manifest.value?.dataset_id && payload.dataset_id !== manifest.value.dataset_id) {
@@ -1509,12 +1635,17 @@ const App = {
         created_at: nowIso(),
         decisions: await getAll(db.value, "decisions"),
         clinic_states: await getAll(db.value, "clinic_states"),
+        email_validations: await getAll(db.value, "email_validations"),
         role_overrides: roleOverrides.value,
         audit_events: await getAll(db.value, "audit_events"),
       });
       for (const decision of payload.decisions || []) {
         const existing = await get(db.value, "decisions", decision.id);
         if (!existing || String(existing.created_at || "") <= String(decision.created_at || "")) await put(db.value, "decisions", decision);
+      }
+      await migrateDecisionsToEmailValidations(payload.decisions || []);
+      for (const validation of payload.email_validations || []) {
+        await putEmailValidationIfNewer(validation);
       }
       for (const state of payload.clinic_states || []) {
         const existing = await get(db.value, "clinic_states", state.clinic_id);
@@ -1536,12 +1667,15 @@ const App = {
       if (payload.format !== REVIEW_FORMAT) throw new Error("Not a lead-gen review export.");
       if (payload.schema_version !== SCHEMA_VERSION) throw new Error("Unsupported review schema version.");
       if (!Array.isArray(payload.decisions) || !Array.isArray(payload.clinic_states)) throw new Error("Invalid review export shape.");
+      if (payload.email_validations != null && !Array.isArray(payload.email_validations)) throw new Error("Invalid email validations.");
       if (payload.role_overrides != null && !Array.isArray(payload.role_overrides)) throw new Error("Invalid role overrides.");
     }
 
     function visibleBackupReminder() {
       if (githubToken.value && syncStatus.value === "Synced") return false;
-      const completed = decisions.value.length + localStates.value.filter((item) => ["confirmed", "no_email", "excluded"].includes(item.status)).length;
+      const completed = emailValidations.value.length
+        + decisions.value.length
+        + localStates.value.filter((item) => ["confirmed", "no_email", "excluded"].includes(item.status)).length;
       if (completed < 25) return false;
       if (!lastExportAt.value) return true;
       return Date.now() - new Date(lastExportAt.value).getTime() > 15 * 60 * 1000;
@@ -1552,7 +1686,8 @@ const App = {
       const key = event.key.toLowerCase();
       if (event.key === "1") confirmCandidate();
       if (key === "enter") confirmCandidate();
-      if (event.key === "3") markNoPublicEmail();
+      if (event.key === "2") invalidateCandidate();
+      if (event.key === "3") markEmailUnsure();
       if (key === "j") moveCandidate(1);
       if (key === "k") moveCandidate(-1);
       if (key === "u") undoLastAction();
@@ -1634,6 +1769,9 @@ const App = {
       snapshotTitle,
       currentClinicState,
       currentClinicDecisions,
+      currentEmailValidation,
+      currentEmailStatus,
+      currentEmailOccurrences,
       editMode,
       editValue,
       note,
@@ -1645,9 +1783,6 @@ const App = {
       displayedCandidateRows,
       showOtherCandidates,
       showInvalidCandidates,
-      reassignMode,
-      reassignSearch,
-      reassignMatches,
       safeText,
       candidateRoleLabel,
       candidateEvidenceCount,
@@ -1656,17 +1791,18 @@ const App = {
       updateCandidateRole,
       candidateDecision,
       candidateDecisionLabel,
+      emailStatusLabel,
       artifactUrl,
       focusedHtmlUrl,
       focusArchivedEvidence,
       stateLabel,
       visibleBackupReminder,
       selectCandidate,
+      selectOccurrence,
       previewCandidate,
       confirmCandidate,
-      startReassign,
-      cancelReassign,
-      reassignCandidate,
+      invalidateCandidate,
+      markEmailUnsure,
       saveDecision,
       markNoPublicEmail,
       excludeCurrent,
@@ -1689,16 +1825,8 @@ const App = {
           <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
         </select>
         <div class="lane-tabs">
-          <button v-for="lane in ['accepted','shared_email_review','weak_join_review','not_accepted','needs_review','no_matched_email','no_public_email','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+          <button v-for="lane in ['unreviewed','valid','invalid','unsure','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
-          </button>
-        </div>
-        <div v-if="selectedLane === 'no_matched_email'" class="evidence-subfilters">
-          <button v-for="option in [
-            {value:'html',label:'Archived HTML'},
-            {value:'none',label:'No captured page'}
-          ]" :key="option.value" :class="{active:noMatchedEvidenceFilter===option.value}" @click="noMatchedEvidenceFilter=option.value">
-            {{ option.label }} <strong>{{ noMatchedEvidenceCounts[option.value] || 0 }}</strong>
           </button>
         </div>
       </section>
@@ -1709,20 +1837,18 @@ const App = {
       <main v-if="currentItem && clinic" class="review-layout">
         <section class="decision-pane">
           <div class="clinic-meta">
-            <span class="pill lane">{{ laneLabel(currentItem.confidence_pool) }}</span>
-            <span v-if="currentItem.review_reason_code" class="pill reason">{{ reasonLabel(currentItem.review_reason_code) }}</span>
-            <span class="muted">{{ currentItem.city }} · {{ currentItem.registry_id }}</span>
-            <button v-if="currentItem.status !== 'excluded'" class="clinic-not-accepted" @click="excludeCurrent">Not accepted</button>
+            <span class="pill lane" :class="'email-status-' + currentEmailStatus">{{ emailStatusLabel(currentEmailStatus) }}</span>
+            <span v-if="currentItem.audit_flags?.length" class="pill reason">{{ currentItem.audit_flags.join(', ') }}</span>
+            <span class="muted">{{ currentItem.occurrence_count }} occurrence{{ currentItem.occurrence_count === 1 ? '' : 's' }}</span>
           </div>
-          <p v-if="currentItem.review_note" class="review-note">{{ currentItem.review_note }}</p>
-          <h2>{{ clinic.clinic.name }}</h2>
-          <p class="clinic-address">{{ clinic.clinic.address }}</p>
+          <h2>{{ currentItem.display_value || currentItem.email }}</h2>
+          <p class="clinic-address">{{ clinic.clinic.name }} · {{ clinic.clinic.address }}</p>
 
           <section class="candidate-card">
-            <p class="label">Email candidates</p>
+            <p class="label">Email validation</p>
             <div v-if="displayedCandidateRows.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th>Email</th><th>Type</th><th>Decision</th></tr></thead>
+                <thead><tr><th>Email</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead>
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
                     <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
@@ -1731,22 +1857,31 @@ const App = {
                         <option v-for="option in roleOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
                       </select>
                     </td>
+                    <td><span class="email-status-pill" :class="'email-status-' + currentEmailStatus">{{ emailStatusLabel(currentEmailStatus) }}</span></td>
                     <td class="candidate-actions">
-                      <button class="candidate-confirm" @click.stop="confirmCandidate(row.index)">Confirm</button>
-                      <button class="candidate-reassign" @click.stop="startReassign(row.index)">Reassign</button>
+                      <button class="candidate-confirm" @click.stop="confirmCandidate(row.index)">Valid</button>
+                      <button class="candidate-invalid" @click.stop="invalidateCandidate(row.index)">Invalid</button>
+                      <button class="candidate-unsure" @click.stop="markEmailUnsure(row.index)">Unsure</button>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p v-else class="muted">{{ isNoMatchArchivedHtml ? 'No extracted email was retained from the archived page.' : 'No likely target-clinic email remains after machine ownership filtering.' }}</p>
+            <p v-else class="muted">No retained candidate row was found for this email occurrence.</p>
             <p v-if="candidateReasonWithoutTriageDuplication(selectedCandidate)" class="candidate-reason">{{ candidateReasonWithoutTriageDuplication(selectedCandidate) }}</p>
-            <div v-if="selectedCandidate?.triage" class="triage-summary" :class="'triage-' + selectedCandidate.triage.decision">
-              <div class="triage-heading">
-                <span class="pill">Machine triage: {{ selectedCandidate.triage.decision }}</span>
-                <strong>{{ selectedCandidate.triage.ownership_class }} · {{ Math.round(Number(selectedCandidate.triage.confidence || 0) * 100) }}%</strong>
-              </div>
-              <p>{{ selectedCandidate.triage.reason }}</p>
+            <div v-if="currentEmailOccurrences.length > 1" class="occurrence-list">
+              <p class="label">Seen with</p>
+              <button
+                v-for="occurrence in currentEmailOccurrences.slice(0, 12)"
+                :key="occurrence.clinic_id + ':' + occurrence.contact_point_id"
+                class="occurrence-row"
+                :class="{active: occurrence.clinic_id === clinic.clinic.id && occurrence.contact_point_id === selectedCandidate?.id}"
+                @click="selectOccurrence(occurrence)"
+              >
+                <strong>{{ occurrence.clinic_name }}</strong>
+                <span>{{ occurrence.city }} · {{ occurrence.registry_id }}</span>
+              </button>
+              <p v-if="currentEmailOccurrences.length > 12" class="muted">+{{ currentEmailOccurrences.length - 12 }} more occurrences</p>
             </div>
           </section>
 
@@ -1754,23 +1889,6 @@ const App = {
             <label>Edit email<input v-model="editValue" /></label>
             <label>Note<textarea v-model="note" rows="3" placeholder="Optional note"></textarea></label>
             <button @click="saveDecision('edited_confirmed', { reviewedValue: editValue })">Save edited email</button>
-          </section>
-
-          <section v-if="reassignMode" class="reassign-panel">
-            <div class="reassign-heading">
-              <div>
-                <p class="label">Reassign candidate</p>
-                <p class="muted">Choose the clinic this email actually belongs to. The target will return to review after import.</p>
-              </div>
-              <button class="quiet" @click="cancelReassign">Cancel</button>
-            </div>
-            <input v-model="reassignSearch" class="reassign-search" type="search" placeholder="Search clinic, city or registry ID…" />
-            <div v-if="reassignSearch && !reassignMatches.length" class="muted">No matching clinic in this market.</div>
-            <button v-for="target in reassignMatches" :key="target.id" class="reassign-target" @click="reassignCandidate(target)">
-              <strong>{{ target.name }}</strong>
-              <span>{{ target.city }} · {{ target.registry_id }}</span>
-              <small>{{ target.address }}</small>
-            </button>
           </section>
 
         </section>

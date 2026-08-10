@@ -17,23 +17,23 @@ tree hashes, required files, and common exposed-secret formats. Do not hand-edit
 
 ## Reviewer workflow
 
-The app is optimized for fast one-lead-at-a-time validation:
+The app is optimized for fast one-email-at-a-time validation:
 
-- left pane: clinic identity, one selected email candidate, compact evidence excerpt, alternates, decision buttons;
+- left pane: email identity, source clinic occurrence, compact evidence excerpt, all known occurrences, validation buttons;
 - right pane: captured evidence snapshot by default, plus Live and Sources tabs;
 - lane and county/region filters for splitting reviewer workloads;
 - optional GitHub-backed decision sync, with IndexedDB and JSON export retained as fallbacks.
 
 Primary keyboard shortcuts:
 
-- `1` confirm selected email;
-- `2` reject, then choose a reason with `w/t/o/d/i/x`;
-- `3` mark no public email;
-- `J` / `K` cycle alternate candidates;
+- `1` mark selected email valid globally;
+- `2` mark selected email invalid globally;
+- `3` mark selected email unsure;
+- `J` / `K` cycle retained occurrences for the selected email;
 - `←` / `→` move between leads;
 - `U` undo last local decision.
 
-Review exports include browser-side timing and evidence-view metadata for audit and UI throughput analysis.
+Review exports include global `email_validations`, browser-side timing, and evidence-view metadata for audit and UI throughput analysis.
 
 ## Shared review persistence
 

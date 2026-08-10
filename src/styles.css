@@ -251,6 +251,34 @@ input, textarea {
   background: #fff4d6;
   color: #7a4e00;
 }
+.pill.email-status-valid,
+.email-status-pill.email-status-valid {
+  background: #e6f7ef;
+  color: #12664f;
+}
+.pill.email-status-invalid,
+.email-status-pill.email-status-invalid {
+  background: #ffe9e9;
+  color: #9c1d26;
+}
+.pill.email-status-unsure,
+.email-status-pill.email-status-unsure {
+  background: #fff4d6;
+  color: #7a4e00;
+}
+.pill.email-status-unreviewed,
+.email-status-pill.email-status-unreviewed {
+  background: var(--concrete-60);
+  color: var(--black-80);
+}
+.email-status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
 .muted {
   color: var(--black-60);
 }
@@ -381,16 +409,49 @@ input, textarea {
   background: var(--black-100);
   color: white;
 }
-.candidate-reassign {
+.candidate-invalid {
   margin-top: 4px;
-  background: var(--blue-10);
-  color: var(--primary);
-  border: 1px solid var(--blue-40);
+  background: #ffe9e9;
+  color: #9c1d26;
+  border: 1px solid #f3b1b5;
+}
+.candidate-unsure {
+  margin-top: 4px;
+  background: #fff4d6;
+  color: #7a4e00;
+  border: 1px solid #f1d288;
 }
 .candidate-table small {
   display: block;
   margin-top: 0.15rem;
   color: var(--black-40);
+}
+.occurrence-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--concrete-100);
+}
+.occurrence-row {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--concrete-100);
+  border-radius: 0.45rem;
+  background: white;
+  color: var(--black-100);
+  text-align: left;
+}
+.occurrence-row:hover,
+.occurrence-row.active {
+  border-color: var(--primary);
+  background: var(--blue-10);
+}
+.occurrence-row span {
+  color: var(--black-60);
+  font-size: 0.72rem;
 }
 .snapshot-meta span {
   display: inline-flex;
@@ -409,24 +470,6 @@ input, textarea {
   font-size: 0.82rem;
   text-align: center;
 }
-.triage-summary {
-  margin-top: 8px;
-  padding: 7px 0 7px 10px;
-  border: 0;
-  border-left: 3px solid var(--blue-40);
-  border-radius: 0;
-  background: transparent;
-  font-size: 0.78rem;
-}
-.triage-summary.triage-promote { border-color: #22967f; }
-.triage-summary.triage-suppress { border-color: #dc3545; }
-.triage-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-.triage-summary p { margin: 6px 0 0; color: var(--black-80); }
 mark {
   border-radius: 0.25rem;
   background: #faff01;
@@ -470,49 +513,6 @@ mark {
   padding: 0.78rem 1rem;
   background: var(--black-100);
   color: white;
-}
-
-.reassign-panel {
-  display: grid;
-  gap: 8px;
-  padding: 10px;
-  border-top: 1px solid var(--concrete-100);
-  background: var(--blue-10);
-}
-.reassign-heading {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 10px;
-}
-.reassign-heading p {
-  margin: 0 0 3px;
-}
-.reassign-search {
-  width: 100%;
-  padding: 0.62rem 0.72rem;
-  border: 1px solid var(--blue-40);
-  border-radius: 0.55rem;
-  background: white;
-}
-.reassign-target {
-  display: grid;
-  gap: 2px;
-  width: 100%;
-  padding: 0.58rem 0.68rem;
-  border: 1px solid var(--concrete-100);
-  border-radius: 0.55rem;
-  background: white;
-  color: var(--black-100);
-  text-align: left;
-}
-.reassign-target:hover {
-  border-color: var(--primary);
-  background: var(--lake-20);
-}
-.reassign-target span,
-.reassign-target small {
-  color: var(--black-60);
 }
 
 .action-bar {
