@@ -509,6 +509,7 @@ const App = {
     const noMatchedEvidenceFilter = ref(normalizedNoMatchedEvidenceFilter(localStorage.getItem("review.filter.noMatchedEvidence")));
     const currentIndex = ref(0);
     const selectedCandidateIndex = ref(0);
+    const pendingEmailStatus = ref("");
     const evidenceTab = ref("snapshot");
     const archiveFrame = ref(null);
     const saveStatus = ref("Loading");
@@ -709,6 +710,7 @@ const App = {
       ? emailValidationByValue.value[currentItem.value.email] || null
       : null);
     const currentEmailStatus = computed(() => normalizedEmailStatus(currentEmailValidation.value?.status));
+    const pendingValidationReady = computed(() => ["valid", "invalid"].includes(pendingEmailStatus.value));
     const currentEmailOccurrences = computed(() => {
       const occurrences = currentItem.value?.occurrences || [];
       if (!selectedRegion.value) return occurrences;
@@ -1220,6 +1222,7 @@ const App = {
         || normalizeEmailValue(candidate.value) === item.email
       ));
       selectedCandidateIndex.value = matchingIndex >= 0 ? matchingIndex : (displayedCandidateRows.value[0]?.index ?? 0);
+      pendingEmailStatus.value = currentEmailStatus.value === "unreviewed" ? "" : currentEmailStatus.value;
       showOtherCandidates.value = false;
       showInvalidCandidates.value = false;
       evidenceTab.value = selectedEvidencePresentation.value.kind;
@@ -1271,22 +1274,29 @@ const App = {
       selectCandidate(index);
     }
 
+    function selectCandidateValidation(status, index = selectedCandidateIndex.value) {
+      const normalized = normalizedEmailStatus(status);
+      if (!["valid", "invalid"].includes(normalized)) return;
+      selectCandidate(index);
+      pendingEmailStatus.value = normalized;
+      saveStatus.value = `${emailStatusLabel(normalized)} selected`;
+    }
+
     async function confirmCandidate(index = selectedCandidateIndex.value) {
       try {
         selectCandidate(index);
-        await saveEmailValidation("valid");
+        if (!pendingValidationReady.value) {
+          saveStatus.value = "Choose Valid or Invalid first";
+          return;
+        }
+        await saveEmailValidation(pendingEmailStatus.value);
       } catch (_) {
         saveStatus.value = "Read-only until browser storage is available";
       }
     }
 
-    async function invalidateCandidate(index = selectedCandidateIndex.value) {
-      try {
-        selectCandidate(index);
-        await saveEmailValidation("invalid");
-      } catch (_) {
-        saveStatus.value = "Read-only until browser storage is available";
-      }
+    function invalidateCandidate(index = selectedCandidateIndex.value) {
+      selectCandidateValidation("invalid", index);
     }
 
     async function saveEmailValidation(status, { reviewedValue = null, reasonCode = null } = {}) {
@@ -1846,7 +1856,7 @@ const App = {
     function onKey(event) {
       if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
       const key = event.key.toLowerCase();
-      if (event.key === "1") confirmCandidate();
+      if (event.key === "1") selectCandidateValidation("valid");
       if (key === "enter") confirmCandidate();
       if (event.key === "2") invalidateCandidate();
       if (key === "j") moveCandidate(1);
@@ -1931,6 +1941,8 @@ const App = {
       currentClinicDecisions,
       currentEmailValidation,
       currentEmailStatus,
+      pendingEmailStatus,
+      pendingValidationReady,
       currentEmailOccurrences,
       editMode,
       editValue,
@@ -1958,6 +1970,7 @@ const App = {
       selectCandidate,
       selectOccurrence,
       previewCandidate,
+      selectCandidateValidation,
       confirmCandidate,
       invalidateCandidate,
       saveDecision,
@@ -2026,12 +2039,15 @@ const App = {
                       </button>
                     </td>
                     <td class="candidate-actions">
-                      <button class="candidate-confirm" @click.stop="confirmCandidate(row.index)">Valid</button>
-                      <button class="candidate-invalid" @click.stop="invalidateCandidate(row.index)">Invalid</button>
+                      <button class="candidate-confirm" :class="{active: row.index===selectedCandidateIndex && pendingEmailStatus==='valid'}" @click.stop="selectCandidateValidation('valid', row.index)">Valid</button>
+                      <button class="candidate-invalid" :class="{active: row.index===selectedCandidateIndex && pendingEmailStatus==='invalid'}" @click.stop="invalidateCandidate(row.index)">Invalid</button>
                     </td>
                   </tr>
                 </tbody>
               </table>
+              <div class="candidate-confirm-row">
+                <button class="candidate-final-confirm" :disabled="!pendingValidationReady" @click="confirmCandidate()">Confirm</button>
+              </div>
             </div>
             <p v-else class="muted">No retained candidate row was found for this email occurrence.</p>
           </section>
