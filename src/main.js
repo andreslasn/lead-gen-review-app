@@ -27,7 +27,7 @@ const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-8";
+const DATA_DEPLOY_VERSION = "email-global-20260810-9";
 const DB_OPEN_TIMEOUT_MS = 2500;
 
 function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
