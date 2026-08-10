@@ -27,7 +27,7 @@ const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-3";
+const DATA_DEPLOY_VERSION = "email-global-20260810-4";
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -497,7 +497,7 @@ const App = {
       };
     }));
     const regionOptions = computed(() => [...new Set(
-      preparedQueue.value.flatMap((item) => (item.occurrences || []).map((occurrence) => String(occurrence.region || "").trim())).filter(Boolean),
+      preparedQueue.value.map((item) => String(item.region || "").trim()).filter(Boolean),
     )].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })));
     const regionFilterLabel = computed(() => manifest.value?.review_ui?.region_filter_label || "All regions");
     const roleOptions = computed(() => {
@@ -513,7 +513,7 @@ const App = {
       ? (syncStatus.value || "Sync review")
       : "Connect sync");
     const locationFilteredQueue = computed(() => selectedRegion.value
-      ? preparedQueue.value.filter((item) => (item.occurrences || []).some((occurrence) => occurrence.region === selectedRegion.value))
+      ? preparedQueue.value.filter((item) => item.region === selectedRegion.value)
       : preparedQueue.value);
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
@@ -530,15 +530,6 @@ const App = {
             item.region,
             item.address,
             item.source_url,
-            ...(item.occurrences || []).flatMap((occurrence) => [
-              occurrence.clinic_name,
-              occurrence.registry_id,
-              occurrence.city,
-              occurrence.region,
-              occurrence.address,
-              occurrence.source_url,
-              occurrence.display_value,
-            ]),
           ].some((value) => String(value || "").toLowerCase().includes(needle));
         })
         .sort((a, b) => (
@@ -956,8 +947,6 @@ const App = {
         db.value = await openDb();
         await loadStaticData();
         await hydrateLocal();
-        await mergeEmailValidationSeed();
-        await hydrateLocal();
         if (syncConfig.value && githubToken.value) await loadRemoteReview();
         const routeEmail = routeEmailValue();
         const routeClinic = routeClinicId();
@@ -968,6 +957,9 @@ const App = {
             : -1;
         await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
         saveStatus.value = "Ready";
+        mergeEmailValidationSeed()
+          .then(() => hydrateLocal())
+          .catch(() => {});
         migrateStoredDecisionsToEmailValidations()
           .then(() => hydrateLocal())
           .catch(() => {});
@@ -980,14 +972,12 @@ const App = {
     }
 
     async function loadStaticData() {
-      const [manifestResponse, queueResponse, clinicIndexResponse, integrityResponse, emailIndexResponse] = await Promise.all([
+      const [manifestResponse, integrityResponse, emailIndexResponse] = await Promise.all([
         fetch(staticUrl("data/manifest.json"), { cache: "no-cache" }),
-        fetch(staticUrl("data/queue.json"), { cache: "no-cache" }),
-        fetch(staticUrl("data/clinic-index.json"), { cache: "no-cache" }),
         fetch(staticUrl("data/package-integrity.json"), { cache: "no-cache" }),
         fetch(staticUrl(EMAIL_REVIEW_QUEUE_PATH), { cache: "no-cache" }),
       ]);
-      if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok || !integrityResponse.ok || !emailIndexResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
+      if (!manifestResponse.ok || !integrityResponse.ok || !emailIndexResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
       manifest.value = await manifestResponse.json();
       const integrity = await integrityResponse.json();
       if (manifest.value?.format !== PACKAGE_FORMAT || manifest.value?.schema_version !== PACKAGE_SCHEMA_VERSION) {
@@ -996,12 +986,8 @@ const App = {
       if (integrity?.dataset_id !== manifest.value?.dataset_id || integrity?.country !== manifest.value?.country) {
         throw new Error("Review package drift detected. Regenerate the dataset before reviewing.");
       }
-      const payload = await queueResponse.json();
-      queue.value = payload.items || [];
       const emailPayload = await emailIndexResponse.json();
       emailIndex.value = emailPayload.items || [];
-      const indexPayload = await clinicIndexResponse.json();
-      clinicIndex.value = indexPayload.items || [];
       try {
         const syncResponse = await fetch(REVIEW_SYNC_CONFIG, { cache: "no-cache" });
         if (syncResponse.ok) {
