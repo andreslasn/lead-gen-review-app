@@ -26,8 +26,12 @@ const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-10";
+const DATA_DEPLOY_VERSION = "email-global-20260810-12";
 const DB_OPEN_TIMEOUT_MS = 2500;
+const HIDDEN_REVIEW_UI_TEXT = [
+  "Accepted by an external human reviewer in a validated workbook column.",
+  "The surrounding context explicitly associates this mailbox with a named professional. Prepared for cohort ownership triage. The evidence directly lists the target doctor's name and the candidate email together in the 19th adult GP district entry",
+];
 
 function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
   return new Promise((resolve, reject) => {
@@ -410,25 +414,6 @@ function normalizedRoleCode(
   return roleOptions.some((option) => option.value === normalized) ? normalized : "clinic_contact";
 }
 
-function candidateEvidenceCount(candidate) {
-  const count = candidate?.evidence_links?.length || 0;
-  return count ? `${count} evidence` : "Evidence";
-}
-
-function candidateReasonWithoutTriageDuplication(candidate) {
-  const triageReason = String(candidate?.triage?.reason || "").trim();
-  let reason = sanitizeTriageUiText(candidate?.reason || candidate?.evidence || "");
-  if (!reason) return "";
-  reason = reason
-    .replace(/^Contact was retained for review but not marked usable because its source or surrounding evidence could not be matched to the target registry clinic\.\s*/i, "")
-    .trim();
-  if (triageReason && reason.localeCompare(triageReason, undefined, { sensitivity: "base" }) === 0) return "";
-  if (triageReason && reason.toLowerCase().endsWith(triageReason.toLowerCase())) {
-    reason = reason.slice(0, -triageReason.length).trim().replace(/[.:;,-]+$/, "").trim();
-  }
-  return reason;
-}
-
 function sanitizeTriageUiText(value) {
   let text = String(value || "").trim();
   if (!text) return "";
@@ -443,6 +428,10 @@ function sanitizeTriageUiText(value) {
     .trim();
   if (/^(different_provider|parent_organization|source_operator|third_party|not_supported_by_evidence)(?:\s*\([\d.]+\))?$/i.test(text)) return "";
   return text;
+}
+
+function visibleAuditFlags(flags = []) {
+  return flags.filter((flag) => !HIDDEN_REVIEW_UI_TEXT.some((text) => String(flag || "").localeCompare(text, undefined, { sensitivity: "base" }) === 0));
 }
 
 function normalizedMatchText(value) {
@@ -567,7 +556,7 @@ const App = {
         confidence_pool: status,
         reviewed_at: validation?.reviewed_at || null,
         reviewer_id: validation?.reviewed_by || null,
-        audit_flags: validation?.audit_flags || [],
+        audit_flags: visibleAuditFlags(validation?.audit_flags || []),
       };
     }));
     const regionOptions = computed(() => [...new Set(
@@ -589,9 +578,6 @@ const App = {
       ...(manifest.value?.review_ui?.contact_type_aliases || {}),
     }));
     const reviewPolicy = computed(() => manifest.value?.review_policy || {});
-    const syncButtonLabel = computed(() => githubToken.value
-      ? (syncStatus.value || "Sync review")
-      : "Connect sync");
     const locationFilteredQueue = computed(() => preparedQueue.value.filter((item) => itemMatchesRegion(item, selectedRegion.value)));
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
@@ -828,16 +814,6 @@ const App = {
       return [...currentClinicDecisions.value]
         .filter((decision) => decision.contact_point_id && decision.contact_point_id === candidate?.id)
         .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")))[0] || null;
-    }
-
-    function candidateDecisionLabel(candidate) {
-      const decision = candidateDecision(candidate);
-      if (!decision) return "";
-      if (decision.decision === "rejected") return "Rejected";
-      if (decision.decision === "reassigned") {
-        return `Reassigned → ${decision.target_clinic_name || decision.target_registry_id || decision.target_clinic_id || "other clinic"}`;
-      }
-      return "Valid";
     }
 
     function focusArchivedEvidence(event) {
@@ -1934,7 +1910,6 @@ const App = {
       syncPanelOpen,
       githubToken,
       syncStatus,
-      syncButtonLabel,
       noMatchedEvidenceFilter,
       laneLabel,
       reasonLabel,
@@ -1971,12 +1946,9 @@ const App = {
       showInvalidCandidates,
       safeText,
       candidateRoleLabel,
-      candidateEvidenceCount,
-      candidateReasonWithoutTriageDuplication,
       displayedCandidateRole,
       updateCandidateRole,
       candidateDecision,
-      candidateDecisionLabel,
       emailStatusLabel,
       artifactUrl,
       focusedHtmlUrl,
@@ -2027,7 +1999,6 @@ const App = {
       <main v-else-if="currentItem && clinic" class="review-layout">
         <section class="decision-pane">
           <div class="clinic-meta">
-            <span class="pill lane" :class="'email-status-' + currentEmailStatus">{{ emailStatusLabel(currentEmailStatus) }}</span>
             <span v-if="currentItem.audit_flags?.length" class="pill reason">{{ currentItem.audit_flags.join(', ') }}</span>
             <span class="muted">{{ currentItem.occurrence_count }} occurrence{{ currentItem.occurrence_count === 1 ? '' : 's' }}</span>
           </div>
@@ -2038,10 +2009,10 @@ const App = {
             <p class="label">Email validation</p>
             <div v-if="displayedCandidateRows.length" class="candidate-table-wrap">
               <table class="candidate-table">
-                <thead><tr><th>Email</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead>
+                <thead><tr><th>Email</th><th>Type</th><th>Actions</th></tr></thead>
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
-                    <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
+                    <td><span class="candidate-email">{{ row.candidate.value }}</span></td>
                     <td class="candidate-role-actions">
                       <button
                         v-for="option in roleOptions"
@@ -2054,7 +2025,6 @@ const App = {
                         {{ option.label }}
                       </button>
                     </td>
-                    <td><span class="email-status-pill" :class="'email-status-' + currentEmailStatus">{{ emailStatusLabel(currentEmailStatus) }}</span></td>
                     <td class="candidate-actions">
                       <button class="candidate-confirm" @click.stop="confirmCandidate(row.index)">Valid</button>
                       <button class="candidate-invalid" @click.stop="invalidateCandidate(row.index)">Invalid</button>
@@ -2064,7 +2034,6 @@ const App = {
               </table>
             </div>
             <p v-else class="muted">No retained candidate row was found for this email occurrence.</p>
-            <p v-if="candidateReasonWithoutTriageDuplication(selectedCandidate)" class="candidate-reason">{{ candidateReasonWithoutTriageDuplication(selectedCandidate) }}</p>
           </section>
 
           <section v-if="editMode" class="edit-panel">
@@ -2130,7 +2099,6 @@ const App = {
         <p class="muted">{{ syncStatus }}</p>
       </section>
 
-      <button v-if="syncConfig" class="floating-sync" @click="syncPanelOpen=!syncPanelOpen" :title="syncStatus">{{ syncButtonLabel }}</button>
       <button class="floating-export" @click="exportProgress" :title="saveStatus">Export .json</button>
     </div>
   `,
