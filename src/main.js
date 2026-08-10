@@ -956,9 +956,7 @@ const App = {
         db.value = await openDb();
         await loadStaticData();
         await hydrateLocal();
-        await mergeCanonicalState();
         await mergeEmailValidationSeed();
-        await migrateStoredDecisionsToEmailValidations();
         await hydrateLocal();
         if (syncConfig.value && githubToken.value) await loadRemoteReview();
         const routeEmail = routeEmailValue();
@@ -970,6 +968,9 @@ const App = {
             : -1;
         await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
         saveStatus.value = "Ready";
+        migrateStoredDecisionsToEmailValidations()
+          .then(() => hydrateLocal())
+          .catch(() => {});
         if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
       } catch (err) {
         error.value = err?.message || String(err);
