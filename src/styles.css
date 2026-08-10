@@ -373,15 +373,28 @@ input, textarea {
   font: 750 0.8rem/1.2 var(--font-body);
   letter-spacing: -0.02em;
 }
-.candidate-role-select {
+.candidate-role-actions {
+  min-width: 9.5rem;
+}
+.candidate-role-button {
+  display: block;
   width: 100%;
-  min-width: 7.5rem;
-  padding: 0.3rem 1.4rem 0.3rem 0.4rem;
+  padding: 0.34rem 0.48rem;
   border: 1px solid var(--concrete-100);
   border-radius: 0.4rem;
   background: white;
-  color: var(--black-100);
-  font-size: 0.72rem;
+  color: var(--black-80);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-align: left;
+}
+.candidate-role-button + .candidate-role-button {
+  margin-top: 4px;
+}
+.candidate-role-button.active {
+  border-color: var(--primary);
+  background: var(--blue-10);
+  color: var(--primary);
 }
 .candidate-table tr.decided {
   color: var(--black-60);
@@ -414,33 +427,6 @@ input, textarea {
   display: block;
   margin-top: 0.15rem;
   color: var(--black-40);
-}
-.occurrence-list {
-  display: grid;
-  gap: 6px;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid var(--concrete-100);
-}
-.occurrence-row {
-  display: grid;
-  gap: 2px;
-  width: 100%;
-  padding: 0.5rem 0.6rem;
-  border: 1px solid var(--concrete-100);
-  border-radius: 0.45rem;
-  background: white;
-  color: var(--black-100);
-  text-align: left;
-}
-.occurrence-row:hover,
-.occurrence-row.active {
-  border-color: var(--primary);
-  background: var(--blue-10);
-}
-.occurrence-row span {
-  color: var(--black-60);
-  font-size: 0.72rem;
 }
 .snapshot-meta span {
   display: inline-flex;

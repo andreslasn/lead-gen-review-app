@@ -11,7 +11,6 @@ const STATES = ["needs_review", "confirmed", "no_email", "not_processed", "exclu
 const DEFAULT_ROLE_OPTIONS = [
   { value: "clinic_contact", label: "Generic contact" },
   { value: "doctor_staff", label: "Doctor/staff" },
-  { value: "not_relevant", label: "Not relevant" },
 ];
 const DEFAULT_ROLE_ALIASES = {
   covering_provider: "doctor_staff",
@@ -27,7 +26,7 @@ const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-9";
+const DATA_DEPLOY_VERSION = "email-global-20260810-10";
 const DB_OPEN_TIMEOUT_MS = 2500;
 
 function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
@@ -322,7 +321,7 @@ function escapeHtml(value) {
 }
 
 function evidenceHtml(link, fallback = "") {
-  if (!link) return escapeHtml(fallback || "No compact evidence was packaged for this candidate.");
+  if (!link) return escapeHtml(sanitizeTriageUiText(fallback) || "No compact evidence was packaged for this candidate.");
   const prefix = escapeHtml(link.prefix_text || "");
   const quote = escapeHtml(link.exact_quote || "");
   const suffix = escapeHtml(link.suffix_text || "");
@@ -390,17 +389,16 @@ function candidateRoleLabel(candidate, reviewPolicy = {}) {
   if (staffTerms.some((term) => term && text.includes(String(term).toLowerCase())) || classification.includes("staff") || classification.includes("doctor") || contactRole.includes("doctor") || /^dr[._-]/i.test(candidate?.value || "")) return "Doctor/staff";
   if (classification.includes("clinic") || contactRole.includes("clinic")) return "Generic contact";
   if (classification.includes("generic")) return "Generic contact";
-  if (classification.includes("third") || classification.includes("directory") || classification.includes("webmaster")) return "Not relevant";
-  return "Not relevant";
+  return "Generic contact";
 }
 
 function candidateRoleCode(candidate, roleOptions = DEFAULT_ROLE_OPTIONS, reviewPolicy = {}) {
   const ownershipClass = candidate?.triage?.ownership_class;
   if (["target_person", "same_professional_other_practice", "covering_provider"].includes(ownershipClass)) return "doctor_staff";
   if (ownershipClass === "target_practice") return "clinic_contact";
-  if (["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "not_relevant";
+  if (["different_provider", "source_operator", "parent_organization", "third_party", "not_supported_by_evidence"].includes(ownershipClass)) return "clinic_contact";
   const label = candidateRoleLabel(candidate, reviewPolicy);
-  return roleOptions.find((option) => option.label === label)?.value || "not_relevant";
+  return roleOptions.find((option) => option.label === label)?.value || "clinic_contact";
 }
 
 function normalizedRoleCode(
@@ -409,7 +407,7 @@ function normalizedRoleCode(
   aliases = DEFAULT_ROLE_ALIASES,
 ) {
   const normalized = aliases[role] || role;
-  return roleOptions.some((option) => option.value === normalized) ? normalized : "not_relevant";
+  return roleOptions.some((option) => option.value === normalized) ? normalized : "clinic_contact";
 }
 
 function candidateEvidenceCount(candidate) {
@@ -419,17 +417,32 @@ function candidateEvidenceCount(candidate) {
 
 function candidateReasonWithoutTriageDuplication(candidate) {
   const triageReason = String(candidate?.triage?.reason || "").trim();
-  let reason = String(candidate?.reason || candidate?.evidence || "").trim();
-  if (/^Triage\s+llm-/i.test(reason) || /LLM classification retained/i.test(reason)) return "";
+  let reason = sanitizeTriageUiText(candidate?.reason || candidate?.evidence || "");
+  if (!reason) return "";
   reason = reason
     .replace(/^Contact was retained for review but not marked usable because its source or surrounding evidence could not be matched to the target registry clinic\.\s*/i, "")
-    .replace(/^Triage (?:suppressed|promoted):\s*/i, "")
     .trim();
   if (triageReason && reason.localeCompare(triageReason, undefined, { sensitivity: "base" }) === 0) return "";
   if (triageReason && reason.toLowerCase().endsWith(triageReason.toLowerCase())) {
     reason = reason.slice(0, -triageReason.length).trim().replace(/[.:;,-]+$/, "").trim();
   }
   return reason;
+}
+
+function sanitizeTriageUiText(value) {
+  let text = String(value || "").trim();
+  if (!text) return "";
+  text = text
+    .replace(/\bTriage\s+llm-[^.!?\n]*(?:[.!?]\s*)?/gi, " ")
+    .replace(/\bMachine triage:\s*[^.!?\n]*(?:[.!?]\s*)?/gi, " ")
+    .replace(/\bTriage\s+(?:suppressed|promoted|retained)[^.!?\n]*(?:[.!?]\s*)?/gi, " ")
+    .replace(/\bLLM classification retained[^.!?\n]*(?:[.!?]\s*)?/gi, " ")
+    .replace(/\b(?:different_provider|parent_organization|source_operator|third_party|not_supported_by_evidence)\s*[·:,-]?\s*\d{1,3}%?/gi, " ")
+    .replace(/\s+/g, " ")
+    .replace(/^[.:;,\s-]+|[.:;,\s-]+$/g, "")
+    .trim();
+  if (/^(different_provider|parent_organization|source_operator|third_party|not_supported_by_evidence)(?:\s*\([\d.]+\))?$/i.test(text)) return "";
+  return text;
 }
 
 function normalizedMatchText(value) {
@@ -563,7 +576,13 @@ const App = {
     const regionFilterLabel = computed(() => manifest.value?.review_ui?.region_filter_label || "All regions");
     const roleOptions = computed(() => {
       const configured = manifest.value?.review_ui?.contact_types;
-      return Array.isArray(configured) && configured.length ? configured : DEFAULT_ROLE_OPTIONS;
+      const options = Array.isArray(configured) && configured.length ? configured : DEFAULT_ROLE_OPTIONS;
+      return options
+        .filter((option) => ["clinic_contact", "doctor_staff"].includes(option.value))
+        .map((option) => ({
+          ...option,
+          label: option.value === "clinic_contact" ? "Generic" : "Doctor/staff",
+        }));
     });
     const roleAliases = computed(() => ({
       ...DEFAULT_ROLE_ALIASES,
@@ -2023,10 +2042,17 @@ const App = {
                 <tbody>
                   <tr v-for="row in displayedCandidateRows" :key="row.candidate.id || row.index" :class="{selected:row.index===selectedCandidateIndex, decided: candidateDecision(row.candidate)}" @mouseenter="previewCandidate(row.index)" @click="selectCandidate(row.index)">
                     <td><span class="candidate-email">{{ row.candidate.value }}</span><small>{{ candidateEvidenceCount(row.candidate) }}</small><small v-if="candidateDecision(row.candidate)" class="candidate-decision-label">{{ candidateDecisionLabel(row.candidate) }}</small></td>
-                    <td>
-                      <select class="candidate-role-select" :value="displayedCandidateRole(row.candidate)" @click.stop @change.stop="updateCandidateRole(row.candidate, $event.target.value)">
-                        <option v-for="option in roleOptions" :key="option.value" :value="option.value">{{ option.label }}</option>
-                      </select>
+                    <td class="candidate-role-actions">
+                      <button
+                        v-for="option in roleOptions"
+                        :key="option.value"
+                        type="button"
+                        class="candidate-role-button"
+                        :class="{active: displayedCandidateRole(row.candidate) === option.value}"
+                        @click.stop="updateCandidateRole(row.candidate, option.value)"
+                      >
+                        {{ option.label }}
+                      </button>
                     </td>
                     <td><span class="email-status-pill" :class="'email-status-' + currentEmailStatus">{{ emailStatusLabel(currentEmailStatus) }}</span></td>
                     <td class="candidate-actions">
@@ -2039,20 +2065,6 @@ const App = {
             </div>
             <p v-else class="muted">No retained candidate row was found for this email occurrence.</p>
             <p v-if="candidateReasonWithoutTriageDuplication(selectedCandidate)" class="candidate-reason">{{ candidateReasonWithoutTriageDuplication(selectedCandidate) }}</p>
-            <div v-if="currentEmailOccurrences.length > 1" class="occurrence-list">
-              <p class="label">Seen with</p>
-              <button
-                v-for="occurrence in currentEmailOccurrences.slice(0, 12)"
-                :key="occurrence.clinic_id + ':' + occurrence.contact_point_id"
-                class="occurrence-row"
-                :class="{active: occurrence.clinic_id === clinic.clinic.id && occurrence.contact_point_id === selectedCandidate?.id}"
-                @click="selectOccurrence(occurrence)"
-              >
-                <strong>{{ occurrence.clinic_name }}</strong>
-                <span>{{ occurrence.city }} · {{ occurrence.registry_id }}</span>
-              </button>
-              <p v-if="currentEmailOccurrences.length > 12" class="muted">+{{ currentEmailOccurrences.length - 12 }} more occurrences</p>
-            </div>
           </section>
 
           <section v-if="editMode" class="edit-panel">
