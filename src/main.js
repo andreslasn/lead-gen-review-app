@@ -26,6 +26,7 @@ const REVIEW_SYNC_CONFIG = "review-sync.json";
 const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
+const DATA_DEPLOY_VERSION = "email-global-20260810-2";
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -107,6 +108,11 @@ function safeReviewPathPart(value) {
     .toLowerCase()
     .replace(/[^a-z0-9._-]+/g, "-")
     .replace(/^-+|-+$/g, "") || "reviewer";
+}
+
+function staticUrl(path) {
+  const separator = String(path).includes("?") ? "&" : "?";
+  return `${path}${separator}v=${encodeURIComponent(DATA_DEPLOY_VERSION)}`;
 }
 
 async function sha256(text) {
@@ -706,7 +712,7 @@ const App = {
     function artifactUrl(path) {
       if (!path) return null;
       const clean = String(path).replace(/^\/+/, "");
-      return `data/${clean}`;
+      return staticUrl(`data/${clean}`);
     }
 
     function focusedHtmlUrl(path, value) {
@@ -970,11 +976,11 @@ const App = {
 
     async function loadStaticData() {
       const [manifestResponse, queueResponse, clinicIndexResponse, integrityResponse, emailIndexResponse] = await Promise.all([
-        fetch("data/manifest.json", { cache: "no-cache" }),
-        fetch("data/queue.json", { cache: "no-cache" }),
-        fetch("data/clinic-index.json", { cache: "no-cache" }),
-        fetch("data/package-integrity.json", { cache: "no-cache" }),
-        fetch(EMAIL_INDEX_PATH, { cache: "no-cache" }),
+        fetch(staticUrl("data/manifest.json"), { cache: "no-cache" }),
+        fetch(staticUrl("data/queue.json"), { cache: "no-cache" }),
+        fetch(staticUrl("data/clinic-index.json"), { cache: "no-cache" }),
+        fetch(staticUrl("data/package-integrity.json"), { cache: "no-cache" }),
+        fetch(staticUrl(EMAIL_INDEX_PATH), { cache: "no-cache" }),
       ]);
       if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok || !integrityResponse.ok || !emailIndexResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
       manifest.value = await manifestResponse.json();
@@ -1056,7 +1062,7 @@ const App = {
     async function loadClinic(clinicId) {
       if (!clinicId) return null;
       if (clinicCache.value[clinicId]) return clinicCache.value[clinicId];
-      const response = await fetch(`data/clinics/${encodeURIComponent(clinicId)}.json`, { cache: "no-cache" });
+      const response = await fetch(staticUrl(`data/clinics/${encodeURIComponent(clinicId)}.json`), { cache: "no-cache" });
       if (!response.ok) throw new Error("Clinic review file not found.");
       const payload = await response.json();
       clinicCache.value = { ...clinicCache.value, [clinicId]: payload };
@@ -1550,7 +1556,7 @@ const App = {
 
     async function mergeCanonicalState() {
       try {
-        const response = await fetch("data/canonical-review-state.json", { cache: "no-cache" });
+        const response = await fetch(staticUrl("data/canonical-review-state.json"), { cache: "no-cache" });
         if (!response.ok) return;
         await mergeImport(await response.json(), { silent: true });
       } catch (_) {
@@ -1560,7 +1566,7 @@ const App = {
 
     async function mergeEmailValidationSeed() {
       try {
-        const response = await fetch(EMAIL_VALIDATION_SEED_PATH, { cache: "no-cache" });
+        const response = await fetch(staticUrl(EMAIL_VALIDATION_SEED_PATH), { cache: "no-cache" });
         if (!response.ok) return;
         const payload = await response.json();
         if (payload.format !== "lead-gen-email-validation-seed" || payload.schema_version !== 1) return;

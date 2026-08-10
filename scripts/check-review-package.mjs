@@ -9,6 +9,8 @@ const requiredFiles = [
   "queue.json",
   "clinic-index.json",
   "canonical-review-state.json",
+  "email-index.json",
+  "email-validation-seed.json",
 ];
 const secretPatterns = [
   ["Google API key", /(^|[^0-9A-Za-z_-])AIza[0-9A-Za-z_-]{35}([^0-9A-Za-z_-]|$)/],
@@ -115,6 +117,8 @@ async function scanSecrets(file) {
 const manifest = await json("manifest.json");
 const queue = await json("queue.json");
 const clinicIndex = await json("clinic-index.json");
+const emailIndex = await json("email-index.json");
+const emailValidationSeed = await json("email-validation-seed.json");
 const integrity = await json("package-integrity.json");
 
 if (manifest.format !== "lead-gen-review-package" || manifest.schema_version !== 1) fail("unsupported manifest contract");
@@ -128,13 +132,24 @@ if (fingerprint !== integrity.package_fingerprint) fail("integrity fingerprint m
 
 const queueItems = queue.items || [];
 const indexItems = clinicIndex.items || [];
+const emailItems = emailIndex.items || [];
+const emailValidations = emailValidationSeed.validations || [];
 const expectedClinics = Number(manifest.counts?.clinics || 0);
 if (queueItems.length !== expectedClinics || indexItems.length < expectedClinics) fail("clinic counts are inconsistent");
+if (emailIndex.format !== "lead-gen-email-index" || emailIndex.schema_version !== 1) fail("unsupported email index contract");
+if (emailValidationSeed.format !== "lead-gen-email-validation-seed" || emailValidationSeed.schema_version !== 1) fail("unsupported email validation seed contract");
+if (emailIndex.dataset_id !== manifest.dataset_id || emailValidationSeed.dataset_id !== manifest.dataset_id) fail("email data dataset mismatch");
+if (!emailItems.length || Number(emailIndex.counts?.emails || 0) !== emailItems.length) fail("email index counts are inconsistent");
+if (!emailValidations.length) fail("email validation seed is empty");
 const queueIds = queueItems.map((item) => String(item.id || ""));
 const indexIds = indexItems.map((item) => String(item.id || ""));
 if (new Set(queueIds).size !== queueIds.length || new Set(indexIds).size !== indexIds.length) fail("duplicate clinic IDs");
 const indexSet = new Set(indexIds);
 if (queueIds.some((id) => !indexSet.has(id))) fail("queue contains clinics absent from the market index");
+const emailValues = emailItems.map((item) => String(item.email || ""));
+if (new Set(emailValues).size !== emailValues.length || emailValues.some((email) => !email.includes("@"))) fail("email index contains duplicate or invalid email keys");
+const emailClinicIds = new Set(emailItems.flatMap((item) => (item.occurrences || []).map((occurrence) => String(occurrence.clinic_id || ""))));
+if ([...emailClinicIds].some((id) => id && !indexSet.has(id))) fail("email index references unknown clinic IDs");
 
 for (const clinicId of queueIds) {
   try {
