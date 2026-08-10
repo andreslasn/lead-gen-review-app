@@ -27,7 +27,7 @@ const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-4";
+const DATA_DEPLOY_VERSION = "email-global-20260810-5";
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -216,6 +216,27 @@ function emailStatusLabel(value) {
 
 function normalizedEmailStatus(value) {
   return EMAIL_STATUSES.includes(value) ? value : "unreviewed";
+}
+
+function mergedEmailValidationList(...lists) {
+  const byEmail = new Map();
+  for (const list of lists) {
+    for (const validation of list || []) {
+      const email = normalizeEmailValue(validation?.email || validation?.display_value);
+      if (!email || !email.includes("@")) continue;
+      const normalized = {
+        ...validation,
+        email,
+        display_value: validation.display_value || email,
+        status: normalizedEmailStatus(validation.status),
+      };
+      const existing = byEmail.get(email);
+      const existingTime = String(existing?.updated_at || existing?.reviewed_at || "");
+      const normalizedTime = String(normalized.updated_at || normalized.reviewed_at || "");
+      if (!existing || existingTime <= normalizedTime) byEmail.set(email, normalized);
+    }
+  }
+  return [...byEmail.values()];
 }
 
 function normalizedNoMatchedEvidenceFilter(value) {
@@ -435,6 +456,7 @@ const App = {
     const manifest = ref(null);
     const queue = ref([]);
     const emailIndex = ref([]);
+    const staticEmailValidations = ref([]);
     const clinicIndex = ref([]);
     const clinic = ref(null);
     const clinicCache = ref({});
@@ -476,7 +498,9 @@ const App = {
     let syncTimer = null;
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
-    const emailValidationByValue = computed(() => Object.fromEntries(emailValidations.value.map((item) => [item.email, item])));
+    const emailValidationByValue = computed(() => Object.fromEntries(
+      mergedEmailValidationList(staticEmailValidations.value, emailValidations.value).map((item) => [item.email, item]),
+    ));
     const decisionsByClinic = computed(() => {
       const grouped = {};
       for (const decision of decisions.value) (grouped[decision.clinic_id] ||= []).push(decision);
@@ -946,8 +970,8 @@ const App = {
       try {
         db.value = await openDb();
         await loadStaticData();
-        await hydrateLocal();
-        if (syncConfig.value && githubToken.value) await loadRemoteReview();
+        sanitizeSavedFilters();
+        await hydrateEmailValidations();
         const routeEmail = routeEmailValue();
         const routeClinic = routeClinicId();
         const routeIndex = routeEmail
@@ -957,12 +981,7 @@ const App = {
             : -1;
         await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
         saveStatus.value = "Ready";
-        mergeEmailValidationSeed()
-          .then(() => hydrateLocal())
-          .catch(() => {});
-        migrateStoredDecisionsToEmailValidations()
-          .then(() => hydrateLocal())
-          .catch(() => {});
+        refreshBackgroundState();
         if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
       } catch (err) {
         error.value = err?.message || String(err);
@@ -972,10 +991,11 @@ const App = {
     }
 
     async function loadStaticData() {
-      const [manifestResponse, integrityResponse, emailIndexResponse] = await Promise.all([
+      const [manifestResponse, integrityResponse, emailIndexResponse, validationSeedResponse] = await Promise.all([
         fetch(staticUrl("data/manifest.json"), { cache: "no-cache" }),
         fetch(staticUrl("data/package-integrity.json"), { cache: "no-cache" }),
         fetch(staticUrl(EMAIL_REVIEW_QUEUE_PATH), { cache: "no-cache" }),
+        fetch(staticUrl(EMAIL_VALIDATION_SEED_PATH), { cache: "no-cache" }).catch(() => null),
       ]);
       if (!manifestResponse.ok || !integrityResponse.ok || !emailIndexResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
       manifest.value = await manifestResponse.json();
@@ -988,6 +1008,12 @@ const App = {
       }
       const emailPayload = await emailIndexResponse.json();
       emailIndex.value = emailPayload.items || [];
+      if (validationSeedResponse?.ok) {
+        const validationSeed = await validationSeedResponse.json();
+        if (validationSeed?.format === "lead-gen-email-validation-seed" && validationSeed?.schema_version === 1) {
+          staticEmailValidations.value = validationSeed.validations || [];
+        }
+      }
       try {
         const syncResponse = await fetch(REVIEW_SYNC_CONFIG, { cache: "no-cache" });
         if (syncResponse.ok) {
@@ -1001,13 +1027,51 @@ const App = {
       }
     }
 
-    async function hydrateLocal() {
-      decisions.value = await getAll(db.value, "decisions");
-      localStates.value = await getAll(db.value, "clinic_states");
+    function sanitizeSavedFilters() {
+      const validRegions = new Set(emailIndex.value.map((item) => String(item.region || "").trim()).filter(Boolean));
+      if (selectedRegion.value && !validRegions.has(selectedRegion.value)) {
+        selectedRegion.value = "";
+        localStorage.removeItem("review.filter.region");
+      }
+    }
+
+    async function hydrateEmailValidations() {
       emailValidations.value = await getAll(db.value, "email_validations");
-      roleOverrides.value = (await getAll(db.value, "meta"))
+    }
+
+    async function hydrateLocal() {
+      const [storedDecisions, storedStates, storedEmailValidations, storedMeta] = await Promise.all([
+        getAll(db.value, "decisions"),
+        getAll(db.value, "clinic_states"),
+        getAll(db.value, "email_validations"),
+        getAll(db.value, "meta"),
+      ]);
+      decisions.value = storedDecisions;
+      localStates.value = storedStates;
+      emailValidations.value = storedEmailValidations;
+      roleOverrides.value = storedMeta
         .filter((item) => String(item.key || "").startsWith("role_override:"))
         .map((item) => item.value);
+    }
+
+    async function refreshCurrentSelection() {
+      if (filteredQueue.value.length && (!clinic.value || currentItem.value?.clinic_id !== clinic.value?.clinic?.id)) {
+        await setIndex(Math.min(currentIndex.value, filteredQueue.value.length - 1), { updateHash: false });
+      }
+    }
+
+    function refreshBackgroundState() {
+      Promise.resolve()
+        .then(async () => {
+          await mergeEmailValidationSeed();
+          await migrateStoredDecisionsToEmailValidations();
+          await hydrateLocal();
+          if (syncConfig.value && githubToken.value) await loadRemoteReview();
+          await refreshCurrentSelection();
+        })
+        .catch((err) => {
+          error.value = err?.message || String(err);
+        });
     }
 
     function displayedCandidateRole(candidate) {
@@ -1358,6 +1422,7 @@ const App = {
 
     async function buildReviewPayload() {
       const exportedAt = nowIso();
+      const storedEmailValidations = await getAll(db.value, "email_validations");
       const payload = {
         format: REVIEW_FORMAT,
         schema_version: SCHEMA_VERSION,
@@ -1369,7 +1434,7 @@ const App = {
         app_build: manifest.value?.source_commit || null,
         decisions: await getAll(db.value, "decisions"),
         clinic_states: await getAll(db.value, "clinic_states"),
-        email_validations: await getAll(db.value, "email_validations"),
+        email_validations: mergedEmailValidationList(staticEmailValidations.value, storedEmailValidations),
         role_overrides: roleOverrides.value,
         audit_events: await getAll(db.value, "audit_events"),
       };
