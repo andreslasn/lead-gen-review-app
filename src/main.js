@@ -24,9 +24,10 @@ const DEFAULT_ROLE_ALIASES = {
 const PREFETCH_COUNT = 3;
 const REVIEW_SYNC_CONFIG = "review-sync.json";
 const EMAIL_INDEX_PATH = "data/email-index.json";
+const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid", "unsure"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-2";
+const DATA_DEPLOY_VERSION = "email-global-20260810-3";
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -451,6 +452,7 @@ const App = {
     const evidenceTab = ref("snapshot");
     const archiveFrame = ref(null);
     const saveStatus = ref("Loading");
+    const loading = ref(true);
     const error = ref("");
     const editMode = ref(false);
     const editValue = ref("");
@@ -971,6 +973,8 @@ const App = {
         if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
       } catch (err) {
         error.value = err?.message || String(err);
+      } finally {
+        loading.value = false;
       }
     }
 
@@ -980,7 +984,7 @@ const App = {
         fetch(staticUrl("data/queue.json"), { cache: "no-cache" }),
         fetch(staticUrl("data/clinic-index.json"), { cache: "no-cache" }),
         fetch(staticUrl("data/package-integrity.json"), { cache: "no-cache" }),
-        fetch(staticUrl(EMAIL_INDEX_PATH), { cache: "no-cache" }),
+        fetch(staticUrl(EMAIL_REVIEW_QUEUE_PATH), { cache: "no-cache" }),
       ]);
       if (!manifestResponse.ok || !queueResponse.ok || !clinicIndexResponse.ok || !integrityResponse.ok || !emailIndexResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
       manifest.value = await manifestResponse.json();
@@ -1782,6 +1786,7 @@ const App = {
       editValue,
       note,
       saveStatus,
+      loading,
       error,
       lastExportAt,
       roleOptions,
@@ -1840,7 +1845,12 @@ const App = {
       <div v-if="error" class="alert error">{{ error }}</div>
       <div v-if="visibleBackupReminder()" class="alert">Export a backup soon. Browser storage is local to this browser profile.</div>
 
-      <main v-if="currentItem && clinic" class="review-layout">
+      <main v-if="loading" class="empty-state">
+        <h2>Loading email review data.</h2>
+        <p>Fetching the packaged email queue and validation state.</p>
+      </main>
+
+      <main v-else-if="currentItem && clinic" class="review-layout">
         <section class="decision-pane">
           <div class="clinic-meta">
             <span class="pill lane" :class="'email-status-' + currentEmailStatus">{{ emailStatusLabel(currentEmailStatus) }}</span>
@@ -1931,7 +1941,7 @@ const App = {
       </main>
 
       <main v-else class="empty-state">
-        <h2>No leads in this lane.</h2>
+        <h2>No emails in this lane.</h2>
         <p>Change the lane filter or search query.</p>
       </main>
 
