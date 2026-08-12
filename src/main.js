@@ -250,10 +250,9 @@ function normalizedCampaignUsageFilter(value) {
 
 function campaignUsageFilterLabel(value) {
   return {
-    all: "All campaign",
     unused: "Unused",
     used: "Used",
-  }[value] || "All campaign";
+  }[value] || "";
 }
 
 function campaignUsageLabel(item) {
