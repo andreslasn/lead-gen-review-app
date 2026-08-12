@@ -2189,7 +2189,7 @@ const App = {
           </button>
         </div>
         <div class="campaign-tabs">
-          <button v-for="filter in ['all','unused','used']" :key="filter" :class="{active:campaignUsageFilter===filter}" @click="campaignUsageFilter=filter">
+          <button v-for="filter in ['unused','used']" :key="filter" :class="{active:campaignUsageFilter===filter}" @click="campaignUsageFilter=campaignUsageFilter===filter ? 'all' : filter">
             {{ campaignUsageFilterLabel(filter) }} <strong>{{ campaignUsageCounts[filter] || 0 }}</strong>
           </button>
         </div>
