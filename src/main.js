@@ -618,9 +618,10 @@ const App = {
     }));
     const reviewPolicy = computed(() => manifest.value?.review_policy || {});
     const locationFilteredQueue = computed(() => preparedQueue.value.filter((item) => itemMatchesRegion(item, selectedRegion.value)));
+    const isUnusedValidCampaignEmail = (item) => item.status === "valid" && !item.used_in_campaign;
     const campaignUsageFilteredQueue = computed(() => locationFilteredQueue.value.filter((item) => {
       if (campaignUsageFilter.value === "used") return item.used_in_campaign;
-      if (campaignUsageFilter.value === "unused") return !item.used_in_campaign;
+      if (campaignUsageFilter.value === "unused") return isUnusedValidCampaignEmail(item);
       return true;
     }));
     const filteredQueue = computed(() => {
@@ -663,7 +664,10 @@ const App = {
     });
     const campaignUsageCounts = computed(() => {
       const counts = { all: locationFilteredQueue.value.length, unused: 0, used: 0 };
-      for (const item of locationFilteredQueue.value) counts[item.used_in_campaign ? "used" : "unused"] += 1;
+      for (const item of locationFilteredQueue.value) {
+        if (item.used_in_campaign) counts.used += 1;
+        else if (isUnusedValidCampaignEmail(item)) counts.unused += 1;
+      }
       return counts;
     });
     const unusedValidExportCount = computed(() => unusedValidEmailRows(selectedRegion.value).length);
