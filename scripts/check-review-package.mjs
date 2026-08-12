@@ -12,6 +12,7 @@ const requiredFiles = [
   "email-index.json",
   "email-review-queue.json",
   "email-validation-seed.json",
+  "campaign-email-usage.json",
 ];
 const secretPatterns = [
   ["Google API key", /(^|[^0-9A-Za-z_-])AIza[0-9A-Za-z_-]{35}([^0-9A-Za-z_-]|$)/],
@@ -121,6 +122,7 @@ const clinicIndex = await json("clinic-index.json");
 const emailIndex = await json("email-index.json");
 const emailReviewQueue = await json("email-review-queue.json");
 const emailValidationSeed = await json("email-validation-seed.json");
+const campaignEmailUsage = await json("campaign-email-usage.json");
 const integrity = await json("package-integrity.json");
 
 if (manifest.format !== "lead-gen-review-package" || manifest.schema_version !== 1) fail("unsupported manifest contract");
@@ -142,7 +144,9 @@ if (queueItems.length !== expectedClinics || indexItems.length < expectedClinics
 if (emailIndex.format !== "lead-gen-email-index" || emailIndex.schema_version !== 1) fail("unsupported email index contract");
 if (emailReviewQueue.format !== "lead-gen-email-review-queue" || emailReviewQueue.schema_version !== 1) fail("unsupported email review queue contract");
 if (emailValidationSeed.format !== "lead-gen-email-validation-seed" || emailValidationSeed.schema_version !== 1) fail("unsupported email validation seed contract");
+if (campaignEmailUsage.format !== "lead-gen-campaign-email-usage" || campaignEmailUsage.schema_version !== 1) fail("unsupported campaign email usage contract");
 if (emailIndex.dataset_id !== manifest.dataset_id || emailReviewQueue.dataset_id !== manifest.dataset_id || emailValidationSeed.dataset_id !== manifest.dataset_id) fail("email data dataset mismatch");
+if (campaignEmailUsage.dataset_id !== manifest.dataset_id) fail("campaign email usage dataset mismatch");
 if (!emailItems.length || Number(emailIndex.counts?.emails || 0) !== emailItems.length) fail("email index counts are inconsistent");
 if (emailQueueItems.length !== emailItems.length || Number(emailReviewQueue.counts?.emails || 0) !== emailQueueItems.length) fail("email review queue counts are inconsistent");
 if (!emailValidations.length) fail("email validation seed is empty");
@@ -157,6 +161,9 @@ if (emailValueSet.size !== emailValues.length || emailValues.some((email) => !em
 const emailQueueValues = emailQueueItems.map((item) => String(item.email || ""));
 if (new Set(emailQueueValues).size !== emailQueueValues.length || emailQueueValues.some((email) => !email.includes("@"))) fail("email review queue contains duplicate or invalid email keys");
 if (emailQueueValues.some((email) => !emailValueSet.has(email))) fail("email review queue contains emails absent from full email index");
+const campaignEmails = (campaignEmailUsage.items || []).map((item) => String(item.email || ""));
+if (new Set(campaignEmails).size !== campaignEmails.length || campaignEmails.some((email) => !email.includes("@"))) fail("campaign email usage contains duplicate or invalid emails");
+if (campaignEmails.some((email) => !emailValueSet.has(email))) fail("campaign email usage contains emails absent from full email index");
 const emailClinicIds = new Set(emailItems.flatMap((item) => (item.occurrences || []).map((occurrence) => String(occurrence.clinic_id || ""))));
 if ([...emailClinicIds].some((id) => id && !indexSet.has(id))) fail("email index references unknown clinic IDs");
 

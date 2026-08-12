@@ -116,7 +116,7 @@ input, textarea {
 }
 .queue-bar {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(150px, 220px) auto;
+  grid-template-columns: minmax(220px, 1fr) minmax(260px, 390px) auto;
   gap: 8px;
   align-items: center;
   padding: 8px;
@@ -133,6 +133,29 @@ input, textarea {
   background: white;
   color: var(--black-80);
   padding: 0.55rem 2rem 0.55rem 0.75rem;
+}
+.region-actions {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) auto;
+  gap: 6px;
+  align-items: center;
+}
+.export-unused-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 2.35rem;
+  padding: 0.48rem 0.62rem;
+  border: 1px solid var(--concrete-100);
+  border-radius: 0.5rem;
+  background: var(--black-100);
+  color: white;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+.export-unused-btn strong {
+  color: inherit;
 }
 .lane-tabs {
   display: flex;
@@ -156,6 +179,28 @@ input, textarea {
   color: var(--primary);
 }
 .lane-tabs strong {
+  color: inherit;
+}
+.campaign-tabs {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+.campaign-tabs button {
+  padding: 0.34rem 0.52rem;
+  border: 1px solid var(--concrete-100);
+  background: white;
+  color: var(--black-60);
+  font-size: 0.7rem;
+}
+.campaign-tabs button.active {
+  border-color: var(--primary);
+  background: var(--blue-10);
+  color: var(--primary);
+}
+.campaign-tabs strong {
   color: inherit;
 }
 .evidence-subfilters {
@@ -248,6 +293,14 @@ input, textarea {
   font-weight: 850;
 }
 .pill.reason {
+  background: #fff4d6;
+  color: #7a4e00;
+}
+.pill.campaign {
+  background: #e8f5f2;
+  color: var(--success);
+}
+.pill.campaign.used {
   background: #fff4d6;
   color: #7a4e00;
 }
@@ -777,6 +830,9 @@ li span {
   .lane-tabs {
     justify-content: flex-start;
   }
+  .campaign-tabs {
+    justify-content: flex-start;
+  }
   .review-layout {
     flex: 0 0 auto;
     height: auto;
@@ -789,6 +845,12 @@ li span {
 }
 
 @media (max-width: 720px) {
+  .region-actions {
+    grid-template-columns: 1fr;
+  }
+  .export-unused-btn {
+    width: 100%;
+  }
   .reason-grid {
     grid-template-columns: 1fr;
   }

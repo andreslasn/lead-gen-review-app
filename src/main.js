@@ -25,8 +25,9 @@ const REVIEW_SYNC_CONFIG = "review-sync.json";
 const EMAIL_INDEX_PATH = "data/email-index.json";
 const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
+const CAMPAIGN_EMAIL_USAGE_PATH = "data/campaign-email-usage.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "email-global-20260810-12";
+const DATA_DEPLOY_VERSION = "email-global-20260812-campaign-1";
 const DB_OPEN_TIMEOUT_MS = 2500;
 const HIDDEN_REVIEW_UI_TEXT = [
   "Accepted by an external human reviewer in a validated workbook column.",
@@ -241,6 +242,35 @@ function emailStatusLabel(value) {
 
 function normalizedEmailStatus(value) {
   return EMAIL_STATUSES.includes(value) ? value : "unreviewed";
+}
+
+function normalizedCampaignUsageFilter(value) {
+  return ["all", "unused", "used"].includes(value) ? value : "all";
+}
+
+function campaignUsageFilterLabel(value) {
+  return {
+    all: "All campaign",
+    unused: "Unused",
+    used: "Used",
+  }[value] || "All campaign";
+}
+
+function campaignUsageLabel(item) {
+  if (item?.used_in_campaign) return "Used in campaign";
+  return "Unused in campaign";
+}
+
+function csvCell(value) {
+  const text = String(value ?? "");
+  return /[",\n\r]/.test(text) ? `"${text.replaceAll("\"", "\"\"")}"` : text;
+}
+
+function csvRows(rows, columns) {
+  return [
+    columns.map((column) => csvCell(column.label)).join(","),
+    ...rows.map((row) => columns.map((column) => csvCell(row[column.key])).join(",")),
+  ].join("\n");
 }
 
 function itemRegions(item) {
@@ -495,6 +525,7 @@ const App = {
     const queue = ref([]);
     const emailIndex = ref([]);
     const staticEmailValidations = ref([]);
+    const campaignEmailUsage = ref([]);
     const clinicIndex = ref([]);
     const clinic = ref(null);
     const clinicCache = ref({});
@@ -506,6 +537,7 @@ const App = {
     const search = ref(localStorage.getItem("review.filter.search") || "");
     const selectedRegion = ref(localStorage.getItem("review.filter.region") || "");
     const selectedLane = ref(normalizedLaneSelection(localStorage.getItem("review.filter.lane")));
+    const campaignUsageFilter = ref(normalizedCampaignUsageFilter(localStorage.getItem("review.filter.campaignUsage")));
     const noMatchedEvidenceFilter = ref(normalizedNoMatchedEvidenceFilter(localStorage.getItem("review.filter.noMatchedEvidence")));
     const currentIndex = ref(0);
     const selectedCandidateIndex = ref(0);
@@ -541,6 +573,9 @@ const App = {
     const emailValidationByValue = computed(() => Object.fromEntries(
       mergedEmailValidationList(staticEmailValidations.value, emailValidations.value).map((item) => [item.email, item]),
     ));
+    const campaignUsageByEmail = computed(() => Object.fromEntries(
+      campaignEmailUsage.value.map((item) => [normalizeEmailValue(item.email), item]).filter(([email]) => email),
+    ));
     const decisionsByClinic = computed(() => {
       const grouped = {};
       for (const decision of decisions.value) (grouped[decision.clinic_id] ||= []).push(decision);
@@ -548,6 +583,7 @@ const App = {
     });
     const preparedQueue = computed(() => emailIndex.value.map((item) => {
       const validation = emailValidationByValue.value[item.email] || null;
+      const campaignUsage = campaignUsageByEmail.value[item.email] || null;
       const status = normalizedEmailStatus(validation?.status);
       return {
         ...item,
@@ -555,6 +591,8 @@ const App = {
         lane: status,
         status,
         confidence_pool: status,
+        used_in_campaign: Boolean(campaignUsage),
+        campaign_usage: campaignUsage,
         reviewed_at: validation?.reviewed_at || null,
         reviewer_id: validation?.reviewed_by || null,
         audit_flags: visibleAuditFlags(validation?.audit_flags || []),
@@ -580,9 +618,14 @@ const App = {
     }));
     const reviewPolicy = computed(() => manifest.value?.review_policy || {});
     const locationFilteredQueue = computed(() => preparedQueue.value.filter((item) => itemMatchesRegion(item, selectedRegion.value)));
+    const campaignUsageFilteredQueue = computed(() => locationFilteredQueue.value.filter((item) => {
+      if (campaignUsageFilter.value === "used") return item.used_in_campaign;
+      if (campaignUsageFilter.value === "unused") return !item.used_in_campaign;
+      return true;
+    }));
     const filteredQueue = computed(() => {
       const needle = search.value.trim().toLowerCase();
-      return locationFilteredQueue.value
+      return campaignUsageFilteredQueue.value
         .filter((item) => matchesLaneStatus(item, selectedLane.value))
         .filter((item) => {
           if (!needle) return true;
@@ -595,6 +638,7 @@ const App = {
             item.region,
             item.address,
             item.source_url,
+            ...(item.campaign_usage?.source_files || []),
           ].some((value) => String(value || "").toLowerCase().includes(needle));
         })
         .sort((a, b) => (
@@ -616,6 +660,16 @@ const App = {
         if (item.status !== "unreviewed") counts.reviewed += 1;
       }
       return counts;
+    });
+    const campaignUsageCounts = computed(() => {
+      const counts = { all: locationFilteredQueue.value.length, unused: 0, used: 0 };
+      for (const item of locationFilteredQueue.value) counts[item.used_in_campaign ? "used" : "unused"] += 1;
+      return counts;
+    });
+    const unusedValidExportCount = computed(() => unusedValidEmailRows(selectedRegion.value).length);
+    const unusedExportTitle = computed(() => {
+      const region = selectedRegion.value || "all counties";
+      return `Export ${unusedValidExportCount.value} unused valid emails for ${region}`;
     });
     const noMatchedEvidenceCounts = computed(() => {
       return { html: 0, none: 0 };
@@ -1062,11 +1116,12 @@ const App = {
     }
 
     async function loadStaticData() {
-      const [manifestResponse, integrityResponse, emailIndexResponse, validationSeedResponse] = await Promise.all([
+      const [manifestResponse, integrityResponse, emailIndexResponse, validationSeedResponse, campaignUsageResponse] = await Promise.all([
         fetch(staticUrl("data/manifest.json"), { cache: "no-cache" }),
         fetch(staticUrl("data/package-integrity.json"), { cache: "no-cache" }),
         fetch(staticUrl(EMAIL_REVIEW_QUEUE_PATH), { cache: "no-cache" }),
         fetch(staticUrl(EMAIL_VALIDATION_SEED_PATH), { cache: "no-cache" }).catch(() => null),
+        fetch(staticUrl(CAMPAIGN_EMAIL_USAGE_PATH), { cache: "no-cache" }).catch(() => null),
       ]);
       if (!manifestResponse.ok || !integrityResponse.ok || !emailIndexResponse.ok) throw new Error("Review dataset is missing or incomplete. Run lead-gen review prepare-market first.");
       manifest.value = await manifestResponse.json();
@@ -1083,6 +1138,12 @@ const App = {
         const validationSeed = await validationSeedResponse.json();
         if (validationSeed?.format === "lead-gen-email-validation-seed" && validationSeed?.schema_version === 1) {
           staticEmailValidations.value = validationSeed.validations || [];
+        }
+      }
+      if (campaignUsageResponse?.ok) {
+        const campaignPayload = await campaignUsageResponse.json();
+        if (campaignPayload?.format === "lead-gen-campaign-email-usage" && campaignPayload?.schema_version === 1) {
+          campaignEmailUsage.value = campaignPayload.items || [];
         }
       }
       try {
@@ -1198,6 +1259,34 @@ const App = {
       return payload;
     }
 
+    function fallbackClinicPayload(item) {
+      if (!item?.email) return null;
+      return {
+        clinic: {
+          id: item.clinic_id || `campaign-import:${item.email}`,
+          name: item.name || "",
+          registry_id: item.registry_id || "",
+          city: item.city || "",
+          region: item.region || "",
+          address: item.address || "",
+        },
+        state: {
+          clinic_id: item.clinic_id || `campaign-import:${item.email}`,
+          status: "confirmed",
+        },
+        candidates: [{
+          id: item.contact_point_id || `campaign-import:${item.email}`,
+          value: item.display_value || item.email,
+          classification: item.classification || "campaign_import",
+          verification_status: item.verification_status || "campaign_validated",
+          usable_contact: true,
+          confidence: 1,
+          evidence_links: [],
+        }],
+        documents: [],
+      };
+    }
+
     function selectedRegionOccurrence(item) {
       if (!item?.occurrences?.length) return null;
       if (selectedRegion.value) {
@@ -1216,7 +1305,8 @@ const App = {
       const occurrence = selectedRegionOccurrence(item);
       editMode.value = false;
       note.value = "";
-      clinic.value = await loadClinic(occurrence?.clinic_id || item.clinic_id || item.occurrences?.[0]?.clinic_id);
+      const clinicId = occurrence?.clinic_id || item.clinic_id || item.occurrences?.[0]?.clinic_id;
+      clinic.value = clinicId ? await loadClinic(clinicId) : fallbackClinicPayload(item);
       const matchingIndex = candidates.value.findIndex((candidate) => (
         candidate.id === (occurrence?.contact_point_id || item.contact_point_id)
         || normalizeEmailValue(candidate.value) === item.email
@@ -1571,6 +1661,72 @@ const App = {
       }
     }
 
+    function campaignUsageTitle(item) {
+      const usage = item?.campaign_usage;
+      if (!usage) return "This email has not appeared in a campaign CSV.";
+      const files = (usage.source_files || []).join(", ");
+      const sent = usage.first_sent_at ? ` · first sent ${usage.first_sent_at}` : "";
+      return `Used in ${usage.campaign_count || 1} campaign row${usage.campaign_count === 1 ? "" : "s"}${files ? ` · ${files}` : ""}${sent}`;
+    }
+
+    function exportOccurrence(item, region) {
+      const occurrences = item.occurrences || [];
+      return (region ? occurrences.find((occurrence) => occurrence.region === region) : null)
+        || occurrences[0]
+        || {};
+    }
+
+    function unusedValidEmailRows(region = "") {
+      return preparedQueue.value
+        .filter((item) => item.status === "valid" && !item.used_in_campaign && itemMatchesRegion(item, region))
+        .map((item) => {
+          const occurrence = exportOccurrence(item, region);
+          return {
+            email: item.display_value || item.email,
+            county: occurrence.region || item.region || "",
+            clinic_name: occurrence.clinic_name || item.name || "",
+            registry_id: occurrence.registry_id || item.registry_id || "",
+            city: occurrence.city || item.city || "",
+            address: occurrence.address || item.address || "",
+            occurrence_count: item.occurrence_count || "",
+            reviewed_at: item.reviewed_at || "",
+          };
+        })
+        .sort((a, b) => (
+          a.county.localeCompare(b.county, undefined, { sensitivity: "base" })
+          || a.clinic_name.localeCompare(b.clinic_name, undefined, { sensitivity: "base" })
+          || a.email.localeCompare(b.email)
+        ));
+    }
+
+    function exportUnusedCampaignEmails() {
+      const rows = unusedValidEmailRows(selectedRegion.value);
+      if (!rows.length) {
+        saveStatus.value = "No unused valid emails to export";
+        return;
+      }
+      const columns = [
+        { key: "email", label: "email" },
+        { key: "county", label: "county" },
+        { key: "clinic_name", label: "clinic_name" },
+        { key: "registry_id", label: "registry_id" },
+        { key: "city", label: "city" },
+        { key: "address", label: "address" },
+        { key: "occurrence_count", label: "occurrence_count" },
+        { key: "reviewed_at", label: "reviewed_at" },
+      ];
+      const csv = `${csvRows(rows, columns)}\n`;
+      const date = nowIso().replaceAll(":", "").slice(0, 15);
+      const region = selectedRegion.value ? safeReviewPathPart(selectedRegion.value) : "all-counties";
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `unused-valid-emails-${region}-${date}.csv`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+      saveStatus.value = `Exported ${rows.length} unused valid emails`;
+    }
+
     function githubReviewPath() {
       const prefix = String(syncConfig.value?.path_prefix || "reviews").replace(/^\/+|\/+$/g, "");
       return `${prefix}/${safeReviewPathPart(reviewer.value)}.json`;
@@ -1878,6 +2034,10 @@ const App = {
       localStorage.setItem("review.filter.lane", value);
       setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
+    watch(campaignUsageFilter, (value) => {
+      localStorage.setItem("review.filter.campaignUsage", value);
+      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+    });
     watch(noMatchedEvidenceFilter, (value) => {
       localStorage.setItem("review.filter.noMatchedEvidence", value);
       setIndex(0).catch((err) => { error.value = err?.message || String(err); });
@@ -1941,6 +2101,10 @@ const App = {
       currentClinicDecisions,
       currentEmailValidation,
       currentEmailStatus,
+      campaignUsageFilter,
+      campaignUsageCounts,
+      unusedValidExportCount,
+      unusedExportTitle,
       pendingEmailStatus,
       pendingValidationReady,
       currentEmailOccurrences,
@@ -1962,6 +2126,9 @@ const App = {
       updateCandidateRole,
       candidateDecision,
       emailStatusLabel,
+      campaignUsageFilterLabel,
+      campaignUsageLabel,
+      campaignUsageTitle,
       artifactUrl,
       focusedHtmlUrl,
       focusArchivedEvidence,
@@ -1980,6 +2147,7 @@ const App = {
       previousLead,
       undoLastAction,
       exportProgress,
+      exportUnusedCampaignEmails,
       importProgress,
       connectReviewSync,
       disconnectReviewSync,
@@ -2002,13 +2170,23 @@ const App = {
     <div class="app-shell">
       <section class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
-        <select v-model="selectedRegion" class="region-filter" :aria-label="regionFilterLabel">
-          <option value="">{{ regionFilterLabel }}</option>
-          <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
-        </select>
+        <div class="region-actions">
+          <select v-model="selectedRegion" class="region-filter" :aria-label="regionFilterLabel">
+            <option value="">{{ regionFilterLabel }}</option>
+            <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
+          </select>
+          <button class="export-unused-btn" @click="exportUnusedCampaignEmails" :title="unusedExportTitle">
+            Export unused CSV <strong>{{ unusedValidExportCount }}</strong>
+          </button>
+        </div>
         <div class="lane-tabs">
           <button v-for="lane in ['unreviewed','reviewed','valid','invalid','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
+          </button>
+        </div>
+        <div class="campaign-tabs">
+          <button v-for="filter in ['all','unused','used']" :key="filter" :class="{active:campaignUsageFilter===filter}" @click="campaignUsageFilter=filter">
+            {{ campaignUsageFilterLabel(filter) }} <strong>{{ campaignUsageCounts[filter] || 0 }}</strong>
           </button>
         </div>
       </section>
@@ -2025,6 +2203,9 @@ const App = {
         <section class="decision-pane">
           <div class="clinic-meta">
             <span v-if="currentItem.audit_flags?.length" class="pill reason">{{ currentItem.audit_flags.join(', ') }}</span>
+            <span class="pill campaign" :class="{used: currentItem.used_in_campaign}" :title="campaignUsageTitle(currentItem)">
+              {{ campaignUsageLabel(currentItem) }}
+            </span>
             <span class="muted">{{ currentItem.occurrence_count }} occurrence{{ currentItem.occurrence_count === 1 ? '' : 's' }}</span>
           </div>
           <div class="email-title-row">
@@ -2033,7 +2214,7 @@ const App = {
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
           </div>
-          <p class="clinic-address">{{ clinic.clinic.name }} · {{ clinic.clinic.address }}</p>
+          <p class="clinic-address">{{ clinic.clinic.name || 'No clinic name' }} · {{ clinic.clinic.address || 'No address' }}</p>
 
           <section class="candidate-card">
             <p class="label">Email validation</p>
