@@ -29,12 +29,19 @@
       "exported_at": "2026-08-12T10:44:36.525Z",
       "files": 7,
       "emails": 1205
+    },
+    {
+      "name": "campaign-csv-import",
+      "path": "/Users/andreslasn/Downloads/campaigns,/Users/andreslasn/Downloads/fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+      "exported_at": "2026-08-12T10:56:22.241Z",
+      "files": 8,
+      "emails": 1322
     }
   ],
-  "generated_at": "2026-08-12T10:44:36.525Z",
+  "generated_at": "2026-08-12T10:56:22.241Z",
   "counts": {
-    "validations": 1997,
-    "indexed_validations": 1997,
+    "validations": 2089,
+    "indexed_validations": 2089,
     "not_in_email_index": 0
   },
   "validations": [
@@ -313,6 +320,28 @@
       "contact_point_id": "baf23756-a970-4709-ac31-f49286104c2c"
     },
     {
+      "email": "13korzet@gmail.com",
+      "display_value": "13korzet@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T12:01:30.674Z",
+      "updated_at": "2026-04-15T12:01:30.674Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_abW52EyHQumzJuvhP"
+      ],
+      "occurrence_count": 13,
+      "clinic_id": "12d5193d-b6c5-4f99-8c8d-9d238fadbb46",
+      "contact_point_id": "dfa57725-59b6-4766-a6f8-96a9be1f2bd6",
+      "audit_flags": []
+    },
+    {
       "email": "17.praxis@alapellatas11.hu",
       "display_value": "17.praxis@alapellatas11.hu",
       "status": "valid",
@@ -425,6 +454,28 @@
       "occurrence_count": 1,
       "clinic_id": "b0034516-843e-4dc6-92ca-90a4eca7770d",
       "contact_point_id": "9eed7403-49f9-4773-8b77-ee43e78db956"
+    },
+    {
+      "email": "2.korzet@egomir.szszm.hu",
+      "display_value": "2.korzet@egomir.szszm.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:12:15.006Z",
+      "updated_at": "2026-04-15T08:12:15.006Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_3L6A8FzCkxWpSsJp8"
+      ],
+      "occurrence_count": 6,
+      "clinic_id": "d96ccf73-2cdc-40ff-bab2-c967da7a115b",
+      "contact_point_id": "21da232b-65e2-426e-84ef-29cdd720e884",
+      "audit_flags": []
     },
     {
       "email": "20.gyermek.korzet@alapellatas11.hu",
@@ -1097,6 +1148,28 @@
       "audit_flags": []
     },
     {
+      "email": "46korzet@gmail.com",
+      "display_value": "46korzet@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:00:28.136Z",
+      "updated_at": "2026-04-15T08:00:28.136Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_SAfFh9DAt3ZKQFuud"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "6be41ba9-a458-4286-b3c9-18cdbdcb0d29",
+      "contact_point_id": "70c350f7-9c0f-4fd5-97c2-684809efef51",
+      "audit_flags": []
+    },
+    {
       "email": "48as.korzetirendelo@gmail.com",
       "display_value": "48as.korzetirendelo@gmail.com",
       "status": "valid",
@@ -1599,6 +1672,28 @@
       "contact_point_id": "1b1a51b0-0e08-4c6e-a7db-16d3378cf92d"
     },
     {
+      "email": "8.korzet@egomir.szszm.hu",
+      "display_value": "8.korzet@egomir.szszm.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:38:12.264Z",
+      "updated_at": "2026-04-15T10:38:12.264Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_c9XCMc6ki9uFrsSzT"
+      ],
+      "occurrence_count": 6,
+      "clinic_id": "f1a38a36-38f4-4ce9-8fcd-5fce927d5efe",
+      "contact_point_id": "8a66a749-cd33-48c2-94b6-1f5d81aecdc8",
+      "audit_flags": []
+    },
+    {
       "email": "8kermagyar@gmail.com",
       "display_value": "8kermagyar@gmail.com",
       "status": "valid",
@@ -1787,6 +1882,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -1804,7 +1900,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_qtiErt2osSc8y5p86"
+      ],
+      "occurrence_count": 15,
+      "clinic_id": "5eabe7d3-1563-4055-b161-a8decca62df4",
+      "contact_point_id": "cd737bb1-32e6-4ce4-802d-317927842a11"
     },
     {
       "email": "adreory@gmail.com",
@@ -2115,6 +2220,28 @@
       "contact_point_id": "663d9e5e-8ec4-49ee-8620-6b89aa358f5a"
     },
     {
+      "email": "alkalmassag@gmail.com",
+      "display_value": "alkalmassag@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:00:52.633Z",
+      "updated_at": "2026-04-15T10:00:52.633Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_abPi9A8fWhHnJJwsv"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "allandorecept.drlazar@gmail.com",
       "display_value": "allandorecept.drlazar@gmail.com",
       "status": "valid",
@@ -2420,6 +2547,28 @@
       "audit_flags": []
     },
     {
+      "email": "angiiren@t-email.hu",
+      "display_value": "angiiren@t-email.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:21:19.369Z",
+      "updated_at": "2026-04-15T08:21:19.369Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_BKgMkSpeQyZbFjbP5"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "0e49c082-652a-4a1e-a473-2c3d0d2c5353",
+      "contact_point_id": "8ed54450-6bfd-48b3-998e-bb6b59783473",
+      "audit_flags": []
+    },
+    {
       "email": "anikomarik@freemail.hu",
       "display_value": "anikomarik@freemail.hu",
       "status": "valid",
@@ -2543,6 +2692,28 @@
       "contact_point_id": "6512ff06-93a4-4316-890c-a817e4c5c5be"
     },
     {
+      "email": "anitaesmonika@gmail.com",
+      "display_value": "anitaesmonika@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T12:08:17.896Z",
+      "updated_at": "2026-04-15T12:08:17.896Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_avkXxPogSa7wHeM5G"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "8e897bfc-32c9-4ef9-b7d6-122a513090e3",
+      "contact_point_id": "d9dac700-611d-42c7-bcaa-daf58744db9c",
+      "audit_flags": []
+    },
+    {
       "email": "anitakarandi@gmail.com",
       "display_value": "anitakarandi@gmail.com",
       "status": "valid",
@@ -2579,6 +2750,7 @@
       "updated_at": "2026-07-29T09:46:48.090770",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -2596,7 +2768,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_dogx3mGfbjcKNgtys"
+      ],
+      "occurrence_count": 5,
+      "clinic_id": "67a69bbc-d263-4d0a-8a54-36b98a3f478a",
+      "contact_point_id": "59574a4b-aa84-4a2f-b883-0c575afea28c"
     },
     {
       "email": "annamaria.leviczky@gmail.com",
@@ -2637,6 +2818,28 @@
       "contact_point_id": "b5cb2cae-452b-48bd-974c-9ac0b8d6e94e"
     },
     {
+      "email": "ansanatio@gmail.com",
+      "display_value": "ansanatio@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:49:06.915Z",
+      "updated_at": "2026-04-15T10:49:06.915Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_M3XwpP7GtC2Z8S94R"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "9e180df0-2b3c-46b8-98da-9775d849e9fb",
+      "contact_point_id": "8dbcced1-3ee6-4bbe-bdab-d1c124e1e24c",
+      "audit_flags": []
+    },
+    {
       "email": "antonio@invitel.hu",
       "display_value": "antonio@invitel.hu",
       "status": "valid",
@@ -2662,6 +2865,50 @@
           "source_export": "latest-reviewer-export"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "apajrendelo@gmail.com",
+      "display_value": "apajrendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:27:48.948Z",
+      "updated_at": "2026-04-15T09:27:48.948Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_fjX2oeF9JHBpCtDgp"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "apmedipa@gmail.com",
+      "display_value": "apmedipa@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:46:56.703Z",
+      "updated_at": "2026-04-15T10:46:56.703Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_oS5LCavbmBDBPcthA"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
       "audit_flags": []
     },
     {
@@ -2893,6 +3140,28 @@
       "contact_point_id": "59e6b95f-2d6e-4029-ae89-fc957f07bac8"
     },
     {
+      "email": "asszisztens@baboslevente.hu",
+      "display_value": "asszisztens@baboslevente.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:02:48.620Z",
+      "updated_at": "2026-04-15T08:02:48.620Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_sAiLyhr2Mib72mZZy"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "5328d7f0-03cc-4654-9645-e59dcd171a0f",
+      "contact_point_id": "435ff744-8d09-4219-89eb-1d6f47dab350",
+      "audit_flags": []
+    },
+    {
       "email": "aszalosdr@gmail.com",
       "display_value": "aszalosdr@gmail.com",
       "status": "valid",
@@ -3016,6 +3285,28 @@
       "occurrence_count": 4,
       "clinic_id": "0ef83879-8e9d-48e9-896c-e04a04dd5ab2",
       "contact_point_id": "1b962b24-803e-41fb-a06d-8c2849fac575",
+      "audit_flags": []
+    },
+    {
+      "email": "avetesi@hotmail.com",
+      "display_value": "avetesi@hotmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:28:33.418Z",
+      "updated_at": "2026-04-15T11:28:33.418Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_sYsGfcf3jQsqXuqP7"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
       "audit_flags": []
     },
     {
@@ -3464,6 +3755,28 @@
       "contact_point_id": "0b349976-ba7b-49b9-ba2b-73613a52d389"
     },
     {
+      "email": "balmadi1praxis@gmail.com",
+      "display_value": "balmadi1praxis@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:50:29.797Z",
+      "updated_at": "2026-04-15T11:50:29.797Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_yfbiWwPbqfv5iTSkD"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "f418aa58-b346-41ac-b844-1387b4003bba",
+      "contact_point_id": "c1c56cf5-be80-4806-9b14-0d17ff64998b",
+      "audit_flags": []
+    },
+    {
       "email": "balogh.maria@18euszolg.hu",
       "display_value": "balogh.maria@18euszolg.hu",
       "status": "valid",
@@ -3556,6 +3869,28 @@
       "occurrence_count": 2,
       "clinic_id": "4120945a-1c31-475f-8349-aee28cd87e8d",
       "contact_point_id": "ca05852c-2e89-413c-8dc4-ab0288b0af40"
+    },
+    {
+      "email": "banhidirendelo@gmail.com",
+      "display_value": "banhidirendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:40:24.109Z",
+      "updated_at": "2026-04-15T10:40:24.109Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_9YyrzXCrLoW82mcZT"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "f4907807-8452-4320-a877-05a705b6c2ab",
+      "contact_point_id": "14631c17-d09b-4652-ba69-7d1d458f832d",
+      "audit_flags": []
     },
     {
       "email": "barathgergo@bkhk.hu",
@@ -4580,6 +4915,28 @@
       "contact_point_id": "a76a02cc-2e4b-47c2-b4f5-c1112d3048c4"
     },
     {
+      "email": "biroemoke1@gmail.com",
+      "display_value": "biroemoke1@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:57:55.065Z",
+      "updated_at": "2026-04-15T10:57:55.065Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_Y9Q4dtkKRNxwpKTFD"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "badb9d32-7440-4b0c-94a5-dc9d6fb325e7",
+      "contact_point_id": "d2ec5d61-ff5a-4389-9f1f-c976da452d3a",
+      "audit_flags": []
+    },
+    {
       "email": "bobkogalopputca@gmail.com",
       "display_value": "bobkogalopputca@gmail.com",
       "status": "valid",
@@ -4910,6 +5267,28 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "bonusmedicina@gmail.com",
+      "display_value": "bonusmedicina@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:52:40.749Z",
+      "updated_at": "2026-04-15T11:52:40.749Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_EcxoH3wy5BnxLgb9s"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "c75f3695-ecae-4cb1-9430-bc179c96bb22",
+      "contact_point_id": "2f549736-93fb-457a-b5dd-f7aa40f0feb6",
       "audit_flags": []
     },
     {
@@ -5273,6 +5652,28 @@
       "occurrence_count": 1,
       "clinic_id": "a90350d6-31cb-4e72-938d-aaced718c558",
       "contact_point_id": "353537ef-0f8e-450b-8bde-45712e93d51b"
+    },
+    {
+      "email": "bubomed@gmail.com",
+      "display_value": "bubomed@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:49:53.139Z",
+      "updated_at": "2026-04-15T09:49:53.139Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_oDDy7Xpz9Ay4pCYvC"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "budafok.15@gmail.com",
@@ -5678,6 +6079,28 @@
           "source_export": "latest-reviewer-export"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "cf41441@gmail.com",
+      "display_value": "cf41441@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:38:49.680Z",
+      "updated_at": "2026-04-15T09:38:49.680Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_aAGKfhG3vruAcFS6a"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "7ab8c9cc-5219-4aa5-96a3-a06d2fbcddee",
+      "contact_point_id": "4f8d7930-3cb2-4925-9ebf-25bcab46b8be",
       "audit_flags": []
     },
     {
@@ -6189,6 +6612,28 @@
       "contact_point_id": "0d733e4f-905f-44a6-a10c-fedf6892bb3d"
     },
     {
+      "email": "csaladorvos2.ker@gmail.com",
+      "display_value": "csaladorvos2.ker@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:06:41.307Z",
+      "updated_at": "2026-04-15T11:06:41.307Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_3936GkgXEC7HaL7pb"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "548a007a-9a61-475b-8faf-8f55686d760f",
+      "contact_point_id": "26e74589-035b-4ff5-a65a-fb0fd07150eb",
+      "audit_flags": []
+    },
+    {
       "email": "csalayldr@gmail.com",
       "display_value": "csalayldr@gmail.com",
       "status": "valid",
@@ -6655,6 +7100,28 @@
       "audit_flags": []
     },
     {
+      "email": "cseresnyes.nador@cherrymed.hu",
+      "display_value": "cseresnyes.nador@cherrymed.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:54:53.796Z",
+      "updated_at": "2026-04-15T11:54:53.796Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_kvo2vQey5nyxTYe2e"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "csergamed@gmail.com",
       "display_value": "csergamed@gmail.com",
       "status": "valid",
@@ -6847,6 +7314,28 @@
       "contact_point_id": "2a59df96-962c-4390-9e16-21d40a5e7399"
     },
     {
+      "email": "csizmadia.eniko.88@gmail.com",
+      "display_value": "csizmadia.eniko.88@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:53:30.198Z",
+      "updated_at": "2026-04-15T10:53:30.198Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_FLCGsksAuv4gG7qaq"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "31f65073-1cc4-4e05-986b-da56912e7ebb",
+      "contact_point_id": "e97d9fe5-ce7f-4c9a-89f6-4349c6195aa0",
+      "audit_flags": []
+    },
+    {
       "email": "csobanka04rendelo@gmail.com",
       "display_value": "csobanka04rendelo@gmail.com",
       "status": "valid",
@@ -6997,6 +7486,28 @@
       "occurrence_count": 1,
       "clinic_id": "bbeb6c1d-eef4-450d-a1eb-c7a710a17c9a",
       "contact_point_id": "7ab474ab-23c7-47dc-b62f-63b2df3991b1"
+    },
+    {
+      "email": "csszabodoktorno@gmail.com",
+      "display_value": "csszabodoktorno@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:33:49.621Z",
+      "updated_at": "2026-04-15T10:33:49.621Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_E5MYoexy8nXpiffCs"
+      ],
+      "occurrence_count": 12,
+      "clinic_id": "e805a1c2-839c-42bd-bc3e-9015460ad285",
+      "contact_point_id": "3d71f197-38c0-4aa0-b184-1bd13360b912",
+      "audit_flags": []
     },
     {
       "email": "csupordr@gmail.com",
@@ -7847,6 +8358,28 @@
       "contact_point_id": "afd593bf-f16a-402b-b1de-c3fe20f79a4f"
     },
     {
+      "email": "dimaszema@citromail.hu",
+      "display_value": "dimaszema@citromail.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:13:14.140Z",
+      "updated_at": "2026-04-15T11:13:14.140Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_uzPRyJ4qLo2uRJuaj"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "ditkecsu@gmail.com",
       "display_value": "ditkecsu@gmail.com",
       "status": "valid",
@@ -7875,6 +8408,28 @@
       "audit_flags": []
     },
     {
+      "email": "dkgyermek1korzet@gmail.com",
+      "display_value": "dkgyermek1korzet@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:24:11.023Z",
+      "updated_at": "2026-04-15T11:24:11.023Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_z2EA6C5JuoAZrHkNr"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "dmgdoktorok@gmail.com",
       "display_value": "dmgdoktorok@gmail.com",
       "status": "valid",
@@ -7883,6 +8438,7 @@
       "updated_at": "2026-07-29T08:32:21.990978",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -7900,7 +8456,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_ff5sxG8c95d6id6jE"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "5aa029c5-0019-415e-bd61-1cbabe51c91e",
+      "contact_point_id": "cdb19c50-b3bd-4da7-bcce-49360bc4a065"
     },
     {
       "email": "dnagyildikodr@gmail.com",
@@ -7966,6 +8531,28 @@
           "source_export": "latest-reviewer-export"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "dobirendelo@gmail.com",
+      "display_value": "dobirendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:30:45.024Z",
+      "updated_at": "2026-04-15T11:30:45.024Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_os7pGMWQvLKFtDsJm"
+      ],
+      "occurrence_count": 7,
+      "clinic_id": "445d3f3f-3945-4211-a01e-6556ab88664c",
+      "contact_point_id": "58f223bb-2c30-4460-902e-4c62f47381a1",
       "audit_flags": []
     },
     {
@@ -8081,6 +8668,28 @@
       "occurrence_count": 1,
       "clinic_id": "7b7b6e58-63b6-4dae-844b-4652cbe9114a",
       "contact_point_id": "20b98a4d-a116-41f1-ac97-3373454fc77c"
+    },
+    {
+      "email": "doktor.pecs@gmail.com",
+      "display_value": "doktor.pecs@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:29:24.353Z",
+      "updated_at": "2026-04-15T10:29:24.353Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_Kqj9ncvN43KZ7oCED"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "0ef83879-8e9d-48e9-896c-e04a04dd5ab2",
+      "contact_point_id": "ce2ae66e-2bb2-4d10-b9c5-12b132049c25",
+      "audit_flags": []
     },
     {
       "email": "doktor1984@citromail.hu",
@@ -8337,6 +8946,28 @@
       "occurrence_count": 2,
       "clinic_id": "55aeb720-1f44-4650-9adc-0468f5f093be",
       "contact_point_id": "818f242f-b70e-4447-904b-6cadeadfe39f"
+    },
+    {
+      "email": "doktorkapu@gmail.com",
+      "display_value": "doktorkapu@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:23:23.892Z",
+      "updated_at": "2026-04-15T07:23:23.892Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_h9pFEK266s5XScP9R"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "doktorker@gmail.com",
@@ -8744,6 +9375,28 @@
       "contact_point_id": "41907d95-93e5-4d65-bf68-2f4ad9a5a798"
     },
     {
+      "email": "domancsilla@gmail.com",
+      "display_value": "domancsilla@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:47:41.180Z",
+      "updated_at": "2026-04-15T09:47:41.180Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_BkhgJf9FghGc5tmvy"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "476de120-d7f5-4cd7-a12c-9417c8de6c3f",
+      "contact_point_id": "126e3130-4195-4c9c-b58f-fc7c507ec555",
+      "audit_flags": []
+    },
+    {
       "email": "domaszekrendelo@gmail.com",
       "display_value": "domaszekrendelo@gmail.com",
       "status": "valid",
@@ -8980,6 +9633,7 @@
       "updated_at": "2026-08-05T10:26:30.397Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -8997,7 +9651,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_C5gFA5adYKyempRFi"
+      ],
+      "occurrence_count": 21,
+      "clinic_id": "7669dfb1-84d7-4b73-a27b-8697c86e8970",
+      "contact_point_id": "b3405ec1-8bb8-42fb-8ae0-9c2cd90d6ed7"
     },
     {
       "email": "dr.balint.andras@freemail.hu",
@@ -9244,6 +9907,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -9261,7 +9925,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_isJ8BsuYXZBDw4K8E"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "f11c923f-7bc4-4136-84dd-9bbbfaa038c3",
+      "contact_point_id": "1f43cf77-a4b0-4221-ac09-d202a3e8b0cf"
     },
     {
       "email": "dr.csak.recept@gmail.com",
@@ -9442,6 +10115,28 @@
       "occurrence_count": 2,
       "clinic_id": "3513a002-f402-4d8c-8b0f-e1169488d7aa",
       "contact_point_id": "cb53e5b3-97cf-4564-b7b1-3c14760b4a5e"
+    },
+    {
+      "email": "dr.czovekmate@gmail.com",
+      "display_value": "dr.czovekmate@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:58:40.062Z",
+      "updated_at": "2026-04-15T09:58:40.062Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_dY82abf8Di55JpFs9"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "1dd0cf9e-9c2d-4a5e-8165-ae88d31edacf",
+      "contact_point_id": "6dce3741-f744-4601-8136-5113fa5773b8",
+      "audit_flags": []
     },
     {
       "email": "dr.daczie62@gmail.com",
@@ -9848,6 +10543,28 @@
       "audit_flags": []
     },
     {
+      "email": "dr.guba.agnes@gmail.com",
+      "display_value": "dr.guba.agnes@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:11:01.314Z",
+      "updated_at": "2026-04-15T11:11:01.314Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_S5CcmmmkZhLW2eByS"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "dr.gyorgyj@freemail.hu",
       "display_value": "dr.gyorgyj@freemail.hu",
       "status": "valid",
@@ -10080,6 +10797,28 @@
       "audit_flags": []
     },
     {
+      "email": "dr.huszaghedvig@invitel.hu",
+      "display_value": "dr.huszaghedvig@invitel.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:19:04.532Z",
+      "updated_at": "2026-04-15T08:19:04.532Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_t4cuG5Hb77naKdZFM"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "aaa266f6-808a-4bed-8276-d9157a805eec",
+      "contact_point_id": "41b6921c-7630-4340-88d6-96d0a4cd01e1",
+      "audit_flags": []
+    },
+    {
       "email": "dr.ilyesgabi@gmail.com",
       "display_value": "dr.ilyesgabi@gmail.com",
       "status": "valid",
@@ -10163,6 +10902,28 @@
       "occurrence_count": 3,
       "clinic_id": "e7666c0c-0aa3-4ba4-82d5-df9413045869",
       "contact_point_id": "a66f8a05-ceb9-4645-a634-4d54764544de"
+    },
+    {
+      "email": "dr.janosi.anita@gmail.com",
+      "display_value": "dr.janosi.anita@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:37:24.802Z",
+      "updated_at": "2026-04-15T07:37:24.802Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_4ZH8fM9T6zXc9K5iB"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "e2f5d2ce-cd53-4d18-99fd-ef45d4c8a42e",
+      "contact_point_id": "7b80ff8d-98e6-40af-9cfd-8bac1a72cc2d",
+      "audit_flags": []
     },
     {
       "email": "dr.kalmane@gmail.com",
@@ -10809,6 +11570,28 @@
       "audit_flags": []
     },
     {
+      "email": "dr.nagyerika@freemail.hu",
+      "display_value": "dr.nagyerika@freemail.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:16:16.610Z",
+      "updated_at": "2026-04-15T07:16:16.610Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_y2BTLSr9PMjsMLdNw"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "dr.opsitos.rendelo@gmail.com",
       "display_value": "dr.opsitos.rendelo@gmail.com",
       "status": "valid",
@@ -11084,6 +11867,28 @@
       "occurrence_count": 1,
       "clinic_id": "f84171df-6312-4a49-ac26-6baf35b03a99",
       "contact_point_id": "d66e9ce6-9db7-499c-a02a-cafd251045a8"
+    },
+    {
+      "email": "dr.racz.zsolt@gmail.com",
+      "display_value": "dr.racz.zsolt@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:41:44.616Z",
+      "updated_at": "2026-04-15T11:41:44.616Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_9gezKfFa7x2p2W27X"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "3234cfe8-ba2c-46cc-b294-01bb7b8992c4",
+      "contact_point_id": "070ae30e-2229-4fb3-9f9c-e17105f6fae1",
+      "audit_flags": []
     },
     {
       "email": "dr.rajnaig@gmail.com",
@@ -11381,6 +12186,50 @@
       "audit_flags": []
     },
     {
+      "email": "dr.simko.robert@mvhr.t-online.hu",
+      "display_value": "dr.simko.robert@mvhr.t-online.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:25:47.943Z",
+      "updated_at": "2026-04-15T07:25:47.943Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_ftwAsyD6KPjnH3Ygs"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "dr.simon1046@gmail.com",
+      "display_value": "dr.simon1046@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:43:15.981Z",
+      "updated_at": "2026-04-15T09:43:15.981Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_Pz8fRWP3vyMsJJyoc"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "dr.simonkovich@gmail.com",
       "display_value": "dr.simonkovich@gmail.com",
       "status": "valid",
@@ -11444,6 +12293,28 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "dr.sipostimea@freemail.hu",
+      "display_value": "dr.sipostimea@freemail.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:26:22.958Z",
+      "updated_at": "2026-04-15T11:26:22.958Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_f8FhjoMywgnc58NKH"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
       "audit_flags": []
     },
     {
@@ -12541,6 +13412,28 @@
       "audit_flags": []
     },
     {
+      "email": "drangiiren@gmail.com",
+      "display_value": "drangiiren@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:02:17.823Z",
+      "updated_at": "2026-04-15T11:02:17.823Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_F79hWkw285w5epxW3"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "0e49c082-652a-4a1e-a473-2c3d0d2c5353",
+      "contact_point_id": "551b26eb-d210-4858-a379-701f6cffe056",
+      "audit_flags": []
+    },
+    {
       "email": "drbagoerzsebet@gmail.com",
       "display_value": "drbagoerzsebet@gmail.com",
       "status": "valid",
@@ -12872,6 +13765,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -12889,7 +13783,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_52QpBw2RGbZFa4frv"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "c413f9bf-7b2a-4123-9eab-c2f8c02dfe6b",
+      "contact_point_id": "ac5e7fca-8184-4ec1-8507-783334fd91b2"
     },
     {
       "email": "drbatta.rendelo@gmail.com",
@@ -13213,6 +14116,50 @@
       "contact_point_id": "63a7d1fe-6a96-44d5-92c9-46c43583bd61"
     },
     {
+      "email": "drbodonhelyi@gmail.com",
+      "display_value": "drbodonhelyi@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:16:13.375Z",
+      "updated_at": "2026-04-15T10:16:13.375Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_Y7DsxegfupmffZbez"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "4ac46b91-dcb2-481b-a2b5-834a73a70519",
+      "contact_point_id": "2a4d8ecf-9e0f-4a39-beaf-d10693cccb5f",
+      "audit_flags": []
+    },
+    {
+      "email": "drborbasviktor@gmail.com",
+      "display_value": "drborbasviktor@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T12:06:05.308Z",
+      "updated_at": "2026-04-15T12:06:05.308Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_zZGFL7vbagkedKYmn"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "258ceb8d-d229-40c0-8546-8ec3476b0db8",
+      "contact_point_id": "f0e55d7d-b9d4-47db-86c1-ea0bc1b724f1",
+      "audit_flags": []
+    },
+    {
       "email": "drborbelyrita@gmail.com",
       "display_value": "drborbelyrita@gmail.com",
       "status": "valid",
@@ -13479,6 +14426,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -13496,7 +14444,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_KE9M4tgMe3TKo9PgY"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "ee40fda6-9d7d-452a-9eed-a4c2aebdb859",
+      "contact_point_id": "b80cdae3-0152-44f2-8a79-785da6a3e679"
     },
     {
       "email": "drcsimaalfred@gmail.com",
@@ -13917,6 +14874,7 @@
       "updated_at": "2026-07-29T08:32:21.990978",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -13934,7 +14892,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_fxTDiXhGZX8AaaEKX"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "342b2b33-6cc5-4ca2-a8f6-a22898db5369",
+      "contact_point_id": "539389ff-ea8b-4bef-b152-4ada88dd8850"
     },
     {
       "email": "drdimaka@freemail.hu",
@@ -14167,6 +15134,28 @@
       "contact_point_id": "2a56e5ad-37fc-4aa7-a792-a9631dd82a47"
     },
     {
+      "email": "drelekagi@gmail.com",
+      "display_value": "drelekagi@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:46:07.377Z",
+      "updated_at": "2026-04-15T11:46:07.377Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_8GwmyvbnA2wdWJtZR"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "dremese.raczrendelo@gmail.com",
       "display_value": "dremese.raczrendelo@gmail.com",
       "status": "valid",
@@ -14331,6 +15320,28 @@
       "contact_point_id": "3cbdc6bc-d797-4538-b077-1b2d32f3ef67"
     },
     {
+      "email": "drfaludiagnes@gmail.com",
+      "display_value": "drfaludiagnes@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:36:36.977Z",
+      "updated_at": "2026-04-15T09:36:36.977Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_ouhcrmhmZRsD5JMpD"
+      ],
+      "occurrence_count": 9,
+      "clinic_id": "3db50b53-5158-4da2-806d-3e2cdeff5282",
+      "contact_point_id": "b3df4b9e-2e4c-480a-bf43-f2c7b9deeb6c",
+      "audit_flags": []
+    },
+    {
       "email": "drfarago.agnes@t-online.hu",
       "display_value": "drfarago.agnes@t-online.hu",
       "status": "valid",
@@ -14427,6 +15438,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -14444,7 +15456,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_a2o7BCeZMzoDEkcio"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "45cc3a1e-1bf7-4686-95dd-f058fc99f1b4",
+      "contact_point_id": "7f8e125a-4151-4036-b90a-47042d826eb6"
     },
     {
       "email": "drfeketejuli@gmail.com",
@@ -14617,6 +15638,28 @@
       "contact_point_id": "24a68560-c951-467e-8f4d-a45ca49f875b"
     },
     {
+      "email": "drfodorrendelo@gmail.com",
+      "display_value": "drfodorrendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:14:04.340Z",
+      "updated_at": "2026-04-15T10:14:04.340Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_5HDQotTpivgbi4bXP"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "drfodorzsuzsanna@gmail.com",
       "display_value": "drfodorzsuzsanna@gmail.com",
       "status": "valid",
@@ -14625,6 +15668,7 @@
       "updated_at": "2026-07-29T09:46:48.090770",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -14642,7 +15686,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_LZ6Zmi9u8gteeKCx6"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "ca4dbf4f-f4f5-40b5-9132-7580e36f5ce7",
+      "contact_point_id": "9498153b-b55f-4049-8df2-d7a053272ac3"
     },
     {
       "email": "drforgo@icloud.com",
@@ -15441,6 +16494,7 @@
       "updated_at": "2026-08-04T12:26:39.546Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -15458,7 +16512,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_kC6HaSau6PKciHsNC"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "3cc5166c-5dcf-479e-bb38-9b2a77defd20",
+      "contact_point_id": "8d1a92d1-2018-4bb5-b705-d65ca546495a"
     },
     {
       "email": "drgyimesi18@gmail.com",
@@ -15497,6 +16560,28 @@
       "occurrence_count": 1,
       "clinic_id": "5d177298-0036-4c8e-9dce-c0719436ecc0",
       "contact_point_id": "2b6abac9-e962-41ce-a8f9-2e665a165728"
+    },
+    {
+      "email": "drgyongyossyeszter.rendelo@gmail.com",
+      "display_value": "drgyongyossyeszter.rendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:19:48.800Z",
+      "updated_at": "2026-04-15T11:19:48.800Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_7RtyLuWrBkvqGLMht"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "drgyuk@gmail.com",
@@ -15559,6 +16644,28 @@
       "contact_point_id": "cc5470bb-09e2-4a55-b9dd-9ecceafcec5f"
     },
     {
+      "email": "drhamorilajos@gmail.com",
+      "display_value": "drhamorilajos@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:05:12.359Z",
+      "updated_at": "2026-04-15T08:05:12.359Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_pRqAbnoiwxfxrAJ6P"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "drhargitaireka@gmail.com",
       "display_value": "drhargitaireka@gmail.com",
       "status": "valid",
@@ -15595,6 +16702,28 @@
       "occurrence_count": 1,
       "clinic_id": "f718b13f-20bd-49b9-adbb-a6af1c954fad",
       "contact_point_id": "d00e7ae6-be45-4c44-a70e-8d0e5e59a779"
+    },
+    {
+      "email": "drhavasikatalin@gmail.com",
+      "display_value": "drhavasikatalin@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:53:39.502Z",
+      "updated_at": "2026-04-15T07:53:39.502Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_hriuzkpcu7uAR6Keq"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "drhegeduslivia@gmail.com",
@@ -15673,6 +16802,28 @@
       "contact_point_id": "40c44a50-2c12-4467-95a0-7a6e78f4e95a"
     },
     {
+      "email": "drhodosi@freemail.hu",
+      "display_value": "drhodosi@freemail.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:17:37.317Z",
+      "updated_at": "2026-04-15T11:17:37.317Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_4mMoZbwXpMoTLcPao"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "42c1b2c6-0579-40b8-a8fd-6854318f560b",
+      "contact_point_id": "9faf9dc0-8260-493d-9b0c-0cf955febb16",
+      "audit_flags": []
+    },
+    {
       "email": "drholerpraxis@gmail.com",
       "display_value": "drholerpraxis@gmail.com",
       "status": "valid",
@@ -15709,6 +16860,7 @@
       "updated_at": "2026-08-04T11:46:32.304Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -15726,7 +16878,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_JofY8nDk97kvbEKbq"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "0155624a-2ef7-4c51-9923-ce85508afcbf",
+      "contact_point_id": "438c9034-df2c-4b99-b4c6-b56300c5f51a"
     },
     {
       "email": "drhoperendelo@gmail.com",
@@ -16094,6 +17255,28 @@
       "audit_flags": []
     },
     {
+      "email": "drjanosioliver@gmail.com",
+      "display_value": "drjanosioliver@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:21:08.130Z",
+      "updated_at": "2026-04-15T09:21:08.130Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_wrwRH3RdrcdutkoLJ"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "drjozsa14@gmail.com",
       "display_value": "drjozsa14@gmail.com",
       "status": "valid",
@@ -16338,6 +17521,28 @@
       "occurrence_count": 1,
       "clinic_id": "06d75dea-4fb1-4bd9-9514-b36b3e75f450",
       "contact_point_id": "13a3a324-fc71-4c5b-a996-9ff93dc1db74"
+    },
+    {
+      "email": "drkadar.rendeles@gmail.com",
+      "display_value": "drkadar.rendeles@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:18:24.695Z",
+      "updated_at": "2026-04-15T10:18:24.695Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_hTo8c5JufAMs9tee4"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "drkaszaesfia@drkaszaesfia.hu",
@@ -16658,6 +17863,28 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "drkisasszisztens@gmail.com",
+      "display_value": "drkisasszisztens@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:43:54.436Z",
+      "updated_at": "2026-04-15T11:43:54.436Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_SpAXCifv4JC2NNF6T"
+      ],
+      "occurrence_count": 7,
+      "clinic_id": "9a32e861-f257-43ef-998e-1a4efeb0b193",
+      "contact_point_id": "79c183a7-f026-45bd-898a-117445696c8a",
       "audit_flags": []
     },
     {
@@ -17154,6 +18381,28 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "drkovacsjulianna56@gmail.com",
+      "display_value": "drkovacsjulianna56@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:09:52.769Z",
+      "updated_at": "2026-04-15T08:09:52.769Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_KDCKomprwAx5gS3co"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
       "audit_flags": []
     },
     {
@@ -18087,6 +19336,28 @@
       "contact_point_id": "c70e9a9d-7eb4-48b0-bcc1-0a01428d8063"
     },
     {
+      "email": "drmelcheri@gmail.com",
+      "display_value": "drmelcheri@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:55:56.613Z",
+      "updated_at": "2026-04-15T07:55:56.613Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_y2ZsBYeM87beB6trD"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "drmelindakiss@gmail.com",
       "display_value": "drmelindakiss@gmail.com",
       "status": "valid",
@@ -18374,6 +19645,28 @@
       "contact_point_id": "c04aa872-0e9e-4c87-aa95-d66533bef3b4"
     },
     {
+      "email": "drmullereva@mullermed.hu",
+      "display_value": "drmullereva@mullermed.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:00:05.190Z",
+      "updated_at": "2026-04-15T11:00:05.190Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_N8furpJMrdnCmoAf2"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "drnaglpetronella@gmail.com",
       "display_value": "drnaglpetronella@gmail.com",
       "status": "valid",
@@ -18574,6 +19867,28 @@
       "contact_point_id": "d5c7d205-3c0f-4a9d-a4f2-e5d9ec311396"
     },
     {
+      "email": "drnagymiklos68@gmail.com",
+      "display_value": "drnagymiklos68@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:21:59.804Z",
+      "updated_at": "2026-04-15T11:21:59.804Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_htysFNkcyP234vdN8"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "drnagynora.rendelo@gmail.com",
       "display_value": "drnagynora.rendelo@gmail.com",
       "status": "valid",
@@ -18637,6 +19952,28 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "drnemeskeriklara@gmail.com",
+      "display_value": "drnemeskeriklara@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:05:16.768Z",
+      "updated_at": "2026-04-15T10:05:16.768Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_uunkLaAgGvnfaWwJY"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "0ef83879-8e9d-48e9-896c-e04a04dd5ab2",
+      "contact_point_id": "0815a5fe-4f67-4094-a913-fd6e8c58e3aa",
       "audit_flags": []
     },
     {
@@ -18875,6 +20212,28 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "droh02@gmail.com",
+      "display_value": "droh02@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:08:50.637Z",
+      "updated_at": "2026-04-15T11:08:50.637Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_KBaheD6o9mAYwywDT"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "dadfcf9a-f173-4c62-beec-6196cfe2ce1d",
+      "contact_point_id": "174ee388-b5a8-4630-bf9b-9c9d819224ab",
       "audit_flags": []
     },
     {
@@ -19124,6 +20483,28 @@
       "contact_point_id": "98c97af6-45ad-4f5d-b3a7-05034f6cb845"
     },
     {
+      "email": "drpeterfaigyomro@gmail.com",
+      "display_value": "drpeterfaigyomro@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:24:59.276Z",
+      "updated_at": "2026-04-15T10:24:59.276Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_Y9WhkjcFQ8B4Yr5ZM"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "d24b8d7f-3aef-4f77-80ae-e56bfc589b91",
+      "contact_point_id": "20fda1e4-ba01-4553-8fb3-5fd7c36e82b9",
+      "audit_flags": []
+    },
+    {
       "email": "drpinterszilvia@gmail.com",
       "display_value": "drpinterszilvia@gmail.com",
       "status": "valid",
@@ -19132,6 +20513,7 @@
       "updated_at": "2026-07-29T09:46:48.090770",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -19149,7 +20531,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_MDQkeaL2bfPE2pmC3"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "88e6e0d1-5b74-4f42-a04b-fd7ca09b3b58",
+      "contact_point_id": "e00535e7-6694-461c-969f-e3d58a1bae55"
     },
     {
       "email": "drpityi2030@gmail.com",
@@ -19750,6 +21141,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -19767,6 +21159,59 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_fg4BfsaWMXk5zBiNj"
+      ],
+      "occurrence_count": 14,
+      "clinic_id": "a5f273ae-77a0-479f-9566-e16c6387a57c",
+      "contact_point_id": "1d315fb9-f245-47c2-a21c-68e8280c4445"
+    },
+    {
+      "email": "drsivokagnes@gmail.com",
+      "display_value": "drsivokagnes@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:58:13.675Z",
+      "updated_at": "2026-04-15T07:58:13.675Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_imGj45d7oQ3mxgJ8w"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "drsolyazsuzsa@gmail.com",
+      "display_value": "drsolyazsuzsa@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:41:53.487Z",
+      "updated_at": "2026-04-15T08:41:53.487Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_tif6bzCsoxLWAezo2"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
       "audit_flags": []
     },
     {
@@ -19898,6 +21343,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -19915,7 +21361,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_AjXuPiRonFgifAxDC"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "3742660a-86be-48d3-a51f-898bcb56e610",
+      "contact_point_id": "2fb0babd-f6a3-44ac-a07e-900c0ed62945"
     },
     {
       "email": "drszabogy@freemail.hu",
@@ -20150,6 +21605,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -20176,7 +21632,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_6C7JS5nsicjsWJMFc"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "103d2853-5db2-47e6-a24b-46f449ef4b74",
+      "contact_point_id": "fc85d965-ac6e-4de8-936c-115fd835fdf7"
     },
     {
       "email": "drszemererendelo@gmail.com",
@@ -20395,6 +21860,28 @@
       "occurrence_count": 1,
       "clinic_id": "080f19e9-5c02-48b3-8123-173d2a692a46",
       "contact_point_id": "bbe8880a-b3f5-490b-bd97-f0eb91b2ba95"
+    },
+    {
+      "email": "drszkenderovicskaroly@gmail.com",
+      "display_value": "drszkenderovicskaroly@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:34:23.915Z",
+      "updated_at": "2026-04-15T09:34:23.915Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_HGsND6vojzxL8vTxX"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "drszklenarik@gmail.com",
@@ -20695,6 +22182,28 @@
       "audit_flags": []
     },
     {
+      "email": "drtakacsv@gmail.com",
+      "display_value": "drtakacsv@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:46:26.308Z",
+      "updated_at": "2026-04-15T08:46:26.308Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_5yZw3oBidaxfkXGLv"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "drtakatsbela@gmail.com",
       "display_value": "drtakatsbela@gmail.com",
       "status": "valid",
@@ -20769,6 +22278,7 @@
       "updated_at": "2026-07-29T08:32:21.990978",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -20786,7 +22296,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_y9ErBa8p9BHKiZLR7"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "988871b0-eb9d-462e-91cc-afbcd7b51407",
+      "contact_point_id": "532ab0b3-93b5-4779-affa-2dbc2a523e5f"
     },
     {
       "email": "drteufelagnes@gmail.com",
@@ -21192,6 +22711,7 @@
       "updated_at": "2026-08-05T10:20:41.976Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -21209,6 +22729,37 @@
           "source_export": "latest-reviewer-export"
         }
       ],
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_WqfkYBzGtbMNhawfd"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "a723c22e-bffc-497a-ba1c-7103ed325d6c",
+      "contact_point_id": "4197760b-59e1-48c6-b13f-a0f1a603e2b4"
+    },
+    {
+      "email": "drvargaeszter9@gmail.com",
+      "display_value": "drvargaeszter9@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:44:08.742Z",
+      "updated_at": "2026-04-15T08:44:08.742Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_jMg7u7pCYaeEWmbbd"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "5bc1344a-2b38-4b06-bd8b-e6bef3889029",
+      "contact_point_id": "9e54d099-5748-4fd7-8edb-4d0a7267a0b2",
       "audit_flags": []
     },
     {
@@ -21362,6 +22913,7 @@
       "updated_at": "2026-08-04T12:08:47.444Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -21379,7 +22931,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_qLCyQ5iJ63esbZRgp"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "e750ecac-2154-4ad0-85df-02f8e68c17ce",
+      "contact_point_id": "77f45a41-94a9-4265-a4b6-9f017bdd5419"
     },
     {
       "email": "drveresiren@gmail.com",
@@ -21846,6 +23407,94 @@
       "audit_flags": []
     },
     {
+      "email": "dunakeszi2ho@gmail.com",
+      "display_value": "dunakeszi2ho@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:25:54.268Z",
+      "updated_at": "2026-04-15T08:25:54.268Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_uFnDrr3DxeL78mYHm"
+      ],
+      "occurrence_count": 13,
+      "clinic_id": "ed5eb80a-a7a2-4b2c-966f-659e2c6dd315",
+      "contact_point_id": "050c3872-4cbc-4e70-90e1-54c5377ca245",
+      "audit_flags": []
+    },
+    {
+      "email": "dunakeszi3@gmail.com",
+      "display_value": "dunakeszi3@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:36:02.333Z",
+      "updated_at": "2026-04-15T10:36:02.333Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_eJFKbBdEiuiHTQEYw"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "dunakeszi4@gmail.com",
+      "display_value": "dunakeszi4@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T12:03:51.226Z",
+      "updated_at": "2026-04-15T12:03:51.226Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_zZ5YGu6TJ5NPCsPMi"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "dunakesziho15@gmail.com",
+      "display_value": "dunakesziho15@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:59:16.432Z",
+      "updated_at": "2026-04-15T11:59:16.432Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_r8nXfyewkNqzd8TgC"
+      ],
+      "occurrence_count": 13,
+      "clinic_id": "6ad859d1-be1e-4dc6-8159-e443befbefe9",
+      "contact_point_id": "888c41a2-3452-42f6-8402-810952dacbc5",
+      "audit_flags": []
+    },
+    {
       "email": "dunakesziliget@gmail.com",
       "display_value": "dunakesziliget@gmail.com",
       "status": "valid",
@@ -21871,6 +23520,28 @@
           "source_export": "latest-reviewer-export"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "dunakilitipraxis@gmail.com",
+      "display_value": "dunakilitipraxis@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:07:28.440Z",
+      "updated_at": "2026-04-15T10:07:28.440Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_po33Rfp4b5XCLNnxy"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "c4a9354b-085b-4d9f-92bf-5be6e8ac5129",
+      "contact_point_id": "e5803844-064a-4ef5-bb93-a978e2f396eb",
       "audit_flags": []
     },
     {
@@ -22284,6 +23955,28 @@
       "audit_flags": []
     },
     {
+      "email": "egeszsegggyongye@gmail.com",
+      "display_value": "egeszsegggyongye@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:28:13.251Z",
+      "updated_at": "2026-04-15T08:28:13.251Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_DsKWSmXTqv2THSiFn"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "egeszseggyongye@gmail.com",
       "display_value": "egeszseggyongye@gmail.com",
       "status": "valid",
@@ -22490,6 +24183,7 @@
       "updated_at": "2026-08-04T12:08:07.260Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -22507,7 +24201,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_d5kCudKsx6wBGSqLN"
+      ],
+      "occurrence_count": 4,
+      "clinic_id": "b6980b67-6715-4a81-83a6-bcd127e6ade3",
+      "contact_point_id": "4daed0e8-336d-4ce1-8a05-890378c2760e"
     },
     {
       "email": "eli801128@gmail.com",
@@ -22747,6 +24450,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -22773,7 +24477,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_5dLRQcLHR4SbN7Wvq"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "fdb82182-eca5-46d4-9540-bfcbfd81d5e6",
+      "contact_point_id": "e7506a3d-8d42-46f0-8304-74d41c7d9319"
     },
     {
       "email": "encsgyerek1@gmail.com",
@@ -23087,6 +24800,50 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "erdihaziorvos05@gmail.com",
+      "display_value": "erdihaziorvos05@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:45:28.073Z",
+      "updated_at": "2026-04-15T09:45:28.073Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_F26pgRRqSdTphvJnX"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "fa3ac0ef-a838-4bda-ad49-20a241fb0599",
+      "contact_point_id": "1b6f5be6-25a3-48c5-acb4-c793221828b4",
+      "audit_flags": []
+    },
+    {
+      "email": "erdosor@gmail.com",
+      "display_value": "erdosor@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:32:55.469Z",
+      "updated_at": "2026-04-15T11:32:55.469Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_vamTxZk9QodXLp2Rq"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
       "audit_flags": []
     },
     {
@@ -23931,6 +25688,7 @@
       "updated_at": "2026-08-04T12:29:42.046Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -23948,7 +25706,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_TQSybn9YFB3zzeSGf"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "4f355301-92ba-400c-8982-deda16543607",
+      "contact_point_id": "398b21e0-83d5-4d9d-bc08-eb93fa32bdf5"
     },
     {
       "email": "famidoktor@yahoo.co.uk",
@@ -24181,6 +25948,28 @@
       "contact_point_id": "ee3d6556-f2ea-48f1-8388-869b6a551046"
     },
     {
+      "email": "fehertoirendelo@gmail.com",
+      "display_value": "fehertoirendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:41:58.951Z",
+      "updated_at": "2026-04-15T07:41:58.951Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_4amYKqTvwswaniRyd"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "e50c6654-4443-4982-aed4-642f87dd3483",
+      "contact_point_id": "078e1ce4-c53c-4975-8637-ab8e15adb75b",
+      "audit_flags": []
+    },
+    {
       "email": "fejer.tibor@t-online.hu",
       "display_value": "fejer.tibor@t-online.hu",
       "status": "valid",
@@ -24273,6 +26062,28 @@
       "occurrence_count": 1,
       "clinic_id": "96c1dc27-3c14-422c-abf6-a3483aecba02",
       "contact_point_id": "11cc435f-a9c9-43fb-bbb0-d6609c4eef21"
+    },
+    {
+      "email": "felcsut.rendelo@gmail.com",
+      "display_value": "felcsut.rendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:03:05.370Z",
+      "updated_at": "2026-04-15T10:03:05.370Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_oYWMpZP3tZAQ8AqNP"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "e07774dd-2581-48a9-a5ab-d440c1fa4ca2",
+      "contact_point_id": "939d7816-cde9-4906-8f1c-892acaf59894",
+      "audit_flags": []
     },
     {
       "email": "felegyhazi2.korzet@gmail.com",
@@ -24387,6 +26198,7 @@
       "updated_at": "2026-08-04T12:35:38.515Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -24404,7 +26216,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_cyTbWCCQAqj8TuyfM"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "1f7b6c25-c3b1-4294-83e8-23179496a4b8",
+      "contact_point_id": "31942a14-1955-4b22-9f5a-8faa37a59cda"
     },
     {
       "email": "feminamedkft@invitel.hu",
@@ -24737,6 +26558,28 @@
       "audit_flags": []
     },
     {
+      "email": "fiokarendelo@gmail.com",
+      "display_value": "fiokarendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:41:04.573Z",
+      "updated_at": "2026-04-15T09:41:04.573Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_MmGYKQnR2vfv2rdPJ"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "af496fce-727b-4921-abcb-c7976848c157",
+      "contact_point_id": "8bc3213e-22ac-4b19-9815-b91a3dadb7b1",
+      "audit_flags": []
+    },
+    {
       "email": "fischer.laszlo@alapellatas.hu",
       "display_value": "fischer.laszlo@alapellatas.hu",
       "status": "valid",
@@ -25005,6 +26848,28 @@
       "audit_flags": []
     },
     {
+      "email": "foldvarydoktor@gmail.com",
+      "display_value": "foldvarydoktor@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:35:07.296Z",
+      "updated_at": "2026-04-15T07:35:07.296Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_r2wqjWpkqAGcsTseg"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "a1b7045a-4642-4bb4-a4c2-ff116cea0e02",
+      "contact_point_id": "70edd810-7eed-441a-a63f-5b6983b8d378",
+      "audit_flags": []
+    },
+    {
       "email": "foldy.maria@alapellatas.hu",
       "display_value": "foldy.maria@alapellatas.hu",
       "status": "valid",
@@ -25223,6 +27088,94 @@
       "contact_point_id": "9019d5a9-5548-4889-a467-b8305784ef3e"
     },
     {
+      "email": "fotgy1@gmail.com",
+      "display_value": "fotgy1@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:14:30.792Z",
+      "updated_at": "2026-04-15T08:14:30.792Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_xoYkTub3naP2EBrtM"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "fotiorvos1@gmail.com",
+      "display_value": "fotiorvos1@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:42:36.308Z",
+      "updated_at": "2026-04-15T10:42:36.308Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_urfJ2jijazWtjbbiB"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "fotiorvos2@gmail.com",
+      "display_value": "fotiorvos2@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:28:11.036Z",
+      "updated_at": "2026-04-15T07:28:11.036Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_ZMTTi3y6vC4jRpdJs"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "fourmed@gmail.com",
+      "display_value": "fourmed@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:09:39.031Z",
+      "updated_at": "2026-04-15T10:09:39.031Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_wAzyyen97ziAWREar"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "8f1ce7c5-70a3-40aa-9881-469d1731b641",
+      "contact_point_id": "f76f806e-d3ab-4bb1-b76b-b674d6c3e88f",
+      "audit_flags": []
+    },
+    {
       "email": "foxi5545@gmail.com",
       "display_value": "foxi5545@gmail.com",
       "status": "valid",
@@ -25314,6 +27267,28 @@
           "source_export": "canonical-review-state"
         }
       ],
+      "audit_flags": []
+    },
+    {
+      "email": "furedi.gyula@okfo.gov.hu",
+      "display_value": "furedi.gyula@okfo.gov.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:32:48.427Z",
+      "updated_at": "2026-04-15T07:32:48.427Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_idbdxcXu2nwXXZ3gy"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "4154b06b-3d33-42ce-9b04-16753cc56360",
+      "contact_point_id": "b09b97dc-9657-455c-afcd-f7cfc8144e66",
       "audit_flags": []
     },
     {
@@ -25807,6 +27782,28 @@
       "audit_flags": []
     },
     {
+      "email": "gandalfbt@yahoo.com",
+      "display_value": "gandalfbt@yahoo.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:20:37.234Z",
+      "updated_at": "2026-04-15T10:20:37.234Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_NeFCntnnvhoQb5QKR"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "37739067-7475-4333-b522-a5052583bda9",
+      "contact_point_id": "fad97268-e277-436e-80ad-a98ca3cfa6ff",
+      "audit_flags": []
+    },
+    {
       "email": "garayerzsebet@gmail.com",
       "display_value": "garayerzsebet@gmail.com",
       "status": "valid",
@@ -25947,6 +27944,28 @@
       "occurrence_count": 3,
       "clinic_id": "a5d9c8de-c55e-4b97-999e-b415597b0ea9",
       "contact_point_id": "4ed1db19-8022-484a-976e-649e010ac35a"
+    },
+    {
+      "email": "gcs.rendelo@gmail.com",
+      "display_value": "gcs.rendelo@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:04:29.466Z",
+      "updated_at": "2026-04-15T11:04:29.466Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_Nng6xjQKXfrxYCDkj"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "gdrmile@gmail.com",
@@ -26396,6 +28415,28 @@
       "occurrence_count": 1,
       "clinic_id": "e146e32f-2e6c-4256-b247-d8a3da010676",
       "contact_point_id": "3b6dbb22-86ee-4376-8d76-d012778468ec"
+    },
+    {
+      "email": "godihaziorvos@gmail.com",
+      "display_value": "godihaziorvos@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:32:11.232Z",
+      "updated_at": "2026-04-15T09:32:11.232Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_Mme2FKmF2wnHvu2Rr"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
     },
     {
       "email": "gombos.katalin@alapellatas.hu",
@@ -26990,6 +29031,7 @@
       "updated_at": "2026-07-30T09:00:51.752Z",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-10T08:46:47.215Z",
@@ -27007,7 +29049,16 @@
           "source_export": "latest-reviewer-export"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_mmWLZstAdYz27u7bh"
+      ],
+      "occurrence_count": 19,
+      "clinic_id": "c9111224-7e6b-4eae-8a60-3ad0787a3611",
+      "contact_point_id": "9c8af0f9-cd5d-4d41-abe3-e6450794af1e"
     },
     {
       "email": "gyerek10@gmail.com",
@@ -27202,6 +29253,28 @@
       "audit_flags": []
     },
     {
+      "email": "gyermek2halasztelek@gmail.com",
+      "display_value": "gyermek2halasztelek@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:32:48.780Z",
+      "updated_at": "2026-04-15T08:32:48.780Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_gynTSc3Q8CiwKQzTB"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "gyermek3askorzet@gmail.com",
       "display_value": "gyermek3askorzet@gmail.com",
       "status": "valid",
@@ -27384,6 +29457,50 @@
       "audit_flags": []
     },
     {
+      "email": "gyermekorvos@veroce.hu",
+      "display_value": "gyermekorvos@veroce.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:39:37.529Z",
+      "updated_at": "2026-04-15T08:39:37.529Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_tKweks563XRCMx53J"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "2ca8b1e4-919d-4232-896f-9c75e6506b10",
+      "contact_point_id": "aadc003a-6b81-4a1b-9cb4-ab32f3119444",
+      "audit_flags": []
+    },
+    {
+      "email": "gyermekorvos01@gmail.com",
+      "display_value": "gyermekorvos01@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T09:25:33.459Z",
+      "updated_at": "2026-04-15T09:25:33.459Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_9R6Xrbz3kda9Arsav"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "gyermekorvos1@hajduhadhaz.hu",
       "display_value": "gyermekorvos1@hajduhadhaz.hu",
       "status": "valid",
@@ -27528,6 +29645,28 @@
       "contact_point_id": "f7ebb996-e3e2-44d6-8642-0d0222eebb57"
     },
     {
+      "email": "gyermekorvosgyomro3@gmail.com",
+      "display_value": "gyermekorvosgyomro3@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T11:15:25.864Z",
+      "updated_at": "2026-04-15T11:15:25.864Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_XKcjmJ7nwLJxqYbAK"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": "d24b8d7f-3aef-4f77-80ae-e56bfc589b91",
+      "contact_point_id": "4f16b997-c24f-4b90-94d8-d30ab9c1e9ed",
+      "audit_flags": []
+    },
+    {
       "email": "gyermekorvosirendelo.harkany@gmail.com",
       "display_value": "gyermekorvosirendelo.harkany@gmail.com",
       "status": "valid",
@@ -27606,6 +29745,50 @@
       "occurrence_count": 1,
       "clinic_id": "e70431cf-edb6-41c6-9463-bb87580e22ba",
       "contact_point_id": "1417e1b5-2c97-410d-a3fb-15b8770060ea",
+      "audit_flags": []
+    },
+    {
+      "email": "gyermekorvosszod@gmail.com",
+      "display_value": "gyermekorvosszod@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:21:00.822Z",
+      "updated_at": "2026-04-15T07:21:00.822Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_33Eahe29mu4nytnz2"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
+      "email": "gyermekrend.vadas@gmail.com",
+      "display_value": "gyermekrend.vadas@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:30:29.242Z",
+      "updated_at": "2026-04-15T08:30:29.242Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_ctDLebAwh3w3CfRoT"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
       "audit_flags": []
     },
     {
@@ -27998,6 +30181,28 @@
       "audit_flags": []
     },
     {
+      "email": "gyongyszemunk@gmail.com",
+      "display_value": "gyongyszemunk@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:22:47.858Z",
+      "updated_at": "2026-04-15T10:22:47.858Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_kzLZMMgfFm9F27NNm"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "gyonidr.jarvany@gmail.com",
       "display_value": "gyonidr.jarvany@gmail.com",
       "status": "valid",
@@ -28276,6 +30481,28 @@
       "contact_point_id": "595db935-39ac-4c46-839a-d10bb8b017f4"
     },
     {
+      "email": "h6217@netdr.hu",
+      "display_value": "h6217@netdr.hu",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T10:11:51.732Z",
+      "updated_at": "2026-04-15T10:11:51.732Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_9db2S2pSkBEoQgjzY"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "d07f3034-94be-44ac-87fd-1177e90e562c",
+      "contact_point_id": "2cbf16fd-0e1b-4b72-9c0b-2d96d8bed632",
+      "audit_flags": []
+    },
+    {
       "email": "hadhazidr.margit33@gmail.com",
       "display_value": "hadhazidr.margit33@gmail.com",
       "status": "valid",
@@ -28380,6 +30607,28 @@
       "contact_point_id": "db32743c-b9ae-49d3-b8a8-4e0eb7bff56b"
     },
     {
+      "email": "hajma.ildiko@gmail.com",
+      "display_value": "hajma.ildiko@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T07:30:31.952Z",
+      "updated_at": "2026-04-15T07:30:31.952Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_R4cBjNhc5K6Ar4iBr"
+      ],
+      "occurrence_count": 1,
+      "clinic_id": null,
+      "contact_point_id": null,
+      "audit_flags": []
+    },
+    {
       "email": "halasmedical@gmail.com",
       "display_value": "halasmedical@gmail.com",
       "status": "valid",
@@ -28416,6 +30665,7 @@
       "updated_at": "2026-07-16T22:32:13.931179",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-csv-import",
         "canonical-review-state"
       ],
       "source_exported_at": "2026-07-29T09:48:45.654104+00:00",
@@ -28433,7 +30683,16 @@
           "source_export": "canonical-review-state"
         }
       ],
-      "audit_flags": []
+      "audit_flags": [],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_sC9b2v5c497gm7BFn"
+      ],
+      "occurrence_count": 3,
+      "clinic_id": "6501fb9b-8b75-43a4-b036-1e2f20df401c",
+      "contact_point_id": "c0a38145-c5aa-4ce9-a1c5-8c16aa9cc0f3"
     },
     {
       "email": "halmosfamily@freemail.hu",
@@ -28510,6 +30769,28 @@
       "occurrence_count": 1,
       "clinic_id": "580caf68-40bd-41d7-ae82-6d6ba1946dd9",
       "contact_point_id": "4631fce3-657b-4917-96f1-5b5ea81a698c"
+    },
+    {
+      "email": "hamorine.ke@gmail.com",
+      "display_value": "hamorine.ke@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-04-15T08:23:35.787Z",
+      "updated_at": "2026-04-15T08:23:35.787Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-csv-import"
+      ],
+      "source_campaign_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "source_campaign_lead_ids": [
+        "lea_obdxYdiDbqRWg7KBm"
+      ],
+      "occurrence_count": 2,
+      "clinic_id": "6963299b-8cb8-434a-a614-7587bd7c16ca",
+      "contact_point_id": "875e1215-1666-4ac3-863b-96255dd2a971",
+      "audit_flags": []
     },
     {
       "email": "hancsicsakjozsef@gmail.com",

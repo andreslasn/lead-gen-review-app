@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve(process.argv[2] || ".");
@@ -6,7 +6,8 @@ const defaultCampaignDirectories = [
   path.join(process.env.HOME || "", "Downloads", "campaign"),
   path.join(process.env.HOME || "", "Downloads", "campaigns"),
 ];
-const campaignDirectory = path.resolve(process.argv[3] || defaultCampaignDirectories[1]);
+const campaignSources = (process.argv.slice(3).length ? process.argv.slice(3) : [defaultCampaignDirectories[1]])
+  .map((source) => path.resolve(source));
 const dataDirectory = path.join(root, "public", "data");
 const emailIndexPath = path.join(dataDirectory, "email-index.json");
 const emailQueuePath = path.join(dataDirectory, "email-review-queue.json");
@@ -117,6 +118,29 @@ function mergedSourceExports(sourceExports, campaignSource) {
     seen.add(key);
     return true;
   });
+}
+
+async function campaignFilesFromSources(sources) {
+  const files = [];
+  const seen = new Set();
+  for (const source of sources) {
+    const sourceStat = await stat(source);
+    if (sourceStat.isDirectory()) {
+      const directoryFiles = (await readdir(source))
+        .filter((file) => file.toLowerCase().endsWith(".csv"))
+        .map((file) => ({ file_name: file, path: path.join(source, file) }));
+      for (const file of directoryFiles) {
+        if (seen.has(file.path)) continue;
+        seen.add(file.path);
+        files.push(file);
+      }
+    } else if (sourceStat.isFile() && source.toLowerCase().endsWith(".csv")) {
+      if (seen.has(source)) continue;
+      seen.add(source);
+      files.push({ file_name: path.basename(source), path: source });
+    }
+  }
+  return files.sort((a, b) => a.file_name.localeCompare(b.file_name) || a.path.localeCompare(b.path));
 }
 
 function makeCampaignSummary(record) {
@@ -233,12 +257,10 @@ const knownRegions = sortedUnique(existingEmailQueueItems.flatMap((item) => [
 const regionBySlug = new Map(knownRegions.map((region) => [safeSlug(region), region]));
 const sourceFiles = [];
 const campaignRecordsByEmail = new Map();
-const files = (await readdir(campaignDirectory))
-  .filter((file) => file.toLowerCase().endsWith(".csv"))
-  .sort((a, b) => a.localeCompare(b));
+const files = await campaignFilesFromSources(campaignSources);
 
 for (const file of files) {
-  const rows = parseCsv(await readFile(path.join(campaignDirectory, file), "utf8"));
+  const rows = parseCsv(await readFile(file.path, "utf8"));
   const header = rows[0] || [];
   const emailColumn = header.indexOf("email");
   if (emailColumn < 0) continue;
@@ -250,7 +272,7 @@ for (const file of files) {
     const record = {
       email,
       display_value: row[emailColumn],
-      source_file: file,
+      source_file: file.file_name,
       row_number: offset + 2,
       row: rowObject(header, row),
     };
@@ -258,7 +280,8 @@ for (const file of files) {
     campaignRecordsByEmail.get(email).push(record);
   }
   sourceFiles.push({
-    file_name: file,
+    file_name: file.file_name,
+    path: file.path,
     row_count: Math.max(0, rows.length - 1),
     email_count: emails.length,
     unique_email_count: new Set(emails).size,
@@ -292,7 +315,8 @@ const usagePayload = {
   dataset_id: emailQueue.dataset_id,
   dataset_version: emailQueue.dataset_version,
   generated_at: generatedAt,
-  source_directory: campaignDirectory,
+  source_directory: campaignSources.length === 1 ? campaignSources[0] : null,
+  source_inputs: campaignSources,
   source_files: sourceFiles,
   counts: {
     source_files: sourceFiles.length,
@@ -384,7 +408,7 @@ const seedPayload = {
   generated_at: generatedAt,
   source_exports: mergedSourceExports(validationSeed.source_exports, {
     name: "campaign-csv-import",
-    path: campaignDirectory,
+    path: campaignSources.join(","),
     exported_at: generatedAt,
     files: sourceFiles.length,
     emails: campaignEmails.length,

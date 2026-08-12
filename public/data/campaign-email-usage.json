@@ -3,60 +3,78 @@
   "schema_version": 1,
   "dataset_id": "hu-review-20260729T094757Z",
   "dataset_version": "2026-07-29T09:47:57.654616+00:00",
-  "generated_at": "2026-08-12T10:44:36.525Z",
-  "source_directory": "/Users/andreslasn/Downloads/campaigns",
+  "generated_at": "2026-08-12T10:56:22.241Z",
+  "source_directory": null,
+  "source_inputs": [
+    "/Users/andreslasn/Downloads/campaigns",
+    "/Users/andreslasn/Downloads/fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+  ],
   "source_files": [
     {
       "file_name": "fil_axp_Fw3QiDsbg3k89FyPG_budapest_4.csv",
+      "path": "/Users/andreslasn/Downloads/campaigns/fil_axp_Fw3QiDsbg3k89FyPG_budapest_4.csv",
       "row_count": 153,
       "email_count": 153,
       "unique_email_count": 153
     },
     {
+      "file_name": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+      "path": "/Users/andreslasn/Downloads/fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+      "row_count": 117,
+      "email_count": 117,
+      "unique_email_count": 117
+    },
+    {
       "file_name": "fil_axp_izZrgo4Fi4JmL3AJ9_borsod-abauj-zemplen__csongrad-csanad.csv",
+      "path": "/Users/andreslasn/Downloads/campaigns/fil_axp_izZrgo4Fi4JmL3AJ9_borsod-abauj-zemplen__csongrad-csanad.csv",
       "row_count": 168,
       "email_count": 168,
       "unique_email_count": 168
     },
     {
       "file_name": "fil_axp_kRimDWZZW5Efageat_budapest_3.csv",
+      "path": "/Users/andreslasn/Downloads/campaigns/fil_axp_kRimDWZZW5Efageat_budapest_3.csv",
       "row_count": 196,
       "email_count": 196,
       "unique_email_count": 196
     },
     {
       "file_name": "fil_axp_L5DFWarQkvkSkPp3g_bacs-kiskun__bekes.csv",
+      "path": "/Users/andreslasn/Downloads/campaigns/fil_axp_L5DFWarQkvkSkPp3g_bacs-kiskun__bekes.csv",
       "row_count": 181,
       "email_count": 181,
       "unique_email_count": 181
     },
     {
       "file_name": "fil_axp_QFToikoT38d4mEHDH_budapest_2.csv",
+      "path": "/Users/andreslasn/Downloads/campaigns/fil_axp_QFToikoT38d4mEHDH_budapest_2.csv",
       "row_count": 193,
       "email_count": 193,
       "unique_email_count": 193
     },
     {
       "file_name": "fil_axp_qyoj7DbS36aks4NcF_budapest_1.csv",
+      "path": "/Users/andreslasn/Downloads/campaigns/fil_axp_qyoj7DbS36aks4NcF_budapest_1.csv",
       "row_count": 198,
       "email_count": 198,
       "unique_email_count": 198
     },
     {
       "file_name": "fil_axp_xcdiPFAzqrjP9BmuH_baranya.csv",
+      "path": "/Users/andreslasn/Downloads/campaigns/fil_axp_xcdiPFAzqrjP9BmuH_baranya.csv",
       "row_count": 116,
       "email_count": 116,
       "unique_email_count": 116
     }
   ],
   "counts": {
-    "source_files": 7,
-    "rows": 1205,
-    "campaign_email_rows": 1205,
-    "emails": 1205,
-    "indexed_emails": 1205,
+    "source_files": 8,
+    "rows": 1322,
+    "campaign_email_rows": 1322,
+    "emails": 1322,
+    "indexed_emails": 1322,
     "not_in_email_index": 0,
-    "campaign_imported_emails": 100
+    "campaign_imported_emails": 144
   },
   "items": [
     {
@@ -144,6 +162,34 @@
       ]
     },
     {
+      "email": "13korzet@gmail.com",
+      "display_value": "13korzet@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_abW52EyHQumzJuvhP"
+      ],
+      "first_sent_at": "2026-04-15T12:01:30.674Z",
+      "last_sent_at": "2026-04-15T12:01:30.674Z",
+      "last_event_at": "2026-04-15T12:01:30.674Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 58,
+          "lead_id": "lea_abW52EyHQumzJuvhP",
+          "sent_at": "2026-04-15T12:01:30.674Z",
+          "last_event_at": "2026-04-15T12:01:30.674Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "17.praxis@alapellatas11.hu",
       "display_value": "17.praxis@alapellatas11.hu",
       "used_in_campaign": true,
@@ -224,6 +270,34 @@
           "company_name": "dr. Nagy Zoltán",
           "person_name": "dr. Nagy Zoltán",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "2.korzet@egomir.szszm.hu",
+      "display_value": "2.korzet@egomir.szszm.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_3L6A8FzCkxWpSsJp8"
+      ],
+      "first_sent_at": "2026-04-15T08:12:15.006Z",
+      "last_sent_at": "2026-04-15T08:12:15.006Z",
+      "last_event_at": "2026-04-20T10:29:08.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 4,
+          "lead_id": "lea_3L6A8FzCkxWpSsJp8",
+          "sent_at": "2026-04-15T08:12:15.006Z",
+          "last_event_at": "2026-04-20T10:29:08.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -592,6 +666,34 @@
       ]
     },
     {
+      "email": "46korzet@gmail.com",
+      "display_value": "46korzet@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_SAfFh9DAt3ZKQFuud"
+      ],
+      "first_sent_at": "2026-04-15T08:00:28.136Z",
+      "last_sent_at": "2026-04-15T08:00:28.136Z",
+      "last_event_at": "2026-04-16T11:36:35.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 46,
+          "lead_id": "lea_SAfFh9DAt3ZKQFuud",
+          "sent_at": "2026-04-15T08:00:28.136Z",
+          "last_event_at": "2026-04-16T11:36:35.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "48as.korzetirendelo@gmail.com",
       "display_value": "48as.korzetirendelo@gmail.com",
       "used_in_campaign": true,
@@ -844,6 +946,34 @@
       ]
     },
     {
+      "email": "8.korzet@egomir.szszm.hu",
+      "display_value": "8.korzet@egomir.szszm.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_c9XCMc6ki9uFrsSzT"
+      ],
+      "first_sent_at": "2026-04-15T10:38:12.264Z",
+      "last_sent_at": "2026-04-15T10:38:12.264Z",
+      "last_event_at": "2026-04-15T12:21:04.378Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 60,
+          "lead_id": "lea_c9XCMc6ki9uFrsSzT",
+          "sent_at": "2026-04-15T10:38:12.264Z",
+          "last_event_at": "2026-04-15T12:21:04.378Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "8kermagyar@gmail.com",
       "display_value": "8kermagyar@gmail.com",
       "used_in_campaign": true,
@@ -952,6 +1082,34 @@
           "company_name": "AdiMed BT",
           "person_name": "Dr. Tuza Adrienne Mária",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "adpenta@gmail.com",
+      "display_value": "adpenta@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_qtiErt2osSc8y5p86"
+      ],
+      "first_sent_at": "2026-04-15T07:39:42.022Z",
+      "last_sent_at": "2026-04-15T07:39:42.022Z",
+      "last_event_at": "2026-04-15T10:23:03.483Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 95,
+          "lead_id": "lea_qtiErt2osSc8y5p86",
+          "sent_at": "2026-04-15T07:39:42.022Z",
+          "last_event_at": "2026-04-15T10:23:03.483Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -1124,6 +1282,34 @@
       ]
     },
     {
+      "email": "alkalmassag@gmail.com",
+      "display_value": "alkalmassag@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_abPi9A8fWhHnJJwsv"
+      ],
+      "first_sent_at": "2026-04-15T10:00:52.633Z",
+      "last_sent_at": "2026-04-15T10:00:52.633Z",
+      "last_event_at": "2026-04-15T12:16:29.192Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 57,
+          "lead_id": "lea_abPi9A8fWhHnJJwsv",
+          "sent_at": "2026-04-15T10:00:52.633Z",
+          "last_event_at": "2026-04-15T12:16:29.192Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "alusicza@kiralymajor.hu",
       "display_value": "alusicza@kiralymajor.hu",
       "used_in_campaign": true,
@@ -1264,6 +1450,34 @@
       ]
     },
     {
+      "email": "angiiren@t-email.hu",
+      "display_value": "angiiren@t-email.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_BKgMkSpeQyZbFjbP5"
+      ],
+      "first_sent_at": "2026-04-15T08:21:19.369Z",
+      "last_sent_at": "2026-04-15T08:21:19.369Z",
+      "last_event_at": "2026-04-15T08:21:19.369Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 20,
+          "lead_id": "lea_BKgMkSpeQyZbFjbP5",
+          "sent_at": "2026-04-15T08:21:19.369Z",
+          "last_event_at": "2026-04-15T08:21:19.369Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "anikomarik@freemail.hu",
       "display_value": "anikomarik@freemail.hu",
       "used_in_campaign": true,
@@ -1348,6 +1562,62 @@
       ]
     },
     {
+      "email": "anitaesmonika@gmail.com",
+      "display_value": "anitaesmonika@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_avkXxPogSa7wHeM5G"
+      ],
+      "first_sent_at": "2026-04-15T12:08:17.896Z",
+      "last_sent_at": "2026-04-15T12:08:17.896Z",
+      "last_event_at": "2026-04-16T10:39:06.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 59,
+          "lead_id": "lea_avkXxPogSa7wHeM5G",
+          "sent_at": "2026-04-15T12:08:17.896Z",
+          "last_event_at": "2026-04-16T10:39:06.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "anna.ozvald@gmail.com",
+      "display_value": "anna.ozvald@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_dogx3mGfbjcKNgtys"
+      ],
+      "first_sent_at": "2026-04-15T09:29:58.899Z",
+      "last_sent_at": "2026-04-15T09:29:58.899Z",
+      "last_event_at": "2026-04-15T14:35:53.777Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 65,
+          "lead_id": "lea_dogx3mGfbjcKNgtys",
+          "sent_at": "2026-04-15T09:29:58.899Z",
+          "last_event_at": "2026-04-15T14:35:53.777Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "annamaria.leviczky@gmail.com",
       "display_value": "annamaria.leviczky@gmail.com",
       "used_in_campaign": true,
@@ -1370,6 +1640,90 @@
           "last_event_at": "2026-06-03T17:29:59.190Z",
           "stage": "Email Contacts",
           "company_name": "Dr. Leviczky Annamária",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "ansanatio@gmail.com",
+      "display_value": "ansanatio@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_M3XwpP7GtC2Z8S94R"
+      ],
+      "first_sent_at": "2026-04-15T10:49:06.915Z",
+      "last_sent_at": "2026-04-15T10:49:06.915Z",
+      "last_event_at": "2026-04-15T10:58:31.266Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 36,
+          "lead_id": "lea_M3XwpP7GtC2Z8S94R",
+          "sent_at": "2026-04-15T10:49:06.915Z",
+          "last_event_at": "2026-04-15T10:58:31.266Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "apajrendelo@gmail.com",
+      "display_value": "apajrendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_fjX2oeF9JHBpCtDgp"
+      ],
+      "first_sent_at": "2026-04-15T09:27:48.948Z",
+      "last_sent_at": "2026-04-15T09:27:48.948Z",
+      "last_event_at": "2026-04-15T09:39:26.873Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 70,
+          "lead_id": "lea_fjX2oeF9JHBpCtDgp",
+          "sent_at": "2026-04-15T09:27:48.948Z",
+          "last_event_at": "2026-04-15T09:39:26.873Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "apmedipa@gmail.com",
+      "display_value": "apmedipa@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_oS5LCavbmBDBPcthA"
+      ],
+      "first_sent_at": "2026-04-15T10:46:56.703Z",
+      "last_sent_at": "2026-04-15T10:46:56.703Z",
+      "last_event_at": "2026-04-15T14:30:48.155Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 87,
+          "lead_id": "lea_oS5LCavbmBDBPcthA",
+          "sent_at": "2026-04-15T10:46:56.703Z",
+          "last_event_at": "2026-04-15T14:30:48.155Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -1516,6 +1870,34 @@
       ]
     },
     {
+      "email": "asszisztens@baboslevente.hu",
+      "display_value": "asszisztens@baboslevente.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_sAiLyhr2Mib72mZZy"
+      ],
+      "first_sent_at": "2026-04-15T08:02:48.620Z",
+      "last_sent_at": "2026-04-15T08:02:48.620Z",
+      "last_event_at": "2026-04-15T08:02:48.620Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 98,
+          "lead_id": "lea_sAiLyhr2Mib72mZZy",
+          "sent_at": "2026-04-15T08:02:48.620Z",
+          "last_event_at": "2026-04-15T08:02:48.620Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "avasgyermek22@gmail.com",
       "display_value": "avasgyermek22@gmail.com",
       "used_in_campaign": true,
@@ -1596,6 +1978,34 @@
           "company_name": null,
           "person_name": "Dr. Barta Zita",
           "location": "BARANYA"
+        }
+      ]
+    },
+    {
+      "email": "avetesi@hotmail.com",
+      "display_value": "avetesi@hotmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_sYsGfcf3jQsqXuqP7"
+      ],
+      "first_sent_at": "2026-04-15T11:28:33.418Z",
+      "last_sent_at": "2026-04-15T11:28:33.418Z",
+      "last_event_at": "2026-04-15T11:28:33.418Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 100,
+          "lead_id": "lea_sYsGfcf3jQsqXuqP7",
+          "sent_at": "2026-04-15T11:28:33.418Z",
+          "last_event_at": "2026-04-15T11:28:33.418Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -1936,6 +2346,34 @@
       ]
     },
     {
+      "email": "balmadi1praxis@gmail.com",
+      "display_value": "balmadi1praxis@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_yfbiWwPbqfv5iTSkD"
+      ],
+      "first_sent_at": "2026-04-15T11:50:29.797Z",
+      "last_sent_at": "2026-04-15T11:50:29.797Z",
+      "last_event_at": "2026-04-15T11:51:13.203Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 115,
+          "lead_id": "lea_yfbiWwPbqfv5iTSkD",
+          "sent_at": "2026-04-15T11:50:29.797Z",
+          "last_event_at": "2026-04-15T11:51:13.203Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "balogh.maria@18euszolg.hu",
       "display_value": "balogh.maria@18euszolg.hu",
       "used_in_campaign": true,
@@ -1984,6 +2422,34 @@
           "lead_id": "lea_qs7CJzWNTwBSHwjGs",
           "sent_at": "2026-07-08T15:24:00.925Z",
           "last_event_at": "2026-07-15T05:34:58.812Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "banhidirendelo@gmail.com",
+      "display_value": "banhidirendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_9YyrzXCrLoW82mcZT"
+      ],
+      "first_sent_at": "2026-04-15T10:40:24.109Z",
+      "last_sent_at": "2026-04-15T10:40:24.109Z",
+      "last_event_at": "2026-04-15T12:32:10.368Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 16,
+          "lead_id": "lea_9YyrzXCrLoW82mcZT",
+          "sent_at": "2026-04-15T10:40:24.109Z",
+          "last_event_at": "2026-04-15T12:32:10.368Z",
           "stage": null,
           "company_name": null,
           "person_name": null,
@@ -2664,6 +3130,34 @@
       ]
     },
     {
+      "email": "biroemoke1@gmail.com",
+      "display_value": "biroemoke1@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_Y9Q4dtkKRNxwpKTFD"
+      ],
+      "first_sent_at": "2026-04-15T10:57:55.065Z",
+      "last_sent_at": "2026-04-15T10:57:55.065Z",
+      "last_event_at": "2026-04-15T10:58:06.016Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 52,
+          "lead_id": "lea_Y9Q4dtkKRNxwpKTFD",
+          "sent_at": "2026-04-15T10:57:55.065Z",
+          "last_event_at": "2026-04-15T10:58:06.016Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "bodepraxis@gmail.com",
       "display_value": "bodepraxis@gmail.com",
       "used_in_campaign": true,
@@ -2828,6 +3322,34 @@
           "company_name": null,
           "person_name": "Dr. Pandur-Sárkány Ágnes",
           "location": "BARANYA"
+        }
+      ]
+    },
+    {
+      "email": "bonusmedicina@gmail.com",
+      "display_value": "bonusmedicina@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_EcxoH3wy5BnxLgb9s"
+      ],
+      "first_sent_at": "2026-04-15T11:52:40.749Z",
+      "last_sent_at": "2026-04-15T11:52:40.749Z",
+      "last_event_at": "2026-04-15T12:49:48.926Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 25,
+          "lead_id": "lea_EcxoH3wy5BnxLgb9s",
+          "sent_at": "2026-04-15T11:52:40.749Z",
+          "last_event_at": "2026-04-15T12:49:48.926Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -3028,6 +3550,34 @@
       ]
     },
     {
+      "email": "bubomed@gmail.com",
+      "display_value": "bubomed@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_oDDy7Xpz9Ay4pCYvC"
+      ],
+      "first_sent_at": "2026-04-15T09:49:53.139Z",
+      "last_sent_at": "2026-04-15T09:49:53.139Z",
+      "last_event_at": "2026-04-15T11:53:49.685Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 86,
+          "lead_id": "lea_oDDy7Xpz9Ay4pCYvC",
+          "sent_at": "2026-04-15T09:49:53.139Z",
+          "last_event_at": "2026-04-15T11:53:49.685Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "budafok.15@gmail.com",
       "display_value": "budafok.15@gmail.com",
       "used_in_campaign": true,
@@ -3220,6 +3770,34 @@
           "company_name": "Buvitalis Kft.",
           "person_name": "Dr. Bujdosó Virág",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "cf41441@gmail.com",
+      "display_value": "cf41441@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_aAGKfhG3vruAcFS6a"
+      ],
+      "first_sent_at": "2026-04-15T09:38:49.680Z",
+      "last_sent_at": "2026-04-15T09:38:49.680Z",
+      "last_event_at": "2026-04-16T04:42:21.132Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 56,
+          "lead_id": "lea_aAGKfhG3vruAcFS6a",
+          "sent_at": "2026-04-15T09:38:49.680Z",
+          "last_event_at": "2026-04-16T04:42:21.132Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -3560,6 +4138,34 @@
       ]
     },
     {
+      "email": "csaladorvos2.ker@gmail.com",
+      "display_value": "csaladorvos2.ker@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_3936GkgXEC7HaL7pb"
+      ],
+      "first_sent_at": "2026-04-15T11:06:41.307Z",
+      "last_sent_at": "2026-04-15T11:06:41.307Z",
+      "last_event_at": "2026-04-15T13:21:46.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 3,
+          "lead_id": "lea_3936GkgXEC7HaL7pb",
+          "sent_at": "2026-04-15T11:06:41.307Z",
+          "last_event_at": "2026-04-15T13:21:46.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "csalayldr@gmail.com",
       "display_value": "csalayldr@gmail.com",
       "used_in_campaign": true,
@@ -3812,6 +4418,34 @@
       ]
     },
     {
+      "email": "cseresnyes.nador@cherrymed.hu",
+      "display_value": "cseresnyes.nador@cherrymed.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_kvo2vQey5nyxTYe2e"
+      ],
+      "first_sent_at": "2026-04-15T11:54:53.796Z",
+      "last_sent_at": "2026-04-15T11:54:53.796Z",
+      "last_event_at": "2026-04-15T11:54:53.796Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 83,
+          "lead_id": "lea_kvo2vQey5nyxTYe2e",
+          "sent_at": "2026-04-15T11:54:53.796Z",
+          "last_event_at": "2026-04-15T11:54:53.796Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "csergamed@gmail.com",
       "display_value": "csergamed@gmail.com",
       "used_in_campaign": true,
@@ -3924,6 +4558,34 @@
       ]
     },
     {
+      "email": "csizmadia.eniko.88@gmail.com",
+      "display_value": "csizmadia.eniko.88@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_FLCGsksAuv4gG7qaq"
+      ],
+      "first_sent_at": "2026-04-15T10:53:30.198Z",
+      "last_sent_at": "2026-04-15T10:53:30.198Z",
+      "last_event_at": "2026-04-15T12:42:59.250Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 28,
+          "lead_id": "lea_FLCGsksAuv4gG7qaq",
+          "sent_at": "2026-04-15T10:53:30.198Z",
+          "last_event_at": "2026-04-15T12:42:59.250Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "csobanka04rendelo@gmail.com",
       "display_value": "csobanka04rendelo@gmail.com",
       "used_in_campaign": true,
@@ -4032,6 +4694,34 @@
           "company_name": "DR. CSORDÁS PÉTER GYERMEKGYÓGYÁSZ Bt.",
           "person_name": "Dr. Csordás Péter",
           "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
+      "email": "csszabodoktorno@gmail.com",
+      "display_value": "csszabodoktorno@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_E5MYoexy8nXpiffCs"
+      ],
+      "first_sent_at": "2026-04-15T10:33:49.621Z",
+      "last_sent_at": "2026-04-15T10:33:49.621Z",
+      "last_event_at": "2026-04-21T12:08:26.213Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 24,
+          "lead_id": "lea_E5MYoexy8nXpiffCs",
+          "sent_at": "2026-04-15T10:33:49.621Z",
+          "last_event_at": "2026-04-21T12:08:26.213Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -4372,6 +5062,90 @@
       ]
     },
     {
+      "email": "dimaszema@citromail.hu",
+      "display_value": "dimaszema@citromail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_uzPRyJ4qLo2uRJuaj"
+      ],
+      "first_sent_at": "2026-04-15T11:13:14.140Z",
+      "last_sent_at": "2026-04-15T11:13:14.140Z",
+      "last_event_at": "2026-04-15T11:19:26.951Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 107,
+          "lead_id": "lea_uzPRyJ4qLo2uRJuaj",
+          "sent_at": "2026-04-15T11:13:14.140Z",
+          "last_event_at": "2026-04-15T11:19:26.951Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dkgyermek1korzet@gmail.com",
+      "display_value": "dkgyermek1korzet@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_z2EA6C5JuoAZrHkNr"
+      ],
+      "first_sent_at": "2026-04-15T11:24:11.023Z",
+      "last_sent_at": "2026-04-15T11:24:11.023Z",
+      "last_event_at": "2026-04-16T08:19:22.038Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 116,
+          "lead_id": "lea_z2EA6C5JuoAZrHkNr",
+          "sent_at": "2026-04-15T11:24:11.023Z",
+          "last_event_at": "2026-04-16T08:19:22.038Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dmgdoktorok@gmail.com",
+      "display_value": "dmgdoktorok@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_ff5sxG8c95d6id6jE"
+      ],
+      "first_sent_at": "2026-04-15T11:48:18.770Z",
+      "last_sent_at": "2026-04-15T11:48:18.770Z",
+      "last_event_at": "2026-04-15T11:48:18.770Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 68,
+          "lead_id": "lea_ff5sxG8c95d6id6jE",
+          "sent_at": "2026-04-15T11:48:18.770Z",
+          "last_event_at": "2026-04-15T11:48:18.770Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dnagyildikodr@gmail.com",
       "display_value": "dnagyildikodr@gmail.com",
       "used_in_campaign": true,
@@ -4395,6 +5169,34 @@
           "stage": "no",
           "company_name": "Dr. D. Nagy Ildiko",
           "person_name": "Dr. D. Nagy Ildiko",
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dobirendelo@gmail.com",
+      "display_value": "dobirendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_os7pGMWQvLKFtDsJm"
+      ],
+      "first_sent_at": "2026-04-15T11:30:45.024Z",
+      "last_sent_at": "2026-04-15T11:30:45.024Z",
+      "last_event_at": "2026-04-17T07:35:28.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 90,
+          "lead_id": "lea_os7pGMWQvLKFtDsJm",
+          "sent_at": "2026-04-15T11:30:45.024Z",
+          "last_event_at": "2026-04-17T07:35:28.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
           "location": null
         }
       ]
@@ -4476,6 +5278,34 @@
           "lead_id": "lea_KBGQJdeEiGKSHBe9p",
           "sent_at": "2026-07-08T12:40:15.874Z",
           "last_event_at": "2026-07-14T12:42:27.194Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "doktor.pecs@gmail.com",
+      "display_value": "doktor.pecs@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_Kqj9ncvN43KZ7oCED"
+      ],
+      "first_sent_at": "2026-04-15T10:29:24.353Z",
+      "last_sent_at": "2026-04-15T10:29:24.353Z",
+      "last_event_at": "2026-04-15T10:46:34.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 34,
+          "lead_id": "lea_Kqj9ncvN43KZ7oCED",
+          "sent_at": "2026-04-15T10:29:24.353Z",
+          "last_event_at": "2026-04-15T10:46:34.000Z",
           "stage": null,
           "company_name": null,
           "person_name": null,
@@ -4648,6 +5478,34 @@
           "company_name": "Dr. Grófcsik Kft.",
           "person_name": "Dr. Grófcsik Alexandra Elvira",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "doktorkapu@gmail.com",
+      "display_value": "doktorkapu@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_h9pFEK266s5XScP9R"
+      ],
+      "first_sent_at": "2026-04-15T07:23:23.892Z",
+      "last_sent_at": "2026-04-15T07:23:23.892Z",
+      "last_event_at": "2026-04-15T07:23:30.368Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 74,
+          "lead_id": "lea_h9pFEK266s5XScP9R",
+          "sent_at": "2026-04-15T07:23:23.892Z",
+          "last_event_at": "2026-04-15T07:23:30.368Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -4848,6 +5706,34 @@
       ]
     },
     {
+      "email": "domancsilla@gmail.com",
+      "display_value": "domancsilla@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_BkhgJf9FghGc5tmvy"
+      ],
+      "first_sent_at": "2026-04-15T09:47:41.180Z",
+      "last_sent_at": "2026-04-15T09:47:41.180Z",
+      "last_event_at": "2026-04-15T09:47:51.896Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 21,
+          "lead_id": "lea_BkhgJf9FghGc5tmvy",
+          "sent_at": "2026-04-15T09:47:41.180Z",
+          "last_event_at": "2026-04-15T09:47:51.896Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "domaszekrendelo@gmail.com",
       "display_value": "domaszekrendelo@gmail.com",
       "used_in_campaign": true,
@@ -5010,6 +5896,34 @@
           "last_event_at": "2026-07-13T09:25:53.000Z",
           "stage": null,
           "company_name": "Dr. Kun Anikó",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dr.babcsanyi@gmail.com",
+      "display_value": "dr.babcsanyi@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_C5gFA5adYKyempRFi"
+      ],
+      "first_sent_at": "2026-04-15T07:46:37.598Z",
+      "last_sent_at": "2026-04-15T07:46:37.598Z",
+      "last_event_at": "2026-04-15T10:06:30.426Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 22,
+          "lead_id": "lea_C5gFA5adYKyempRFi",
+          "sent_at": "2026-04-15T07:46:37.598Z",
+          "last_event_at": "2026-04-15T10:06:30.426Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -5184,6 +6098,34 @@
       ]
     },
     {
+      "email": "dr.buzdogany@gmail.com",
+      "display_value": "dr.buzdogany@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_isJ8BsuYXZBDw4K8E"
+      ],
+      "first_sent_at": "2026-04-15T11:57:05.881Z",
+      "last_sent_at": "2026-04-15T11:57:05.881Z",
+      "last_event_at": "2026-04-16T06:06:32.238Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 80,
+          "lead_id": "lea_isJ8BsuYXZBDw4K8E",
+          "sent_at": "2026-04-15T11:57:05.881Z",
+          "last_event_at": "2026-04-16T06:06:32.238Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dr.csak.recept@gmail.com",
       "display_value": "dr.csak.recept@gmail.com",
       "used_in_campaign": true,
@@ -5292,6 +6234,34 @@
           "company_name": "Dr. Czéh Lídia",
           "person_name": "Endorfin BT, VII. ker.",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "dr.czovekmate@gmail.com",
+      "display_value": "dr.czovekmate@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_dY82abf8Di55JpFs9"
+      ],
+      "first_sent_at": "2026-04-15T09:58:40.062Z",
+      "last_sent_at": "2026-04-15T09:58:40.062Z",
+      "last_event_at": "2026-04-15T10:01:09.374Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 64,
+          "lead_id": "lea_dY82abf8Di55JpFs9",
+          "sent_at": "2026-04-15T09:58:40.062Z",
+          "last_event_at": "2026-04-15T10:01:09.374Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -5576,6 +6546,34 @@
       ]
     },
     {
+      "email": "dr.guba.agnes@gmail.com",
+      "display_value": "dr.guba.agnes@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_S5CcmmmkZhLW2eByS"
+      ],
+      "first_sent_at": "2026-04-15T11:11:01.314Z",
+      "last_sent_at": "2026-04-15T11:11:01.314Z",
+      "last_event_at": "2026-04-15T11:11:01.314Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 45,
+          "lead_id": "lea_S5CcmmmkZhLW2eByS",
+          "sent_at": "2026-04-15T11:11:01.314Z",
+          "last_event_at": "2026-04-15T11:11:01.314Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dr.gyorgyj@freemail.hu",
       "display_value": "dr.gyorgyj@freemail.hu",
       "used_in_campaign": true,
@@ -5744,6 +6742,34 @@
       ]
     },
     {
+      "email": "dr.huszaghedvig@invitel.hu",
+      "display_value": "dr.huszaghedvig@invitel.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_t4cuG5Hb77naKdZFM"
+      ],
+      "first_sent_at": "2026-04-15T08:19:04.532Z",
+      "last_sent_at": "2026-04-15T08:19:04.532Z",
+      "last_event_at": "2026-04-15T08:28:17.971Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 101,
+          "lead_id": "lea_t4cuG5Hb77naKdZFM",
+          "sent_at": "2026-04-15T08:19:04.532Z",
+          "last_event_at": "2026-04-15T08:28:17.971Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dr.ilyesgabi@gmail.com",
       "display_value": "dr.ilyesgabi@gmail.com",
       "used_in_campaign": true,
@@ -5796,6 +6822,34 @@
           "company_name": "Szakszonné Dr. Martinovics Ilona Erika",
           "person_name": "Dr. Martinovics Erika",
           "location": "BÉKÉS"
+        }
+      ]
+    },
+    {
+      "email": "dr.janosi.anita@gmail.com",
+      "display_value": "dr.janosi.anita@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_4ZH8fM9T6zXc9K5iB"
+      ],
+      "first_sent_at": "2026-04-15T07:37:24.802Z",
+      "last_sent_at": "2026-04-15T07:37:24.802Z",
+      "last_event_at": "2026-04-15T08:34:33.062Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 5,
+          "lead_id": "lea_4ZH8fM9T6zXc9K5iB",
+          "sent_at": "2026-04-15T07:37:24.802Z",
+          "last_event_at": "2026-04-15T08:34:33.062Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -6276,6 +7330,34 @@
       ]
     },
     {
+      "email": "dr.nagyerika@freemail.hu",
+      "display_value": "dr.nagyerika@freemail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_y2BTLSr9PMjsMLdNw"
+      ],
+      "first_sent_at": "2026-04-15T07:16:16.610Z",
+      "last_sent_at": "2026-04-15T07:16:16.610Z",
+      "last_event_at": "2026-04-15T07:16:16.610Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 112,
+          "lead_id": "lea_y2BTLSr9PMjsMLdNw",
+          "sent_at": "2026-04-15T07:16:16.610Z",
+          "last_event_at": "2026-04-15T07:16:16.610Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dr.pappe@gmail.com",
       "display_value": "dr.pappe@gmail.com",
       "used_in_campaign": true,
@@ -6444,6 +7526,34 @@
       ]
     },
     {
+      "email": "dr.racz.zsolt@gmail.com",
+      "display_value": "dr.racz.zsolt@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_9gezKfFa7x2p2W27X"
+      ],
+      "first_sent_at": "2026-04-15T11:41:44.616Z",
+      "last_sent_at": "2026-04-15T11:41:44.616Z",
+      "last_event_at": "2026-04-21T04:08:52.281Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 18,
+          "lead_id": "lea_9gezKfFa7x2p2W27X",
+          "sent_at": "2026-04-15T11:41:44.616Z",
+          "last_event_at": "2026-04-21T04:08:52.281Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dr.rajnaig@gmail.com",
       "display_value": "dr.rajnaig@gmail.com",
       "used_in_campaign": true,
@@ -6584,6 +7694,62 @@
       ]
     },
     {
+      "email": "dr.simko.robert@mvhr.t-online.hu",
+      "display_value": "dr.simko.robert@mvhr.t-online.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_ftwAsyD6KPjnH3Ygs"
+      ],
+      "first_sent_at": "2026-04-15T07:25:47.943Z",
+      "last_sent_at": "2026-04-15T07:25:47.943Z",
+      "last_event_at": "2026-04-15T08:49:41.209Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 71,
+          "lead_id": "lea_ftwAsyD6KPjnH3Ygs",
+          "sent_at": "2026-04-15T07:25:47.943Z",
+          "last_event_at": "2026-04-15T08:49:41.209Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dr.simon1046@gmail.com",
+      "display_value": "dr.simon1046@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_Pz8fRWP3vyMsJJyoc"
+      ],
+      "first_sent_at": "2026-04-15T09:43:15.981Z",
+      "last_sent_at": "2026-04-15T09:43:15.981Z",
+      "last_event_at": "2026-04-15T17:28:16.456Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 43,
+          "lead_id": "lea_Pz8fRWP3vyMsJJyoc",
+          "sent_at": "2026-04-15T09:43:15.981Z",
+          "last_event_at": "2026-04-15T17:28:16.456Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dr.simonkovich@gmail.com",
       "display_value": "dr.simonkovich@gmail.com",
       "used_in_campaign": true,
@@ -6608,6 +7774,34 @@
           "company_name": "SOS HELP Kft. XX.ker.",
           "person_name": "Dr. Simonkovich Péter",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "dr.sipostimea@freemail.hu",
+      "display_value": "dr.sipostimea@freemail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_f8FhjoMywgnc58NKH"
+      ],
+      "first_sent_at": "2026-04-15T11:26:22.958Z",
+      "last_sent_at": "2026-04-15T11:26:22.958Z",
+      "last_event_at": "2026-04-15T11:38:30.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 67,
+          "lead_id": "lea_f8FhjoMywgnc58NKH",
+          "sent_at": "2026-04-15T11:26:22.958Z",
+          "last_event_at": "2026-04-15T11:38:30.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -7256,6 +8450,34 @@
       ]
     },
     {
+      "email": "drangiiren@gmail.com",
+      "display_value": "drangiiren@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_F79hWkw285w5epxW3"
+      ],
+      "first_sent_at": "2026-04-15T11:02:17.823Z",
+      "last_sent_at": "2026-04-15T11:02:17.823Z",
+      "last_event_at": "2026-04-15T11:18:27.671Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 27,
+          "lead_id": "lea_F79hWkw285w5epxW3",
+          "sent_at": "2026-04-15T11:02:17.823Z",
+          "last_event_at": "2026-04-15T11:18:27.671Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drbagoerzsebet@gmail.com",
       "display_value": "drbagoerzsebet@gmail.com",
       "used_in_campaign": true,
@@ -7390,6 +8612,34 @@
           "last_event_at": "2026-06-30T07:06:14.000Z",
           "stage": null,
           "company_name": "Dr. Barkóczi Katalin",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drbarnailona@gmail.com",
+      "display_value": "drbarnailona@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_52QpBw2RGbZFa4frv"
+      ],
+      "first_sent_at": "2026-04-15T10:55:43.739Z",
+      "last_sent_at": "2026-04-15T10:55:43.739Z",
+      "last_event_at": "2026-04-15T13:17:52.051Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 8,
+          "lead_id": "lea_52QpBw2RGbZFa4frv",
+          "sent_at": "2026-04-15T10:55:43.739Z",
+          "last_event_at": "2026-04-15T13:17:52.051Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -7564,6 +8814,62 @@
       ]
     },
     {
+      "email": "drbodonhelyi@gmail.com",
+      "display_value": "drbodonhelyi@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_Y7DsxegfupmffZbez"
+      ],
+      "first_sent_at": "2026-04-15T10:16:13.375Z",
+      "last_sent_at": "2026-04-15T10:16:13.375Z",
+      "last_event_at": "2026-04-15T13:45:39.255Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 51,
+          "lead_id": "lea_Y7DsxegfupmffZbez",
+          "sent_at": "2026-04-15T10:16:13.375Z",
+          "last_event_at": "2026-04-15T13:45:39.255Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drborbasviktor@gmail.com",
+      "display_value": "drborbasviktor@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_zZGFL7vbagkedKYmn"
+      ],
+      "first_sent_at": "2026-04-15T12:06:05.308Z",
+      "last_sent_at": "2026-04-15T12:06:05.308Z",
+      "last_event_at": "2026-04-15T12:06:23.023Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 118,
+          "lead_id": "lea_zZGFL7vbagkedKYmn",
+          "sent_at": "2026-04-15T12:06:05.308Z",
+          "last_event_at": "2026-04-15T12:06:23.023Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drborbelyrita@gmail.com",
       "display_value": "drborbelyrita@gmail.com",
       "used_in_campaign": true,
@@ -7699,6 +9005,34 @@
           "stage": "no",
           "company_name": "Dr. Csatlós Dalma Dorottya",
           "person_name": "Dr. Csatlós Dalma Dorottya",
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drcsilekeva@gmail.com",
+      "display_value": "drcsilekeva@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_KE9M4tgMe3TKo9PgY"
+      ],
+      "first_sent_at": "2026-04-15T09:56:28.733Z",
+      "last_sent_at": "2026-04-15T09:56:28.733Z",
+      "last_event_at": "2026-04-16T09:09:43.883Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 33,
+          "lead_id": "lea_KE9M4tgMe3TKo9PgY",
+          "sent_at": "2026-04-15T09:56:28.733Z",
+          "last_event_at": "2026-04-16T09:09:43.883Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
           "location": null
         }
       ]
@@ -7956,6 +9290,34 @@
       ]
     },
     {
+      "email": "drdenescsaba@gmail.com",
+      "display_value": "drdenescsaba@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_fxTDiXhGZX8AaaEKX"
+      ],
+      "first_sent_at": "2026-04-15T11:35:07.267Z",
+      "last_sent_at": "2026-04-15T11:35:07.267Z",
+      "last_event_at": "2026-04-15T11:35:07.267Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 72,
+          "lead_id": "lea_fxTDiXhGZX8AaaEKX",
+          "sent_at": "2026-04-15T11:35:07.267Z",
+          "last_event_at": "2026-04-15T11:35:07.267Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drdimaka@freemail.hu",
       "display_value": "drdimaka@freemail.hu",
       "used_in_campaign": true,
@@ -8096,6 +9458,34 @@
       ]
     },
     {
+      "email": "drelekagi@gmail.com",
+      "display_value": "drelekagi@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_8GwmyvbnA2wdWJtZR"
+      ],
+      "first_sent_at": "2026-04-15T11:46:07.377Z",
+      "last_sent_at": "2026-04-15T11:46:07.377Z",
+      "last_event_at": "2026-04-15T12:16:15.598Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 14,
+          "lead_id": "lea_8GwmyvbnA2wdWJtZR",
+          "sent_at": "2026-04-15T11:46:07.377Z",
+          "last_event_at": "2026-04-15T12:16:15.598Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dremese.raczrendelo@gmail.com",
       "display_value": "dremese.raczrendelo@gmail.com",
       "used_in_campaign": true,
@@ -8208,6 +9598,34 @@
       ]
     },
     {
+      "email": "drfaludiagnes@gmail.com",
+      "display_value": "drfaludiagnes@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_ouhcrmhmZRsD5JMpD"
+      ],
+      "first_sent_at": "2026-04-15T09:36:36.977Z",
+      "last_sent_at": "2026-04-15T09:36:36.977Z",
+      "last_event_at": "2026-04-15T09:36:44.514Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 91,
+          "lead_id": "lea_ouhcrmhmZRsD5JMpD",
+          "sent_at": "2026-04-15T09:36:36.977Z",
+          "last_event_at": "2026-04-15T09:36:44.514Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": "Dr. Faludi Ágnes",
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drfeherklauzalrendelo@gmail.com",
       "display_value": "drfeherklauzalrendelo@gmail.com",
       "used_in_campaign": true,
@@ -8258,6 +9676,34 @@
           "last_event_at": "2026-06-30T08:32:49.158Z",
           "stage": null,
           "company_name": "Dr. Fekete Béla",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drfeketej29@gmail.com",
+      "display_value": "drfeketej29@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_a2o7BCeZMzoDEkcio"
+      ],
+      "first_sent_at": "2026-04-15T11:39:31.771Z",
+      "last_sent_at": "2026-04-15T11:39:31.771Z",
+      "last_event_at": "2026-04-15T11:39:44.459Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 55,
+          "lead_id": "lea_a2o7BCeZMzoDEkcio",
+          "sent_at": "2026-04-15T11:39:31.771Z",
+          "last_event_at": "2026-04-15T11:39:44.459Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -8342,6 +9788,62 @@
           "last_event_at": "2026-06-30T10:54:52.486Z",
           "stage": null,
           "company_name": "Dr. Fodor Ferenc",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drfodorrendelo@gmail.com",
+      "display_value": "drfodorrendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_5HDQotTpivgbi4bXP"
+      ],
+      "first_sent_at": "2026-04-15T10:14:04.340Z",
+      "last_sent_at": "2026-04-15T10:14:04.340Z",
+      "last_event_at": "2026-04-15T10:14:11.106Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 9,
+          "lead_id": "lea_5HDQotTpivgbi4bXP",
+          "sent_at": "2026-04-15T10:14:04.340Z",
+          "last_event_at": "2026-04-15T10:14:11.106Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drfodorzsuzsanna@gmail.com",
+      "display_value": "drfodorzsuzsanna@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_LZ6Zmi9u8gteeKCx6"
+      ],
+      "first_sent_at": "2026-04-15T10:27:12.725Z",
+      "last_sent_at": "2026-04-15T10:27:12.725Z",
+      "last_event_at": "2026-04-15T11:13:38.701Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 35,
+          "lead_id": "lea_LZ6Zmi9u8gteeKCx6",
+          "sent_at": "2026-04-15T10:27:12.725Z",
+          "last_event_at": "2026-04-15T11:13:38.701Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -8796,6 +10298,34 @@
       ]
     },
     {
+      "email": "drgyenesolga@gmail.hu",
+      "display_value": "drgyenesolga@gmail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_kC6HaSau6PKciHsNC"
+      ],
+      "first_sent_at": "2026-04-15T08:37:22.014Z",
+      "last_sent_at": "2026-04-15T08:37:22.014Z",
+      "last_event_at": "2026-04-15T08:42:36.444Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 82,
+          "lead_id": "lea_kC6HaSau6PKciHsNC",
+          "sent_at": "2026-04-15T08:37:22.014Z",
+          "last_event_at": "2026-04-15T08:42:36.444Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drgyimesi18@gmail.com",
       "display_value": "drgyimesi18@gmail.com",
       "used_in_campaign": true,
@@ -8820,6 +10350,34 @@
           "company_name": "GYI-MEDI KFT.",
           "person_name": "Dr. Gyimesi Boróka",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "drgyongyossyeszter.rendelo@gmail.com",
+      "display_value": "drgyongyossyeszter.rendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_7RtyLuWrBkvqGLMht"
+      ],
+      "first_sent_at": "2026-04-15T11:19:48.800Z",
+      "last_sent_at": "2026-04-15T11:19:48.800Z",
+      "last_event_at": "2026-04-15T12:03:38.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 13,
+          "lead_id": "lea_7RtyLuWrBkvqGLMht",
+          "sent_at": "2026-04-15T11:19:48.800Z",
+          "last_event_at": "2026-04-15T12:03:38.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -8880,6 +10438,34 @@
       ]
     },
     {
+      "email": "drhamorilajos@gmail.com",
+      "display_value": "drhamorilajos@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_pRqAbnoiwxfxrAJ6P"
+      ],
+      "first_sent_at": "2026-04-15T08:05:12.359Z",
+      "last_sent_at": "2026-04-15T08:05:12.359Z",
+      "last_event_at": "2026-04-15T09:32:25.186Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 92,
+          "lead_id": "lea_pRqAbnoiwxfxrAJ6P",
+          "sent_at": "2026-04-15T08:05:12.359Z",
+          "last_event_at": "2026-04-15T09:32:25.186Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drhargitaireka@gmail.com",
       "display_value": "drhargitaireka@gmail.com",
       "used_in_campaign": true,
@@ -8902,6 +10488,34 @@
           "last_event_at": "2026-08-02T06:01:33.825Z",
           "stage": null,
           "company_name": "Dr. Hargitai Réka",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drhavasikatalin@gmail.com",
+      "display_value": "drhavasikatalin@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_hriuzkpcu7uAR6Keq"
+      ],
+      "first_sent_at": "2026-04-15T07:53:39.502Z",
+      "last_sent_at": "2026-04-15T07:53:39.502Z",
+      "last_event_at": "2026-04-15T18:16:30.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 76,
+          "lead_id": "lea_hriuzkpcu7uAR6Keq",
+          "sent_at": "2026-04-15T07:53:39.502Z",
+          "last_event_at": "2026-04-15T18:16:30.000Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -8960,6 +10574,62 @@
           "company_name": "Dr. Horváth Mária Adrienn",
           "person_name": "Dr. Horváth Mária",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "drhodosi@freemail.hu",
+      "display_value": "drhodosi@freemail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_4mMoZbwXpMoTLcPao"
+      ],
+      "first_sent_at": "2026-04-15T11:17:37.317Z",
+      "last_sent_at": "2026-04-15T11:17:37.317Z",
+      "last_event_at": "2026-04-15T11:17:37.317Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 7,
+          "lead_id": "lea_4mMoZbwXpMoTLcPao",
+          "sent_at": "2026-04-15T11:17:37.317Z",
+          "last_event_at": "2026-04-15T11:17:37.317Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drhomicsko@gmail.com",
+      "display_value": "drhomicsko@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_JofY8nDk97kvbEKbq"
+      ],
+      "first_sent_at": "2026-04-15T10:51:18.886Z",
+      "last_sent_at": "2026-04-15T10:51:18.886Z",
+      "last_event_at": "2026-04-15T12:13:34.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 30,
+          "lead_id": "lea_JofY8nDk97kvbEKbq",
+          "sent_at": "2026-04-15T10:51:18.886Z",
+          "last_event_at": "2026-04-15T12:13:34.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -9160,6 +10830,34 @@
       ]
     },
     {
+      "email": "drjanosioliver@gmail.com",
+      "display_value": "drjanosioliver@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_wrwRH3RdrcdutkoLJ"
+      ],
+      "first_sent_at": "2026-04-15T09:21:08.130Z",
+      "last_sent_at": "2026-04-15T09:21:08.130Z",
+      "last_event_at": "2026-04-15T09:21:08.130Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 110,
+          "lead_id": "lea_wrwRH3RdrcdutkoLJ",
+          "sent_at": "2026-04-15T09:21:08.130Z",
+          "last_event_at": "2026-04-15T09:21:08.130Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drjozsa14@gmail.com",
       "display_value": "drjozsa14@gmail.com",
       "used_in_campaign": true,
@@ -9292,6 +10990,34 @@
           "lead_id": "lea_FLSFNFEEcrp2iyjFq",
           "sent_at": "2026-07-08T15:53:48.148Z",
           "last_event_at": "2026-07-14T22:41:33.085Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drkadar.rendeles@gmail.com",
+      "display_value": "drkadar.rendeles@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_hTo8c5JufAMs9tee4"
+      ],
+      "first_sent_at": "2026-04-15T10:18:24.695Z",
+      "last_sent_at": "2026-04-15T10:18:24.695Z",
+      "last_event_at": "2026-04-16T09:58:34.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 75,
+          "lead_id": "lea_hTo8c5JufAMs9tee4",
+          "sent_at": "2026-04-15T10:18:24.695Z",
+          "last_event_at": "2026-04-16T09:58:34.000Z",
           "stage": null,
           "company_name": null,
           "person_name": null,
@@ -9524,6 +11250,34 @@
       ]
     },
     {
+      "email": "drkisasszisztens@gmail.com",
+      "display_value": "drkisasszisztens@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_SpAXCifv4JC2NNF6T"
+      ],
+      "first_sent_at": "2026-04-15T11:43:54.436Z",
+      "last_sent_at": "2026-04-15T11:43:54.436Z",
+      "last_event_at": "2026-04-16T13:26:21.240Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 47,
+          "lead_id": "lea_SpAXCifv4JC2NNF6T",
+          "sent_at": "2026-04-15T11:43:54.436Z",
+          "last_event_at": "2026-04-16T13:26:21.240Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drkissalexandra2025@gmail.com",
       "display_value": "drkissalexandra2025@gmail.com",
       "used_in_campaign": true,
@@ -9714,6 +11468,34 @@
           "last_event_at": "2026-06-03T13:23:49.599Z",
           "stage": "Email Contacts",
           "company_name": "Dr. Kovács Béla",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drkovacsjulianna56@gmail.com",
+      "display_value": "drkovacsjulianna56@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_KDCKomprwAx5gS3co"
+      ],
+      "first_sent_at": "2026-04-15T08:09:52.769Z",
+      "last_sent_at": "2026-04-15T08:09:52.769Z",
+      "last_event_at": "2026-04-15T08:55:32.806Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 32,
+          "lead_id": "lea_KDCKomprwAx5gS3co",
+          "sent_at": "2026-04-15T08:09:52.769Z",
+          "last_event_at": "2026-04-15T08:55:32.806Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -10252,6 +12034,34 @@
       ]
     },
     {
+      "email": "drmelcheri@gmail.com",
+      "display_value": "drmelcheri@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_y2ZsBYeM87beB6trD"
+      ],
+      "first_sent_at": "2026-04-15T07:55:56.613Z",
+      "last_sent_at": "2026-04-15T07:55:56.613Z",
+      "last_event_at": "2026-04-15T10:31:34.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 113,
+          "lead_id": "lea_y2ZsBYeM87beB6trD",
+          "sent_at": "2026-04-15T07:55:56.613Z",
+          "last_event_at": "2026-04-15T10:31:34.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drmelindakiss@gmail.com",
       "display_value": "drmelindakiss@gmail.com",
       "used_in_campaign": true,
@@ -10448,6 +12258,34 @@
       ]
     },
     {
+      "email": "drmullereva@mullermed.hu",
+      "display_value": "drmullereva@mullermed.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_N8furpJMrdnCmoAf2"
+      ],
+      "first_sent_at": "2026-04-15T11:00:05.190Z",
+      "last_sent_at": "2026-04-15T11:00:05.190Z",
+      "last_event_at": "2026-04-15T11:00:05.190Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 40,
+          "lead_id": "lea_N8furpJMrdnCmoAf2",
+          "sent_at": "2026-04-15T11:00:05.190Z",
+          "last_event_at": "2026-04-15T11:00:05.190Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drnagyj1957@gmail.com",
       "display_value": "drnagyj1957@gmail.com",
       "used_in_campaign": true,
@@ -10504,6 +12342,34 @@
       ]
     },
     {
+      "email": "drnagymiklos68@gmail.com",
+      "display_value": "drnagymiklos68@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_htysFNkcyP234vdN8"
+      ],
+      "first_sent_at": "2026-04-15T11:21:59.804Z",
+      "last_sent_at": "2026-04-15T11:21:59.804Z",
+      "last_event_at": "2026-04-15T11:21:59.804Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 77,
+          "lead_id": "lea_htysFNkcyP234vdN8",
+          "sent_at": "2026-04-15T11:21:59.804Z",
+          "last_event_at": "2026-04-15T11:21:59.804Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drnagynora.rendelo@gmail.com",
       "display_value": "drnagynora.rendelo@gmail.com",
       "used_in_campaign": true,
@@ -10528,6 +12394,34 @@
           "company_name": "Dr. Nagy Nóra Krisztina",
           "person_name": "DOCTOR CONSULTING KFT.",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "drnemeskeriklara@gmail.com",
+      "display_value": "drnemeskeriklara@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_uunkLaAgGvnfaWwJY"
+      ],
+      "first_sent_at": "2026-04-15T10:05:16.768Z",
+      "last_sent_at": "2026-04-15T10:05:16.768Z",
+      "last_event_at": "2026-04-15T10:05:44.871Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 106,
+          "lead_id": "lea_uunkLaAgGvnfaWwJY",
+          "sent_at": "2026-04-15T10:05:16.768Z",
+          "last_event_at": "2026-04-15T10:05:44.871Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": "Dr. Nemeskéri Klára",
+          "location": null
         }
       ]
     },
@@ -10610,6 +12504,34 @@
           "last_event_at": "2026-06-03T09:03:40.104Z",
           "stage": "Email Contacts",
           "company_name": "Dr. Nikolits Ilona",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "droh02@gmail.com",
+      "display_value": "droh02@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_KBaheD6o9mAYwywDT"
+      ],
+      "first_sent_at": "2026-04-15T11:08:50.637Z",
+      "last_sent_at": "2026-04-15T11:08:50.637Z",
+      "last_event_at": "2026-04-15T11:08:50.637Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 31,
+          "lead_id": "lea_KBaheD6o9mAYwywDT",
+          "sent_at": "2026-04-15T11:08:50.637Z",
+          "last_event_at": "2026-04-15T11:08:50.637Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -10780,6 +12702,62 @@
           "company_name": "Dr. Ökördi Péter",
           "person_name": "Dr. Ökördy Péter",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "drpeterfaigyomro@gmail.com",
+      "display_value": "drpeterfaigyomro@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_Y9WhkjcFQ8B4Yr5ZM"
+      ],
+      "first_sent_at": "2026-04-15T10:24:59.276Z",
+      "last_sent_at": "2026-04-15T10:24:59.276Z",
+      "last_event_at": "2026-04-17T08:56:08.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 53,
+          "lead_id": "lea_Y9WhkjcFQ8B4Yr5ZM",
+          "sent_at": "2026-04-15T10:24:59.276Z",
+          "last_event_at": "2026-04-17T08:56:08.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drpinterszilvia@gmail.com",
+      "display_value": "drpinterszilvia@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_MDQkeaL2bfPE2pmC3"
+      ],
+      "first_sent_at": "2026-04-15T07:18:40.838Z",
+      "last_sent_at": "2026-04-15T07:18:40.838Z",
+      "last_event_at": "2026-04-15T07:42:38.749Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 37,
+          "lead_id": "lea_MDQkeaL2bfPE2pmC3",
+          "sent_at": "2026-04-15T07:18:40.838Z",
+          "last_event_at": "2026-04-15T07:42:38.749Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -11064,6 +13042,90 @@
       ]
     },
     {
+      "email": "drsipos.zita@gmail.com",
+      "display_value": "drsipos.zita@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_fg4BfsaWMXk5zBiNj"
+      ],
+      "first_sent_at": "2026-04-15T11:37:19.160Z",
+      "last_sent_at": "2026-04-15T11:37:19.160Z",
+      "last_event_at": "2026-04-15T11:45:09.766Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 69,
+          "lead_id": "lea_fg4BfsaWMXk5zBiNj",
+          "sent_at": "2026-04-15T11:37:19.160Z",
+          "last_event_at": "2026-04-15T11:45:09.766Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drsivokagnes@gmail.com",
+      "display_value": "drsivokagnes@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_imGj45d7oQ3mxgJ8w"
+      ],
+      "first_sent_at": "2026-04-15T07:58:13.675Z",
+      "last_sent_at": "2026-04-15T07:58:13.675Z",
+      "last_event_at": "2026-04-15T08:47:45.594Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 79,
+          "lead_id": "lea_imGj45d7oQ3mxgJ8w",
+          "sent_at": "2026-04-15T07:58:13.675Z",
+          "last_event_at": "2026-04-15T08:47:45.594Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drsolyazsuzsa@gmail.com",
+      "display_value": "drsolyazsuzsa@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_tif6bzCsoxLWAezo2"
+      ],
+      "first_sent_at": "2026-04-15T08:41:53.487Z",
+      "last_sent_at": "2026-04-15T08:41:53.487Z",
+      "last_event_at": "2026-04-15T08:41:58.312Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 103,
+          "lead_id": "lea_tif6bzCsoxLWAezo2",
+          "sent_at": "2026-04-15T08:41:53.487Z",
+          "last_event_at": "2026-04-15T08:41:58.312Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drsolymosagnes@gmail.com",
       "display_value": "drsolymosagnes@gmail.com",
       "used_in_campaign": true,
@@ -11172,6 +13234,34 @@
           "company_name": "SPONNER Bt.",
           "person_name": "Dr. Sponner Tamás",
           "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
+      "email": "drszabadrendelo@gmail.com",
+      "display_value": "drszabadrendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_AjXuPiRonFgifAxDC"
+      ],
+      "first_sent_at": "2026-04-15T08:16:48.558Z",
+      "last_sent_at": "2026-04-15T08:16:48.558Z",
+      "last_event_at": "2026-04-16T06:25:01.528Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 19,
+          "lead_id": "lea_AjXuPiRonFgifAxDC",
+          "sent_at": "2026-04-15T08:16:48.558Z",
+          "last_event_at": "2026-04-16T06:25:01.528Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -11344,6 +13434,34 @@
       ]
     },
     {
+      "email": "drszeleditpiroska@gmail.com",
+      "display_value": "drszeleditpiroska@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_6C7JS5nsicjsWJMFc"
+      ],
+      "first_sent_at": "2026-04-15T08:35:06.114Z",
+      "last_sent_at": "2026-04-15T08:35:06.114Z",
+      "last_event_at": "2026-04-15T11:17:59.378Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 12,
+          "lead_id": "lea_6C7JS5nsicjsWJMFc",
+          "sent_at": "2026-04-15T08:35:06.114Z",
+          "last_event_at": "2026-04-15T11:17:59.378Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drszemererendelo@gmail.com",
       "display_value": "drszemererendelo@gmail.com",
       "used_in_campaign": true,
@@ -11480,6 +13598,34 @@
           "company_name": "Dr. Sziráczki és Társa Bt.",
           "person_name": "Dr. Sziráczki Magdolna",
           "location": "BÉKÉS"
+        }
+      ]
+    },
+    {
+      "email": "drszkenderovicskaroly@gmail.com",
+      "display_value": "drszkenderovicskaroly@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_HGsND6vojzxL8vTxX"
+      ],
+      "first_sent_at": "2026-04-15T09:34:23.915Z",
+      "last_sent_at": "2026-04-15T09:34:23.915Z",
+      "last_event_at": "2026-04-15T09:35:01.186Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 29,
+          "lead_id": "lea_HGsND6vojzxL8vTxX",
+          "sent_at": "2026-04-15T09:34:23.915Z",
+          "last_event_at": "2026-04-15T09:35:01.186Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -11624,6 +13770,34 @@
       ]
     },
     {
+      "email": "drtakacsv@gmail.com",
+      "display_value": "drtakacsv@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_5yZw3oBidaxfkXGLv"
+      ],
+      "first_sent_at": "2026-04-15T08:46:26.308Z",
+      "last_sent_at": "2026-04-15T08:46:26.308Z",
+      "last_event_at": "2026-04-15T10:55:43.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 11,
+          "lead_id": "lea_5yZw3oBidaxfkXGLv",
+          "sent_at": "2026-04-15T08:46:26.308Z",
+          "last_event_at": "2026-04-15T10:55:43.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drtakatsbela@gmail.com",
       "display_value": "drtakatsbela@gmail.com",
       "used_in_campaign": true,
@@ -11647,6 +13821,34 @@
           "stage": "no",
           "company_name": "Dr. Takáts Béla",
           "person_name": "Dr. Takáts Béla",
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drtegzes@gmail.com",
+      "display_value": "drtegzes@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_y9ErBa8p9BHKiZLR7"
+      ],
+      "first_sent_at": "2026-04-15T09:23:20.930Z",
+      "last_sent_at": "2026-04-15T09:23:20.930Z",
+      "last_event_at": "2026-04-15T09:24:17.563Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 114,
+          "lead_id": "lea_y9ErBa8p9BHKiZLR7",
+          "sent_at": "2026-04-15T09:23:20.930Z",
+          "last_event_at": "2026-04-15T09:24:17.563Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
           "location": null
         }
       ]
@@ -11792,6 +13994,62 @@
       ]
     },
     {
+      "email": "drvaradigabor@gmail.com",
+      "display_value": "drvaradigabor@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_WqfkYBzGtbMNhawfd"
+      ],
+      "first_sent_at": "2026-04-15T07:51:22.681Z",
+      "last_sent_at": "2026-04-15T07:51:22.681Z",
+      "last_event_at": "2026-04-18T10:57:28.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 49,
+          "lead_id": "lea_WqfkYBzGtbMNhawfd",
+          "sent_at": "2026-04-15T07:51:22.681Z",
+          "last_event_at": "2026-04-18T10:57:28.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drvargaeszter9@gmail.com",
+      "display_value": "drvargaeszter9@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_jMg7u7pCYaeEWmbbd"
+      ],
+      "first_sent_at": "2026-04-15T08:44:08.742Z",
+      "last_sent_at": "2026-04-15T08:44:08.742Z",
+      "last_event_at": "2026-04-15T09:00:45.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 81,
+          "lead_id": "lea_jMg7u7pCYaeEWmbbd",
+          "sent_at": "2026-04-15T08:44:08.742Z",
+          "last_event_at": "2026-04-15T09:00:45.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "drvargakrisztina.beketer@gmail.com",
       "display_value": "drvargakrisztina.beketer@gmail.com",
       "used_in_campaign": true,
@@ -11868,6 +14126,34 @@
           "lead_id": "lea_tPkgy5dKzHQ8i6SRZ",
           "sent_at": "2026-07-09T06:21:12.729Z",
           "last_event_at": "2026-07-15T06:36:41.939Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "drveresagnes26@gmail.com",
+      "display_value": "drveresagnes26@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_qLCyQ5iJ63esbZRgp"
+      ],
+      "first_sent_at": "2026-04-15T10:44:46.026Z",
+      "last_sent_at": "2026-04-15T10:44:46.026Z",
+      "last_event_at": "2026-04-15T11:29:10.766Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 94,
+          "lead_id": "lea_qLCyQ5iJ63esbZRgp",
+          "sent_at": "2026-04-15T10:44:46.026Z",
+          "last_event_at": "2026-04-15T11:29:10.766Z",
           "stage": null,
           "company_name": null,
           "person_name": null,
@@ -12128,6 +14414,146 @@
       ]
     },
     {
+      "email": "dunakeszi2ho@gmail.com",
+      "display_value": "dunakeszi2ho@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_uFnDrr3DxeL78mYHm"
+      ],
+      "first_sent_at": "2026-04-15T08:25:54.268Z",
+      "last_sent_at": "2026-04-15T08:25:54.268Z",
+      "last_event_at": "2026-04-21T17:10:37.746Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 104,
+          "lead_id": "lea_uFnDrr3DxeL78mYHm",
+          "sent_at": "2026-04-15T08:25:54.268Z",
+          "last_event_at": "2026-04-21T17:10:37.746Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dunakeszi3@gmail.com",
+      "display_value": "dunakeszi3@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_eJFKbBdEiuiHTQEYw"
+      ],
+      "first_sent_at": "2026-04-15T10:36:02.333Z",
+      "last_sent_at": "2026-04-15T10:36:02.333Z",
+      "last_event_at": "2026-04-15T14:13:01.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 66,
+          "lead_id": "lea_eJFKbBdEiuiHTQEYw",
+          "sent_at": "2026-04-15T10:36:02.333Z",
+          "last_event_at": "2026-04-15T14:13:01.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dunakeszi4@gmail.com",
+      "display_value": "dunakeszi4@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_zZ5YGu6TJ5NPCsPMi"
+      ],
+      "first_sent_at": "2026-04-15T12:03:51.226Z",
+      "last_sent_at": "2026-04-15T12:03:51.226Z",
+      "last_event_at": "2026-04-15T12:45:33.342Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 117,
+          "lead_id": "lea_zZ5YGu6TJ5NPCsPMi",
+          "sent_at": "2026-04-15T12:03:51.226Z",
+          "last_event_at": "2026-04-15T12:45:33.342Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dunakesziho15@gmail.com",
+      "display_value": "dunakesziho15@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_r8nXfyewkNqzd8TgC"
+      ],
+      "first_sent_at": "2026-04-15T11:59:16.432Z",
+      "last_sent_at": "2026-04-15T11:59:16.432Z",
+      "last_event_at": "2026-04-16T09:52:02.675Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 97,
+          "lead_id": "lea_r8nXfyewkNqzd8TgC",
+          "sent_at": "2026-04-15T11:59:16.432Z",
+          "last_event_at": "2026-04-16T09:52:02.675Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "dunakilitipraxis@gmail.com",
+      "display_value": "dunakilitipraxis@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_po33Rfp4b5XCLNnxy"
+      ],
+      "first_sent_at": "2026-04-15T10:07:28.440Z",
+      "last_sent_at": "2026-04-15T10:07:28.440Z",
+      "last_event_at": "2026-04-15T10:48:01.617Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 93,
+          "lead_id": "lea_po33Rfp4b5XCLNnxy",
+          "sent_at": "2026-04-15T10:07:28.440Z",
+          "last_event_at": "2026-04-15T10:48:01.617Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "dunapataj1@tolna.net.hu",
       "display_value": "dunapataj1@tolna.net.hu",
       "used_in_campaign": true,
@@ -12268,6 +14694,34 @@
       ]
     },
     {
+      "email": "egeszsegggyongye@gmail.com",
+      "display_value": "egeszsegggyongye@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_DsKWSmXTqv2THSiFn"
+      ],
+      "first_sent_at": "2026-04-15T08:28:13.251Z",
+      "last_sent_at": "2026-04-15T08:28:13.251Z",
+      "last_event_at": "2026-04-15T08:42:35.352Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 23,
+          "lead_id": "lea_DsKWSmXTqv2THSiFn",
+          "sent_at": "2026-04-15T08:28:13.251Z",
+          "last_event_at": "2026-04-15T08:42:35.352Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "egyensulymed37@gmail.com",
       "display_value": "egyensulymed37@gmail.com",
       "used_in_campaign": true,
@@ -12348,6 +14802,34 @@
           "company_name": "Dr. Elekes Zsuzsánna Magdolna",
           "person_name": "Dr. Elekes Zsuzsánna Magdolna",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "eleteromedicina@hotmail.com",
+      "display_value": "eleteromedicina@hotmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_d5kCudKsx6wBGSqLN"
+      ],
+      "first_sent_at": "2026-04-15T07:49:01.062Z",
+      "last_sent_at": "2026-04-15T07:49:01.062Z",
+      "last_event_at": "2026-04-15T07:49:01.062Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 63,
+          "lead_id": "lea_d5kCudKsx6wBGSqLN",
+          "sent_at": "2026-04-15T07:49:01.062Z",
+          "last_event_at": "2026-04-15T07:49:01.062Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -12458,6 +14940,34 @@
           "last_event_at": "2026-06-23T13:11:53.845Z",
           "stage": null,
           "company_name": "Dr. Szabó Emese",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "emocsai29@gmail.com",
+      "display_value": "emocsai29@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_5dLRQcLHR4SbN7Wvq"
+      ],
+      "first_sent_at": "2026-04-15T09:54:16.823Z",
+      "last_sent_at": "2026-04-15T09:54:16.823Z",
+      "last_event_at": "2026-04-15T09:54:16.823Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 10,
+          "lead_id": "lea_5dLRQcLHR4SbN7Wvq",
+          "sent_at": "2026-04-15T09:54:16.823Z",
+          "last_event_at": "2026-04-15T09:54:16.823Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -12600,6 +15110,62 @@
           "company_name": "Dr. Papirnyik Erika",
           "person_name": "PAPIRNYIKMED Kft.",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "erdihaziorvos05@gmail.com",
+      "display_value": "erdihaziorvos05@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_F26pgRRqSdTphvJnX"
+      ],
+      "first_sent_at": "2026-04-15T09:45:28.073Z",
+      "last_sent_at": "2026-04-15T09:45:28.073Z",
+      "last_event_at": "2026-04-15T18:36:37.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 26,
+          "lead_id": "lea_F26pgRRqSdTphvJnX",
+          "sent_at": "2026-04-15T09:45:28.073Z",
+          "last_event_at": "2026-04-15T18:36:37.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "erdosor@gmail.com",
+      "display_value": "erdosor@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_vamTxZk9QodXLp2Rq"
+      ],
+      "first_sent_at": "2026-04-15T11:32:55.469Z",
+      "last_sent_at": "2026-04-15T11:32:55.469Z",
+      "last_event_at": "2026-04-15T11:32:55.469Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 108,
+          "lead_id": "lea_vamTxZk9QodXLp2Rq",
+          "sent_at": "2026-04-15T11:32:55.469Z",
+          "last_event_at": "2026-04-15T11:32:55.469Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -13052,6 +15618,34 @@
       ]
     },
     {
+      "email": "faludidoktor@gmail.com",
+      "display_value": "faludidoktor@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_TQSybn9YFB3zzeSGf"
+      ],
+      "first_sent_at": "2026-04-15T07:44:19.532Z",
+      "last_sent_at": "2026-04-15T07:44:19.532Z",
+      "last_event_at": "2026-04-15T12:10:40.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 48,
+          "lead_id": "lea_TQSybn9YFB3zzeSGf",
+          "sent_at": "2026-04-15T07:44:19.532Z",
+          "last_event_at": "2026-04-15T12:10:40.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "famidoktor@yahoo.co.uk",
       "display_value": "famidoktor@yahoo.co.uk",
       "used_in_campaign": true,
@@ -13192,6 +15786,34 @@
       ]
     },
     {
+      "email": "fehertoirendelo@gmail.com",
+      "display_value": "fehertoirendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_4amYKqTvwswaniRyd"
+      ],
+      "first_sent_at": "2026-04-15T07:41:58.951Z",
+      "last_sent_at": "2026-04-15T07:41:58.951Z",
+      "last_event_at": "2026-04-15T07:42:35.910Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 6,
+          "lead_id": "lea_4amYKqTvwswaniRyd",
+          "sent_at": "2026-04-15T07:41:58.951Z",
+          "last_event_at": "2026-04-15T07:42:35.910Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "fejos.rendelo@gmail.com",
       "display_value": "fejos.rendelo@gmail.com",
       "used_in_campaign": true,
@@ -13214,6 +15836,34 @@
           "last_event_at": "2026-07-02T05:41:09.059Z",
           "stage": null,
           "company_name": "Dr. Fejős Róbert",
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "felcsut.rendelo@gmail.com",
+      "display_value": "felcsut.rendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_oYWMpZP3tZAQ8AqNP"
+      ],
+      "first_sent_at": "2026-04-15T10:03:05.370Z",
+      "last_sent_at": "2026-04-15T10:03:05.370Z",
+      "last_event_at": "2026-04-15T10:18:25.274Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 88,
+          "lead_id": "lea_oYWMpZP3tZAQ8AqNP",
+          "sent_at": "2026-04-15T10:03:05.370Z",
+          "last_event_at": "2026-04-15T10:18:25.274Z",
+          "stage": null,
+          "company_name": null,
           "person_name": null,
           "location": null
         }
@@ -13272,6 +15922,34 @@
           "company_name": "Tudatos Egészség Kft.",
           "person_name": "Dr. Al Mohamed Hamdó Rita",
           "location": "BUDAPEST"
+        }
+      ]
+    },
+    {
+      "email": "felsogodrendelo@gmail.com",
+      "display_value": "felsogodrendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_cyTbWCCQAqj8TuyfM"
+      ],
+      "first_sent_at": "2026-04-15T09:52:05.307Z",
+      "last_sent_at": "2026-04-15T09:52:05.307Z",
+      "last_event_at": "2026-04-15T09:52:13.945Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 62,
+          "lead_id": "lea_cyTbWCCQAqj8TuyfM",
+          "sent_at": "2026-04-15T09:52:05.307Z",
+          "last_event_at": "2026-04-15T09:52:13.945Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -13472,6 +16150,34 @@
       ]
     },
     {
+      "email": "fiokarendelo@gmail.com",
+      "display_value": "fiokarendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_MmGYKQnR2vfv2rdPJ"
+      ],
+      "first_sent_at": "2026-04-15T09:41:04.573Z",
+      "last_sent_at": "2026-04-15T09:41:04.573Z",
+      "last_event_at": "2026-04-15T10:16:03.680Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 38,
+          "lead_id": "lea_MmGYKQnR2vfv2rdPJ",
+          "sent_at": "2026-04-15T09:41:04.573Z",
+          "last_event_at": "2026-04-15T10:16:03.680Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "fischer.laszlo@alapellatas.hu",
       "display_value": "fischer.laszlo@alapellatas.hu",
       "used_in_campaign": true,
@@ -13635,6 +16341,34 @@
           "stage": "no",
           "company_name": "Dr. Fodor Jolán",
           "person_name": "Dr. Fodor Jolán",
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "foldvarydoktor@gmail.com",
+      "display_value": "foldvarydoktor@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_r2wqjWpkqAGcsTseg"
+      ],
+      "first_sent_at": "2026-04-15T07:35:07.296Z",
+      "last_sent_at": "2026-04-15T07:35:07.296Z",
+      "last_event_at": "2026-04-15T17:30:21.661Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 96,
+          "lead_id": "lea_r2wqjWpkqAGcsTseg",
+          "sent_at": "2026-04-15T07:35:07.296Z",
+          "last_event_at": "2026-04-15T17:30:21.661Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
           "location": null
         }
       ]
@@ -13836,6 +16570,118 @@
       ]
     },
     {
+      "email": "fotgy1@gmail.com",
+      "display_value": "fotgy1@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_xoYkTub3naP2EBrtM"
+      ],
+      "first_sent_at": "2026-04-15T08:14:30.792Z",
+      "last_sent_at": "2026-04-15T08:14:30.792Z",
+      "last_event_at": "2026-04-15T18:36:38.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 111,
+          "lead_id": "lea_xoYkTub3naP2EBrtM",
+          "sent_at": "2026-04-15T08:14:30.792Z",
+          "last_event_at": "2026-04-15T18:36:38.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "fotiorvos1@gmail.com",
+      "display_value": "fotiorvos1@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_urfJ2jijazWtjbbiB"
+      ],
+      "first_sent_at": "2026-04-15T10:42:36.308Z",
+      "last_sent_at": "2026-04-15T10:42:36.308Z",
+      "last_event_at": "2026-04-16T11:55:28.115Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 105,
+          "lead_id": "lea_urfJ2jijazWtjbbiB",
+          "sent_at": "2026-04-15T10:42:36.308Z",
+          "last_event_at": "2026-04-16T11:55:28.115Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "fotiorvos2@gmail.com",
+      "display_value": "fotiorvos2@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_ZMTTi3y6vC4jRpdJs"
+      ],
+      "first_sent_at": "2026-04-15T07:28:11.036Z",
+      "last_sent_at": "2026-04-15T07:28:11.036Z",
+      "last_event_at": "2026-04-15T08:57:11.445Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 54,
+          "lead_id": "lea_ZMTTi3y6vC4jRpdJs",
+          "sent_at": "2026-04-15T07:28:11.036Z",
+          "last_event_at": "2026-04-15T08:57:11.445Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "fourmed@gmail.com",
+      "display_value": "fourmed@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_wAzyyen97ziAWREar"
+      ],
+      "first_sent_at": "2026-04-15T10:09:39.031Z",
+      "last_sent_at": "2026-04-15T10:09:39.031Z",
+      "last_event_at": "2026-04-15T10:09:39.031Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 109,
+          "lead_id": "lea_wAzyyen97ziAWREar",
+          "sent_at": "2026-04-15T10:09:39.031Z",
+          "last_event_at": "2026-04-15T10:09:39.031Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "foxi5545@gmail.com",
       "display_value": "foxi5545@gmail.com",
       "used_in_campaign": true,
@@ -13859,6 +16705,34 @@
           "stage": "no",
           "company_name": "Dr. Salacz András",
           "person_name": "Dr. Salacz András",
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "furedi.gyula@okfo.gov.hu",
+      "display_value": "furedi.gyula@okfo.gov.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_idbdxcXu2nwXXZ3gy"
+      ],
+      "first_sent_at": "2026-04-15T07:32:48.427Z",
+      "last_sent_at": "2026-04-15T07:32:48.427Z",
+      "last_event_at": "2026-04-15T07:32:48.427Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 78,
+          "lead_id": "lea_idbdxcXu2nwXXZ3gy",
+          "sent_at": "2026-04-15T07:32:48.427Z",
+          "last_event_at": "2026-04-15T07:32:48.427Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
           "location": null
         }
       ]
@@ -14116,6 +16990,34 @@
       ]
     },
     {
+      "email": "gandalfbt@yahoo.com",
+      "display_value": "gandalfbt@yahoo.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_NeFCntnnvhoQb5QKR"
+      ],
+      "first_sent_at": "2026-04-15T10:20:37.234Z",
+      "last_sent_at": "2026-04-15T10:20:37.234Z",
+      "last_event_at": "2026-04-15T10:20:37.234Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 41,
+          "lead_id": "lea_NeFCntnnvhoQb5QKR",
+          "sent_at": "2026-04-15T10:20:37.234Z",
+          "last_event_at": "2026-04-15T10:20:37.234Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "garayerzsebet@gmail.com",
       "display_value": "garayerzsebet@gmail.com",
       "used_in_campaign": true,
@@ -14196,6 +17098,34 @@
           "company_name": "Dr. Zagyi Kné Dr. Gazsó Anikó",
           "person_name": "Dr. Gazsó Anikó",
           "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
+      "email": "gcs.rendelo@gmail.com",
+      "display_value": "gcs.rendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_Nng6xjQKXfrxYCDkj"
+      ],
+      "first_sent_at": "2026-04-15T11:04:29.466Z",
+      "last_sent_at": "2026-04-15T11:04:29.466Z",
+      "last_event_at": "2026-04-15T12:46:22.155Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 42,
+          "lead_id": "lea_Nng6xjQKXfrxYCDkj",
+          "sent_at": "2026-04-15T11:04:29.466Z",
+          "last_event_at": "2026-04-15T12:46:22.155Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -14419,6 +17349,34 @@
           "stage": "no",
           "company_name": "Dr. Goda Emese",
           "person_name": "Dr. Goda Emese",
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "godihaziorvos@gmail.com",
+      "display_value": "godihaziorvos@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_Mme2FKmF2wnHvu2Rr"
+      ],
+      "first_sent_at": "2026-04-15T09:32:11.232Z",
+      "last_sent_at": "2026-04-15T09:32:11.232Z",
+      "last_event_at": "2026-04-15T12:24:03.857Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 39,
+          "lead_id": "lea_Mme2FKmF2wnHvu2Rr",
+          "sent_at": "2026-04-15T09:32:11.232Z",
+          "last_event_at": "2026-04-15T12:24:03.857Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
           "location": null
         }
       ]
@@ -14816,6 +17774,34 @@
       ]
     },
     {
+      "email": "gyerek.rendelo.kertvaros@gmail.com",
+      "display_value": "gyerek.rendelo.kertvaros@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_mmWLZstAdYz27u7bh"
+      ],
+      "first_sent_at": "2026-04-15T10:31:36.717Z",
+      "last_sent_at": "2026-04-15T10:31:36.717Z",
+      "last_event_at": "2026-04-15T12:54:54.888Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 85,
+          "lead_id": "lea_mmWLZstAdYz27u7bh",
+          "sent_at": "2026-04-15T10:31:36.717Z",
+          "last_event_at": "2026-04-15T12:54:54.888Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "gyerekdrma@gmail.com",
       "display_value": "gyerekdrma@gmail.com",
       "used_in_campaign": true,
@@ -14896,6 +17882,34 @@
           "company_name": "PEDIATER MATÁN Kft.",
           "person_name": "Dr. Matán Eszter",
           "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
+      "email": "gyermek2halasztelek@gmail.com",
+      "display_value": "gyermek2halasztelek@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_gynTSc3Q8CiwKQzTB"
+      ],
+      "first_sent_at": "2026-04-15T08:32:48.780Z",
+      "last_sent_at": "2026-04-15T08:32:48.780Z",
+      "last_event_at": "2026-04-15T08:53:39.604Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 73,
+          "lead_id": "lea_gynTSc3Q8CiwKQzTB",
+          "sent_at": "2026-04-15T08:32:48.780Z",
+          "last_event_at": "2026-04-15T08:53:39.604Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -14984,6 +17998,62 @@
       ]
     },
     {
+      "email": "gyermekorvos@veroce.hu",
+      "display_value": "gyermekorvos@veroce.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_tKweks563XRCMx53J"
+      ],
+      "first_sent_at": "2026-04-15T08:39:37.529Z",
+      "last_sent_at": "2026-04-15T08:39:37.529Z",
+      "last_event_at": "2026-04-15T08:39:37.529Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 102,
+          "lead_id": "lea_tKweks563XRCMx53J",
+          "sent_at": "2026-04-15T08:39:37.529Z",
+          "last_event_at": "2026-04-15T08:39:37.529Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "gyermekorvos01@gmail.com",
+      "display_value": "gyermekorvos01@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_9R6Xrbz3kda9Arsav"
+      ],
+      "first_sent_at": "2026-04-15T09:25:33.459Z",
+      "last_sent_at": "2026-04-15T09:25:33.459Z",
+      "last_event_at": "2026-04-15T09:25:33.459Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 15,
+          "lead_id": "lea_9R6Xrbz3kda9Arsav",
+          "sent_at": "2026-04-15T09:25:33.459Z",
+          "last_event_at": "2026-04-15T09:25:33.459Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "gyermekorvos1@spvri.hu",
       "display_value": "gyermekorvos1@spvri.hu",
       "used_in_campaign": true,
@@ -15040,6 +18110,34 @@
       ]
     },
     {
+      "email": "gyermekorvosgyomro3@gmail.com",
+      "display_value": "gyermekorvosgyomro3@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_XKcjmJ7nwLJxqYbAK"
+      ],
+      "first_sent_at": "2026-04-15T11:15:25.864Z",
+      "last_sent_at": "2026-04-15T11:15:25.864Z",
+      "last_event_at": "2026-04-15T11:19:39.528Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 50,
+          "lead_id": "lea_XKcjmJ7nwLJxqYbAK",
+          "sent_at": "2026-04-15T11:15:25.864Z",
+          "last_event_at": "2026-04-15T11:19:39.528Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "gyermekorvosirendelo.harkany@gmail.com",
       "display_value": "gyermekorvosirendelo.harkany@gmail.com",
       "used_in_campaign": true,
@@ -15092,6 +18190,62 @@
           "company_name": null,
           "person_name": "Dr. Békési Bernadett",
           "location": "BARANYA"
+        }
+      ]
+    },
+    {
+      "email": "gyermekorvosszod@gmail.com",
+      "display_value": "gyermekorvosszod@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_33Eahe29mu4nytnz2"
+      ],
+      "first_sent_at": "2026-04-15T07:21:00.822Z",
+      "last_sent_at": "2026-04-15T07:21:00.822Z",
+      "last_event_at": "2026-04-15T11:04:30.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 2,
+          "lead_id": "lea_33Eahe29mu4nytnz2",
+          "sent_at": "2026-04-15T07:21:00.822Z",
+          "last_event_at": "2026-04-15T11:04:30.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "gyermekrend.vadas@gmail.com",
+      "display_value": "gyermekrend.vadas@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_ctDLebAwh3w3CfRoT"
+      ],
+      "first_sent_at": "2026-04-15T08:30:29.242Z",
+      "last_sent_at": "2026-04-15T08:30:29.242Z",
+      "last_event_at": "2026-04-15T08:30:29.242Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 61,
+          "lead_id": "lea_ctDLebAwh3w3CfRoT",
+          "sent_at": "2026-04-15T08:30:29.242Z",
+          "last_event_at": "2026-04-15T08:30:29.242Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
         }
       ]
     },
@@ -15292,6 +18446,34 @@
       ]
     },
     {
+      "email": "gyongyszemunk@gmail.com",
+      "display_value": "gyongyszemunk@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_kzLZMMgfFm9F27NNm"
+      ],
+      "first_sent_at": "2026-04-15T10:22:47.858Z",
+      "last_sent_at": "2026-04-15T10:22:47.858Z",
+      "last_event_at": "2026-04-15T10:31:45.714Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 84,
+          "lead_id": "lea_kzLZMMgfFm9F27NNm",
+          "sent_at": "2026-04-15T10:22:47.858Z",
+          "last_event_at": "2026-04-15T10:31:45.714Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "gyonidr.jarvany@gmail.com",
       "display_value": "gyonidr.jarvany@gmail.com",
       "used_in_campaign": true,
@@ -15488,6 +18670,34 @@
       ]
     },
     {
+      "email": "h6217@netdr.hu",
+      "display_value": "h6217@netdr.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_9db2S2pSkBEoQgjzY"
+      ],
+      "first_sent_at": "2026-04-15T10:11:51.732Z",
+      "last_sent_at": "2026-04-15T10:11:51.732Z",
+      "last_event_at": "2026-04-15T11:30:24.577Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 17,
+          "lead_id": "lea_9db2S2pSkBEoQgjzY",
+          "sent_at": "2026-04-15T10:11:51.732Z",
+          "last_event_at": "2026-04-15T11:30:24.577Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "hadhazidr.margit33@gmail.com",
       "display_value": "hadhazidr.margit33@gmail.com",
       "used_in_campaign": true,
@@ -15544,6 +18754,62 @@
       ]
     },
     {
+      "email": "hajma.ildiko@gmail.com",
+      "display_value": "hajma.ildiko@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_R4cBjNhc5K6Ar4iBr"
+      ],
+      "first_sent_at": "2026-04-15T07:30:31.952Z",
+      "last_sent_at": "2026-04-15T07:30:31.952Z",
+      "last_event_at": "2026-04-15T09:44:59.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 44,
+          "lead_id": "lea_R4cBjNhc5K6Ar4iBr",
+          "sent_at": "2026-04-15T07:30:31.952Z",
+          "last_event_at": "2026-04-15T09:44:59.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "halmajhaziorvos@gmail.com",
+      "display_value": "halmajhaziorvos@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_sC9b2v5c497gm7BFn"
+      ],
+      "first_sent_at": "2026-04-15T08:07:31.832Z",
+      "last_sent_at": "2026-04-15T08:07:31.832Z",
+      "last_event_at": "2026-04-15T12:26:31.968Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 99,
+          "lead_id": "lea_sC9b2v5c497gm7BFn",
+          "sent_at": "2026-04-15T08:07:31.832Z",
+          "last_event_at": "2026-04-15T12:26:31.968Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
+          "location": null
+        }
+      ]
+    },
+    {
       "email": "halmosfamily@freemail.hu",
       "display_value": "halmosfamily@freemail.hu",
       "used_in_campaign": true,
@@ -15595,6 +18861,34 @@
           "stage": "no",
           "company_name": "Dr. Hamori Katalin",
           "person_name": "Dr. Hamori Katalin",
+          "location": null
+        }
+      ]
+    },
+    {
+      "email": "hamorine.ke@gmail.com",
+      "display_value": "hamorine.ke@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv"
+      ],
+      "lead_ids": [
+        "lea_obdxYdiDbqRWg7KBm"
+      ],
+      "first_sent_at": "2026-04-15T08:23:35.787Z",
+      "last_sent_at": "2026-04-15T08:23:35.787Z",
+      "last_event_at": "2026-04-15T09:26:47.000Z",
+      "campaigns": [
+        {
+          "source_file": "fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+          "row_number": 89,
+          "lead_id": "lea_obdxYdiDbqRWg7KBm",
+          "sent_at": "2026-04-15T08:23:35.787Z",
+          "last_event_at": "2026-04-15T09:26:47.000Z",
+          "stage": null,
+          "company_name": null,
+          "person_name": null,
           "location": null
         }
       ]

@@ -27,7 +27,7 @@ const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const CAMPAIGN_EMAIL_USAGE_PATH = "data/campaign-email-usage.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "email-global-20260812-campaign-1";
+const DATA_DEPLOY_VERSION = "email-global-20260812-campaign-2";
 const DB_OPEN_TIMEOUT_MS = 2500;
 const HIDDEN_REVIEW_UI_TEXT = [
   "Accepted by an external human reviewer in a validated workbook column.",
