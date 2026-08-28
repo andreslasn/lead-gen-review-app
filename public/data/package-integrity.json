@@ -11,7 +11,7 @@
     "manifest.json": "sha256:818c3fb748b4512b9bd05992e35ee377633429d694c802de05f2e40a351f776f",
     "queue.json": "sha256:07cfd6e487f7d822a15fec744e4207fc1738cb5d34c628733211dbfd9601d40f",
     "clinic-index.json": "sha256:53cc4264ebdd3de59d848b8b6816600c9d06eca44b3d8c226cb33b924103a127",
-    "canonical-review-state.json": "sha256:d78f9c07207a625a7d1b95c9895799d319e5585fd0df7c09c58493783dc2a7df"
+    "canonical-review-state.json": "sha256:7409b8bd2d2d3271a6d8dfcd25afcf908e4d1c81926a431018bbb353d1a2e0b0"
   },
   "trees": {
     "clinics": {
@@ -25,5 +25,5 @@
       "sha256": "sha256:4ef31c94e1abe665727d0b9814184d6ad276a614078e7eb4264f9accada4fc04"
     }
   },
-  "package_fingerprint": "sha256:726f40e5a2c7d4616d35c16b2c0685f6da10f99545f48ce2d15fc04731cb9929"
+  "package_fingerprint": "sha256:15c9b13f9085b37adca8e179c6e8df75e8381262265904be3701d5475f51302e"
 }

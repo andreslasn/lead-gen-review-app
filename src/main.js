@@ -27,7 +27,7 @@ const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const CAMPAIGN_EMAIL_USAGE_PATH = "data/campaign-email-usage.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "email-global-20260812-campaign-2";
+const DATA_DEPLOY_VERSION = "email-global-20260828-campaign-3";
 const DB_OPEN_TIMEOUT_MS = 2500;
 const HIDDEN_REVIEW_UI_TEXT = [
   "Accepted by an external human reviewer in a validated workbook column.",
@@ -584,8 +584,10 @@ const App = {
       const validation = emailValidationByValue.value[item.email] || null;
       const campaignUsage = campaignUsageByEmail.value[item.email] || null;
       const status = normalizedEmailStatus(validation?.status);
+      const displayValue = validation?.display_value || item.display_value;
       return {
         ...item,
+        display_value: displayValue,
         id: item.email,
         lane: status,
         status,
@@ -1392,12 +1394,13 @@ const App = {
       selectCandidateValidation("invalid", index);
     }
 
-    async function saveEmailValidation(status, { reviewedValue = null, reasonCode = null } = {}) {
+    async function saveEmailValidation(status, { reviewedValue = null, reasonCode = null, validationEmail = null } = {}) {
       const connection = await ensureDb();
       const candidate = selectedCandidate.value;
-      const value = reviewedValue || candidate?.value || currentItem.value?.email || "";
-      const email = normalizeEmailValue(value);
-      if (!email || !email.includes("@")) {
+      const value = String(reviewedValue || candidate?.value || currentItem.value?.email || "").trim();
+      const reviewedEmail = normalizeEmailValue(value);
+      const email = normalizeEmailValue(validationEmail || value);
+      if (!reviewedEmail || !reviewedEmail.includes("@") || !email || !email.includes("@")) {
         error.value = "Email validation needs an email value.";
         return;
       }
@@ -1406,6 +1409,9 @@ const App = {
       const validation = {
         email,
         display_value: value,
+        reviewed_value: value,
+        original_email: email,
+        corrected_email: reviewedEmail !== email ? reviewedEmail : null,
         status: normalizedEmailStatus(status),
         reason_code: reasonCode || null,
         note: note.value || null,
@@ -1442,6 +1448,29 @@ const App = {
       await hydrateLocal();
       scheduleRemoteSync();
       await setIndex(currentIndex.value);
+    }
+
+    function startEmailEdit() {
+      editValue.value = currentItem.value?.display_value || currentItem.value?.email || selectedCandidate.value?.value || "";
+      editMode.value = true;
+    }
+
+    async function saveEditedEmail() {
+      try {
+        const status = pendingValidationReady.value
+          ? pendingEmailStatus.value
+          : ["valid", "invalid"].includes(currentEmailStatus.value)
+            ? currentEmailStatus.value
+            : "valid";
+        await saveEmailValidation(status, {
+          reviewedValue: editValue.value,
+          reasonCode: "edited_email",
+          validationEmail: currentItem.value?.email,
+        });
+        editMode.value = false;
+      } catch (_) {
+        saveStatus.value = "Read-only until browser storage is available";
+      }
     }
 
     function moveCandidate(delta) {
@@ -1589,8 +1618,10 @@ const App = {
           else await deleteValue(connection, "email_validations", lastAction.value.email_validation_email);
         }
         if (lastAction.value.audit_event_id) await deleteValue(connection, "audit_events", lastAction.value.audit_event_id);
-        if (lastAction.value.previous_state) await put(connection, "clinic_states", lastAction.value.previous_state);
-        else await deleteValue(connection, "clinic_states", lastAction.value.state_clinic_id);
+        if (lastAction.value.state_clinic_id) {
+          if (lastAction.value.previous_state) await put(connection, "clinic_states", lastAction.value.previous_state);
+          else await deleteValue(connection, "clinic_states", lastAction.value.state_clinic_id);
+        }
         await hydrateLocal();
         saveStatus.value = "Undone";
         const index = filteredQueue.value.findIndex((item) => item.id === lastAction.value.state_clinic_id);
@@ -2143,6 +2174,8 @@ const App = {
       selectCandidateValidation,
       confirmCandidate,
       invalidateCandidate,
+      startEmailEdit,
+      saveEditedEmail,
       saveDecision,
       markNoPublicEmail,
       excludeCurrent,
@@ -2216,6 +2249,9 @@ const App = {
             <button class="copy-btn" @click="copyEmail" title="Copy email">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
             </button>
+            <button class="edit-email-btn" @click="startEmailEdit" title="Edit email">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.9 3.1l3 3M2.5 13.5l3.35-.7 6.7-6.7a2.12 2.12 0 00-3-3l-6.7 6.7-.35 3.7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </button>
           </div>
           <p class="clinic-address">{{ clinic.clinic.name || 'No clinic name' }} · {{ clinic.clinic.address || 'No address' }}</p>
 
@@ -2252,9 +2288,12 @@ const App = {
           </section>
 
           <section v-if="editMode" class="edit-panel">
-            <label>Edit email<input v-model="editValue" /></label>
+            <label>Edit email<input v-model="editValue" type="email" /></label>
             <label>Note<textarea v-model="note" rows="3" placeholder="Optional note"></textarea></label>
-            <button @click="saveDecision('edited_confirmed', { reviewedValue: editValue })">Save edited email</button>
+            <div class="edit-actions">
+              <button @click="saveEditedEmail">Save edited email</button>
+              <button class="quiet" @click="editMode=false">Cancel</button>
+            </div>
           </section>
 
           <div class="decision-footer-actions">

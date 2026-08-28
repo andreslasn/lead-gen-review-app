@@ -1,5 +1,9 @@
+import { execFile } from "node:child_process";
 import { readdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { promisify } from "node:util";
+
+const execFileAsync = promisify(execFile);
 
 const root = path.resolve(process.argv[2] || ".");
 const defaultCampaignDirectories = [
@@ -13,6 +17,101 @@ const emailIndexPath = path.join(dataDirectory, "email-index.json");
 const emailQueuePath = path.join(dataDirectory, "email-review-queue.json");
 const validationSeedPath = path.join(dataDirectory, "email-validation-seed.json");
 const usagePath = path.join(dataDirectory, "campaign-email-usage.json");
+
+function decodeXml(value) {
+  return String(value || "")
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)))
+    .replace(/&#([0-9]+);/g, (_, code) => String.fromCodePoint(parseInt(code, 10)))
+    .replace(/&quot;/g, "\"")
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
+}
+
+function xmlAttribute(tag, name) {
+  const match = String(tag || "").match(new RegExp(`(?:^|\\s)${name.replace(":", "\\:")}="([^"]*)"`));
+  return match ? decodeXml(match[1]) : "";
+}
+
+function columnIndex(cellReference) {
+  const letters = String(cellReference || "").match(/^[A-Z]+/i)?.[0] || "";
+  return [...letters.toUpperCase()].reduce((sum, character) => (sum * 26) + character.charCodeAt(0) - 64, 0) - 1;
+}
+
+function parseSharedStrings(xml) {
+  const strings = [];
+  for (const item of String(xml || "").matchAll(/<si\b[^>]*>([\s\S]*?)<\/si>/g)) {
+    const textParts = [...item[1].matchAll(/<t\b[^>]*>([\s\S]*?)<\/t>/g)].map((match) => decodeXml(match[1]));
+    strings.push(textParts.length ? textParts.join("") : decodeXml(item[1].replace(/<[^>]*>/g, "")));
+  }
+  return strings;
+}
+
+function parseWorksheetRows(xml, sharedStrings) {
+  const rows = [];
+  for (const rowMatch of String(xml || "").matchAll(/<row\b[^>]*>([\s\S]*?)<\/row>/g)) {
+    const row = [];
+    for (const cellMatch of rowMatch[1].matchAll(/<c\b([^>]*)>([\s\S]*?)<\/c>|<c\b([^>]*)\/>/g)) {
+      const attributes = cellMatch[1] || cellMatch[3] || "";
+      const body = cellMatch[2] || "";
+      const index = columnIndex(xmlAttribute(attributes, "r"));
+      if (index < 0) continue;
+      const type = xmlAttribute(attributes, "t");
+      const rawValue = body.match(/<v\b[^>]*>([\s\S]*?)<\/v>/)?.[1] || "";
+      const inlineText = [...body.matchAll(/<t\b[^>]*>([\s\S]*?)<\/t>/g)].map((match) => decodeXml(match[1])).join("");
+      let value = "";
+      if (type === "s") value = sharedStrings[Number(rawValue)] || "";
+      else if (type === "inlineStr") value = inlineText;
+      else value = decodeXml(rawValue);
+      row[index] = value;
+    }
+    while (row.length && !String(row.at(-1) || "").trim()) row.pop();
+    rows.push(row);
+  }
+  return rows.filter((candidate) => candidate.some((value) => String(value || "").trim()));
+}
+
+async function readZipEntry(file, entry, { optional = false } = {}) {
+  try {
+    const { stdout } = await execFileAsync("unzip", ["-p", file, entry], { maxBuffer: 100 * 1024 * 1024 });
+    return stdout;
+  } catch (err) {
+    if (optional) return "";
+    throw err;
+  }
+}
+
+async function xlsxWorksheets(file) {
+  const [workbookXml, relationshipsXml] = await Promise.all([
+    readZipEntry(file, "xl/workbook.xml"),
+    readZipEntry(file, "xl/_rels/workbook.xml.rels"),
+  ]);
+  const relationshipById = new Map();
+  for (const relationship of relationshipsXml.matchAll(/<Relationship\b([^>]*)\/>/g)) {
+    const attributes = relationship[1];
+    const id = xmlAttribute(attributes, "Id");
+    const target = xmlAttribute(attributes, "Target");
+    if (id && target) relationshipById.set(id, target.startsWith("xl/") ? target : `xl/${target}`);
+  }
+  return [...workbookXml.matchAll(/<sheet\b([^>]*)\/>/g)].map((sheet, index) => {
+    const attributes = sheet[1];
+    const id = xmlAttribute(attributes, "r:id");
+    const sheetName = xmlAttribute(attributes, "name") || `Sheet ${index + 1}`;
+    return {
+      sheet_name: sheetName,
+      worksheet_path: relationshipById.get(id) || `xl/worksheets/sheet${index + 1}.xml`,
+    };
+  });
+}
+
+async function parseXlsx(file, worksheetPath) {
+  const [sharedStringsXml, worksheetXml] = await Promise.all([
+    readZipEntry(file, "xl/sharedStrings.xml", { optional: true }),
+    readZipEntry(file, worksheetPath),
+  ]);
+  return parseWorksheetRows(worksheetXml, parseSharedStrings(sharedStringsXml));
+}
 
 function parseCsv(text) {
   const rows = [];
@@ -58,6 +157,30 @@ function normalizeEmailValue(value) {
 
 function rowObject(header, row) {
   return Object.fromEntries(header.map((name, index) => [name, row[index] || ""]));
+}
+
+function excelSerialDateToIso(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number < 20000 || number > 70000) return "";
+  return new Date(Math.round((number - 25569) * 86400 * 1000)).toISOString();
+}
+
+function spreadsheetIdentifier(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  const number = Number(text);
+  if (!Number.isFinite(number)) return text;
+  return Math.round(number).toString().padStart(9, "0");
+}
+
+function normalizeImportedRowObject(object) {
+  const normalized = { ...object };
+  if (normalized.registry_id) normalized.registry_id = spreadsheetIdentifier(normalized.registry_id);
+  for (const key of ["reviewed_at", "sent_at", "last_event_at"]) {
+    const converted = excelSerialDateToIso(normalized[key]);
+    if (converted) normalized[key] = converted;
+  }
+  return normalized;
 }
 
 function firstValue(object, keys) {
@@ -123,24 +246,45 @@ function mergedSourceExports(sourceExports, campaignSource) {
 async function campaignFilesFromSources(sources) {
   const files = [];
   const seen = new Set();
+  async function addSourceFile(filePath, baseName = path.basename(filePath)) {
+    const extension = path.extname(filePath).toLowerCase();
+    if (extension === ".csv") {
+      const key = filePath;
+      if (seen.has(key)) return;
+      seen.add(key);
+      files.push({ type: "csv", file_name: baseName, path: filePath });
+    } else if (extension === ".xlsx") {
+      for (const sheet of await xlsxWorksheets(filePath)) {
+        const key = `${filePath}#${sheet.worksheet_path}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        files.push({
+          type: "xlsx",
+          file_name: `${baseName} - ${sheet.sheet_name}`,
+          sheet_name: sheet.sheet_name,
+          worksheet_path: sheet.worksheet_path,
+          path: filePath,
+        });
+      }
+    }
+  }
   for (const source of sources) {
     const sourceStat = await stat(source);
     if (sourceStat.isDirectory()) {
       const directoryFiles = (await readdir(source))
-        .filter((file) => file.toLowerCase().endsWith(".csv"))
-        .map((file) => ({ file_name: file, path: path.join(source, file) }));
-      for (const file of directoryFiles) {
-        if (seen.has(file.path)) continue;
-        seen.add(file.path);
-        files.push(file);
-      }
-    } else if (sourceStat.isFile() && source.toLowerCase().endsWith(".csv")) {
-      if (seen.has(source)) continue;
-      seen.add(source);
-      files.push({ file_name: path.basename(source), path: source });
+        .filter((file) => [".csv", ".xlsx"].includes(path.extname(file).toLowerCase()))
+        .sort((a, b) => a.localeCompare(b));
+      for (const file of directoryFiles) await addSourceFile(path.join(source, file), file);
+    } else if (sourceStat.isFile()) {
+      await addSourceFile(source);
     }
   }
   return files.sort((a, b) => a.file_name.localeCompare(b.file_name) || a.path.localeCompare(b.path));
+}
+
+async function campaignRows(file) {
+  if (file.type === "xlsx") return parseXlsx(file.path, file.worksheet_path);
+  return parseCsv(await readFile(file.path, "utf8"));
 }
 
 function makeCampaignSummary(record) {
@@ -152,10 +296,11 @@ function makeCampaignSummary(record) {
     lead_id: record.row._id || null,
     sent_at: sent[0] || null,
     last_event_at: events.at(-1) || sent.at(-1) || null,
+    reviewed_at: firstReviewTime(record),
     stage: record.row.Stage || null,
-    company_name: firstValue(record.row, ["companyName", "Company", "Organization - Name _", "Szolg_ltat_ neve"]) || null,
-    person_name: firstValue(record.row, ["Person - Name _", "H_ziorvos neve", "firstName", "cleanFirstName"]) || null,
-    location: firstValue(record.row, ["location", "Customer Type", "V_rmegye"]) || null,
+    company_name: firstValue(record.row, ["clinic_name", "companyName", "Company", "Organization - Name _", "Szolg_ltat_ neve"]) || null,
+    person_name: firstValue(record.row, ["clinic_name", "Person - Name _", "H_ziorvos neve", "firstName", "cleanFirstName"]) || null,
+    location: firstValue(record.row, ["county", "location", "Customer Type", "V_rmegye"]) || null,
   };
 }
 
@@ -177,6 +322,7 @@ function canonicalRegion(value) {
 
 function campaignRegion(record) {
   const explicit = canonicalRegion(firstValue(record.row, [
+    "county",
     "V_rmegye",
     "location",
     "Customer Type",
@@ -192,7 +338,9 @@ function campaignImportedEmailItem(email, records) {
   const region = campaignRegion(preferred);
   const city = firstValue(row, ["city", "Szeged"]);
   const address = firstValue(row, ["address", "Organization - Address _suggested_", "H_ziorvosi rendel_ c_me", "Debreceni u_ 10-14_"]);
+  const occurrenceCount = Math.max(1, ...records.map((record) => Number(record.row?.occurrence_count || 0)).filter(Number.isFinite));
   const name = firstValue(row, [
+    "clinic_name",
     "Person - Name _",
     "H_ziorvos neve",
     "Dr_ Garas Gy_rgyi Erzs_bet",
@@ -207,7 +355,7 @@ function campaignImportedEmailItem(email, records) {
     clinic_id: null,
     contact_point_id: null,
     clinic_name: name || "",
-    registry_id: "",
+    registry_id: firstValue(row, ["registry_id"]) || "",
     city: city || "",
     region: region || "",
     address: address || "",
@@ -215,11 +363,11 @@ function campaignImportedEmailItem(email, records) {
   return {
     email,
     display_value: records[0]?.display_value || email,
-    occurrence_count: 1,
+    occurrence_count: occurrenceCount,
     clinic_id: null,
     contact_point_id: null,
     name: name || "",
-    registry_id: "",
+    registry_id: firstValue(row, ["registry_id"]) || "",
     city: city || "",
     region: region || "",
     address: address || "",
@@ -231,19 +379,88 @@ function campaignImportedEmailItem(email, records) {
     confidence: 1,
     evidence_count: 0,
     regions: region ? [region] : [],
-    region_occurrence_counts: region ? { [region]: 1 } : {},
+    region_occurrence_counts: region ? { [region]: occurrenceCount } : {},
     occurrences: [occurrence],
   };
 }
 
-const [emailIndexDocument, emailQueueDocument, validationSeedDocument] = await Promise.all([
+function firstReviewTime(record) {
+  return firstValue(record.row, ["reviewed_at"]) || null;
+}
+
+function mergeCampaignLists(existingCampaigns, incomingCampaigns) {
+  const seen = new Set();
+  return [...(existingCampaigns || []), ...(incomingCampaigns || [])].filter((campaign) => {
+    const key = [
+      campaign?.source_file,
+      campaign?.row_number,
+      campaign?.lead_id,
+      campaign?.sent_at,
+      campaign?.reviewed_at,
+    ].filter(Boolean).join("|");
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function mergeUsageItem(existing, incoming) {
+  const campaigns = mergeCampaignLists(existing?.campaigns, incoming?.campaigns);
+  const sent = sortedUnique(campaigns.map((campaign) => campaign.sent_at));
+  const events = sortedUnique(campaigns.map((campaign) => campaign.last_event_at));
+  const reviewed = sortedUnique(campaigns.map((campaign) => campaign.reviewed_at));
+  return {
+    ...(existing || {}),
+    ...(incoming || {}),
+    email: incoming?.email || existing?.email,
+    display_value: existing?.display_value || incoming?.display_value || incoming?.email || existing?.email,
+    used_in_campaign: true,
+    campaign_count: campaigns.length || incoming?.campaign_count || existing?.campaign_count || 1,
+    source_files: sortedUnique([...(existing?.source_files || []), ...(incoming?.source_files || [])]),
+    lead_ids: sortedUnique([...(existing?.lead_ids || []), ...(incoming?.lead_ids || [])]),
+    first_sent_at: sent[0] || existing?.first_sent_at || incoming?.first_sent_at || null,
+    last_sent_at: sent.at(-1) || incoming?.last_sent_at || existing?.last_sent_at || null,
+    last_event_at: events.at(-1) || sent.at(-1) || incoming?.last_event_at || existing?.last_event_at || null,
+    first_reviewed_at: reviewed[0] || existing?.first_reviewed_at || incoming?.first_reviewed_at || null,
+    last_reviewed_at: reviewed.at(-1) || incoming?.last_reviewed_at || existing?.last_reviewed_at || null,
+    campaigns,
+  };
+}
+
+function mergedUsageItems(existingItems, incomingItems) {
+  const byEmail = new Map();
+  for (const item of [...(existingItems || []), ...(incomingItems || [])]) {
+    const email = normalizeEmailValue(item.email || item.display_value);
+    if (!email) continue;
+    byEmail.set(email, mergeUsageItem(byEmail.get(email), { ...item, email }));
+  }
+  return [...byEmail.values()].sort((a, b) => a.email.localeCompare(b.email));
+}
+
+function sourceFileKey(file) {
+  return [file?.file_name, file?.path, file?.sheet_name].filter(Boolean).join("|");
+}
+
+function mergedSourceFiles(existingSourceFiles, incomingSourceFiles) {
+  const seen = new Set();
+  return [...(existingSourceFiles || []), ...(incomingSourceFiles || [])].filter((file) => {
+    const key = sourceFileKey(file);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+const [emailIndexDocument, emailQueueDocument, validationSeedDocument, usageDocument] = await Promise.all([
   jsonDocument(emailIndexPath),
   jsonDocument(emailQueuePath),
   jsonDocument(validationSeedPath),
+  jsonDocument(usagePath).catch(() => ({ data: {}, pretty: true })),
 ]);
 const emailIndexPayload = emailIndexDocument.data;
 const emailQueue = emailQueueDocument.data;
 const validationSeed = validationSeedDocument.data;
+const existingUsagePayload = usageDocument.data;
 const existingEmailItems = emailIndexPayload.items || [];
 const existingEmailQueueItems = emailQueue.items || [];
 const emailIndex = new Map(existingEmailItems.map((item) => [item.email, item]));
@@ -260,8 +477,8 @@ const campaignRecordsByEmail = new Map();
 const files = await campaignFilesFromSources(campaignSources);
 
 for (const file of files) {
-  const rows = parseCsv(await readFile(file.path, "utf8"));
-  const header = rows[0] || [];
+  const rows = await campaignRows(file);
+  const header = (rows[0] || []).map((value) => String(value || "").trim());
   const emailColumn = header.indexOf("email");
   if (emailColumn < 0) continue;
   const emails = [];
@@ -274,7 +491,7 @@ for (const file of files) {
       display_value: row[emailColumn],
       source_file: file.file_name,
       row_number: offset + 2,
-      row: rowObject(header, row),
+      row: normalizeImportedRowObject(rowObject(header, row)),
     };
     if (!campaignRecordsByEmail.has(email)) campaignRecordsByEmail.set(email, []);
     campaignRecordsByEmail.get(email).push(record);
@@ -282,6 +499,8 @@ for (const file of files) {
   sourceFiles.push({
     file_name: file.file_name,
     path: file.path,
+    type: file.type,
+    sheet_name: file.sheet_name || null,
     row_count: Math.max(0, rows.length - 1),
     email_count: emails.length,
     unique_email_count: new Set(emails).size,
@@ -290,11 +509,12 @@ for (const file of files) {
 
 const generatedAt = new Date().toISOString();
 const campaignEmails = [...campaignRecordsByEmail.keys()].sort((a, b) => a.localeCompare(b));
-const usageItems = campaignEmails.map((email) => {
+const newUsageItems = campaignEmails.map((email) => {
   const records = campaignRecordsByEmail.get(email) || [];
   const campaigns = records.map(makeCampaignSummary);
   const sent = sortedUnique(campaigns.map((campaign) => campaign.sent_at));
   const events = sortedUnique(campaigns.map((campaign) => campaign.last_event_at));
+  const reviewed = sortedUnique(campaigns.map((campaign) => campaign.reviewed_at));
   return {
     email,
     display_value: records[0]?.display_value || email,
@@ -305,29 +525,11 @@ const usageItems = campaignEmails.map((email) => {
     first_sent_at: sent[0] || null,
     last_sent_at: sent.at(-1) || null,
     last_event_at: events.at(-1) || sent.at(-1) || null,
+    first_reviewed_at: reviewed[0] || null,
+    last_reviewed_at: reviewed.at(-1) || null,
     campaigns,
   };
 });
-
-const usagePayload = {
-  format: "lead-gen-campaign-email-usage",
-  schema_version: 1,
-  dataset_id: emailQueue.dataset_id,
-  dataset_version: emailQueue.dataset_version,
-  generated_at: generatedAt,
-  source_directory: campaignSources.length === 1 ? campaignSources[0] : null,
-  source_inputs: campaignSources,
-  source_files: sourceFiles,
-  counts: {
-    source_files: sourceFiles.length,
-    rows: sourceFiles.reduce((sum, file) => sum + file.row_count, 0),
-    campaign_email_rows: sourceFiles.reduce((sum, file) => sum + file.email_count, 0),
-    emails: campaignEmails.length,
-    indexed_emails: campaignEmails.filter((email) => emailIndex.has(email)).length,
-    not_in_email_index: campaignEmails.filter((email) => !emailIndex.has(email)).length,
-  },
-  items: usageItems,
-};
 
 const importedEmailItems = [];
 const upsertedCampaignOnlyEmailItems = [];
@@ -374,15 +576,38 @@ const emailQueueOutput = {
   },
   items: emailQueueItems,
 };
-usagePayload.counts.indexed_emails = campaignEmails.filter((email) => emailIndex.has(email)).length;
-usagePayload.counts.not_in_email_index = campaignEmails.filter((email) => !emailIndex.has(email)).length;
-usagePayload.counts.campaign_imported_emails = campaignOnlyEmailCount;
+
+const usageItems = mergedUsageItems(existingUsagePayload.items || [], newUsageItems);
+const allCampaignEmails = usageItems.map((item) => item.email);
+const usageSourceInputs = sortedUnique([...(existingUsagePayload.source_inputs || []), ...campaignSources]);
+const usageSourceFiles = mergedSourceFiles(existingUsagePayload.source_files || [], sourceFiles);
+const usagePayload = {
+  ...(existingUsagePayload || {}),
+  format: "lead-gen-campaign-email-usage",
+  schema_version: 1,
+  dataset_id: emailQueue.dataset_id,
+  dataset_version: emailQueue.dataset_version,
+  generated_at: generatedAt,
+  source_directory: usageSourceInputs.length === 1 ? usageSourceInputs[0] : null,
+  source_inputs: usageSourceInputs,
+  source_files: usageSourceFiles,
+  counts: {
+    source_files: usageSourceFiles.length,
+    rows: usageSourceFiles.reduce((sum, file) => sum + Number(file.row_count || 0), 0),
+    campaign_email_rows: usageSourceFiles.reduce((sum, file) => sum + Number(file.email_count || 0), 0),
+    emails: allCampaignEmails.length,
+    indexed_emails: allCampaignEmails.filter((email) => emailIndex.has(email)).length,
+    not_in_email_index: allCampaignEmails.filter((email) => !emailIndex.has(email)).length,
+    campaign_imported_emails: campaignOnlyEmailCount,
+  },
+  items: usageItems,
+};
 
 const validationsByEmail = new Map(existingValidationByEmail);
-for (const item of usageItems) {
+for (const item of newUsageItems) {
   const indexed = emailIndex.get(item.email);
   const existing = validationsByEmail.get(item.email) || {};
-  const timestamp = existing.updated_at || existing.reviewed_at || item.first_sent_at || generatedAt;
+  const timestamp = existing.updated_at || existing.reviewed_at || item.first_reviewed_at || item.first_sent_at || generatedAt;
   validationsByEmail.set(item.email, {
     ...existing,
     email: item.email,
@@ -392,7 +617,7 @@ for (const item of usageItems) {
     reviewed_at: existing.reviewed_at || timestamp,
     updated_at: existing.updated_at || timestamp,
     source: existing.source || "campaign-import",
-    source_exports: sortedUnique([...(existing.source_exports || []), "campaign-csv-import"]),
+    source_exports: sortedUnique([...(existing.source_exports || []), "campaign-import"]),
     source_campaign_files: sortedUnique([...(existing.source_campaign_files || []), ...item.source_files]),
     source_campaign_lead_ids: sortedUnique([...(existing.source_campaign_lead_ids || []), ...item.lead_ids]),
     occurrence_count: existing.occurrence_count || indexed?.occurrence_count || null,
@@ -407,7 +632,7 @@ const seedPayload = {
   ...validationSeed,
   generated_at: generatedAt,
   source_exports: mergedSourceExports(validationSeed.source_exports, {
-    name: "campaign-csv-import",
+    name: "campaign-import",
     path: campaignSources.join(","),
     exported_at: generatedAt,
     files: sourceFiles.length,
@@ -429,6 +654,7 @@ await Promise.all([
 ]);
 
 console.log(`Imported ${campaignEmails.length} campaign emails from ${sourceFiles.length} files.`);
+console.log(`Campaign usage now has ${usageItems.length} total used emails from ${usageSourceFiles.length} source files.`);
 console.log(`Added ${importedEmailItems.length} campaign-only emails to the email dataset.`);
 console.log(`Upserted ${upsertedCampaignOnlyEmailItems.length} campaign-only email dataset rows.`);
 console.log(`Validation seed now has ${validations.length} validations (${seedPayload.counts.not_in_email_index} not in email index).`);

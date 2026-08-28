@@ -321,12 +321,17 @@ input, textarea {
   align-items: center;
   gap: 8px;
 }
+.email-title-row h2 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .decision-pane h2, .evidence-toolbar h2 {
   margin: 0;
   font: 400 clamp(1.1rem, 1.5vw + 0.6rem, 1.55rem)/1.08 var(--font-display);
   letter-spacing: -0.03em;
 }
-.copy-btn {
+.copy-btn,
+.edit-email-btn {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -339,7 +344,8 @@ input, textarea {
   background: white;
   color: var(--black-60);
 }
-.copy-btn:hover {
+.copy-btn:hover,
+.edit-email-btn:hover {
   border-color: var(--blue-40);
   background: var(--blue-10);
   color: var(--primary);
@@ -533,6 +539,10 @@ mark {
   padding: 0.78rem 1rem;
   background: var(--black-100);
   color: white;
+}
+.edit-panel .quiet {
+  background: white;
+  color: var(--black-60);
 }
 
 .action-bar {
@@ -763,6 +773,11 @@ details {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
+}
+.edit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 .sync-panel-actions button {
   min-height: 2.25rem;
