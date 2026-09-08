@@ -3,11 +3,12 @@
   "schema_version": 1,
   "dataset_id": "hu-review-20260729T094757Z",
   "dataset_version": "2026-07-29T09:47:57.654616+00:00",
-  "generated_at": "2026-08-28T09:17:15.755Z",
+  "generated_at": "2026-09-08T11:18:21.679Z",
   "source_directory": null,
   "source_inputs": [
     "/Users/andreslasn/Downloads/campaigns",
     "/Users/andreslasn/Downloads/fil_axp_g9bvwNpjPRb7PfPrM_erodium_1_copy.csv",
+    "/Users/andreslasn/Downloads/Sep 2, used - Copy B.csv",
     "/Users/andreslasn/Downloads/Used 25.Aug.26.xlsx"
   ],
   "source_files": [
@@ -84,14 +85,23 @@
       "row_count": 100,
       "email_count": 100,
       "unique_email_count": 100
+    },
+    {
+      "file_name": "Sep 2, used - Copy B.csv",
+      "path": "/Users/andreslasn/Downloads/Sep 2, used - Copy B.csv",
+      "type": "csv",
+      "sheet_name": null,
+      "row_count": 100,
+      "email_count": 100,
+      "unique_email_count": 100
     }
   ],
   "counts": {
-    "source_files": 10,
-    "rows": 1522,
-    "campaign_email_rows": 1522,
-    "emails": 1522,
-    "indexed_emails": 1522,
+    "source_files": 11,
+    "rows": 1622,
+    "campaign_email_rows": 1622,
+    "emails": 1622,
+    "indexed_emails": 1622,
     "not_in_email_index": 0,
     "campaign_imported_emails": 144
   },
@@ -21791,6 +21801,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "gyermekorvos@buk.hu",
+      "display_value": "gyermekorvos@buk.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T12:25:34.994Z",
+      "last_reviewed_at": "2026-08-27T12:25:34.994Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 2,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T12:25:34.994Z",
+          "stage": null,
+          "company_name": "Dr. Antal Zsuzsanna — háziorvosi praxis",
+          "person_name": "Dr. Antal Zsuzsanna — háziorvosi praxis",
+          "location": "VAS"
+        }
+      ]
+    },
+    {
       "email": "gyermekorvos@veroce.hu",
       "display_value": "gyermekorvos@veroce.hu",
       "used_in_campaign": true,
@@ -21851,6 +21890,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "gyermekorvos1@hajduhadhaz.hu",
+      "display_value": "gyermekorvos1@hajduhadhaz.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-29 8:32:18",
+      "last_reviewed_at": "2026-07-29 8:32:18",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 3,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-29 8:32:18",
+          "stage": null,
+          "company_name": "Dr. Erdős Andrea — háziorvosi praxis",
+          "person_name": "Dr. Erdős Andrea — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
       "email": "gyermekorvos1@spvri.hu",
       "display_value": "gyermekorvos1@spvri.hu",
       "used_in_campaign": true,
@@ -21879,6 +21947,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "gyermekorvos2@csomor.hu",
+      "display_value": "gyermekorvos2@csomor.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:34:12.615Z",
+      "last_reviewed_at": "2026-08-04T12:34:12.615Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 4,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:34:12.615Z",
+          "stage": null,
+          "company_name": "Dr. Kovács Éva — háziorvosi praxis",
+          "person_name": "Dr. Kovács Éva — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "gyermekorvos2@kiskunmajsa.hu",
@@ -21969,6 +22066,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "gyermekorvosirinyi@gmail.com",
+      "display_value": "gyermekorvosirinyi@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:08:21.064Z",
+      "last_reviewed_at": "2026-08-25T13:08:21.064Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 5,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:08:21.064Z",
+          "stage": null,
+          "company_name": "Dr. Kiss Gábor — háziorvosi praxis",
+          "person_name": "Dr. Kiss Gábor — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
     },
     {
       "email": "gyermekorvosmecseknadasd@gmail.com",
@@ -22687,6 +22813,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "hadhazirendelo@gmail.com",
+      "display_value": "hadhazirendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T11:53:22.349Z",
+      "last_reviewed_at": "2026-08-25T11:53:22.349Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 6,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T11:53:22.349Z",
+          "stage": null,
+          "company_name": "Dr. Hadházi Éva — háziorvosi praxis",
+          "person_name": "Dr. Hadházi Éva — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "hadi.leticia@med.u-szeged.hu",
       "display_value": "hadi.leticia@med.u-szeged.hu",
       "used_in_campaign": true,
@@ -23045,6 +23200,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "harmaskorzet@oroszlany.hu",
+      "display_value": "harmaskorzet@oroszlany.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:54:52.493Z",
+      "last_reviewed_at": "2026-08-25T08:54:52.493Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 7,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:54:52.493Z",
+          "stage": null,
+          "company_name": "Dr. Gulyás Boglárka — háziorvosi praxis",
+          "person_name": "Dr. Gulyás Boglárka — háziorvosi praxis",
+          "location": "KOMÁROM-ESZTERGOM"
+        }
+      ]
+    },
+    {
       "email": "harmati.valeria@gmail.com",
       "display_value": "harmati.valeria@gmail.com",
       "used_in_campaign": true,
@@ -23073,6 +23257,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "havirecept@gmail.com",
+      "display_value": "havirecept@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:26:17.918Z",
+      "last_reviewed_at": "2026-08-25T08:26:17.918Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 8,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:26:17.918Z",
+          "stage": null,
+          "company_name": "Dr. Magony Anett — háziorvosi praxis",
+          "person_name": "Dr. Magony Anett — háziorvosi praxis",
+          "location": "SOMOGY"
+        }
+      ]
     },
     {
       "email": "hazidoki19@gmail.com",
@@ -23135,6 +23348,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "haziorvos.eger8@gmail.com",
+      "display_value": "haziorvos.eger8@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:14:09.657Z",
+      "last_reviewed_at": "2026-08-05T10:14:09.657Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 9,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:14:09.657Z",
+          "stage": null,
+          "company_name": "Dr. Lévai Tibor — háziorvosi praxis",
+          "person_name": "Dr. Lévai Tibor — háziorvosi praxis",
+          "location": "HEVES"
+        }
+      ]
+    },
+    {
       "email": "haziorvos.filler@gmail.com",
       "display_value": "haziorvos.filler@gmail.com",
       "used_in_campaign": true,
@@ -23163,6 +23405,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "haziorvos.tothmolnar@gmail.com",
+      "display_value": "haziorvos.tothmolnar@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:23:38.719Z",
+      "last_reviewed_at": "2026-08-05T10:23:38.719Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 10,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:23:38.719Z",
+          "stage": null,
+          "company_name": "Dr. Molnár Tímea — háziorvosi praxis",
+          "person_name": "Dr. Molnár Tímea — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "haziorvos@innomedkft.hu",
@@ -23344,6 +23615,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "haziorvos13@gmail.com",
+      "display_value": "haziorvos13@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:25:14.342Z",
+      "last_reviewed_at": "2026-08-04T12:25:14.342Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 11,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:25:14.342Z",
+          "stage": null,
+          "company_name": "Dr. Zsákai Zsolt — háziorvosi praxis",
+          "person_name": "Dr. Zsákai Zsolt — háziorvosi praxis",
+          "location": "SOMOGY"
+        }
+      ]
+    },
+    {
       "email": "haziorvos15@gmail.com",
       "display_value": "haziorvos15@gmail.com",
       "used_in_campaign": true,
@@ -23399,6 +23699,64 @@
           "company_name": "Dr. Mozga Fruzsina — háziorvosi praxis",
           "person_name": "Dr. Mozga Fruzsina — háziorvosi praxis",
           "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
+      "email": "haziorvos71@gmail.com",
+      "display_value": "haziorvos71@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-29 8:32:18",
+      "last_reviewed_at": "2026-07-29 8:32:18",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 12,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-29 8:32:18",
+          "stage": null,
+          "company_name": "Dr. Boldogh Zoltán — háziorvosi praxis",
+          "person_name": "Dr. Boldogh Zoltán — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
+      "email": "haziorvosbercel@gmail.com",
+      "display_value": "haziorvosbercel@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:34:48.381Z",
+      "last_reviewed_at": "2026-08-04T12:34:48.381Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 13,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:34:48.381Z",
+          "stage": null,
+          "company_name": "Dr. Kőházi Anikó — háziorvosi praxis",
+          "person_name": "Dr. Kőházi Anikó — háziorvosi praxis",
+          "location": "PEST"
         }
       ]
     },
@@ -23461,6 +23819,35 @@
       ]
     },
     {
+      "email": "haziorvosirendelo.2sz@gmail.com",
+      "display_value": "haziorvosirendelo.2sz@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:28:56.029Z",
+      "last_reviewed_at": "2026-08-04T12:28:56.029Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 14,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:28:56.029Z",
+          "stage": null,
+          "company_name": "Dr. Csikós Márton András — háziorvosi praxis",
+          "person_name": "Dr. Csikós Márton András — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "haziorvosirendeloszoreg@gmail.com",
       "display_value": "haziorvosirendeloszoreg@gmail.com",
       "used_in_campaign": true,
@@ -23489,6 +23876,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "haziorvosom@t-online.hu",
+      "display_value": "haziorvosom@t-online.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:35:22.968Z",
+      "last_reviewed_at": "2026-08-25T08:35:22.968Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 15,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:35:22.968Z",
+          "stage": null,
+          "company_name": "Dr. Habony Norbert — háziorvosi praxis",
+          "person_name": "Dr. Habony Norbert — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "haziorvosom02@gmail.com",
@@ -23940,6 +24356,64 @@
       "last_reviewed_at": null
     },
     {
+      "email": "hernad2recept@gmail.com",
+      "display_value": "hernad2recept@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:23:35.808Z",
+      "last_reviewed_at": "2026-08-04T11:23:35.808Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 16,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:23:35.808Z",
+          "stage": null,
+          "company_name": "Dr. Kovács Ákos — háziorvosi praxis",
+          "person_name": "Dr. Kovács Ákos — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
+      "email": "hertelendyapolo@gmail.com",
+      "display_value": "hertelendyapolo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:30:51.511Z",
+      "last_reviewed_at": "2026-08-04T12:30:51.511Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 17,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:30:51.511Z",
+          "stage": null,
+          "company_name": "Dr. Hertelendy László Péter — háziorvosi praxis",
+          "person_name": "Dr. Hertelendy László Péter — háziorvosi praxis",
+          "location": "ZALA"
+        }
+      ]
+    },
+    {
       "email": "hetvehely.vedono@gmail.com",
       "display_value": "hetvehely.vedono@gmail.com",
       "used_in_campaign": true,
@@ -23968,6 +24442,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "hgypraxis60@gmail.com",
+      "display_value": "hgypraxis60@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T09:28:00.047Z",
+      "last_reviewed_at": "2026-08-25T09:28:00.047Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 18,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T09:28:00.047Z",
+          "stage": null,
+          "company_name": "Dr. Szőgyör Zita — háziorvosi praxis",
+          "person_name": "Dr. Szőgyör Zita — háziorvosi praxis",
+          "location": "HEVES"
+        }
+      ]
     },
     {
       "email": "hidasonkormanyzat@gmail.com",
@@ -24028,6 +24531,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "hnvri@hnvri.hu",
+      "display_value": "hnvri@hnvri.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-29 8:32:18",
+      "last_reviewed_at": "2026-07-29 8:32:18",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 19,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-29 8:32:18",
+          "stage": null,
+          "company_name": "Dr. Áron Páldeák — external validated entry",
+          "person_name": "Dr. Áron Páldeák — external validated entry",
+          "location": null
+        }
+      ]
     },
     {
       "email": "ho.drmarkovics4@freemail.hu",
@@ -24115,6 +24647,35 @@
           "company_name": "Dr. Berényi Károly — háziorvosi praxis",
           "person_name": "Dr. Berényi Károly — háziorvosi praxis",
           "location": "CSONGRÁD-CSANÁD"
+        }
+      ]
+    },
+    {
+      "email": "hoffergabormed@gmail.com",
+      "display_value": "hoffergabormed@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:22:27.838Z",
+      "last_reviewed_at": "2026-08-05T10:22:27.838Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 20,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:22:27.838Z",
+          "stage": null,
+          "company_name": "Dr. Hoffer Gábor — háziorvosi praxis",
+          "person_name": "Dr. Hoffer Gábor — háziorvosi praxis",
+          "location": "PEST"
         }
       ]
     },
@@ -24476,6 +25037,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "humanumbeteg@gmail.com",
+      "display_value": "humanumbeteg@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:13:55.710Z",
+      "last_reviewed_at": "2026-08-04T11:13:55.710Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 21,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:13:55.710Z",
+          "stage": null,
+          "company_name": "Dr. Vancsura Tamás — háziorvosi praxis",
+          "person_name": "Dr. Vancsura Tamás — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "hunyadidoktor@gmail.com",
       "display_value": "hunyadidoktor@gmail.com",
       "used_in_campaign": true,
@@ -24594,6 +25184,64 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "illyesannadr@gmail.com",
+      "display_value": "illyesannadr@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T10:56:40.432Z",
+      "last_reviewed_at": "2026-07-30T10:56:40.432Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 22,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T10:56:40.432Z",
+          "stage": null,
+          "company_name": "Dr. Illyés Anna — háziorvosi praxis",
+          "person_name": "Dr. Illyés Anna — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
+      "email": "imre.dr.kiss@freemail.hu",
+      "display_value": "imre.dr.kiss@freemail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T12:15:14.991Z",
+      "last_reviewed_at": "2026-08-27T12:15:14.991Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 23,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T12:15:14.991Z",
+          "stage": null,
+          "company_name": "Dr. Győrffy Éva — háziorvosi praxis",
+          "person_name": "Dr. Győrffy Éva — háziorvosi praxis",
+          "location": "VAS"
+        }
+      ]
     },
     {
       "email": "imreffy@t-online.hu",
@@ -25368,6 +26016,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "istvan.schutz@gmail.com",
+      "display_value": "istvan.schutz@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:17:56.004Z",
+      "last_reviewed_at": "2026-08-05T10:17:56.004Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 24,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:17:56.004Z",
+          "stage": null,
+          "company_name": "Dr. Schütz István — háziorvosi praxis",
+          "person_name": "Dr. Schütz István — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "iszlai1959@gmail.com",
       "display_value": "iszlai1959@gmail.com",
       "used_in_campaign": true,
@@ -25398,6 +26075,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "ivanfimed@gmail.com",
+      "display_value": "ivanfimed@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-28T11:08:37.177Z",
+      "last_reviewed_at": "2026-08-28T11:08:37.177Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 25,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-28T11:08:37.177Z",
+          "stage": null,
+          "company_name": "Dr. Ivánfi Judit — háziorvosi praxis",
+          "person_name": "Dr. Ivánfi Judit — háziorvosi praxis",
+          "location": "BARANYA"
+        }
+      ]
+    },
+    {
       "email": "izsakmed@gmail.com",
       "display_value": "izsakmed@gmail.com",
       "used_in_campaign": true,
@@ -25426,6 +26132,64 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "j.szabo@vnet.hu",
+      "display_value": "j.szabo@vnet.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:27:35.766Z",
+      "last_reviewed_at": "2026-08-25T08:27:35.766Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 26,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:27:35.766Z",
+          "stage": null,
+          "company_name": "Dr. Csikós Tamás — háziorvosi praxis",
+          "person_name": "Dr. Csikós Tamás — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
+      "email": "jakab45416@gmail.com",
+      "display_value": "jakab45416@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-29 8:32:18",
+      "last_reviewed_at": "2026-07-29 8:32:18",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 27,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-29 8:32:18",
+          "stage": null,
+          "company_name": "Dr. Jakab Éva — háziorvosi praxis",
+          "person_name": "Dr. Jakab Éva — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
     },
     {
       "email": "jakabrendelo@gmail.com",
@@ -25605,6 +26369,64 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "janoshaza.rendelo@gmail.com",
+      "display_value": "janoshaza.rendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T12:15:23.241Z",
+      "last_reviewed_at": "2026-08-27T12:15:23.241Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 28,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T12:15:23.241Z",
+          "stage": null,
+          "company_name": "Dr. Szücs Katalin — háziorvosi praxis",
+          "person_name": "Dr. Szücs Katalin — háziorvosi praxis",
+          "location": "VAS"
+        }
+      ]
+    },
+    {
+      "email": "janoshida1@gmail.com",
+      "display_value": "janoshida1@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T09:01:12.788Z",
+      "last_reviewed_at": "2026-07-30T09:01:12.788Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 29,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T09:01:12.788Z",
+          "stage": null,
+          "company_name": "Dr. Hajdú Jenő — háziorvosi praxis",
+          "person_name": "Dr. Hajdú Jenő — háziorvosi praxis",
+          "location": "JÁSZ-NAGYKUN-SZOLNOK"
+        }
+      ]
     },
     {
       "email": "jarmai.judit@alapellatas11.hu",
@@ -25993,6 +26815,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "jutomed2@gmail.com",
+      "display_value": "jutomed2@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:28:08.196Z",
+      "last_reviewed_at": "2026-08-05T10:28:08.196Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 30,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:28:08.196Z",
+          "stage": null,
+          "company_name": "Dr. Tóth Katalin — háziorvosi praxis",
+          "person_name": "Dr. Tóth Katalin — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "jzsfhalasz@gmail.com",
@@ -26413,6 +27264,64 @@
       "last_reviewed_at": null
     },
     {
+      "email": "kaposvar.5korzet@gmail.com",
+      "display_value": "kaposvar.5korzet@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T11:08:15.892Z",
+      "last_reviewed_at": "2026-08-05T11:08:15.892Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 31,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T11:08:15.892Z",
+          "stage": null,
+          "company_name": "Dr. Halász Kata — háziorvosi praxis",
+          "person_name": "Dr. Halász Kata — háziorvosi praxis",
+          "location": "SOMOGY"
+        }
+      ]
+    },
+    {
+      "email": "kaposvar.6.korzet@gmail.com",
+      "display_value": "kaposvar.6.korzet@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:06:42.712Z",
+      "last_reviewed_at": "2026-08-04T12:06:42.712Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 32,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:06:42.712Z",
+          "stage": null,
+          "company_name": "Dr. Szabó Barna — háziorvosi praxis",
+          "person_name": "Dr. Szabó Barna — háziorvosi praxis",
+          "location": "SOMOGY"
+        }
+      ]
+    },
+    {
       "email": "kaprinai@lilinor-med.hu",
       "display_value": "kaprinai@lilinor-med.hu",
       "used_in_campaign": true,
@@ -26441,6 +27350,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "kapusinedrvasseva@gmail.com",
+      "display_value": "kapusinedrvasseva@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:08:32.246Z",
+      "last_reviewed_at": "2026-08-04T12:08:32.246Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 33,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:08:32.246Z",
+          "stage": null,
+          "company_name": "Dr. Vass Éva — háziorvosi praxis",
+          "person_name": "Dr. Vass Éva — háziorvosi praxis",
+          "location": "JÁSZ-NAGYKUN-SZOLNOK"
+        }
+      ]
     },
     {
       "email": "kara.eva@alapellatas.hu",
@@ -26743,6 +27681,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "karpati3korzet@gmail.com",
+      "display_value": "karpati3korzet@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T09:41:23.669Z",
+      "last_reviewed_at": "2026-08-27T09:41:23.669Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 34,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T09:41:23.669Z",
+          "stage": null,
+          "company_name": "Dr. Szakács Katalin — háziorvosi praxis",
+          "person_name": "Dr. Szakács Katalin — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "kasza.beata@alapellatas.hu",
       "display_value": "kasza.beata@alapellatas.hu",
       "used_in_campaign": true,
@@ -26860,6 +27827,93 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "katonapiroskadr@gmail.com",
+      "display_value": "katonapiroskadr@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T09:41:31.485Z",
+      "last_reviewed_at": "2026-08-27T09:41:31.485Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 35,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T09:41:31.485Z",
+          "stage": null,
+          "company_name": "Dr. Katona Piroska — háziorvosi praxis",
+          "person_name": "Dr. Katona Piroska — háziorvosi praxis",
+          "location": "BÉKÉS"
+        }
+      ]
+    },
+    {
+      "email": "katonatelep.recept@gmail.com",
+      "display_value": "katonatelep.recept@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:32:04.467Z",
+      "last_reviewed_at": "2026-08-25T13:32:04.467Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 36,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:32:04.467Z",
+          "stage": null,
+          "company_name": "Dr. Serfőző Katalin Matild — háziorvosi praxis",
+          "person_name": "Dr. Serfőző Katalin Matild — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
+      "email": "kavabenyerendelo@gmail.com",
+      "display_value": "kavabenyerendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:05:24.497Z",
+      "last_reviewed_at": "2026-08-04T12:05:24.497Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 37,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:05:24.497Z",
+          "stage": null,
+          "company_name": "Dr. Néma Andrea Éva — háziorvosi praxis",
+          "person_name": "Dr. Néma Andrea Éva — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "kelemenk@ajk.elte.hu",
@@ -27041,6 +28095,64 @@
       "last_reviewed_at": null
     },
     {
+      "email": "kerkuska.ilona@gmail.com",
+      "display_value": "kerkuska.ilona@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T10:53:38.017Z",
+      "last_reviewed_at": "2026-07-30T10:53:38.017Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 38,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T10:53:38.017Z",
+          "stage": null,
+          "company_name": "Dr. Kerkuska Ilona Zsuzsanna — háziorvosi praxis",
+          "person_name": "Dr. Kerkuska Ilona Zsuzsanna — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
+      "email": "kertvaros.receptrendeles@gmail.com",
+      "display_value": "kertvaros.receptrendeles@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:50:42.601Z",
+      "last_reviewed_at": "2026-08-25T08:50:42.601Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 39,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:50:42.601Z",
+          "stage": null,
+          "company_name": "Dr. Baumann Marcell — háziorvosi praxis",
+          "person_name": "Dr. Baumann Marcell — háziorvosi praxis",
+          "location": "KOMÁROM-ESZTERGOM"
+        }
+      ]
+    },
+    {
       "email": "kertvarosigyerekrendelo@gmail.com",
       "display_value": "kertvarosigyerekrendelo@gmail.com",
       "used_in_campaign": true,
@@ -27095,6 +28207,64 @@
           "company_name": "Dr. Keserű Gabriella — háziorvosi praxis",
           "person_name": "Dr. Keserű Gabriella — háziorvosi praxis",
           "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
+      "email": "ketteskorzet60@gmail.com",
+      "display_value": "ketteskorzet60@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:17:16.324Z",
+      "last_reviewed_at": "2026-08-25T12:17:16.324Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 40,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:17:16.324Z",
+          "stage": null,
+          "company_name": "Dr. Szőgyör Zita — háziorvosi praxis",
+          "person_name": "Dr. Szőgyör Zita — háziorvosi praxis",
+          "location": "HEVES"
+        }
+      ]
+    },
+    {
+      "email": "kghgyrendelo3.0@gmail.com",
+      "display_value": "kghgyrendelo3.0@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:39:49.536Z",
+      "last_reviewed_at": "2026-08-25T08:39:49.536Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 41,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:39:49.536Z",
+          "stage": null,
+          "company_name": "Dr. Juhász Zsuzsanna — háziorvosi praxis",
+          "person_name": "Dr. Juhász Zsuzsanna — háziorvosi praxis",
+          "location": "JÁSZ-NAGYKUN-SZOLNOK"
         }
       ]
     },
@@ -27667,6 +28837,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "konczmedikids@gmail.com",
+      "display_value": "konczmedikids@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:33:05.545Z",
+      "last_reviewed_at": "2026-08-04T12:33:05.545Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 42,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:33:05.545Z",
+          "stage": null,
+          "company_name": "Dr. Koncz Levente Csaba — háziorvosi praxis",
+          "person_name": "Dr. Koncz Levente Csaba — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "konczzs2@gmail.com",
       "display_value": "konczzs2@gmail.com",
       "used_in_campaign": true,
@@ -27755,6 +28954,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "korkepbt1956@gmail.com",
+      "display_value": "korkepbt1956@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:18:25.036Z",
+      "last_reviewed_at": "2026-08-04T11:18:25.036Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 43,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:18:25.036Z",
+          "stage": null,
+          "company_name": "Dr. Szőgyör Zita — háziorvosi praxis",
+          "person_name": "Dr. Szőgyör Zita — háziorvosi praxis",
+          "location": "HEVES"
+        }
+      ]
     },
     {
       "email": "kormany.zsolt@gmail.com",
@@ -27900,6 +29128,64 @@
           "company_name": "Dr. Balázs Sándor — háziorvosi praxis",
           "person_name": "Dr. Balázs Sándor — háziorvosi praxis",
           "location": "FEJÉR"
+        }
+      ]
+    },
+    {
+      "email": "korzet1cegled@gmail.com",
+      "display_value": "korzet1cegled@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:22:37.400Z",
+      "last_reviewed_at": "2026-08-25T08:22:37.400Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 44,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:22:37.400Z",
+          "stage": null,
+          "company_name": "Dr. Kelemen István — háziorvosi praxis",
+          "person_name": "Dr. Kelemen István — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
+      "email": "korzet1isaszeg@gmail.com",
+      "display_value": "korzet1isaszeg@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:19:28.267Z",
+      "last_reviewed_at": "2026-08-05T10:19:28.267Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 45,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:19:28.267Z",
+          "stage": null,
+          "company_name": "Dr. Tordai Gábor — háziorvosi praxis",
+          "person_name": "Dr. Tordai Gábor — háziorvosi praxis",
+          "location": "PEST"
         }
       ]
     },
@@ -28709,6 +29995,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "kvassay24@gmail.com",
+      "display_value": "kvassay24@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-17T09:55:57.103Z",
+      "last_reviewed_at": "2026-07-17T09:55:57.103Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 46,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-17T09:55:57.103Z",
+          "stage": null,
+          "company_name": "Dr. Kvassay-Sajó Krisztina — háziorvosi praxis",
+          "person_name": "Dr. Kvassay-Sajó Krisztina — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "labor.pajer@gmail.com",
       "display_value": "labor.pajer@gmail.com",
       "used_in_campaign": true,
@@ -28799,6 +30114,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "lacidoki2@freemail.hu",
+      "display_value": "lacidoki2@freemail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:47:06.087Z",
+      "last_reviewed_at": "2026-08-04T11:47:06.087Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 47,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:47:06.087Z",
+          "stage": null,
+          "company_name": "Dr. Horváth László — háziorvosi praxis",
+          "person_name": "Dr. Horváth László — háziorvosi praxis",
+          "location": "JÁSZ-NAGYKUN-SZOLNOK"
+        }
+      ]
+    },
+    {
       "email": "lajko.ilona@alapellatas.hu",
       "display_value": "lajko.ilona@alapellatas.hu",
       "used_in_campaign": true,
@@ -28827,6 +30171,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "lakatos.elvira25@gmail.com",
+      "display_value": "lakatos.elvira25@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:47:11.607Z",
+      "last_reviewed_at": "2026-08-25T12:47:11.607Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 48,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:47:11.607Z",
+          "stage": null,
+          "company_name": "Dr. Antonio Da Rocha — háziorvosi praxis",
+          "person_name": "Dr. Antonio Da Rocha — háziorvosi praxis",
+          "location": "JÁSZ-NAGYKUN-SZOLNOK"
+        }
+      ]
     },
     {
       "email": "langermann.istvan@gmail.com",
@@ -29278,6 +30651,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "liget.rendelo@yahoo.com",
+      "display_value": "liget.rendelo@yahoo.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:40:07.821Z",
+      "last_reviewed_at": "2026-08-25T08:40:07.821Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 49,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:40:07.821Z",
+          "stage": null,
+          "company_name": "Dr. Czellár Éva — háziorvosi praxis",
+          "person_name": "Dr. Czellár Éva — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "linka.katalin@alapellatas11.hu",
       "display_value": "linka.katalin@alapellatas11.hu",
       "used_in_campaign": true,
@@ -29668,6 +31070,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "m.cseresnyes@cherrymed.hu",
+      "display_value": "m.cseresnyes@cherrymed.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:47:48.327Z",
+      "last_reviewed_at": "2026-08-25T12:47:48.327Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 50,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:47:48.327Z",
+          "stage": null,
+          "company_name": "Dr. Takács Tamás — háziorvosi praxis",
+          "person_name": "Dr. Takács Tamás — háziorvosi praxis",
+          "location": "JÁSZ-NAGYKUN-SZOLNOK"
+        }
+      ]
+    },
+    {
       "email": "madarasirendelo@gmail.com",
       "display_value": "madarasirendelo@gmail.com",
       "used_in_campaign": true,
@@ -29756,6 +31187,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "magyardoktorno@gmail.com",
+      "display_value": "magyardoktorno@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:24:12.518Z",
+      "last_reviewed_at": "2026-08-05T10:24:12.518Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 51,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:24:12.518Z",
+          "stage": null,
+          "company_name": "Dr. Magyar Mária Tünde — háziorvosi praxis",
+          "person_name": "Dr. Magyar Mária Tünde — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "magyaridoktor@gmail.com",
@@ -30056,6 +31516,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "margit.stahorszky@gmail.com",
+      "display_value": "margit.stahorszky@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:27:33.512Z",
+      "last_reviewed_at": "2026-08-05T10:27:33.512Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 52,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:27:33.512Z",
+          "stage": null,
+          "company_name": "Dr. Stahorszky Margit — háziorvosi praxis",
+          "person_name": "Dr. Stahorszky Margit — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "mariannabirodr@gmail.com",
@@ -30387,6 +31876,35 @@
       ]
     },
     {
+      "email": "medadentkft@gmail.com",
+      "display_value": "medadentkft@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:36:31.385Z",
+      "last_reviewed_at": "2026-08-25T08:36:31.385Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 53,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:36:31.385Z",
+          "stage": null,
+          "company_name": "Dr. Tóth Tibor — háziorvosi praxis",
+          "person_name": "Dr. Tóth Tibor — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "medberbt@gmail.com",
       "display_value": "medberbt@gmail.com",
       "used_in_campaign": true,
@@ -30444,6 +31962,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "meddeb.drmagyari@gmail.com",
+      "display_value": "meddeb.drmagyari@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-29 8:32:18",
+      "last_reviewed_at": "2026-07-29 8:32:18",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 54,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-29 8:32:18",
+          "stage": null,
+          "company_name": "Dr. Magyari Marietta — external validated entry",
+          "person_name": "Dr. Magyari Marietta — external validated entry",
+          "location": null
+        }
+      ]
     },
     {
       "email": "medelledoki@gmail.com",
@@ -30683,6 +32230,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "medigeo@drlodi.hu",
+      "display_value": "medigeo@drlodi.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:33:37.658Z",
+      "last_reviewed_at": "2026-08-25T12:33:37.658Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 55,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:33:37.658Z",
+          "stage": null,
+          "company_name": "Dr. Lódi Brigitta — háziorvosi praxis",
+          "person_name": "Dr. Lódi Brigitta — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
     },
     {
       "email": "medihelperbt@gmail.com",
@@ -31222,6 +32798,35 @@
       ]
     },
     {
+      "email": "megu@megu.hu",
+      "display_value": "megu@megu.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T10:54:41.273Z",
+      "last_reviewed_at": "2026-07-30T10:54:41.273Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 56,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T10:54:41.273Z",
+          "stage": null,
+          "company_name": "Dr. Fischl Anna Tuovi — háziorvosi praxis",
+          "person_name": "Dr. Fischl Anna Tuovi — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "melitkft.uzleti@upcmail.hu",
       "display_value": "melitkft.uzleti@upcmail.hu",
       "used_in_campaign": true,
@@ -31580,6 +33185,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "mirimed222@gmail.com",
+      "display_value": "mirimed222@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:28:04.416Z",
+      "last_reviewed_at": "2026-08-25T08:28:04.416Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 57,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:28:04.416Z",
+          "stage": null,
+          "company_name": "Dr. Resli István — háziorvosi praxis",
+          "person_name": "Dr. Resli István — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "miskolctapolcairendelo@gmail.com",
       "display_value": "miskolctapolcairendelo@gmail.com",
       "used_in_campaign": true,
@@ -31788,6 +33422,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "molnardrgod@gmail.com",
+      "display_value": "molnardrgod@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:18:10.222Z",
+      "last_reviewed_at": "2026-08-25T12:18:10.222Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 58,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:18:10.222Z",
+          "stage": null,
+          "company_name": "Dr. Molnár Csaba — háziorvosi praxis",
+          "person_name": "Dr. Molnár Csaba — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "molnarest@gmail.com",
@@ -32264,6 +33927,35 @@
           "company_name": "Dr. Gáspár Alicia — háziorvosi praxis",
           "person_name": "Dr. Gáspár Alicia — háziorvosi praxis",
           "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
+      "email": "nagyg0747@gmail.com",
+      "display_value": "nagyg0747@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T10:57:46.047Z",
+      "last_reviewed_at": "2026-07-30T10:57:46.047Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 59,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T10:57:46.047Z",
+          "stage": null,
+          "company_name": "Dr. Nagy Gábor — háziorvosi praxis",
+          "person_name": "Dr. Nagy Gábor — háziorvosi praxis",
+          "location": "PEST"
         }
       ]
     },
@@ -33047,6 +34739,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "orla2100@gmail.com",
+      "display_value": "orla2100@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:36:07.038Z",
+      "last_reviewed_at": "2026-08-04T11:36:07.038Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 60,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:36:07.038Z",
+          "stage": null,
+          "company_name": "Dr. Oravecz László Antal — háziorvosi praxis",
+          "person_name": "Dr. Oravecz László Antal — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "orospraxis@gmail.com",
       "display_value": "orospraxis@gmail.com",
       "used_in_campaign": true,
@@ -33287,6 +35008,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "orvos1@citromail.hu",
+      "display_value": "orvos1@citromail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T12:03:53.179Z",
+      "last_reviewed_at": "2026-08-27T12:03:53.179Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 61,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T12:03:53.179Z",
+          "stage": null,
+          "company_name": "Dr. Simondán György — háziorvosi praxis",
+          "person_name": "Dr. Simondán György — háziorvosi praxis",
+          "location": "BÉKÉS"
+        }
+      ]
+    },
+    {
       "email": "orvosdoktor4@gmail.com",
       "display_value": "orvosdoktor4@gmail.com",
       "used_in_campaign": true,
@@ -33436,6 +35186,35 @@
       ]
     },
     {
+      "email": "orvosirendelokaposvar3@gmail.com",
+      "display_value": "orvosirendelokaposvar3@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:43:07.635Z",
+      "last_reviewed_at": "2026-08-04T11:43:07.635Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 62,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:43:07.635Z",
+          "stage": null,
+          "company_name": "Dr. Boros Berta — háziorvosi praxis",
+          "person_name": "Dr. Boros Berta — háziorvosi praxis",
+          "location": "SOMOGY"
+        }
+      ]
+    },
+    {
       "email": "orvosirendelolengyela@gmail.com",
       "display_value": "orvosirendelolengyela@gmail.com",
       "used_in_campaign": true,
@@ -33494,6 +35273,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "orvosroder@gmail.com",
+      "display_value": "orvosroder@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-21T09:53:35.222Z",
+      "last_reviewed_at": "2026-08-21T09:53:35.222Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 63,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-21T09:53:35.222Z",
+          "stage": null,
+          "company_name": "Dr. Röder Rita — háziorvosi praxis",
+          "person_name": "Dr. Röder Rita — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "oxyline@upcmail.hu",
@@ -33646,6 +35454,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "palankhont2@gmail.com",
+      "display_value": "palankhont2@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T13:42:05.892Z",
+      "last_reviewed_at": "2026-08-27T13:42:05.892Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 64,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T13:42:05.892Z",
+          "stage": null,
+          "company_name": "Dr. Koreny Csilla Hajnalka — háziorvosi praxis",
+          "person_name": "Dr. Koreny Csilla Hajnalka — háziorvosi praxis",
+          "location": "NOGRÁD"
+        }
+      ]
+    },
+    {
       "email": "palhazarendelo2@gmail.com",
       "display_value": "palhazarendelo2@gmail.com",
       "used_in_campaign": true,
@@ -33674,6 +35511,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "palilona56@gmail.com",
+      "display_value": "palilona56@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T09:04:46.286Z",
+      "last_reviewed_at": "2026-07-30T09:04:46.286Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 65,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T09:04:46.286Z",
+          "stage": null,
+          "company_name": "Dr. Pál Ilona — háziorvosi praxis",
+          "person_name": "Dr. Pál Ilona — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
     },
     {
       "email": "palkorendelo@gmail.com",
@@ -33973,6 +35839,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "papintmedrendelo@gmail.com",
+      "display_value": "papintmedrendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:21:28.467Z",
+      "last_reviewed_at": "2026-08-25T12:21:28.467Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 66,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:21:28.467Z",
+          "stage": null,
+          "company_name": "Dr. Patocskai Máté — háziorvosi praxis",
+          "person_name": "Dr. Patocskai Máté — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
       "email": "papp.dr.53@freemail.hu",
       "display_value": "papp.dr.53@freemail.hu",
       "used_in_campaign": true,
@@ -34211,6 +36106,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "pecsi.ferenc@meditres.hu",
+      "display_value": "pecsi.ferenc@meditres.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:49:20.172Z",
+      "last_reviewed_at": "2026-08-25T12:49:20.172Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 67,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:49:20.172Z",
+          "stage": null,
+          "company_name": "Dr. Pécsi Ferenc — háziorvosi praxis",
+          "person_name": "Dr. Pécsi Ferenc — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
     },
     {
       "email": "pediodoktor@gmail.com",
@@ -34778,6 +36702,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "polyakerzsi@freemail.hu",
+      "display_value": "polyakerzsi@freemail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T12:05:04.571Z",
+      "last_reviewed_at": "2026-08-27T12:05:04.571Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 68,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T12:05:04.571Z",
+          "stage": null,
+          "company_name": "Dr. Polyák Erzsébet — háziorvosi praxis",
+          "person_name": "Dr. Polyák Erzsébet — háziorvosi praxis",
+          "location": "BÉKÉS"
+        }
+      ]
     },
     {
       "email": "poncsakcsaba@freemail.hu",
@@ -35433,6 +37386,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "praxis313.kadafalva@gmail.com",
+      "display_value": "praxis313.kadafalva@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:44:57.768Z",
+      "last_reviewed_at": "2026-08-25T13:44:57.768Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 69,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:44:57.768Z",
+          "stage": null,
+          "company_name": "Dr. Herczeg Lajos — háziorvosi praxis",
+          "person_name": "Dr. Herczeg Lajos — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
       "email": "praxis313@alapellatas.hu",
       "display_value": "praxis313@alapellatas.hu",
       "used_in_campaign": true,
@@ -35850,6 +37832,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "psppatika.bt@chello.hui",
+      "display_value": "psppatika.bt@chello.hui",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:22:55.138Z",
+      "last_reviewed_at": "2026-08-04T11:22:55.138Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 70,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:22:55.138Z",
+          "stage": null,
+          "company_name": "Dr. Száray Eszter — háziorvosi praxis",
+          "person_name": "Dr. Száray Eszter — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "pufuto@gmail.com",
       "display_value": "pufuto@gmail.com",
       "used_in_campaign": true,
@@ -35905,6 +37916,35 @@
           "company_name": "Dr. Holczer Attila — háziorvosi praxis",
           "person_name": "Dr. Holczer Attila — háziorvosi praxis",
           "location": "FEJÉR"
+        }
+      ]
+    },
+    {
+      "email": "putorekzita@gmail.com",
+      "display_value": "putorekzita@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-21T09:53:44.903Z",
+      "last_reviewed_at": "2026-08-21T09:53:44.903Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 71,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-21T09:53:44.903Z",
+          "stage": null,
+          "company_name": "Dr. Zsákai Zsolt — háziorvosi praxis",
+          "person_name": "Dr. Zsákai Zsolt — háziorvosi praxis",
+          "location": "SOMOGY"
         }
       ]
     },
@@ -35997,6 +38037,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "raczdoktor4242@gmail.com",
+      "display_value": "raczdoktor4242@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T09:06:52.000Z",
+      "last_reviewed_at": "2026-07-30T09:06:52.000Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 72,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T09:06:52.000Z",
+          "stage": null,
+          "company_name": "Dr. Rácz Attila — háziorvosi praxis",
+          "person_name": "Dr. Rácz Attila — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
     },
     {
       "email": "raczdr65@gmail.com",
@@ -36298,6 +38367,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "recept.banyai@gmail.com",
+      "display_value": "recept.banyai@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:28:42.846Z",
+      "last_reviewed_at": "2026-08-04T12:28:42.846Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 73,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:28:42.846Z",
+          "stage": null,
+          "company_name": "Dr. Bányai Zsuzsanna — háziorvosi praxis",
+          "person_name": "Dr. Bányai Zsuzsanna — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "recept.boszormenyi@gmail.com",
       "display_value": "recept.boszormenyi@gmail.com",
       "used_in_campaign": true,
@@ -36382,6 +38480,35 @@
           "company_name": "Dr. Bakró Anikó Ildikó — háziorvosi praxis",
           "person_name": "Dr. Bakró Anikó Ildikó — háziorvosi praxis",
           "location": "FEJÉR"
+        }
+      ]
+    },
+    {
+      "email": "recept.hajduhadhaz@gmail.com",
+      "display_value": "recept.hajduhadhaz@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:27:06.359Z",
+      "last_reviewed_at": "2026-08-04T11:27:06.359Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 74,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:27:06.359Z",
+          "stage": null,
+          "company_name": "Dr. Simon Diána Éva — háziorvosi praxis",
+          "person_name": "Dr. Simon Diána Éva — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
         }
       ]
     },
@@ -36535,6 +38662,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "recept@triplamed.hu",
+      "display_value": "recept@triplamed.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:28:28.866Z",
+      "last_reviewed_at": "2026-08-25T08:28:28.866Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 75,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:28:28.866Z",
+          "stage": null,
+          "company_name": "Dr. Sükösdi László — háziorvosi praxis",
+          "person_name": "Dr. Sükösdi László — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "receptdrpalocz@gmail.com",
       "display_value": "receptdrpalocz@gmail.com",
       "used_in_campaign": true,
@@ -36563,6 +38719,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "recepthogyesz@gmail.com",
+      "display_value": "recepthogyesz@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T10:51:26.420Z",
+      "last_reviewed_at": "2026-07-30T10:51:26.420Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 76,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T10:51:26.420Z",
+          "stage": null,
+          "company_name": "Dr. Sásdi Zsuzsanna — háziorvosi praxis",
+          "person_name": "Dr. Sásdi Zsuzsanna — háziorvosi praxis",
+          "location": "TOLNA"
+        }
+      ]
     },
     {
       "email": "receptholnap@netdr.hu",
@@ -36623,6 +38808,35 @@
       ]
     },
     {
+      "email": "receptikervar@gmail.com",
+      "display_value": "receptikervar@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-27T12:34:56.304Z",
+      "last_reviewed_at": "2026-08-27T12:34:56.304Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 77,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-27T12:34:56.304Z",
+          "stage": null,
+          "company_name": "Dr. Fehér Adrienn — háziorvosi praxis",
+          "person_name": "Dr. Fehér Adrienn — háziorvosi praxis",
+          "location": "VAS"
+        }
+      ]
+    },
+    {
       "email": "receptirasdrtakacsvaleria@gmail.com",
       "display_value": "receptirasdrtakacsvaleria@gmail.com",
       "used_in_campaign": true,
@@ -36651,6 +38865,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "receptkeres@gmail.com",
+      "display_value": "receptkeres@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:14:35.227Z",
+      "last_reviewed_at": "2026-08-04T11:14:35.227Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 78,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:14:35.227Z",
+          "stage": null,
+          "company_name": "Dr. Veisz Brigitta — háziorvosi praxis",
+          "person_name": "Dr. Veisz Brigitta — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "receptkeres62@gmail.com",
@@ -37037,6 +39280,35 @@
       ]
     },
     {
+      "email": "rendeles.incze@gmail.com",
+      "display_value": "rendeles.incze@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:31:42.098Z",
+      "last_reviewed_at": "2026-08-04T12:31:42.098Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 79,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:31:42.098Z",
+          "stage": null,
+          "company_name": "Dr. Incze Ferenc — háziorvosi praxis",
+          "person_name": "Dr. Incze Ferenc — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "rendelo.agyagos@gmail.com",
       "display_value": "rendelo.agyagos@gmail.com",
       "used_in_campaign": true,
@@ -37094,6 +39366,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "rendelo.besnyo@gmail.com",
+      "display_value": "rendelo.besnyo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-21T09:58:24.899Z",
+      "last_reviewed_at": "2026-08-21T09:58:24.899Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 80,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-21T09:58:24.899Z",
+          "stage": null,
+          "company_name": "Dr. Kövesi Margit — háziorvosi praxis",
+          "person_name": "Dr. Kövesi Margit — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "rendelo.bogacs@freemail.com",
@@ -37210,6 +39511,35 @@
           "company_name": "Dr. Székely Csaba Szilárd — háziorvosi praxis",
           "person_name": "Dr. Székely Csaba Szilárd — háziorvosi praxis",
           "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
+      "email": "rendelo.egervar@gmail.com",
+      "display_value": "rendelo.egervar@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:15:22.629Z",
+      "last_reviewed_at": "2026-08-04T11:15:22.629Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 81,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:15:22.629Z",
+          "stage": null,
+          "company_name": "Dr. Balazsicz Katalin — háziorvosi praxis",
+          "person_name": "Dr. Balazsicz Katalin — háziorvosi praxis",
+          "location": "ZALA"
         }
       ]
     },
@@ -37391,6 +39721,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "rendelo.verdoc@gmail.com",
+      "display_value": "rendelo.verdoc@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-05T10:27:43.728Z",
+      "last_reviewed_at": "2026-08-05T10:27:43.728Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 82,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-05T10:27:43.728Z",
+          "stage": null,
+          "company_name": "Dr. Szimándli Vera — háziorvosi praxis",
+          "person_name": "Dr. Szimándli Vera — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "rendelo@bognarmedical.hu",
@@ -38078,6 +40437,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "rendelo61@gmail.com",
+      "display_value": "rendelo61@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:46:15.549Z",
+      "last_reviewed_at": "2026-08-25T13:46:15.549Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 83,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:46:15.549Z",
+          "stage": null,
+          "company_name": "Dr. Bükki Éva — háziorvosi praxis",
+          "person_name": "Dr. Bükki Éva — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
       "email": "rendelo7624@gmail.com",
       "display_value": "rendelo7624@gmail.com",
       "used_in_campaign": true,
@@ -38166,6 +40554,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "rendeloczollner@gmail.com",
+      "display_value": "rendeloczollner@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:46:23.898Z",
+      "last_reviewed_at": "2026-08-25T13:46:23.898Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 84,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:46:23.898Z",
+          "stage": null,
+          "company_name": "Dr. Tóth Zoltán — háziorvosi praxis",
+          "person_name": "Dr. Tóth Zoltán — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
     },
     {
       "email": "rendelod.praxisn@gmail.com",
@@ -38284,6 +40701,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "rendelokorzet2@gmail.com",
+      "display_value": "rendelokorzet2@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:32:15.079Z",
+      "last_reviewed_at": "2026-08-04T12:32:15.079Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 85,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:32:15.079Z",
+          "stage": null,
+          "company_name": "Dr. Jekkel Csilla — háziorvosi praxis",
+          "person_name": "Dr. Jekkel Csilla — háziorvosi praxis",
+          "location": "KOMÁROM-ESZTERGOM"
+        }
+      ]
     },
     {
       "email": "rendelolaczid@netdr.hu",
@@ -39213,6 +41659,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "samsonkertrend@gmail.com",
+      "display_value": "samsonkertrend@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:29:55.911Z",
+      "last_reviewed_at": "2026-08-04T11:29:55.911Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 86,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:29:55.911Z",
+          "stage": null,
+          "company_name": "Dr. Vadász Györgyi — háziorvosi praxis",
+          "person_name": "Dr. Vadász Györgyi — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
       "email": "sanavitateam@gmail.com",
       "display_value": "sanavitateam@gmail.com",
       "used_in_campaign": true,
@@ -39509,6 +41984,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "schmidt.gyorgytibor@gmail.com",
+      "display_value": "schmidt.gyorgytibor@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T11:13:42.311Z",
+      "last_reviewed_at": "2026-08-04T11:13:42.311Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 87,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T11:13:42.311Z",
+          "stage": null,
+          "company_name": "Dr. Szabados Zsófia — háziorvosi praxis",
+          "person_name": "Dr. Szabados Zsófia — háziorvosi praxis",
+          "location": "SOMOGY"
+        }
+      ]
     },
     {
       "email": "schrameddr@gmail.com",
@@ -40440,6 +42944,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "sz.katalinrendelo@gmail.com",
+      "display_value": "sz.katalinrendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T10:54:16.051Z",
+      "last_reviewed_at": "2026-07-30T10:54:16.051Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 88,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T10:54:16.051Z",
+          "stage": null,
+          "company_name": "Dr. Száraz Katalin — háziorvosi praxis",
+          "person_name": "Dr. Száraz Katalin — háziorvosi praxis",
+          "location": "HEVES"
+        }
+      ]
+    },
+    {
       "email": "szabadka.rendelo@gmail.com",
       "display_value": "szabadka.rendelo@gmail.com",
       "used_in_campaign": true,
@@ -40560,6 +43093,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "szabojuditeva1963@gmail.com",
+      "display_value": "szabojuditeva1963@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-21T09:53:54.169Z",
+      "last_reviewed_at": "2026-08-21T09:53:54.169Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 89,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-21T09:53:54.169Z",
+          "stage": null,
+          "company_name": "Dr. Szabó Judit Éva — háziorvosi praxis",
+          "person_name": "Dr. Szabó Judit Éva — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "szabolcs.katalin@alapellatas.hu",
       "display_value": "szabolcs.katalin@alapellatas.hu",
       "used_in_campaign": true,
@@ -40646,6 +43208,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "szabonita@gmail.com",
+      "display_value": "szabonita@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:47:05.189Z",
+      "last_reviewed_at": "2026-08-25T13:47:05.189Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 90,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:47:05.189Z",
+          "stage": null,
+          "company_name": "Dr. Szabó Anita — háziorvosi praxis",
+          "person_name": "Dr. Szabó Anita — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
     },
     {
       "email": "szamosvari.timea@alapellatas11.hu",
@@ -41813,6 +44404,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "sztanyikferenc@gmail.com",
+      "display_value": "sztanyikferenc@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T12:54:19.066Z",
+      "last_reviewed_at": "2026-08-25T12:54:19.066Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 91,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T12:54:19.066Z",
+          "stage": null,
+          "company_name": "Dr. Török Ildikó — háziorvosi praxis",
+          "person_name": "Dr. Török Ildikó — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
+    },
+    {
       "email": "szucs.maria@alapellatas.hu",
       "display_value": "szucs.maria@alapellatas.hu",
       "used_in_campaign": true,
@@ -42293,6 +44913,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "telekeva60@gmail.com",
+      "display_value": "telekeva60@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-30T10:56:54.815Z",
+      "last_reviewed_at": "2026-07-30T10:56:54.815Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 92,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-30T10:56:54.815Z",
+          "stage": null,
+          "company_name": "Dr. Jakab Lajos — háziorvosi praxis",
+          "person_name": "Dr. Jakab Lajos — háziorvosi praxis",
+          "location": "HEVES"
+        }
+      ]
+    },
+    {
       "email": "terentibor@freemail.hu",
       "display_value": "terentibor@freemail.hu",
       "used_in_campaign": true,
@@ -42562,6 +45211,64 @@
       ]
     },
     {
+      "email": "titkarsag@szoboszlorendelo.hu",
+      "display_value": "titkarsag@szoboszlorendelo.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:41:56.986Z",
+      "last_reviewed_at": "2026-08-25T08:41:56.986Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 93,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:41:56.986Z",
+          "stage": null,
+          "company_name": "Dr. Ozsváth Márta — háziorvosi praxis",
+          "person_name": "Dr. Ozsváth Márta — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
+      "email": "tizeskorzet@freemail.hu",
+      "display_value": "tizeskorzet@freemail.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T11:19:26.440Z",
+      "last_reviewed_at": "2026-08-25T11:19:26.440Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 94,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T11:19:26.440Z",
+          "stage": null,
+          "company_name": "Dr. Jakab Lajos — háziorvosi praxis",
+          "person_name": "Dr. Jakab Lajos — háziorvosi praxis",
+          "location": "HEVES"
+        }
+      ]
+    },
+    {
       "email": "tizeskorzet@gmail.hu",
       "display_value": "tizeskorzet@gmail.hu",
       "used_in_campaign": true,
@@ -42592,6 +45299,64 @@
       "last_reviewed_at": null
     },
     {
+      "email": "toponarirendelo@gmail.com",
+      "display_value": "toponarirendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:29:07.486Z",
+      "last_reviewed_at": "2026-08-25T08:29:07.486Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 95,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:29:07.486Z",
+          "stage": null,
+          "company_name": "Dr. Müller Balázs — háziorvosi praxis",
+          "person_name": "Dr. Müller Balázs — háziorvosi praxis",
+          "location": "SOMOGY"
+        }
+      ]
+    },
+    {
+      "email": "tordasi@yahoo.co.uk",
+      "display_value": "tordasi@yahoo.co.uk",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T08:37:29.082Z",
+      "last_reviewed_at": "2026-08-25T08:37:29.082Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 96,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T08:37:29.082Z",
+          "stage": null,
+          "company_name": "Dr. Tordasi Éva — háziorvosi praxis",
+          "person_name": "Dr. Tordasi Éva — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "torocsik.kalman@alapellatas.hu",
       "display_value": "torocsik.kalman@alapellatas.hu",
       "used_in_campaign": true,
@@ -42620,6 +45385,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "torocsikmed@gmail.com",
+      "display_value": "torocsikmed@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:52:24.577Z",
+      "last_reviewed_at": "2026-08-25T13:52:24.577Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 97,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:52:24.577Z",
+          "stage": null,
+          "company_name": "Dr. Törőcsik Kálmán — háziorvosi praxis",
+          "person_name": "Dr. Törőcsik Kálmán — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
     },
     {
       "email": "torokirma@freemail.hu",
@@ -43102,6 +45896,35 @@
       "last_reviewed_at": null
     },
     {
+      "email": "tusor.timea@pc-honvedkorhaz.hu",
+      "display_value": "tusor.timea@pc-honvedkorhaz.hu",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-04T12:07:28.112Z",
+      "last_reviewed_at": "2026-08-04T12:07:28.112Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 98,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-04T12:07:28.112Z",
+          "stage": null,
+          "company_name": "Dr. Havay Miklós — háziorvosi praxis",
+          "person_name": "Dr. Havay Miklós — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
+    },
+    {
       "email": "tvizlerbt@gmail.com",
       "display_value": "tvizlerbt@gmail.com",
       "used_in_campaign": true,
@@ -43519,6 +46342,35 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "vagorendelo@gmail.com",
+      "display_value": "vagorendelo@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-25T13:54:09.760Z",
+      "last_reviewed_at": "2026-08-25T13:54:09.760Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 99,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-25T13:54:09.760Z",
+          "stage": null,
+          "company_name": "Dr. Vágó Orsolya — háziorvosi praxis",
+          "person_name": "Dr. Vágó Orsolya — háziorvosi praxis",
+          "location": "BÁCS-KISKUN"
+        }
+      ]
     },
     {
       "email": "valachrendelo@gmail.com",
@@ -45225,6 +48077,64 @@
       ],
       "first_reviewed_at": null,
       "last_reviewed_at": null
+    },
+    {
+      "email": "zsoltdrfordos@gmail.com",
+      "display_value": "zsoltdrfordos@gmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-07-29 8:32:18",
+      "last_reviewed_at": "2026-07-29 8:32:18",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 100,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-07-29 8:32:18",
+          "stage": null,
+          "company_name": "Dr. Fördős Zsolt — háziorvosi praxis",
+          "person_name": "Dr. Fördős Zsolt — háziorvosi praxis",
+          "location": "HAJDU-BIHAR"
+        }
+      ]
+    },
+    {
+      "email": "zsoltmeszoly@hotmail.com",
+      "display_value": "zsoltmeszoly@hotmail.com",
+      "used_in_campaign": true,
+      "campaign_count": 1,
+      "source_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "lead_ids": [],
+      "first_sent_at": null,
+      "last_sent_at": null,
+      "last_event_at": null,
+      "first_reviewed_at": "2026-08-21T09:52:45.805Z",
+      "last_reviewed_at": "2026-08-21T09:52:45.805Z",
+      "campaigns": [
+        {
+          "source_file": "Sep 2, used - Copy B.csv",
+          "row_number": 101,
+          "lead_id": null,
+          "sent_at": null,
+          "last_event_at": null,
+          "reviewed_at": "2026-08-21T09:52:45.805Z",
+          "stage": null,
+          "company_name": "Dr. Röder Rita — háziorvosi praxis",
+          "person_name": "Dr. Röder Rita — háziorvosi praxis",
+          "location": "PEST"
+        }
+      ]
     },
     {
       "email": "zsuffa.janos@alapellatas11.hu",

@@ -55,12 +55,19 @@
       "exported_at": "2026-08-28T09:17:15.755Z",
       "files": 2,
       "emails": 200
+    },
+    {
+      "name": "campaign-import",
+      "path": "/Users/andreslasn/Downloads/Sep 2, used - Copy B.csv",
+      "exported_at": "2026-09-08T11:18:21.679Z",
+      "files": 1,
+      "emails": 100
     }
   ],
-  "generated_at": "2026-08-28T09:17:15.755Z",
+  "generated_at": "2026-09-08T11:18:21.679Z",
   "counts": {
-    "validations": 3727,
-    "indexed_validations": 3727,
+    "validations": 3728,
+    "indexed_validations": 3728,
     "not_in_email_index": 0
   },
   "validations": [
@@ -48127,11 +48134,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "gyermekorvos@csepelidoki.hu",
@@ -48238,6 +48250,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -48266,8 +48279,13 @@
       ],
       "audit_flags": [],
       "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
-      "source_campaign_files": [],
-      "source_campaign_lead_ids": []
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": [],
+      "occurrence_count": 2,
+      "clinic_id": "f110ac9a-f3e8-4f5a-a823-92b9f742686c",
+      "contact_point_id": "4af2c3f5-c7d1-4378-864a-425b00766a26"
     },
     {
       "email": "gyermekorvos1@spvri.hu",
@@ -48348,6 +48366,7 @@
       "updated_at": "2026-08-04T12:34:12.615Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -48357,7 +48376,9 @@
         "f1a99b65-a2f9-4911-838d-62a7aad33ed6"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -48368,7 +48389,8 @@
           "reviewed_value": "gyermekorvos2@csomor.hu",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "gyermekorvos2@kiskunmajsa.hu",
@@ -48532,11 +48554,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "gyermekorvosmecseknadasd@gmail.com",
@@ -50143,11 +50170,16 @@
       "occurrence_count": 6,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "hadi.leticia@med.u-szeged.hu",
@@ -50820,11 +50852,16 @@
       "occurrence_count": 3,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "harmati.valeria@gmail.com",
@@ -51168,11 +51205,16 @@
       "occurrence_count": 12,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "hazidoki19@gmail.com",
@@ -51281,6 +51323,7 @@
       "updated_at": "2026-08-05T10:14:09.657Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -51290,7 +51333,9 @@
         "3adcdce8-45f2-4728-9203-44e7dea0a89a"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -51301,7 +51346,8 @@
           "reviewed_value": "haziorvos.eger8@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "haziorvos.filler@gmail.com",
@@ -51396,6 +51442,7 @@
       "updated_at": "2026-08-05T10:23:38.719Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -51405,7 +51452,9 @@
         "11761acd-d423-4271-b5ed-b8ec73fba3cb"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -51416,7 +51465,8 @@
           "reviewed_value": "haziorvos.tothmolnar@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 6
     },
     {
       "email": "haziorvos@innomedkft.hu",
@@ -51759,6 +51809,7 @@
       "updated_at": "2026-08-04T12:25:14.342Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -51768,7 +51819,9 @@
         "fadb57fb-6d16-46f0-a1d7-d98622d39338"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -51779,7 +51832,8 @@
           "reviewed_value": "haziorvos13@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 11
     },
     {
       "email": "haziorvos15@gmail.com",
@@ -51979,6 +52033,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -52007,8 +52062,13 @@
       ],
       "audit_flags": [],
       "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
-      "source_campaign_files": [],
-      "source_campaign_lead_ids": []
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": [],
+      "occurrence_count": 2,
+      "clinic_id": "aac3e7b2-8501-4430-8743-f4c2aa85df89",
+      "contact_point_id": "cd6a124b-3130-46dc-9959-86ab03ed2563"
     },
     {
       "email": "haziorvosbercel@gmail.com",
@@ -52021,6 +52081,7 @@
       "updated_at": "2026-08-04T12:34:48.381Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -52030,7 +52091,9 @@
         "3df1f825-c702-4613-8e5f-05216c58eb48"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -52041,7 +52104,8 @@
           "reviewed_value": "haziorvosbercel@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "haziorvoshornyak35korzet@gmail.com",
@@ -52159,6 +52223,7 @@
       "updated_at": "2026-08-04T12:28:56.029Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -52168,7 +52233,9 @@
         "1c1f7d2c-f1d1-4097-ba58-7de29169bb5f"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -52179,7 +52246,8 @@
           "reviewed_value": "haziorvosirendelo.2sz@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 5
     },
     {
       "email": "haziorvosirendeloszoreg@gmail.com",
@@ -52346,11 +52414,16 @@
       "occurrence_count": 11,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "haziorvosom02@gmail.com",
@@ -53512,6 +53585,7 @@
       "updated_at": "2026-08-04T11:23:35.808Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -53521,7 +53595,9 @@
         "da55890a-3dbc-402d-9950-c0ecc839a07d"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -53532,7 +53608,8 @@
           "reviewed_value": "hernad2recept@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "hernadi.gyongyver@pte.hu",
@@ -53622,6 +53699,7 @@
       "updated_at": "2026-08-04T12:30:51.511Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -53631,7 +53709,9 @@
         "10e77f17-3c19-49a8-9114-7bfa40568c73"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -53642,7 +53722,8 @@
           "reviewed_value": "hertelendyapolo@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 4
     },
     {
       "email": "hetvehely.vedono@gmail.com",
@@ -53688,11 +53769,16 @@
       "occurrence_count": 7,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "hh@hh16.hu",
@@ -54695,6 +54781,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -54723,8 +54810,13 @@
       ],
       "audit_flags": [],
       "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
-      "source_campaign_files": [],
-      "source_campaign_lead_ids": []
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": [],
+      "occurrence_count": 6,
+      "clinic_id": "a93ce01c-5d00-4dfa-8a47-f82c525dfde4",
+      "contact_point_id": "c4ac06d4-49ec-474d-a350-88b2658eec7a"
     },
     {
       "email": "ho.drmarkovics4@freemail.hu",
@@ -54882,6 +54974,7 @@
       "updated_at": "2026-08-05T10:22:27.838Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -54891,7 +54984,9 @@
         "70379843-6e8a-4241-a0df-b848ffeeb140"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -54902,7 +54997,8 @@
           "reviewed_value": "hoffergabormed@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 4
     },
     {
       "email": "holczer.eszter@pte.hu",
@@ -55941,6 +56037,7 @@
       "updated_at": "2026-08-04T11:13:55.710Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -55950,7 +56047,9 @@
         "38aa6f61-9849-4438-90a1-49e3837d6604"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -55961,7 +56060,8 @@
           "reviewed_value": "humanumbeteg@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 3
     },
     {
       "email": "hungarikumliget@hungarikumliget.hu",
@@ -57361,6 +57461,7 @@
       "updated_at": "2026-07-30T10:56:40.432Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -57370,7 +57471,9 @@
         "e3c28166-fc49-4418-ac00-3ed3d9a26b35"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -57381,7 +57484,8 @@
           "reviewed_value": "illyesannadr@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "ilona.katona@freemail.hu",
@@ -57479,11 +57583,16 @@
       "occurrence_count": 3,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "imreffy@t-online.hu",
@@ -63897,6 +64006,7 @@
       "updated_at": "2026-08-05T10:17:56.004Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -63906,7 +64016,9 @@
         "6417808e-c46c-49c9-9f20-e050694ab9ed"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -63917,7 +64029,8 @@
           "reviewed_value": "istvan.schutz@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "istvan.varga@webteszt.com",
@@ -64074,6 +64187,26 @@
       "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
     },
     {
+      "email": "ivanfimed@gmail.com",
+      "display_value": "ivanfimed@gmail.com",
+      "status": "valid",
+      "reviewed_by": "campaign-import",
+      "reviewed_at": "2026-08-28T11:08:37.177Z",
+      "updated_at": "2026-08-28T11:08:37.177Z",
+      "source": "campaign-import",
+      "source_exports": [
+        "campaign-import"
+      ],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": [],
+      "occurrence_count": 3,
+      "clinic_id": "cd6a0320-7a21-4d92-88c3-b89f05dce225",
+      "contact_point_id": "e09f53ca-340b-4f1d-a4fd-b2522ea26657",
+      "audit_flags": []
+    },
+    {
       "email": "ivanova.eniko@pte.hu",
       "display_value": "ivanova.eniko@pte.hu",
       "status": "invalid",
@@ -64199,11 +64332,16 @@
       "occurrence_count": 12,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "jagicza.anna@pte.hu",
@@ -64280,6 +64418,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -64308,8 +64447,13 @@
       ],
       "audit_flags": [],
       "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
-      "source_campaign_files": [],
-      "source_campaign_lead_ids": []
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": [],
+      "occurrence_count": 2,
+      "clinic_id": "b267d888-60ea-421c-87f8-0ef6305f742c",
+      "contact_point_id": "6be7536e-7f87-4026-ab46-87fe7f0192ab"
     },
     {
       "email": "jakabetelkadr@gmail.com",
@@ -64765,11 +64909,16 @@
       "occurrence_count": 3,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "janoshida1@gmail.com",
@@ -64782,6 +64931,7 @@
       "updated_at": "2026-07-30T09:01:12.788Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -64791,7 +64941,9 @@
         "20290f0c-19b7-45ac-b554-81927c333a16"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -64802,7 +64954,8 @@
           "reviewed_value": "janoshida1@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "jaras.retsag@nmkh.hu",
@@ -66509,6 +66662,7 @@
       "updated_at": "2026-08-05T10:28:08.196Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -66519,7 +66673,9 @@
         "92e97327-4128-4284-aced-350ca434c2b0"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -66538,7 +66694,8 @@
           "reviewed_value": "jutomed2@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 13
     },
     {
       "email": "jzsfhalasz@gmail.com",
@@ -67741,6 +67898,7 @@
       "updated_at": "2026-08-05T11:08:15.892Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -67750,7 +67908,9 @@
         "ac947a40-9e6c-40e7-ba77-d77fa31a7a72"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -67761,7 +67921,8 @@
           "reviewed_value": "kaposvar.5korzet@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 15
     },
     {
       "email": "kaposvar.6.korzet@gmail.com",
@@ -67774,6 +67935,7 @@
       "updated_at": "2026-08-04T12:06:42.712Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -67783,7 +67945,9 @@
         "ca632221-ea00-406c-981c-58b79ffd416f"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -67794,7 +67958,8 @@
           "reviewed_value": "kaposvar.6.korzet@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "kaprinai@lilinor-med.hu",
@@ -67855,6 +68020,7 @@
       "updated_at": "2026-08-04T12:08:32.246Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -67864,7 +68030,9 @@
         "74ade8f2-c056-48a0-bdf8-2e3c8fa66b4e"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -67875,7 +68043,8 @@
           "reviewed_value": "kapusinedrvasseva@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 10
     },
     {
       "email": "kara.eva@alapellatas.hu",
@@ -68390,11 +68559,16 @@
       "occurrence_count": 2,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "karrier@leobudapest.hu",
@@ -68861,11 +69035,16 @@
       "occurrence_count": 2,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "katonatelep.recept@gmail.com",
@@ -68883,11 +69062,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "kavabenyerendelo@gmail.com",
@@ -68900,6 +69084,7 @@
       "updated_at": "2026-08-04T12:05:24.497Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -68909,7 +69094,9 @@
         "a0be0101-5cc6-456a-b83e-e62800359b6c"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -68920,7 +69107,8 @@
           "reviewed_value": "kavabenyerendelo@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "kaveczki.andrea@biatorbagy.hu",
@@ -69623,6 +69811,7 @@
       "updated_at": "2026-07-30T10:53:38.017Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -69632,7 +69821,9 @@
         "4d644ef8-e7c6-4792-8624-146a7ef0975e"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -69643,7 +69834,8 @@
           "reviewed_value": "kerkuska.ilona@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "kerpolhi@kerekegyhaza.hu",
@@ -69683,11 +69875,16 @@
       "occurrence_count": 9,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "kertvarosigyerekrendelo@gmail.com",
@@ -69844,11 +70041,16 @@
       "occurrence_count": 6,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "keverecept@gmail.com",
@@ -69939,11 +70141,16 @@
       "occurrence_count": 10,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "kicsikincsem.med@gmail.com",
@@ -71598,6 +71805,7 @@
       "updated_at": "2026-08-04T12:33:05.545Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -71607,7 +71815,9 @@
         "92370c5f-cb9f-42d1-848e-0ec08d06085b"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -71618,7 +71828,8 @@
           "reviewed_value": "konczmedikids@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "konczzs2@gmail.com",
@@ -72215,6 +72426,7 @@
       "updated_at": "2026-08-04T11:18:25.036Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -72224,7 +72436,9 @@
         "8bd73b12-7463-4316-bbea-6bb0c463c1d1"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -72235,7 +72449,8 @@
           "reviewed_value": "korkepbt1956@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 6
     },
     {
       "email": "kormany.zsolt@gmail.com",
@@ -72552,11 +72767,16 @@
       "occurrence_count": 13,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "korzet1isaszeg@gmail.com",
@@ -72569,6 +72789,7 @@
       "updated_at": "2026-08-05T10:19:28.267Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -72578,7 +72799,9 @@
         "c9ddb031-565f-41fa-82fb-7e2205f337c1"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -72589,7 +72812,8 @@
           "reviewed_value": "korzet1isaszeg@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "korzet21@gmail.com",
@@ -75078,6 +75302,7 @@
       "updated_at": "2026-07-17T09:55:57.103Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -75087,7 +75312,9 @@
         "36d54519-a9c0-4645-b5bb-9fc6a10f67f8"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -75098,7 +75325,8 @@
           "reviewed_value": "kvassay24@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 7
     },
     {
       "email": "labor.dorozsmai@gmail.com",
@@ -75257,6 +75485,7 @@
       "updated_at": "2026-08-04T11:47:06.087Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -75266,7 +75495,9 @@
         "070f376f-dc55-4f52-88ee-0526998b1507"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -75277,7 +75508,8 @@
           "reviewed_value": "lacidoki2@freemail.hu",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "lajko.ilona@alapellatas.hu",
@@ -75365,11 +75597,16 @@
       "occurrence_count": 2,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "lakiandras@freemail.hu",
@@ -76642,11 +76879,16 @@
       "occurrence_count": 10,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "lilykanchan@yahoo.com",
@@ -77820,11 +78062,16 @@
       "occurrence_count": 2,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "m2d2kft@gmail.com",
@@ -78355,6 +78602,7 @@
       "updated_at": "2026-08-05T10:24:12.518Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -78364,7 +78612,9 @@
         "5ebf12f7-c52a-43af-826d-cbd70cd69270"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -78375,7 +78625,8 @@
           "reviewed_value": "magyardoktorno@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "magyaridoktor@gmail.com",
@@ -78949,6 +79200,7 @@
       "updated_at": "2026-08-05T10:27:33.512Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -78958,7 +79210,9 @@
         "18f57557-b176-4a39-98be-6d06adab507c"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -78969,7 +79223,8 @@
           "reviewed_value": "margit.stahorszky@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "maria.bedok@t-online.hu",
@@ -79880,11 +80135,16 @@
       "occurrence_count": 11,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "medberbt@gmail.com",
@@ -80004,6 +80264,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -80032,8 +80293,13 @@
       ],
       "audit_flags": [],
       "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
-      "source_campaign_files": [],
-      "source_campaign_lead_ids": []
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": [],
+      "occurrence_count": 2,
+      "clinic_id": "d5003244-315b-4b6b-a1ec-15f475031dfb",
+      "contact_point_id": "523b287d-50a4-47e5-9794-60877af36182"
     },
     {
       "email": "medelledoki@gmail.com",
@@ -80776,11 +81042,16 @@
       "occurrence_count": 3,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "medihelperbt@gmail.com",
@@ -81574,6 +81845,7 @@
       "updated_at": "2026-07-30T10:54:41.273Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -81583,7 +81855,9 @@
         "2ef167de-5721-41ee-8a05-ce07e5d50580"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -81594,7 +81868,8 @@
           "reviewed_value": "megu@megu.hu",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "megyeridoki@gmail.com",
@@ -82483,11 +82758,16 @@
       "occurrence_count": 12,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "miskeonk@t-online.hu",
@@ -83345,11 +83625,16 @@
       "occurrence_count": 6,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "molnardrrecept@gmail.com",
@@ -85135,6 +85420,7 @@
       "updated_at": "2026-07-30T10:57:46.047Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -85144,7 +85430,9 @@
         "b23ec36d-deb5-4f8e-b23f-3b772eb14c20"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -85155,7 +85443,8 @@
           "reviewed_value": "nagyg0747@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "nagyj2001@gmail.com",
@@ -88444,6 +88733,7 @@
       "updated_at": "2026-08-04T11:36:07.038Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -88453,7 +88743,9 @@
         "82a49283-7a82-4ac2-ab4e-0549530bf246"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -88464,7 +88756,8 @@
           "reviewed_value": "orla2100@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 16
     },
     {
       "email": "ormaine.kollar.eva@pte.hu",
@@ -89168,11 +89461,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "orvosdoktor4@gmail.com",
@@ -89511,6 +89809,7 @@
       "updated_at": "2026-08-04T11:43:07.635Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -89520,7 +89819,9 @@
         "95f02321-88cc-4205-9d20-ec63f31e5b6a"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -89531,7 +89832,8 @@
           "reviewed_value": "orvosirendelokaposvar3@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "orvosirendelolengyela@gmail.com",
@@ -89689,11 +89991,16 @@
       "occurrence_count": 16,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "osh@osei.hu",
@@ -90426,11 +90733,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "palanta@mail2000.net",
@@ -90553,6 +90865,7 @@
       "updated_at": "2026-07-30T09:04:46.286Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -90564,7 +90877,9 @@
         "e1ded5b3-c404-5069-a898-d38e1affb5a3"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -90583,7 +90898,8 @@
           "reviewed_value": "palilona56@gmail.com",
           "source_export": "canonical-review-state"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "palkone.kubik.andrea@pte.hu",
@@ -91284,11 +91600,16 @@
       "occurrence_count": 5,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "papp.dr.53@freemail.hu",
@@ -92010,11 +92331,16 @@
       "occurrence_count": 2,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "pediodoktor@gmail.com",
@@ -95211,11 +95537,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "poncsakcsaba@freemail.hu",
@@ -96572,11 +96903,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "praxis313@alapellatas.hu",
@@ -97507,6 +97843,7 @@
       "updated_at": "2026-08-04T11:22:55.138Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -97516,7 +97853,9 @@
         "0348c4fb-a8cf-4220-be6a-a816902a96c2"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -97527,7 +97866,8 @@
           "reviewed_value": "psppatika.bt@chello.hui",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "pszgyszk@gmail.com",
@@ -97708,11 +98048,16 @@
       "occurrence_count": 16,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "quaiser.erzsebet@alapellatas11.hu",
@@ -97948,6 +98293,7 @@
       "updated_at": "2026-07-30T09:06:52.000Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -97959,7 +98305,9 @@
         "dd6fca53-55df-4663-86bc-fec539ac84dd"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -97978,7 +98326,8 @@
           "reviewed_value": "raczdoktor4242@gmail.com",
           "source_export": "canonical-review-state"
         }
-      ]
+      ],
+      "occurrence_count": 5
     },
     {
       "email": "raczdr65@gmail.com",
@@ -98697,6 +99046,7 @@
       "updated_at": "2026-08-04T12:28:42.846Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -98706,7 +99056,9 @@
         "81bfa913-3663-4b9e-a384-09cb8cc31119"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -98717,7 +99069,8 @@
           "reviewed_value": "recept.banyai@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 2
     },
     {
       "email": "recept.boszormenyi@gmail.com",
@@ -98822,6 +99175,7 @@
       "updated_at": "2026-08-04T11:27:06.359Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -98833,7 +99187,9 @@
         "b48db73e-8270-5278-bf80-fb72afd2ba3c"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -98852,7 +99208,8 @@
           "reviewed_value": "recept.hajduhadhaz@gmail.com",
           "source_export": "canonical-review-state"
         }
-      ]
+      ],
+      "occurrence_count": 5
     },
     {
       "email": "recept.hirsch@gmail.com",
@@ -99161,11 +99518,16 @@
       "occurrence_count": 12,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "recept31korzet@gmail.com",
@@ -99355,6 +99717,7 @@
       "updated_at": "2026-07-30T10:51:26.420Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -99364,7 +99727,9 @@
         "69b1a0eb-2c23-44bc-9cd4-c47d2b36d447"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -99375,7 +99740,8 @@
           "reviewed_value": "recepthogyesz@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "receptholnap@netdr.hu",
@@ -99485,11 +99851,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "receptiras99@gmail.com",
@@ -99583,6 +99954,7 @@
       "updated_at": "2026-08-04T11:14:35.227Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -99592,7 +99964,9 @@
         "4a228b8b-865f-43d3-81ae-6cfb1d43e11a"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -99603,7 +99977,8 @@
           "reviewed_value": "receptkeres@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 3
     },
     {
       "email": "receptkeres62@gmail.com",
@@ -100405,6 +100780,7 @@
       "updated_at": "2026-08-04T12:31:42.098Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -100414,7 +100790,9 @@
         "cc0ac066-951d-41c4-bee7-e481bfc0c102"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -100425,7 +100803,8 @@
           "reviewed_value": "rendeles.incze@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 4
     },
     {
       "email": "rendelesprugberger@gmail.com",
@@ -100550,11 +100929,16 @@
       "occurrence_count": 15,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "rendelo.bogacs@freemail.com",
@@ -100746,6 +101130,7 @@
       "updated_at": "2026-08-04T11:15:22.629Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -100755,7 +101140,9 @@
         "7fae1518-f9d2-486b-af32-6c4c30fd9a72"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -100766,7 +101153,8 @@
           "reviewed_value": "rendelo.egervar@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "rendelo.lakitelek@gmail.com",
@@ -101109,6 +101497,7 @@
       "updated_at": "2026-08-05T10:27:43.728Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -101118,7 +101507,9 @@
         "f68d0b94-c279-41ed-ac41-7fab2d7506d4"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -101129,7 +101520,8 @@
           "reviewed_value": "rendelo.verdoc@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 1
     },
     {
       "email": "rendelo@bognarmedical.hu",
@@ -102335,11 +102727,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "rendelo7624@gmail.com",
@@ -102481,11 +102878,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "rendelod.praxisn@gmail.com",
@@ -102782,6 +103184,7 @@
       "updated_at": "2026-08-04T12:32:15.079Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -102791,7 +103194,9 @@
         "a19aeb76-836b-464a-96d8-35e8faf79342"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -102802,7 +103207,8 @@
           "reviewed_value": "rendelokorzet2@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 8
     },
     {
       "email": "rendelolaczid@netdr.hu",
@@ -105145,6 +105551,7 @@
       "updated_at": "2026-08-04T11:29:55.911Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -105156,7 +105563,9 @@
         "b3727d93-ecd8-5f0e-826e-c86b1427e802"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -105175,7 +105584,8 @@
           "reviewed_value": "samsonkertrend@gmail.com",
           "source_export": "canonical-review-state"
         }
-      ]
+      ],
+      "occurrence_count": 3
     },
     {
       "email": "sanavitateam@gmail.com",
@@ -105949,6 +106359,7 @@
       "updated_at": "2026-08-04T11:13:42.311Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -105958,7 +106369,9 @@
         "8cc6ccf0-c93d-4b82-96cf-3d872915b166"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -105969,7 +106382,8 @@
           "reviewed_value": "schmidt.gyorgytibor@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 5
     },
     {
       "email": "schneider.edina@pte.hu",
@@ -108485,6 +108899,7 @@
       "updated_at": "2026-07-30T10:54:16.051Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -108494,7 +108909,9 @@
         "dd401025-ee17-46f5-b92c-0a96f1d2e671"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -108505,7 +108922,8 @@
           "reviewed_value": "sz.katalinrendelo@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 7
     },
     {
       "email": "sz.marta65@gmail.com",
@@ -108867,11 +109285,16 @@
       "occurrence_count": 16,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "szaboki_sandor@aranykapu.hu",
@@ -109166,11 +109589,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "szaborozsaveronika2@gmail.com",
@@ -113052,11 +113480,16 @@
       "occurrence_count": 2,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "szucs.maria@alapellatas.hu",
@@ -114733,6 +115166,7 @@
       "updated_at": "2026-07-30T10:56:54.815Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -114742,7 +115176,9 @@
         "60279f9f-56c4-4ad5-b30a-630a2ca65591"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -114753,7 +115189,8 @@
           "reviewed_value": "telekeva60@gmail.com",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 6
     },
     {
       "email": "telepules.vaskut@gmail.com",
@@ -116184,11 +116621,16 @@
       "occurrence_count": 10,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "titkarsag@tazlar.hu",
@@ -116382,11 +116824,16 @@
       "occurrence_count": 7,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "tizeskorzet@gmail.hu",
@@ -116688,11 +117135,16 @@
       "occurrence_count": 12,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "tordasi@yahoo.co.uk",
@@ -116710,11 +117162,16 @@
       "occurrence_count": 11,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "tormajanos@gmail.com",
@@ -116820,11 +117277,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "torok.veronika@pte.hu",
@@ -118253,6 +118715,7 @@
       "updated_at": "2026-08-04T12:07:28.112Z",
       "source": "legacy-decision",
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
@@ -118262,7 +118725,9 @@
         "21b6a561-2d13-4144-8fdc-cd796f8b5e1c"
       ],
       "audit_flags": [],
-      "source_campaign_files": [],
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
       "source_campaign_lead_ids": [],
       "occurrences": [
         {
@@ -118273,7 +118738,8 @@
           "reviewed_value": "tusor.timea@pc-honvedkorhaz.hu",
           "source_export": "latest-reviewer-export"
         }
-      ]
+      ],
+      "occurrence_count": 3
     },
     {
       "email": "tvizlerbt@gmail.com",
@@ -119795,11 +120261,16 @@
       "occurrence_count": 1,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "vagvolgyie@t-online.hu",
@@ -125130,6 +125601,7 @@
       "updated_at": "2026-07-29T08:32:17.809793",
       "source": "review-export-seed",
       "source_exports": [
+        "campaign-import",
         "canonical-review-state",
         "latest-reviewer-export"
       ],
@@ -125158,8 +125630,13 @@
       ],
       "audit_flags": [],
       "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
-      "source_campaign_files": [],
-      "source_campaign_lead_ids": []
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": [],
+      "occurrence_count": 2,
+      "clinic_id": "8887c5bc-4119-413a-8009-d688e7781ebb",
+      "contact_point_id": "eb855d7f-d774-485b-9b87-e25330e10c35"
     },
     {
       "email": "zsoltmeszoly@hotmail.com",
@@ -125177,11 +125654,16 @@
       "occurrence_count": 17,
       "audit_flags": [],
       "source_exports": [
+        "campaign-import",
         "latest-reviewer-export"
       ],
       "source_exported_at": "2026-08-28T09:13:52.524Z",
       "source_dataset_id": "hu-review-20260729T094757Z",
-      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json"
+      "source_review_export_path": "clinic-review-hu-review-20260729T094757Z-reviewer-2026-08-28T0913.json",
+      "source_campaign_files": [
+        "Sep 2, used - Copy B.csv"
+      ],
+      "source_campaign_lead_ids": []
     },
     {
       "email": "zsubereczki@gmail.com",
