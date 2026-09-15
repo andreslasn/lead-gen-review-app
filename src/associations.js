@@ -5,12 +5,13 @@ export function associationState(base, events = []) {
   const superseded = new Set(pairEvents.flatMap(e => e.supersedes || []));
   const heads = pairEvents.filter(e => !superseded.has(e.id));
   if (!heads.length) return { ...base, status: pairEvents.length ? 'conflict' : base.status, heads: pairEvents.map(e=>e.id) };
-  const signatures = new Set(heads.map(e => JSON.stringify([e.status, e.contact_role, e.owner_name, e.contact_purpose||''])));
+  const signatures = new Set(heads.map(e => JSON.stringify([e.status, e.contact_role, e.owner_name, e.contact_purpose||'',e.webpage_capabilities?.actions.length?[e.webpage_capabilities.version,[...e.webpage_capabilities.actions].sort(),e.webpage_capabilities.provider]:null])));
   if (signatures.size > 1) return { ...base, status: 'conflict', heads: heads.map(e => e.id), reason: 'Reviewers disagree. Review the evidence and save a decision to resolve the conflict.' };
   const newest = [...heads].sort((a,b) => a.reviewed_at.localeCompare(b.reviewed_at) || a.id.localeCompare(b.id)).at(-1);
   return { ...base, ...newest, id: base.id, heads: heads.map(e => e.id) };
 }
 export function validateAssociationDecision(e) {
+  if(e&&Object.hasOwn(e,'webpage_capabilities'))throw Error('Patient capabilities require a Latvia webpage.');
   if (!e || typeof e.id !== 'string' || !e.id || !/^[^\s@]+@[^\s@]+$/.test(e.email || '') || !/^[A-Z0-9]{4}$/.test(e.provider_code || '') || e.country !== 'HU') throw Error('Invalid email-to-provider identity.');
   if (e.association_id !== associationKey(e.email, e.provider_code)) throw Error('Email-to-provider key mismatch.');
   if (!['confirmed','rejected','unreviewed'].includes(e.status) || !['unknown','clinic_contact','doctor_staff','shared_contact'].includes(e.contact_role)) throw Error('Invalid association decision.');

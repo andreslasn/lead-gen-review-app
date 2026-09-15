@@ -1,11 +1,16 @@
 import { associationState, safeSourceUrl } from './associations.js';
 export const researchFields = {website:'Website', email:'Email account link', telephone:'Telephone', practice_software:'Practice software', patient_tools:'Patient tools', opening_hours:'Opening hours', patient_count_clue:'Patient count clue (scope unverified)'};
-export const contactRoles = {practice:'Practice contact',doctor:'Doctor',reception:'Reception / assistant',prescriptions:'Prescriptions',shared:'Shared organisation contact',municipal:'Municipal contact',webmaster:'Website / data operator',historical:'Historical contact',unrelated:'Unrelated contact',unresolved:'Purpose unresolved',practice_website:'Practice website',patient_portal:'Patient portal',social_profile:'Social profile',source_page:'Supporting source',fax:'Fax',out_of_hours:'Out-of-hours service'};
+export const contactRoles = {practice:'Practice contact',doctor:'Doctor',reception:'Reception / assistant',prescriptions:'Prescriptions',shared:'Shared organisation contact',municipal:'Municipal contact',webmaster:'Website / data operator',historical:'Historical contact',unrelated:'Unrelated contact',unresolved:'Purpose unresolved',practice_website:'Practice website',patient_portal:'Patient portal',social_profile:'Social profile',source_page:'Supporting source',directory_profile:'Directory / registry profile',organisation_profile:'Hospital / organisation profile',fax:'Fax',out_of_hours:'Out-of-hours service'};
 export const contactFields = ['email','website','telephone'];
 const excludedContactRoles = new Set(['municipal','webmaster','historical','unrelated','source_page','fax','out_of_hours']);
 export const validAccountKey = key => /^(?:HU:[A-Z0-9]{4}|LV:[a-f0-9]{20})$/.test(key||'');
 export const validEvidencePath = path => /^account-evidence\/(?:[A-Z0-9]{4}|LV-[a-f0-9]{20})-[a-f0-9]{16}\.json$/.test(path||'');
-export const webpageRoles = {practice_website:'Practice websites',patient_portal:'Patient portals',social_profile:'Social profiles',source_page:'Supporting sources'};
+export const webpageRoles = {practice_website:'Practice websites',patient_portal:'Patient portals',social_profile:'Social profiles',directory_profile:'Directory / registry profiles',organisation_profile:'Hospital / organisation profiles',source_page:'Supporting sources'};
+export const webpageActions = {book_appointment:'Book an appointment',request_appointment:'Request an appointment',general_enquiry:'Send a general enquiry',none_observed:'No capability observed',unclear:'Unclear'};
+export function validateWebpageCapabilities(value) {
+  if(!value||value.version!==1||!Array.isArray(value.actions)||value.actions.some(a=>typeof a!=='string'||!Object.hasOwn(webpageActions,a))||new Set(value.actions).size!==value.actions.length||value.actions.some(a=>['none_observed','unclear'].includes(a))&&value.actions.length!==1||typeof value.provider!=='string'||value.provider.length>160||value.provider!==value.provider.trim()||value.provider&&(!value.actions.length||value.actions.some(a=>['none_observed','unclear'].includes(a)))||Object.keys(value).some(k=>!['version','actions','provider'].includes(k)))throw Error('Invalid webpage capabilities.');
+  return value;
+}
 export function validateFieldDecision(e, pkg) {
   if (!e || !e.id || !/^[a-f0-9]{64}$/.test(e.claim_id||'') || !validAccountKey(e.account_key) || !researchFields[e.field] || e.field==='email' || e.account_key.startsWith('LV:')&&e.field!=='website' || !['confirmed','rejected','unreviewed'].includes(e.status) || !e.reviewed_by || !Number.isFinite(Date.parse(e.reviewed_at)) || !Array.isArray(e.supersedes) || e.supersedes.includes(e.id) || !Array.isArray(e.observation_ids) || !e.observation_ids.length) throw Error('Invalid account field decision.');
   if (pkg) {
@@ -14,10 +19,14 @@ export function validateFieldDecision(e, pkg) {
   }
   if(e.contact_role!=null&&!Object.hasOwn(contactRoles,e.contact_role))throw Error('Invalid contact purpose.');
   if(e.account_key.startsWith('LV:')&&e.contact_role!=null&&!Object.hasOwn(webpageRoles,e.contact_role))throw Error('Invalid webpage role.');
+  if(Object.hasOwn(e,'webpage_capabilities')){
+    if(!e.account_key.startsWith('LV:')||e.field!=='website')throw Error('Patient capabilities require a Latvia webpage.');
+    validateWebpageCapabilities(e.webpage_capabilities);
+  }
   return e;
 }
 export function fieldState(claim, events=[]) {
-  const matching=events.filter(e=>e.claim_id===claim.claim_id);
+  const matching=events.filter(e=>e.claim_id===claim.claim_id&&e.account_key===claim.account_key);
   return associationState({...claim,id:claim.claim_id,status:'unreviewed'},matching.map(e=>({...e,association_id:e.claim_id,contact_role:e.contact_role||'',owner_name:''})));
 }
 export function validateAccountPackage(pkg, manifest) {

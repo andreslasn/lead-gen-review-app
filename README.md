@@ -40,6 +40,27 @@ saving. Choose **Right clinic** (`1`) or **Wrong clinic** (`2`), then **Confirm*
 leave text inputs and selects to their native controls, and navigation is paused
 while a review saves. An unsaved choice does not carry over to another webpage.
 
+**Page role** also includes **Directory / registry profile** and
+**Hospital / organisation profile**. Choose the role independently of the
+patient functions: a directory profile can offer booking without being the
+practice's own website. Account qualification is unchanged.
+
+Under **What can patients do on this page?**, select any combination of booking
+an appointment, requesting an appointment and sending a general enquiry. **No
+capability observed** and **Unclear** are exclusive alternatives; leaving all
+unchecked means **Not reviewed**. Name the booking/service provider if identifiable.
+These findings apply to the displayed account on that page. A directory entry or
+generic portal link does not establish booking or use of clinical software.
+
+The optional field-event extension `webpage_capabilities` has `version: 1`, an
+`actions` array (`book_appointment`, `request_appointment`, `general_enquiry`,
+`none_observed`, `unclear`) and `provider` (trimmed text, at most 160 characters).
+Only the three positive actions allow a provider. Historical events without this
+extension remain valid and their functions stay not reviewed. JSON transfer and
+canonical import retain these fields; conflicting reviewer findings require an
+explicit resolution. The dashboard displays capabilities only for confirmed
+account links. Existing Hungarian validity and campaign-use state stays separate.
+
 Latvia uses the existing field-decision store with `LV:<dashboard-record-id>`
 identities, since institution codes can repeat. Confirmed, rejected and pending
 views include saved decisions after reload. A failed evidence download disables

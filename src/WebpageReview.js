@@ -1,5 +1,5 @@
 import {computed,ref,watch} from 'vue';
-import {fieldState,webpageRoles} from './accountEvidence.js';
+import {fieldState,webpageRoles,webpageActions} from './accountEvidence.js';
 import {safeSourceUrl} from './associations.js';
 import ReviewHeader from './ReviewHeader.js';
 
@@ -8,7 +8,7 @@ export default {
   props:{pkg:Object,decisions:Array,reviewer:String,saving:Boolean,error:String},
   emits:['decision','load-account','retry','export','import'],
   setup(props,{emit}) {
-    const search=ref(new URLSearchParams(location.hash.slice(1)).get('account')||''),kind=ref(new URLSearchParams(location.hash.slice(1)).has('account')?'all':'practice_website'),status=ref('unreviewed'),selected=ref(''),copied=ref(''),reviewRole=ref('practice_website'),choice=ref('');
+    const search=ref(new URLSearchParams(location.hash.slice(1)).get('account')||''),kind=ref(new URLSearchParams(location.hash.slice(1)).has('account')?'all':'practice_website'),status=ref('unreviewed'),selected=ref(''),copied=ref(''),reviewRole=ref('practice_website'),choice=ref(''),capabilityActions=ref([]),capabilityProvider=ref('');
     const state=claim=>fieldState(claim,props.decisions);
     const role=claim=>{const value=state(claim);return value.status==='confirmed'&&value.contact_role||claim.website_role;};
     const all=computed(()=>(props.pkg?.accounts||[]).flatMap(account=>account.claims.map(claim=>({account,claim,id:claim.claim_id}))));
@@ -21,19 +21,29 @@ export default {
     watch(()=>props.pkg,pkg=>{const account=pkg?.accounts.find(a=>a.account_key===search.value);if(account&&!account.claims.length)kind.value='missing';});
     const index=computed(()=>Math.max(0,rows.value.findIndex(r=>r.id===selected.value)));
     const current=computed(()=>rows.value[index.value]);
-    watch(()=>[current.value?.id,current.value?.claim&&state(current.value.claim).status,current.value?.claim&&state(current.value.claim).contact_role],()=>{
+    watch(()=>JSON.stringify([current.value?.id,current.value?.claim&&state(current.value.claim).status,current.value?.claim&&state(current.value.claim).contact_role,current.value?.claim&&state(current.value.claim).webpage_capabilities]),()=>{
       const claim=current.value?.claim;
       reviewRole.value=claim?role(claim):'practice_website';
       choice.value=claim&&['confirmed','rejected'].includes(state(claim).status)?state(claim).status:'';
+      const capabilities=claim&&state(claim).webpage_capabilities;
+      capabilityActions.value=[...(capabilities?.actions||[])];
+      capabilityProvider.value=capabilities?.provider||'';
       copied.value='';
     },{immediate:true});
     const ready=computed(()=>props.pkg?.evidence_storage!=='account-files-v1'||current.value?.account.evidence_loaded);
     watch(()=>[current.value?.account.account_key,props.pkg?.research_snapshot_id],()=>{copied.value='';if(current.value&&!ready.value)emit('load-account',current.value.account.account_key);},{immediate:true});
     function move(offset){if(!props.saving)selected.value=rows.value[index.value+offset]?.id||selected.value;}
     function choose(status){if(current.value?.claim&&ready.value&&!props.saving&&['confirmed','rejected','unreviewed'].includes(status))choice.value=status;}
-    function confirm(){const c=current.value?.claim;if(!c||!choice.value||!ready.value||props.saving)return;emit('decision',{id:crypto.randomUUID(),claim_id:c.claim_id,account_key:c.account_key,field:'website',status:choice.value,contact_role:reviewRole.value,reviewed_by:props.reviewer||'reviewer',reviewed_at:new Date().toISOString(),observation_ids:c.observations.map(o=>o.observation_id),supersedes:state(c).heads||[],source:'webpage-review'});}
+    const hasPatientAction=computed(()=>capabilityActions.value.some(a=>!['none_observed','unclear'].includes(a)));
+    function toggleCapability(action,checked){
+      if(props.saving||!ready.value)return;
+      const exclusive=['none_observed','unclear'].includes(action);
+      capabilityActions.value=checked?(exclusive?[action]:[...capabilityActions.value.filter(a=>!['none_observed','unclear',action].includes(a)),action]):capabilityActions.value.filter(a=>a!==action);
+      if(!hasPatientAction.value)capabilityProvider.value='';
+    }
+    function confirm(){const c=current.value?.claim;if(!c||!choice.value||!ready.value||props.saving)return;emit('decision',{id:crypto.randomUUID(),claim_id:c.claim_id,account_key:c.account_key,field:'website',status:choice.value,contact_role:reviewRole.value,webpage_capabilities:{version:1,actions:[...capabilityActions.value].sort(),provider:hasPatientAction.value?capabilityProvider.value.trim():''},reviewed_by:props.reviewer||'reviewer',reviewed_at:new Date().toISOString(),observation_ids:c.observations.map(o=>o.observation_id),supersedes:state(c).heads||[],source:'webpage-review'});}
     async function copy(){try{await navigator.clipboard.writeText(current.value.claim.value);copied.value='Copied';}catch{copied.value='Copy unavailable; select the link text to copy.';}}
-    return {search,kind,status,reviewRole,role,counts,statuses,missing,rows,index,current,ready,move,choose,confirm,choice,state,copy,copied,webpageRoles,safeSourceUrl};
+    return {search,kind,status,reviewRole,role,counts,statuses,missing,rows,index,current,ready,move,choose,confirm,choice,capabilityActions,capabilityProvider,hasPatientAction,toggleCapability,webpageActions,state,copy,copied,webpageRoles,safeSourceUrl};
   },
   template:`<section class="webpage-review mapping-workspace">
     <div class="webpage-summary"><h1>Webpages · Latvia</h1><span v-if="pkg">{{pkg.accounts.length}} accounts · {{rows.length}} {{kind==='missing'?'accounts without a practice website candidate':'webpages in this view'}}</span></div>
@@ -58,7 +68,14 @@ export default {
           <template v-if="current.claim">
             <span class="webpage-state mapping-status" :class="state(current.claim).status">{{state(current.claim).status}}<sup v-if="['unreviewed','conflict'].includes(state(current.claim).status)">*</sup></span>
             <label class="mapping-clinic-picker">Page role<select v-model="reviewRole" class="region-filter" aria-label="Page role" :disabled="saving||!ready"><option v-for="(label,key) in webpageRoles" :value="key">{{label}}</option></select></label>
-            <p class="review-note">{{reviewRole==='source_page'?'Confirming verifies this source’s relevance to the account. It does not designate an official website.':'Confirming verifies this webpage’s association with the account.'}}</p>
+            <p class="review-note">{{['source_page','directory_profile','organisation_profile'].includes(reviewRole)?'Confirming verifies this source’s relevance to the account. It does not designate an official website.':'Confirming verifies this webpage’s association with the account.'}}</p>
+            <fieldset class="webpage-capabilities" :disabled="saving||!ready">
+              <legend>What can patients do on this page?</legend>
+              <div class="webpage-capability-options"><label v-for="(label,action) in webpageActions" :key="action"><input type="checkbox" :checked="capabilityActions.includes(action)" @change="toggleCapability(action,$event.target.checked)">{{label}}</label></div>
+              <small v-if="!capabilityActions.length" class="muted">Not reviewed</small>
+              <small class="muted">Check functions for this practice. A general portal link or directory listing is not proof of booking.</small>
+              <label v-if="hasPatientAction" class="mapping-clinic-picker">Booking / service provider (optional)<input v-model="capabilityProvider" maxlength="160" placeholder="Provider name, if identifiable" aria-label="Booking / service provider"></label>
+            </fieldset>
             <div class="validation-buttons">
               <button class="validation-btn valid-btn" :disabled="saving||!ready" :class="{active:choice==='confirmed'}" :aria-pressed="choice==='confirmed'" @click="choose('confirmed')" title="Right clinic (1)">Right clinic</button>
               <button class="validation-btn invalid-btn" :disabled="saving||!ready" :class="{active:choice==='rejected'}" :aria-pressed="choice==='rejected'" @click="choose('rejected')" title="Wrong clinic (2)">Wrong clinic</button>

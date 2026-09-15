@@ -55,8 +55,10 @@ const origin=process.env.REVIEW_TEST_URL||'http://127.0.0.1:5173/lead-gen-review
   await page.keyboard.press('ArrowLeft');assert.equal(await title.innerText(),'https://example.invalid/a');
   await page.keyboard.press('1');assert.equal(await page.getByRole('button',{name:'Right clinic',exact:true}).getAttribute('aria-pressed'),'true');
   assert.equal(await page.locator('.webpage-state').innerText(),'unreviewed*');
+  await page.getByLabel('Book an appointment',{exact:true}).check();await page.getByLabel('Booking / service provider',{exact:true}).fill('Unsaved provider');await blur();
   await page.keyboard.press('ArrowRight');assert.equal(await title.innerText(),'https://example.invalid/c');
   assert.equal(await page.getByRole('button',{name:'Confirm',exact:true}).isDisabled(),true);
+  assert.equal(await page.getByLabel('Book an appointment',{exact:true}).isChecked(),false);assert.equal(await page.getByLabel('Booking / service provider',{exact:true}).count(),0);
   await page.keyboard.press('ArrowRight');assert.equal(await title.innerText(),'https://example.invalid/c');
   await nav.getByRole('button',{name:'Previous webpage'}).focus();await page.keyboard.press('Enter');
   assert.equal(await title.innerText(),'https://example.invalid/a');assert.equal(await page.getByRole('button',{name:'Confirm',exact:true}).isDisabled(),true);
@@ -72,13 +74,15 @@ const origin=process.env.REVIEW_TEST_URL||'http://127.0.0.1:5173/lead-gen-review
   await page.setViewportSize({width:375,height:900});await page.screenshot({path:'/tmp/latvia-webpage-mobile-synthetic.png',fullPage:true});await page.setViewportSize({width:1440,height:900});
   await page.getByLabel('Page type',{exact:true}).selectOption('practice_website');
   await page.getByRole('group',{name:'Webpage review status'}).getByRole('button',{name:'All 1',exact:true}).click();
+  await page.getByLabel('Book an appointment',{exact:true}).check();await page.getByLabel('Send a general enquiry',{exact:true}).check();await page.getByLabel('Booking / service provider',{exact:true}).fill('Synthetic booking');
   await blur();await page.keyboard.press('1');
   await page.evaluate(()=>window.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',repeat:true,bubbles:true})));
   assert.equal(await page.locator('.webpage-state').innerText(),'unreviewed*');
   await page.keyboard.press('Enter');await page.waitForFunction(()=>document.querySelector('.webpage-state')?.textContent==='confirmed');
   let download=page.waitForEvent('download');await page.getByRole('button',{name:'Export review JSON',exact:true}).click();const exported=await download;await exported.saveAs(path.join(temp,'lv.json'));const payload=JSON.parse(fs.readFileSync(path.join(temp,'lv.json')));
-  assert.equal(payload.dataset_id,'synthetic-lv');assert.equal(payload.field_decisions.length,1);assert.equal(payload.email_validations.length,0);assert.equal(payload.association_decisions.length,0);
+  assert.equal(payload.dataset_id,'synthetic-lv');assert.equal(payload.field_decisions.length,1);assert.deepEqual(payload.field_decisions[0].webpage_capabilities,{version:1,actions:['book_appointment','general_enquiry'],provider:'Synthetic booking'});assert.equal(payload.email_validations.length,0);assert.equal(payload.association_decisions.length,0);
   await page.reload();await page.getByRole('heading',{name:'Webpages · Latvia'}).waitFor();await page.getByRole('button',{name:'Confirmed 1',exact:true}).click();await page.waitForFunction(()=>document.querySelector('.webpage-state')?.textContent==='confirmed');
+  assert.equal(await page.getByLabel('Book an appointment',{exact:true}).isChecked(),true);assert.equal(await page.getByLabel('Booking / service provider',{exact:true}).inputValue(),'Synthetic booking');
   await page.getByRole('button',{name:'Wrong clinic',exact:true}).focus();await page.keyboard.press('2');await page.keyboard.press('Enter');await page.getByRole('button',{name:'Rejected 1',exact:true}).click();await page.waitForFunction(()=>document.querySelector('.webpage-state')?.textContent==='rejected');
   await page.getByLabel('Import review JSON',{exact:true}).setInputFiles(path.join(temp,'lv.json'));await page.waitForTimeout(150);assert.equal(await page.locator('.webpage-state').innerText(),'rejected');
   const bad={...payload,email_validations:[{email,status:'invalid'}]};fs.writeFileSync(path.join(temp,'bad.json'),JSON.stringify(bad));await page.getByLabel('Import review JSON',{exact:true}).setInputFiles(path.join(temp,'bad.json'));await page.getByRole('alert').filter({hasText:'cannot contain other review data'}).waitFor();
@@ -87,6 +91,16 @@ const origin=process.env.REVIEW_TEST_URL||'http://127.0.0.1:5173/lead-gen-review
   await page.screenshot({path:'/tmp/latvia-webpage-candidate-synthetic.png',fullPage:true});
   await page.getByRole('button',{name:'Leave unresolved',exact:true}).click();assert.equal(await page.locator('.webpage-state').innerText(),'rejected');
   await page.getByRole('button',{name:'Confirm unresolved',exact:true}).click();await page.waitForFunction(()=>document.querySelector('.webpage-state')?.textContent==='unreviewed*');
+  await page.getByLabel('Page role',{exact:true}).selectOption('directory_profile');
+  await page.getByLabel('No capability observed',{exact:true}).check();assert.equal(await page.getByLabel('Book an appointment',{exact:true}).isChecked(),false);assert.equal(await page.getByLabel('Booking / service provider',{exact:true}).count(),0);
+  await page.getByLabel('Unclear',{exact:true}).check();assert.equal(await page.getByLabel('No capability observed',{exact:true}).isChecked(),false);
+  await page.getByRole('button',{name:'Right clinic',exact:true}).click();await page.getByRole('button',{name:'Confirm',exact:true}).click();
+  await page.getByLabel('Page type',{exact:true}).selectOption('directory_profile');await page.getByRole('button',{name:'Confirmed 1',exact:true}).click();assert.equal(await page.getByLabel('Page role',{exact:true}).inputValue(),'directory_profile');
+  await page.getByLabel('Page role',{exact:true}).selectOption('organisation_profile');await page.getByLabel('Request an appointment',{exact:true}).check();assert.equal(await page.getByLabel('Unclear',{exact:true}).isChecked(),false);
+  await page.getByRole('button',{name:'Confirm',exact:true}).click();await page.getByLabel('Page type',{exact:true}).selectOption('organisation_profile');await page.getByRole('button',{name:'Confirmed 1',exact:true}).click();
+  download=page.waitForEvent('download');await page.getByRole('button',{name:'Export review JSON',exact:true}).click();const classified=await download;await classified.saveAs(path.join(temp,'classified.json'));
+  const latest=JSON.parse(fs.readFileSync(path.join(temp,'classified.json'))).field_decisions.find(e=>e.contact_role==='organisation_profile');assert.equal(latest.contact_role,'organisation_profile');assert.deepEqual(latest.webpage_capabilities,{version:1,actions:['request_appointment'],provider:''});
+  await page.reload();await page.getByLabel('Page type',{exact:true}).selectOption('organisation_profile');await page.getByRole('button',{name:'Confirmed 1',exact:true}).click();assert.equal(await page.getByLabel('Request an appointment',{exact:true}).isChecked(),true);
   await page.getByLabel('Page type',{exact:true}).selectOption('missing');await page.getByText('Website not yet identified. This does not establish that the practice has no website.',{exact:true}).waitFor();
   for(const width of [375,768,1440]){await page.setViewportSize({width,height:900});assert.ok(await page.locator('.app-shell').evaluate(el=>el.scrollWidth<=innerWidth));}
   await page.screenshot({path:'/tmp/latvia-webpage-review-synthetic.png',fullPage:true});

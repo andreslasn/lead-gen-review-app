@@ -912,3 +912,13 @@ li span {
 .account-evidence-workspace main > label { display:flex; flex-direction:column; gap:6px; margin:16px 0; max-width:380px; }
 
 .account-evidence-workspace select[aria-label="Account review section"]{min-height:44px;padding:8px 12px;margin:8px 0 16px;display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;background:#fff;color:#252525;}
+
+.webpage-capabilities { margin:12px 0 0; padding:10px 0; border:0; border-top:1px solid var(--concrete-100); min-width:0; }
+.webpage-capabilities legend { padding:0 6px 0 0; font-size:.8rem; font-weight:600; }
+.webpage-capability-options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px 12px; }
+.webpage-capability-options label { display:flex; align-items:center; gap:8px; min-height:36px; font-size:.78rem; cursor:pointer; }
+.webpage-capability-options input { width:16px; min-width:16px; height:16px; padding:0; accent-color:var(--primary); }
+.webpage-capabilities small { display:block; margin-top:6px; font-size:.72rem; }
+@media(max-width:720px){.webpage-capability-options{grid-template-columns:1fr;}.webpage-capability-options label{min-height:44px;}}
+
+.webpage-identity .review-identity { gap:6px; margin-bottom:12px; }
