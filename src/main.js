@@ -5,7 +5,7 @@ import ReviewHeader from "./ReviewHeader.js";
 import ClinicEmailReview from "./ClinicEmailReview.js";
 import AccountEvidenceReview from "./AccountEvidenceReview.js";
 import WebpageReview from "./WebpageReview.js";
-import { validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences, validateWebpageReviewExport } from "./accountEvidence.js";
+import { parseAccountIndex, validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences, validateWebpageReviewExport } from "./accountEvidence.js";
 import { validateAssociationDecision, validateAssociationPackage, mappingEmails, mappedEmailRows } from "./associations.js";
 import { unusedValidEmailRows as campaignEmailRows } from "./campaignEmails.js";
 
@@ -534,23 +534,28 @@ const App = {
     const db = ref(null);
     const manifest = ref(null);
     const routeAccount=new URLSearchParams(location.hash.slice(1)).get('account');
-    const selectedMarket=ref(routeClinicId()||routeEmailValue()||routeAccount?.startsWith('HU:')?'HU':routeAccount?.startsWith('LV:')||new URLSearchParams(location.hash.slice(1)).get('market')==='LV'?'LV':localStorage.getItem('review.market')==='LV'?'LV':'HU');
-    const latviaPackage=ref(null),latviaManifest=ref(null),latviaError=ref('');
-    const activeAccountPackage=computed(()=>selectedMarket.value==='LV'?latviaPackage.value:accountPackage.value);
-    let loadingLatvia=false;
-    async function loadLatvia() {
-      if(loadingLatvia)return;loadingLatvia=true;latviaError.value='';
+    const routeMarket=routeAccount?.slice(0,2)||new URLSearchParams(location.hash.slice(1)).get('market')||localStorage.getItem('review.market');
+    const selectedMarket=ref(routeClinicId()||routeEmailValue()?'HU':['HU','LV','PL'].includes(routeMarket)?routeMarket:'HU');
+    const regionalPackages=ref({}),regionalManifests=ref({}),regionalErrors=ref({});
+    const regionalPackage=computed(()=>regionalPackages.value[selectedMarket.value]||null),regionalError=computed(()=>regionalErrors.value[selectedMarket.value]||'');
+    const regionalMode=ref(routeAccount?.startsWith('PL:')?'account':'webpages');
+    const activeAccountPackage=computed(()=>selectedMarket.value==='HU'?accountPackage.value:regionalPackage.value);
+    const loadingRegional=new Set();
+    async function loadRegional(country=selectedMarket.value) {
+      if(!['LV','PL'].includes(country)||loadingRegional.has(country))return;
+      loadingRegional.add(country);regionalErrors.value[country]='';
+      const label=country==='PL'?'Poland':'Latvia';
       try {
-        const [m,p]=await Promise.all(['manifest.json','account-enrichment.json'].map(name=>fetch(staticUrl('data/markets/LV/'+name),{cache:'no-cache'})));
-        if(!m.ok||!p.ok)throw Error('Could not load Latvia webpage evidence. Retry; existing reviews remain saved.');
-        const meta=await m.json(),pkg=validateAccountPackage(await p.json(),meta);
-        if(pkg.country!=='LV'||meta.country!=='LV'||pkg.research_snapshot_id!==meta.research_snapshot_id)throw Error('Latvia package changed during loading. Retry.');
-        latviaManifest.value=meta;latviaPackage.value=pkg;
-        const canonical=await fetch(staticUrl('data/markets/LV/canonical-review-state.json'),{cache:'no-cache'});
+        const [m,p]=await Promise.all(['manifest.json','account-enrichment.json'].map(name=>fetch(staticUrl('data/markets/'+country+'/'+name),{cache:'no-cache'})));
+        if(!m.ok||!p.ok)throw Error('Could not load '+label+' evidence. Retry; existing reviews remain saved.');
+        const meta=await m.json(),pkg=validateAccountPackage(await parseAccountIndex(await p.text()),meta);
+        if(pkg.country!==country||meta.country!==country||pkg.research_snapshot_id!==meta.research_snapshot_id)throw Error(label+' package changed during loading. Retry.');
+        regionalManifests.value[country]=meta;regionalPackages.value[country]=pkg;
+        const canonical=await fetch(staticUrl('data/markets/'+country+'/canonical-review-state.json'),{cache:'no-cache'});
         if(canonical.ok){await mergeImport(await canonical.json(),{silent:true});await hydrateLocal();}
-      }catch(err){latviaError.value=err.message;}finally{loadingLatvia=false;}
+      }catch(err){regionalErrors.value[country]=err.message;}finally{loadingRegional.delete(country);}
     }
-    watch(selectedMarket,value=>{localStorage.setItem('review.market',value);history.replaceState(null,'',value==='LV'?'#market=LV':location.pathname+location.search);fieldError.value='';if(value==='LV'&&!latviaPackage.value)loadLatvia();});
+    watch(selectedMarket,value=>{localStorage.setItem('review.market',value);history.replaceState(null,'',value!=='HU'?'#market='+value:location.pathname+location.search);fieldError.value='';regionalMode.value='webpages';if(value!=='HU'&&!regionalPackages.value[value])loadRegional(value);});
     const queue = ref([]);
     const emailIndex = ref([]);
     const staticEmailValidations = ref([]);
@@ -588,19 +593,20 @@ const App = {
     const accountPackage = ref(null), fieldDecisions = ref([]), contactPreferences = ref([]), fieldSaving = ref(false), fieldError = ref('');
     let researchRefreshTimer, refreshingResearch=false;
     async function openAccountEvidence(key) {
-      const pkg=key.startsWith('LV:')?latviaPackage.value:accountPackage.value, account=pkg?.accounts.find(a=>a.account_key===key);
+      const pkg=key.startsWith('HU:')?accountPackage.value:regionalPackages.value[key.slice(0,2)], account=pkg?.accounts.find(a=>a.account_key===key);
       if(!account)return;
       try {
         fieldError.value='';
-        const detail=await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/'+(pkg.country==='LV'?'markets/LV/':'')+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not load account evidence. Retry or refresh the research data.');return response.text();});
-        if((key.startsWith('LV:')?latviaPackage.value:accountPackage.value)===pkg)pkg.accounts=pkg.accounts.map(a=>a.account_key===key?detail:a);
+        const detail=await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/'+(pkg.country!=='HU'?'markets/'+pkg.country+'/':'')+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not load account evidence. Retry or refresh the research data.');return response.text();});
+        if((key.startsWith('HU:')?accountPackage.value:regionalPackages.value[key.slice(0,2)])===pkg)pkg.accounts=pkg.accounts.map(a=>a.account_key===key?detail:a);
       } catch(err) {fieldError.value=err.message;}
     }
     async function refreshResearch() {
-      if(selectedMarket.value==='LV'){
-        if(loadingLatvia||fieldSaving.value)return;
-        try{const response=await fetch(staticUrl('data/markets/LV/account-research-status.json'),{cache:'no-cache'});if(response.ok){const status=await response.json();if(status.research_snapshot_id!==latviaPackage.value?.research_snapshot_id)await loadLatvia();}}
-        catch(err){latviaError.value='Research refresh unavailable; existing reviews are preserved.';}
+      if(selectedMarket.value!=='HU'){
+        const country=selectedMarket.value;
+        if(loadingRegional.has(country)||fieldSaving.value)return;
+        try{const response=await fetch(staticUrl('data/markets/'+country+'/account-research-status.json'),{cache:'no-cache'});if(response.ok){const status=await response.json();if(status.research_snapshot_id!==regionalPackages.value[country]?.research_snapshot_id)await loadRegional(country);}}
+        catch(err){regionalErrors.value[country]='Research refresh unavailable; existing reviews are preserved.';}
         return;
       }
       if(refreshingResearch||!accountPackage.value||fieldSaving.value||associationSaving.value)return;
@@ -612,7 +618,7 @@ const App = {
         if(status.research_snapshot_id===accountPackage.value.research_snapshot_id)return;
         const [accountResponse,associationResponse]=await Promise.all([fetch(staticUrl('data/account-enrichment.json'),{cache:'no-cache'}),fetch(staticUrl('data/email-associations.json'),{cache:'no-cache'})]);
         if(!accountResponse.ok||!associationResponse.ok)throw Error('Research refresh unavailable; existing reviews are preserved.');
-        const pkg=validateAccountPackage(await accountResponse.json(),manifest.value), links=await associationResponse.json();
+        const pkg=validateAccountPackage(await parseAccountIndex(await accountResponse.text()),manifest.value), links=await associationResponse.json();
         validateAssociationPackage(links,manifest.value);
         // Review events stay in their existing stores; only source packages refresh.
         associationPackage.value=links;accountPackage.value=pkg;
@@ -1056,7 +1062,7 @@ const App = {
       } catch (err) { associationError.value = err.message; }
       try {
         const response = await fetch(staticUrl('data/account-enrichment.json'), {cache:'no-cache'});
-        if(response.ok) accountPackage.value=validateAccountPackage(await response.json(),manifest.value);
+        if(response.ok) accountPackage.value=validateAccountPackage(await parseAccountIndex(await response.text()),manifest.value);
       } catch(err) { fieldError.value=err.message; }
       try {
         const syncResponse = await fetch(REVIEW_SYNC_CONFIG, { cache: "no-cache" });
@@ -1564,7 +1570,7 @@ const App = {
       const exportedAt = nowIso();
       const connection = await ensureDb();
       const storedEmailValidations = await getAll(connection, "email_validations");
-      const meta=country==='LV'?latviaManifest.value:manifest.value;
+      const meta=country==='HU'?manifest.value:regionalManifests.value[country];
       if(!meta)throw Error('Market dataset is unavailable. Retry before exporting.');
       const payload = {
         format: REVIEW_FORMAT,
@@ -1586,7 +1592,7 @@ const App = {
       };
       payload.field_decisions=payload.field_decisions.filter(e=>e.account_key.startsWith(country+':'));
       payload.contact_preferences=payload.contact_preferences.filter(e=>e.account_key.startsWith(country+':'));
-      if(country==='LV')for(const key of ['decisions','clinic_states','email_validations','association_decisions','contact_preferences','role_overrides','audit_events'])payload[key]=[];
+      if(country!=='HU')for(const key of ['decisions','clinic_states','email_validations','association_decisions',...(country==='LV'?['contact_preferences']:[]),'role_overrides','audit_events'])payload[key]=[];
       payload.checksum = await sha256(JSON.stringify({
         decisions: payload.decisions,
         clinic_states: payload.clinic_states,
@@ -1656,7 +1662,7 @@ const App = {
       if(fieldSaving.value)return;
       fieldSaving.value=true;fieldError.value='';
       try {
-        event=JSON.parse(JSON.stringify(event));validateContactPreference(event,accountPackage.value);
+        event=JSON.parse(JSON.stringify(event));validateContactPreference(event,activeAccountPackage.value);
         const connection=await ensureDb();
         await new Promise((resolve,reject)=>{
           const tx=connection.transaction('contact_preferences','readwrite');tx.objectStore('contact_preferences').add(event);
@@ -1930,18 +1936,20 @@ const App = {
     async function mergeImport(payload, { silent = false } = {}) {
       const connection = await ensureDb();
       validatePayload(payload);
-      if(payload.dataset_id===latviaManifest.value?.dataset_id){
-        const pkg=latviaPackage.value,details=[];
-        for(const key of new Set((payload.field_decisions||[]).map(e=>e.account_key))){
-          const account=pkg.accounts.find(a=>a.account_key===key);if(!account)throw Error('Unknown Latvia account.');
-          details.push(await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/markets/LV/'+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not verify imported webpage evidence.');return response.text();}));
+      const regionalCountry=['LV','PL'].find(country=>payload.dataset_id===regionalManifests.value[country]?.dataset_id);
+      if(regionalCountry){
+        const pkg=regionalPackages.value[regionalCountry],details=[];
+        for(const key of new Set([...(payload.field_decisions||[]),...(payload.contact_preferences||[])].map(e=>e.account_key))){
+          const account=pkg.accounts.find(a=>a.account_key===key);if(!account)throw Error('Unknown regional account.');
+          details.push(await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/markets/'+regionalCountry+'/'+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not verify imported account evidence.');return response.text();}));
         }
         validateWebpageReviewExport(payload,{...pkg,accounts:details});
         mergeFieldEvents(await getAll(connection,'field_decisions'),payload.field_decisions);
-        await new Promise((resolve,reject)=>{const tx=connection.transaction('field_decisions','readwrite');for(const event of payload.field_decisions)tx.objectStore('field_decisions').put(event);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Webpage import aborted'));});
-        fieldDecisions.value=await getAll(connection,'field_decisions');return;
+        mergeContactPreferences(await getAll(connection,'contact_preferences'),payload.contact_preferences||[]);
+        await new Promise((resolve,reject)=>{const tx=connection.transaction(['field_decisions','contact_preferences'],'readwrite');for(const event of payload.field_decisions)tx.objectStore('field_decisions').put(event);for(const event of payload.contact_preferences||[])tx.objectStore('contact_preferences').put(event);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Account import aborted'));});
+        fieldDecisions.value=await getAll(connection,'field_decisions');contactPreferences.value=await getAll(connection,'contact_preferences');return;
       }
-      if(payload.field_decisions?.some(e=>e.account_key.startsWith('LV:')))throw Error('Latvia review dataset is unavailable or mismatched.');
+      if([...(payload.field_decisions||[]),...(payload.contact_preferences||[])].some(e=>!/^(HU):/.test(e.account_key||'')))throw Error('Regional review dataset is unavailable or mismatched.');
       if (!silent && manifest.value?.dataset_id && payload.dataset_id !== manifest.value.dataset_id) {
         const ok = confirm(`This export is for dataset ${payload.dataset_id}, current dataset is ${manifest.value.dataset_id}. Import anyway?`);
         if (!ok) return;
@@ -2033,14 +2041,14 @@ const App = {
     }
 
     function onKey(event) {
-      if(selectedMarket.value==='HU'&&accountMode.value)return;
+      if(selectedMarket.value==='HU'&&accountMode.value||selectedMarket.value==='PL'&&regionalMode.value==='account')return;
       if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.isComposing) return;
       if (event.target?.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
       const key = event.key.toLowerCase();
       // Keep native Enter on navigation, exports, links and disclosure controls.
       if (key === 'enter' && event.target?.closest?.('button, a, summary') && !event.target.closest('.validation-btn, .confirm-btn')) return;
       const review = mappingReview.value;
-      const actions = selectedMarket.value==='LV' ? {
+      const actions = selectedMarket.value!=='HU' ? {
         '1': () => webpageReview.value?.choose('confirmed'), '2': () => webpageReview.value?.choose('rejected'),
         enter: () => webpageReview.value?.confirm(),
         arrowright: () => webpageReview.value?.move(1), arrowleft: () => webpageReview.value?.move(-1),
@@ -2094,7 +2102,7 @@ const App = {
     onMounted(() => {
       window.addEventListener("keydown", onKey);
       init();
-      if(selectedMarket.value==='LV')loadLatvia();
+      if(selectedMarket.value!=='HU')loadRegional();
       researchRefreshTimer=setInterval(refreshResearch,30000);
     });
 
@@ -2105,7 +2113,7 @@ const App = {
     });
 
     return {
-      selectedMarket,latviaPackage,latviaError,loadLatvia,importWebpageReviews,webpageReview,
+      selectedMarket,regionalPackage,regionalError,regionalMode,loadRegional,importWebpageReviews,webpageReview,
       accountMode, accountPackage, fieldDecisions, contactPreferences, emailValidationByValue, saveContactPreference, fieldSaving, fieldError, saveField, openAccountEvidence,
       mappingMode, mappingReview, associationPackage, associationDecisions, associationSaving, associationError, saveAssociation, exportAssociationCSV, preparedQueue, associationEmails,
       manifest,
@@ -2209,14 +2217,18 @@ const App = {
     async function importWebpageReviews(event) {
       const file=event.target.files?.[0];if(!file||fieldSaving.value)return;
       fieldSaving.value=true;fieldError.value='';
-      try{if(!latviaPackage.value)throw Error('Load Latvia data before importing.');const payload=JSON.parse(await file.text());if(payload.dataset_id!==latviaPackage.value.dataset_id)throw Error('Latvia review dataset mismatch.');await mergeImport(payload,{silent:true});}
+      try{if(!regionalPackage.value)throw Error('Load market data before importing.');const payload=JSON.parse(await file.text());if(payload.dataset_id!==regionalPackage.value.dataset_id)throw Error('Market review dataset mismatch.');await mergeImport(payload,{silent:true});}
       catch(err){fieldError.value=err.message;}finally{fieldSaving.value=false;}
     }
   },
   template: `
     <div class="app-shell">
-      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option></select></label>
-      <WebpageReview ref="webpageReview" v-if="selectedMarket==='LV'" :pkg="latviaPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="latviaError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadLatvia" @export="exportProgress" @import="importWebpageReviews" />
+      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option><option value="PL">Poland</option></select></label>
+      <template v-if="selectedMarket!=='HU'">
+        <nav v-if="selectedMarket==='PL'" class="review-mode-tabs" aria-label="Review mode"><button :class="{active:regionalMode==='webpages'}" @click="regionalMode='webpages'">Webpages</button><button :class="{active:regionalMode==='account'}" @click="regionalMode='account'">Account data</button></nav>
+        <WebpageReview ref="webpageReview" v-if="regionalMode==='webpages'" :key="selectedMarket" :market="selectedMarket" :pkg="regionalPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="regionalError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadRegional(selectedMarket)" @export="exportProgress" @import="importWebpageReviews" />
+        <AccountEvidenceReview v-else :key="selectedMarket" :pkg="regionalPackage" :associations="null" :field-decisions="fieldDecisions" :preferences="contactPreferences" :association-decisions="[]" :reviewer="reviewer" :saving="fieldSaving" :error="regionalError||fieldError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @export="exportProgress" />
+      </template>
       <template v-else>
       <nav class="review-mode-tabs" aria-label="Review mode"><button :class="{active:!mappingMode&&!accountMode}" @click="mappingMode=false;accountMode=false">Email validity</button><button :class="{active:mappingMode&&!accountMode}" @click="mappingMode=true;accountMode=false">Clinic mapping</button><button :class="{active:accountMode}" @click="accountMode=true;mappingMode=false">Account data</button></nav>
       <AccountEvidenceReview v-if="accountMode" :pkg="accountPackage" :associations="associationPackage" :field-decisions="fieldDecisions" :preferences="contactPreferences" :validity="emailValidationByValue" :association-decisions="associationDecisions" :reviewer="reviewer" :saving="fieldSaving||associationSaving" :error="fieldError||associationError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @association-decision="saveAssociation" @export="exportProgress" />

@@ -1,3 +1,4 @@
+import {parseAccountIndex} from '../src/accountEvidence.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,mkdir,readFile,writeFile,rm} from 'node:fs/promises';
@@ -51,7 +52,7 @@ test('compressed LV evidence and canonical import preserve event IDs and HU file
   const publication={...pkg,accounts:[pkg.accounts[0]]};await writeFile(path.join(directory,'account-enrichment.json'),JSON.stringify(publication));await writeFile(path.join(directory,'account-research-status.json'),JSON.stringify(publication));
   await writeFile(path.join(directory,'account-evidence/LV-'+full.dashboard_record_id+'-'+'0'.repeat(16)+'.json'),'obsolete');
   await copyPublicPackage(path.join(root,'public'),path.join(root,'dist'));
-  const output=JSON.parse(await readFile(path.join(root,'dist/data/markets/LV/account-enrichment.json')));
+  const output=await parseAccountIndex(await readFile(path.join(root,'dist/data/markets/LV/account-enrichment.json'),'utf8'));
   assert.equal(output.accounts[0].evidence_path,evidence_path);assert.deepEqual(await readFile(path.join(root,'dist/data/markets/LV',evidence_path)),bytes);
   await assert.rejects(readFile(path.join(root,'dist/data/markets/LV/account-evidence/LV-'+full.dashboard_record_id+'-'+'0'.repeat(16)+'.json')));
  }finally{await rm(root,{recursive:true,force:true});}

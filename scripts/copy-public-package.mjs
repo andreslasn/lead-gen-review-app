@@ -4,7 +4,7 @@ import { gzip } from 'node:zlib';
 import { promisify } from 'node:util';
 import { cp, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import {validEvidencePath} from '../src/accountEvidence.js';
+import {parseAccountIndex,validEvidencePath} from '../src/accountEvidence.js';
 
 const compress = promisify(gzip);
 
@@ -27,7 +27,7 @@ async function directorySize(directory) {
 
 export async function copyPublicPackage(source, destination, { maxBytes = 1_000_000_000 } = {}) {
   const roots=['data'];
-  try {await stat(path.join(source,'data/markets/LV'));roots.push('data/markets/LV');}catch(error){if(error.code!=='ENOENT')throw error;}
+  for(const country of ['LV','PL'])try {await stat(path.join(source,'data/markets/'+country));roots.push('data/markets/'+country);}catch(error){if(error.code!=='ENOENT')throw error;}
   await cp(source, destination, {
     recursive: true, mode: constants.COPYFILE_FICLONE,
     filter: file => {
@@ -38,7 +38,7 @@ export async function copyPublicPackage(source, destination, { maxBytes = 1_000_
   for(const root of roots){
   const indexText = await readFile(path.join(source, root,'account-enrichment.json'), 'utf8');
   const statusText = await readFile(path.join(source, root,'account-research-status.json'), 'utf8');
-  const index = JSON.parse(indexText), status = JSON.parse(statusText);
+  const index = await parseAccountIndex(indexText), status = JSON.parse(statusText);
   for (const key of ['dataset_id', 'base_data_hash', 'research_snapshot_id']) {
     if (!index[key] || index[key] !== status[key]) throw Error('Research publication changed during build; retry.');
   }
@@ -66,7 +66,8 @@ export async function copyPublicPackage(source, destination, { maxBytes = 1_000_
     }
   }));
   await mkdir(path.join(destination, root), { recursive: true });
-  await writeFile(path.join(destination, root,'account-enrichment.json'), JSON.stringify(index) + '\n');
+  const indexBytes=Buffer.from(JSON.stringify(index)+'\n');
+  await writeFile(path.join(destination, root,'account-enrichment.json'),await encodeAccountEvidence(indexBytes,{evidence_sha256:createHash('sha256').update(indexBytes).digest('hex')}));
   await writeFile(path.join(destination, root,'account-research-status.json'), statusText);
   }
   const size = await directorySize(destination);

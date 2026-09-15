@@ -1,4 +1,4 @@
-import { validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
+import { parseAccountIndex, validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
 import { validateAssociationPackage, validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
 import { createReadStream } from "node:fs";
@@ -35,7 +35,10 @@ function stableJson(value) {
 
 async function json(relative) {
   try {
-    return JSON.parse(await readFile(path.join(root, relative), "utf8"));
+    const text=await readFile(path.join(root, relative), "utf8");
+    const value=relative.endsWith('account-enrichment.json')?await parseAccountIndex(text):JSON.parse(text);
+    if(relative.endsWith('account-enrichment.json'))for(const [name,pattern] of secretPatterns)if(pattern.test(JSON.stringify(value)))fail(name+' detected in decoded research index');
+    return value;
   } catch (error) {
     fail(`${relative}: ${error.message}`);
   }
@@ -150,11 +153,12 @@ try {
   await scanSecrets(path.join(root,'account-enrichment.json'));
 } catch(error) {if(error.code!=='ENOENT')throw error;}
 const canonical = await json("canonical-review-state.json");
-let hasLatvia=false;
-try{await stat(path.join(root,'markets/LV'));hasLatvia=true;}catch(error){if(error.code!=='ENOENT')throw error;}
-if(hasLatvia){
-  const prefix='markets/LV/',meta=await json(prefix+'manifest.json'),pkg=validateAccountPackage(await json(prefix+'account-enrichment.json'),meta);
-  if(pkg.country!=='LV')fail('Latvia package country mismatch');
+for(const country of ['LV','PL']){
+let hasMarket=false;
+try{await stat(path.join(root,'markets/'+country));hasMarket=true;}catch(error){if(error.code!=='ENOENT')throw error;}
+if(hasMarket){
+  const prefix='markets/'+country+'/',meta=await json(prefix+'manifest.json'),pkg=validateAccountPackage(await json(prefix+'account-enrichment.json'),meta);
+  if(pkg.country!==country)fail('Latvia package country mismatch');
   const status=await json(prefix+'account-research-status.json');
   if(['dataset_id','base_data_hash','research_snapshot_id'].some(k=>pkg[k]!==status[k]))fail('Latvia research status mismatch');
   const accounts=[];
@@ -167,6 +171,7 @@ if(hasLatvia){
   try{state=await json(prefix+'canonical-review-state.json');}catch(error){if(!error.message.includes('ENOENT'))throw error;}
   if(state)validateWebpageReviewExport(state,{...pkg,accounts});
   await scanSecrets(path.join(root,prefix,'account-enrichment.json'));
+}
 }
 mergeFieldEvents([],canonical.field_decisions||[]);
 mergeContactPreferences([],canonical.contact_preferences||[]);

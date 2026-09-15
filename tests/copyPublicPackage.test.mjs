@@ -1,3 +1,4 @@
+import {parseAccountIndex} from '../src/accountEvidence.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
@@ -24,7 +25,7 @@ test('build retains the selected evidence and ordinary assets without copying hi
     ['data/' + selected]: payload, ['data/' + historical]: 'historical', 'logo.svg': '<svg/>',
   })) await writeFile(path.join(source, file), value);
   await copyPublicPackage(source, destination);
-  const built = JSON.parse(await readFile(path.join(destination, 'data/account-enrichment.json'), 'utf8'));
+  const built = await parseAccountIndex(await readFile(path.join(destination, 'data/account-enrichment.json'), 'utf8'));
   const account = built.accounts[0];
   assert.equal(built.research_snapshot_id, index.research_snapshot_id);
   assert.equal(account.evidence_encoding, 'gzip-base64-v1');

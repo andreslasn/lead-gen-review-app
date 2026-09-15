@@ -1,4 +1,4 @@
-import { mergeFieldEvents, mergeContactPreferences, validateFieldDecision, validateContactPreference, validateAccountPackage, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
+import { parseAccountIndex, mergeFieldEvents, mergeContactPreferences, validateFieldDecision, validateContactPreference, validateAccountPackage, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
 import { validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
 import { createReadStream } from "node:fs";
@@ -163,13 +163,14 @@ async function refreshIntegrityCanonicalHash() {
 }
 
 const reviewExport=JSON.parse(await readFile(reviewExportPath,'utf8'));
-let lvManifest;
-try{lvManifest=JSON.parse(await readFile(path.join(dataDirectory,'markets/LV/manifest.json'),'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
-if(lvManifest&&reviewExport.dataset_id===lvManifest.dataset_id){
- const directory=path.join(dataDirectory,'markets/LV'),target=path.join(directory,'canonical-review-state.json');
- const pkg=validateAccountPackage(JSON.parse(await readFile(path.join(directory,'account-enrichment.json'),'utf8')),lvManifest);
+for(const country of ['LV','PL']){
+let regionalManifest;
+try{regionalManifest=JSON.parse(await readFile(path.join(dataDirectory,'markets/'+country+'/manifest.json'),'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
+if(regionalManifest&&reviewExport.dataset_id===regionalManifest.dataset_id){
+ const directory=path.join(dataDirectory,'markets/'+country),target=path.join(directory,'canonical-review-state.json');
+ const pkg=validateAccountPackage(await parseAccountIndex(await readFile(path.join(directory,'account-enrichment.json'),'utf8')),regionalManifest);
  const accounts=[];
- for(const key of new Set((reviewExport.field_decisions||[]).map(e=>e.account_key))){
+ for(const key of new Set([...(reviewExport.field_decisions||[]),...(reviewExport.contact_preferences||[])].map(e=>e.account_key))){
   const account=pkg.accounts.find(a=>a.account_key===key);if(!account)throw Error('Unknown Latvia account.');
   accounts.push(await loadAccountEvidence(pkg,account,relative=>readFile(path.join(directory,relative),'utf8')));
  }
@@ -177,9 +178,11 @@ if(lvManifest&&reviewExport.dataset_id===lvManifest.dataset_id){
  let existing={};try{existing=JSON.parse(await readFile(target,'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
  if(existing.dataset_id&&(existing.dataset_id!==pkg.dataset_id||existing.base_data_hash!==pkg.base_data_hash))throw Error('Latvia canonical dataset mismatch.');
  const field_decisions=mergeFieldEvents(existing.field_decisions||[],reviewExport.field_decisions);
- const output={...reviewExport,field_decisions};delete output.checksum;
+ const contact_preferences=mergeContactPreferences(existing.contact_preferences||[],reviewExport.contact_preferences||[]);
+ const output={...reviewExport,field_decisions,contact_preferences};delete output.checksum;
  await writeFile(target+'.tmp',JSON.stringify(output,null,2)+'\n');await rename(target+'.tmp',target);
- console.log(JSON.stringify({country:'LV',field_decisions:field_decisions.length}));process.exit(0);
+ console.log(JSON.stringify({country,field_decisions:field_decisions.length}));process.exit(0);
+}
 }
 const [canonicalState, validationSeed, emailIndex] = await Promise.all([
   readFile(canonicalStatePath, "utf8").then(JSON.parse),
@@ -195,7 +198,7 @@ if (reviewExport.dataset_id !== canonicalState.dataset_id || reviewExport.datase
 }
 await stat(reviewExportPath);
 if(reviewExport.field_decisions?.length||reviewExport.contact_preferences?.length){
- const pkg=JSON.parse(await readFile(path.join(dataDirectory,'account-enrichment.json'),'utf8'));
+ const pkg=await parseAccountIndex(await readFile(path.join(dataDirectory,'account-enrichment.json'),'utf8'));
  if(reviewExport.base_data_hash!==pkg.base_data_hash||reviewExport.dataset_id!==pkg.dataset_id)throw Error('Account review dataset mismatch.');
  const keys=new Set([...(reviewExport.field_decisions||[]),...(reviewExport.contact_preferences||[])].map(e=>e.account_key));
  for(const key of keys){

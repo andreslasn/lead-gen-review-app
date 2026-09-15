@@ -1,9 +1,11 @@
 # Lead Gen Review App
 
-Repository: `andreslasn/lead-gen-review-app`, branch `main`. GitHub Pages deploys
-at `https://andreslasn.github.io/lead-gen-review-app/` through `.github/workflows/pages.yml`.
-Review sync retains the separate `review-data` branch. Keep this origin, dataset
-identity and browser database name unchanged when refreshing the app.
+Repository: `certific-ou/certific-website`, branch `lead-gen-review`. Review sync
+uses the separate `lead-gen-review-data` branch. The marketing website stays on
+its existing branch; this branch contains the standalone Vue/Vite review app.
+For a root-hosted preview build, use `REVIEW_BASE_PATH=/ npm run build`. The
+default local path remains `/lead-gen-review-app/` to preserve local browser
+storage origins. CI validates builds; publishing is configured separately.
 
 Static clinic email review app generated from the private `lead-gen` pipeline.
 
@@ -109,7 +111,7 @@ Review exports include global `email_validations`, browser-side timing, and evid
 
 ## Shared review persistence
 
-`public/review-sync.json` points the app at the dedicated `review-data` branch. Previously connected browser sessions retain synchronization; the review screens no longer expose connection controls. Session tokens are not written into review exports, application data, commits, or packaged evidence.
+`public/review-sync.json` points the app at the dedicated `lead-gen-review-data` branch. Previously connected browser sessions retain synchronization; the review screens no longer expose connection controls. Session tokens are not written into review exports, application data, commits, or packaged evidence.
 
 Each reviewer is stored separately under `reviews/<reviewer-id>.json`. Local decisions continue to work if sync is unavailable, and **Export .json** remains available as an independent backup.
 
@@ -346,3 +348,23 @@ first. When the original review package retained text instead of HTML, the
 mapping viewer shows **Saved text** and highlights the email in that source.
 Missing text falls back to the retained excerpt. Municipal pages and directories
 can support an account link without becoming a practice homepage.
+
+### Poland account research
+
+Select **Poland** or open `#market=PL`. Webpages uses the same arrow navigation,
+page-role review and patient-function checkboxes as Latvia. **Account data** also
+reviews public email/phone ownership, preferred contacts, workplace doctor names,
+and software attribution. Confirming an account link does not validate an email
+address or change campaign use. Portal listings and telephone-only registration
+are retained as references without establishing online booking adoption.
+
+Poland packages live in `public/data/markets/PL`, use stable `PL:<dashboard-id>`
+keys and preserve NFZ provider aliases and NIP. Exports/imports are market scoped;
+Poland can update its field decisions and contact preferences only. HU and LV
+canonical reviews and all HU validity/campaign stores remain unchanged.
+
+Published research indexes now use the existing gzip/base64 evidence envelope as
+well. Source indexes remain ordinary JSON; builds preserve the complete decoded
+index and all immutable account details. This reduces Pages size without dropping
+source evidence. Index loading and validation accept both encodings. Raw scraped
+HTML and internal CRM annotations are not copied into the Poland public package.

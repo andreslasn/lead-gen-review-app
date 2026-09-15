@@ -1,0 +1,9 @@
+{
+  "format": "lead-gen-account-enrichment",
+  "schema_version": 1,
+  "country": "PL",
+  "dataset_id": "pl-market-2026-09-15",
+  "base_data_hash": "53e48b46b4ca5e7e78b508fc183f822af7bfea634d0dc418b348326913f11fd8",
+  "research_snapshot_id": "9c596cb94195310307a97c1a724dd24770ca9ca563e8683eeda46826745b3777",
+  "registry_snapshot": "2026-09"
+}

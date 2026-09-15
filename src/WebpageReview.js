@@ -5,13 +5,13 @@ import ReviewHeader from './ReviewHeader.js';
 
 export default {
   components:{ReviewHeader},
-  props:{pkg:Object,decisions:Array,reviewer:String,saving:Boolean,error:String},
+  props:{market:{type:String,default:'LV'},pkg:Object,decisions:Array,reviewer:String,saving:Boolean,error:String},
   emits:['decision','load-account','retry','export','import'],
   setup(props,{emit}) {
     const search=ref(new URLSearchParams(location.hash.slice(1)).get('account')||''),kind=ref(new URLSearchParams(location.hash.slice(1)).has('account')?'all':'practice_website'),status=ref('unreviewed'),selected=ref(''),copied=ref(''),reviewRole=ref('practice_website'),choice=ref(''),capabilityActions=ref([]),capabilityProvider=ref('');
     const state=claim=>fieldState(claim,props.decisions);
     const role=claim=>{const value=state(claim);return value.status==='confirmed'&&value.contact_role||claim.website_role;};
-    const all=computed(()=>(props.pkg?.accounts||[]).flatMap(account=>account.claims.map(claim=>({account,claim,id:claim.claim_id}))));
+    const all=computed(()=>(props.pkg?.accounts||[]).flatMap(account=>account.claims.filter(c=>c.field==='website').map(claim=>({account,claim,id:claim.claim_id}))));
     const counts=computed(()=>Object.fromEntries(Object.keys(webpageRoles).map(type=>[type,all.value.filter(row=>role(row.claim)===type).length])));
     const missing=computed(()=>(props.pkg?.accounts||[]).filter(a=>!a.claims.some(c=>role(c)==='practice_website'&&state(c).status!=='rejected')));
     const matches=account=>[account.account_key,account.provider_code,account.name,account.doctor,account.address,account.county,...account.claims.map(c=>c.value)].join(' ').toLocaleLowerCase().includes(search.value.toLocaleLowerCase());
@@ -46,7 +46,7 @@ export default {
     return {search,kind,status,reviewRole,role,counts,statuses,missing,rows,index,current,ready,move,choose,confirm,choice,capabilityActions,capabilityProvider,hasPatientAction,toggleCapability,webpageActions,state,copy,copied,webpageRoles,safeSourceUrl};
   },
   template:`<section class="webpage-review mapping-workspace">
-    <div class="webpage-summary"><h1>Webpages · Latvia</h1><span v-if="pkg">{{pkg.accounts.length}} accounts · {{rows.length}} {{kind==='missing'?'accounts without a practice website candidate':'webpages in this view'}}</span></div>
+    <div class="webpage-summary"><h1>Webpages · {{market==='PL'?'Poland':'Latvia'}}</h1><span v-if="pkg">{{pkg.accounts.length}} accounts · {{rows.length}} {{kind==='missing'?'accounts without a practice website candidate':'webpages in this view'}}</span></div>
     <div class="queue-bar webpage-controls">
       <input v-model="search" :disabled="saving" class="search" aria-label="Find account, doctor, address or webpage" placeholder="Account, doctor, address or webpage…" type="search">
       <select v-model="kind" :disabled="saving" class="region-filter" aria-label="Page type"><option value="all">All webpages</option><option v-for="(label,key) in webpageRoles" :value="key">{{label}} ({{counts[key]||0}})</option><option value="missing">Website not yet identified ({{missing.length}})</option></select>
@@ -54,7 +54,7 @@ export default {
       <label class="webpage-import">Import review JSON<input type="file" accept=".json,application/json" @change="$emit('import',$event);$event.target.value=''" :disabled="saving||!pkg"></label>
       <div v-if="pkg&&kind!=='missing'" class="lane-tabs" role="group" aria-label="Webpage review status"><button v-for="s in ['unreviewed','confirmed','rejected','all']" :class="{active:status===s}" :aria-pressed="status===s" :disabled="saving" @click="status=s">{{s==='unreviewed'?'Needs review':s==='confirmed'?'Confirmed':s==='rejected'?'Rejected':'All'}} <strong>{{statuses[s]}}</strong></button></div>
     </div>
-    <main v-if="!pkg" class="empty-state"><p role="status">Latvia evidence is unavailable. <button @click="$emit('retry')">Retry Latvia data</button></p></main>
+    <main v-if="!pkg" class="empty-state"><p role="status">{{market==='PL'?'Poland':'Latvia'}} evidence is unavailable. <button @click="$emit('retry')">Retry {{market==='PL'?'Poland':'Latvia'}} data</button></p></main>
     <main v-else-if="current" class="review-layout mapping-review">
       <section class="decision-pane webpage-identity">
         <ReviewHeader :email="current.claim?.value||current.account.name" :index="index" :total="rows.length" :disabled="saving" :item-label="current.claim?'webpage':'account'" :copyable="!!current.claim" @move="move" @copy="copy" />
