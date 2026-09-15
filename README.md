@@ -130,12 +130,18 @@ state. Use that importer for these exports; the older Python
 review importer is for legacy clinic decisions. When updating deployment assets,
 keep the same browser origin to retain local review storage.
 
-**Export confirmed mappings** and **Export unused CSV** include only confirmed
-associations for currently valid emails. They never select the first occurrence
-as proof of clinic ownership. Shared contacts yield one row per provider. An
-edited email must have its own mapping. If the optional mapping package is
-missing or mismatched, validity review remains available and mapped exports
-contain no guessed identities.
+**Export unused CSV** in Email validity includes every valid email not recorded
+as used in a campaign, within the selected county. It exports one row per email,
+whether or not its clinic link has been reviewed. Clinic details come only from
+confirmed associations; otherwise they stay blank with `clinic_link_status` set
+to `unconfirmed`. Multiple confirmed clinics are joined with semicolons.
+
+**Export confirmed mappings** in Clinic mapping still includes only confirmed
+associations for currently valid emails, with one row per provider. Neither
+export uses the first occurrence as proof of clinic ownership. An edited email
+must have its own mapping. If the optional mapping package is missing or
+mismatched, validity review and unused email export remain available without
+guessed clinic identities; the confirmed mapping export contains no rows.
 
 Checks: `node --test tests/associations.test.mjs tests/evidence.test.mjs`, `npm run build`, and
 `node tests/associations.browser.cjs` with `PLAYWRIGHT_MODULE` pointing to an

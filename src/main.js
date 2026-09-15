@@ -6,6 +6,7 @@ import ClinicEmailReview from "./ClinicEmailReview.js";
 import AccountEvidenceReview from "./AccountEvidenceReview.js";
 import { validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences } from "./accountEvidence.js";
 import { validateAssociationDecision, validateAssociationPackage, mappingEmails, mappedEmailRows } from "./associations.js";
+import { unusedValidEmailRows as campaignEmailRows } from "./campaignEmails.js";
 
 const DB_NAME = "lead-gen-clinic-review";
 const DB_VERSION = 5;
@@ -719,7 +720,7 @@ const App = {
     const unusedValidExportCount = computed(() => unusedValidEmailRows(selectedRegion.value).length);
     const unusedExportTitle = computed(() => {
       const region = selectedRegion.value || "all counties";
-      return `Export ${unusedValidExportCount.value} confirmed clinic links for unused valid emails in ${region}`;
+      return `Export ${unusedValidExportCount.value} valid, unused emails in ${region}. Unconfirmed clinic details are left blank.`;
     });
     const noMatchedEvidenceCounts = computed(() => {
       return { html: 0, none: 0 };
@@ -1598,7 +1599,7 @@ const App = {
 
     function unusedValidEmailRows(region = "") {
       const eligible = preparedQueue.value.filter(item => itemMatchesRegion(item, region));
-      return mappedEmailRows(eligible, associationPackage.value, associationDecisions.value, { unused: true });
+      return campaignEmailRows(eligible, associationPackage.value, associationDecisions.value);
     }
 
     async function saveField(event) {
@@ -1677,6 +1678,10 @@ const App = {
       }
       const columns = [
         { key: "email", label: "email" },
+        { key: "email_status", label: "email_status" },
+        { key: "email_reviewed_at", label: "email_reviewed_at" },
+        { key: "email_reviewed_by", label: "email_reviewed_by" },
+        { key: "clinic_link_status", label: "clinic_link_status" },
         { key: "county", label: "county" },
         { key: "clinic_name", label: "clinic_name" },
         { key: "neak_provider_code", label: "neak_provider_code" },

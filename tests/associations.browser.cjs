@@ -83,6 +83,22 @@ await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurabl
 await page.getByRole('button',{name:'Copy email',exact:true}).click();assert.equal(await page.evaluate(()=>window.copiedEmail),email);
 for(const width of [375,768,1440]){await page.setViewportSize({width,height:900});assert.ok(await page.locator('.app-shell').evaluate(e=>e.scrollWidth<=innerWidth));}
 if(process.env.MAPPING_SCREENSHOT_PATH)await page.screenshot({path:'/tmp/email-review-aligned.png',fullPage:true});
+// Validity export counts emails, including those without confirmed clinic links.
+await page.locator('.region-filter').selectOption('');
+await page.getByRole('button',{name:'Unused 2',exact:true}).click();
+assert.equal(await page.locator('.review-navigation span').innerText(),'1 / 2');
+assert.equal(await page.getByRole('button',{name:'Export unused CSV 2',exact:true}).count(),1);
+downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'Export unused CSV 2',exact:true}).click();dl=await downloaded;
+const unusedCsv=fs.readFileSync(await dl.path(),'utf8').trim().split('\n');
+assert.equal(unusedCsv.length,3);
+assert.ok(unusedCsv[0].includes('clinic_link_status'));
+assert.ok(unusedCsv.some(row=>row.startsWith('unmatched@example.invalid,')&&row.includes('unconfirmed')&&!row.includes('Synthetic Clinic')));
+assert.ok(unusedCsv.some(row=>row.startsWith(email+',')&&row.includes('B002')&&!row.includes('A001')));
+await page.locator('.region-filter').selectOption('Test');
+assert.equal(await page.getByRole('button',{name:'Unused 1',exact:true}).count(),1);
+assert.equal(await page.getByRole('button',{name:'Export unused CSV 1',exact:true}).count(),1);
+await page.locator('.region-filter').selectOption('');
+assert.equal(await page.getByRole('button',{name:'Export unused CSV 2',exact:true}).count(),1);
 downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'Export .json',exact:true}).click();dl=await downloaded;const exported=JSON.parse(fs.readFileSync(await dl.path(),'utf8'));assert.equal(exported.association_decisions.length,3);assert.equal(exported.email_validations[0].status,'valid');
 // Reload retains the exported local review decisions.
 await page.reload();
