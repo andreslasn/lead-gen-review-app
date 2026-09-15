@@ -1,8 +1,8 @@
-import { mergeFieldEvents, mergeContactPreferences, validateFieldDecision, validateContactPreference, validateAccountPackage } from "../src/accountEvidence.js";
+import { mergeFieldEvents, mergeContactPreferences, validateFieldDecision, validateContactPreference, validateAccountPackage, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
 import { validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
 import { createReadStream } from "node:fs";
-import { readFile, stat, writeFile } from "node:fs/promises";
+import { readFile, stat, writeFile, rename } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve(process.argv[2] || ".");
@@ -162,11 +162,29 @@ async function refreshIntegrityCanonicalHash() {
   await writeFile(integrityPath, `${JSON.stringify(integrity, null, 2)}\n`);
 }
 
-const [canonicalState, validationSeed, emailIndex, reviewExport] = await Promise.all([
+const reviewExport=JSON.parse(await readFile(reviewExportPath,'utf8'));
+let lvManifest;
+try{lvManifest=JSON.parse(await readFile(path.join(dataDirectory,'markets/LV/manifest.json'),'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
+if(lvManifest&&reviewExport.dataset_id===lvManifest.dataset_id){
+ const directory=path.join(dataDirectory,'markets/LV'),target=path.join(directory,'canonical-review-state.json');
+ const pkg=validateAccountPackage(JSON.parse(await readFile(path.join(directory,'account-enrichment.json'),'utf8')),lvManifest);
+ const accounts=[];
+ for(const key of new Set((reviewExport.field_decisions||[]).map(e=>e.account_key))){
+  const account=pkg.accounts.find(a=>a.account_key===key);if(!account)throw Error('Unknown Latvia account.');
+  accounts.push(await loadAccountEvidence(pkg,account,relative=>readFile(path.join(directory,relative),'utf8')));
+ }
+ validateWebpageReviewExport(reviewExport,{...pkg,accounts});
+ let existing={};try{existing=JSON.parse(await readFile(target,'utf8'));}catch(error){if(error.code!=='ENOENT')throw error;}
+ if(existing.dataset_id&&(existing.dataset_id!==pkg.dataset_id||existing.base_data_hash!==pkg.base_data_hash))throw Error('Latvia canonical dataset mismatch.');
+ const field_decisions=mergeFieldEvents(existing.field_decisions||[],reviewExport.field_decisions);
+ const output={...reviewExport,field_decisions};delete output.checksum;
+ await writeFile(target+'.tmp',JSON.stringify(output,null,2)+'\n');await rename(target+'.tmp',target);
+ console.log(JSON.stringify({country:'LV',field_decisions:field_decisions.length}));process.exit(0);
+}
+const [canonicalState, validationSeed, emailIndex] = await Promise.all([
   readFile(canonicalStatePath, "utf8").then(JSON.parse),
   readFile(validationSeedPath, "utf8").then(JSON.parse),
   readFile(emailIndexPath, "utf8").then(JSON.parse),
-  readFile(reviewExportPath, "utf8").then(JSON.parse),
 ]);
 
 if (reviewExport.format !== "lead-gen-clinic-review" || reviewExport.schema_version !== 1) {
@@ -182,11 +200,7 @@ if(reviewExport.field_decisions?.length||reviewExport.contact_preferences?.lengt
  const keys=new Set([...(reviewExport.field_decisions||[]),...(reviewExport.contact_preferences||[])].map(e=>e.account_key));
  for(const key of keys){
   const indexed=pkg.accounts.find(a=>a.account_key===key);if(!indexed)throw Error('Unknown account in review export.');
-  let detail=indexed;
-  if(pkg.evidence_storage==='account-files-v1'){
-   if(!/^account-evidence\/[A-Z0-9]{4}-[a-f0-9]{16}\.json$/.test(indexed.evidence_path||''))throw Error('Invalid account path.');
-   const raw=await readFile(path.join(dataDirectory,indexed.evidence_path));if(createHash('sha256').update(raw).digest('hex')!==indexed.evidence_sha256)throw Error('Account evidence hash mismatch.');detail=JSON.parse(raw);
-  }
+  const detail=await loadAccountEvidence(pkg,indexed,relative=>readFile(path.join(dataDirectory,relative),'utf8'));
   const full={...pkg,evidence_storage:undefined,accounts:[detail]};validateAccountPackage(full,pkg);
   for(const e of reviewExport.field_decisions||[])if(e.account_key===key)validateFieldDecision(e,full);
   for(const e of reviewExport.contact_preferences||[])if(e.account_key===key)validateContactPreference(e,full);

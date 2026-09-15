@@ -22,6 +22,45 @@ tree hashes, required files, and common exposed-secret formats. Do not hand-edit
 
 ## Reviewer workflow
 
+The **Market** selector switches between Hungary and Latvia. Hungary keeps its
+existing email validity, clinic mapping and account-data views. Latvia opens
+**Webpages**, with page-type filters for practice websites, patient portals,
+social profiles, supporting sources and accounts whose website is not yet
+identified. Review each account/page association against the displayed public
+doctor/address identity and saved excerpts; open the source for additional
+context. Confirming a supporting source does not designate an official homepage.
+Reviewers can change **Page role** before confirming when a source was classified
+incorrectly; the accepted role accompanies the dashboard review export.
+
+Latvia uses the existing field-decision store with `LV:<dashboard-record-id>`
+identities, since institution codes can repeat. Confirmed, rejected and pending
+views include saved decisions after reload. A failed evidence download disables
+review controls and offers retry. No raw HTML or private dashboard fields are
+published. Existing Hungary deep links select Hungary regardless of the last
+chosen market.
+
+**Export review JSON** exports only the selected market. Latvia also has
+**Import review JSON** for restoring or merging webpage decisions. The same
+export can be imported into the market-data dashboard or through
+`scripts/import-review-export.mjs`; its dataset and observation IDs are checked
+before mutation. Hungary validation and campaign-use state are excluded from
+LV exports and retained unchanged. LV shared GitHub synchronization is not
+enabled; its reviews stay in browser storage until exported/imported. Existing
+HU synchronization keeps its current dataset and remote path.
+
+Generate LV webpage review data from the saved discovery run in `lead-gen`:
+
+```sh
+.venv/bin/python -m lead_gen.account_package --country LV \
+  --pilot data/reports/lv/account-discovery-2026-09-15 \
+  --output /path/to/review-app/public/data/markets/LV/account-enrichment.json
+```
+
+The public package contains all 1,096 accounts and 4,685 candidate webpages.
+Captured HTML/PDF files remain in the local clinic folders; publication uses
+allowlisted excerpts and compressed immutable account details (about 5.9 MB
+for the complete LV package). No rescraping is needed to rebuild it.
+
 The app is optimized for fast one-email-at-a-time validation:
 
 - left pane: email identity, source clinic occurrence, compact evidence excerpt, all known occurrences, validation buttons;
@@ -104,8 +143,8 @@ validity: ←/→ move between emails, J/K between clinic matches, 1 selects
 Right clinic, 2 selects Wrong clinic, and Enter confirms. Typing fields retain
 their normal keys. This page has one Export confirmed
 mappings button; full JSON backups remain available through Export .json on Email validity.
-The top navigation contains Email validity, Clinic mapping and Account data;
-redundant controls have been removed. Saved reviews and the import/sync data format are retained.
+The top navigation contains only the two review modes; redundant JSON and sync
+controls have been removed. Saved reviews and the import/sync data format are retained.
 Wrong clinic reveals a live clinic-name / doctor / NEAK / town search. Select a
 replacement and use Confirm & assign to reject the original link and confirm
 the replacement in one transaction. Confirm without a replacement records only

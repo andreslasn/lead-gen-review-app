@@ -4,6 +4,7 @@ import { gzip } from 'node:zlib';
 import { promisify } from 'node:util';
 import { cp, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import {validEvidencePath} from '../src/accountEvidence.js';
 
 const compress = promisify(gzip);
 
@@ -25,8 +26,18 @@ async function directorySize(directory) {
 }
 
 export async function copyPublicPackage(source, destination, { maxBytes = 1_000_000_000 } = {}) {
-  const indexText = await readFile(path.join(source, 'data/account-enrichment.json'), 'utf8');
-  const statusText = await readFile(path.join(source, 'data/account-research-status.json'), 'utf8');
+  const roots=['data'];
+  try {await stat(path.join(source,'data/markets/LV'));roots.push('data/markets/LV');}catch(error){if(error.code!=='ENOENT')throw error;}
+  await cp(source, destination, {
+    recursive: true, mode: constants.COPYFILE_FICLONE,
+    filter: file => {
+      const relative = path.relative(source, file).split(path.sep).join('/');
+      return !roots.some(root=>[root+'/account-enrichment.json',root+'/account-research-status.json'].includes(relative)||relative.startsWith(root+'/account-evidence/'));
+    },
+  });
+  for(const root of roots){
+  const indexText = await readFile(path.join(source, root,'account-enrichment.json'), 'utf8');
+  const statusText = await readFile(path.join(source, root,'account-research-status.json'), 'utf8');
   const index = JSON.parse(indexText), status = JSON.parse(statusText);
   for (const key of ['dataset_id', 'base_data_hash', 'research_snapshot_id']) {
     if (!index[key] || index[key] !== status[key]) throw Error('Research publication changed during build; retry.');
@@ -34,37 +45,30 @@ export async function copyPublicPackage(source, destination, { maxBytes = 1_000_
   const selected = [];
   if (index.evidence_storage === 'account-files-v1') {
     for (const account of index.accounts) {
-      if (!/^account-evidence\/[A-Z0-9]{4}-[a-f0-9]{16}\.json$/.test(account.evidence_path || '')) throw Error('Invalid account evidence reference.');
+      if (!validEvidencePath(account.evidence_path)) throw Error('Invalid account evidence reference.');
       selected.push(account);
     }
   }
-  await cp(source, destination, {
-    recursive: true, mode: constants.COPYFILE_FICLONE,
-    filter: file => {
-      const relative = path.relative(source, file).split(path.sep).join('/');
-      if (['data/account-enrichment.json', 'data/account-research-status.json'].includes(relative)) return false;
-      return !relative.startsWith('data/account-evidence/');
-    },
-  });
-  await mkdir(path.join(destination, 'data/account-evidence'), { recursive: true });
+  await mkdir(path.join(destination, root,'account-evidence'), { recursive: true });
   // Keep source JSON untouched; only the Pages artifact uses lossless compression.
   // Bound concurrency so large accounts do not accumulate in memory.
   let next = 0;
   await Promise.all(Array.from({ length: Math.min(4, selected.length) }, async () => {
     while (next < selected.length) {
       const account = selected[next++];
-      const payload = await readFile(path.join(source, 'data', account.evidence_path));
+      const payload = await readFile(path.join(source, root, account.evidence_path));
       const encoded = await encodeAccountEvidence(payload, account);
       const hash = createHash('sha256').update(encoded).digest('hex');
-      account.evidence_path = `account-evidence/${account.evidence_path.split('/').at(-1).slice(0, 4)}-${hash.slice(0, 16)}.json`;
+      account.evidence_path = account.evidence_path.replace(/-[a-f0-9]{16}\.json$/,`-${hash.slice(0,16)}.json`);
       account.evidence_sha256 = hash;
       account.evidence_encoding = 'gzip-base64-v1';
-      await writeFile(path.join(destination, 'data', account.evidence_path), encoded);
+      await writeFile(path.join(destination, root, account.evidence_path), encoded);
     }
   }));
-  await mkdir(path.join(destination, 'data'), { recursive: true });
-  await writeFile(path.join(destination, 'data/account-enrichment.json'), JSON.stringify(index) + '\n');
-  await writeFile(path.join(destination, 'data/account-research-status.json'), statusText);
+  await mkdir(path.join(destination, root), { recursive: true });
+  await writeFile(path.join(destination, root,'account-enrichment.json'), JSON.stringify(index) + '\n');
+  await writeFile(path.join(destination, root,'account-research-status.json'), statusText);
+  }
   const size = await directorySize(destination);
   if (size >= maxBytes) throw Error(`Review site is ${size} bytes; exceeds the ${maxBytes}-byte publication budget. Existing deployment is unchanged.`);
   console.log(`Review site size: ${size} bytes (budget ${maxBytes}).`);

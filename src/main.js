@@ -4,7 +4,8 @@ import { focusArchivedEvidence as focusSourceEvidence } from "./evidence.js";
 import ReviewHeader from "./ReviewHeader.js";
 import ClinicEmailReview from "./ClinicEmailReview.js";
 import AccountEvidenceReview from "./AccountEvidenceReview.js";
-import { validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences } from "./accountEvidence.js";
+import WebpageReview from "./WebpageReview.js";
+import { validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences, validateWebpageReviewExport } from "./accountEvidence.js";
 import { validateAssociationDecision, validateAssociationPackage, mappingEmails, mappedEmailRows } from "./associations.js";
 import { unusedValidEmailRows as campaignEmailRows } from "./campaignEmails.js";
 
@@ -528,10 +529,28 @@ function candidatePresentationGroup(candidate, clinic, reviewPolicy = {}) {
 }
 
 const App = {
-  components: { ClinicEmailReview, ReviewHeader, AccountEvidenceReview },
+  components: { ClinicEmailReview, ReviewHeader, AccountEvidenceReview, WebpageReview },
   setup() {
     const db = ref(null);
     const manifest = ref(null);
+    const routeAccount=new URLSearchParams(location.hash.slice(1)).get('account');
+    const selectedMarket=ref(routeClinicId()||routeEmailValue()||routeAccount?.startsWith('HU:')?'HU':routeAccount?.startsWith('LV:')||new URLSearchParams(location.hash.slice(1)).get('market')==='LV'?'LV':localStorage.getItem('review.market')==='LV'?'LV':'HU');
+    const latviaPackage=ref(null),latviaManifest=ref(null),latviaError=ref('');
+    const activeAccountPackage=computed(()=>selectedMarket.value==='LV'?latviaPackage.value:accountPackage.value);
+    let loadingLatvia=false;
+    async function loadLatvia() {
+      if(loadingLatvia)return;loadingLatvia=true;latviaError.value='';
+      try {
+        const [m,p]=await Promise.all(['manifest.json','account-enrichment.json'].map(name=>fetch(staticUrl('data/markets/LV/'+name),{cache:'no-cache'})));
+        if(!m.ok||!p.ok)throw Error('Could not load Latvia webpage evidence. Retry; existing reviews remain saved.');
+        const meta=await m.json(),pkg=validateAccountPackage(await p.json(),meta);
+        if(pkg.country!=='LV'||meta.country!=='LV'||pkg.research_snapshot_id!==meta.research_snapshot_id)throw Error('Latvia package changed during loading. Retry.');
+        latviaManifest.value=meta;latviaPackage.value=pkg;
+        const canonical=await fetch(staticUrl('data/markets/LV/canonical-review-state.json'),{cache:'no-cache'});
+        if(canonical.ok){await mergeImport(await canonical.json(),{silent:true});await hydrateLocal();}
+      }catch(err){latviaError.value=err.message;}finally{loadingLatvia=false;}
+    }
+    watch(selectedMarket,value=>{localStorage.setItem('review.market',value);history.replaceState(null,'',value==='LV'?'#market=LV':location.pathname+location.search);fieldError.value='';if(value==='LV'&&!latviaPackage.value)loadLatvia();});
     const queue = ref([]);
     const emailIndex = ref([]);
     const staticEmailValidations = ref([]);
@@ -569,15 +588,21 @@ const App = {
     const accountPackage = ref(null), fieldDecisions = ref([]), contactPreferences = ref([]), fieldSaving = ref(false), fieldError = ref('');
     let researchRefreshTimer, refreshingResearch=false;
     async function openAccountEvidence(key) {
-      const pkg=accountPackage.value, account=pkg?.accounts.find(a=>a.account_key===key);
+      const pkg=key.startsWith('LV:')?latviaPackage.value:accountPackage.value, account=pkg?.accounts.find(a=>a.account_key===key);
       if(!account)return;
       try {
         fieldError.value='';
-        const detail=await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/'+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not load account evidence. Retry or refresh the research data.');return response.text();});
-        if(accountPackage.value===pkg)pkg.accounts=pkg.accounts.map(a=>a.account_key===key?detail:a);
+        const detail=await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/'+(pkg.country==='LV'?'markets/LV/':'')+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not load account evidence. Retry or refresh the research data.');return response.text();});
+        if((key.startsWith('LV:')?latviaPackage.value:accountPackage.value)===pkg)pkg.accounts=pkg.accounts.map(a=>a.account_key===key?detail:a);
       } catch(err) {fieldError.value=err.message;}
     }
     async function refreshResearch() {
+      if(selectedMarket.value==='LV'){
+        if(loadingLatvia||fieldSaving.value)return;
+        try{const response=await fetch(staticUrl('data/markets/LV/account-research-status.json'),{cache:'no-cache'});if(response.ok){const status=await response.json();if(status.research_snapshot_id!==latviaPackage.value?.research_snapshot_id)await loadLatvia();}}
+        catch(err){latviaError.value='Research refresh unavailable; existing reviews are preserved.';}
+        return;
+      }
       if(refreshingResearch||!accountPackage.value||fieldSaving.value||associationSaving.value)return;
       refreshingResearch=true;
       try {
@@ -1534,16 +1559,18 @@ const App = {
       await setIndex(currentIndex.value);
     }
 
-    async function buildReviewPayload() {
+    async function buildReviewPayload(country='HU') {
       const exportedAt = nowIso();
       const connection = await ensureDb();
       const storedEmailValidations = await getAll(connection, "email_validations");
+      const meta=country==='LV'?latviaManifest.value:manifest.value;
+      if(!meta)throw Error('Market dataset is unavailable. Retry before exporting.');
       const payload = {
         format: REVIEW_FORMAT,
         schema_version: SCHEMA_VERSION,
-        dataset_id: manifest.value?.dataset_id || "unknown",
-        dataset_version: manifest.value?.dataset_version || "unknown",
-        base_data_hash: manifest.value?.base_data_hash || "sha256:unknown",
+        dataset_id: meta.dataset_id,
+        dataset_version: meta.dataset_version || meta.registry_snapshot || '1',
+        base_data_hash: meta.base_data_hash,
         reviewer: { id: reviewer.value || "reviewer" },
         exported_at: exportedAt,
         app_build: manifest.value?.source_commit || null,
@@ -1556,6 +1583,9 @@ const App = {
         role_overrides: JSON.parse(JSON.stringify(roleOverrides.value)),
         audit_events: await getAll(connection, "audit_events"),
       };
+      payload.field_decisions=payload.field_decisions.filter(e=>e.account_key.startsWith(country+':'));
+      payload.contact_preferences=payload.contact_preferences.filter(e=>e.account_key.startsWith(country+':'));
+      if(country==='LV')for(const key of ['decisions','clinic_states','email_validations','association_decisions','contact_preferences','role_overrides','audit_events'])payload[key]=[];
       payload.checksum = await sha256(JSON.stringify({
         decisions: payload.decisions,
         clinic_states: payload.clinic_states,
@@ -1571,7 +1601,7 @@ const App = {
 
     async function exportProgress() {
       try {
-        const payload = await buildReviewPayload();
+        const payload = await buildReviewPayload(selectedMarket.value);
         const exportedAt = payload.exported_at;
         const date = exportedAt.replaceAll(":", "").slice(0, 15);
         const filename = `clinic-review-${payload.dataset_id}-${payload.reviewer.id}-${date}.json`;
@@ -1584,8 +1614,8 @@ const App = {
         lastExportAt.value = exportedAt;
         localStorage.setItem("review.lastExportAt", exportedAt);
         saveStatus.value = `Exported ${payload.email_validations?.length || 0} email validations`;
-      } catch (_) {
-        saveStatus.value = "Read-only until browser storage is available";
+      } catch (err) {
+        saveStatus.value = err.message;fieldError.value=err.message;
       }
     }
 
@@ -1608,7 +1638,8 @@ const App = {
       try {
         const events=JSON.parse(JSON.stringify(Array.isArray(event)?event:[event]));
         if(!events.length||events.length>100)throw Error('Invalid field decision batch.');
-        events.forEach(e=>validateFieldDecision(e,accountPackage.value));
+        if(!activeAccountPackage.value)throw Error('Account evidence is unavailable.');
+        events.forEach(e=>validateFieldDecision(e,activeAccountPackage.value));
         const connection=await ensureDb();
         await new Promise((resolve,reject)=>{
           const tx=connection.transaction('field_decisions','readwrite');
@@ -1765,10 +1796,10 @@ const App = {
 
     async function syncReview() {
       if (!syncConfig.value || !githubToken.value) return;
-      if((contactPreferences.value.length||associationDecisions.value.some(e=>e.contact_purpose)||fieldDecisions.value.some(e=>e.contact_role))&&!syncConfig.value.capabilities?.includes('account_contacts_v1')){
+      if((contactPreferences.value.length||associationDecisions.value.some(e=>e.contact_purpose)||fieldDecisions.value.some(e=>e.account_key.startsWith('HU:')&&e.contact_role))&&!syncConfig.value.capabilities?.includes('account_contacts_v1')){
         syncStatus.value='Contact preferences saved locally. Export review JSON; shared sync needs contact-review support.';return;
       }
-      if(fieldDecisions.value.length&&!syncConfig.value.capabilities?.includes('account_fields_v1')){
+      if(fieldDecisions.value.some(e=>e.account_key.startsWith('HU:'))&&!syncConfig.value.capabilities?.includes('account_fields_v1')){
         syncStatus.value='Account reviews saved locally. Export review JSON; shared sync needs account-field support.';
         return;
       }
@@ -1898,6 +1929,18 @@ const App = {
     async function mergeImport(payload, { silent = false } = {}) {
       const connection = await ensureDb();
       validatePayload(payload);
+      if(payload.dataset_id===latviaManifest.value?.dataset_id){
+        const pkg=latviaPackage.value,details=[];
+        for(const key of new Set((payload.field_decisions||[]).map(e=>e.account_key))){
+          const account=pkg.accounts.find(a=>a.account_key===key);if(!account)throw Error('Unknown Latvia account.');
+          details.push(await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/markets/LV/'+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not verify imported webpage evidence.');return response.text();}));
+        }
+        validateWebpageReviewExport(payload,{...pkg,accounts:details});
+        mergeFieldEvents(await getAll(connection,'field_decisions'),payload.field_decisions);
+        await new Promise((resolve,reject)=>{const tx=connection.transaction('field_decisions','readwrite');for(const event of payload.field_decisions)tx.objectStore('field_decisions').put(event);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Webpage import aborted'));});
+        fieldDecisions.value=await getAll(connection,'field_decisions');return;
+      }
+      if(payload.field_decisions?.some(e=>e.account_key.startsWith('LV:')))throw Error('Latvia review dataset is unavailable or mismatched.');
       if (!silent && manifest.value?.dataset_id && payload.dataset_id !== manifest.value.dataset_id) {
         const ok = confirm(`This export is for dataset ${payload.dataset_id}, current dataset is ${manifest.value.dataset_id}. Import anyway?`);
         if (!ok) return;
@@ -1989,7 +2032,7 @@ const App = {
     }
 
     function onKey(event) {
-      if(accountMode.value)return;
+      if(accountMode.value||selectedMarket.value==='LV')return;
       if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.isComposing) return;
       if (event.target?.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
       const key = event.key.toLowerCase();
@@ -2046,6 +2089,7 @@ const App = {
     onMounted(() => {
       window.addEventListener("keydown", onKey);
       init();
+      if(selectedMarket.value==='LV')loadLatvia();
       researchRefreshTimer=setInterval(refreshResearch,30000);
     });
 
@@ -2056,6 +2100,7 @@ const App = {
     });
 
     return {
+      selectedMarket,latviaPackage,latviaError,loadLatvia,importWebpageReviews,
       accountMode, accountPackage, fieldDecisions, contactPreferences, emailValidationByValue, saveContactPreference, fieldSaving, fieldError, saveField, openAccountEvidence,
       mappingMode, mappingReview, associationPackage, associationDecisions, associationSaving, associationError, saveAssociation, exportAssociationCSV, preparedQueue, associationEmails,
       manifest,
@@ -2156,9 +2201,18 @@ const App = {
         saveStatus.value = "Copy failed";
       }
     }
+    async function importWebpageReviews(event) {
+      const file=event.target.files?.[0];if(!file||fieldSaving.value)return;
+      fieldSaving.value=true;fieldError.value='';
+      try{if(!latviaPackage.value)throw Error('Load Latvia data before importing.');const payload=JSON.parse(await file.text());if(payload.dataset_id!==latviaPackage.value.dataset_id)throw Error('Latvia review dataset mismatch.');await mergeImport(payload,{silent:true});}
+      catch(err){fieldError.value=err.message;}finally{fieldSaving.value=false;}
+    }
   },
   template: `
     <div class="app-shell">
+      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option></select></label>
+      <WebpageReview v-if="selectedMarket==='LV'" :pkg="latviaPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="latviaError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadLatvia" @export="exportProgress" @import="importWebpageReviews" />
+      <template v-else>
       <nav class="review-mode-tabs" aria-label="Review mode"><button :class="{active:!mappingMode&&!accountMode}" @click="mappingMode=false;accountMode=false">Email validity</button><button :class="{active:mappingMode&&!accountMode}" @click="mappingMode=true;accountMode=false">Clinic mapping</button><button :class="{active:accountMode}" @click="accountMode=true;mappingMode=false">Account data</button></nav>
       <AccountEvidenceReview v-if="accountMode" :pkg="accountPackage" :associations="associationPackage" :field-decisions="fieldDecisions" :preferences="contactPreferences" :validity="emailValidationByValue" :association-decisions="associationDecisions" :reviewer="reviewer" :saving="fieldSaving||associationSaving" :error="fieldError||associationError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @association-decision="saveAssociation" @export="exportProgress" />
       <ClinicEmailReview ref="mappingReview" v-if="mappingMode&&!accountMode" :pkg="associationPackage" :emails="associationEmails" :decisions="associationDecisions" :reviewer="reviewer" :saving="associationSaving" :save-error="associationError" @decision="saveAssociation" @copy="copyEmail" @export="exportAssociationCSV" />
@@ -2286,9 +2340,7 @@ const App = {
         <h2>No emails in this lane.</h2>
         <p>Change the lane filter or search query.</p>
       </main>
-
-
-
+      </template>
     </div>
   `,
 };

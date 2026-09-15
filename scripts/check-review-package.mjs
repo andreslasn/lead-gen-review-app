@@ -1,4 +1,4 @@
-import { validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences } from "../src/accountEvidence.js";
+import { validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
 import { validateAssociationPackage, validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
 import { createReadStream } from "node:fs";
@@ -150,6 +150,24 @@ try {
   await scanSecrets(path.join(root,'account-enrichment.json'));
 } catch(error) {if(error.code!=='ENOENT')throw error;}
 const canonical = await json("canonical-review-state.json");
+let hasLatvia=false;
+try{await stat(path.join(root,'markets/LV'));hasLatvia=true;}catch(error){if(error.code!=='ENOENT')throw error;}
+if(hasLatvia){
+  const prefix='markets/LV/',meta=await json(prefix+'manifest.json'),pkg=validateAccountPackage(await json(prefix+'account-enrichment.json'),meta);
+  if(pkg.country!=='LV')fail('Latvia package country mismatch');
+  const status=await json(prefix+'account-research-status.json');
+  if(['dataset_id','base_data_hash','research_snapshot_id'].some(k=>pkg[k]!==status[k]))fail('Latvia research status mismatch');
+  const accounts=[];
+  for(const account of pkg.accounts){
+    const detail=await loadAccountEvidence(pkg,account,relative=>readFile(path.join(root,prefix,relative),'utf8'));
+    const decoded=JSON.stringify(detail);for(const [name,pattern] of secretPatterns)if(pattern.test(decoded))fail(name+' detected in Latvia evidence');
+    accounts.push(detail);
+  }
+  let state;
+  try{state=await json(prefix+'canonical-review-state.json');}catch(error){if(!error.message.includes('ENOENT'))throw error;}
+  if(state)validateWebpageReviewExport(state,{...pkg,accounts});
+  await scanSecrets(path.join(root,prefix,'account-enrichment.json'));
+}
 mergeFieldEvents([],canonical.field_decisions||[]);
 mergeContactPreferences([],canonical.contact_preferences||[]);
 for(const event of canonical.association_decisions || []) validateAssociationDecision(event);

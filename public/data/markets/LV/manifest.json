@@ -1,0 +1,9 @@
+{
+  "format": "lead-gen-account-enrichment",
+  "schema_version": 1,
+  "country": "LV",
+  "dataset_id": "lv-market-2026-09-15",
+  "base_data_hash": "e8d6410e2dca1217a5dc97cb3e2da3246b5c0904abaa1bf128d2d42da4a6f8c3",
+  "research_snapshot_id": "8585812c8c41a46f131e4f95bf3cdf8e0fd0dabfe6e672ce9ac727e3d48b46e1",
+  "registry_snapshot": "2026-09"
+}
