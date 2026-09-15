@@ -1,16 +1,1 @@
-Dr. Lavicska Enikő
-Rendelő címe
-1204 Budapest XX. kerület Virág Benedek utca 44.
-Email cím
-dr.lavicska.eniko@gmail.com
-Telefonszám
-Információ
-Asszisztens neve:
-Rohály Kálmánné
-Rendelési idő:
-Hétfő, szerda: 15:00 - 19:00
-Kedd, csütörtök, péntek: 8:00 - 12:00
-Bemutatkozás:
-20 éve dolgozom háziorvosként a XX. kerületi praxisban. Munkánk egy legfontosabb része a prevenció, egyben a legnehezebb feladatunk is - meggyőzni a pácienseket arról, hogy tegyenek az egészségükért!
-Ebben lehet segítségünkre a Mozgás Receptre!
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1VSvYobMRDu9RRz/d5iGwcuWyUmhoTLNSaEa7WrsSyklRZJNme9xT6Cyy2uOkjlTux7ZXRnAikkgeab72ekb76Gn/ykuqA5bK3S88h2aAWaeYQuv/bIlqvFGjZHwQcMEZ6fa9Do89VghN/K54uEDVoUqOEYOw7rdc22PVfmvZ0JX5sbf43E777IUqw717NfaHDvbEj50rMfdu98ny+dym/sawhJhRTRBrB4wobt3CFfzBkeaSeUtXm6Gc1TUKDEPDbse57ifh4rCAm94A0sPzWLBdzD8jOd7BGFqKAL+RrzH09LVzDkyUbUDTzckKuC3GB/jDxqR9ZCw1YLyNMJQTgjXXI9kJeknD+5oEs/8P/momDw/EWFltsano5Wk18NKM9gUFLg6AJvW/DkPCH1Dp4i2hK8KqgWLV0S1OIBExJyj4YLHokJVCCTPUp5nsdkVekuM6NBoaYX4d7nN1PBwZFaJDJ6Gg08EW9RC3mS+Uqefbxj27YoGRKJEKj+Gj/KVvvi6sklSelhhx0O0ePdv4/xF1bf3pE1AgAA"}

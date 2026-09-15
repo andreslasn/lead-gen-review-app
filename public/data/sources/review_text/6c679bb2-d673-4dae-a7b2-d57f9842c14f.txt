@@ -1,10 +1,1 @@
-Időpontfoglalás
-Kedves Pácienseink!
-A hatékonyabb, korszerűbb betegellátás érdekében, ezúton kívánjuk biztosítani Önöknek az on-line időpontfoglalás lehetőségét. Időpontot a
-rendelési idő
-utolsó egy órájában tudunk rögzíteni.
-Kérjük, az időpontfoglalás iránti igényüket (nevük, időpont megjelölésével, telefonos elérhetőségük megadásával) az
-idopont.rendelo@gmail.com
-email címre továbbítani szíveskedjenek.
-A megadott email/ (telefonos) elérhetőségén írásban értesítjük vagy visszahívjuk Önt és fixáljuk a pontos időpontot, ezért kérjük, olyan email címet/telefonszámot adjon meg, amelyen el tudjuk érni.
-Az időpont igénylés csak akkor tekinthető foglalásnak, amennyiben visszaigazoltuk azt. Ha munkanapokon 48 órán belül nem kap tőlünk választ, kérjük lépjen velünk kapcsolatba egyéb elérhetőségeinken keresztül.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE2VTMW7bQBDs+YpNZwOK3KRIGXcJ3OQLR3FNH++4J/BWRMRfuEnPkoWKwICLwN3C/8ocLduA01HU7OzszPBH83y/T6K3qY0u2pyrG25GzvTT5p1nyewlfKqu6c6pLSHJ0dX1hkIa8sTD85+6ppqVW44YVsyTLUPDwZaaZUM82V9NQsFOo83SHQLVftKU7aROPNlvsccgHMhNlORz9MLkP2qiyHesz/fZltYW3dKPMyIpuWpgaTjakv06WR00xWwPxO2R7GGwubO5dkJ6aA4SaLDHdsJ6Fr+tbqC2s6ewKfv/3+sxLQperJUjcKx0ITyuE69w6rntIOCxaLBl5Lgh5ci3SVKmomx4V/8UCtw1YLd5dPESiyvfpEK0fbkkfWt75+N2l/qKyxPt7NQPTJrgYV2frcs4AkEFbjqGgVtktDInVVrHrujiTcblRx2LkJ1wXS7O4B/lEkmxgkYH40af8+TusKJkhpgUqEy3/pfNsbxytAaQ32xIusYNKqT96mqKR/C/X8F6ddYE+XNf8ms69APKEUHP8ciAx5LVuncZSkrX79mcoyhW0y476AjoIvwOXnQ9j97iExdWUpGjRxvPN/nWTSlqOWFClb476lELJ26fUG/68vWlNIJeR3uKJNxTcHsCNX6jQAghujzh3Nc7CXL2XdnALxDgdzlFp7UrNcTH8MH/8lUBH3hgMGHN9h/dU+KBiQMAAA=="}

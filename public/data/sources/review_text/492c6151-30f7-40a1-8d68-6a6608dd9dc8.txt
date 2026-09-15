@@ -1,18 +1,1 @@
-Dr.
-JÃ¡mbor ZoltÃ¡n
-Telefon:
-0620/9432388
-Email:
-jamborzoltan@jkmed.hu
-Rendelő:
-1115 Budapest, TÃ©tÃ©nyi Ãºt 12/16 – Szent Imre
-KÃ³rhÃ¡z BÃ¡rtfai Ãºti Szakrendelője II. emelet, tel.: 464 8772
-KenÃ©z Anna
-0620/5113862
-kenezanna@jkmed.hu
-1121 Budapest, Normafa u. 4.
-MolnÃ¡r Judit
-0620/3609561
-molnarjudit@jkmed.hu
-Oktat:
-1123 Budapest, TÃ¡ltos u. 15/a
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE12QvU7DMBSFdz/FfQDk1M5P00xQwZBWgASd2C7KjZrEdpDrDGRC4gkQT9CxMxsjiBfhSbBppSKmK/scf+f4nlvOFp/PH1t931u465ULB8NWpKjuTcEmmZxEsySWcZ6zC42NKliLwT16M5rTttNU8fXAbshUpL5eCiaESGE+VPhAG3cCK4/cBe7OPDbg57sDISORwffTK9yOZByU2hJbeu3NrkODEeZhWFfj4UnjndjZQ0hLUJYcSPuePsKR4gUkWQL5dCrZkkyIG+HMGNx/IRUizjPJOjI0or8+FhdCij91r3qrsUYYOCScXfbK/DaBxVA1bg+Ls8kszQTTXkTbBuGIu+4curAEGf9bwla5fhO4Io3wB7odgMR6AQAA"}

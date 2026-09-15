@@ -1,14 +1,1 @@
-Balogh Vendégház
-H-3950 Sárospatak, Kölcsey Ferenc utca 17. Telefon: +36-20/477-2007
-Keresés
-Kapcsolattartó
-Amennyiben érdeklődik apartmanjaink iránt, örömmel válaszolunk kérdéseire. Ha bármilyen információra vagy segítségre van szüksége, vegye fel velünk a kapcsolatot az alábbi elérhetőségeink egyikén:
-Kapcsolattartó:
-Balogh Gábor
-Telefon: +3620/477-2007
-Szabó Erika
-Telefon: +3620/340-7464
-E-mail:
-vendeghazbalogh@gmail.com
-Szálláshely címe: 3950 Sárospatak, Kölcsey Ferenc utca 17.
-APARTMANOK FOGLALTSÁGA
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE42RPW7bQBCFe55i+kiKEskmwio0YMuA/BNEQvohNSI33B9hdy2A7HwEH4GlClcCVLkb+F4ZOghguEq12Jl5b799c4HaVTX8IrvhQ1Vz3yXX49m3symsuPcu7DBiM4Iln3QZqIUr8mRLeIglwpd0AmvStHU2g0+z8/HX6ed5msoxTZOlDAY+hGSJuzI4jTGij3xMckPWtqogC3zwG2r069NGNYA76Ru0v1HZBpTn3sYR8MnzyRjSsOdeY+icfpB2M0jFnZSnCVwjFEJrlG7FVdmt84b7UvHRI+yxaiFQxc9ReCpPUrEQOn5phjuNYE9VS7Ad3iDNL2KP0PyjdhGwA9TcF4UC6R98TfH16U07kIpYCY7NPv40Sy7+hrsQrfPJ+6jeJ7XqsOAjXHrV4Meh2Xw6Tufn8+RybFDpLNnLoqiqsSvevL9XQ3lSOiM2EpBghpp0CyU/G8rg/zeZ5D/yn+vb/O5+CVf3i5v8Zr3ix0X+B0vCAKchAgAA"}

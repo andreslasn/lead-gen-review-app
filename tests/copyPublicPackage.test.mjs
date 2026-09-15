@@ -1,4 +1,4 @@
-import {parseAccountIndex} from '../src/accountEvidence.js';
+import {parseAccountIndex,decodeReviewArtifact} from '../src/accountEvidence.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
@@ -7,12 +7,18 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { decodeAccountEvidence } from '../src/accountEvidence.js';
 import { copyPublicPackage } from '../scripts/copy-public-package.mjs';
+import { compactClinicArtifacts } from '../scripts/compact-research-package.mjs';
 
 test('build retains the selected evidence and ordinary assets without copying historical snapshots', async t => {
   const root = await mkdtemp(path.join(tmpdir(), 'review-package-test-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const source = path.join(root, 'public'), destination = path.join(root, 'dist');
   await mkdir(path.join(source, 'data/account-evidence'), { recursive: true });
+  await mkdir(path.join(source, 'data/clinics'), { recursive: true });
+  await mkdir(path.join(source, 'data/sources/review_text'), { recursive: true });
+  await mkdir(path.join(source, 'data/sources/raw_html'), { recursive: true });
+  const clinic='{"clinic":{"id":"preserved"},"state":{"status":"confirmed"}}\n';
+  const reviewText='Dr. Przykładowa · Review evidence\r\nEmail on the original page.\n';
   const selected = 'account-evidence/A001-aaaaaaaaaaaaaaaa.json';
   const historical = 'account-evidence/A001-bbbbbbbbbbbbbbbb.json';
   const status = { dataset_id: 'test', base_data_hash: 'hash', research_snapshot_id: 'snapshot' };
@@ -23,8 +29,19 @@ test('build retains the selected evidence and ordinary assets without copying hi
     'data/account-enrichment.json': JSON.stringify(index),
     'data/account-research-status.json': JSON.stringify(status),
     ['data/' + selected]: payload, ['data/' + historical]: 'historical', 'logo.svg': '<svg/>',
+    'data/clinics/preserved.json':clinic,'data/sources/review_text/evidence.txt':reviewText,
+    'data/sources/raw_html/proof.html':'<html><body>Saved public page</body></html>',
   })) await writeFile(path.join(source, file), value);
   await copyPublicPackage(source, destination);
+  for(const [file,original] of [['data/clinics/preserved.json',clinic],['data/sources/review_text/evidence.txt',reviewText]]) {
+    assert.equal(await readFile(path.join(source,file),'utf8'),original);
+    const encoded=await readFile(path.join(destination,file),'utf8');
+    assert.notEqual(encoded,original);
+    assert.equal(await decodeReviewArtifact(encoded),original);
+    assert.equal(await decodeReviewArtifact(original),original);
+  }
+  assert.equal(await decodeReviewArtifact('{plain non-JSON evidence'),'{plain non-JSON evidence');
+  await assert.rejects(decodeReviewArtifact('{"format":"lead-gen-account-evidence-gzip","schema_version":2}'),/Invalid compressed/);
   const built = await parseAccountIndex(await readFile(path.join(destination, 'data/account-enrichment.json'), 'utf8'));
   const account = built.accounts[0];
   assert.equal(built.research_snapshot_id, index.research_snapshot_id);
@@ -37,6 +54,11 @@ test('build retains the selected evidence and ordinary assets without copying hi
   assert.equal(await readFile(path.join(destination, 'logo.svg'), 'utf8'), '<svg/>');
   await assert.rejects(readFile(path.join(destination, 'data', historical)), { code: 'ENOENT' });
   assert.equal(await readFile(path.join(source, 'data', historical), 'utf8'), 'historical');
+  const archive=await mkdtemp(path.join(tmpdir(),'artifact-archive-'));t.after(()=>rm(archive,{recursive:true,force:true}));
+  assert.equal((await compactClinicArtifacts(path.join(source,'data'),archive)).files,3);
+  assert.equal((await compactClinicArtifacts(path.join(source,'data'),archive)).files,0);
+  await copyPublicPackage(source,destination);
+  for(const file of ['data/clinics/preserved.json','data/sources/raw_html/proof.html'])assert.equal(await readFile(path.join(source,file),'utf8'),await readFile(path.join(destination,file),'utf8'));
   await assert.rejects(copyPublicPackage(source, destination, { maxBytes: 1 }), /publication budget/);
   await writeFile(path.join(source, 'data/account-research-status.json'), JSON.stringify({ ...status, research_snapshot_id: 'changed' }));
   await assert.rejects(copyPublicPackage(source, destination), /publication changed/);

@@ -1,17 +1,1 @@
-lyok, szabványok, előírások ismerete;
-szakszerű, felelősségteljes munkavégzés;
-jó fizikai erőnlét és állóképesség;
-1-3 év szakmai tapasztalat;
-
-Munkaidő: 
-teljes munkaidő, egyenlőtlen munkaidőbeosztás, napi 12 órás munkavégzés
-Munkavégzés helye: 
-Szeged Sport és Fürdők Kft. létesítményei
-Jelentkezés:
-e-mail: allas@szegedsport.hu 
-személyesen: 6726 Szeged, Temesvári krt. 33. Fsz. 13. iroda Tovább Művezető A Szegedi Sport és Fürdők Kft. MŰVEZETŐmunkakörbe keres munkatársat
-Feladat
-
-Műszaki csapat vezetése, támogatása, fejlesztése, irányítása;
-A karbantartási rendszer működtetése, felügyelete és elemzése (stratégia kidolgozása, TMK);
-Költs
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE3VSPW/bMBDdBeg/3NgCigHHQAq4SzPEQw1PMTp0o6qzQpMiDR5jwPoV9T+IRw0BahjIlCmE/lfvZAdth27kfbz37t3ZnTcFUKvKbTq44YO236fnkA7kDWhqMGDEz3nGRYZaDP2xgBVaKSNKXR3RrpGgeXRGbfnfpo64fJ1OsNKtNkoDN+2dTV0EzkE6WJtOJnUbHAC4eHw14dRWhJiGG6LaKGqjsipyNs8WAq6rfj99e8qzvxklyJrrHToWFC26P/ESPYPwIAU4tdEwvoZ0ksH+FXuBf//CA9odDkT3LdZYwf3Gh7P0WXoNDGxgvoojkImQ0nNsUud2qPPsK/viokHBmeYZXvEwdgrKWkVfaEAjARs9PAo+R7iV2QjdFG4+Xd/AmbKAJTZIvJOgwXA9TCYjmFE7gjE/dPCVgqXnfFnCoj9uscXY7+H20q//p/ntadH/+nb3/W7Z/xxMMOkllAiGt3yxhQ0LpGKezdCqSh5sUH+U1Wj4QbyZCAMfg2MBXN74WrpIyWGsLYrpQ04HOSo2SJK8yFswKpTKRRUkpCGgq+SmoOmPrKSK76h8YOmVl2r59oYp+NWIqwgfKAam62qtwOjK29q3Z/LlYv6RWebpxUb6DfT8o8naAgAA"}

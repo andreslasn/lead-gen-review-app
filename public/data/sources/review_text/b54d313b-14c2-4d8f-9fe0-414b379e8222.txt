@@ -1,16 +1,1 @@
-Dr. Magony Edit
-Rendelő címe
-1118 Budapest XI. kerület Gazdagréti tér 1.
-Email cím
-drmagonye@gmail.com
-Telefonszám
-Információ
-Asszisztens neve:
-Tóth Szabina
-Rendelési idő:
-Hétfő, Szerda: 9:00 - 13:00
-Kedd, Csütörtök: 15:00 - 19:00
-Péntek, páratlan: 15:00 - 19:00; páros: 8:00 - 12:00
-Bemutatkozás:
-Háziorvos, neurológus szakorvos, reumatológus jártassággal, úszóversenyzői tapasztalattal. Fizikoterápiát végzünk. Szülészet-nőgyógyászat jártasság, szülésznői végzettséggel.
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE11RwW7UQAy9z1f4A9KooUIq4QKlhVYVEoIeuJqNNwxJZlYzzko7f5FPyDEHTitxQHuz8l91VgEhDjOW7Ge/5+fbkMNHrL07wF1l2XwmV1E7D7CRnx2Zoiiu4aavcEeR4etDDg0FObXE8AFThXWQiS2wTAGK3Nx1aNtzq6lCdx5Lb+olmW98Z56opa13McnYmQe39aGTcWPlaN7GmGxMTC6Coz2V5kmO/B2+JPxmHa6yZIoWbDUPpblX3u08ZIqgUGEJr8rLS7iA4kqjeaSqyuBdlBPLr6CvKaF4uSIWpPkkk2NqMtjJGJBbdP8hXp8rPpZwvWZfLH031PWM3HjdIS4yxmR92PuYqe4++FaOdR8hJmzWdKC+Q/5T+KFDGWOUsa6xzUB+qxvHPYVI7pDmQb3EHaoT2CLrl8N7m2zjWW0fd1ZGhr1MdZKTa3JdXm+hriTiCzcP9UFJDiosIf/LlKmeFegWivMEYo4aa2rzv1d/BuTSagIOAgAA"}

@@ -1,18 +1,1 @@
-Dr. Egri Gábor háziorvos
-honlapja
-Ma 2026 július 15, szerda és páratlan hét van. A mai napon 14:00 - 17:00 lesz rendelés, amely 9 óra 2 perc múlva kezdődik.
-Dr Egri G 2026. július 6- 24 között szabadságon van. Helyettese Dr Bóné Emese a saját rendelési idejében.
-Elérhetőség
-A Rendelő a Semmelweis - Gerlóczy
-utca sarkán helyezkedik el
-A bejárat a Gerlóczy utca felől van
-A Recepció már nem működik!
-A kész igazolásokat, beutalókat, stb, az adatvédelmi
-szabályok miatt csak tőlünk (vagy a másik műszaktól) vehetik át rendelési időben.
-A Rendelő elhelyezkedését térképen itt nézheti meg:
-térkép
-Levelezési cím: 1052 Budapest, Semmelweis u. 14.
-E-mail cím: oepjelentes7(kukac)gmail.com
-Telefon: 318 - 6046
-A megnövekedett jogsértő üzenetek miatt az oldalról küldhető üzenetek átmenetileg letiltásra kerültek!
-Amennyiben a fenti e-mail cím megadott, akkor normál e-mail küldése javasolt.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE2WTv27bMBDGdz3FdUuARLDdxGm9JUiQDu3S9gXO0kWhSZECSauw3sJvUI0eOhQGMhSZSvi9+knIP6CTJPLuu+9+d7r2Od1UXtFt6pfO033qO+V860J276zhZsXZF6bZZDanVfpj1DrQ9PyEQie+ZEq7QE3qPUfDFsm7SC3bnC6pZkWWG2dperaYTOiUphfD00joyIstxSD5hLgWs6GPlPYeZagRX1CNQi2Tlq48bEul8+zaP7kcneQvVuanNDsjnR669BAjXPGSy5D6CnVHI5+gLjFKEILGVdrbtKObevhmCrxKfXx1o0iVskq7pdg8u8GJv5d42Ia0q7JL+jqGHbZI/CY1bP8QFdDXrXiT9kW3ydaxGES9Tj1gDJU7LfBPYpC/hPRACvkvKTSm3A2yZjA8limkKVTaA0PvyUpN9eE3WoTQO9xrGO1IVdw5k/rgNMcTaK8jQ3L8CHEJrh1xybFNO5iuVTagSb3ZOE21YrAqAmtCdyY9Wv3351HL1QbWUDTAMUoiQ8e0N8fUCjjg8D9Yh+2I6g0bMS99I2bYhwiM8NyIJYWy4N8NalRLtcieL7PP0oqRbtQt0q96QdPJ+Yyu1iU3EtDUG+TrHDuFAZ1ix8xTtJNmBQGLSV8c6bXm4rgarvPC1dl33Nw5u6D30w8Y2HxyNodnGLDpoRVYxYbQylXw60GE0mMnVqI8owJLZ0o2HjTA/9GU4168iQOZenhVRiqsOJ4RHP2wwx7xCMHoEGE3CsRoGLkFA3ltYbDDpYtolbXGn2idxyzMc8xYFniEVtxycCbm/wDPHLPnvAMAAA=="}

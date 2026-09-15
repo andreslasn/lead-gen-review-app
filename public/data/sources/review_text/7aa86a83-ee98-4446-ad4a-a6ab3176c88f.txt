@@ -1,6 +1,1 @@
-alt="Pécs címere" /></noscript></p>
-<p class="mb-1 font-weight-bold text-white">
-Pécs Megyei Jogú Város Önkormányzata</p>
-<p class="mb-1">7621 Pécs, Széchenyi tér 1.</p>
-<p class="mb-1"><a href="tel:+3672533800" target="_blank" class="tel">+36 (72) 533 800</a></p>
-<p class="mb-1"><a href="javascript:;" data-enc-email="crpf[at]crpf.uh" target="_blank" class="email mail-link" data-wpel-link="ignore"><span id="eeb-450847-723590"></span><script type="text/javascript">document.getElementById("eeb-450847-723590").innerHTML = eval(decodeURIComponent("%27%73%7a%65%72%6b%65%73%7a%74%6f%40%70%68%2e%70%65%63%73%2e%68%75%27"))</script><noscript>*protected ema
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE31SyY7UMBC9z1eULFnqBtJJJ524GZIcQEjMiJEQ2wUh5CTVaTOJHTmeJfMh3Oc4B36Aa36MSprl0nBxbe89V5UtG5exN+ND2UM5fm/RIgM/T31t+tKqzpHb5SdpB2Uj+z5jbeGtYWe0825Q1XvnFaapwOEtJfbKIctPDmoXWA+o4NzU4w/4ON5b08P4TV8a2473eriTTh6RZrlIwjXMEk/g3R3ZPepBgRsfLKxXRymphL3FXcYcNqePo0SEcRRtg4CBk7ZGGvBL0Uh9yX7TCMdyAsJChEsgMBA69WX+f/mv8loetnL6jEFFE3ioSw9bqZqMlbbbfZLu82RXV/t/Xj7DYTq8Rk35Weimw0OcMVVrQ8+Qp30nNaiKKFh4mzjYboQnwih+GlDRn6qEmfsBN3Q4zXXr/L9dsrwy5VWL2q2okZcNTu7z4axaHFFcrpTWaF+9v3gNGeC1bBYVlqbCD2/PXpi2M5rIC8ZDwUXEheRJzEXIk2J25ozY8GTHNwEXAU+2PMTZiXkSTQAKKSliUmDLJfX/63/9+WmPOmsclg4roB39BIQo8NCZAgAA"}

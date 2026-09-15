@@ -1,17 +1,1 @@
-Dr. Berta Izabella
-Rendelő címe
-1132 Budapest Visegrádi utca 47/C
-Email cím
-berta.izabella@gmail.com
-Telefonszám
-+06-30-9868626
-Információ
-Asszisztens neve:
-Baranyiné Nagy Orsolya
-Rendelési idő:
-Hétfő, Szerda:  8-12h-ig
-Kedd, Csütörtök: 15-19-ig
-Péntek: 8-12-ig
-Bemutatkozás:
-17 éve dolgozom ebben a praxisban, háziorvosként. Tapasztalataim azt mutatják, hogy mozgásszegény életmód nagyon általános, ennek számos oka van, munkakörülmények, egészségi állapot, nevelés, családi szokások, stb. Nagyon nehezen vehető rá, főleg az idősebb korosztály a mozgásra, nehezen fogadják el, hogy a gyógyulásuk és a fittségük köszönhető lenne egy kis mozgásnak. Sokszor a gyógytornát is elutasítják, elküldik a szakembert.  Szerencsére jelentkezett, főleg a fiatalok köréből olyan réteg, akik rendszeresen mozognak és ez segíti az idősebbeket is, főleg családon belül a mozgásra. Szerintem, tudnék a betegeimnek segíteni a mozgásuk fokozásában, ha csatlakozhatnék a programhoz
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE01TvW7bMBDe9RS3V1bjpHUTT63TAg0KtEUTdD9ZZ5nhn0HSRsW3yBtUo4ZMATJlKpH36lFxnAyGgdPx++PHz66CBbmAcBGxJqWw+EWmIfV4A8t0q6mYTk+OYbFtcEM+wG/hqXWpbwRswxLh3Ye358UXjUKN60WdsSqxx/rY5i/V0uriihStrPEx9bp4czSbnBxNzk5np7PjWXFhVtbp1C9Fuis+eR+Fj4GMB0M7mhcLdGg6YdIA37Ht4IfzVnXPQtPgBYjm8WZefE1DWD3elHAZyTU4h39/TyfT4/VEtMU3apoSzn16COne8U/OYfp+Mj3LH3+mwQTiSV7PgwXpbcAgLcv182L6AdKwI2isam20GqiuyQDCxuEf4Ws0JaxTH4V1O+tlRqvgCjfIPlBhQKEBY4AR9Dr1ktctO9E2tkzgI7V8pmMSRUGnuwYMG7UGUq8YIPXG+hLIGJIwJmg9WImwy8R6ayRKNpUelM4wxPAZ0EefhlZkEIUbG8oxzxxYCUufYfkWfbSSJVg+40NdjQkzsaE1Rba44//AXeArL4GzVdSykzFvzyGAtM6ySaboOI69H4flAWBlW2yyZSC1d43Qdumu7baswG8lu/Y8W4kQst70IIHdsM1788StsnF21IEU/pnDoKzg0krW7w6IwTqT+gC8Roqz9ul2HzcpyfE0QvKujyhJ56ZW3JDcFTJLpnYE19xSEyQrD+HFL2vjO1R2FObSUPMccgUN5zIEaktAydCM0/gM59k467QtqxztUQR+N6xGvE6PJGWtB6L9pXD8/HpY7utEq7HUgmuqSwjbhl9D9lIT05PQYzNGBjLi5Rynu7JPLU79U00x0wSFPF1j2MNsnG0d6rWNh+f/H22VkBUaBAAA"}

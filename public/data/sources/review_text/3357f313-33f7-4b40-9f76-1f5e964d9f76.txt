@@ -1,16 +1,1 @@
-Impresszum
-Legyek jól!
-Kiadja:
-Doctor Consulting Kft.
-H-1088 Budapest
-Mikszáth tér 4.
-info@legyekjol.hu
-A Szerkesztőségről bővebben
-itt
-olvashatsz.
-Adatkezelési tájékoztatónk
-innen
-tölthető le.
-A
-https://www.legyekjol.hu
-oldalon elérhető tartalmak szerzői jog védelme alá esnek, indokolt terjedelemben és az eredetihez híven – a forrás, valamint az ott megjelölt szerző megnevezésével idézhetőek és az átvevő a művet nem használhatja fel üzletszerűen.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1WRsW4UMRCGez/F0IdNkCiiVIRQBAUqnmCOndv1emyf7DmfcJVXOOUJttyCIopERWfti/AkzCWkoJ3x//2fxp/9LlHOde/NFxp+kIOpPfEbc2exn/DKfIrfJSa4iSHvWWwY4G4rnbl9++7i8hI+7nvcURbz1bpc2ywjSFsSvO+MDdv4gZ+RU+Ru3Jtr+FYpOcpV1mNuy5DWI8NmPRbabCgYK2IiF8wjSq6due5RHFXitmSr3Hlqi4tVUNpTcFoQNCTtF8tISgQmzZhRZJevzs8Ph0P3X33kHjkGOPHSS0IwCbJHB1nN6nq0MMUBSlt6Yk+A3GagHMidgQ19dJEFhNJEuiev0qBugBUo6UjsSBXG9rPo4s/9AyBsY0ptzmdQkNHbIKfHUQQ8DZOaqPxr92kUqFBVZFsKMdi+LfXZVL/lX5HeuFDR1wh+fSwkEMjDiLmGNrNebtJSzbbflUlO6PWRQvcXT6E3XOcBAAA="}

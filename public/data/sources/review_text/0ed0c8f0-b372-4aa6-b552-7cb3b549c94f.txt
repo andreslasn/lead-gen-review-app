@@ -1,10 +1,1 @@
-2026.01.01‐től a 40‐es számú körzet tartós helyettesítéssel folytatódik.
-Kedves betegeim ! Rendelési ideje és helye az alábbiak szerint változik:Rendelő helye: Medilomb orvosi rendelő, Jurisics u. 17. (régi rendelővel szemben)Helyettesítő orvos : Dr. Lomb Zoltán Rendelési idő Hétfő 12.00 – 14.00 Kedd 8.00 – 10.00 Szerda 12.00 – 14.00 Csütörtök 8.00 – 10.00 Péntek 12.00 – 14.00 Rendelési időn kívül gyógyszert kérhetnek a 06 …
-Elérhetőségek
-Cím : 7624 Pécs, Jurisics u. 17. 32. busz vonalán az MTA megállónálMTA-val szemben a szolgáltatóházban Dr. Lomb Zoltán : medilombkft@gmail.com honlap: www.medilomb.hu Térképre váltás Prämie Invexus Telefon    Háziorvosi rendelés: 72/534-888, 72/534-889 (rendelési időben) Rendelési időn kívül, sürgős halaszthatatlan esetben: Hétfő-Szerda-Péntek 12-16 között és Kedd- Csütörtök 8-13 óra között hívható telefonszám: 30/370-4065 Gasztroenterológia: 30/293-4759
-Szolgáltatások
-Köszöntjük a Medilomb kft weblapján! Az alábbi oldalon szolgáltatásinkról olvashat bővebben.
-Rendelési idők
-Háziorvosi rendelési napok, illetve gasztroenterológiai rendelési időpontok.
-Díjtételek
-Az alábbi oldalon találhatja meg szakrendeléseink díjtételeit és a háziorvosi ellátás térítés köteles vizsgálatainak árazását is.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE3VUzU7cMBC+71NMb61EQvaHZdlTEVSlpUiocOrNIUPijWMj2xtKTjxCUV+gkapKe+C00h4qTrV4EZ6k403ZZVmqJIplz4zn+7E7UacfRm16H66/2fsbAQx6EY3RgKlcXbjfkLuZrtCCZdq6qYEMxRVai8bdWjcxBgWcK3FlGa0mPA9bh5iUlB+jxRR5Aa/gM8oEBQVz4AmOEGjY1AFWAROujmPOctoSNZcWSlcLqyqeD5vM+5smeghHmHChihiULhWV0//WN+DjWHPDzwyMQ2hvh/Bau0m6DCipTSpfxCjfHDxBQKXnpWAI+zqET772FyWsq+Vq2xR44Cb2nP7tThhF8HD9Hdo9PyLACQwWc5EfnRCUhK2F7hl3Z4lQ+vLnKcduIi3maznP2pCkyG3p7gSkV26aXnnSLM1NdIZWUj6DqE/pv1rvRDN5f2OIC8xbe+62IKDb/U7P73Zm1mnrdkKIx6aCUkkvjPQKHZ3uQoEpqSLcVNKPJoKSLRilLU2lhA+Y2yBzdRUzuc7okMo0Aubn9m1aMC7CM1VApqRgF0O4vLwMHyPCbAynBICQXWhsPOFqA8fa/Sw4wgdZ4texgVMUeK7knx/+IY3qiq+Yg4gjyJ3NrW4vGAwGG8vxDplklVvvjv/yvQEknk6JTciYYKayGSO4goCiQUu5w0eLBI38wVLSoN33J6lyM2vn9vemCZ75IWh3wU01W0ZmtHXmKQXbwJyfyiF0o83udhT0ov4WvPetaIW0k1YkUMrZPKCz0w1621s7rZMn2tRG5a1DN6M6M2lH7s77ZXGqSBW4xJi0GJFcr2B3cTpBiYQJJVeErg2XuXZTQaslM9QoxP6oxcRF2HrGY956URsOkl2ofAO4EGhLhHQdzkq4r3WhpFV01ey72xFdQp6bvPVCs9ZPCOprxLyBqXmWL0ohNQ/JsgJvhGGQPekTyfL13HcUpZsrz8vjEwyUvDKeDPIBl3SBuVozEshQCnAT/gU+n6lMXwUAAA=="}

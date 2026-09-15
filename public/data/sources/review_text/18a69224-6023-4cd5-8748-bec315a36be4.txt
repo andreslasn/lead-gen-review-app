@@ -1,18 +1,1 @@
-Rendelési idő változás és helyettesítés Dr. Somogyi Magdolna háziorvos körzetében
-by
-Felsőzsolca
-2026.01.22.
-Fotó: Illuszráció
-Ma és holnap ideiglenesen változik Dr. Somogyi Magdolna háziorvos rendelése, melyről az alábbiakban tájékoztat.
-Dr. Somogyi Magdolna háziorvos tájékoztatja a Tisztelt Lakosokat, hogy szabadság miatt a rendelés 2026. január 22-én és 23-án az alábbiak szerint alakul:
-Helyettesítés:
-Csütörtök: 12.00-14.00
-Péntek:         7.30- 9.30
-Helyettesítő orvosok:
-Dr. Dudás Csilla
-Dr. Pohl Balázs
-Rendelő elérhetőségei:
-06-46/613-034
-06-30/975-2353
-email: somogyimagdolnahaziorvos@gmail.com
-Tájékoztató
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE4VRwU7jMBC9+yvmA0hIk1JETqsFoV0JJAT8wKQZJa4dexW7SPVf9A/IsQdOlfa0px31v9YJsGpPSPZIM555fu/NI5maNO+cBFkftvDCg/Y28OAgFqElvSHvyfGbH/ObPoUn29lmI+Eem9pqg9DyEKTtX6wDxb/7QLG1IiOqjbgl7Q7b4KxeosizfJFmszTPU3FrPe9L+Kn12oWeh6XkvbjH909H1F+RD8lGkyFH5pOXVF9S6D8V0Rl0kX5/2GrAAKh5qCqJqkIDnocV75QNHn0qvoI87l4hIDxLFzxpD3eorLMK/Vlk3WzABaywdjw00En0Pvb+5wOTflihWfPQQ54nvDOT4LxIeDAnJCMS9dJEAI1qrUvx43QTpbh2/MdHu+NVJczyNMuS2TxG8RBxPany7yscncu0yBK4ivEEK+58EmlVOflws67H5V87qTVOlQfbavg+MgtOPE5q4tAoqW8pzjveNSRLkS2S+eJ8MSuSrJiPWZGdX11eJHlxUQjqUOoS3LvL3YfJLX5Y/K0Z39Ol7cTzkdm8/wfryCY0oAIAAA=="}

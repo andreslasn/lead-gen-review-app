@@ -1,5 +1,1 @@
-404
-Az oldal nem található.
-Nézd meg az URL-t, hogy nincs-e benne elírás. Ha segítségre van szükséged írj nekünk a
-hello@minup.io
-email címre.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACExXNsQ3CMBBG4d5T/AMQiyIDQEeBKJAY4EhOjol9RnFAwtukTJGKNt0tRiif9Emv3tfmWJBCSwHCESMFnUJHo36tuehcWkR2oILb9VyNO3TJfSBemlwx7izC4KDLoFO2OBEyO13GrLMbGG8S5KJr/29usbnHtul1lR5kOg4hHaKX19P6ZDiSD2h0iQPbH9HluSKaAAAA"}

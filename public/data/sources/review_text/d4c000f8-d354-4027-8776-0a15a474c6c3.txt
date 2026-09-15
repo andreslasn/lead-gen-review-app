@@ -1,4 +1,1 @@
-Dr. Sarkadi Ágnes általános orvos
-dr. Sarkadi Ágnes online orvosi tanácsadás
-jótékonysági célú, ingyenes orvosi online tanácsadás
-drsarkadiagnes@gmail.com
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE2WNsQ0CMQxF+5vCA6CbgYINmMBKosicz5biCOlKRnF5NR2tF0NHaBD1/++9S5vhim3BTBCPKsUgnDtyuKiBtrvalP9PKkxSxk7QUcKTYQ636RbPHvuisll4JUixc7xOQFK38mEH9FX8sLnZ6OBROdcVieek6xu131SbpwAAAA=="}

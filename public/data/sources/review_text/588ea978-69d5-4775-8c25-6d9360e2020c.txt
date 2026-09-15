@@ -1,18 +1,1 @@
-Címlap
-Felnőtt háziorvos
-Hírek
-Közérdekű információk
-Elérhetőségek
-Rendelés helye: 7759 Lánycsók, II.Lajos u.15.
-Telefon: 69/364-136,
-Háziorvos: Dr Nyárfás Géza
-Rendelés ideje:
-Hétfő:       8-12 óráig
-Kedd:       14-16 óráig
-Szerda:     8-12 óráig
-Csütörtök: 13-17 óráig
-Péntek:     8-12 óráig
-Orvosi vizsgálatra időpontkérés kötelező!
-A Lánycsóki Háziorvosi Szolgálatnál a továbbikban recept kérhető, másnapi teljesitéssel, emailben is a
-recept.lanycsok@gmail.com
-email cimen.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE21Ry07DMBC8+yuWexsUCi3kBOJZtQIE/ICbbFvXjl3ZplLzF/mD5pgDB1SpJ06s8l+4oEIPSLYPOzs749lLessVn7MbVLopvYcpVYUwdmEcu6M3i5INaFNQbTOUzTsIPTY2pyoVtJbsWgVgir4pHdWT0PuEOsNQdDBFtcQEer2TMxhSpZepC4wW9PvRkM+Mg9coPonYCyocG51A9+yw0z1ux51uKwjvPCRwZeF+SZUdU+XgluqC74mIDGeYhP7aj5sy+VzB7py24yOgtaVKTNgAs2wfjINO9xd9LtBmPPmXeenow9PGhisTiDvtuPeLPVKtPcr/iQ9b9wIWonATqhT3lge3TTk32ssQ2ta9pI0P3y+a8oBd7IUk4C8AAc+FUT8jdHiBgzcLqkYjIUdcg8UU5x7kbg+tz1XYjtN8LiAMn6ETPmg5VC3AnAs1Qg3CAWc/zEjxraqR55MtGqUmZ999kIocdfQFLMEhGyACAAA="}

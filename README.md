@@ -318,9 +318,15 @@ Builds losslessly encode current account evidence as gzip/base64 JSON envelopes
 the transport bytes; decoded account and claim identities must still match. Source
 account JSON and the logical research snapshot stay unchanged. Validation scans both
 original and decoded evidence. The build rejects artifacts at or above 1,000,000,000
-bytes before upload. Browsers without gzip decompression can still review email
-validity; account evidence offers an explicit browser-update message without
-altering stored reviews.
+bytes before upload. Clinic JSON, saved HTML and review text use the same lossless
+transport in the built site. Their integrity manifest still hashes the decoded
+original bytes; source files and reviewer IDs are unchanged. Both email validity
+and clinic mapping decode these artifacts; HTML stays in a sandboxed frame.
+`node scripts/compact-research-package.mjs /absolute/private/archive public/data --clinic-artifacts`
+also compacts these immutable repository files after archiving and verifying the
+original bytes. It resumes safely and does not change validation or usage data.
+Browsers without gzip decompression
+need an update to open saved evidence; stored reviews remain intact.
 
 Deployment preserves the dataset, canonical reviews, email validation seed,
 campaign usage, clinic/source files and review-sync target. IndexedDB keeps its

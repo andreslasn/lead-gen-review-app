@@ -1,18 +1,1 @@
-Dr. Endes Györgyi
-Rendelő címe
-1118 Budapest XI. kerület Gazdagréti tér 5
-Email cím
-endesgyorgyi4@gmail.com
-Telefonszám
-Információ
-Asszisztens neve:
-Gulyás Rita
-Rendelési idő
-Hétfő: 14-18
-Kedd:   14-18
-Szerda:  8-12
-Csütörtök:   8-12
-Péntek: változó
-Bemutatkozás
-Dr Endes Györgyi vagyok felnőtt háziorvos. Magam is aktívan sportolok, azt gondolom, hogy a mozgás segíti a hosszú távú egészség megőrzést, és a krónikus betegségek szinten tartásában is nagy szerepet játszik. Mivel hosszú éveken keresztül gondozom a pácienseimet, sokszor családokat, az egészségtudatosság, és az egészséges életmódra való nevelés is az ellátás részét képezik. Ezért örömmel veszek részt a programban.
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE11SzWobMRC+71PMAyQGlxSMT22a4IZSKGkPvSresaJqtTLSeMF6C79B9riHnAw5lJwy+L36rWNC6GG1zI9G389cpQldtzVnWmz1Kdmtq24ZcXPY0VIfA1fT6XRGl5varDkL/b6ZkOekzw0LLUypjU06iCPRIdHH6joY1xxvVuOYbLdxHHrxyY6FyTKG6hc3vIptLtqH6qZdxRS0XzrdV59zLi4X4TZTyx3Pq8Wm2Wqf6daJOQHTITty9WFXfcXDq8NuTtOL8+ms+sZ1PX95eHk4xT8Lp9ogQ7Pz6YfqS9ZnAUV8/rXtmP6hQyvs59Rp30gsgHHJYSNGPII+V1fpP4GoM2DlacVNe9iJ0L32xcXUxTyh78aaQC6T8aKPnWkpr2OS2ER/RqYI2djWiMIZ3Ue7JUMhFjtSzGz1EUIaFKCD/oWkfYcf8kMuWQdLge1hlwpiOSOcaPZJ963zm0x3LGzHNvYEHcGqJTHg22ft74AEqFpAR5ETr+HfH+0FnR6wXcfN28M6dOxxG0Yz7IDZr7BLDHhxPboFi9gFBowcfS4x0TKbRvs6eiMj03ewBcsjGK29PaF+X4WyOmCbgu7rZCBuo/uj+6PTRyXR3WD0SITSeA2+k9dhzUfs14iTEMzRpxBAowNoaHBslRFwijaZAAkmb8v9D216w/T4AgAA"}

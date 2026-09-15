@@ -4,11 +4,42 @@ import { promisify } from 'node:util';
 import { mkdir, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { encodeAccountEvidence } from './copy-public-package.mjs';
-import { decodeAccountEvidence, parseAccountIndex, validEvidencePath } from '../src/accountEvidence.js';
+import { encodeAccountEvidence, encodeReviewArtifact } from './copy-public-package.mjs';
+import { decodeAccountEvidence, decodeReviewArtifact, parseAccountIndex, validEvidencePath } from '../src/accountEvidence.js';
 
 const compress = promisify(gzip), decompress = promisify(gunzip);
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+
+export async function compactClinicArtifacts(root, archive) {
+  root=path.resolve(root);archive=path.resolve(archive);
+  const repo=path.resolve(root,'../..');
+  if(archive===repo||archive.startsWith(repo+path.sep))throw Error('Use a private archive outside the repository.');
+  await mkdir(archive,{recursive:true,mode:0o700});
+  let files=0,originalBytes=0,currentBytes=0;
+  async function walk(relative) {
+    let entries;
+    try {entries=await readdir(path.join(root,relative),{withFileTypes:true});}
+    catch(error){if(error.code==='ENOENT')return;throw error;}
+    for(const entry of entries){
+      const name=path.join(relative,entry.name),source=path.join(root,name);
+      if(entry.isDirectory()){await walk(name);continue;}
+      const bytes=await readFile(source),encoded=await encodeReviewArtifact(bytes);
+      if(encoded.equals(bytes))continue;
+      if(!Buffer.from(await decodeReviewArtifact(encoded.toString('utf8'))).equals(bytes))throw Error('Artifact round-trip failed; original preserved.');
+      const saved=path.join(archive,'artifact-'+hash(bytes)+'.gz');
+      let archived;
+      try {archived=await readFile(saved);}catch(error){if(error.code!=='ENOENT')throw error;}
+      if(!archived){archived=await compress(bytes);await writeFile(saved+'.tmp',archived,{mode:0o600});await rename(saved+'.tmp',saved);}
+      if(!(await decompress(archived)).equals(bytes))throw Error('Archive verification failed; original preserved.');
+      await writeFile(source+'.compact.tmp',encoded);
+      if(!(await readFile(source)).equals(bytes))throw Error('Artifact changed; retry.');
+      await rename(source+'.compact.tmp',source);
+      files++;originalBytes+=bytes.length;currentBytes+=encoded.length;
+    }
+  }
+  for(const directory of ['clinics','sources/raw_html','sources/review_text'])await walk(directory);
+  return {files,originalBytes,currentBytes};
+}
 
 // The archive must be outside the repository. Raw clinic sources and review
 // decisions are untouched. Interrupted runs can repeat every step safely.
@@ -71,5 +102,5 @@ export async function archiveObsoleteEvidence(root, archive, index) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   if (!process.argv[2]) throw Error('Usage: npm run compact:research -- /absolute/private/archive [public/data]');
-  console.log(JSON.stringify(await compactResearchPackage(process.argv[3] || 'public/data', process.argv[2])));
+  console.log(JSON.stringify(await (process.argv.includes('--clinic-artifacts')?compactClinicArtifacts:compactResearchPackage)(process.argv[3] || 'public/data', process.argv[2])));
 }

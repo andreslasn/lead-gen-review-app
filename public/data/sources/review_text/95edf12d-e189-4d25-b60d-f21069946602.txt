@@ -1,13 +1,1 @@
-Dr. Tóth Károly
-Rendelő címe
-8200 Veszprém Cserhát lakótelep 1.
-Email cím
-toth.karoly.haziorvos@gmail.com
-Telefonszám
-+36-20-2303318
-Információ
-Asszistens neve: Férhezli Tímea és Papp Beatrix
-Rendelés idő: - Cserhát Lakótelep 1, 8200, Veszprém:  Hétfő 8.00-12.00, Kedd 13.00-17.00, Szerda 8.00-12.00, Csütörtök 12.30-1630
-- Győri utca 58/1, 8411 Veszprém-Kádárta     Péntek 8.00-12.00 (Kádárta)
-Ellátás típusa: Felnőtt
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1VRu07DMBTd/RV3BNGEPKBEnYBSHipDBRW71dySKM5DtlvR/EX+gIwZOlViYuIq/4UTobZI9nJ87j0P30kb5rTTEUyplrnYsBfMQhRtBQvapsgCz3HgDVVZSGpSGCuUEdUaBE/MGAoswLXZJOWx6CeYznVkJ7zbZUe8jHO5ztX1e0ewF3nK5mZmmWeqpDplZ/7Q8hzL8x3fdwP2lC1zmVK9iGnHbpQqY6UxU5DhGkdwT42MsBSxcWyscaBGwYwXBdwi1zL++PPewXHYViOwDn6fj/wOoEs1OMQa/XzCIzV6aWIHtuNYrmd3hCmGIbh+j1z1yGuJMuT/SGNF35q+pLkJGMw3L0PfYRY8bNpKxrDSCw6XwXmne+G6B1nLdB6a2jU3+v2ZUZNpTI72w8medMomQpgsVCvQtC1WiptSUGRtpfX+334Bt5ms7dIBAAA="}

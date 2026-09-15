@@ -1,16 +1,1 @@
-Elérhetőségek
-Cím : 7624 Pécs, Jurisics u. 17.
-32. busz vonalán az MTA megállónál
-MTA-val szemben a szolgáltatóházban
-Dr. Lomb Zoltán : medilombkft@gmail.com
-honlap: www.medilomb.hu
-Térképre váltás
-Prämie Invexus
-Telefon
-Háziorvosi rendelés: 72/534-888, 72/534-889 (rendelési időben)
-Rendelési időn kívül, sürgős halaszthatatlan esetben:
-Hétfő-Szerda-Péntek 12-16 között
-és
-Kedd- Csütörtök 8-13 óra között
-hívható telefonszám: 30/370-4065
-Gasztroenterológia: 30/293-4759
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1VRu47bMBDs+RVbJoClsyU/VSW4BHkDh8RVOtpaS4Qo8kBScqC/8CcISKPiKgOurlv4v7LK4XJIQXAxGM7sDN9rGlyJ4XryNBRYiVt6qCGD1TKZwx0Nez+Bz41TXu09NDHMVrFIkxh2je+gtUZq6g3IDr5t30KNBfVa09nwJRiJWqnBd1jvkEk8WT0yggx0LqnvdtKIdy6Gr7bewU+rwyiWsU6uNEPVIbwpaql0vLe1KK3R8j6D4/EYPzPishFbTlDRcO8Q2lGcei/uHP2uFcIn0+KvxostajxYIz6yqbKutV6BQ5Mjx/ecNrlZpPNovV5PXuYNvPpHUaDy64lTvBbf/8cMVPTQ0qOegKdHV3CRUEotfRdKyUG1NIAeA7/N2H4Ih+sp+tGhy2XE/ZqAFcySaLZknUtHlxAEa4svmOcR3LJkoIvjU8E6mqVAZydfmCVbl2OZEJ4C+o76OoN0epOuptF8ulyID+MqziI7Oct/Uyj5l5Bs0mi+Wmz+AKFNKdACAgAA"}

@@ -1,16 +1,1 @@
-Kapcsolat
-Dr Tiszamarti Edit Klára
-háziorvos
-2251 Tápiószecső , Kátai út 75.
-Akut panasszal a rendelés első 2 órájában hívjon,
-állandó gyógyszerek iratása a második 2 órában.
-Hétfő:       08.30-10.30  10.30-12.30
-Kedd:        12.00-14.00   14.00-16.00
-Szerda :    08.30-10.30  10.30-11.30
-várandós:11.30-12.30
-Csütörtök: 08.30-10.30  10.30-12.30
-Péntek:      08.30-10.30  10.30-12.30
-06-29/ 751-511
-praxis1@tapioszecso.hu
-Facebook:
-Tápiószecső I. háziorvosi körzet
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE3VRS07DMBDd+xRzgCbEgRbICsRHoGyQ6AWmjWndpHFkuxXNLXoDvOyCVSQWiBWj3gsnalWEqGS/sefz5mkmxWpsVIGW3WoYSlPjHLWVcJdJC2lBTiObkqul0ktlWBz3OQzJVZIaU4ux2a6hByk5ixLo08J5P2TX+cJChSUaT1cAghZlJgraGBBFWxEDNZrcjNwIS5jS+3Kmyh4jVxRYZtTAZEXNZOUbaJGD1GjJGfREc29VJvM9gy8P2QNt7Mt2nXy/wf5EF+FpFPDIo/93NuCxR5aKLPudCd4d+eCZx87RvQI+8MievYAMYZf/LylvSZftmFrhJukcu143hr4sfWh/8wSOa3qiTWlFfpB1PDUaBPHliZ8yD/qcs0rjqzT8ymIlVbcPFU4X7B7HYqRUnrA/q3oM4bBMCbkXVwv7A8nrBuAEAgAA"}

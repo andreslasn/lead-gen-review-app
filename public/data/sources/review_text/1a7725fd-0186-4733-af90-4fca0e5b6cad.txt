@@ -1,16 +1,1 @@
-Dr. Székely Enikő
-Rendelő címe
-5000 Szolnok Abonyi út 38.
-Email cím
-duomed3@gmail.com
-Telefonszám
-+06-30-4779461
-Információ
-Rendelés ideje:
-Hétfő: 8.00-13.00  Prevenciós rendelés: 12.00-13.00
-Kedd: 12.00-17.00     Prevenciós rendelés: 16.00-17.00
-Szerda: 7.00-10.00
-Csütörtök: 14.00-17.00    Prevenciós rendelés: 16.00-17.00
-Péntek: 8.00-13.00         Prevenciós rendelés: 8.00-9.00
-Szakvizsga: Háziorvostan és foglalkozás-orvostan(üzemorvostan) szakorvos
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE41RzUrDQBC+71PMUZGEralNm5OihYqXYn2BmJ2Udf9gNxaat+gbtMccPAkepKcufS+T1AYqFGSYhfn2+76ZnX2wIcxKXwmUSxhrLvYr8oyaodyvIPMfCskNpbTmGKmNgLtXo5cc/HcB0TAkY5Vy2fIIezcKWXQ7b6AwM4q8oMTcaFf6jSJXdBBENOjH8ag/6JFHnRur/Cbj/vO3oa8ccIZvmJCJr4p8v0pgGFIa9KL63K1hanGBulE4sEdJAr3rjkSekLEOiVvZIc6KBx2VzEq0LE0gbiHaQPfObwv/ZesUNbn/x/c/rlNf6QLF6VtO45xNqxgdRkvFgpdunia79cRvSm7swrgi1dCsLTdzmUph6k274Hhz4bclqmN1Ca72aKvug38AtdmAJv0BAAA="}

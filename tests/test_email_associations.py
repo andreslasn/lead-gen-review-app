@@ -1,4 +1,6 @@
 import json
+import gzip
+import base64
 from pathlib import Path
 import tempfile
 import unittest
@@ -20,7 +22,10 @@ class AssociationTests(unittest.TestCase):
    write('canonical-review-state.json',dict(decisions=[dict(id='d1',reviewer_id='human-reviewer',clinic_id='c1',target_clinic_id='c2',decision='reassigned',reviewed_value=email,created_at='2026-01-01')]))
    def service(hsz):return dict(values={'Szervezti egység kódja (HSZ kód)':hsz,'Szolgáltató neve':'Synthetic provider','Háziorvos neve':'Doctor Synthetic','Háziorvosi rendelő székhelye (település)':'Town'})
    board=dict(records=[dict(fields=dict(country='HU',institution_code='A001',sales_comments='PRIVATE MUST NOT EXPORT'),source_services=[service('000000001'),service('000000002')])])
+   clinic={'candidates':[{'id':'c','value':email,'evidence':'Original saved evidence'}]}
+   write('clinics/c1.json',{'format':'lead-gen-account-evidence-gzip','schema_version':1,'data':base64.b64encode(gzip.compress(json.dumps(clinic).encode())).decode()})
    result=build(p,board);pairs={r['email']:r for r in result['associations']}
+   self.assertIn('Original saved evidence',json.dumps(result))
    self.assertEqual('confirmed',pairs[email]['status'])
    self.assertEqual('unreviewed',pairs[unreviewed]['status'])
    self.assertEqual('A001',pairs[email]['provider_code']);self.assertEqual(1,len(result['providers']))

@@ -1,14 +1,1 @@
-Elérhetőségeink
-Cím:
-3527 Miskolc, Baross Gábor u. 17.
-Telefon / Fax
-:
-46-344-830
-E-mail:
-haziorvosi.egyesules@mvhr.t-online.hu
-Üzenjen Nekünk!
-Ez a weboldal cookie-kat használ a felhasználói élmény fokozásának érdekében. Amennyiben elfogadja, ez az üzenet többé nem jelenik meg.
-Elfogadom
-Privacy & Cookies Policy
-Necessary
-Always Enabled
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACEzVPu07DQBDs7yuWhio2jwSCUhEiQ0WUgh9Y22v7cnt70p2TYP8FPU1KF1RIVOlO/BcWiG5nRvPYjOPgG2q/30IcatJi1Cp+2IWa3lzP4VkH47iYwAN6FwI8xWPuPOxSuJqn6oWYKidwAY/4qhZqdptMZ7PkbnqpssSi5oVqsNfO713QKdUdhR1TuLf7xqdt4oS1UNrsVHzvSbYksCYTT2LOVNYDwoFyxyUyFM4ZTYnBFhoMvcQjj3JF/I/ip4Y4sI2DdFA54/p4DPEoaEbal2PqkJOksLQk0unxBuLK1VhucQI0lvUQT+MIaqGNX3keBxCysB0/FG3AUp2q7M/hrNp4vceig3NY/S4LsHGsi06tqaAQ0HdqyQfsAmSCOVP5A281SplmAQAA"}

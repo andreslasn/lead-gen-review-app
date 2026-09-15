@@ -1,13 +1,1 @@
-Hosszúhetény
-a hagyományőrző és
-teremtő falu
-További információk
-Tájékoztatás a körzeti orvosi rendelés változásairól
-Tisztelt Betegeink!
-Tájékoztatjuk Önöket, hogy a COVID19 helyzetre való tekintettel, a jelenleg érvényes eljárási rendnek megfelelően, az orvosi rendelőbe bejönni csak és kizárólag előzetes telefonos orvosi konzultáció után, előre egyeztetett időpontban lehet,amennyiben ez feltétlenül indokolt!
-Szakorvosi leleteket, javaslatokat nem szükséges személyesen behozni, az EESZT rendszerben minden egészségügyi dokumentumot látunk, rendszeres gyógyszereiket feliratni továbbra is e-mailben, messengeren, telefonon, sms-ben lehet.
-A nagy telefonos leterheltség miatt kérjük, hogy rendelési időben csak betegség, rosszullét, járványügyi problémák miatt keressenek minket.  Receptiratás, táppénzespapír kiadás, beutaló iratás és minden egyéb adminisztratív ügyintézéssel kapcsolatban a rendelési idő után mindennap 15 óráig állunk rendelkezésükre.
-Elérhetőségeink:  0672/490-837,  0670/394 8826, drkissandrea16@gmail.com,
-A jelenlegi helyzet mindannyiunk számára rendkívül megterhelő, ezért megértésüket és türelmüket kérjük és köszönjük!
-Dr. Kiss Andrea, Réfiné Hegyi Katalin
-Hosszúhetény 2020.09.29.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE11UsY7jNhDt9RWzvdfn9V321qlyyS2wwRUB7hYp0lH2WKZJkQZJG5D+wk3qqHRxlQEXwVYh/F95I9mLbCqL0vDNe2/e+MnH2Oa/V5zywTWFopWqGl/nzjXnfWjPe8qHWCQOXCcclspui2e/y11ZatJu6QNq5zofTfGcu3U+GN8mlXIXSZHJp9By0uTDzkdNgd2CLQAJADb5FmVKh3y0xbOObWKb6GdOXLF25uYN4HprKP/p8slwGtHKVw3wf/nt918/381oxbZBn8C0UzYfKbHRLnEC4Ahla7bsLFeQEnYikyOxXecuoP/AyrGhmqslKu15zw7X2resz/uSqeR1PjmnaR6VEWfI6FZwjlZVJEWgAXQ05qV3Pl4xjHft1qbBKtriAS2kHpy5ahjahS/pxXm/8S6VypFlTGWkanau0SU74pZAEINK0JNfLPxfeONtuim+tcpcWkEBsHqb1mqnolXJG5XIcU0Y9YuJ+VCBY2y5zgcLMwBd8sq3TveyHx+//fHcq0ZJkMY1Gkn/CopbuZ5fqkYTmm/BLm1rn8jmLm2dGb1eRIuqyceq6Q8ahIS9DirBvzREKCjSmMVtrbQtxfWaI+hUuIDD1UU8xjreCpPek3HxiRxi+h+bRXJADJKwA18FLw3GvYbeS1xew6d7lwWtn2IpgZNroC7LsLUoEvMw153swSB2E3yJD0i7ueKLRrCV6CCv4PXPX/SV57xJohLZgoTcbTaIXMtxozb5e0Bg1KL/VPI29Wm9FPdxenW6yYeS1AJnWQyp+L6jnolDAFrURrZk1GYePSYseVH/lzjk7ILp1IbufqB8ROg1VqGzFuO6XDEsiPAq8Lh4BAK8xLr3SYG0HyFscv9x+u7DbHL78P7jaDhP3r2ffaCHh+n9iBbB6BiVWwRWd/c/VTLR8dzXI8zqun/6uqg9JSWxFgoIZQdbw8DfQKhkG9s4jPS8x6aAXkjyTn4HqoARx1J+CWzr4cV15MNq5hOgT05e3BSfw5i+gCJ96jmO6Gs+LLXLB3pime8XhWloVzy9+UOk6WQ6GU9m4+ls/C8liF/nKwUAAA=="}

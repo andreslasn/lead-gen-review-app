@@ -1,16 +1,1 @@
-Dr. Szűcs Mária
-Rendelő címe
-6000 Kecskemét Smetana utca 5.
-Email cím
-szucs.maria@alapellatas.hu
-Telefonszám
-0676-507-964
-Információ
-Asszisztens neve:
-Lantosné Arató Anita
-Rendelési idő:
-Hétfő - Szerda - Péntek: 8:00 - 12:00
-Kedd - Csütörtök: 14:00 - 18:00
-Bemutatkozás:
-1999 óta házi gyermekorvosként dolgozom. Nagy létszámú praxissal rendelkezem.
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACEz2QzUrDQBDH7/sU8wIJqbSpycn6AUpVRH2BIZm2S/aj7GyKzVv0EXLMwYMUPIi3pe/ltqiHZXbgx8zvP9cuhZfu8FExPITeSRTPZGpShx1U4V2TyLMsgzlV3JAOg4cXTR4NQusrhEkqbjRKdWIFd23FqcY45QIVrkkp9MjpqhWvpGhhDXeh1yLLp3kyyaZJkY/FnVlYp0NfybAXM+ZOcufJMBjaUCnu0XjLJgwwc+jDHmZG+j/JMLAEWR92pbiNbosoncQ05GqMn6cwGE9NCedljJDA6CxWMae6js0Vh28fPl18kRiNf5EjKi5Jtx59Y6Mtl2JUFAWEvUdYhb6TsNyS09RYt7HcHHdAbdXSdlan8IjLLUQvf0oavmDt8E0yowJ3Um6oI53+H/kHAnuc/H8BAAA="}

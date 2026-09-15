@@ -1,18 +1,1 @@
-Dr. Mallász Andrea
-Rendelő címe
-1118 Budapest XI. kerület Gazdagréti tér 5
-Email cím
-haziorvos74@gmail.com
-Telefonszám
-Információ
-Asszisztens neve:
-Sztráda-Jenei Andrea
-Rendelési idő:
-Hétfő: 08 - 12
-Kedd: 08 - 12
-Szerda: 14 - 18
-Csütörtök: 14 - 18
-Péntek: 08 - 12*; 14 - 18**
-Bemutatkozás:
-A hagyományos orvosi tevékenységem mellett életmód terapeuta végzettségem is van. Az életmód változtatás során a mozgás szerepét kiemelt fontosságúnak tartom.
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1VRPU8DMQzd8ys8V+qJQ0VUZaEFxJeQEDCwRo17je6SoDic1PwLfsKNNzBVYkBsFv8LtwIKQ5T4+dl+fjmNBdzopuGOMky9iajVHXqDzecLzPnVoSrLcgyzZ6OfkBI8XhZQY+SPBhOc62x0FblPFhL3EQ7UmdO22Vaqpc42xDbQ4ei42sDFPDj1gA0ugqfMnVOXfhGi425uea2mRNlSTugJPLY4Ufc5Re6MHl6hR/tfH/dkwZrPl4m6EAELecDeGIZQ7qtrNGYX3WeMRk+gHG3isToh/kj8FuXUO/SWe5+w/i0bHP2kBgM1Q/ecdKqDqKaJmsJSV6sgwv0qEGyXFAew5b5GvyLuK3TgsBGTEnAvl+O1EUYUF6UTCLPKkvymWoJW+wKm+Q+75a5JIctcGQoUxAoPGlzI1RaQtfBJVofaosxKILamQMRdxe9e15B0TMEVvx/6BVLq7ObtAQAA"}

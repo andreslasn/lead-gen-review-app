@@ -158,6 +158,13 @@ export function validateSoftwareAttribution(claim,account){
 
 // Index transport uses the same lossless envelope as immutable account evidence.
 export async function parseAccountIndex(text) {
-  const value=JSON.parse(text);
-  return value.format==='lead-gen-account-evidence-gzip'?JSON.parse(await decodeAccountEvidence(text,'gzip-base64-v1')):value;
+  return JSON.parse(await decodeReviewArtifact(text));
+}
+
+// Clinic JSON and review text use the same transport; original bytes and IDs remain unchanged.
+export async function decodeReviewArtifact(text) {
+  if (!text.trimStart().startsWith('{')) return text;
+  let value;
+  try { value=JSON.parse(text); } catch { return text; }
+  return value?.format==='lead-gen-account-evidence-gzip'?decodeAccountEvidence(text,'gzip-base64-v1'):text;
 }

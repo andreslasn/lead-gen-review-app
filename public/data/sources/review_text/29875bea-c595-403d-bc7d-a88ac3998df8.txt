@@ -1,15 +1,1 @@
-KAPCSOLAT
-Dr. Veszelyné Dr. Nacsa Enikő
-6723 Szeged
-Gáspár Zoltán u. 7/C.
-E-mail
-drnacsaeniko@gmail.com
-Telefonszám
-+36-30/6900-99-6, + 36/62 /491-897          ( csak rendelési időben elérhető)
-ÖRÖMMEL TÁJÉKOZTATOM  ÖNÖKET, HOGY RENDELŐNK 2020.06.15-TŐL  ÚJ HELYEN, IGÉNYES KÖRNYEZETBEN VÁRJA  A BETEGEKET 8 PERCES SÉTÁRA A KORÁBBI, JÓZSEF A. 98.SZ. ALATTI RENDELŐTŐL.
-CÍM: 6723 SZEGED
-GÁSPÁR Z. U. 7/C.
-Találkozó ütemezésére hívjon bennünket munkaidő alatt, írjon e-mailt vagy használja  a kapcsolatfelvételi űrlapot.
-Név
-Üzenet
-Küldés
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACEz2RMY/aMBTHd3+KN7Y6EnLQBtKpAVwOEgJK0pPI5oIPuBgHJTmky8bIcNKhSgxVhzIy3FB1ZepTvledtjrJsvye/+//nn927Ek3GLt2SHqpDrc8K7h4lHiGKvTYLGNA5SouD8RsNZoQFHzB56SPp2yDpxSiROR4kvCgQ6ve1QnV1mwlyDyVVSlXlcnHRZXSZ8mahFzwu0RmBZ7W5Kppak2jblqGoVmWZtbgCppm3WxA/Z11rbWtFvz+8brU9gaUZQwpl3Mu8JytYDUvD1+4hCpMlzwvD28JHn08jkbUhRB3Q9w74yi0w/FIGeDRw6NDwxrcjPtT8KnXo2757DnQMBqGbpj69XstLJ/dSvttCDfUnVKvBoM+7r0pDcBR5uoQ0bBDPbjFnT+0ldaGDg1pnypraMOE+l2lDXCvBvBtdeuMfdx1OoMaDPFrFNBPYOtgtfUg0sFW6MPB6yxVd5108Wn0Af4Bj5RxTwHfBRNlB6rk83/WIRN4EnFS4C/AS87XvFBUFAkOS3zZ3icSFByJFxnzHNYPMmYVMGCC5XkN8CWtJPzvj+WwZYtHWLKskMr0nqlnMYjZZpYlSn7HxRbPORcrKH+mgm2SXCcenrcEvxdc8pw4eBFz1f4P25f6FFACAAA="}

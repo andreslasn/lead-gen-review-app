@@ -5,7 +5,7 @@ import ReviewHeader from "./ReviewHeader.js";
 import ClinicEmailReview from "./ClinicEmailReview.js";
 import AccountEvidenceReview from "./AccountEvidenceReview.js";
 import WebpageReview from "./WebpageReview.js";
-import { parseAccountIndex, validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences, validateWebpageReviewExport } from "./accountEvidence.js";
+import { decodeReviewArtifact, parseAccountIndex, validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences, validateWebpageReviewExport } from "./accountEvidence.js";
 import { validateAssociationDecision, validateAssociationPackage, mappingEmails, mappedEmailRows } from "./associations.js";
 import { unusedValidEmailRows as campaignEmailRows } from "./campaignEmails.js";
 
@@ -578,6 +578,8 @@ const App = {
     const pendingEmailStatus = ref("");
     const evidenceTab = ref("snapshot");
     const archiveFrame = ref(null);
+    const archiveHtmlUrl=ref(''),archiveHtmlError=ref('');
+    let archiveHtmlRequest=0;
     const saveStatus = ref("Loading");
     const loading = ref(true);
     const error = ref("");
@@ -922,9 +924,19 @@ const App = {
     }
 
     function focusedHtmlUrl(path, value) {
-      const url = artifactUrl(path);
-      if (!url) return null;
-      return url;
+      return archiveHtmlUrl.value || null;
+    }
+
+    async function loadArchivedHtml(path) {
+      const request=++archiveHtmlRequest;
+      URL.revokeObjectURL(archiveHtmlUrl.value);archiveHtmlUrl.value='';archiveHtmlError.value='';
+      if(!path)return;
+      try {
+        const response=await fetch(artifactUrl(path),{cache:'no-cache'});
+        if(!response.ok)throw Error('Saved page unavailable. Open the live page or use the saved excerpt.');
+        const text=await decodeReviewArtifact(await response.text());
+        if(request===archiveHtmlRequest)archiveHtmlUrl.value=URL.createObjectURL(new Blob([text],{type:'text/html'}));
+      } catch(error) {if(request===archiveHtmlRequest)archiveHtmlError.value=error.message;}
     }
 
     async function loadFullEvidenceText() {
@@ -936,7 +948,7 @@ const App = {
       try {
         const response = await fetch(url, { cache: "no-cache" });
         if (!response.ok) return;
-        const text = await response.text();
+        const text = await decodeReviewArtifact(await response.text());
         if (requestId !== evidenceTextRequest) return;
         fullEvidenceText.value = text;
         await nextTick();
@@ -1177,7 +1189,7 @@ const App = {
       if (clinicCache.value[clinicId]) return clinicCache.value[clinicId];
       const response = await fetch(staticUrl(`data/clinics/${encodeURIComponent(clinicId)}.json`), { cache: "no-cache" });
       if (!response.ok) throw new Error("Clinic review file not found.");
-      const payload = await response.json();
+      const payload = JSON.parse(await decodeReviewArtifact(await response.text()));
       clinicCache.value = { ...clinicCache.value, [clinicId]: payload };
       return payload;
     }
@@ -2094,6 +2106,7 @@ const App = {
       syncStatus.value = githubToken.value ? "Reconnect sync" : "Local only";
     });
     watch(evidenceTab, () => nextTick(scrollEvidenceToHighlight));
+    watch(()=>selectedEvidencePresentation.value.kind==='html'?selectedEvidencePresentation.value.path:'',loadArchivedHtml);
     watch(
       () => [selectedEvidence.value?.review_text_path, selectedEvidence.value?.source_document_id, selectedCandidate.value?.value],
       () => loadFullEvidenceText(),
@@ -2107,6 +2120,7 @@ const App = {
     });
 
     onUnmounted(() => {
+      archiveHtmlRequest++;URL.revokeObjectURL(archiveHtmlUrl.value);
       window.removeEventListener("keydown", onKey);
       clearTimeout(syncTimer);
       clearInterval(researchRefreshTimer);
@@ -2145,6 +2159,7 @@ const App = {
       fullEvidenceBody,
       evidencePane,
       archiveFrame,
+      archiveHtmlError,
       evidenceTab,
       snapshotTitle,
       currentClinicState,
@@ -2332,6 +2347,7 @@ const App = {
           </div>
 
           <div v-if="selectedEvidencePresentation.kind === 'html'" class="archive-pane">
+            <p v-if="archiveHtmlError" role="status">{{archiveHtmlError}}</p>
             <iframe
               class="archive-frame"
               :src="focusedHtmlUrl(selectedEvidencePresentation.path, selectedCandidate?.value)"

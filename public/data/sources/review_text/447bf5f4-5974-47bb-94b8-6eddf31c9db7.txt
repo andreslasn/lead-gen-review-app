@@ -1,14 +1,1 @@
-Dr. Sziráczki Magdolna
-Rendelő címe
-5650 Mezőberény Petőfi út 5/3
-Email cím
-drsziracki@szucsnet.hu
-Telefonszám
-+36-66-424044
-Információ
-Asszisztens: Szabó Erzsébet, Tóth Gyöngyi
-Rendelés: H-K-P: 8-12, Sz: 10-13, Cs: 9-12
-Tanácsadás: Sz: 7-10, Cs 8.30-9.30
-Szegeden az Aáltalános Orvosi Karon csecsemő-, és gyermekgyógyászat szakvizsgát tett, ezt követően Mezőberényben kezdett dolgozni házi gyermekorvosként.
-Jelenleg is itt dolgozik főorvosként saját rendelőjében helyettesével, Dr. Bokor Gabriellával.
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE01SS27cMAzd6xTc13I9mU+TWTVtgrQNggbNXEC2OR7FsgxIigHrFj6Cl7PoaoAssiV8r9JBmhaQCEh65Ht65JVL4SFqR2MRaw13qipbY5X4hbZEMw1Q0O8GxXqzzuAO4zTk6Ohoe7jHMA17DfQSYP1xKa4bpc0rWpTOc0VV1Pqzj0+FtxjSw5PYocF9a32ksREflhu52cjV2SpbrcR3u29dwxo0ncSl53QfA1q/ZW0qpxNcu+jpmGNIYEencICbnp5t1es3oXRk7Dd5K++3cC4XZwknbmGRycUyga/8dsGXYqcsc3hV0vhaeguf5CKbAXCeLjN5wUE8RKywRAsqwiWNJihDo209/HRd6zXcKtdaKDzyaqZBJsDkUPXoGqyrnk68Rx9VAA51p6OvaAwQMLB4jAFqeu5m85jif0dzPtcYS8YB96Bqo9VwoDHqv8XbWUDN2JCKH2ymNViB9qDfM3QN+2n4hwOvHmdy99bNx9lDCwc0PdMgW9qhSeCKh+BLy/XhRuVOo+Efd8qk71PwB2Dx9twmAgAA"}

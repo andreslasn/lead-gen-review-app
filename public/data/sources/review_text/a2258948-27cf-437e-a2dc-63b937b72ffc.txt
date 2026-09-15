@@ -1,12 +1,1 @@
-Változás a III. és IV. háziorvosi körzet ellátásában
-A
-hármas számú rendelő új háziorvosa 2024 januárjától Dr. Molnár Bálint
-. Átmenetileg,
-helyettesítéssel ugyanő látja el a négyes számú körzet betegeit is
-. A vizsgálatokhoz – a súlyos, akkut panaszokkal érkezők kivételével – előjegyzés szükséges. A hármas körzet rendelési ideje: hétfőn és csütörtökön 14:00 – 18:00 óráig, kedden, szerdán és pénteken 8:00 – 12:00 óráig.
-Cím: 2051 Biatorbágy, Szabadság u. 8.
-A III. körzet elérhetőségei:                         A IV. körzet elérhetőségei:
-Telefon, fax: 06 23/311-076                    Telefon, fax.: 06 23/311-077
-E-mail:
-ekorzet@gmail.com
-szepamed@gmail.com
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE4VSvW7bMBDe9RT3AIoqOWliaKrTdvDQqUV2OjrTFCnSEGmj0tQ+gtEXqEYNmQJ0MDL14Bfpk/Rkx7E7tAVFgCLu+7nveEedCa6lzoOA6XSaAPUepncJLKhrlavXzivQ9KNuMQAaQ13gYupmwkaTiIvqSnjwzFDRFmq0BZrdBmhbnjEIGKWjKyiFXTGgHDgeDbyrE/jgjOUruGUfyoaI9b+GCi0GZVDG0QJNgyGgp4fAzjwaWMlGWJYYrJSCPbFzS71s8OTjaHiGASWqAMoz9QTWqvWSpURweuFa+PXlG6M9bU3jfAxC61WApbDCt05rYTiNWmO722jQak19QEP9miUH4NBoibJph8hY+Ul7toF+EDoGczRyCIYLFagCS8y5og/z3cbuA7/39BS4lDcjLGRXeZruRbLxcKLHmjolY9BYFGhjlsO6oO6AXlJvA2q0MH6Bjc5gSfSWHqqch/A6g1vFzdcz6mQTw8dWzETB45SwSmCcRJPDIzgNnANYYNht9q2pHH5+//eCs2+yf0h/5Yo+ocG5427m4nMO6TWMLl9dZtlFenP9P5lnsXOG5E+Km+j9RSWUySPUbjDwRg6/yb2rIk5vKSosTle/Aa0AfrEIAwAA"}

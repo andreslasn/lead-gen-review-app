@@ -1,18 +1,1 @@
-Kapcsolat
-Nagypall Község Önkormányzata
-Cím: 7731 Nagypall, Szabadság u. 26.
-Tel.: +36 72 466-752
-Fax: +36 72 466-752
-E-Mail: nagypall@t-online.hu
-Erzsébeti Közös Önkormányzati Hivatal
-Székhely hivatal:
-Cím: 7661 Erzsébet, Fő u. 135.
-Telefon/Fax: 69/351-102
-E-mail: hivatal@erzsebetikoh.hu
-Kirendeltségek:
-Telefon/Fax: 72/466-752
-Cím: 7733 Geresdlak, Hunyadi u. 22.
-Telefon/Fax: 69/349-101
-Ügyfélszolgálat:
-Cím: 7723 Erdősmecske, Petőfi u. 40.
-Telefon: 30/505-1172
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE23RO26DQBAG4J5TTB9eyxqQqSxFdixZiSI5F1ibMaxYFovFUeAWblKlcekirS+w8r0CxCDl0Y52f33zz4rtt6oQrDKeWFLvmRCw0pdG6XMC+l1mRZnrk6wbVjHjXn/mEYQhJTA8NmHdsA2LlT4lcLDBC2zjBYUdwR0NIPRgEgRW6HvGgr39mc2tR8ZFBPIWNqusQgou0U4PxrzsEBuseA/SF/XLw2HJX1uWMNaNPmcpihrS70k0UIOAwBhkwuJ67JCE+r0Sd4V0elgwdahPLOJ2qLxH3aJm2H7HjpEVaeda8RJljKLqKsIs+hkUes6w3dgWhQcsUcWCZSYsD7JmMe+78v5RTKatghj6I6l3+ixUU4hEn9r7jDuFHm13iq9HleNWZWjCM1bX467PnLhjZgTUdXzXtwgJvS+stHsr5wEAAA=="}

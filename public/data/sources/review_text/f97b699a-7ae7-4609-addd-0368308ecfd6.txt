@@ -1,18 +1,1 @@
-Dr. Horváth Kata
-Rendelő címe
-1115 Budapest XI. kerület Keveháza utca 10.
-Email cím
-61.korzet@gmail.com
-Telefonszám
-Információ
-Asszisztens neve:
-Vaja Katalin
-Rendelési idő:
-Hétfő: 15:00-19:00
-Kedd: 08:00-12:00
-Szerda: 15:00-19:00
-Csütörtök: 08:00-12:00
-Péntek: változó
-Bemutatkozás
-2025 októberétől dolgozom háziorvosként a 6-os számú háziorvosi praxisban a XI. kerületben. 2025-ben szereztem a háziorvosi szakvizsgám. Kiemelten fontosnak tartom a primer prevenciót és próbálom a betegeink érdekében mindent is megtenni ezért, ezért is szeretnék jelentkezni a programba
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1WSO27jMBCGe55iDhALkgEHG1d57AIJ3CySYLEtZY0Vhi+DHBsBb+EjqFSRKsAWi3SE75WhECBOQZGc+ef1UT9DBbc+7PNAT7CSJMU9ug7N8QDr/GpRNE2zgOtdJ7cYCf7eVaAx5HeDBCvc41MekoQdrSU0dSV+WanMFCnOm0r7kJAu+2Ks1t6KRzS48S6mPFhx5zY+2DysVX4TVzEmFROhi+A471L8kc9y6sgo99lUHqMC1R0PS3GbR9rwAZrFsq5nzQV/xQq7bgn1j8kyL5aHhKGT31U3Mb9T/hd46e/q33l0hGxkHIZ84r6u0e5IkubLEMW8ni/Aa8pvLUMY6Xgw0HnT++QtFBSKUfqoSx6QcD7zEaZh8/8Tt4JtkC8qttKx6BRpi66CUmTGJ47EgIzEsuo0Oiap9yrFnhNXsFJo0TA4YLLko5MaSAbyJWwblMXAGyN1BTQBQ+Q7T8AzTpoWCXtUTrMrdMjNl+JWMXGeQkWw2HN6pwATK+jscy+uqUVyedTwzG/rSGNiYSns+yBt+/U/fQDd4dFIagIAAA=="}

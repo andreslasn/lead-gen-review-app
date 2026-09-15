@@ -1,18 +1,1 @@
-Pollux-Medicatus 2000 Bt
-HĂĄziorvosi SzolgĂĄlat
-PusztamĂŠrges
-ĂdvĂśzĂśljĂźnk a honlapon!
-A vĂĄllalkozĂĄs megismerĂŠsĂŠhez vĂĄlasszon az alĂĄbbi menĂźpontokbĂłl:
-BemutatkozĂĄs
-RendelĂŠsi idĂľ
-FoglalkozĂĄs
-egĂŠszsĂŠgĂźgy
-Ăgyelet
-RendelĂŠs: hĂŠtfĂľtĂľl pĂŠntekig: 8-12 ĂłrĂĄig
-SĂźrgĂľssĂŠgi esetben kĂŠszenlĂŠt elĂŠrhetĂľ rendelĂŠsi napokon 16 ĂłrĂĄig
-ElĂŠrhetĂľsĂŠgeink:
-TEL:
-62/651-721
-e-mail:
-polluxmed@polluxmed.hu
-30/4308274
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1WRQU7DMBBF9z7FcIDQJC0tygoqFbEAqaJcwCGDY+LYVexU1MuIW8CCc3TRBSr3wpMAajfj8djz/vh7aZRqX6N7LOQTd62FNI5jmDt2e+gOb16aZmOshJU3SlBFcceWrfWO14fu+7MRaNmh+/ooNmH77imolxB3ugIOpdGKr40+Y9ew6dsVV5XxlFqoUUhbY0MgS6FE/3uNW+uNBu6BKyrkuQzXNYEDzpkqD2mnMjbHunXc/THZA+oCVU+UIItQ3LMbI45kGYr+2PeSlO/Etn+D2KJCd4zIoKTVPRPHUVCwpop2WEmRwWWUpECjNMSWgq2I15BVezsISECLLkcN1aCLuoc7GESaEnsyNMej62BbFRxIpif4xUnLIIBSVxl7XNxlbJqOphdJNEsThlHNZTBo3X9wjcXVf3Zetmwcjybj+DKdTX4A85xN5QICAAA="}

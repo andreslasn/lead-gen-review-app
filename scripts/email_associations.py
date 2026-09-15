@@ -5,6 +5,8 @@ reviewed public evidence. Generated data is local review material, not code.
 """
 from __future__ import annotations
 import argparse
+import base64
+import gzip
 from collections import defaultdict
 from datetime import datetime, timezone
 import json
@@ -51,7 +53,11 @@ def build(package, board, research=None):
     def clinic_payload(cid):
         if cid not in payload_cache:
             p=package/'clinics'/f'{cid}.json'
-            payload_cache[cid]=json.loads(p.read_text()) if p.exists() else {}
+            detail=json.loads(p.read_text()) if p.exists() else {}
+            if detail.get('format')=='lead-gen-account-evidence-gzip':
+                if detail.get('schema_version')!=1:raise ValueError('Invalid compressed clinic payload')
+                detail=json.loads(gzip.decompress(base64.b64decode(detail['data'],validate=True)))
+            payload_cache[cid]=detail
         return payload_cache[cid]
     for row in index:
         email=email_key(row['email']);rows_by_email[email]=dict(email=email,unlinked_occurrences=[],candidate_ids=[])

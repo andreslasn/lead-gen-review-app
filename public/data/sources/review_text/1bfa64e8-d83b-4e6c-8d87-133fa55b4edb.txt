@@ -1,17 +1,1 @@
-Dr. Györfy György
-belgyógyász, kardiológus, háziorvos
-Dunakeszi, V. számú háziorvosi körzet
-MENÜ
-Rendelési idők:
-Hétfő: 14.00 - 18.00
-Kedd: 08.00 - 12.00
-Szerda: 14.00 - 18.00
-Csütörtök: 08.00 - 12.00
-Péntek: 08.00 - 12.00
-Elérhetőségek:
-Rendelő +36-27-392-487
-gyorfygyorgy@gmail.com
-2120, Dunakeszi, Bercsényi u. 5.
-sza
-Ingyen weblap készítés - ewk.hu
-Asztali nézet
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE2VQPU/DMBDd/StuJ7HStNCSiY9WgBAIUYndbVzXSuIg26Gy/0V2lo4ZmJAYEJuV/8VVdKjKcPekd1/v3lRTuHHhS6/cHwpHFrwULnxibI2PoGA6l3WJRGMiWIetl7V+qw2ZNooV3HgZwQsF48O2Ct8HDRIKXOi5JQ+zx/BOnrnKeRk6LMi8b4uM3IbOrvo2g8GIJgnEMJggknue5xkkkz2X7ri55zpnx53XJvxYPIJRHE88hU5Z/o+eoQK95rZvTegE1ve6+hZOhmdxOo6H52k8moyJcDXassvCXYiKyZIu64qkgzSJ4OD5K66XuEs5CQ2FU0qMZ+ROCccVbPiiZK9oRIf+fFgEFMI3BV035NJ4y0oJKnRo0i/smMKgigEAAA=="}

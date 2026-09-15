@@ -1,18 +1,1 @@
-Felsőtárkány
-A Bükk nyugati kapuja
-II. sz. felnőtt orvosi körzet
-Létrehozva:
-2021. 09. 08.
-Egészségház - II. Rákóczi Ferenc u. 53.
-Dr. Szilágyi Erika
-Tel.: 36/434-244
-20/942-4509
-e-mail:
-orvosirendelo2.felsotarkany@gmail.com
-RENDELÉSI IDŐ                                                                           Előjegyzett betegek
-Hétfő:                   13:00 – 16:00                                                      14:00 – 15:00
-Kedd:                    08:00 – 12:00                                                      10:00 – 11:00
-Szerda:                 13:00 – 16:00                                                      14:00 – 15:00
-Csütörtök:           08:00 – 12:00                                                      10:00 – 11:00
-Péntek:                10:00 – 12:00                                                      10:00 – 11:00
-Rendelkezésre állási idő: 8:00 -16:00
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE82Uy07CQBSG9/MU5wU69AaRrrxQYiMxBnyBkR5KmdKa6UDSWbl1J/EF7JK1iStWTngRn8QBE+LCKCskk5NMMufy5Z+cv4tZuV5IXQuu67wiZ3CuV5xDXs0SJlPg7H42YSSKKJSKwgiz3KRLKMS8KM2zfhMKJenppRQ4LtScBcS1XYeC3TZxQkmY6GWpSr1MxrpWYMGmV1/XXL8OVQpdFJgPYUah6VHSERQGKs10nVQphCLljNxiRgPwWg3f8y3X903/Rtt3Lb9ptwlaU5ZmAfniMa1izAqXGs6ykExwllenySaFDosp6YfXnbCnHwcRRJ310/vL8R0Is/VigkllZJVwhxIT5OTS6DtaLwLYo4HjBbYNHw/P4LTM7YDojr+b3DQ3coVxvA+yKbVPdqXugaHt3WRnAz1QKGL2F/YRqXxR6pU0e2iC/4R9RNre6GUukf8u7veqf+btb/2EozIWJhB0nRlnMraXxptd3Mpqbb//E5Cg8ElHBQAA"}

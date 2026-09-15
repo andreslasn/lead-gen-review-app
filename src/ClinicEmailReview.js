@@ -1,6 +1,7 @@
-import { computed, nextTick, ref, watch } from 'vue';
+import { computed, nextTick, onUnmounted, ref, watch } from 'vue';
 import { associationKey, resolvedAssociations, safeSourceUrl, mappedEmailRows, associationRank, associationEvidence } from './associations.js';
 import { focusArchivedEvidence, findEvidenceMatch } from './evidence.js';
+import { decodeReviewArtifact } from './accountEvidence.js';
 import ReviewHeader from './ReviewHeader.js';
 export default {
   components:{ReviewHeader},
@@ -9,6 +10,8 @@ export default {
   setup(props,{emit}) {
     const search=ref(''), selectedEmail=ref(''), filter=ref('unreviewed'), providerSearch=ref(''), target=ref(null), selectedEvidence=ref(null), activeId=ref(''), evidenceIndex=ref(0), choice=ref(''), archiveFrame=ref(null), evidencePane=ref(null), evidenceLocated=ref(null);
     let evidenceRequest=0;
+    let archiveHtmlUrl='';
+    onUnmounted(()=>{evidenceRequest++;URL.revokeObjectURL(archiveHtmlUrl);});
     const providers=computed(()=>new Map((props.pkg?.providers || []).map(p=>[p.code,p])));
     const states=computed(()=>resolvedAssociations(props.pkg,props.decisions));
     const byEmail=computed(()=>{const map=new Map();for(const a of states.value){if(!map.has(a.email))map.set(a.email,[]);map.get(a.email).push(a);}return map;});
@@ -82,13 +85,14 @@ export default {
     });
     async function loadEvidence(e) {
       const request=++evidenceRequest;
+      URL.revokeObjectURL(archiveHtmlUrl);archiveHtmlUrl='';
       evidenceLocated.value=null;
       selectedEvidence.value={loading:!!e?.clinic_id,quote:e?.quote||'No saved evidence for this clinic link.'};
       if(!e?.clinic_id)return;
       try {
         const response=await fetch('data/clinics/'+encodeURIComponent(e.clinic_id)+'.json');
         if(!response.ok)throw Error('Saved page unavailable. Review the excerpt or open the source.');
-        const payload=await response.json();
+        const payload=JSON.parse(await decodeReviewArtifact(await response.text()));
         const doc=(payload.documents||[]).find(d=>d.source_url===e.source_url||d.final_url===e.source_url);
         const path=doc?.raw_html_path||'';
         const safePath=path.startsWith('sources/raw_html/')&&!path.includes('..')&&!path.includes(':')&&path.endsWith('.html');
@@ -96,13 +100,20 @@ export default {
         if(!safePath&&/^sources\/review_text\/[a-zA-Z0-9_-]+\.txt$/.test(textPath)){
           const textResponse=await fetch('data/'+textPath);
           if(!textResponse.ok)throw Error('Saved text unavailable. Review the excerpt or open the source.');
-          const text=await textResponse.text();
+          const text=await decodeReviewArtifact(await textResponse.text());
           if(request!==evidenceRequest)return;
           selectedEvidence.value={textPath:'data/'+textPath,quote:text};
           return;
         }
+        if(safePath){
+          const response=await fetch('data/'+path);
+          if(!response.ok)throw Error('Saved page unavailable. Review the excerpt or open the source.');
+          const html=await decodeReviewArtifact(await response.text());
+          if(request!==evidenceRequest)return;
+          archiveHtmlUrl=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+        }
         if(request!==evidenceRequest)return;
-        selectedEvidence.value={path:safePath?'data/'+path:'',quote:e.quote||'No matching HTML page retained for this source.'};
+        selectedEvidence.value={path:archiveHtmlUrl,quote:e.quote||'No matching HTML page retained for this source.'};
       } catch(err){if(request===evidenceRequest)selectedEvidence.value={quote:e.quote||'',error:err.message};}
     }
     function select(email){selectedEmail.value=email;selectedEvidence.value=null;}

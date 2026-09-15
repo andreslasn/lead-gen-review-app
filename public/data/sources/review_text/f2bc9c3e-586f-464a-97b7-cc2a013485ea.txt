@@ -1,18 +1,1 @@
-Dr. Rudas Rozália
-Rendelő címe
-7400 Kaposvár Honvéd utca 55.
-Email cím
-2eskorzetkaposvar@gmail.com
-Telefonszám
-0682312812
-Információ
-Asszisztens neve:
-Ballér Szerénke Judit
-Rendelési idő:
-Hétfő, Péntek: 7:30 - 11:00
-Kedd, Csütörtök: 12:30 - 15:30
-Prevenciós rendelési idő:
-Hétfő: 11:00 - 12:30
-Kedd, Csütörtök: 12:30 - 13:00
-Szerda, Péntek: 11:00 - 12:00
-Rendelő
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE32QO07EMBCGe59iDrBEeRB25YqntLDNauECVjxBVhwb2U6K3CJHSJmCComKzsq9sJdF2gaK0RTz/Q/NvUng0HFm4aAHP0nByAEVR7mMUPn3Fsn6Mk1hx9607f1kYKtV72cOnasYlGVCHlom5JElOdpGmwFdc8SZuX6Nx6TSLXlBibVWNoS0JL3a5EWWb7KcPKpam9ZPlfAf5MbaQdjBobKgsEdKbpmUfjbwPKDxs2oQnjou3Kmkn60AwZeRkq2fXb2MK9gHzGFDYU2LFC4gy2iakh1yvoI767+c/zRhApDlJ6IMm+xNCFSxhgXzhzv9cYuaqP3ftYi5sTdnZ63ODML599ffsSRj94cBAAA="}

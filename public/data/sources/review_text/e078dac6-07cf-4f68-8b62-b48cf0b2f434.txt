@@ -1,13 +1,1 @@
-2026. július. 17, péntek
-Címoldal
-|
-Városi hírek
-Kulturális hírek
-Berettyó Televizió
-4100 Berettyóújfalu,
-József Attila utca 9.
-Mobil: 06-30-9850-263
-E-mail cím: berettyotv@gmail.com
-MENÜ:
-Impresszum
-Elérhetőségeink
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACEz2Ou04CQRRA+/sV9wPYzbDoKlspZAs1WBn7YRngwh2GzIPEjT9hb0O5BdV2tDf+lxij7TnJySlUUea4kTNTCjkObwa4l24XzRamcrKOF5rhHV7l6F0gXMvJX9RT4pi8HJnCH5oYb2J8kx5fDJsDtSQ9XA2Vwn8j581ScxrAo/RtMEu8j5FYY4qNxnEOMzcnrlCV2Uhl49trlRXlCOrMamJsLjcVzn9bLh7uVj84b5yFWf0snxU82L03IbTJQs3S+bWJXx9BupWh3fYbP/W6wugAAAA="}

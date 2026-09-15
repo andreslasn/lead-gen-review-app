@@ -1,11 +1,1 @@
-Dr. Vasas Krisztina
-Csecsemő- és gyermekgyógyász
-szakorvos
-Cím: 4030 Debrecen, Híd utca 14.
-Telefon: (52) 470-892
-e-mail:
-vkgydebrecen@gmail.com
-Köszöntés
-Sok szeretettel üdvözlöm a debreceni 17. számú házi gyermekorvosi körzet honlapján, ahol újszülött kortól egészen 19 éves korig várom leendő és jövendő pácienseimet.
-Ha a gyermek beteg, a legnagyobb biztonságot egy felkészült szakorvos nyújthatja az aggódó szülő számára. Fontos számomra, hogy Ön és gyermeke is bizalommal forduljanak felém, ezért a gyermek életkorából adódó speciális kommunikációs- és vizsgálati igények figyelembevételével, a gyermeket és a szülőt is partnernek tekintve történik a gyermekgyógyászati vizsgálat, Önt pedig részletesen tájékoztatom minden körülményről és a javasolt kezelés menetéről.
-Minden szülő számára gyermeke egészsége a legfontosabb. Ezért házi gyermekorvosként a betegségorientált gyógyitás mellett nagy hangsúlyt helyezek a prevencióra, vagyis a betegségek megelőzésére is, különös tekintettel a kötelező és választható védőoltásokra, szűrésekre. A rendelésen a komplex terápia mellett egészségvédelemmel és egészségmegőrzéssel kapcsolatban is kérhet tanácsot.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE2VUu44bRxDM9ys6tAHe4k4+Q9ZFNiQbAgRHNpz3ks3lcOexmJlbmPsXlzjfkIECgwCDg7IB/0vVXJ54gAIC5Ex3V3VVDT/Emv7hxIk+RZPGbDxX75Msk7jT0w2VfaJ2J9FJ1+7KAZ8pjVUauQtxCKl6Xz67B7q//emWPkgTZSl+QR/L5xU95iXT3X1d/S1W1sE/0A8/v/mR7t/e3vzy7k0lN46NfagGzF1dOn9t9axeBld9Ksc0lqPPIFD9FTpKo0TJkrNYKl9WQzmOthwdMb10G7p7W6OuTK4806ZMo3mhfuZqqCvHOEqmTfCW+22ZwJU3AQOft+j7goE5E6pzOViSFtijeLp7BxkGSXpjWhrKFIMjK+JXp6ezQttyHOZffZmWRnwS4yTX1UcGwQsJasC/BSJaW8/tLjQNNWbMwacytSEDcUdrsZ3igk2mbzqT34Fj3nDeYuJI3LblsCoHOhcCd157ilzTH8FndJxPgou8wL4YXP7zr90UMknR2Qbn2NI6xNWj3bLnTjmUvVuQjGUf86sNyt5KBqMyNaoQry4kelmaMlmjEjn36E2nMpRDmgM0mDG1uOdsyEBVv8OstcFUK66RoeyzIg5iF1cw+KS9/LJiVsI9x+wlevRn6YzPg1CGq4gJQK/N16wq5hV/oTJk6mUFI6PqjIUkweRcpm3Zd2HMnOGuM36FU00M0J1yjqcne6G05YFTgEGdjMo8kRMvIKE1dfXn3PydN1ft52ylsm9lzsP6bBo3TU2/z6p/H2Dkwqsb5xxpL+IoeCETiMwLG/xQLhZbZdKM0YY9ap/tDhPF7sBXZeqjILBqkeZjQKFJryejyEkrYA8yOIgalwXk0Dfi8TYv8s/vkVUnfJHx8h4GFRt/Jsgr4gF/8TQgF8iFTgHTePpf1ZcuSk2/UcTjOesI1Vgz1Fv5FxAIWm/420JX1XSkhsfJbMn1BrRPT1FZJ9x13C9hFOeGveYHEsYNkpXZI6Ep5PorlIBoagAFAAA="}

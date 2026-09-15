@@ -1,13 +1,1 @@
-Budapesti Medical Center
-1134. Budapest Váci út 37. I. em. 18.rendelő | 1118. Budapest, Ramocsa u. 9.
-Elérhetőség
-Elérhetőségeink:
-Mobil: 06/30/9579-773
-Email:
-budapestimedical@gmail.com
-Cím: 1134. Budapest Váci út 37. I. em. 18.rendelő
-Mobil: 06-30-9579-773
-Email: budapestimedical@gmail.com
-Cím:
-1134. Budapest Váci út 37. I. em. 18.rendelő
-1118. Budapest, Ramocsa u. 9.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE5WQPQ6CQBSE+z3FO4AsbFZBqAyEwoLGwn6BF9y4Cwaw8xLeQEsKL2DphnuJ8aew0FDOTCbfZMJ9LnbYtBISzGUmFERYtlgTxviUQviKYW3OmQRzbYF7FJYUUFNgc1pjmaPqj3AAxgb9aUxgJXSVNQL2FHxKYmW6eoNtf2xMV3xJlOU2IEmVShXcTo5rc8f2Z55veR4nsRaDTdL3Uv0cuigePs0qTSJz0UNv5OQXDxzX4o71hYN/uLEHkZ/33AE2dL3NhwEAAA=="}

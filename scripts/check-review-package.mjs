@@ -1,4 +1,4 @@
-import { parseAccountIndex, validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
+import { decodeReviewArtifact, parseAccountIndex, validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
 import { validateAssociationPackage, validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
 import { createReadStream } from "node:fs";
@@ -85,8 +85,10 @@ async function treeSummary(paths) {
   let byteSize = 0;
   for (const file of paths) {
     const relative = path.relative(root, file).split(path.sep).join("/");
-    const size = (await stat(file)).size;
-    const fileHash = await sha256(file);
+    const original = /^(?:clinics\/|sources\/(?:review_text|raw_html)\/)/.test(relative)
+      ? Buffer.from(await decodeReviewArtifact(await readFile(file,'utf8')),'utf8') : null;
+    const size = original ? original.length : (await stat(file)).size;
+    const fileHash = original ? `sha256:${createHash('sha256').update(original).digest('hex')}` : await sha256(file);
     byteSize += size;
     digest.update(relative, "utf8");
     digest.update("\0");
@@ -103,6 +105,10 @@ async function treeSummary(paths) {
 }
 
 async function scanSecrets(file) {
+  if (/^(?:clinics\/|sources\/(?:review_text|raw_html)\/)/.test(path.relative(root,file).split(path.sep).join('/'))) {
+    const decoded=await decodeReviewArtifact(await readFile(file,'utf8'));
+    for(const [name,pattern] of secretPatterns)if(pattern.test(decoded))fail(`${name} detected in decoded review artifact`);
+  }
   let carry = "";
   await new Promise((resolve, reject) => {
     const stream = createReadStream(file, { encoding: "latin1" });

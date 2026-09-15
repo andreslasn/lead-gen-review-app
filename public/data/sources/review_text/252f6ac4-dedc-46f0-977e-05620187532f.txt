@@ -1,16 +1,1 @@
-Kapcsolat
-Ha kérdése, észrevétele, javaslata van, vagy szeretne együttműködni a 2026-valasztas.hu csapatával, keressen minket bizalommal.
-✅ Jelölti oldal indítás
-✅ Pártprogram beküldés
-✅ Technikai segítség vagy tartalmi kérdés
-✅ Média- vagy szakmai együttműködés
-📩
-valasztas@2026-valasztas.hu
-Mivel az oldal célja a választások hiteles és közérthető bemutatása, külön figyelmet fordítunk a visszaélések kiszűrésére.
-Ezért nem biztosítunk automatikus regisztrációt — minden kapcsolatfelvételt
-személyesen kezelünk
-, és minden megkeresésre válaszolunk.
-Köszönjük az érdeklődést és a bizalmat!
-Üdvözlettel:
-A 2026-valasztas.hu független fejlesztőcsapata
-Mutasd meg a barátaidnak is!
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE21SvWobQRDu9ynGvSyCixSpkiIQYgQp8gJj3dxptT8ndkcHuipNHsAkpSGovCKFCVx13aAX8RPkETJ7sgwhaRZ2d76Z72ducbfOrUc2HxCcDKmSIdMC9OwTdTIweb1uscOsVQgdxoUezQFyT4k4ElBzkIk5nB6djFW0gHDz6ub1dYcec8+Yl5s9rDPukOWojwtwisyZIgQbHTHc2R59GwL6pXl6+Aofycvo2ULrK/RgYyU/FZvnz09yTLxLbZMwwB05mXwhPf99pvUmWocWMjWKyTI0Z7aMidEH+yJyrl/JUFm8vghCFxT6t55S+vvHt8G8yHn7jzqzsh15wP6Z8FoGv0X1oZPjXKXcWwcbW9zMxVylMfbKhDfEp3uVEfZc7Mmo7qgiGSPUtjmQD+pP3abiwD660tNmZaoTSlIOnM396THpRdvR0ryf20KkUGzlNl+Ae24DsnX7DIkaRXGS49rKL4anL99LFJUm4i4LUZM/x89Gkw4670AlMke9pjNFZ+YtueACNXOq+pToorv1OnlpbmXMvSrayuSKSSUBcv50X8zluQued0AJXhl5qDp1xxPr9Dfm3X+2qZapaYi9Dq5pq5726uJ5xdCs1MpcFUalLapKRltFdGDz1R+gxpdf8QIAAA=="}

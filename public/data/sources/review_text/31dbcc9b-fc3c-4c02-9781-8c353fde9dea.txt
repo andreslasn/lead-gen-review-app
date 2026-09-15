@@ -1,8 +1,1 @@
-<meta charset="utf-8" />
-<link rel="shortcut icon" href="https://arhiv.tata.hu/sites/default/files/cimer_67x74.gif" type="image/gif" />
-<meta name="description" content="hétfő kedd szerda csütörtök péntek 7:30 - 11:00 12:00 - 15:30 7:30 - 11:00 8:00 - 12:00 tanácsadás12:00 - 15:30 betegrendelés 11:00 - 13:00 E-mail: rendelodrhonti kukac gmail pont com" />
-<meta name="robots" content="follow, index" />
-<meta name="generator" content="Drupal 7 (http://drupal.org)" />
-<link rel="canonical" href="https://arhiv.tata.hu/20866/dr_honti_anna" />
-<link rel="shortlink" href="https://arhiv.tata.hu/node/20866" />
-<meta property="og:site_name" content="Tata Város Hivatalos Honl
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE31SS27jMAzd9xSEVy0wiZN+ksCou+oAc4Ci24CVaFuwLBkU3d8teoQsc4FZzc6Ye1Vyu0g/6EIf8vGRfCAvOxIE1SAHkjIbpJptMsivji6tcS0w2TILjWdRg4BR3mXQMFVl1oj0ochz5MbczwUF582QByMUck0VDlbyythoKdMRb1frx/X5vDZVBvLUU5mZDmvKJ0cqN/XhsIuIpqDY9GJStVhSyMXWmnEv1f8XaElrCM/EOvYdxn8y/uV4WujHfQxtYV2cLWAGy2WxWMDyNN3RukjeD9DmHZkiBN24UwH1uAsfOXckVDM5TXbch3duBM/S+3vWobEFvOFecxPbNdAOLSqoEwZ99EQV3ReZ7O+8hAOFlbfWP/wCE3M9fgmvyRGjeD5gXPPQo4U1HKdxxGnoyTH3XJ98nqJC551RaH+e4Olis1rFPNtJyRadw2/3IZk/Z3Je01u6Ay09+55YnsrM10Xalm1SdyDpJrLhdtyxD/DH3EfLpp939hUbnjmbqwIAAA=="}

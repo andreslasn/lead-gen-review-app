@@ -1,15 +1,1 @@
-Bemutatkozás
-Szolgáltatások
-Rendelőről
-Elérhetőség
-English
-Elérhetőségek
-Cím:
-XIII. ker. Budapest, Pannónia utca 56. fszt. 1.
-Kapu kód:1-es
-E-mail:
-info@drkissildiko.hu
-Telefonszám:
-+36 30 2921101
-Bejelentkezés:
-telefonos egyeztetés alapján
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE12OMU7EMBBF+znF9LDWZlesRCoUlCKiQUBBa+FJ4rVjRxm7ILfIEVKmoNojWLkXlugo//tP+r+iIQYZjJ/TyvA+e9ul1WaSozfwRk6R3ZdpXyzUNm1TT2FfOG0d1K6zmvt/mAw8p5+hhM+maQQamgRWUcmRONzjq3Qu3ZyWGMOXxIeLwJbnILAQ8CLHiCbdVFkciKE+DFLbErRr/ZOajGbWVmnjRR/hgyy13nF+nafuzhc8H/H0eCqKYwEVXXPtgqE5bVxC+JM9I3XfNAcKGaO0crym1f0Cl2Qy/wIBAAA="}

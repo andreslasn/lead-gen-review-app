@@ -1,18 +1,1 @@
-Háziorvos
-Háziorvosi Rendelő
-Cím:       6612 Nagytőke, Széchenyi tér 8.
-Telefon:  63/450-610
-E-mail:
-orvosirend.8@gmail.com
-Rendelési idő:
-Hétfő            13.00 – 15.00
-Kedd             12.00 – 15.00
-Szerda          12.00 – 15.00
-Csütörtök      13.00 – 15.00
-Péntek          10.00 – 12.00
-Minden esetben időpont egyeztetés szükséges.
-Időpont egyeztetés nélkül csak sürgős, életveszélyes esetben lehet igénybe venni soron kívül a háziorvos szolgáltatást.
-Háziorvos:
-Dr. Máthé-Magyar Csaba
-Ápolónő:
-Aradi Aranka
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE4VSwUrDQBC971fMB9iYtFokJ6UKFamI+gPbZpou2e6W3SWQnPQTgj9gj3vwJHjqySE/4pe4QQiKFQ87MwyP997M7JS2tdCm1JZN+1LALaoMZduwCb2s0/fn92foQkjjcTKEa55Xrm0KPIC7mvxihaoS4MgbOInYPUpcapV26NHh0XE8GCcxuxisuZAp+1IwQSA6Oc27XrTQa/alSD6Ii6xt0mDHu2Xb9NrfQjKK4hg+Hp4gOQ4Vu8Is24PrkMOfyLsaTcb/hU0s7Ry9mfCKv2VvyCuHxW+2uMd1vGwmwmgK0KKbh9yNt9HKAeYV1g7D2izYmnaFJZ+jjdjlPoQiLwvaSVhYXkAwaPK2sQcQ2uhKDAReVmh7GYkrdCDyYLKaI5SolACrjVZQ0EvZMXFY9TcPDrTMaSsdd7S1Lvr2H1J2biKY0datyA9m4fjcwMTyOWf0uNGSXlV3sTPDMwEhqoJ/Ak7iCfhYAgAA"}

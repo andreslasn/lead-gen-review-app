@@ -1,17 +1,1 @@
-+36-62-451-489
-rendelo.lechnerter@gmail.com
-Rendelési idő: H-Sze-P: 7:30-12:00, K-Cs: 12:30-17:00
-6721 Szeged, Lechner tér 7.
-Rólam-Szakvizsgáim
-Szakvizsgáim
-Belgyógyász, háziorvosi és foglalkozás-egészségügyi szakvizsgákkal rendelkezem és most is képzem magam. Jelenleg az obezitológiai licenc vizsgára készülök. Ez a terület arra irányul, hogy felmérje a túlsúlyos, elhízott emberek anyagcsereállapotát, megállapítsa az elhízást kiváltó oki tényezőket, ezek alapján pedig meghatározza azt az egyénre szabott terápiát, amivel a túlsúly korrigálható.
-Hozzászólás
-Válasz megszakítása
-Az e-mail címet nem tesszük közzé.
-A kötelező mezőket
-*
-karakterrel jelöltük
-Név
-E-mail cím
-Honlap
-A nevem, e-mail címem, és weboldalcímem mentése a böngészőben a következő hozzászólásomhoz.
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1VSy27bMBC86yv23FpCXo1bn5oWAYK2KIoUyJ22NzLDl0GyKsS/yCfoqENOBnwofCPyXx3KBdIcCGl3ubMzs3x7fllfntUX707ri/cfKs92zdo1mlcbyz6y/9gaIXWzcqa6nYp5DJLk+vlxQTf1z8T1jwXNF+cn9enZ4uRkRl/rz2FBCEpqjlR1OT87JdxseT2jb0dkinn0NG+q27zTwgBIqE6m0OZBmup19Il12+cdzhDSjDZ5SNL5zoEHyNC9a7XQyiWUa26RSiGPbT60vaTwgqSU0HQUqDixmZqNC5FkIJXHbckZ0QrT0BfWbDW3JBK5JScZnQYDKSRpuWK7on+gXpTWkPJB571q6DqRINiGmCMJj7r0ebD9Lw3mru3pnrWB9gcuF/MfHXB6F2bEepOfkouR2CzZsyJhe9GuAv7zoLXYupiHOCMDkVOcn2IQheKxFfojKdmhGPOOnJLFZdtzen5UjEaoBigaH8CItryWbQHbCOB6l1LBihMevB6t52LfsjAqioatnMYLIzvW/7Mn5byXhVSB2jXVDcDKsrBbfKo7VERIZVbZB2gjK6orDKrL66JVfjKwy2IBkUNxU8HWPUDGproqvxELgQxAHMVUbyolvFAg5kHmAe9yD9UHVX3PY1ddv+CCjIVkwFju2MxezURYXsFvXjq9FvqYwxAL40LZ0DLv7fSknh+XbKlse99xVBOZzSuZziBu/gLsPOCdUQMAAA=="}

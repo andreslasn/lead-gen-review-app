@@ -1,11 +1,1 @@
-KAPCSOLAT
-ENIRÉ KFT
-2509 Esztergom-Kertváros, Damjanich út 113
-Figyelem! Az utcát átszámozták, ezért a régebbi GPS-ek a Pala Pizzához vezetnek, ezért a Damjanich út 79-et írják be a navigációba!
-Telefonszám
-+36-33-319-552
-Kizárólag foglalkozás-egészségügyi ellátással kapcsolatban hívható telefonszám:
-+36-20-9516215
-E-mail
-kertvaros.receptrendeles@gmail.com
-dr.baumann.marcell@gmail.com
+{"format":"lead-gen-account-evidence-gzip","schema_version":1,"data":"H4sIAAAAAAACE1WQsW7CMBCGdz/FMRcjQhQqOhW1UFVULSq8wCUcjokTI9sg4TfoY2RkYGKruvnFalhKh/Pw/3f3/b7ZeP60+HgbL9nk/fUzfMFsumSDrD+CifWOjNA1n5Fx+9AabbvwjPUGG1mUEL4dJEnKplIcSFHdgbGHnStC6yCW9aGttXehrbpAPhyNAwQTjoLyXMLLfMGpisocVXykj+2l9rAnT66h25n/yPsRpwg4mU3cDDnFhgb3UoS2kOGcY4ctY5q1bq4B2F065GnK02TEs2zAZjKqJpwVClhroVBVOiqWkwhH622MF37EQQIpFT8RHYsKKtwWVit0OTZQhtO+RBfO4G5AD1fSoM9HWTIcJBmb8BqlYtXldhhP1zNU0NYZalZxzD6Ki90rdM1Wppfjrsam6dVoikj+M38Bf/2MRJ8BAAA="}
