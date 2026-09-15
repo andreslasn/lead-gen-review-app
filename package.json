@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "check:data": "node scripts/check-review-package.mjs",
-    "build": "npm run check:data && vite build",
+    "build": "npm run check:data && vite build && node scripts/check-review-package.mjs dist/data",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {

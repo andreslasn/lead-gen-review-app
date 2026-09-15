@@ -1,8 +1,14 @@
 import { createApp, computed, nextTick, onMounted, onUnmounted, ref, watch } from "vue";
 import "./styles.css";
+import { focusArchivedEvidence as focusSourceEvidence } from "./evidence.js";
+import ReviewHeader from "./ReviewHeader.js";
+import ClinicEmailReview from "./ClinicEmailReview.js";
+import AccountEvidenceReview from "./AccountEvidenceReview.js";
+import { validateAccountPackage, validateFieldDecision, mergeFieldEvents, loadAccountEvidence, validateContactPreference, mergeContactPreferences } from "./accountEvidence.js";
+import { validateAssociationDecision, validateAssociationPackage, mappingEmails, mappedEmailRows } from "./associations.js";
 
 const DB_NAME = "lead-gen-clinic-review";
-const DB_VERSION = 2;
+const DB_VERSION = 5;
 const REVIEW_FORMAT = "lead-gen-clinic-review";
 const SCHEMA_VERSION = 1;
 const PACKAGE_FORMAT = "lead-gen-review-package";
@@ -27,7 +33,7 @@ const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const CAMPAIGN_EMAIL_USAGE_PATH = "data/campaign-email-usage.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "email-global-20260828-campaign-3";
+const DATA_DEPLOY_VERSION = "account-evidence-20260914";
 const DB_OPEN_TIMEOUT_MS = 2500;
 const HIDDEN_REVIEW_UI_TEXT = [
   "Accepted by an external human reviewer in a validated workbook column.",
@@ -58,6 +64,9 @@ function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
       if (!db.objectStoreNames.contains("audit_events")) db.createObjectStore("audit_events", { keyPath: "id" });
       if (!db.objectStoreNames.contains("meta")) db.createObjectStore("meta", { keyPath: "key" });
       if (!db.objectStoreNames.contains("backups")) db.createObjectStore("backups", { keyPath: "id" });
+      if (!db.objectStoreNames.contains("contact_preferences")) db.createObjectStore("contact_preferences", { keyPath: "id" });
+      if (!db.objectStoreNames.contains("field_decisions")) db.createObjectStore("field_decisions", { keyPath: "id" });
+      if (!db.objectStoreNames.contains("association_decisions")) db.createObjectStore("association_decisions", { keyPath: "id" });
       if (!db.objectStoreNames.contains("email_validations")) db.createObjectStore("email_validations", { keyPath: "email" });
     };
     request.onblocked = () => {
@@ -518,6 +527,7 @@ function candidatePresentationGroup(candidate, clinic, reviewPolicy = {}) {
 }
 
 const App = {
+  components: { ClinicEmailReview, ReviewHeader, AccountEvidenceReview },
   setup() {
     const db = ref(null);
     const manifest = ref(null);
@@ -553,13 +563,47 @@ const App = {
     const showInvalidCandidates = ref(false);
     const lastExportAt = ref(localStorage.getItem("review.lastExportAt") || "");
     const lastAction = ref(null);
+    const mappingMode = ref(false);
+    const accountMode = ref(new URLSearchParams(location.hash.slice(1)).has('account'));
+    const accountPackage = ref(null), fieldDecisions = ref([]), contactPreferences = ref([]), fieldSaving = ref(false), fieldError = ref('');
+    let researchRefreshTimer, refreshingResearch=false;
+    async function openAccountEvidence(key) {
+      const pkg=accountPackage.value, account=pkg?.accounts.find(a=>a.account_key===key);
+      if(!account)return;
+      try {
+        fieldError.value='';
+        const detail=await loadAccountEvidence(pkg,account,async path=>{const response=await fetch(staticUrl('data/'+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not load account evidence. Retry or refresh the research data.');return response.text();});
+        if(accountPackage.value===pkg)pkg.accounts=pkg.accounts.map(a=>a.account_key===key?detail:a);
+      } catch(err) {fieldError.value=err.message;}
+    }
+    async function refreshResearch() {
+      if(refreshingResearch||!accountPackage.value||fieldSaving.value||associationSaving.value)return;
+      refreshingResearch=true;
+      try {
+        const response=await fetch(staticUrl('data/account-research-status.json'),{cache:'no-cache'});
+        if(!response.ok)return;
+        const status=await response.json();
+        if(status.research_snapshot_id===accountPackage.value.research_snapshot_id)return;
+        const [accountResponse,associationResponse]=await Promise.all([fetch(staticUrl('data/account-enrichment.json'),{cache:'no-cache'}),fetch(staticUrl('data/email-associations.json'),{cache:'no-cache'})]);
+        if(!accountResponse.ok||!associationResponse.ok)throw Error('Research refresh unavailable; existing reviews are preserved.');
+        const pkg=validateAccountPackage(await accountResponse.json(),manifest.value), links=await associationResponse.json();
+        validateAssociationPackage(links,manifest.value);
+        // Review events stay in their existing stores; only source packages refresh.
+        associationPackage.value=links;accountPackage.value=pkg;
+      } catch(err) {fieldError.value=err.message;}
+      finally {refreshingResearch=false;}
+    }
+    const mappingReview = ref(null);
+    const associationPackage = ref(null);
+    const associationDecisions = ref([]);
+    const associationSaving = ref(false);
+    const associationError = ref("");
     const sessionStartedAt = ref(Date.now());
     const sessionDecisionCount = ref(0);
     const itemStartedAt = ref(Date.now());
     const evidencePane = ref(null);
     const fullEvidenceText = ref("");
     const syncConfig = ref(null);
-    const syncPanelOpen = ref(false);
     const githubToken = ref(sessionStorage.getItem("review.githubToken") || "");
     const syncStatus = ref("Local only");
     const remoteReviewSha = ref(null);
@@ -599,6 +643,7 @@ const App = {
         audit_flags: visibleAuditFlags(validation?.audit_flags || []),
       };
     }));
+    const associationEmails = computed(() => mappingEmails(preparedQueue.value));
     const regionOptions = computed(() => [...new Set(
       preparedQueue.value.flatMap((item) => itemRegions(item)),
     )].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })));
@@ -674,7 +719,7 @@ const App = {
     const unusedValidExportCount = computed(() => unusedValidEmailRows(selectedRegion.value).length);
     const unusedExportTitle = computed(() => {
       const region = selectedRegion.value || "all counties";
-      return `Export ${unusedValidExportCount.value} unused valid emails for ${region}`;
+      return `Export ${unusedValidExportCount.value} confirmed clinic links for unused valid emails in ${region}`;
     });
     const noMatchedEvidenceCounts = computed(() => {
       return { html: 0, none: 0 };
@@ -878,191 +923,7 @@ const App = {
     }
 
     function focusArchivedEvidence(event) {
-      const frame = event?.target || archiveFrame.value;
-      const document = frame?.contentDocument;
-      const needle = String(selectedCandidate.value?.value || "").trim().toLowerCase();
-      if (!document) return;
-      document.documentElement.style.setProperty("zoom", "1", "important");
-      if (!document.getElementById("review-evidence-media-constraints")) {
-        const style = document.createElement("style");
-        style.id = "review-evidence-media-constraints";
-        style.textContent = `
-          html, body {
-            background: #fff !important;
-            color: #000 !important;
-            font-family: Arial, Helvetica, sans-serif !important;
-            font-size: 16px !important;
-            line-height: 1.5 !important;
-            margin: 0 !important;
-          }
-          body {
-            padding: 16px !important;
-          }
-          body *, body *::before, body *::after {
-            align-items: stretch !important;
-            animation: none !important;
-            background-color: transparent !important;
-            background-image: none !important;
-            box-shadow: none !important;
-            clear: both !important;
-            clip: auto !important;
-            clip-path: none !important;
-            color: #000 !important;
-            columns: auto !important;
-            column-gap: 0 !important;
-            flex-direction: column !important;
-            float: none !important;
-            font-family: Arial, Helvetica, sans-serif !important;
-            font-size: 16px !important;
-            gap: 0 !important;
-            grid-auto-flow: row !important;
-            grid-template-columns: minmax(0, 1fr) !important;
-            height: auto !important;
-            inset: auto !important;
-            letter-spacing: normal !important;
-            line-height: 1.5 !important;
-            margin: 0 !important;
-            max-height: none !important;
-            max-width: 100% !important;
-            min-height: 0 !important;
-            min-width: 0 !important;
-            overflow: visible !important;
-            padding: 0 !important;
-            position: static !important;
-            row-gap: 0 !important;
-            justify-content: flex-start !important;
-            text-shadow: none !important;
-            text-overflow: clip !important;
-            transform: none !important;
-            transition: none !important;
-            white-space: normal !important;
-            width: auto !important;
-            word-break: normal !important;
-            z-index: auto !important;
-            overflow-wrap: anywhere !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-          img, picture, svg, video, canvas, object, embed, iframe,
-          source, track, input, textarea, select, button {
-            display: none !important;
-          }
-          [data-review-dimmer] {
-            background: rgba(0, 0, 0, 0.2) !important;
-            display: block !important;
-            inset: 0 !important;
-            pointer-events: none !important;
-            position: fixed !important;
-            z-index: 2147483645 !important;
-          }
-          [data-review-email-highlight] {
-            background: #fff36d !important;
-            border-radius: 4px !important;
-            box-shadow: 0 2px 10px rgba(255, 45, 125, 0.35) !important;
-            color: #000 !important;
-            outline: 3px solid #ff2d7d !important;
-            outline-offset: 2px !important;
-            padding: 1px 2px !important;
-            position: relative !important;
-            z-index: 2147483647 !important;
-          }
-          [data-review-proof-text] {
-            display: block !important;
-            white-space: pre-wrap !important;
-          }
-        `;
-        (document.head || document.documentElement).append(style);
-      }
-      document.querySelectorAll("[data-review-dimmer], [data-review-spotlight]").forEach((element) => element.remove());
-      for (const highlight of document.querySelectorAll("[data-review-email-highlight]")) {
-        if (highlight.tagName === "MARK") {
-          const parent = highlight.parentNode;
-          highlight.replaceWith(...highlight.childNodes);
-          parent?.normalize();
-        } else {
-          highlight.removeAttribute("data-review-email-highlight");
-        }
-      }
-      if (document.body.dataset.reviewTextNormalized !== "true") {
-        for (const element of document.querySelectorAll("[class*='cookie' i], [id*='cookie' i], [class*='consent' i], [id*='consent' i]")) {
-          element.style.setProperty("display", "none", "important");
-        }
-        for (const element of document.querySelectorAll(`
-          img, picture, svg, video, canvas, object, embed, iframe, source, track,
-          input, textarea, select, button, noscript, template,
-          [aria-busy='true'], [class*='skeleton' i], [class*='spinner' i],
-          [class*='preloader' i], [class*='placeholder' i]
-        `)) {
-          element.remove();
-        }
-        const seenNavigation = new Set();
-        for (const navigation of document.querySelectorAll("nav")) {
-          const navigationText = String(navigation.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
-          if (!navigationText || seenNavigation.has(navigationText)) navigation.remove();
-          else seenNavigation.add(navigationText);
-        }
-        let removedEmptyElement = true;
-        while (removedEmptyElement) {
-          removedEmptyElement = false;
-          const elements = [...document.body.querySelectorAll("*")].reverse();
-          for (const element of elements) {
-            if (element.matches("script, style, link, meta, br, hr")) continue;
-            const visibleText = String(element.textContent || "").replace(/\s+/g, "").trim();
-            if (visibleText) continue;
-            element.remove();
-            removedEmptyElement = true;
-          }
-        }
-        const normalizedText = String(document.body.innerText || document.body.textContent || "")
-          .split(/\r?\n/)
-          .map((line) => line.replace(/[\t ]+/g, " ").trim())
-          .filter(Boolean)
-          .join("\n");
-        const proofText = document.createElement("div");
-        proofText.setAttribute("data-review-proof-text", "true");
-        proofText.textContent = normalizedText;
-        document.body.replaceChildren(proofText);
-        document.body.dataset.reviewTextNormalized = "true";
-      }
-      if (!needle) return;
-      let target = null;
-      let matchedRange = null;
-      if (document.body) {
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-        let node;
-        while ((node = walker.nextNode())) {
-          const value = String(node.nodeValue || "");
-          const start = value.toLowerCase().indexOf(needle);
-          if (start < 0) continue;
-          target = node.parentElement;
-          matchedRange = document.createRange();
-          matchedRange.setStart(node, start);
-          matchedRange.setEnd(node, start + needle.length);
-          break;
-        }
-      }
-      if (!target) {
-        target = [...document.querySelectorAll("a")].find((element) =>
-          `${element.textContent || ""} ${element.getAttribute("data-review-original-href") || ""}`.toLowerCase().includes(needle)
-        );
-      }
-      if (!target) {
-        target = [...document.querySelectorAll("*")].find((element) =>
-          [...element.attributes].some((attribute) => String(attribute.value || "").toLowerCase().includes(needle))
-        );
-      }
-      if (!target) return;
-      if (matchedRange) {
-        const highlight = document.createElement("mark");
-        highlight.setAttribute("data-review-email-highlight", "true");
-        matchedRange.surroundContents(highlight);
-        target = highlight;
-      } else {
-        target.setAttribute("data-review-email-highlight", "true");
-      }
-      const dimmer = document.createElement("div");
-      dimmer.setAttribute("data-review-dimmer", "true");
-      document.body.append(dimmer);
-      target.scrollIntoView({ block: "center", inline: "nearest" });
+      return focusSourceEvidence(event?.target || archiveFrame.value, selectedCandidate.value?.value);
     }
 
     async function init() {
@@ -1152,6 +1013,18 @@ const App = {
         }
       }
       try {
+        const response = await fetch(staticUrl("data/email-associations.json"), { cache: "no-cache" });
+        if (response.ok) {
+          const extension = await response.json();
+          validateAssociationPackage(extension, manifest.value);
+          associationPackage.value = extension;
+        }
+      } catch (err) { associationError.value = err.message; }
+      try {
+        const response = await fetch(staticUrl('data/account-enrichment.json'), {cache:'no-cache'});
+        if(response.ok) accountPackage.value=validateAccountPackage(await response.json(),manifest.value);
+      } catch(err) { fieldError.value=err.message; }
+      try {
         const syncResponse = await fetch(REVIEW_SYNC_CONFIG, { cache: "no-cache" });
         if (syncResponse.ok) {
           const config = await syncResponse.json();
@@ -1185,6 +1058,9 @@ const App = {
         getAll(connection, "email_validations"),
         getAll(connection, "meta"),
       ]);
+      associationDecisions.value = await getAll(connection, "association_decisions");
+      fieldDecisions.value = await getAll(connection, "field_decisions");
+      contactPreferences.value = await getAll(connection, "contact_preferences");
       decisions.value = storedDecisions;
       localStates.value = storedStates;
       emailValidations.value = storedEmailValidations;
@@ -1662,13 +1538,19 @@ const App = {
         decisions: await getAll(connection, "decisions"),
         clinic_states: await getAll(connection, "clinic_states"),
         email_validations: mergedEmailValidationList(staticEmailValidations.value, storedEmailValidations),
-        role_overrides: roleOverrides.value,
+        association_decisions: await getAll(connection, "association_decisions"),
+        field_decisions: await getAll(connection, "field_decisions"),
+        contact_preferences: await getAll(connection, "contact_preferences"),
+        role_overrides: JSON.parse(JSON.stringify(roleOverrides.value)),
         audit_events: await getAll(connection, "audit_events"),
       };
       payload.checksum = await sha256(JSON.stringify({
         decisions: payload.decisions,
         clinic_states: payload.clinic_states,
         email_validations: payload.email_validations,
+        association_decisions: payload.association_decisions,
+        field_decisions: payload.field_decisions,
+        contact_preferences: payload.contact_preferences,
         role_overrides: payload.role_overrides,
         audit_events: payload.audit_events,
       }));
@@ -1703,34 +1585,77 @@ const App = {
       return `Used in ${usage.campaign_count || 1} campaign row${usage.campaign_count === 1 ? "" : "s"}${files ? ` · ${files}` : ""}${sent}`;
     }
 
-    function exportOccurrence(item, region) {
-      const occurrences = item.occurrences || [];
-      return (region ? occurrences.find((occurrence) => occurrence.region === region) : null)
-        || occurrences[0]
-        || {};
+    function unusedValidEmailRows(region = "") {
+      const eligible = preparedQueue.value.filter(item => itemMatchesRegion(item, region));
+      return mappedEmailRows(eligible, associationPackage.value, associationDecisions.value, { unused: true });
     }
 
-    function unusedValidEmailRows(region = "") {
-      return preparedQueue.value
-        .filter((item) => item.status === "valid" && !item.used_in_campaign && itemMatchesRegion(item, region))
-        .map((item) => {
-          const occurrence = exportOccurrence(item, region);
-          return {
-            email: item.display_value || item.email,
-            county: occurrence.region || item.region || "",
-            clinic_name: occurrence.clinic_name || item.name || "",
-            registry_id: occurrence.registry_id || item.registry_id || "",
-            city: occurrence.city || item.city || "",
-            address: occurrence.address || item.address || "",
-            occurrence_count: item.occurrence_count || "",
-            reviewed_at: item.reviewed_at || "",
-          };
-        })
-        .sort((a, b) => (
-          a.county.localeCompare(b.county, undefined, { sensitivity: "base" })
-          || a.clinic_name.localeCompare(b.clinic_name, undefined, { sensitivity: "base" })
-          || a.email.localeCompare(b.email)
-        ));
+    async function saveField(event) {
+      if(fieldSaving.value)return;
+      fieldSaving.value=true;fieldError.value='';
+      try {
+        const events=JSON.parse(JSON.stringify(Array.isArray(event)?event:[event]));
+        if(!events.length||events.length>100)throw Error('Invalid field decision batch.');
+        events.forEach(e=>validateFieldDecision(e,accountPackage.value));
+        const connection=await ensureDb();
+        await new Promise((resolve,reject)=>{
+          const tx=connection.transaction('field_decisions','readwrite');
+          for(const e of events)tx.objectStore('field_decisions').add(e);
+          tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Save aborted'));
+        });
+        fieldDecisions.value=await getAll(connection,'field_decisions');
+        saveStatus.value='Account field saved locally. Export review JSON to update the dashboard.';
+      } catch(err) {fieldError.value=err.message;} finally {fieldSaving.value=false;}
+    }
+
+    async function saveContactPreference(event) {
+      if(fieldSaving.value)return;
+      fieldSaving.value=true;fieldError.value='';
+      try {
+        event=JSON.parse(JSON.stringify(event));validateContactPreference(event,accountPackage.value);
+        const connection=await ensureDb();
+        await new Promise((resolve,reject)=>{
+          const tx=connection.transaction('contact_preferences','readwrite');tx.objectStore('contact_preferences').add(event);
+          tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Preference save aborted'));
+        });
+        contactPreferences.value=await getAll(connection,'contact_preferences');
+        saveStatus.value='Contact preference saved locally. Ownership and email validity are unchanged.';
+      } catch(err){fieldError.value=err.message;} finally {fieldSaving.value=false;}
+    }
+
+    async function saveAssociation(event) {
+      if (associationSaving.value) return;
+      const events = JSON.parse(JSON.stringify(Array.isArray(event) ? event : [event]));
+      associationError.value = ""; associationSaving.value = true;
+      try {
+        if (!events.length || events.length > 2) throw Error("Invalid clinic decision batch.");
+        for (const decision of events) {
+          validateAssociationDecision(decision);
+          if (!associationPackage.value?.providers.some(p => p.code === decision.provider_code)) throw Error("Provider is absent from this registry.");
+        }
+        if (events.length === 2 && (events[0].email !== events[1].email || events[0].provider_code === events[1].provider_code || events[0].status !== "rejected" || events[1].status !== "confirmed")) throw Error("Invalid clinic reassignment.");
+        const connection = await ensureDb();
+        // Resolve a UI save only when its transaction has committed.
+        await new Promise((resolve,reject) => {
+          const tx = connection.transaction("association_decisions", "readwrite");
+          tx.oncomplete = resolve; tx.onerror = () => reject(tx.error); tx.onabort = () => reject(tx.error || Error("Save aborted"));
+          try { for (const decision of events) tx.objectStore("association_decisions").add(decision); }
+          catch (error) { tx.abort(); reject(error); }
+        });
+        associationDecisions.value = await getAll(connection, "association_decisions");
+        saveStatus.value = "Clinic link saved. Email validity unchanged.";
+        scheduleRemoteSync();
+      } catch (err) { associationError.value = err.message; }
+      finally { associationSaving.value = false; }
+    }
+
+    function exportAssociationCSV() {
+      const rows = mappedEmailRows(preparedQueue.value, associationPackage.value, associationDecisions.value);
+      if (!rows.length) { saveStatus.value = "No confirmed mappings for valid emails."; return; }
+      const csv = csvRows(rows, Object.keys(rows[0]).map(key=>({key,label:key})));
+      const url = URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));
+      const link=document.createElement('a');link.href=url;link.download='confirmed-clinic-email-mappings.csv';link.click();URL.revokeObjectURL(url);
+      saveStatus.value = `Exported ${rows.length} confirmed clinic-to-email mappings`;
     }
 
     function exportUnusedCampaignEmails() {
@@ -1743,11 +1668,15 @@ const App = {
         { key: "email", label: "email" },
         { key: "county", label: "county" },
         { key: "clinic_name", label: "clinic_name" },
-        { key: "registry_id", label: "registry_id" },
+        { key: "neak_provider_code", label: "neak_provider_code" },
+        { key: "hsz_service_codes", label: "hsz_service_codes" },
+        { key: "contact_role", label: "contact_role" },
+        { key: "owner_name", label: "owner_name" },
+        { key: "source_urls", label: "source_urls" },
         { key: "city", label: "city" },
         { key: "address", label: "address" },
-        { key: "occurrence_count", label: "occurrence_count" },
-        { key: "reviewed_at", label: "reviewed_at" },
+        { key: "association_reviewed_at", label: "association_reviewed_at" },
+        { key: "association_reviewed_by", label: "association_reviewed_by" },
       ];
       const csv = `${csvRows(rows, columns)}\n`;
       const date = nowIso().replaceAll(":", "").slice(0, 15);
@@ -1820,6 +1749,13 @@ const App = {
 
     async function syncReview() {
       if (!syncConfig.value || !githubToken.value) return;
+      if((contactPreferences.value.length||associationDecisions.value.some(e=>e.contact_purpose)||fieldDecisions.value.some(e=>e.contact_role))&&!syncConfig.value.capabilities?.includes('account_contacts_v1')){
+        syncStatus.value='Contact preferences saved locally. Export review JSON; shared sync needs contact-review support.';return;
+      }
+      if(fieldDecisions.value.length&&!syncConfig.value.capabilities?.includes('account_fields_v1')){
+        syncStatus.value='Account reviews saved locally. Export review JSON; shared sync needs account-field support.';
+        return;
+      }
       try {
         if (!remoteReviewLoaded.value && !(await loadRemoteReview())) return;
         syncStatus.value = "Syncing…";
@@ -1863,48 +1799,6 @@ const App = {
       clearTimeout(syncTimer);
       syncStatus.value = "Local saved · syncing…";
       syncTimer = setTimeout(() => syncReview(), 1200);
-    }
-
-    async function connectReviewSync() {
-      error.value = "";
-      if (!syncConfig.value) {
-        error.value = "Shared review sync is not configured for this deployment.";
-        return;
-      }
-      if (!githubToken.value.trim()) {
-        error.value = "Enter a fine-grained GitHub token with Contents write access to this repository.";
-        return;
-      }
-      sessionStorage.setItem("review.githubToken", githubToken.value.trim());
-      remoteReviewLoaded.value = false;
-      remoteReviewSha.value = null;
-      await loadRemoteReview({ force: true });
-      await syncReview();
-    }
-
-    function disconnectReviewSync() {
-      clearTimeout(syncTimer);
-      githubToken.value = "";
-      sessionStorage.removeItem("review.githubToken");
-      remoteReviewLoaded.value = false;
-      remoteReviewSha.value = null;
-      syncStatus.value = "Local only";
-    }
-
-    async function importProgress(event) {
-      const file = event.target.files?.[0];
-      if (!file) return;
-      try {
-        const payload = JSON.parse(await file.text());
-        await mergeImport(payload);
-        await hydrateLocal();
-        saveStatus.value = `Imported ${payload.email_validations?.length || payload.decisions?.length || 0} email validations`;
-        scheduleRemoteSync();
-      } catch (err) {
-        error.value = err?.message || String(err);
-      } finally {
-        event.target.value = "";
-      }
     }
 
     async function mergeCanonicalState() {
@@ -1992,14 +1886,43 @@ const App = {
         const ok = confirm(`This export is for dataset ${payload.dataset_id}, current dataset is ${manifest.value.dataset_id}. Import anyway?`);
         if (!ok) return;
       }
+      if((payload.field_decisions?.length||payload.contact_preferences?.length) && (payload.dataset_id!==manifest.value.dataset_id || payload.base_data_hash!==manifest.value.base_data_hash))throw Error('Account review dataset mismatch.');
+      mergeFieldEvents(await getAll(connection,'field_decisions'),payload.field_decisions||[]);
+      mergeContactPreferences(await getAll(connection,'contact_preferences'),payload.contact_preferences||[]);
+      for(const key of new Set((payload.contact_preferences||[]).map(e=>e.account_key))){
+        const account=accountPackage.value?.accounts.find(a=>a.account_key===key);if(!account)throw Error('Preferred-contact account is absent.');
+        const detail=await loadAccountEvidence(accountPackage.value,account,async path=>{const response=await fetch(staticUrl('data/'+path),{cache:'no-cache'});if(!response.ok)throw Error('Could not verify imported contact preference. Retry after loading the evidence.');return response.text();});
+        for(const event of payload.contact_preferences.filter(e=>e.account_key===key))validateContactPreference(event,{accounts:[detail]});
+      }
+      for (const event of payload.association_decisions || []) {
+        const existing = await get(connection, "association_decisions", event.id);
+        if (existing && JSON.stringify(existing) !== JSON.stringify(event)) throw Error("Conflicting association event ID; original decision preserved.");
+      }
       await put(connection, "backups", {
         id: uuid(),
         created_at: nowIso(),
         decisions: await getAll(connection, "decisions"),
         clinic_states: await getAll(connection, "clinic_states"),
         email_validations: await getAll(connection, "email_validations"),
-        role_overrides: roleOverrides.value,
+        association_decisions: await getAll(connection, "association_decisions"),
+        field_decisions: await getAll(connection, "field_decisions"),
+        contact_preferences: await getAll(connection, "contact_preferences"),
+        role_overrides: JSON.parse(JSON.stringify(roleOverrides.value)),
         audit_events: await getAll(connection, "audit_events"),
+      });
+      for (const event of payload.association_decisions || []) {
+        const existing = await get(connection, "association_decisions", event.id);
+        if (existing && JSON.stringify(existing) !== JSON.stringify(event)) throw Error("Conflicting association event ID; original decision preserved.");
+        if (!existing) await put(connection, "association_decisions", event);
+      }
+      if(payload.field_decisions?.length)await new Promise((resolve,reject)=>{
+        const tx=connection.transaction('field_decisions','readwrite');
+        for(const event of payload.field_decisions)tx.objectStore('field_decisions').put(event);
+        tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Account import aborted'));
+      });
+      if(payload.contact_preferences?.length)await new Promise((resolve,reject)=>{
+        const tx=connection.transaction('contact_preferences','readwrite');for(const event of payload.contact_preferences)tx.objectStore('contact_preferences').put(event);
+        tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Contact import aborted'));
       });
       for (const decision of payload.decisions || []) {
         const existing = await get(connection, "decisions", decision.id);
@@ -2030,12 +1953,18 @@ const App = {
       if (payload.schema_version !== SCHEMA_VERSION) throw new Error("Unsupported review schema version.");
       if (!Array.isArray(payload.decisions) || !Array.isArray(payload.clinic_states)) throw new Error("Invalid review export shape.");
       if (payload.email_validations != null && !Array.isArray(payload.email_validations)) throw new Error("Invalid email validations.");
+      if(payload.field_decisions!=null&&!Array.isArray(payload.field_decisions))throw Error('Invalid account field decisions.');
+      mergeFieldEvents([],payload.field_decisions||[]);
+      if(payload.contact_preferences!=null&&!Array.isArray(payload.contact_preferences))throw Error('Invalid preferred-contact decisions.');
+      mergeContactPreferences([],payload.contact_preferences||[]);
+      if (payload.association_decisions != null && !Array.isArray(payload.association_decisions)) throw Error("Invalid association decisions.");
+      for (const event of payload.association_decisions || []) validateAssociationDecision(event);
       if (payload.role_overrides != null && !Array.isArray(payload.role_overrides)) throw new Error("Invalid role overrides.");
     }
 
     function visibleBackupReminder() {
       if (githubToken.value && syncStatus.value === "Synced") return false;
-      const completed = emailValidations.value.length
+      const completed = contactPreferences.value.length + fieldDecisions.value.length + associationDecisions.value.length + emailValidations.value.length
         + decisions.value.length
         + localStates.value.filter((item) => ["confirmed", "no_email", "excluded"].includes(item.status)).length;
       if (completed < 25) return false;
@@ -2044,16 +1973,26 @@ const App = {
     }
 
     function onKey(event) {
-      if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
+      if(accountMode.value)return;
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.isComposing) return;
+      if (event.target?.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
       const key = event.key.toLowerCase();
-      if (event.key === "1") selectCandidateValidation("valid");
-      if (key === "enter") confirmCandidate();
-      if (event.key === "2") invalidateCandidate();
-      if (key === "j") moveCandidate(1);
-      if (key === "k") moveCandidate(-1);
-      if (key === "u") undoLastAction();
-      if (key === "arrowright") nextLead();
-      if (key === "arrowleft") previousLead();
+      // Keep native Enter on navigation, exports, links and disclosure controls.
+      if (key === 'enter' && event.target?.closest?.('button, a, summary') && !event.target.closest('.validation-btn, .confirm-btn')) return;
+      const review = mappingReview.value;
+      const actions = mappingMode.value ? {
+        '1': () => review?.choose('confirmed'), '2': () => review?.choose('rejected'),
+        enter: () => review?.confirm(), j: () => review?.moveClinic(1), k: () => review?.moveClinic(-1),
+        arrowright: () => review?.moveEmail(1), arrowleft: () => review?.moveEmail(-1),
+      } : {
+        '1': () => selectCandidateValidation('valid'), '2': () => invalidateCandidate(),
+        enter: confirmCandidate, j: () => moveCandidate(1), k: () => moveCandidate(-1),
+        u: undoLastAction, arrowright: nextLead, arrowleft: previousLead,
+      };
+      if (!actions[key]) return;
+      event.preventDefault();
+      if (event.repeat && ['enter','u'].includes(key)) return;
+      actions[key]();
     }
 
     watch(search, (value) => {
@@ -2091,18 +2030,22 @@ const App = {
     onMounted(() => {
       window.addEventListener("keydown", onKey);
       init();
+      researchRefreshTimer=setInterval(refreshResearch,30000);
     });
 
     onUnmounted(() => {
       window.removeEventListener("keydown", onKey);
       clearTimeout(syncTimer);
+      clearInterval(researchRefreshTimer);
     });
 
     return {
+      accountMode, accountPackage, fieldDecisions, contactPreferences, emailValidationByValue, saveContactPreference, fieldSaving, fieldError, saveField, openAccountEvidence,
+      mappingMode, mappingReview, associationPackage, associationDecisions, associationSaving, associationError, saveAssociation, exportAssociationCSV, preparedQueue, associationEmails,
       manifest,
       clinic,
       currentItem,
-      filteredQueue,
+      filteredQueue, currentIndex,
       laneCounts,
       noMatchedEvidenceCounts,
       isNoMatchArchivedHtml,
@@ -2111,7 +2054,6 @@ const App = {
       regionOptions,
       regionFilterLabel,
       syncConfig,
-      syncPanelOpen,
       githubToken,
       syncStatus,
       noMatchedEvidenceFilter,
@@ -2184,15 +2126,12 @@ const App = {
       undoLastAction,
       exportProgress,
       exportUnusedCampaignEmails,
-      importProgress,
-      connectReviewSync,
-      disconnectReviewSync,
       syncReview,
       copyEmail,
     };
 
-    async function copyEmail() {
-      const email = currentItem.value?.display_value || currentItem.value?.email || "";
+    async function copyEmail(value) {
+      const email = typeof value === "string" ? value : currentItem.value?.display_value || currentItem.value?.email || "";
       if (!email) return;
       try {
         await navigator.clipboard.writeText(email);
@@ -2204,7 +2143,10 @@ const App = {
   },
   template: `
     <div class="app-shell">
-      <section class="queue-bar">
+      <nav class="review-mode-tabs" aria-label="Review mode"><button :class="{active:!mappingMode&&!accountMode}" @click="mappingMode=false;accountMode=false">Email validity</button><button :class="{active:mappingMode&&!accountMode}" @click="mappingMode=true;accountMode=false">Clinic mapping</button><button :class="{active:accountMode}" @click="accountMode=true;mappingMode=false">Account data</button></nav>
+      <AccountEvidenceReview v-if="accountMode" :pkg="accountPackage" :associations="associationPackage" :field-decisions="fieldDecisions" :preferences="contactPreferences" :validity="emailValidationByValue" :association-decisions="associationDecisions" :reviewer="reviewer" :saving="fieldSaving||associationSaving" :error="fieldError||associationError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @association-decision="saveAssociation" @export="exportProgress" />
+      <ClinicEmailReview ref="mappingReview" v-if="mappingMode&&!accountMode" :pkg="associationPackage" :emails="associationEmails" :decisions="associationDecisions" :reviewer="reviewer" :saving="associationSaving" :save-error="associationError" @decision="saveAssociation" @copy="copyEmail" @export="exportAssociationCSV" />
+      <section v-show="!mappingMode&&!accountMode" class="queue-bar">
         <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="region-actions">
           <select v-model="selectedRegion" class="region-filter" :aria-label="regionFilterLabel">
@@ -2215,8 +2157,8 @@ const App = {
             Export unused CSV <strong>{{ unusedValidExportCount }}</strong>
           </button>
         </div>
-        <div class="lane-tabs">
-          <button v-for="lane in ['unreviewed','reviewed','valid','invalid','all']" :key="lane" :class="{active:selectedLane===lane}" @click="selectedLane=lane">
+        <div class="lane-tabs" role="group" aria-label="Email review status">
+          <button v-for="lane in ['unreviewed','reviewed','valid','invalid','all']" :key="lane" :class="{active:selectedLane===lane}" :aria-pressed="selectedLane===lane" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
@@ -2228,15 +2170,16 @@ const App = {
       </section>
 
       <div v-if="error" class="alert error">{{ error }}</div>
-      <div v-if="visibleBackupReminder()" class="alert">Export a backup soon. Browser storage is local to this browser profile.</div>
+      <div v-if="visibleBackupReminder()" class="alert">{{mappingMode ? 'For a full review backup, use Export .json in Email validity.' : 'Export a backup soon. Browser storage is local to this browser profile.'}}</div>
 
-      <main v-if="loading" class="empty-state">
+      <main v-if="!mappingMode && !accountMode && loading" class="empty-state">
         <h2>Loading email review data.</h2>
         <p>Fetching the packaged email queue and validation state.</p>
       </main>
 
-      <main v-else-if="currentItem && clinic" class="review-layout">
+      <main v-else-if="!mappingMode && !accountMode && currentItem && clinic" class="review-layout">
         <section class="decision-pane">
+          <ReviewHeader :email="currentItem.display_value||currentItem.email" :index="currentIndex" :total="filteredQueue.length" editable @move="$event>0?nextLead():previousLead()" @copy="copyEmail" @edit="startEmailEdit" />
           <div class="clinic-meta">
             <span v-if="currentItem.audit_flags?.length" class="pill reason">{{ currentItem.audit_flags.join(', ') }}</span>
             <span class="pill campaign" :class="{used: currentItem.used_in_campaign}" :title="campaignUsageTitle(currentItem)">
@@ -2244,19 +2187,11 @@ const App = {
             </span>
             <span class="muted">{{ currentItem.occurrence_count }} occurrence{{ currentItem.occurrence_count === 1 ? '' : 's' }}</span>
           </div>
-          <div class="email-title-row">
-            <h2>{{ currentItem.display_value || currentItem.email }}</h2>
-            <button class="copy-btn" @click="copyEmail" title="Copy email">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
-            </button>
-            <button class="edit-email-btn" @click="startEmailEdit" title="Edit email">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.9 3.1l3 3M2.5 13.5l3.35-.7 6.7-6.7a2.12 2.12 0 00-3-3l-6.7 6.7-.35 3.7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </button>
-          </div>
-          <p class="clinic-address">{{ clinic.clinic.name || 'No clinic name' }} · {{ clinic.clinic.address || 'No address' }}</p>
-
           <section class="candidate-card">
-            <p class="label">Email validation</p>
+            <div class="review-identity">
+              <h3>{{clinic.clinic.name||'No clinic name'}}</h3>
+              <p v-if="clinic.clinic.address" class="clinic-address">{{clinic.clinic.address}}</p>
+            </div>
             <div v-if="displayedCandidateRows.length" class="validation-controls">
               <div class="validation-row">
                 <div class="validation-group">
@@ -2275,14 +2210,13 @@ const App = {
                   </div>
                 </div>
                 <div class="validation-group">
-                  <span class="validation-group-label">Status</span>
                   <div class="validation-buttons">
-                    <button class="validation-btn valid-btn" :class="{active: pendingEmailStatus==='valid'}" @click="selectCandidateValidation('valid')">Valid</button>
-                    <button class="validation-btn invalid-btn" :class="{active: pendingEmailStatus==='invalid'}" @click="invalidateCandidate()">Invalid</button>
+                    <button class="validation-btn valid-btn" :class="{active: pendingEmailStatus==='valid'}" :aria-pressed="pendingEmailStatus==='valid'" @click="selectCandidateValidation('valid')" title="Valid (1)">Valid</button>
+                    <button class="validation-btn invalid-btn" :class="{active: pendingEmailStatus==='invalid'}" :aria-pressed="pendingEmailStatus==='invalid'" @click="invalidateCandidate()" title="Invalid (2)">Invalid</button>
                   </div>
                 </div>
               </div>
-              <button class="confirm-btn" :disabled="!pendingValidationReady" @click="confirmCandidate()">Confirm</button>
+              <button class="confirm-btn" :disabled="!pendingValidationReady" @click="confirmCandidate()" title="Confirm (Enter)">Confirm</button>
             </div>
             <p v-else class="muted">No retained candidate row was found for this email occurrence.</p>
           </section>
@@ -2297,17 +2231,17 @@ const App = {
           </section>
 
           <div class="decision-footer-actions">
-            <a v-if="livePageUrl" :href="livePageUrl" target="_blank" rel="noreferrer">Open live page ↗</a>
+            <span class="muted">← → Emails · J/K Occurrences · 1/2 Choose · Enter Confirm</span>
             <button @click="exportProgress" :title="saveStatus">Export .json</button>
           </div>
         </section>
 
         <section class="evidence-pane">
           <div class="evidence-toolbar">
-            <div v-if="selectedEvidencePresentation.kind !== 'screenshot'" class="evidence-provenance" :class="'evidence-' + selectedEvidencePresentation.kind">
-              <strong>{{ selectedEvidencePresentation.label }}</strong>
-              <span>{{ selectedEvidencePresentation.detail }}</span>
+            <div class="evidence-provenance" :title="selectedEvidencePresentation.detail">
+              <strong>{{selectedEvidencePresentation.kind==='html'?'Saved page':selectedEvidencePresentation.kind==='screenshot'?'Screenshot':'Source evidence'}}</strong>
             </div>
+            <a v-if="livePageUrl" :href="livePageUrl" target="_blank" rel="noreferrer">Open live page ↗</a>
           </div>
 
           <div v-if="selectedEvidencePresentation.kind === 'html'" class="archive-pane">
@@ -2332,29 +2266,12 @@ const App = {
         </section>
       </main>
 
-      <main v-else class="empty-state">
+      <main v-else-if="!mappingMode&&!accountMode" class="empty-state">
         <h2>No emails in this lane.</h2>
         <p>Change the lane filter or search query.</p>
       </main>
 
-      <section v-if="syncPanelOpen" class="sync-panel">
-        <div class="sync-panel-heading">
-          <div>
-            <strong>GitHub review sync</strong>
-            <small>Decisions remain in this browser and are also saved to the dedicated review-data branch when connected.</small>
-          </div>
-          <button class="quiet" @click="syncPanelOpen=false">Close</button>
-        </div>
-        <label>Reviewer ID<input v-model="reviewer" autocomplete="username" /></label>
-        <label>Fine-grained GitHub token<input v-model="githubToken" type="password" autocomplete="off" placeholder="Contents: read and write" /></label>
-        <p class="sync-note">The token is kept only for this browser session and is never included in exports or commits.</p>
-        <div class="sync-panel-actions">
-          <button class="candidate-confirm" @click="connectReviewSync">Connect and sync</button>
-          <button v-if="githubToken" class="quiet" @click="syncReview">Sync now</button>
-          <button v-if="githubToken" class="quiet" @click="disconnectReviewSync">Disconnect</button>
-        </div>
-        <p class="muted">{{ syncStatus }}</p>
-      </section>
+
 
     </div>
   `,

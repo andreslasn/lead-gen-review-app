@@ -733,58 +733,10 @@ details {
   padding: 13px 14px;
 }
 
-.sync-panel {
-  position: fixed;
-  right: 18px;
-  bottom: 70px;
-  z-index: 30;
-  display: grid;
-  width: min(420px, calc(100vw - 36px));
-  gap: 10px;
-  padding: 14px;
-  border: 1px solid var(--concrete-100);
-  border-radius: 1rem;
-  background: white;
-  box-shadow: var(--shadow-elevated);
-}
-.sync-panel-heading {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-}
-.sync-panel-heading div {
-  display: grid;
-  gap: 3px;
-}
-.sync-panel-heading small,
-.sync-note {
-  color: var(--black-60);
-  font-size: 0.74rem;
-}
-.sync-panel label {
-  display: grid;
-  gap: 4px;
-  color: var(--black-80);
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-.sync-panel-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
 .edit-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-.sync-panel-actions button {
-  min-height: 2.25rem;
-  padding: 0.5rem 0.7rem;
-}
-.sync-panel p {
-  margin: 0;
 }
 summary {
   cursor: pointer;
@@ -873,3 +825,77 @@ li span {
     grid-template-columns: 1fr;
   }
 }
+
+.review-mode-tabs { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:8px; }
+.review-mode-tabs>button { padding:8px 12px; background:white; border:1px solid var(--concrete-100); color:var(--black-80); }
+.review-mode-tabs>button.active { background:var(--blue-10); color:var(--primary); border-color:var(--primary); }
+.mapping-workspace { display:flex; flex-direction:column; flex:1 1 auto; min-height:0; gap:8px; }
+.mapping-controls { grid-template-columns:minmax(220px,1fr) auto auto; }
+.review-navigation { display:flex; align-items:center; gap:8px; color:var(--black-60); font-size:.78rem; }
+.review-navigation button { padding:6px 12px; min-height:32px; background:white; border:1px solid var(--concrete-100); color:var(--primary); }
+.review-navigation button:disabled { opacity:.4; cursor:default; }
+.mapping-clinic-picker,.mapping-provider-search label { display:grid; gap:6px; font-size:.78rem; color:var(--black-80); }
+.review-identity h3 { margin:8px 0; font:400 1.15rem/1.2 var(--font-display); overflow-wrap:anywhere; }
+.mapping-doctor { margin:8px 0; color:var(--black-80); font-size:.84rem; }
+.mapping-status { font-size:.75rem; color:var(--black-60); }.mapping-status.confirmed { color:var(--success); }.mapping-status.rejected,.mapping-status.conflict { color:var(--error); }
+.mapping-details { padding:10px 0; font-size:.78rem; }.mapping-details summary { color:var(--black-80); font-weight:600; }.mapping-details p { overflow-wrap:anywhere; }
+.mapping-provider-search label { margin-top:10px; }
+.mapping-provider-results { padding:0; list-style:none; }.mapping-provider-results button { text-align:left; padding:8px; background:var(--blue-10); color:var(--primary); width:100%; }
+.evidence-toolbar { justify-content:flex-start; align-items:center; flex-wrap:wrap; gap:8px 16px; padding:12px 16px; }
+.evidence-toolbar .evidence-provenance { display:flex; flex-direction:row; align-items:baseline; flex-wrap:wrap; gap:8px; }
+.mapping-source-picker { width:auto; max-width:calc(100% - 32px); align-self:flex-start; margin:0 16px 12px; }
+.mapping-review .snapshot-text { margin:12px 0; }
+@media(max-width:1050px) { .mapping-controls { grid-template-columns:1fr; }.mapping-workspace { flex:0 0 auto; }.mapping-review .evidence-pane { min-height:440px; } }
+
+.mapping-card .validation-buttons { margin-top:16px; }
+.mapping-clinic-picker { width:100%; min-width:0; }
+.mapping-selected-target { font-size:.84rem; overflow-wrap:anywhere; }
+.mapping-selected-target button { padding:4px 8px; background:var(--blue-10); color:var(--primary); }
+
+.review-identity { display:grid; gap:12px; margin:4px 0 20px; }
+.review-identity .mapping-clinic-picker { min-height:44px; font-size:1rem; font-weight:700; }
+.review-identity h3,.review-identity .clinic-address,.review-identity .mapping-doctor { margin:0; }
+.review-identity h3 { line-height:1.4; }
+.review-identity .clinic-address { line-height:1.6; }
+.review-identity .mapping-doctor { font-size:.9rem; line-height:1.5; }
+
+.evidence-pane { display:flex; flex-direction:column; }
+.evidence-toolbar,.mapping-source-picker { flex-shrink:0; }
+.archive-pane,.snapshot-pane,.screenshot-pane { flex:1; min-height:0; }
+@media(max-width:1050px) { .archive-pane { min-height:360px; } }
+
+.review-layout .validation-controls { padding:0; background:transparent; }
+.review-layout .validation-row { flex-direction:column; gap:16px; }
+.review-layout .confirm-btn { margin-top:12px; }
+.review-layout .decision-footer-actions span { font-size:.75rem; }
+
+.account-evidence-workspace { padding: 24px; }
+.account-evidence-layout { display: grid; grid-template-columns: minmax(220px, 28%) minmax(0, 1fr); gap: 24px; align-items: start; }
+.account-evidence-layout nav { max-height: 75vh; overflow: auto; }
+.account-evidence-layout nav button { display: block; width: 100%; padding: 12px; text-align: left; overflow-wrap: anywhere; }
+.account-evidence-layout nav small { display: block; }
+.account-evidence-layout .mapping-card { padding: 16px; margin: 16px 0; border: 1px solid #ddd; }
+.account-evidence-layout h3, .account-evidence-layout blockquote { overflow-wrap: anywhere; }
+.account-evidence-layout button { min-height: 44px; cursor: pointer; }
+.account-evidence-layout .mapping-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+@media(max-width: 768px) { .account-evidence-layout { grid-template-columns: 1fr; } .account-evidence-layout nav { max-height: 220px; } }
+.account-evidence-workspace .mapping-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; }
+.account-evidence-workspace .mapping-controls label { display: flex; flex-direction: column; gap: 6px; }
+.account-evidence-workspace .mapping-controls label:first-child { flex: 1; min-width: 220px; }
+.account-evidence-workspace .mapping-controls select, .account-evidence-workspace .mapping-controls button { min-height: 44px; padding: 10px 14px; }
+.account-evidence-layout .mapping-card { border-radius: 16px; }
+.account-evidence-layout nav button.active { box-shadow: inset 3px 0 #3d15e0; }
+
+.contact-review-value { display:flex; align-items:flex-start; gap:8px; }
+.contact-review-value h3 { flex:1; min-width:0; overflow-wrap:anywhere; margin:0; text-align:left; }
+.contact-copy-button { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; flex:none; }
+.contact-review-meta { color:#555; font-size:.9rem; }
+.contact-review-cautions { border-left:3px solid #7a7a7a; padding-left:24px; }
+.contact-review-card label { display:flex; flex-direction:column; gap:6px; margin:12px 0; max-width:360px; }
+.contact-review-card a,.contact-review-card blockquote { overflow-wrap:anywhere; }
+.contact-review-card li { margin:4px 0; }
+.contact-alternatives { margin-top:24px; }
+.contact-alternatives > summary { font-weight:700; padding:12px 0; cursor:pointer; }
+.account-evidence-workspace main > label { display:flex; flex-direction:column; gap:6px; margin:16px 0; max-width:380px; }
+
+.account-evidence-workspace select[aria-label="Account review section"]{min-height:44px;padding:8px 12px;margin:8px 0 16px;display:block;max-width:100%;border:1px solid #ccc;border-radius:8px;background:#fff;color:#252525;}

@@ -1,3 +1,5 @@
+import { mergeFieldEvents, mergeContactPreferences, validateFieldDecision, validateContactPreference, validateAccountPackage } from "../src/accountEvidence.js";
+import { validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
 import { createReadStream } from "node:fs";
 import { readFile, stat, writeFile } from "node:fs/promises";
@@ -174,7 +176,32 @@ if (reviewExport.dataset_id !== canonicalState.dataset_id || reviewExport.datase
   throw new Error(`Dataset mismatch: ${reviewExport.dataset_id}`);
 }
 await stat(reviewExportPath);
+if(reviewExport.field_decisions?.length||reviewExport.contact_preferences?.length){
+ const pkg=JSON.parse(await readFile(path.join(dataDirectory,'account-enrichment.json'),'utf8'));
+ if(reviewExport.base_data_hash!==pkg.base_data_hash||reviewExport.dataset_id!==pkg.dataset_id)throw Error('Account review dataset mismatch.');
+ const keys=new Set([...(reviewExport.field_decisions||[]),...(reviewExport.contact_preferences||[])].map(e=>e.account_key));
+ for(const key of keys){
+  const indexed=pkg.accounts.find(a=>a.account_key===key);if(!indexed)throw Error('Unknown account in review export.');
+  let detail=indexed;
+  if(pkg.evidence_storage==='account-files-v1'){
+   if(!/^account-evidence\/[A-Z0-9]{4}-[a-f0-9]{16}\.json$/.test(indexed.evidence_path||''))throw Error('Invalid account path.');
+   const raw=await readFile(path.join(dataDirectory,indexed.evidence_path));if(createHash('sha256').update(raw).digest('hex')!==indexed.evidence_sha256)throw Error('Account evidence hash mismatch.');detail=JSON.parse(raw);
+  }
+  const full={...pkg,evidence_storage:undefined,accounts:[detail]};validateAccountPackage(full,pkg);
+  for(const e of reviewExport.field_decisions||[])if(e.account_key===key)validateFieldDecision(e,full);
+  for(const e of reviewExport.contact_preferences||[])if(e.account_key===key)validateContactPreference(e,full);
+ }
+}
 
+
+for (const event of reviewExport.association_decisions || []) validateAssociationDecision(event);
+const associationEvents = new Map((canonicalState.association_decisions || []).map(e=>[e.id,e]));
+for (const event of reviewExport.association_decisions || []) {
+  if (associationEvents.has(event.id) && JSON.stringify(associationEvents.get(event.id)) !== JSON.stringify(event)) throw Error("Conflicting association event ID; no files changed.");
+  associationEvents.set(event.id,event);
+}
+const fieldEvents=mergeFieldEvents(canonicalState.field_decisions||[],reviewExport.field_decisions||[]);
+const contactPreferences=mergeContactPreferences(canonicalState.contact_preferences||[],reviewExport.contact_preferences||[]);
 const importedAt = new Date().toISOString();
 const sourceExport = {
   name: "latest-reviewer-export",
@@ -189,6 +216,9 @@ const sourceExport = {
 
 const canonicalOutput = {
   ...canonicalState,
+  association_decisions: [...associationEvents.values()],
+  field_decisions: fieldEvents,
+  contact_preferences: contactPreferences,
   exported_at: reviewExport.exported_at || importedAt,
   reviewer: reviewExport.reviewer || canonicalState.reviewer,
   decisions: mergeObjectsByKey(

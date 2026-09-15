@@ -1,3 +1,5 @@
+import { validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences } from "../src/accountEvidence.js";
+import { validateAssociationPackage, validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
 import { createReadStream } from "node:fs";
 import { readdir, readFile, stat } from "node:fs/promises";
@@ -124,6 +126,33 @@ const emailReviewQueue = await json("email-review-queue.json");
 const emailValidationSeed = await json("email-validation-seed.json");
 const campaignEmailUsage = await json("campaign-email-usage.json");
 const integrity = await json("package-integrity.json");
+try {
+  await stat(path.join(root,"email-associations.json"));
+  validateAssociationPackage(await json("email-associations.json"),manifest);
+  await scanSecrets(path.join(root,"email-associations.json"));
+} catch(error) { if(error.code !== "ENOENT") throw error; }
+try {
+  await stat(path.join(root,'account-enrichment.json'));
+  const accountPackage=validateAccountPackage(await json('account-enrichment.json'),manifest);
+  if(accountPackage.evidence_storage==='account-files-v1') {
+    for(const account of accountPackage.accounts) {
+      if(!/^account-evidence\/[A-Z0-9]{4}-[a-f0-9]{16}\.json$/.test(account.evidence_path||''))fail('invalid account evidence path');
+      const payload=await readFile(path.join(root,account.evidence_path));
+      if(createHash('sha256').update(payload).digest('hex')!==account.evidence_sha256)fail('account evidence hash mismatch');
+      const decoded=await decodeAccountEvidence(payload.toString('utf8'),account.evidence_encoding);
+      for(const [name,pattern] of secretPatterns)if(pattern.test(decoded))fail(`${name} detected in decoded account evidence`);
+      const detail=JSON.parse(decoded);
+      if(detail.account_key!==account.account_key||JSON.stringify(detail.claims.map(c=>c.claim_id))!==JSON.stringify(account.claims.map(c=>c.claim_id)))fail('account evidence identity mismatch');
+      validateAccountPackage({...accountPackage,evidence_storage:undefined,accounts:[detail]},manifest);
+      await scanSecrets(path.join(root,account.evidence_path));
+    }
+  }
+  await scanSecrets(path.join(root,'account-enrichment.json'));
+} catch(error) {if(error.code!=='ENOENT')throw error;}
+const canonical = await json("canonical-review-state.json");
+mergeFieldEvents([],canonical.field_decisions||[]);
+mergeContactPreferences([],canonical.contact_preferences||[]);
+for(const event of canonical.association_decisions || []) validateAssociationDecision(event);
 
 if (manifest.format !== "lead-gen-review-package" || manifest.schema_version !== 1) fail("unsupported manifest contract");
 if (!manifest.country_pack?.config_hash) fail("country-pack hash missing");

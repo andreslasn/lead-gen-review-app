@@ -4,3 +4,6 @@ dist/
 public/data/sources/screenshots/
 .env
 .env.*
+
+__pycache__/
+*.pyc

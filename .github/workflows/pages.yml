@@ -28,8 +28,18 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Check review contracts
+        run: |
+          node --test tests/*.test.mjs
+          python3 -m unittest discover -s tests -p test_email_associations.py
 
       - name: Build static review app
         run: npm run build
