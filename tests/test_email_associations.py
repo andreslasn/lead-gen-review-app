@@ -63,3 +63,15 @@ class EvidenceCompactionTests(unittest.TestCase):
 
 
 if __name__=='__main__':unittest.main()
+
+class DoctorInferenceTests(unittest.TestCase):
+ def test_machine_name_evidence_preserves_human_rejection_and_is_idempotent(self):
+  email='synthetic@example.invalid';key=email+'|HU|A001'
+  base=dict(providers=[dict(code='A001')],items=[dict(email=email,candidate_ids=[key])],associations=[dict(id=key,email=email,provider_code='A001',status='rejected',confidence='human_reviewed',reviewed_by='existing-reviewer',note='Keep this decision',clinic_ids=[],service_ids=[],evidence=[])])
+  identity=dict(version=1,tier='email_name',method='complete_email_name',account_key='HU:A001',human_verified=False,doctor_names=['Synthetic Doctor'],service_ids=['001'])
+  finding=dict(email=email,provider_code='A001',evidence=dict(source_url='https://example.invalid/',quote='Synthetic',identity_match=identity))
+  result=module.merge_research(base,dict(findings=[finding]))
+  self.assertEqual('rejected',result['associations'][0]['status'])
+  self.assertEqual('Keep this decision',result['associations'][0]['note'])
+  self.assertEqual(identity,result['associations'][0]['identity_match'])
+  self.assertEqual(result,module.merge_research(result,dict(findings=[finding])))

@@ -32,6 +32,7 @@ await context.addInitScript(()=>{if(!sessionStorage.getItem('seeded')){sessionSt
 await context.route('**/*',async route=>{
  const url=new URL(route.request().url());if(!url.href.startsWith(origin)){return route.abort();}
  if(url.pathname.endsWith('/proof.html'))return route.fulfill({status:200,contentType:'text/html',body:'<html><body><p>Other provider shared@example.invalid</p>'+Array.from({length:180},(_,i)=>'<p>Unrelated source section '+i+'</p>').join('')+'<p>Synthetic Clinic A</p><p>Synthetic Doctor</p><p>shared@example.invalid</p><script>window.unsafeExecuted=true</script></body></html>'});
+ if(url.pathname.endsWith('/saved-doctor.txt'))return route.fulfill({status:200,contentType:'text/plain',body:'Second Doctor\nValidated source record for Second Doctor\nnamed@example.invalid'});
  if(url.pathname.includes('/data/')){const name=url.pathname.split('/').at(-1);return route.fulfill({status:payloads[name]?200:404,contentType:'application/json',body:JSON.stringify(payloads[name]||{})});}
  if(url.pathname.endsWith('review-sync.json'))return route.fulfill({status:404,body:'{}'});
  return route.continue();
@@ -207,6 +208,27 @@ assert.equal(await page.getByRole('heading',{name:'Synthetic Secondary Clinic',e
 await page.goto(origin+'#/clinics/missing-clinic');await page.reload();
 await page.getByText('This link has no email in the current review queue.',{exact:true}).waitFor();
 assert.equal(await page.locator('.review-identity').count(),0);
+// A validated named source record ranks above duplicate scrape occurrences,
+// while remaining an unconfirmed account suggestion.
+const inferredEmail='named@example.invalid';
+payloads['email-review-queue.json'].items.push({...item,email:inferredEmail,display_value:inferredEmail,clinic_id:null,contact_point_id:null,occurrences:[]});
+payloads['email-validation-seed.json'].validations.push({email:inferredEmail,display_value:inferredEmail,status:'valid',updated_at:'2026-09-15T10:00:00Z'});
+pkg.associations.push(...['A001','B002'].map(code=>({id:inferredEmail+'|HU|'+code,email:inferredEmail,provider_code:code,country:'HU',status:'unreviewed',clinic_ids:[],service_ids:[code==='A001'?'000000001':'000000002'],evidence:[{source_url:'https://example.invalid/',quote:'Legacy duplicate'}]})));
+const inferred=pkg.associations.at(-1);
+inferred.identity_match={version:1,tier:'reviewed_record',method:'validated_email_occurrence_hsz',human_verified:false,account_key:'HU:B002',doctor_names:['Second Doctor'],service_ids:['000000002']};
+inferred.evidence.push({clinic_id:'synthetic',source_url:'https://text.example.invalid/',quote:'Validated source record for Second Doctor',identity_match:inferred.identity_match});
+payloads['synthetic.json'].documents.push({source_url:'https://text.example.invalid/',review_text_path:'sources/review_text/saved-doctor.txt'});
+await page.goto(origin);await page.reload();
+await page.getByRole('button',{name:'Clinic mapping',exact:true}).click();
+await page.getByRole('group',{name:'Clinic review status'}).getByRole('button',{name:/^Unreviewed /}).click();
+await page.getByRole('searchbox',{name:'Find email or clinic',exact:true}).fill(inferredEmail);
+assert.equal(await page.locator('.mapping-card').getAttribute('data-association'),inferredEmail+'|HU|B002');
+await page.getByText('Doctor-to-account suggestion *',{exact:true}).waitFor();
+await page.getByText('Validated doctor/email record matches the NEAK service',{exact:false}).waitFor();
+assert.equal(await page.locator('.mapping-status.confirmed').count(),0);
+await page.getByText('Saved text',{exact:true}).waitFor();
+assert.ok((await page.locator('.mapping-review .snapshot-text').innerText()).includes('Validated source record for Second Doctor'));
+assert.equal(await page.locator('.mapping-review .snapshot-text mark').innerText(),inferredEmail);
 assert.deepEqual(errors,[]);
 await context.close();console.log('Synthetic browser checks passed: IndexedDB migration, save/reload, atomic reassignment and rollback, rejection independent of validity, CSV/JSON exports, account-field confirmation/rejection and persistence, responsive layout.');
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1)});

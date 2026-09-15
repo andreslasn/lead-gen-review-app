@@ -1,5 +1,5 @@
 import { computed, nextTick, ref, watch } from 'vue';
-import { associationKey, resolvedAssociations, safeSourceUrl, mappedEmailRows } from './associations.js';
+import { associationKey, resolvedAssociations, safeSourceUrl, mappedEmailRows, associationRank, associationEvidence } from './associations.js';
 import { focusArchivedEvidence, findEvidenceMatch } from './evidence.js';
 import ReviewHeader from './ReviewHeader.js';
 export default {
@@ -23,18 +23,19 @@ export default {
     const rows=computed(()=>validEmails.value.filter(e=>{
       const matches=byEmail.value.get(e.email)||[];
       const needle=search.value.trim().toLowerCase();
-      return emailLanes.value.get(e.email).has(filter.value) && (!needle || [e.email,e.name,...matches.flatMap(a=>[a.provider_code,providers.value.get(a.provider_code)?.name])].some(v=>String(v||'').toLowerCase().includes(needle)));
+      return emailLanes.value.get(e.email).has(filter.value) && (!needle || [e.email,e.name,...matches.flatMap(a=>[a.provider_code,providers.value.get(a.provider_code)?.name,...(providers.value.get(a.provider_code)?.services||[]).map(s=>s.doctor)])].some(v=>String(v||'').toLowerCase().includes(needle)));
     }));
     const current=computed(()=>rows.value.find(e=>e.email===selectedEmail.value)||rows.value[0]);
     const candidates=computed(()=>{
       if(!current.value)return [];
       const stored=byEmail.value.get(current.value.email)||[];
-      return [...stored].sort((a,b)=>Number(b.status==='confirmed')-Number(a.status==='confirmed')||a.provider_code.localeCompare(b.provider_code));
+      return [...stored].sort((a,b)=>associationRank(b)-associationRank(a)||a.provider_code.localeCompare(b.provider_code));
     });
     const active=computed(()=>candidates.value.find(a=>a.id===activeId.value)||candidates.value.find(a=>filter.value==='unreviewed'?['unreviewed','conflict'].includes(a.status):a.status===filter.value)||candidates.value[0]);
     const provider=computed(()=>providers.value.get(active.value?.provider_code));
     const currentIndex=computed(()=>rows.value.findIndex(e=>e.email===current.value?.email));
-    const evidence=computed(()=>active.value?.evidence?.[evidenceIndex.value]||active.value?.evidence?.[0]);
+    const orderedEvidence=computed(()=>associationEvidence(active.value));
+    const evidence=computed(()=>orderedEvidence.value[evidenceIndex.value]||orderedEvidence.value[0]);
     const stateLabels={unreviewed:'Needs review',confirmed:'Confirmed',rejected:'Wrong clinic',conflict:'Conflicting reviews'};
     function moveEmail(offset){if(props.saving)return;const row=rows.value[currentIndex.value+offset];if(row)select(row.email);}
     function choose(status){if(active.value&&!props.saving){choice.value=status;target.value=null;providerSearch.value='';}}
@@ -91,6 +92,15 @@ export default {
         const doc=(payload.documents||[]).find(d=>d.source_url===e.source_url||d.final_url===e.source_url);
         const path=doc?.raw_html_path||'';
         const safePath=path.startsWith('sources/raw_html/')&&!path.includes('..')&&!path.includes(':')&&path.endsWith('.html');
+        const textPath=doc?.review_text_path||'';
+        if(!safePath&&/^sources\/review_text\/[a-zA-Z0-9_-]+\.txt$/.test(textPath)){
+          const textResponse=await fetch('data/'+textPath);
+          if(!textResponse.ok)throw Error('Saved text unavailable. Review the excerpt or open the source.');
+          const text=await textResponse.text();
+          if(request!==evidenceRequest)return;
+          selectedEvidence.value={textPath:'data/'+textPath,quote:text};
+          return;
+        }
         if(request!==evidenceRequest)return;
         selectedEvidence.value={path:safePath?'data/'+path:'',quote:e.quote||'No matching HTML page retained for this source.'};
       } catch(err){if(request===evidenceRequest)selectedEvidence.value={quote:e.quote||'',error:err.message};}
@@ -107,7 +117,7 @@ export default {
       if(archiveFrame.value)focusProof();
       else {const mark=evidencePane.value?.querySelector('mark');if(mark)mark.scrollIntoView({block:'center',inline:'nearest'});}
     });
-    return {sourceLabel,archiveFrame,evidencePane,evidenceLocated,focusProof,excerptParts,search,filter,lanes,laneCounts,rows,current,candidates,providers,active,activeId,provider,currentIndex,moveEmail,evidence,evidenceIndex,choice,choose,confirm,moveClinic,stateLabels,suggestions,providerSearch,target,selectTarget,select,loadEvidence,selectedEvidence,safeSourceUrl,exportCount};
+    return {sourceLabel,archiveFrame,evidencePane,evidenceLocated,focusProof,excerptParts,search,filter,lanes,laneCounts,rows,current,candidates,providers,active,activeId,provider,currentIndex,moveEmail,evidence,orderedEvidence,evidenceIndex,choice,choose,confirm,moveClinic,stateLabels,suggestions,providerSearch,target,selectTarget,select,loadEvidence,selectedEvidence,safeSourceUrl,exportCount};
   },
   template:`<section class="mapping-workspace">
     <p v-if="!pkg" class="empty-state" role="status">Clinic mapping data is unavailable. You can still review email validity.</p>
@@ -128,6 +138,7 @@ export default {
             <p v-if="provider?.services[0]?.doctor" class="mapping-doctor">{{provider.services[0].doctor}}</p>
             <details v-if="provider?.services.length>1" class="mapping-details"><summary>All doctors & locations</summary><p v-for="s in provider.services" :key="s.hsz">{{s.doctor}} · {{s.city}}, {{s.address}}</p></details>
             </div>
+            <p v-if="active.identity_match" class="review-note doctor-account-match"><b>{{active.identity_match.tier==='ambiguous'?'Same-name alternatives *':active.status==='confirmed'?'Doctor evidence':'Doctor-to-account suggestion *'}}</b><br>{{active.identity_match.doctor_names.join(', ')}}<br>{{active.identity_match.tier==='reviewed_record'?'Validated doctor/email record matches the NEAK service':active.identity_match.tier==='corroborated'?'Name and location match in saved source':active.identity_match.tier==='email_name'?'Full name matches the email address':active.identity_match.tier==='profile_name'?'Name matches the saved clinic profile':active.identity_match.tier==='historical'?'Historical context; current association needs review':'Recorded doctor name matches; check the source and location'}}</p>
             <span v-if="active.status!=='unreviewed'" class="mapping-status" :class="active.status">{{stateLabels[active.status]}}</span>
             <p v-if="active.status==='conflict'" class="review-note">Reviews disagree. Choose a decision to resolve this clinic link.</p>
             <div class="validation-buttons"><button class="validation-btn valid-btn" :disabled="saving" :class="{active:choice==='confirmed'}" :aria-pressed="choice==='confirmed'" @click="choose('confirmed')" title="Right clinic (1)">Right clinic</button><button class="validation-btn invalid-btn" :disabled="saving" :class="{active:choice==='rejected'}" :aria-pressed="choice==='rejected'" @click="choose('rejected')" title="Wrong clinic (2)">Wrong clinic</button></div>
@@ -143,8 +154,8 @@ export default {
           <div class="decision-footer-actions"><span class="muted">← → Emails · J/K Clinics · 1/2 Choose · Enter Confirm</span></div>
         </section>
         <section ref="evidencePane" class="evidence-pane" aria-label="Clinic association evidence">
-          <div class="evidence-toolbar"><div class="evidence-provenance"><strong>{{selectedEvidence?.path?'Saved page':'Source evidence'}}</strong><span v-if="evidence?.observed_at">{{evidence.observed_at.slice(0,10)}}</span></div><a v-if="safeSourceUrl(evidence?.source_url)" :href="safeSourceUrl(evidence.source_url)" target="_blank" rel="noopener noreferrer">Open live page ↗</a></div>
-          <select v-if="active?.evidence?.length>1" v-model="evidenceIndex" class="region-filter mapping-source-picker" :title="evidence?.source_url" aria-label="Evidence source"><option v-for="(e,i) in active.evidence" :key="i" :value="i" :title="e.source_url">{{sourceLabel(e,i)}}</option></select>
+          <div class="evidence-toolbar"><div class="evidence-provenance"><strong>{{selectedEvidence?.path?'Saved page':selectedEvidence?.textPath?'Saved text':'Source evidence'}}</strong><span v-if="evidence?.observed_at">{{evidence.observed_at.slice(0,10)}}</span></div><a v-if="safeSourceUrl(evidence?.source_url)" :href="safeSourceUrl(evidence.source_url)" target="_blank" rel="noopener noreferrer">Open live page ↗</a></div>
+          <select v-if="orderedEvidence.length>1" v-model="evidenceIndex" class="region-filter mapping-source-picker" :title="evidence?.source_url" aria-label="Evidence source"><option v-for="(e,i) in orderedEvidence" :key="i" :value="i" :title="e.source_url">{{sourceLabel(e,i)}}</option></select>
           <p v-if="selectedEvidence?.path&&evidenceLocated===false" class="review-note">No matching passage found in this saved page.</p>
           <div v-if="selectedEvidence?.path" class="archive-pane"><iframe ref="archiveFrame" @load="focusProof" :key="selectedEvidence.path + active.id" class="archive-frame" :src="selectedEvidence.path" title="Saved clinic source HTML" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe></div>
           <div v-else class="snapshot-pane text-fallback-pane"><p v-if="selectedEvidence?.loading" class="muted" role="status">Loading saved page…</p><p v-if="selectedEvidence?.error" class="review-note">{{selectedEvidence.error}}</p><p v-if="evidence?.basis" class="muted">{{evidence.basis}}</p><blockquote class="snapshot-text">{{excerptParts.before}}<mark v-if="excerptParts.match">{{excerptParts.match}}</mark>{{excerptParts.after}}</blockquote></div>

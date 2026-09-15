@@ -46,6 +46,19 @@ export function validateAssociationPackage(pkg, manifest) {
   if (pkg?.format !== 'lead-gen-email-associations' || pkg.schema_version !== 1 || pkg.country !== 'HU' || pkg.dataset_id !== manifest.dataset_id || pkg.base_data_hash !== manifest.base_data_hash) throw Error('Clinic mapping package does not match this dataset.');
   if (![pkg.providers,pkg.associations,pkg.items].every(Array.isArray)) throw Error('Incomplete clinic mapping package.');
   const codes=new Set();for(const p of pkg.providers){if(!/^[A-Z0-9]{4}$/.test(p.code)||codes.has(p.code)||!Array.isArray(p.services))throw Error('Invalid or duplicate provider.');codes.add(p.code);}
-  const ids=new Set();for(const a of pkg.associations){if(a.id!==associationKey(a.email,a.provider_code)||ids.has(a.id)||!codes.has(a.provider_code)||!['confirmed','rejected','unreviewed'].includes(a.status))throw Error('Invalid or duplicate clinic association.');ids.add(a.id);}
+  const ids=new Set();for(const a of pkg.associations){if(a.id!==associationKey(a.email,a.provider_code)||ids.has(a.id)||!codes.has(a.provider_code)||!['confirmed','rejected','unreviewed'].includes(a.status))throw Error('Invalid or duplicate clinic association.');if(a.identity_match)validateIdentityMatch(a.identity_match,pkg.providers.find(p=>p.code===a.provider_code));ids.add(a.id);}
   return pkg;
+}
+
+export const identityTiers = {corroborated:90,reviewed_record:85,source_name:70,email_name:60,profile_name:30,ambiguous:10,historical:0};
+export function associationRank(a) {
+  if(a.status==='confirmed')return 1000;
+  if(a.status==='rejected')return -1000;
+  return identityTiers[a.identity_match?.tier] ?? (a.confidence==='corroborated'?80:0);
+}
+export function associationEvidence(a) {
+  return [...(a?.evidence||[])].sort((a,b)=>(identityTiers[b.identity_match?.tier]??-1)-(identityTiers[a.identity_match?.tier]??-1));
+}
+export function validateIdentityMatch(value,provider) {
+  if(value.version!==1||!Object.hasOwn(identityTiers,value.tier)||value.human_verified!==false||value.account_key!=='HU:'+provider.code||!Array.isArray(value.doctor_names)||!value.doctor_names.length||value.doctor_names.some(name=>!provider.services.some(s=>s.doctor===name))||!Array.isArray(value.service_ids)||value.service_ids.some(id=>!provider.services.some(s=>s.hsz===id)))throw Error('Invalid doctor-to-account inference.');
 }

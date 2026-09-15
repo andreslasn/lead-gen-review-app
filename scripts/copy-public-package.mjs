@@ -7,6 +7,14 @@ import path from 'node:path';
 
 const compress = promisify(gzip);
 
+export async function encodeAccountEvidence(payload, account) {
+  if (createHash('sha256').update(payload).digest('hex') !== account.evidence_sha256) throw Error('Account evidence changed; retry.');
+  if (account.evidence_encoding === 'gzip-base64-v1') return payload;
+  if (account.evidence_encoding != null) throw Error('Unsupported account evidence encoding.');
+  const data = (await compress(payload, { level: 9 })).toString('base64');
+  return Buffer.from(JSON.stringify({ format: 'lead-gen-account-evidence-gzip', schema_version: 1, data }) + '\n');
+}
+
 async function directorySize(directory) {
   let bytes = 0;
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -46,10 +54,7 @@ export async function copyPublicPackage(source, destination, { maxBytes = 1_000_
     while (next < selected.length) {
       const account = selected[next++];
       const payload = await readFile(path.join(source, 'data', account.evidence_path));
-      if (createHash('sha256').update(payload).digest('hex') !== account.evidence_sha256) throw Error('Account evidence changed during build; retry.');
-      if (account.evidence_encoding != null) throw Error('Build requires the original JSON evidence package.');
-      const data = (await compress(payload, { level: 9 })).toString('base64');
-      const encoded = JSON.stringify({ format: 'lead-gen-account-evidence-gzip', schema_version: 1, data }) + '\n';
+      const encoded = await encodeAccountEvidence(payload, account);
       const hash = createHash('sha256').update(encoded).digest('hex');
       account.evidence_path = `account-evidence/${account.evidence_path.split('/').at(-1).slice(0, 4)}-${hash.slice(0, 16)}.json`;
       account.evidence_sha256 = hash;

@@ -33,3 +33,18 @@ test('dataset drift and duplicate provider identities fail closed',()=>{
  assert.throws(()=>validateAssociationPackage(fixture,{dataset_id:'other',base_data_hash:'hash'}));
  assert.throws(()=>validateAssociationPackage({...fixture,providers:[...fixture.providers,fixture.providers[0]]},{dataset_id:'fixture',base_data_hash:'hash'}));
 });
+
+test('doctor-name suggestions rank evidence without becoming confirmed campaign links', async()=>{
+ const {associationRank,associationEvidence,validateIdentityMatch}=await import('../src/associations.js');
+ const identity={version:1,tier:'email_name',method:'complete_email_name',human_verified:false,account_key:'HU:A001',doctor_names:['Dr. Synthetic Doctor'],service_ids:['001']};
+ const provider={code:'A001',services:[{hsz:'001',doctor:'Dr. Synthetic Doctor'}]};
+ validateIdentityMatch(identity,provider);
+ assert.throws(()=>validateIdentityMatch({...identity,human_verified:true},provider));
+ assert.throws(()=>validateIdentityMatch({...identity,doctor_names:['Another Doctor']},provider));
+ assert.ok(associationRank({status:'unreviewed',identity_match:identity})>associationRank({status:'unreviewed'}));
+ assert.ok(associationRank({status:'confirmed'})>associationRank({status:'unreviewed',identity_match:identity}));
+ assert.ok(associationRank({status:'rejected',identity_match:identity})<associationRank({status:'unreviewed'}));
+ assert.equal(associationEvidence({evidence:[{quote:'Legacy suggestion'},{quote:'Doctor match',identity_match:identity}]})[0].quote,'Doctor match');
+ const candidate={id:'valid@example.invalid|HU|A001',email:'valid@example.invalid',provider_code:'A001',status:'unreviewed',identity_match:identity};
+ assert.equal(mappedEmailRows([{email:candidate.email,status:'valid'}],{providers:[provider],associations:[candidate]},[]).length,0);
+});

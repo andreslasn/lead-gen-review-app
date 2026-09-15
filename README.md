@@ -202,7 +202,9 @@ HU account research can use `evidence_storage: account-files-v1`. The versioned 
 
 Repeated research observations with identical source, quote, date, method and service scope share one association evidence entry. The original `observation_id` stays unchanged; `additional_observation_ids` retains every other ID. Different dates, scopes or excerpts remain separate. This reduces package size without changing review decisions.
 
-Production builds include only the immutable account evidence files referenced by the current index, then validate the built package. Historical evidence stays in Git and the local public directory, so successive research publications do not multiply deployment disk usage. The build rejects inconsistent index/status snapshots or missing referenced evidence; retry after publication finishes.
+Production builds include only the immutable account evidence files referenced by the current index, then validate the built package. Before committing a research refresh, run `npm run compact:research -- /absolute/private/archive`. This keeps one compressed current file per account, verifies a lossless local archive before removing obsolete generated files, and leaves all source captures and review decisions unchanged. Older versions also remain recoverable from Git history; history is not rewritten. The compaction command resumes safely after interruption. The build accepts compressed or original evidence and rejects inconsistent snapshots, missing files and hash mismatches.
+
+Repository payload and deployed-site size are different: the site also includes saved clinic source pages, legacy clinic records and search indexes. Account compaction reduces future Git changes without removing source evidence needed by reviewers. To restore an archived account file for offline work, decompress its `.json.gz` into a private directory; archived index files retain its original identity and path. Keep the archive outside Git.
 
 ### Contact recommendations and software attribution
 
@@ -244,7 +246,7 @@ retained HTML can remain unresolved even when a clinic actually uses a vendor.
 Builds losslessly encode current account evidence as gzip/base64 JSON envelopes
 (`evidence_encoding: gzip-base64-v1`). The built index contains SHA-256 hashes of
 the transport bytes; decoded account and claim identities must still match. Source
-JSON and the logical research snapshot stay unchanged. Validation scans both
+account JSON and the logical research snapshot stay unchanged. Validation scans both
 original and decoded evidence. The build rejects artifacts at or above 1,000,000,000
 bytes before upload. Browsers without gzip decompression can still review email
 validity; account evidence offers an explicit browser-update message without
@@ -261,3 +263,18 @@ queue, including reviewed or campaign-used contacts. Conflicting saved filters
 are cleared to reveal the target; clinic links select the matching occurrence
 of a shared email. Missing targets show an explicit message. These navigation
 changes do not change validation, usage or ownership decisions.
+
+### Doctor and retained-source account suggestions
+
+Clinic mapping ranks source-backed doctor/location matches and human-validated
+named records with matching current NEAK service IDs ahead of weaker name-only
+suggestions and duplicate scrape occurrences. The account link remains pending
+until reviewed; these suggestions never alter global email validity, campaign
+use, confirmed/rejected account decisions or the unused-email export rules.
+Doctor names are searchable in the mapping queue and account directory.
+
+Evidence is ordered by the same strength so the best supporting passage opens
+first. When the original review package retained text instead of HTML, the
+mapping viewer shows **Saved text** and highlights the email in that source.
+Missing text falls back to the retained excerpt. Municipal pages and directories
+can support an account link without becoming a practice homepage.

@@ -2,6 +2,7 @@
 node_modules/
 dist/
 public/data/sources/screenshots/
+public/data/**/*.tmp
 .env
 .env.*
 

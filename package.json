@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "compact:research": "node scripts/compact-research-package.mjs",
     "dev": "vite --host 127.0.0.1",
     "check:data": "node scripts/check-review-package.mjs",
     "build": "npm run check:data && vite build && node scripts/check-review-package.mjs dist/data",

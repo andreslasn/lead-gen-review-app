@@ -132,6 +132,9 @@ def compact_observation_evidence(evidence):
     return result
 
 
+IDENTITY_TIERS = {"corroborated":90,"reviewed_record":85,"source_name":70,"email_name":60,"profile_name":30,"ambiguous":10,"historical":0}
+
+
 def merge_research(result, research):
     """Append evidence by stable pair ID; never replace a reviewed base or event."""
     import copy
@@ -147,6 +150,10 @@ def merge_research(result, research):
         c=pairs.setdefault(key,dict(id=key,email=email,provider_code=code,country='HU',clinic_ids=[],service_ids=[],evidence=[],status='unreviewed',confidence='researched',contact_role='unknown',reason=finding.get('reason','Public contact evidence; account ownership needs review.')))
         e=finding['evidence']
         if e not in c['evidence']:c['evidence'].append(e)
+        identity=e.get('identity_match')
+        if identity and identity.get('version')==1 and identity.get('account_key')=='HU:'+code and identity.get('human_verified') is False and identity.get('tier') in IDENTITY_TIERS:
+            previous=c.get('identity_match',{})
+            if not previous or IDENTITY_TIERS[identity['tier']]>IDENTITY_TIERS.get(previous.get('tier'),-1):c['identity_match']=copy.deepcopy(identity)
         if e.get('clinic_id') and e['clinic_id'] not in c['clinic_ids']:c['clinic_ids'].append(e['clinic_id'])
         for hsz in [e.get('service_id')]+e.get('service_ids',[]):
             if hsz and hsz not in c['service_ids']:c['service_ids'].append(hsz)
