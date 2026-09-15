@@ -32,6 +32,14 @@ context. Confirming a supporting source does not designate an official homepage.
 Reviewers can change **Page role** before confirming when a source was classified
 incorrectly; the accepted role accompanies the dashboard review export.
 
+The Latvia review uses Hungary's shared navigation header and two-pane layout:
+the webpage, account identity and decision appear on the left, with saved evidence
+on the right. Use the arrow buttons or `←` / `→` to move between webpages without
+saving. Choose **Right clinic** (`1`) or **Wrong clinic** (`2`), then **Confirm**
+(`Enter`) to save. **Leave unresolved** also requires confirmation. Shortcuts
+leave text inputs and selects to their native controls, and navigation is paused
+while a review saves. An unsaved choice does not carry over to another webpage.
+
 Latvia uses the existing field-decision store with `LV:<dashboard-record-id>`
 identities, since institution codes can repeat. Confirmed, rejected and pending
 views include saved decisions after reload. A failed evidence download disables

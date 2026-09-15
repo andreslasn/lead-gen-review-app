@@ -620,6 +620,7 @@ const App = {
       finally {refreshingResearch=false;}
     }
     const mappingReview = ref(null);
+    const webpageReview = ref(null);
     const associationPackage = ref(null);
     const associationDecisions = ref([]);
     const associationSaving = ref(false);
@@ -2032,14 +2033,18 @@ const App = {
     }
 
     function onKey(event) {
-      if(accountMode.value||selectedMarket.value==='LV')return;
+      if(selectedMarket.value==='HU'&&accountMode.value)return;
       if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.isComposing) return;
       if (event.target?.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
       const key = event.key.toLowerCase();
       // Keep native Enter on navigation, exports, links and disclosure controls.
       if (key === 'enter' && event.target?.closest?.('button, a, summary') && !event.target.closest('.validation-btn, .confirm-btn')) return;
       const review = mappingReview.value;
-      const actions = mappingMode.value ? {
+      const actions = selectedMarket.value==='LV' ? {
+        '1': () => webpageReview.value?.choose('confirmed'), '2': () => webpageReview.value?.choose('rejected'),
+        enter: () => webpageReview.value?.confirm(),
+        arrowright: () => webpageReview.value?.move(1), arrowleft: () => webpageReview.value?.move(-1),
+      } : mappingMode.value ? {
         '1': () => review?.choose('confirmed'), '2': () => review?.choose('rejected'),
         enter: () => review?.confirm(), j: () => review?.moveClinic(1), k: () => review?.moveClinic(-1),
         arrowright: () => review?.moveEmail(1), arrowleft: () => review?.moveEmail(-1),
@@ -2100,7 +2105,7 @@ const App = {
     });
 
     return {
-      selectedMarket,latviaPackage,latviaError,loadLatvia,importWebpageReviews,
+      selectedMarket,latviaPackage,latviaError,loadLatvia,importWebpageReviews,webpageReview,
       accountMode, accountPackage, fieldDecisions, contactPreferences, emailValidationByValue, saveContactPreference, fieldSaving, fieldError, saveField, openAccountEvidence,
       mappingMode, mappingReview, associationPackage, associationDecisions, associationSaving, associationError, saveAssociation, exportAssociationCSV, preparedQueue, associationEmails,
       manifest,
@@ -2211,7 +2216,7 @@ const App = {
   template: `
     <div class="app-shell">
       <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option></select></label>
-      <WebpageReview v-if="selectedMarket==='LV'" :pkg="latviaPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="latviaError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadLatvia" @export="exportProgress" @import="importWebpageReviews" />
+      <WebpageReview ref="webpageReview" v-if="selectedMarket==='LV'" :pkg="latviaPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="latviaError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadLatvia" @export="exportProgress" @import="importWebpageReviews" />
       <template v-else>
       <nav class="review-mode-tabs" aria-label="Review mode"><button :class="{active:!mappingMode&&!accountMode}" @click="mappingMode=false;accountMode=false">Email validity</button><button :class="{active:mappingMode&&!accountMode}" @click="mappingMode=true;accountMode=false">Clinic mapping</button><button :class="{active:accountMode}" @click="accountMode=true;mappingMode=false">Account data</button></nav>
       <AccountEvidenceReview v-if="accountMode" :pkg="accountPackage" :associations="associationPackage" :field-decisions="fieldDecisions" :preferences="contactPreferences" :validity="emailValidationByValue" :association-decisions="associationDecisions" :reviewer="reviewer" :saving="fieldSaving||associationSaving" :error="fieldError||associationError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @association-decision="saveAssociation" @export="exportProgress" />
