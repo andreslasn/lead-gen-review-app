@@ -931,13 +931,20 @@ const App = {
         await loadStaticData();
         sanitizeSavedFilters();
         const routeEmail = routeEmailValue();
-        const routeClinic = routeClinicId();
-        const routeIndex = routeEmail
-          ? filteredQueue.value.findIndex((item) => item.email === normalizeEmailValue(decodeURIComponent(routeEmail)))
-          : routeClinic
-            ? filteredQueue.value.findIndex((item) => item.clinic_id === decodeURIComponent(routeClinic))
-            : -1;
-        await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false });
+        const routeClinic = routeClinicId() ? decodeURIComponent(routeClinicId()) : null;
+        const matchesRoute = item => routeEmail
+          ? item.email === normalizeEmailValue(decodeURIComponent(routeEmail))
+          : routeClinic && (item.clinic_id === routeClinic || item.occurrences?.some(occurrence => occurrence.clinic_id === routeClinic));
+        if ((routeEmail || routeClinic) && !preparedQueue.value.some(matchesRoute)) throw Error('This link has no email in the current review queue.');
+        if ((routeEmail || routeClinic) && !filteredQueue.value.some(matchesRoute)) {
+          // An explicit link must remain reachable after validation or campaign use.
+          search.value = '';
+          selectedRegion.value = '';
+          selectedLane.value = 'all';
+          campaignUsageFilter.value = 'all';
+        }
+        const routeIndex = filteredQueue.value.findIndex(matchesRoute);
+        await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false, preferredClinicId: routeClinic });
         saveStatus.value = "Ready";
         connectStorageInBackground();
         if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
@@ -1070,7 +1077,9 @@ const App = {
     }
 
     async function refreshCurrentSelection() {
-      if (filteredQueue.value.length && (!clinic.value || currentItem.value?.clinic_id !== clinic.value?.clinic?.id)) {
+      const selectedClinicId = clinic.value?.clinic?.id;
+      const matchesCurrentEmail = selectedClinicId && (currentItem.value?.clinic_id === selectedClinicId || currentItem.value?.occurrences?.some(occurrence => occurrence.clinic_id === selectedClinicId));
+      if (filteredQueue.value.length && !matchesCurrentEmail) {
         await setIndex(Math.min(currentIndex.value, filteredQueue.value.length - 1), { updateHash: false });
       }
     }
@@ -1176,14 +1185,16 @@ const App = {
       return null;
     }
 
-    async function setIndex(index, { updateHash = true } = {}) {
+    async function setIndex(index, { updateHash = true, preferredClinicId = null } = {}) {
       if (!filteredQueue.value.length) {
         clinic.value = null;
         return;
       }
       currentIndex.value = clamp(index, 0, filteredQueue.value.length - 1);
       const item = filteredQueue.value[currentIndex.value];
-      const occurrence = selectedRegionOccurrence(item);
+      const occurrence = preferredClinicId
+        ? item.occurrences?.find(value => value.clinic_id === preferredClinicId) || { clinic_id: preferredClinicId }
+        : selectedRegionOccurrence(item);
       editMode.value = false;
       note.value = "";
       const clinicId = occurrence?.clinic_id || item.clinic_id || item.occurrences?.[0]?.clinic_id;
@@ -1997,23 +2008,23 @@ const App = {
 
     watch(search, (value) => {
       localStorage.setItem("review.filter.search", value);
-      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+      if (!loading.value) setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
     watch(selectedRegion, (value) => {
       localStorage.setItem("review.filter.region", value);
-      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+      if (!loading.value) setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
     watch(selectedLane, (value) => {
       localStorage.setItem("review.filter.lane", value);
-      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+      if (!loading.value) setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
     watch(campaignUsageFilter, (value) => {
       localStorage.setItem("review.filter.campaignUsage", value);
-      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+      if (!loading.value) setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
     watch(noMatchedEvidenceFilter, (value) => {
       localStorage.setItem("review.filter.noMatchedEvidence", value);
-      setIndex(0).catch((err) => { error.value = err?.message || String(err); });
+      if (!loading.value) setIndex(0).catch((err) => { error.value = err?.message || String(err); });
     });
     watch(reviewer, (value) => {
       localStorage.setItem("review.reviewer", value);

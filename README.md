@@ -249,3 +249,9 @@ campaign usage, clinic/source files and review-sync target. IndexedDB keeps its
 name and gains stores through additive upgrades. The synthetic browser regression
 starts at schema 2 with an existing validation, loads compressed account evidence,
 and checks that validity, reviewer notes and campaign Used status survive refresh.
+
+Legacy `#/clinics/<id>` and `#/emails/<email>` links resolve across the full email
+queue, including reviewed or campaign-used contacts. Conflicting saved filters
+are cleared to reveal the target; clinic links select the matching occurrence
+of a shared email. Missing targets show an explicit message. These navigation
+changes do not change validation, usage or ownership decisions.

@@ -179,6 +179,18 @@ await page.reload();await page.getByText('Used in campaign',{exact:true}).waitFo
 assert.equal(await page.getByRole('heading',{name:email,exact:true}).count(),1);
 const validation=await page.evaluate(async()=>{const db=await new Promise(resolve=>{const r=indexedDB.open('lead-gen-clinic-review');r.onsuccess=()=>resolve(r.result);});return new Promise(resolve=>{const r=db.transaction('email_validations').objectStore('email_validations').get('shared@example.invalid');r.onsuccess=()=>{db.close();resolve(r.result);};});});
 assert.equal(validation.status,'valid');assert.equal(validation.note,'Preserve my existing validation');
+// Old clinic links open reviewed/used emails, including a secondary occurrence.
+item.occurrences.push({...occurrence,clinic_id:'secondary',clinic_name:'Synthetic Secondary Clinic'});
+payloads['secondary.json']={...payloads['synthetic.json'],clinic:{...payloads['synthetic.json'].clinic,id:'secondary',name:'Synthetic Secondary Clinic'}};
+await page.evaluate(()=>{localStorage.setItem('review.filter.lane','unreviewed');localStorage.setItem('review.filter.campaignUsage','unused');localStorage.setItem('review.filter.search','excludes target');});
+await page.goto(origin+'#/clinics/secondary');await page.reload();
+await page.getByRole('heading',{name:'Synthetic Secondary Clinic',exact:true}).waitFor();
+await page.getByText('Used in campaign',{exact:true}).waitFor();
+await page.waitForFunction(()=>document.querySelector('.review-identity h3')?.textContent==='Synthetic Secondary Clinic');
+assert.equal(await page.getByRole('heading',{name:'Synthetic Secondary Clinic',exact:true}).count(),1);
+await page.goto(origin+'#/clinics/missing-clinic');await page.reload();
+await page.getByText('This link has no email in the current review queue.',{exact:true}).waitFor();
+assert.equal(await page.locator('.review-identity').count(),0);
 assert.deepEqual(errors,[]);
 await context.close();console.log('Synthetic browser checks passed: IndexedDB migration, save/reload, atomic reassignment and rollback, rejection independent of validity, CSV/JSON exports, account-field confirmation/rejection and persistence, responsive layout.');
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1)});
