@@ -28,7 +28,7 @@ indexAccountEvidence(fullAccountEvidence,'c'.repeat(64));
 (async()=>{const browser=await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE||undefined});try{
 const context=await browser.newContext({acceptDownloads:true});
 // Start with the old database schema and a reviewer record to verify non-destructive migration.
-await context.addInitScript(()=>{if(!sessionStorage.getItem('seeded')){sessionStorage.setItem('seeded','yes');const r=indexedDB.open('lead-gen-clinic-review',2);r.onupgradeneeded=()=>{for(const [name,key] of [['decisions','id'],['clinic_states','clinic_id'],['audit_events','id'],['meta','key'],['backups','id'],['email_validations','email']])r.result.createObjectStore(name,{keyPath:key});r.transaction.objectStore('email_validations').put({email:'shared@example.invalid',display_value:'shared@example.invalid',status:'valid',updated_at:'2026-09-15T10:00:00Z',reviewed_at:'2026-09-15T10:00:00Z',reviewed_by:'existing-reviewer',note:'Preserve my existing validation'});};r.onsuccess=()=>r.result.close();}});
+await context.addInitScript(()=>{if(!sessionStorage.getItem('seeded')){sessionStorage.setItem('seeded','yes');const r=indexedDB.open('lead-gen-clinic-review',2);r.onupgradeneeded=()=>{for(const [name,key] of [['decisions','id'],['clinic_states','clinic_id'],['audit_events','id'],['meta','key'],['backups','id'],['email_validations','email']])r.result.createObjectStore(name,{keyPath:key});r.transaction.objectStore('email_validations').put({email:'shared@example.invalid',display_value:'shared@example.invalid',status:'valid',updated_at:'2026-09-15T10:00:00Z',reviewed_at:'2026-09-15T10:00:00Z',reviewed_by:'existing-reviewer',note:'Preserve my existing validation',audit_flags:['reviewer_checked']});};r.onsuccess=()=>r.result.close();}});
 await context.route('**/*',async route=>{
  const url=new URL(route.request().url());if(!url.href.startsWith(origin)){return route.abort();}
  if(url.pathname.endsWith('/proof.html'))return route.fulfill({status:200,contentType:'text/html',body:JSON.stringify({format:'lead-gen-account-evidence-gzip',schema_version:1,data:gzipSync('<html><body><p>Other provider shared@example.invalid</p>'+Array.from({length:180},(_,i)=>'<p>Unrelated source section '+i+'</p>').join('')+'<p>Synthetic Clinic A</p><p>Synthetic Doctor</p><p>shared@example.invalid</p><script>window.unsafeExecuted=true</script></body></html>').toString('base64')})});
@@ -101,6 +101,44 @@ assert.equal(await page.getByRole('button',{name:'Export unused CSV 1',exact:tru
 await page.locator('.region-filter').selectOption('');
 assert.equal(await page.getByRole('button',{name:'Export unused CSV 2',exact:true}).count(),1);
 downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'Export .json',exact:true}).click();dl=await downloaded;const exported=JSON.parse(fs.readFileSync(await dl.path(),'utf8'));assert.equal(exported.association_decisions.length,3);assert.equal(exported.email_validations[0].status,'valid');
+// Reconfirming an existing validation must persist reactive audit flags and support undo.
+const storedEmailReview=()=>page.evaluate(async()=>{
+ const db=await new Promise((resolve,reject)=>{const request=indexedDB.open('lead-gen-clinic-review');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});
+ try{return await new Promise((resolve,reject)=>{const request=db.transaction('email_validations').objectStore('email_validations').get('shared@example.invalid');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});}finally{db.close();}
+});
+const previousEmailReview=await storedEmailReview();
+await page.locator('.validation-btn.valid-btn').click();await page.locator('.confirm-btn').click();
+await page.waitForFunction(()=>document.querySelector('.decision-footer-actions button')?.title==='Valid · press U to undo');
+assert.equal((await storedEmailReview()).source,'manual');
+await page.locator('.review-identity h3').click();await page.keyboard.press('u');
+await page.waitForFunction(()=>document.querySelector('.decision-footer-actions button')?.title==='Undone');
+assert.deepEqual(await storedEmailReview(),previousEmailReview);
+// An abort after a successful request must roll back both review and audit, then permit retry.
+await page.getByRole('group',{name:'Email review status'}).getByRole('button',{name:'All 2',exact:true}).click();
+if(await page.getByRole('button',{name:'Unused 2',exact:true}).evaluate(el=>el.classList.contains('active')))await page.getByRole('button',{name:'Unused 2',exact:true}).click();
+await page.locator('.queue-bar .search').fill(email);
+await page.evaluate(()=>{
+ window.originalReviewPut=IDBObjectStore.prototype.put;
+ IDBObjectStore.prototype.put=function(...args){const request=window.originalReviewPut.apply(this,args);if(this.name==='audit_events')request.addEventListener('success',()=>this.transaction.abort());return request;};
+});
+await page.locator('.validation-btn.invalid-btn').click();await page.locator('.confirm-btn').click();
+await page.getByRole('alert').filter({hasText:'Could not save this email review'}).waitFor();
+assert.deepEqual(await storedEmailReview(),previousEmailReview);
+assert.equal(await page.locator('.validation-btn.invalid-btn').getAttribute('aria-pressed'),'true');
+await page.evaluate(()=>{IDBObjectStore.prototype.put=window.originalReviewPut;delete window.originalReviewPut;});
+await page.locator('.confirm-btn').click();await page.waitForFunction(()=>document.querySelector('.decision-footer-actions button')?.title==='Invalid · press U to undo');
+assert.equal((await storedEmailReview()).status,'invalid');assert.equal(await page.getByRole('alert').count(),0);
+await page.locator('.review-identity h3').click();await page.keyboard.press('u');
+await page.waitForFunction(()=>document.querySelector('.decision-footer-actions button')?.title==='Undone');assert.deepEqual(await storedEmailReview(),previousEmailReview);
+// Edited addresses remain attached to their original validity key and undo restores every field.
+await page.getByRole('button',{name:'Edit email',exact:true}).click();
+await page.getByRole('textbox',{name:'Edit email',exact:true}).fill('corrected@example.invalid');await page.getByLabel('Note',{exact:true}).fill('Correction note');
+await page.getByRole('button',{name:'Save edited email',exact:true}).click();
+await page.waitForFunction(()=>document.querySelector('.decision-footer-actions button')?.title==='Valid · press U to undo');
+const corrected=await storedEmailReview();assert.equal(corrected.email,email);assert.equal(corrected.corrected_email,'corrected@example.invalid');assert.equal(corrected.note,'Correction note');
+await page.locator('.review-identity h3').click();await page.keyboard.press('u');
+await page.waitForFunction(()=>document.querySelector('.decision-footer-actions button')?.title==='Undone');assert.deepEqual(await storedEmailReview(),previousEmailReview);
+await page.locator('.queue-bar .search').fill('');
 // Reload retains the exported local review decisions.
 await page.reload();
 await page.getByRole('button',{name:'Clinic mapping',exact:true}).click();await page.getByRole('group',{name:'Clinic review status'}).getByRole('button',{name:/^All /}).click();await page.getByLabel('Clinic to review',{exact:true}).selectOption(key);await page.waitForFunction(()=>document.querySelectorAll('.mapping-status.rejected').length===1).catch(async e=>{console.log(await page.locator('body').innerText());throw e;});

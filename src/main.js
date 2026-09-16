@@ -72,10 +72,13 @@ function openDb({ timeoutMs = DB_OPEN_TIMEOUT_MS } = {}) {
       if (!db.objectStoreNames.contains("email_validations")) db.createObjectStore("email_validations", { keyPath: "email" });
     };
     request.onblocked = () => {
-      finish(reject, new Error("Browser storage unavailable."));
+      finish(reject, new Error("Close older review-app tabs and reload to finish updating browser storage. Existing reviews are retained."));
     };
     request.onerror = () => finish(reject, request.error);
-    request.onsuccess = () => finish(resolve, request.result);
+    request.onsuccess = () => {
+      if (settled) request.result.close();
+      else finish(resolve, request.result);
+    };
   });
 }
 
@@ -99,20 +102,29 @@ function get(db, storeName, key) {
   });
 }
 
-function put(db, storeName, value) {
+function writeChanges(db, changes) {
   return new Promise((resolve, reject) => {
-    const request = txStore(db, storeName, "readwrite").put(value);
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(value);
+    // Review records use the JSON export contract. Vue proxies cannot be cloned by IndexedDB.
+    const entries = JSON.parse(JSON.stringify(changes));
+    const tx = db.transaction([...new Set(entries.map(entry => entry.store))], "readwrite");
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error || new Error("Review storage write failed."));
+    tx.onabort = () => reject(tx.error || new Error("Review storage transaction was aborted."));
+    try {
+      for (const entry of entries) {
+        const store = tx.objectStore(entry.store);
+        if (entry.remove) store.delete(entry.key);
+        else store.put(entry.value);
+      }
+    } catch (error) {
+      tx.abort();
+      reject(error);
+    }
   });
 }
 
-function deleteValue(db, storeName, key) {
-  return new Promise((resolve, reject) => {
-    const request = txStore(db, storeName, "readwrite").delete(key);
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(true);
-  });
+function put(db, storeName, value) {
+  return writeChanges(db, [{store: storeName, value}]).then(() => value);
 }
 
 function uuid() {
@@ -576,6 +588,7 @@ const App = {
     const currentIndex = ref(0);
     const selectedCandidateIndex = ref(0);
     const pendingEmailStatus = ref("");
+    const emailSaving = ref(false);
     const evidenceTab = ref("snapshot");
     const archiveFrame = ref(null);
     const archiveHtmlUrl=ref(''),archiveHtmlError=ref('');
@@ -1009,6 +1022,7 @@ const App = {
             connection.onversionchange = () => {
               connection.close();
               if (db.value === connection) db.value = null;
+              dbOpenPromise = null;
               saveStatus.value = "Refresh before saving more review work";
             };
             return connection;
@@ -1271,6 +1285,7 @@ const App = {
     }
 
     async function selectOccurrence(occurrence) {
+      if (emailSaving.value) return;
       if (!occurrence?.clinic_id) return;
       clinic.value = await loadClinic(occurrence.clinic_id);
       const index = candidates.value.findIndex((candidate) => (
@@ -1302,6 +1317,7 @@ const App = {
     }
 
     function selectCandidateValidation(status, index = selectedCandidateIndex.value) {
+      if (emailSaving.value) return;
       const normalized = normalizedEmailStatus(status);
       if (!["valid", "invalid"].includes(normalized)) return;
       selectCandidate(index);
@@ -1310,6 +1326,9 @@ const App = {
     }
 
     async function confirmCandidate(index = selectedCandidateIndex.value) {
+      if (emailSaving.value) return;
+      emailSaving.value = true;
+      error.value = "";
       try {
         selectCandidate(index);
         if (!pendingValidationReady.value) {
@@ -1317,9 +1336,10 @@ const App = {
           return;
         }
         await saveEmailValidation(pendingEmailStatus.value);
-      } catch (_) {
-        saveStatus.value = "Read-only until browser storage is available";
-      }
+      } catch (err) {
+        saveStatus.value = "Review not saved";
+        error.value = `Could not save this email review: ${err.message} Your choice is retained; try Confirm again.`;
+      } finally { emailSaving.value = false; }
     }
 
     function invalidateCandidate(index = selectedCandidateIndex.value) {
@@ -1333,8 +1353,7 @@ const App = {
       const reviewedEmail = normalizeEmailValue(value);
       const email = normalizeEmailValue(validationEmail || value);
       if (!reviewedEmail || !reviewedEmail.includes("@") || !email || !email.includes("@")) {
-        error.value = "Email validation needs an email value.";
-        return;
+        throw new Error("Email validation needs an email value.");
       }
       const previousValidation = emailValidationByValue.value[email] ? { ...emailValidationByValue.value[email] } : null;
       const timestamp = nowIso();
@@ -1357,7 +1376,6 @@ const App = {
         occurrence_count: currentItem.value?.occurrence_count || null,
         audit_flags: currentEmailValidation.value?.audit_flags || [],
       };
-      await put(connection, "email_validations", validation);
       const event = {
         id: uuid(),
         clinic_id: validation.clinic_id,
@@ -1369,7 +1387,7 @@ const App = {
         evidence_viewed: evidenceTab.value,
         decision_duration_ms: Date.now() - itemStartedAt.value,
       };
-      await put(connection, "audit_events", event);
+      await writeChanges(connection, [{store: "email_validations", value: validation}, {store: "audit_events", value: event}]);
       lastAction.value = {
         email_validation_email: email,
         previous_email_validation: previousValidation,
@@ -1377,17 +1395,25 @@ const App = {
       };
       sessionDecisionCount.value += 1;
       saveStatus.value = `${emailStatusLabel(validation.status)} · press U to undo`;
-      await hydrateLocal();
       scheduleRemoteSync();
-      await setIndex(currentIndex.value);
+      try {
+        await hydrateLocal();
+        await setIndex(currentIndex.value);
+      } catch (err) {
+        error.value = `Review saved, but the display could not refresh: ${err.message} Reload to see the saved review.`;
+      }
     }
 
     function startEmailEdit() {
+      if (emailSaving.value) return;
       editValue.value = currentItem.value?.display_value || currentItem.value?.email || selectedCandidate.value?.value || "";
       editMode.value = true;
     }
 
     async function saveEditedEmail() {
+      if (emailSaving.value) return;
+      emailSaving.value = true;
+      error.value = "";
       try {
         const status = pendingValidationReady.value
           ? pendingEmailStatus.value
@@ -1400,12 +1426,14 @@ const App = {
           validationEmail: currentItem.value?.email,
         });
         editMode.value = false;
-      } catch (_) {
-        saveStatus.value = "Read-only until browser storage is available";
-      }
+      } catch (err) {
+        saveStatus.value = "Review not saved";
+        error.value = `Could not save the edited email: ${err.message} Your edit is retained; try saving again.`;
+      } finally { emailSaving.value = false; }
     }
 
     function moveCandidate(delta) {
+      if (emailSaving.value) return;
       const indices = displayedCandidateRows.value.map((row) => row.index);
       if (!indices.length) return;
       const currentPosition = Math.max(0, indices.indexOf(selectedCandidateIndex.value));
@@ -1414,10 +1442,12 @@ const App = {
     }
 
     async function nextLead() {
+      if (emailSaving.value) return;
       await setIndex(currentIndex.value + 1);
     }
 
     async function previousLead() {
+      if (emailSaving.value) return;
       await setIndex(currentIndex.value - 1);
     }
 
@@ -1541,28 +1571,37 @@ const App = {
     }
 
     async function undoLastAction() {
+      if (emailSaving.value || !lastAction.value) return;
+      emailSaving.value = true;
+      error.value = "";
       try {
-        if (!lastAction.value) return;
         const connection = await ensureDb();
-        if (lastAction.value.decision_id) await deleteValue(connection, "decisions", lastAction.value.decision_id);
+        const changes = [];
+        if (lastAction.value.decision_id) changes.push({store: "decisions", remove: true, key: lastAction.value.decision_id});
         if (lastAction.value.email_validation_email) {
-          if (lastAction.value.previous_email_validation) await put(connection, "email_validations", lastAction.value.previous_email_validation);
-          else await deleteValue(connection, "email_validations", lastAction.value.email_validation_email);
+          changes.push(lastAction.value.previous_email_validation
+            ? {store: "email_validations", value: lastAction.value.previous_email_validation}
+            : {store: "email_validations", remove: true, key: lastAction.value.email_validation_email});
         }
-        if (lastAction.value.audit_event_id) await deleteValue(connection, "audit_events", lastAction.value.audit_event_id);
+        if (lastAction.value.audit_event_id) changes.push({store: "audit_events", remove: true, key: lastAction.value.audit_event_id});
         if (lastAction.value.state_clinic_id) {
-          if (lastAction.value.previous_state) await put(connection, "clinic_states", lastAction.value.previous_state);
-          else await deleteValue(connection, "clinic_states", lastAction.value.state_clinic_id);
+          changes.push(lastAction.value.previous_state
+            ? {store: "clinic_states", value: lastAction.value.previous_state}
+            : {store: "clinic_states", remove: true, key: lastAction.value.state_clinic_id});
         }
+        await writeChanges(connection, changes);
         await hydrateLocal();
         saveStatus.value = "Undone";
-        const index = filteredQueue.value.findIndex((item) => item.id === lastAction.value.state_clinic_id);
+        const index = filteredQueue.value.findIndex((item) => lastAction.value.email_validation_email
+          ? item.email === lastAction.value.email_validation_email
+          : item.clinic_id === lastAction.value.state_clinic_id || item.id === lastAction.value.state_clinic_id);
         lastAction.value = null;
-        if (index >= 0) await setIndex(index);
+        await setIndex(index >= 0 ? index : currentIndex.value);
         scheduleRemoteSync();
-      } catch (_) {
-        saveStatus.value = "Read-only until browser storage is available";
-      }
+      } catch (err) {
+        saveStatus.value = "Undo failed";
+        error.value = `Could not undo this review: ${err.message} Try Undo again.`;
+      } finally { emailSaving.value = false; }
     }
 
     async function markNoPublicEmail() {
@@ -2053,6 +2092,7 @@ const App = {
     }
 
     function onKey(event) {
+      if (emailSaving.value) return;
       if(selectedMarket.value==='HU'&&accountMode.value||selectedMarket.value==='PL'&&regionalMode.value==='account')return;
       if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.isComposing) return;
       if (event.target?.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
@@ -2171,6 +2211,7 @@ const App = {
       unusedValidExportCount,
       unusedExportTitle,
       pendingEmailStatus,
+      emailSaving,
       pendingValidationReady,
       currentEmailOccurrences,
       editMode,
@@ -2238,20 +2279,20 @@ const App = {
   },
   template: `
     <div class="app-shell">
-      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option><option value="PL">Poland</option></select></label>
+      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving||emailSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option><option value="PL">Poland</option></select></label>
       <template v-if="selectedMarket!=='HU'">
         <nav v-if="selectedMarket==='PL'" class="review-mode-tabs" aria-label="Review mode"><button :class="{active:regionalMode==='webpages'}" @click="regionalMode='webpages'">Webpages</button><button :class="{active:regionalMode==='account'}" @click="regionalMode='account'">Account data</button></nav>
         <WebpageReview ref="webpageReview" v-if="regionalMode==='webpages'" :key="selectedMarket" :market="selectedMarket" :pkg="regionalPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="regionalError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadRegional(selectedMarket)" @export="exportProgress" @import="importWebpageReviews" />
         <AccountEvidenceReview v-else :key="selectedMarket" :pkg="regionalPackage" :associations="null" :field-decisions="fieldDecisions" :preferences="contactPreferences" :association-decisions="[]" :reviewer="reviewer" :saving="fieldSaving" :error="regionalError||fieldError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @export="exportProgress" />
       </template>
       <template v-else>
-      <nav class="review-mode-tabs" aria-label="Review mode"><button :class="{active:!mappingMode&&!accountMode}" @click="mappingMode=false;accountMode=false">Email validity</button><button :class="{active:mappingMode&&!accountMode}" @click="mappingMode=true;accountMode=false">Clinic mapping</button><button :class="{active:accountMode}" @click="accountMode=true;mappingMode=false">Account data</button></nav>
+      <nav class="review-mode-tabs" aria-label="Review mode"><button :disabled="emailSaving" :class="{active:!mappingMode&&!accountMode}" @click="mappingMode=false;accountMode=false">Email validity</button><button :disabled="emailSaving" :class="{active:mappingMode&&!accountMode}" @click="mappingMode=true;accountMode=false">Clinic mapping</button><button :disabled="emailSaving" :class="{active:accountMode}" @click="accountMode=true;mappingMode=false">Account data</button></nav>
       <AccountEvidenceReview v-if="accountMode" :pkg="accountPackage" :associations="associationPackage" :field-decisions="fieldDecisions" :preferences="contactPreferences" :validity="emailValidationByValue" :association-decisions="associationDecisions" :reviewer="reviewer" :saving="fieldSaving||associationSaving" :error="fieldError||associationError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @association-decision="saveAssociation" @export="exportProgress" />
       <ClinicEmailReview ref="mappingReview" v-if="mappingMode&&!accountMode" :pkg="associationPackage" :emails="associationEmails" :decisions="associationDecisions" :reviewer="reviewer" :saving="associationSaving" :save-error="associationError" @decision="saveAssociation" @copy="copyEmail" @export="exportAssociationCSV" />
       <section v-show="!mappingMode&&!accountMode" class="queue-bar">
-        <input v-model="search" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
+        <input v-model="search" :disabled="emailSaving" class="search" type="search" placeholder="Search clinic, city, registry ID, email…" />
         <div class="region-actions">
-          <select v-model="selectedRegion" class="region-filter" :aria-label="regionFilterLabel">
+          <select v-model="selectedRegion" :disabled="emailSaving" class="region-filter" :aria-label="regionFilterLabel">
             <option value="">{{ regionFilterLabel }}</option>
             <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
           </select>
@@ -2260,18 +2301,18 @@ const App = {
           </button>
         </div>
         <div class="lane-tabs" role="group" aria-label="Email review status">
-          <button v-for="lane in ['unreviewed','reviewed','valid','invalid','all']" :key="lane" :class="{active:selectedLane===lane}" :aria-pressed="selectedLane===lane" @click="selectedLane=lane">
+          <button v-for="lane in ['unreviewed','reviewed','valid','invalid','all']" :key="lane" :disabled="emailSaving" :class="{active:selectedLane===lane}" :aria-pressed="selectedLane===lane" @click="selectedLane=lane">
             {{ laneLabel(lane) }} <strong>{{ laneCounts[lane] || 0 }}</strong>
           </button>
         </div>
         <div class="campaign-tabs">
-          <button v-for="filter in ['unused','used']" :key="filter" :class="{active:campaignUsageFilter===filter}" @click="campaignUsageFilter=campaignUsageFilter===filter ? 'all' : filter">
+          <button v-for="filter in ['unused','used']" :key="filter" :disabled="emailSaving" :class="{active:campaignUsageFilter===filter}" @click="campaignUsageFilter=campaignUsageFilter===filter ? 'all' : filter">
             {{ campaignUsageFilterLabel(filter) }} <strong>{{ campaignUsageCounts[filter] || 0 }}</strong>
           </button>
         </div>
       </section>
 
-      <div v-if="error" class="alert error">{{ error }}</div>
+      <div v-if="error" class="alert error" role="alert">{{ error }}</div>
       <div v-if="visibleBackupReminder()" class="alert">{{mappingMode ? 'For a full review backup, use Export .json in Email validity.' : 'Export a backup soon. Browser storage is local to this browser profile.'}}</div>
 
       <main v-if="!mappingMode && !accountMode && loading" class="empty-state">
@@ -2281,7 +2322,7 @@ const App = {
 
       <main v-else-if="!mappingMode && !accountMode && currentItem && clinic" class="review-layout">
         <section class="decision-pane">
-          <ReviewHeader :email="currentItem.display_value||currentItem.email" :index="currentIndex" :total="filteredQueue.length" editable @move="$event>0?nextLead():previousLead()" @copy="copyEmail" @edit="startEmailEdit" />
+          <ReviewHeader :email="currentItem.display_value||currentItem.email" :index="currentIndex" :total="filteredQueue.length" :disabled="emailSaving" editable @move="$event>0?nextLead():previousLead()" @copy="copyEmail" @edit="startEmailEdit" />
           <div class="clinic-meta">
             <span v-if="currentItem.audit_flags?.length" class="pill reason">{{ currentItem.audit_flags.join(', ') }}</span>
             <span class="pill campaign" :class="{used: currentItem.used_in_campaign}" :title="campaignUsageTitle(currentItem)">
@@ -2313,22 +2354,22 @@ const App = {
                 </div>
                 <div class="validation-group">
                   <div class="validation-buttons">
-                    <button class="validation-btn valid-btn" :class="{active: pendingEmailStatus==='valid'}" :aria-pressed="pendingEmailStatus==='valid'" @click="selectCandidateValidation('valid')" title="Valid (1)">Valid</button>
-                    <button class="validation-btn invalid-btn" :class="{active: pendingEmailStatus==='invalid'}" :aria-pressed="pendingEmailStatus==='invalid'" @click="invalidateCandidate()" title="Invalid (2)">Invalid</button>
+                    <button class="validation-btn valid-btn" :disabled="emailSaving" :class="{active: pendingEmailStatus==='valid'}" :aria-pressed="pendingEmailStatus==='valid'" @click="selectCandidateValidation('valid')" title="Valid (1)">Valid</button>
+                    <button class="validation-btn invalid-btn" :disabled="emailSaving" :class="{active: pendingEmailStatus==='invalid'}" :aria-pressed="pendingEmailStatus==='invalid'" @click="invalidateCandidate()" title="Invalid (2)">Invalid</button>
                   </div>
                 </div>
               </div>
-              <button class="confirm-btn" :disabled="!pendingValidationReady" @click="confirmCandidate()" title="Confirm (Enter)">Confirm</button>
+              <button class="confirm-btn" :disabled="emailSaving||!pendingValidationReady" @click="confirmCandidate()" title="Confirm (Enter)">{{emailSaving ? 'Saving…' : 'Confirm'}}</button>
             </div>
             <p v-else class="muted">No retained candidate row was found for this email occurrence.</p>
           </section>
 
           <section v-if="editMode" class="edit-panel">
-            <label>Edit email<input v-model="editValue" type="email" /></label>
-            <label>Note<textarea v-model="note" rows="3" placeholder="Optional note"></textarea></label>
+            <label>Edit email<input v-model="editValue" :disabled="emailSaving" type="email" /></label>
+            <label>Note<textarea v-model="note" :disabled="emailSaving" rows="3" placeholder="Optional note"></textarea></label>
             <div class="edit-actions">
-              <button @click="saveEditedEmail">Save edited email</button>
-              <button class="quiet" @click="editMode=false">Cancel</button>
+              <button :disabled="emailSaving" @click="saveEditedEmail">Save edited email</button>
+              <button :disabled="emailSaving" class="quiet" @click="editMode=false">Cancel</button>
             </div>
           </section>
 

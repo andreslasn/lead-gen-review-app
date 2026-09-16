@@ -61,7 +61,7 @@ test('compressed LV evidence and canonical import preserve event IDs and HU file
 test('page roles and patient functions are independent, bounded and LV-only',()=>{
  const pkg=lvPackage(),claim=pkg.accounts[0].claims[0];
  const capabilities={version:1,actions:['book_appointment','general_enquiry'],provider:'Synthetic booking'};
- for(const role of ['directory_profile','organisation_profile']){
+ for(const role of ['directory_profile','organisation_profile','not_icp']){
   claim.website_role=role;validateAccountPackage(pkg,pkg);
   const event={...lvEvent(),contact_role:role,webpage_capabilities:capabilities};validateFieldDecision(event,pkg);
   assert.deepEqual(fieldState(claim,[event]).webpage_capabilities,capabilities);

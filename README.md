@@ -42,6 +42,14 @@ saving. Choose **Right clinic** (`1`) or **Wrong clinic** (`2`), then **Confirm*
 leave text inputs and selects to their native controls, and navigation is paused
 while a review saves. An unsaved choice does not carry over to another webpage.
 
+Latvia also has **Not ICP**, for a linked hospital or large multispecialty
+organisation outside the target profile. Choose it, then Confirm. It records a
+confirmed webpage classification with `contact_role: not_icp`, separate from
+Wrong clinic and Supporting sources. The **Page type** filter can show these
+findings. It flags the linked organisation only; the account stays in the market
+list. Existing patient functions are retained, and JSON export/import carries
+the classification to the market-data dashboard.
+
 **Page role** also includes **Directory / registry profile** and
 **Hospital / organisation profile**. Choose the role independently of the
 patient functions: a directory profile can offer booking without being the
@@ -108,6 +116,15 @@ Primary keyboard shortcuts:
 - `U` undo last local decision.
 
 Review exports include global `email_validations`, browser-side timing, and evidence-view metadata for audit and UI throughput analysis.
+
+Email confirmation and editing serialize JSON review records before writing to
+IndexedDB, including existing reactive audit flags. The validation and audit
+event commit together; Undo restores the prior record and removes its audit in
+one transaction. Saves acknowledge transaction completion, keep the choice/edit
+on failure, and show a visible error for retry. Duplicate confirmation and
+navigation are disabled while saving. This requires no storage reset or schema
+upgrade and preserves the existing validation seed, campaign-use records and
+browser origin.
 
 ## Shared review persistence
 

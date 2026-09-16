@@ -104,6 +104,21 @@ const origin=process.env.REVIEW_TEST_URL||'http://127.0.0.1:5173/lead-gen-review
   download=page.waitForEvent('download');await page.getByRole('button',{name:'Export review JSON',exact:true}).click();const classified=await download;await classified.saveAs(path.join(temp,'classified.json'));
   const latest=JSON.parse(fs.readFileSync(path.join(temp,'classified.json'))).field_decisions.find(e=>e.contact_role==='organisation_profile');assert.equal(latest.contact_role,'organisation_profile');assert.deepEqual(latest.webpage_capabilities,{version:1,actions:['request_appointment'],provider:''});
   await page.reload();await page.getByLabel('Page type',{exact:true}).selectOption('organisation_profile');await page.getByRole('button',{name:'Confirmed 1',exact:true}).click();assert.equal(await page.getByLabel('Request an appointment',{exact:true}).isChecked(),true);
+  if(market==='LV'){
+   await page.getByRole('button',{name:'Not ICP',exact:true}).click();
+   assert.equal(await page.getByLabel('Page role',{exact:true}).inputValue(),'not_icp');
+   await page.getByRole('button',{name:'Right clinic',exact:true}).click();assert.equal(await page.getByLabel('Page role',{exact:true}).inputValue(),'practice_website');
+   await page.getByRole('button',{name:'Not ICP',exact:true}).click();await page.getByRole('button',{name:'Confirm',exact:true}).click();
+   await page.getByLabel('Page type',{exact:true}).selectOption('not_icp');await page.getByRole('button',{name:'Confirmed 1',exact:true}).waitFor();
+   await page.getByText('The linked organisation is outside our target profile. This keeps the account in the market list.',{exact:true}).waitFor();
+   download=page.waitForEvent('download');await page.getByRole('button',{name:'Export review JSON',exact:true}).click();
+   const file=path.join(temp,'not-icp.json');await (await download).saveAs(file);
+   const exported=JSON.parse(fs.readFileSync(file));assert.ok(exported.field_decisions.some(e=>e.contact_role==='not_icp'&&e.status==='confirmed'));
+   await page.reload();await page.getByLabel('Page type',{exact:true}).selectOption('not_icp');await page.getByRole('button',{name:'Confirmed 1',exact:true}).click();
+   assert.equal(await page.getByRole('button',{name:'Not ICP',exact:true}).getAttribute('aria-pressed'),'true');
+   await page.getByLabel('Import review JSON',{exact:true}).setInputFiles(file);
+   assert.equal(await page.getByLabel('Page role',{exact:true}).inputValue(),'not_icp');
+  }else assert.equal(await page.getByRole('button',{name:'Not ICP',exact:true}).count(),0);
   await page.getByLabel('Page type',{exact:true}).selectOption('missing');await page.getByText('Website not yet identified. This does not establish that the practice has no website.',{exact:true}).waitFor();
   for(const width of [375,768,1440]){await page.setViewportSize({width,height:900});assert.ok(await page.locator('.app-shell').evaluate(el=>el.scrollWidth<=innerWidth));}
   await page.screenshot({path:'/tmp/latvia-webpage-review-synthetic.png',fullPage:true});
