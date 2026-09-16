@@ -391,3 +391,14 @@ well. Source indexes remain ordinary JSON; builds preserve the complete decoded
 index and all immutable account details. This reduces Pages size without dropping
 source evidence. Index loading and validation accept both encodings. Raw scraped
 HTML and internal CRM annotations are not copied into the Poland public package.
+
+Romania is available under `#market=RO`, with the same webpage keyboard controls
+and account-data review as the existing markets. Its public package belongs under
+`public/data/markets/RO/`; the full official account roster remains in the index,
+including accounts without discovered websites. Dedicated clinic sites, directories,
+patient portals, supporting sources and Not ICP linked organisations are distinct
+roles. Confirming an email confirms its account link; it cannot change HU global
+email validity or campaign-used flags. Export review JSON to transfer decisions to
+the market dashboard. Raw research captures stay in private account folders outside
+this repository; the Romania index and immutable evidence files use the existing
+lossless gzip/base64 envelope and contain only allowlisted public-source fields.

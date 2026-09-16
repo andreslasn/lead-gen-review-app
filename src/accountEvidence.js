@@ -3,8 +3,8 @@ export const researchFields = {website:'Website', email:'Email account link', te
 export const contactRoles = {practice:'Practice contact',doctor:'Doctor',reception:'Reception / assistant',prescriptions:'Prescriptions',shared:'Shared organisation contact',municipal:'Municipal contact',webmaster:'Website / data operator',historical:'Historical contact',unrelated:'Unrelated contact',unresolved:'Purpose unresolved',practice_website:'Practice website',patient_portal:'Patient portal',social_profile:'Social profile',source_page:'Supporting source',directory_profile:'Directory / registry profile',organisation_profile:'Hospital / organisation profile',not_icp:'Not ICP (linked organisation)',fax:'Fax',out_of_hours:'Out-of-hours service'};
 export const contactFields = ['email','website','telephone'];
 const excludedContactRoles = new Set(['municipal','webmaster','historical','unrelated','source_page','not_icp','fax','out_of_hours']);
-export const validAccountKey = key => /^(?:HU:[A-Z0-9]{4}|(?:LV|PL):[a-f0-9]{20})$/.test(key||'');
-export const validEvidencePath = path => /^account-evidence\/(?:[A-Z0-9]{4}|(?:LV|PL)-[a-f0-9]{20})-[a-f0-9]{16}\.json$/.test(path||'');
+export const validAccountKey = key => /^(?:HU:[A-Z0-9]{4}|(?:LV|PL|RO):[a-f0-9]{20})$/.test(key||'');
+export const validEvidencePath = path => /^account-evidence\/(?:[A-Z0-9]{4}|(?:LV|PL|RO)-[a-f0-9]{20})-[a-f0-9]{16}\.json$/.test(path||'');
 export const webpageRoles = {practice_website:'Practice websites',patient_portal:'Patient portals',social_profile:'Social profiles',directory_profile:'Directory / registry profiles',organisation_profile:'Hospital / organisation profiles',not_icp:'Not ICP (linked organisation)',source_page:'Supporting sources'};
 export const webpageActions = {book_appointment:'Book an appointment',request_appointment:'Request an appointment',prescription_request:'Request a prescription',general_enquiry:'Send a general enquiry',none_observed:'No capability observed',unclear:'Unclear'};
 export function validateWebpageCapabilities(value) {
@@ -12,15 +12,15 @@ export function validateWebpageCapabilities(value) {
   return value;
 }
 export function validateFieldDecision(e, pkg) {
-  if (!e || !e.id || !/^[a-f0-9]{64}$/.test(e.claim_id||'') || !validAccountKey(e.account_key) || !researchFields[e.field] || e.field==='email'&&!e.account_key.startsWith('PL:') || e.account_key.startsWith('LV:')&&e.field!=='website' || !['confirmed','rejected','unreviewed'].includes(e.status) || !e.reviewed_by || !Number.isFinite(Date.parse(e.reviewed_at)) || !Array.isArray(e.supersedes) || e.supersedes.includes(e.id) || !Array.isArray(e.observation_ids) || !e.observation_ids.length) throw Error('Invalid account field decision.');
+  if (!e || !e.id || !/^[a-f0-9]{64}$/.test(e.claim_id||'') || !validAccountKey(e.account_key) || !researchFields[e.field] || e.field==='email'&&!/^(PL|RO):/.test(e.account_key) || e.account_key.startsWith('LV:')&&e.field!=='website' || !['confirmed','rejected','unreviewed'].includes(e.status) || !e.reviewed_by || !Number.isFinite(Date.parse(e.reviewed_at)) || !Array.isArray(e.supersedes) || e.supersedes.includes(e.id) || !Array.isArray(e.observation_ids) || !e.observation_ids.length) throw Error('Invalid account field decision.');
   if (pkg) {
     const c=pkg.accounts.flatMap(a=>a.claims).find(c=>c.claim_id===e.claim_id);
     if (!c || c.account_key!==e.account_key || c.field!==e.field || e.observation_ids.some(id=>!c.observations.some(o=>o.observation_id===id))) throw Error('Decision does not match the current account evidence.');
   }
   if(e.contact_role!=null&&!Object.hasOwn(contactRoles,e.contact_role))throw Error('Invalid contact purpose.');
-  if(/^(LV|PL):/.test(e.account_key)&&e.field==='website'&&e.contact_role!=null&&!Object.hasOwn(webpageRoles,e.contact_role))throw Error('Invalid webpage role.');
+  if(/^(LV|PL|RO):/.test(e.account_key)&&e.field==='website'&&e.contact_role!=null&&!Object.hasOwn(webpageRoles,e.contact_role))throw Error('Invalid webpage role.');
   if(Object.hasOwn(e,'webpage_capabilities')){
-    if(!/^(LV|PL):/.test(e.account_key)||e.field!=='website')throw Error('Patient capabilities require a reviewed webpage.');
+    if(!/^(LV|PL|RO):/.test(e.account_key)||e.field!=='website')throw Error('Patient capabilities require a reviewed webpage.');
     validateWebpageCapabilities(e.webpage_capabilities);
   }
   return e;
@@ -33,7 +33,7 @@ export function validateAccountPackage(pkg, manifest) {
   if (pkg?.format!=='lead-gen-account-enrichment' || pkg.schema_version!==1 || pkg.dataset_id!==manifest.dataset_id || pkg.base_data_hash!==manifest.base_data_hash || !Array.isArray(pkg.accounts)) throw Error('Account evidence does not match this dataset.');
   const ids=new Set(), codes=new Set();
   const country=pkg.country||'HU';
-  if(!['HU','LV','PL'].includes(country))throw Error('Unsupported account market.');
+  if(!['HU','LV','PL','RO'].includes(country))throw Error('Unsupported account market.');
   for (const a of pkg.accounts) {
     if (!validAccountKey(a.account_key) || !a.account_key.startsWith(country+':') || codes.has(a.account_key) || !Array.isArray(a.claims) || !Array.isArray(a.services)) throw Error('Invalid account identity.');
     if(country!=='HU'&&(a.country!==country||a.account_key!==country+':'+a.dashboard_record_id||typeof a.provider_code!=='string'||typeof a.name!=='string'))throw Error('Invalid Latvia account identity.');
@@ -141,7 +141,7 @@ export function mergeFieldEvents(existing=[], incoming=[]) {
 }
 
 export function validateWebpageReviewExport(payload,pkg) {
-  if(payload?.format!=='lead-gen-clinic-review'||payload.schema_version!==1||!['LV','PL'].includes(pkg?.country)||payload.dataset_id!==pkg.dataset_id||payload.base_data_hash!==pkg.base_data_hash)throw Error('Latvia review dataset mismatch.');
+  if(payload?.format!=='lead-gen-clinic-review'||payload.schema_version!==1||!['LV','PL','RO'].includes(pkg?.country)||payload.dataset_id!==pkg.dataset_id||payload.base_data_hash!==pkg.base_data_hash)throw Error('Latvia review dataset mismatch.');
   for(const key of ['decisions','clinic_states','email_validations','association_decisions',...(pkg.country==='LV'?['contact_preferences']:[]),'role_overrides','audit_events'])if(payload[key]!=null&&(!Array.isArray(payload[key])||payload[key].length))throw Error('Latvia webpage reviews cannot contain other review data.');
   if(!Array.isArray(payload.field_decisions)||payload.field_decisions.some(e=>!e.account_key?.startsWith(pkg.country+':')))throw Error('Invalid Latvia webpage reviews.');
   mergeFieldEvents([],payload.field_decisions);

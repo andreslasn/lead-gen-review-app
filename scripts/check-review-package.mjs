@@ -159,7 +159,7 @@ try {
   await scanSecrets(path.join(root,'account-enrichment.json'));
 } catch(error) {if(error.code!=='ENOENT')throw error;}
 const canonical = await json("canonical-review-state.json");
-for(const country of ['LV','PL']){
+for(const country of ['LV','PL','RO']){
 let hasMarket=false;
 try{await stat(path.join(root,'markets/'+country));hasMarket=true;}catch(error){if(error.code!=='ENOENT')throw error;}
 if(hasMarket){

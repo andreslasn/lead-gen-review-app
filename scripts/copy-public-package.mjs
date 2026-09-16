@@ -34,7 +34,7 @@ async function directorySize(directory) {
 export async function copyPublicPackage(source, destination, { maxBytes = 1_000_000_000 } = {}) {
   const roots=['data'];
   const artifacts=['data/clinics','data/sources/review_text','data/sources/raw_html'];
-  for(const country of ['LV','PL'])try {await stat(path.join(source,'data/markets/'+country));roots.push('data/markets/'+country);}catch(error){if(error.code!=='ENOENT')throw error;}
+  for(const country of ['LV','PL','RO'])try {await stat(path.join(source,'data/markets/'+country));roots.push('data/markets/'+country);}catch(error){if(error.code!=='ENOENT')throw error;}
   await cp(source, destination, {
     recursive: true, mode: constants.COPYFILE_FICLONE,
     filter: file => {

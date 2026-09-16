@@ -5,12 +5,12 @@ const path=require('node:path');
 const {createHash}=require('node:crypto');
 const {gzipSync}=require('node:zlib');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
-const market=process.env.REVIEW_TEST_MARKET||'LV',marketLabel=market==='PL'?'Poland':'Latvia';
+const market=process.env.REVIEW_TEST_MARKET||'LV',marketLabel=({PL:'Poland',RO:'Romania',LV:'Latvia'})[market];
 const origin=process.env.REVIEW_TEST_URL||'http://127.0.0.1:5173/lead-gen-review-app/';
 
 (async()=>{
- const {lvPackage}=await import('./lvFixtures.mjs'),full=market==='PL'?JSON.parse(JSON.stringify(lvPackage()).replaceAll('LV:','PL:').replaceAll('\"LV\"','\"PL\"').replaceAll('synthetic-lv','synthetic-pl').replaceAll('lv-hash','pl-hash')):lvPackage();
- if(market==='PL'){const a=full.accounts[0];a.business_entity_code='1234563218';a.locations=[];a.claims.push({...a.claims[0],claim_id:'d'.repeat(64),field:'email',value:'practice@example.invalid'}, {...a.claims[0],claim_id:'f'.repeat(64),field:'practice_software',value:'Synthetic PL booking',attribution:{version:1,status:'attributable_candidate',eligible_for_analytics:true,scope:'account',service_ids:[],current_use_verified:false,all_panels_verified:false,reasons:['Named account'],proofs:[]}});a.contact_reconciliation={version:1,groups:[{id:'8'.repeat(64),field:'email',value:'practice@example.invalid',role:'practice',strength:'strong',claim_ids:['d'.repeat(64)],proofs:[]}],recommended:{email:null,website:null,telephone:null},lanes:[]};}
+ const {lvPackage}=await import('./lvFixtures.mjs'),full=['PL','RO'].includes(market)?JSON.parse(JSON.stringify(lvPackage()).replaceAll('LV:',market+':').replaceAll('\"LV\"','\"'+market+'\"').replaceAll('synthetic-lv','synthetic-'+market.toLowerCase()).replaceAll('lv-hash',market.toLowerCase()+'-hash')):lvPackage();
+ if(['PL','RO'].includes(market)){const a=full.accounts[0];a.business_entity_code='1234563218';a.locations=[];a.claims.push({...a.claims[0],claim_id:'d'.repeat(64),field:'email',value:'practice@example.invalid'}, {...a.claims[0],claim_id:'f'.repeat(64),field:'practice_software',value:'Synthetic PL booking',attribution:{version:1,status:'attributable_candidate',eligible_for_analytics:true,scope:'account',service_ids:[],current_use_verified:false,all_panels_verified:false,reasons:['Named account'],proofs:[]}});a.contact_reconciliation={version:1,groups:[{id:'8'.repeat(64),field:'email',value:'practice@example.invalid',role:'practice',strength:'strong',claim_ids:['d'.repeat(64)],proofs:[]}],recommended:{email:null,website:null,telephone:null},lanes:[]};}
  const pkg=structuredClone(full),details={};
  pkg.evidence_storage='account-files-v1';
  pkg.accounts=pkg.accounts.map(a=>{const raw=JSON.stringify({format:'lead-gen-account-evidence-gzip',schema_version:1,data:gzipSync(JSON.stringify(a)).toString('base64')}),hash=createHash('sha256').update(raw).digest('hex'),relative='account-evidence/'+market+'-'+a.dashboard_record_id+'-'+hash.slice(0,16)+'.json';details[relative]=raw;return {...a,claims:a.claims.map(({observations,...c})=>c),evidence_path:relative,evidence_sha256:hash,evidence_encoding:'gzip-base64-v1'};});
@@ -104,7 +104,7 @@ const origin=process.env.REVIEW_TEST_URL||'http://127.0.0.1:5173/lead-gen-review
   download=page.waitForEvent('download');await page.getByRole('button',{name:'Export review JSON',exact:true}).click();const classified=await download;await classified.saveAs(path.join(temp,'classified.json'));
   const latest=JSON.parse(fs.readFileSync(path.join(temp,'classified.json'))).field_decisions.find(e=>e.contact_role==='organisation_profile');assert.equal(latest.contact_role,'organisation_profile');assert.deepEqual(latest.webpage_capabilities,{version:1,actions:['request_appointment'],provider:''});
   await page.reload();await page.getByLabel('Page type',{exact:true}).selectOption('organisation_profile');await page.getByRole('button',{name:'Confirmed 1',exact:true}).click();assert.equal(await page.getByLabel('Request an appointment',{exact:true}).isChecked(),true);
-  if(market==='LV'){
+  if(['LV','RO'].includes(market)){
    await page.getByRole('button',{name:'Not ICP',exact:true}).click();
    assert.equal(await page.getByLabel('Page role',{exact:true}).inputValue(),'not_icp');
    await page.getByRole('button',{name:'Right clinic',exact:true}).click();assert.equal(await page.getByLabel('Page role',{exact:true}).inputValue(),'practice_website');
@@ -122,9 +122,9 @@ const origin=process.env.REVIEW_TEST_URL||'http://127.0.0.1:5173/lead-gen-review
   await page.getByLabel('Page type',{exact:true}).selectOption('missing');await page.getByText('Website not yet identified. This does not establish that the practice has no website.',{exact:true}).waitFor();
   for(const width of [375,768,1440]){await page.setViewportSize({width,height:900});assert.ok(await page.locator('.app-shell').evaluate(el=>el.scrollWidth<=innerWidth));}
   await page.screenshot({path:'/tmp/latvia-webpage-review-synthetic.png',fullPage:true});
-  if(market==='PL'){
+  if(['PL','RO'].includes(market)){
    await page.getByRole('button',{name:'Account data',exact:true}).click();
-   await page.getByRole('button',{name:'Synthetic Latvia Practice · PL:'+ '1'.repeat(20),exact:false}).click();
+   await page.getByRole('button',{name:'Synthetic Latvia Practice · '+market+':'+ '1'.repeat(20),exact:false}).click();
    await page.getByText('Other contacts and alternatives (1)',{exact:true}).click();
    const card=page.locator('.contact-review-card').filter({hasText:'practice@example.invalid'});
    await card.getByRole('button',{name:'Confirm clinic link',exact:true}).click();

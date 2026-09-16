@@ -8,7 +8,7 @@ export default {
   props:{market:{type:String,default:'LV'},pkg:Object,decisions:Array,reviewer:String,saving:Boolean,error:String},
   emits:['decision','load-account','retry','export','import'],
   setup(props,{emit}) {
-    const availableRoles=computed(()=>Object.fromEntries(Object.entries(webpageRoles).filter(([role])=>props.market==='LV'||role!=='not_icp')));
+    const availableRoles=computed(()=>Object.fromEntries(Object.entries(webpageRoles).filter(([role])=>['LV','RO'].includes(props.market)||role!=='not_icp')));
     const search=ref(new URLSearchParams(location.hash.slice(1)).get('account')||''),kind=ref(new URLSearchParams(location.hash.slice(1)).has('account')?'all':'practice_website'),status=ref('unreviewed'),selected=ref(''),copied=ref(''),reviewRole=ref('practice_website'),choice=ref(''),capabilityActions=ref([]),capabilityProvider=ref('');
     const state=claim=>fieldState(claim,props.decisions);
     const role=claim=>{const value=state(claim);return value.status==='confirmed'&&value.contact_role||claim.website_role;};
@@ -35,7 +35,7 @@ export default {
     watch(()=>[current.value?.account.account_key,props.pkg?.research_snapshot_id],()=>{copied.value='';if(current.value&&!ready.value)emit('load-account',current.value.account.account_key);},{immediate:true});
     function move(offset){if(!props.saving)selected.value=rows.value[index.value+offset]?.id||selected.value;}
     function choose(status){if(current.value?.claim&&ready.value&&!props.saving&&['confirmed','rejected','unreviewed'].includes(status)){if(status==='confirmed'&&reviewRole.value==='not_icp')reviewRole.value=current.value.claim.website_role;choice.value=status;}}
-    function chooseNotIcp(){if(props.market==='LV'&&current.value?.claim&&ready.value&&!props.saving){choice.value='confirmed';reviewRole.value='not_icp';}}
+    function chooseNotIcp(){if(['LV','RO'].includes(props.market)&&current.value?.claim&&ready.value&&!props.saving){choice.value='confirmed';reviewRole.value='not_icp';}}
     const hasPatientAction=computed(()=>capabilityActions.value.some(a=>!['none_observed','unclear'].includes(a)));
     function toggleCapability(action,checked){
       if(props.saving||!ready.value)return;
@@ -48,7 +48,7 @@ export default {
     return {search,kind,status,reviewRole,role,counts,statuses,missing,rows,index,current,ready,move,choose,chooseNotIcp,confirm,choice,capabilityActions,capabilityProvider,hasPatientAction,toggleCapability,webpageActions,state,copy,copied,webpageRoles:availableRoles,safeSourceUrl};
   },
   template:`<section class="webpage-review mapping-workspace">
-    <div class="webpage-summary"><h1>Webpages · {{market==='PL'?'Poland':'Latvia'}}</h1><span v-if="pkg">{{pkg.accounts.length}} accounts · {{rows.length}} {{kind==='missing'?'accounts without a practice website candidate':'webpages in this view'}}</span></div>
+    <div class="webpage-summary"><h1>Webpages · {{({PL:'Poland',RO:'Romania',LV:'Latvia'})[market]}}</h1><span v-if="pkg">{{pkg.accounts.length}} accounts · {{rows.length}} {{kind==='missing'?'accounts without a practice website candidate':'webpages in this view'}}</span></div>
     <div class="queue-bar webpage-controls">
       <input v-model="search" :disabled="saving" class="search" aria-label="Find account, doctor, address or webpage" placeholder="Account, doctor, address or webpage…" type="search">
       <select v-model="kind" :disabled="saving" class="region-filter" aria-label="Page type"><option value="all">All webpages</option><option v-for="(label,key) in webpageRoles" :value="key">{{label}} ({{counts[key]||0}})</option><option value="missing">Website not yet identified ({{missing.length}})</option></select>
@@ -56,7 +56,7 @@ export default {
       <label class="webpage-import">Import review JSON<input type="file" accept=".json,application/json" @change="$emit('import',$event);$event.target.value=''" :disabled="saving||!pkg"></label>
       <div v-if="pkg&&kind!=='missing'" class="lane-tabs" role="group" aria-label="Webpage review status"><button v-for="s in ['unreviewed','confirmed','rejected','all']" :class="{active:status===s}" :aria-pressed="status===s" :disabled="saving" @click="status=s">{{s==='unreviewed'?'Needs review':s==='confirmed'?'Confirmed':s==='rejected'?'Rejected':'All'}} <strong>{{statuses[s]}}</strong></button></div>
     </div>
-    <main v-if="!pkg" class="empty-state"><p role="status">{{market==='PL'?'Poland':'Latvia'}} evidence is unavailable. <button @click="$emit('retry')">Retry {{market==='PL'?'Poland':'Latvia'}} data</button></p></main>
+    <main v-if="!pkg" class="empty-state"><p role="status">{{({PL:'Poland',RO:'Romania',LV:'Latvia'})[market]}} evidence is unavailable. <button @click="$emit('retry')">Retry {{({PL:'Poland',RO:'Romania',LV:'Latvia'})[market]}} data</button></p></main>
     <main v-else-if="current" class="review-layout mapping-review">
       <section class="decision-pane webpage-identity">
         <ReviewHeader :email="current.claim?.value||current.account.name" :index="index" :total="rows.length" :disabled="saving" :item-label="current.claim?'webpage':'account'" :copyable="!!current.claim" @move="move" @copy="copy" />
@@ -81,7 +81,7 @@ export default {
             <div class="validation-buttons">
               <button class="validation-btn valid-btn" :disabled="saving||!ready" :class="{active:choice==='confirmed'&&reviewRole!=='not_icp'}" :aria-pressed="choice==='confirmed'&&reviewRole!=='not_icp'" @click="choose('confirmed')" title="Right clinic (1)">Right clinic</button>
               <button class="validation-btn invalid-btn" :disabled="saving||!ready" :class="{active:choice==='rejected'}" :aria-pressed="choice==='rejected'" @click="choose('rejected')" title="Wrong clinic (2)">Wrong clinic</button>
-              <button v-if="market==='LV'" class="validation-btn" :disabled="saving||!ready" :class="{active:choice==='confirmed'&&reviewRole==='not_icp'}" :aria-pressed="choice==='confirmed'&&reviewRole==='not_icp'" @click="chooseNotIcp">Not ICP</button>
+              <button v-if="['LV','RO'].includes(market)" class="validation-btn" :disabled="saving||!ready" :class="{active:choice==='confirmed'&&reviewRole==='not_icp'}" :aria-pressed="choice==='confirmed'&&reviewRole==='not_icp'" @click="chooseNotIcp">Not ICP</button>
             </div>
           </template>
           <p v-else class="review-note">Website not yet identified. This does not establish that the practice has no website.</p>

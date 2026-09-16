@@ -1,0 +1,9 @@
+{
+  "format": "lead-gen-account-enrichment",
+  "schema_version": 1,
+  "country": "RO",
+  "dataset_id": "ro-market-2026-09-16",
+  "base_data_hash": "28dbdebeabdf8550b0ed29e6dce202c5eb3f6306c9b8b0c36e8b66bd0c6839f5",
+  "research_snapshot_id": "aa28789340851e7c37c09bc75ec62bf8b4b1d13efa6f464dc38754ea6c8a5dfa",
+  "registry_snapshot": "2026-09"
+}

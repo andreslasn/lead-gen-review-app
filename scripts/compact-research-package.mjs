@@ -83,7 +83,7 @@ export async function archiveObsoleteEvidence(root, archive, index) {
   const selected = new Set(index.accounts.map(a => path.basename(a.evidence_path)));
   let archivedFiles = 0, archivedBytes = 0;
   for (const name of await readdir(path.join(root, 'account-evidence'))) {
-    if (!/^(?:[A-Z0-9]{4}|(?:LV|PL)-[a-f0-9]{20})-[a-f0-9]{16}\.json$/.test(name) || selected.has(name)) continue;
+    if (!/^(?:[A-Z0-9]{4}|(?:LV|PL|RO)-[a-f0-9]{20})-[a-f0-9]{16}\.json$/.test(name) || selected.has(name)) continue;
     const source = path.join(root, 'account-evidence', name), destination = path.join(archive, name + '.gz');
     const bytes = await readFile(source);
     let saved;

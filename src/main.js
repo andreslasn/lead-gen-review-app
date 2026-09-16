@@ -547,16 +547,16 @@ const App = {
     const manifest = ref(null);
     const routeAccount=new URLSearchParams(location.hash.slice(1)).get('account');
     const routeMarket=routeAccount?.slice(0,2)||new URLSearchParams(location.hash.slice(1)).get('market')||localStorage.getItem('review.market');
-    const selectedMarket=ref(routeClinicId()||routeEmailValue()?'HU':['HU','LV','PL'].includes(routeMarket)?routeMarket:'HU');
+    const selectedMarket=ref(routeClinicId()||routeEmailValue()?'HU':['HU','LV','PL','RO'].includes(routeMarket)?routeMarket:'HU');
     const regionalPackages=ref({}),regionalManifests=ref({}),regionalErrors=ref({});
     const regionalPackage=computed(()=>regionalPackages.value[selectedMarket.value]||null),regionalError=computed(()=>regionalErrors.value[selectedMarket.value]||'');
-    const regionalMode=ref(routeAccount?.startsWith('PL:')?'account':'webpages');
+    const regionalMode=ref(/^(PL|RO):/.test(routeAccount||'')?'account':'webpages');
     const activeAccountPackage=computed(()=>selectedMarket.value==='HU'?accountPackage.value:regionalPackage.value);
     const loadingRegional=new Set();
     async function loadRegional(country=selectedMarket.value) {
-      if(!['LV','PL'].includes(country)||loadingRegional.has(country))return;
+      if(!['LV','PL','RO'].includes(country)||loadingRegional.has(country))return;
       loadingRegional.add(country);regionalErrors.value[country]='';
-      const label=country==='PL'?'Poland':'Latvia';
+      const label=({PL:'Poland',RO:'Romania',LV:'Latvia'})[country];
       try {
         const [m,p]=await Promise.all(['manifest.json','account-enrichment.json'].map(name=>fetch(staticUrl('data/markets/'+country+'/'+name),{cache:'no-cache'})));
         if(!m.ok||!p.ok)throw Error('Could not load '+label+' evidence. Retry; existing reviews remain saved.');
@@ -1987,7 +1987,7 @@ const App = {
     async function mergeImport(payload, { silent = false } = {}) {
       const connection = await ensureDb();
       validatePayload(payload);
-      const regionalCountry=['LV','PL'].find(country=>payload.dataset_id===regionalManifests.value[country]?.dataset_id);
+      const regionalCountry=['LV','PL','RO'].find(country=>payload.dataset_id===regionalManifests.value[country]?.dataset_id);
       if(regionalCountry){
         const pkg=regionalPackages.value[regionalCountry],details=[];
         for(const key of new Set([...(payload.field_decisions||[]),...(payload.contact_preferences||[])].map(e=>e.account_key))){
@@ -2093,7 +2093,7 @@ const App = {
 
     function onKey(event) {
       if (emailSaving.value) return;
-      if(selectedMarket.value==='HU'&&accountMode.value||selectedMarket.value==='PL'&&regionalMode.value==='account')return;
+      if(selectedMarket.value==='HU'&&accountMode.value||['PL','RO'].includes(selectedMarket.value)&&regionalMode.value==='account')return;
       if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.isComposing) return;
       if (event.target?.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
       const key = event.key.toLowerCase();
@@ -2279,9 +2279,9 @@ const App = {
   },
   template: `
     <div class="app-shell">
-      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving||emailSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option><option value="PL">Poland</option></select></label>
+      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving||emailSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option><option value="PL">Poland</option><option value="RO">Romania</option></select></label>
       <template v-if="selectedMarket!=='HU'">
-        <nav v-if="selectedMarket==='PL'" class="review-mode-tabs" aria-label="Review mode"><button :class="{active:regionalMode==='webpages'}" @click="regionalMode='webpages'">Webpages</button><button :class="{active:regionalMode==='account'}" @click="regionalMode='account'">Account data</button></nav>
+        <nav v-if="['PL','RO'].includes(selectedMarket)" class="review-mode-tabs" aria-label="Review mode"><button :class="{active:regionalMode==='webpages'}" @click="regionalMode='webpages'">Webpages</button><button :class="{active:regionalMode==='account'}" @click="regionalMode='account'">Account data</button></nav>
         <WebpageReview ref="webpageReview" v-if="regionalMode==='webpages'" :key="selectedMarket" :market="selectedMarket" :pkg="regionalPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="regionalError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadRegional(selectedMarket)" @export="exportProgress" @import="importWebpageReviews" />
         <AccountEvidenceReview v-else :key="selectedMarket" :pkg="regionalPackage" :associations="null" :field-decisions="fieldDecisions" :preferences="contactPreferences" :association-decisions="[]" :reviewer="reviewer" :saving="fieldSaving" :error="regionalError||fieldError" @load-account="openAccountEvidence" @field-decision="saveField" @preference="saveContactPreference" @export="exportProgress" />
       </template>
