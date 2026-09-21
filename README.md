@@ -374,7 +374,8 @@ can support an account link without becoming a practice homepage.
 
 ### Poland account research
 
-Select **Poland** or open `#market=PL`. Webpages uses the same arrow navigation,
+Poland is retained in the package but is no longer offered in the market menu.
+Its webpage review code uses the same arrow navigation,
 page-role review and patient-function checkboxes as Latvia. **Account data** also
 reviews public email/phone ownership, preferred contacts, workplace doctor names,
 and software attribution. Confirming an account link does not validate an email
@@ -392,7 +393,8 @@ index and all immutable account details. This reduces Pages size without droppin
 source evidence. Index loading and validation accept both encodings. Raw scraped
 HTML and internal CRM annotations are not copied into the Poland public package.
 
-Romania is available under `#market=RO`, with the same webpage keyboard controls
+Romania is retained in the package but is no longer offered in the market menu.
+Its review code uses the same webpage keyboard controls
 and account-data review as the existing markets. Its public package belongs under
 `public/data/markets/RO/`; the full official account roster remains in the index,
 including accounts without discovered websites. Dedicated clinic sites, directories,
@@ -426,3 +428,6 @@ idempotent and checks the audited 1,343/195 counts before its first application.
 Backups must be outside the published repo. Preserve reset metadata when preparing
 future packages. Run `node --test tests/*.test.mjs`, `npm run build`, and the focused
 `tests/emailReviewReset.browser.cjs` against a running dev server to check this flow.
+
+The market menu offers Hungary and Latvia. Saved selections and older links for
+Poland or Romania open Hungary, preserving all stored data and review history.

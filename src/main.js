@@ -527,7 +527,7 @@ const App = {
     const manifest = ref(null);
     const routeAccount=new URLSearchParams(location.hash.slice(1)).get('account');
     const routeMarket=routeAccount?.slice(0,2)||new URLSearchParams(location.hash.slice(1)).get('market')||localStorage.getItem('review.market');
-    const selectedMarket=ref(routeClinicId()||routeEmailValue()?'HU':['HU','LV','PL','RO'].includes(routeMarket)?routeMarket:'HU');
+    const selectedMarket=ref(routeClinicId()||routeEmailValue()?'HU':['HU','LV'].includes(routeMarket)?routeMarket:'HU');
     const regionalPackages=ref({}),regionalManifests=ref({}),regionalErrors=ref({});
     const regionalPackage=computed(()=>regionalPackages.value[selectedMarket.value]||null),regionalError=computed(()=>regionalErrors.value[selectedMarket.value]||'');
     const regionalMode=ref(/^(PL|RO):/.test(routeAccount||'')?'account':'webpages');
@@ -587,7 +587,7 @@ const App = {
     const lastExportAt = ref(localStorage.getItem("review.lastExportAt") || "");
     const lastAction = ref(null);
     const mappingMode = ref(false);
-    const accountMode = ref(new URLSearchParams(location.hash.slice(1)).has('account'));
+    const accountMode = ref(Boolean(routeAccount?.startsWith(selectedMarket.value + ':')));
     const accountPackage = ref(null), fieldDecisions = ref([]), contactPreferences = ref([]), fieldSaving = ref(false), fieldError = ref('');
     let researchRefreshTimer, refreshingResearch=false;
     async function openAccountEvidence(key) {
@@ -2303,7 +2303,7 @@ const App = {
   },
   template: `
     <div class="app-shell">
-      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving||emailSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option><option value="PL">Poland</option><option value="RO">Romania</option></select></label>
+      <label class="review-market-selector">Market<select v-model="selectedMarket" aria-label="Market" :disabled="fieldSaving||associationSaving||emailSaving"><option value="HU">Hungary</option><option value="LV">Latvia</option></select></label>
       <template v-if="selectedMarket!=='HU'">
         <nav v-if="['PL','RO'].includes(selectedMarket)" class="review-mode-tabs" aria-label="Review mode"><button :class="{active:regionalMode==='webpages'}" @click="regionalMode='webpages'">Webpages</button><button :class="{active:regionalMode==='account'}" @click="regionalMode='account'">Account data</button></nav>
         <WebpageReview ref="webpageReview" v-if="regionalMode==='webpages'" :key="selectedMarket" :market="selectedMarket" :pkg="regionalPackage" :decisions="fieldDecisions" :reviewer="reviewer" :saving="fieldSaving" :error="regionalError||fieldError" @decision="saveField" @load-account="openAccountEvidence" @retry="loadRegional(selectedMarket)" @export="exportProgress" @import="importWebpageReviews" />
