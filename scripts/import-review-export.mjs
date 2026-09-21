@@ -1,3 +1,4 @@
+import { mergeEmailValidations, mergeReviewResets } from "../src/emailValidations.js";
 import { parseAccountIndex, mergeFieldEvents, mergeContactPreferences, validateFieldDecision, validateContactPreference, validateAccountPackage, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
 import { validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
@@ -105,32 +106,6 @@ function normalizeValidation(validation, reviewExport, sourcePath) {
   };
 }
 
-function mergeValidation(existing, incoming) {
-  if (!existing) return incoming;
-  const existingTime = String(existing.updated_at || existing.reviewed_at || "");
-  const incomingTime = String(incoming.updated_at || incoming.reviewed_at || "");
-  const base = existingTime <= incomingTime ? incoming : existing;
-  return {
-    ...base,
-    source_exports: sortedUnique([...(existing.source_exports || []), ...(incoming.source_exports || [])]),
-    source_decision_ids: sortedUnique([...(existing.source_decision_ids || []), ...(incoming.source_decision_ids || [])]),
-    source_campaign_files: sortedUnique([...(existing.source_campaign_files || []), ...(incoming.source_campaign_files || [])]),
-    source_campaign_lead_ids: sortedUnique([...(existing.source_campaign_lead_ids || []), ...(incoming.source_campaign_lead_ids || [])]),
-    occurrences: [...(existing.occurrences || []), ...(incoming.occurrences || [])],
-    audit_flags: sortedUnique([...(existing.audit_flags || []), ...(incoming.audit_flags || [])]),
-  };
-}
-
-function mergeValidations(existingValidations, incomingValidations) {
-  const byEmail = new Map();
-  for (const validation of [...(existingValidations || []), ...(incomingValidations || [])]) {
-    const email = normalizeEmailValue(validation?.email || validation?.display_value);
-    if (!email || !email.includes("@")) continue;
-    byEmail.set(email, mergeValidation(byEmail.get(email), { ...validation, email }));
-  }
-  return [...byEmail.values()].sort((a, b) => a.email.localeCompare(b.email));
-}
-
 function stableJson(value) {
   if (Array.isArray(value)) return `[${value.map(stableJson).join(",")}]`;
   if (value && typeof value === "object") {
@@ -155,6 +130,7 @@ async function refreshIntegrityCanonicalHash() {
   integrity.required_files = {
     ...(integrity.required_files || {}),
     "canonical-review-state.json": await sha256(canonicalStatePath),
+    "email-validation-seed.json": await sha256(validationSeedPath),
   };
   const fingerprintPayload = { ...integrity };
   delete fingerprintPayload.package_fingerprint;
@@ -197,6 +173,7 @@ if (reviewExport.dataset_id !== canonicalState.dataset_id || reviewExport.datase
   throw new Error(`Dataset mismatch: ${reviewExport.dataset_id}`);
 }
 await stat(reviewExportPath);
+const reviewResets = mergeReviewResets(canonicalState.dataset_id, validationSeed.review_resets || [], reviewExport.email_review_resets || []);
 if(reviewExport.field_decisions?.length||reviewExport.contact_preferences?.length){
  const pkg=await parseAccountIndex(await readFile(path.join(dataDirectory,'account-enrichment.json'),'utf8'));
  if(reviewExport.base_data_hash!==pkg.base_data_hash||reviewExport.dataset_id!==pkg.dataset_id)throw Error('Account review dataset mismatch.');
@@ -233,6 +210,7 @@ const sourceExport = {
 
 const canonicalOutput = {
   ...canonicalState,
+  email_review_resets: reviewResets,
   association_decisions: [...associationEvents.values()],
   field_decisions: fieldEvents,
   contact_preferences: contactPreferences,
@@ -268,10 +246,11 @@ const importedValidations = [
   ...(reviewExport.email_validations || []).map((validation) => normalizeValidation(validation, reviewExport, reviewExportPath)),
   ...(reviewExport.decisions || []).map((decision) => emailValidationFromDecision(decision, reviewExport.exported_at || importedAt)),
 ].filter(Boolean);
-const validations = mergeValidations(validationSeed.validations || [], importedValidations);
+const validations = mergeEmailValidations(reviewResets, validationSeed.validations || [], importedValidations).sort((a,b) => a.email.localeCompare(b.email));
 const indexedEmails = new Set((emailIndex.items || []).map((item) => item.email));
 const validationSeedOutput = {
   ...validationSeed,
+  review_resets: reviewResets,
   generated_at: importedAt,
   source_exports: mergeSourceExports(validationSeed.source_exports, sourceExport),
   counts: {

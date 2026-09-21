@@ -64,6 +64,60 @@
     },
     "audit_events": {
       "type": "array"
+    },
+    "email_review_resets": {
+      "type": "array",
+      "description": "Immutable approval withdrawals; older imports must preserve existing reset policy.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "dataset_id",
+          "created_at",
+          "reviewed_by",
+          "targets"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "dataset_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reviewed_by": {
+            "type": "string"
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "email",
+                "decision_ids",
+                "recheck"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "decision_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "recheck": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

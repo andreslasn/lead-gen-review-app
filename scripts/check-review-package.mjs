@@ -1,3 +1,4 @@
+import { mergeEmailValidations, mergeReviewResets } from "../src/emailValidations.js";
 import { decodeReviewArtifact, parseAccountIndex, validateAccountPackage, decodeAccountEvidence, mergeFieldEvents, mergeContactPreferences, loadAccountEvidence, validateWebpageReviewExport } from "../src/accountEvidence.js";
 import { validateAssociationPackage, validateAssociationDecision } from "../src/associations.js";
 import { createHash } from "node:crypto";
@@ -208,6 +209,12 @@ if (campaignEmailUsage.dataset_id !== manifest.dataset_id) fail("campaign email 
 if (!emailItems.length || Number(emailIndex.counts?.emails || 0) !== emailItems.length) fail("email index counts are inconsistent");
 if (emailQueueItems.length !== emailItems.length || Number(emailReviewQueue.counts?.emails || 0) !== emailQueueItems.length) fail("email review queue counts are inconsistent");
 if (!emailValidations.length) fail("email validation seed is empty");
+const reviewResets = mergeReviewResets(manifest.dataset_id, emailValidationSeed.review_resets || []);
+const resolvedValidations = mergeEmailValidations(reviewResets, emailValidations);
+if (resolvedValidations.some((value,index) => value.status !== emailValidations[index].status)) fail("reset approvals are not materialized in the validation seed");
+const resetCohort = reviewResets.flatMap(reset => reset.targets.filter(target => target.recheck).map(target => target.email));
+if (resetCohort.some(email => !emailItems.some(item => item.email === email))) fail("recheck cohort contains unknown emails");
+
 const queueIds = queueItems.map((item) => String(item.id || ""));
 const indexIds = indexItems.map((item) => String(item.id || ""));
 if (new Set(queueIds).size !== queueIds.length || new Set(indexIds).size !== indexIds.length) fail("duplicate clinic IDs");

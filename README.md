@@ -402,3 +402,27 @@ email validity or campaign-used flags. Export review JSON to transfer decisions 
 the market dashboard. Raw research captures stay in private account folders outside
 this repository; the Romania index and immutable evidence files use the existing
 lossless gzip/base64 envelope and contain only allowlisted public-source fields.
+
+### External reviewer recheck
+
+The September 21 reset returns 1,343 existing `external-reviewer` approvals to
+Unreviewed. The **Recheck 195** filter keeps the 195 unused affected emails together
+and shows the remaining pending count. The status tabs show pending or completed
+reviews within that group. Confirm each address individually. Independent human
+decisions and all campaign-use history are preserved; the separately labelled
+`external-reviewer-validated-list` group is outside this reset.
+
+Reset policy lives in `email-validation-seed.json` as immutable `review_resets` and
+travels in review backups/sync as `email_review_resets`. The shared resolver in
+`src/emailValidations.js` applies it to the browser, old decision migrations and
+review imports, so revoked approvals cannot become valid through a stale import.
+An explicit human review survives the reset; withdrawn evidence IDs are not merged
+into independent decisions. Original decisions remain available in canonical
+history. Missing review/usage state or conflicting reset metadata blocks the
+affected operation. Campaign imports only record usage and never grant approval.
+
+`scripts/reset-external-reviews.mjs <repo> <private-backup-directory> --apply` is
+idempotent and checks the audited 1,343/195 counts before its first application.
+Backups must be outside the published repo. Preserve reset metadata when preparing
+future packages. Run `node --test tests/*.test.mjs`, `npm run build`, and the focused
+`tests/emailReviewReset.browser.cjs` against a running dev server to check this flow.

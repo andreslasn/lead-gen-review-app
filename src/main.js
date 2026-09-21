@@ -2,6 +2,7 @@ import { createApp, computed, nextTick, onMounted, onUnmounted, ref, watch } fro
 import "./styles.css";
 import { focusArchivedEvidence as focusSourceEvidence } from "./evidence.js";
 import ReviewHeader from "./ReviewHeader.js";
+import { mergeEmailValidations as mergedEmailValidationList, mergeReviewResets, reviewResetTargets } from "./emailValidations.js";
 import ClinicEmailReview from "./ClinicEmailReview.js";
 import AccountEvidenceReview from "./AccountEvidenceReview.js";
 import WebpageReview from "./WebpageReview.js";
@@ -35,7 +36,7 @@ const EMAIL_REVIEW_QUEUE_PATH = "data/email-review-queue.json";
 const EMAIL_VALIDATION_SEED_PATH = "data/email-validation-seed.json";
 const CAMPAIGN_EMAIL_USAGE_PATH = "data/campaign-email-usage.json";
 const EMAIL_STATUSES = ["unreviewed", "valid", "invalid"];
-const DATA_DEPLOY_VERSION = "account-evidence-20260914";
+const DATA_DEPLOY_VERSION = "email-review-reset-20260921";
 const DB_OPEN_TIMEOUT_MS = 2500;
 const HIDDEN_REVIEW_UI_TEXT = [
   "Accepted by an external human reviewer in a validated workbook column.",
@@ -309,27 +310,6 @@ function itemMatchesRegion(item, region) {
   return !region || itemRegions(item).includes(region);
 }
 
-function mergedEmailValidationList(...lists) {
-  const byEmail = new Map();
-  for (const list of lists) {
-    for (const validation of list || []) {
-      const email = normalizeEmailValue(validation?.email || validation?.display_value);
-      if (!email || !email.includes("@")) continue;
-      const normalized = {
-        ...validation,
-        email,
-        display_value: validation.display_value || email,
-        status: normalizedEmailStatus(validation.status),
-      };
-      const existing = byEmail.get(email);
-      const existingTime = String(existing?.updated_at || existing?.reviewed_at || "");
-      const normalizedTime = String(normalized.updated_at || normalized.reviewed_at || "");
-      if (!existing || existingTime <= normalizedTime) byEmail.set(email, normalized);
-    }
-  }
-  return [...byEmail.values()];
-}
-
 function normalizedNoMatchedEvidenceFilter(value) {
   if (["html", "none"].includes(value)) return value;
   return value === "no_html" ? "none" : "html";
@@ -571,6 +551,9 @@ const App = {
     const queue = ref([]);
     const emailIndex = ref([]);
     const staticEmailValidations = ref([]);
+    const emailReviewResets = ref([]);
+    const validationSeedReady = ref(false);
+    const recheckOnly = ref(localStorage.getItem("review.filter.recheck") === "true");
     const campaignEmailUsage = ref([]);
     const clinicIndex = ref([]);
     const clinic = ref(null);
@@ -662,7 +645,7 @@ const App = {
 
     const localStateByClinic = computed(() => Object.fromEntries(localStates.value.map((item) => [item.clinic_id, item])));
     const emailValidationByValue = computed(() => Object.fromEntries(
-      mergedEmailValidationList(staticEmailValidations.value, emailValidations.value).map((item) => [item.email, item]),
+      mergedEmailValidationList(emailReviewResets.value, staticEmailValidations.value, emailValidations.value).map((item) => [item.email, item]),
     ));
     const campaignUsageByEmail = computed(() => Object.fromEntries(
       campaignEmailUsage.value.map((item) => [normalizeEmailValue(item.email), item]).filter(([email]) => email),
@@ -672,6 +655,7 @@ const App = {
       for (const decision of decisions.value) (grouped[decision.clinic_id] ||= []).push(decision);
       return grouped;
     });
+    const resetTargets = computed(() => reviewResetTargets(emailReviewResets.value));
     const preparedQueue = computed(() => emailIndex.value.map((item) => {
       const validation = emailValidationByValue.value[item.email] || null;
       const campaignUsage = campaignUsageByEmail.value[item.email] || null;
@@ -684,6 +668,7 @@ const App = {
         lane: status,
         status,
         confidence_pool: status,
+        recheck_cohort: (resetTargets.value.get(item.email) || []).some(target => target.recheck),
         used_in_campaign: Boolean(campaignUsage),
         campaign_usage: campaignUsage,
         reviewed_at: validation?.reviewed_at || null,
@@ -711,7 +696,19 @@ const App = {
       ...(manifest.value?.review_ui?.contact_type_aliases || {}),
     }));
     const reviewPolicy = computed(() => manifest.value?.review_policy || {});
-    const locationFilteredQueue = computed(() => preparedQueue.value.filter((item) => itemMatchesRegion(item, selectedRegion.value)));
+    const recheckTotal = computed(() => preparedQueue.value.filter(item => item.recheck_cohort).length);
+    const recheckPending = computed(() => preparedQueue.value.filter(item => item.recheck_cohort && item.status === "unreviewed").length);
+    const locationFilteredQueue = computed(() => preparedQueue.value.filter(item => (!recheckOnly.value || item.recheck_cohort) && itemMatchesRegion(item, selectedRegion.value)));
+    function toggleRecheck() {
+      recheckOnly.value = !recheckOnly.value;
+      if (recheckOnly.value) {
+        search.value = ""; selectedRegion.value = ""; selectedLane.value = "unreviewed"; campaignUsageFilter.value = "all";
+      }
+    }
+    watch(recheckOnly, value => {
+      localStorage.setItem("review.filter.recheck", String(value));
+      if (!loading.value) setIndex(0).catch(err => { error.value = err.message; });
+    });
     const isUnusedValidCampaignEmail = (item) => item.status === "valid" && !item.used_in_campaign;
     const campaignUsageFilteredQueue = computed(() => locationFilteredQueue.value.filter((item) => {
       if (campaignUsageFilter.value === "used") return item.used_in_campaign;
@@ -1000,6 +997,7 @@ const App = {
           selectedRegion.value = '';
           selectedLane.value = 'all';
           campaignUsageFilter.value = 'all';
+          recheckOnly.value = false;
         }
         const routeIndex = filteredQueue.value.findIndex(matchesRoute);
         await setIndex(routeIndex >= 0 ? routeIndex : 0, { updateHash: false, preferredClinicId: routeClinic });
@@ -1042,8 +1040,10 @@ const App = {
           await hydrateEmailValidations();
           await refreshBackgroundState();
         })
-        .catch(() => {
+        .catch((err) => {
+          validationSeedReady.value = false;
           saveStatus.value = "Read-only until browser storage is available";
+          error.value = err?.message || String(err);
         });
     }
 
@@ -1066,18 +1066,19 @@ const App = {
       }
       const emailPayload = await emailIndexResponse.json();
       emailIndex.value = emailPayload.items || [];
-      if (validationSeedResponse?.ok) {
-        const validationSeed = await validationSeedResponse.json();
-        if (validationSeed?.format === "lead-gen-email-validation-seed" && validationSeed?.schema_version === 1) {
-          staticEmailValidations.value = validationSeed.validations || [];
-        }
-      }
-      if (campaignUsageResponse?.ok) {
-        const campaignPayload = await campaignUsageResponse.json();
-        if (campaignPayload?.format === "lead-gen-campaign-email-usage" && campaignPayload?.schema_version === 1) {
-          campaignEmailUsage.value = campaignPayload.items || [];
-        }
-      }
+      if (!validationSeedResponse?.ok) throw Error("Email review state could not be loaded. Reload before reviewing or exporting.");
+      const validationSeed = await validationSeedResponse.json();
+      if (validationSeed?.format !== "lead-gen-email-validation-seed" || validationSeed?.schema_version !== 1
+        || !Array.isArray(validationSeed.validations)
+        || (validationSeed.dataset_id && validationSeed.dataset_id !== manifest.value.dataset_id)) throw Error("Invalid email review state. Reload before reviewing or exporting.");
+      emailReviewResets.value = mergeReviewResets(manifest.value.dataset_id, emailReviewResets.value, validationSeed.review_resets || []);
+      staticEmailValidations.value = mergedEmailValidationList(emailReviewResets.value, validationSeed.validations || []);
+      if (!campaignUsageResponse?.ok) throw Error("Campaign usage could not be loaded. Reload before reviewing or exporting.");
+      const campaignPayload = await campaignUsageResponse.json();
+      if (campaignPayload?.format !== "lead-gen-campaign-email-usage" || campaignPayload?.schema_version !== 1
+        || !Array.isArray(campaignPayload.items)) throw Error("Invalid campaign usage. Reload before reviewing or exporting.");
+      campaignEmailUsage.value = campaignPayload.items;
+      validationSeedReady.value = true;
       try {
         const response = await fetch(staticUrl("data/email-associations.json"), { cache: "no-cache" });
         if (response.ok) {
@@ -1113,6 +1114,8 @@ const App = {
 
     async function hydrateEmailValidations() {
       const connection = await ensureDb();
+      const storedReset = await get(connection, "meta", "email_review_resets");
+      emailReviewResets.value = mergeReviewResets(manifest.value.dataset_id, emailReviewResets.value, storedReset?.value || []);
       emailValidations.value = await getAll(connection, "email_validations");
     }
 
@@ -1129,6 +1132,8 @@ const App = {
       contactPreferences.value = await getAll(connection, "contact_preferences");
       decisions.value = storedDecisions;
       localStates.value = storedStates;
+      emailReviewResets.value = mergeReviewResets(manifest.value.dataset_id, emailReviewResets.value,
+        storedMeta.find(item => item.key === "email_review_resets")?.value || []);
       emailValidations.value = storedEmailValidations;
       roleOverrides.value = storedMeta
         .filter((item) => String(item.key || "").startsWith("role_override:"))
@@ -1153,6 +1158,7 @@ const App = {
           await refreshCurrentSelection();
         })
         .catch((err) => {
+          validationSeedReady.value = false;
           error.value = err?.message || String(err);
         });
     }
@@ -1347,6 +1353,7 @@ const App = {
     }
 
     async function saveEmailValidation(status, { reviewedValue = null, reasonCode = null, validationEmail = null } = {}) {
+      if (!validationSeedReady.value) throw Error("Reload the current review state before saving.");
       const connection = await ensureDb();
       const candidate = selectedCandidate.value;
       const value = String(reviewedValue || candidate?.value || currentItem.value?.email || "").trim();
@@ -1370,6 +1377,7 @@ const App = {
         reviewed_at: timestamp,
         updated_at: timestamp,
         source: "manual",
+        reviewed_reset_ids: (resetTargets.value.get(email) || []).map(target => target.reset.id),
         clinic_id: clinic.value?.clinic?.id || currentItem.value?.clinic_id || null,
         contact_point_id: candidate?.id || currentItem.value?.contact_point_id || null,
         evidence_link_id: selectedEvidence.value?.id || null,
@@ -1634,7 +1642,8 @@ const App = {
         app_build: manifest.value?.source_commit || null,
         decisions: await getAll(connection, "decisions"),
         clinic_states: await getAll(connection, "clinic_states"),
-        email_validations: mergedEmailValidationList(staticEmailValidations.value, storedEmailValidations),
+        email_validations: mergedEmailValidationList(emailReviewResets.value, staticEmailValidations.value, storedEmailValidations),
+        email_review_resets: JSON.parse(JSON.stringify(emailReviewResets.value)),
         association_decisions: await getAll(connection, "association_decisions"),
         field_decisions: await getAll(connection, "field_decisions"),
         contact_preferences: await getAll(connection, "contact_preferences"),
@@ -1643,11 +1652,12 @@ const App = {
       };
       payload.field_decisions=payload.field_decisions.filter(e=>e.account_key.startsWith(country+':'));
       payload.contact_preferences=payload.contact_preferences.filter(e=>e.account_key.startsWith(country+':'));
-      if(country!=='HU')for(const key of ['decisions','clinic_states','email_validations','association_decisions',...(country==='LV'?['contact_preferences']:[]),'role_overrides','audit_events'])payload[key]=[];
+      if(country!=='HU')for(const key of ['decisions','clinic_states','email_validations','email_review_resets','association_decisions',...(country==='LV'?['contact_preferences']:[]),'role_overrides','audit_events'])payload[key]=[];
       payload.checksum = await sha256(JSON.stringify({
         decisions: payload.decisions,
         clinic_states: payload.clinic_states,
         email_validations: payload.email_validations,
+        email_review_resets: payload.email_review_resets,
         association_decisions: payload.association_decisions,
         field_decisions: payload.field_decisions,
         contact_preferences: payload.contact_preferences,
@@ -1760,6 +1770,10 @@ const App = {
     }
 
     function exportUnusedCampaignEmails() {
+      if (!validationSeedReady.value || emailSaving.value) {
+        saveStatus.value = "Reload the current review state before exporting.";
+        return;
+      }
       const rows = unusedValidEmailRows(selectedRegion.value);
       if (!rows.length) {
         saveStatus.value = "No unused valid emails to export";
@@ -1917,15 +1931,10 @@ const App = {
     }
 
     async function mergeEmailValidationSeed() {
-      try {
-        const response = await fetch(staticUrl(EMAIL_VALIDATION_SEED_PATH), { cache: "no-cache" });
-        if (!response.ok) return;
-        const payload = await response.json();
-        if (payload.format !== "lead-gen-email-validation-seed" || payload.schema_version !== 1) return;
-        for (const validation of payload.validations || []) await putEmailValidationIfNewer(validation);
-      } catch (_) {
-        return;
-      }
+      // Persist the policy already loaded with the queue, avoiding a second fetch
+      // that could belong to a different deployment or lose newer local resets.
+      await put(await ensureDb(), "meta", {key: "email_review_resets", value: JSON.parse(JSON.stringify(emailReviewResets.value))});
+      for (const validation of staticEmailValidations.value) await putEmailValidationIfNewer(validation);
     }
 
     function emailValidationFromDecision(decision) {
@@ -1966,10 +1975,21 @@ const App = {
         reviewed_at: validation.reviewed_at || validation.updated_at || nowIso(),
         updated_at: validation.updated_at || validation.reviewed_at || nowIso(),
       };
-      const existing = await get(connection, "email_validations", email);
-      if (!existing || String(existing.updated_at || existing.reviewed_at || "") <= String(normalized.updated_at || normalized.reviewed_at || "")) {
-        await put(connection, "email_validations", normalized);
-      }
+      // Keep the read and merge in one transaction so background migration cannot
+      // overwrite a human review saved between separate read/write transactions.
+      await new Promise((resolve, reject) => {
+        const tx = connection.transaction("email_validations", "readwrite");
+        const store = tx.objectStore("email_validations");
+        const request = store.get(email);
+        request.onsuccess = () => {
+          const existing = request.result;
+          const resolved = mergedEmailValidationList(emailReviewResets.value, existing ? [existing] : [], [normalized])[0];
+          store.put(JSON.parse(JSON.stringify(resolved)));
+        };
+        tx.oncomplete = resolve;
+        tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(tx.error || Error("Email review merge aborted."));
+      });
     }
 
     async function migrateDecisionsToEmailValidations(sourceDecisions) {
@@ -2001,6 +2021,7 @@ const App = {
         fieldDecisions.value=await getAll(connection,'field_decisions');contactPreferences.value=await getAll(connection,'contact_preferences');return;
       }
       if([...(payload.field_decisions||[]),...(payload.contact_preferences||[])].some(e=>!/^(HU):/.test(e.account_key||'')))throw Error('Regional review dataset is unavailable or mismatched.');
+      const importedResets = mergeReviewResets(manifest.value.dataset_id, emailReviewResets.value, payload.email_review_resets || []);
       if (!silent && manifest.value?.dataset_id && payload.dataset_id !== manifest.value.dataset_id) {
         const ok = confirm(`This export is for dataset ${payload.dataset_id}, current dataset is ${manifest.value.dataset_id}. Import anyway?`);
         if (!ok) return;
@@ -2043,6 +2064,8 @@ const App = {
         const tx=connection.transaction('contact_preferences','readwrite');for(const event of payload.contact_preferences)tx.objectStore('contact_preferences').put(event);
         tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Contact import aborted'));
       });
+      emailReviewResets.value = importedResets;
+      await put(connection, "meta", {key: "email_review_resets", value: JSON.parse(JSON.stringify(importedResets))});
       for (const decision of payload.decisions || []) {
         const existing = await get(connection, "decisions", decision.id);
         if (!existing || String(existing.created_at || "") <= String(decision.created_at || "")) await put(connection, "decisions", decision);
@@ -2208,6 +2231,7 @@ const App = {
       currentEmailStatus,
       campaignUsageFilter,
       campaignUsageCounts,
+      recheckOnly, recheckTotal, recheckPending, toggleRecheck, validationSeedReady,
       unusedValidExportCount,
       unusedExportTitle,
       pendingEmailStatus,
@@ -2296,7 +2320,7 @@ const App = {
             <option value="">{{ regionFilterLabel }}</option>
             <option v-for="region in regionOptions" :key="region" :value="region">{{ region }}</option>
           </select>
-          <button class="export-unused-btn" @click="exportUnusedCampaignEmails" :title="unusedExportTitle">
+          <button class="export-unused-btn" :disabled="!validationSeedReady||emailSaving" @click="exportUnusedCampaignEmails" :title="unusedExportTitle">
             Export unused CSV <strong>{{ unusedValidExportCount }}</strong>
           </button>
         </div>
@@ -2306,10 +2330,12 @@ const App = {
           </button>
         </div>
         <div class="campaign-tabs">
+          <button v-if="recheckTotal" :disabled="emailSaving" :class="{active:recheckOnly}" :aria-pressed="recheckOnly" @click="toggleRecheck">Recheck <strong>{{ recheckTotal }}</strong></button>
           <button v-for="filter in ['unused','used']" :key="filter" :disabled="emailSaving" :class="{active:campaignUsageFilter===filter}" @click="campaignUsageFilter=campaignUsageFilter===filter ? 'all' : filter">
             {{ campaignUsageFilterLabel(filter) }} <strong>{{ campaignUsageCounts[filter] || 0 }}</strong>
           </button>
         </div>
+        <p v-if="recheckOnly" class="review-note" role="status">External reviewer recheck: {{ recheckPending }} pending of {{ recheckTotal }} emails. Use the status tabs to see completed reviews.</p>
       </section>
 
       <div v-if="error" class="alert error" role="alert">{{ error }}</div>

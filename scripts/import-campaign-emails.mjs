@@ -230,19 +230,6 @@ function sortedUnique(values) {
   return [...new Set(values.filter(Boolean).map((value) => String(value)))].sort((a, b) => a.localeCompare(b));
 }
 
-function mergedSourceExports(sourceExports, campaignSource) {
-  const output = [...(sourceExports || []), campaignSource];
-  const seen = new Set();
-  return output.filter((item) => {
-    const key = typeof item === "string"
-      ? item
-      : [item?.name, item?.path, item?.exported_at].filter(Boolean).join("|");
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
-
 async function campaignFilesFromSources(sources) {
   const files = [];
   const seen = new Set();
@@ -603,58 +590,16 @@ const usagePayload = {
   items: usageItems,
 };
 
-const validationsByEmail = new Map(existingValidationByEmail);
-for (const item of newUsageItems) {
-  const indexed = emailIndex.get(item.email);
-  const existing = validationsByEmail.get(item.email) || {};
-  const timestamp = existing.updated_at || existing.reviewed_at || item.first_reviewed_at || item.first_sent_at || generatedAt;
-  validationsByEmail.set(item.email, {
-    ...existing,
-    email: item.email,
-    display_value: existing.display_value || item.display_value || item.email,
-    status: "valid",
-    reviewed_by: existing.reviewed_by || "campaign-import",
-    reviewed_at: existing.reviewed_at || timestamp,
-    updated_at: existing.updated_at || timestamp,
-    source: existing.source || "campaign-import",
-    source_exports: sortedUnique([...(existing.source_exports || []), "campaign-import"]),
-    source_campaign_files: sortedUnique([...(existing.source_campaign_files || []), ...item.source_files]),
-    source_campaign_lead_ids: sortedUnique([...(existing.source_campaign_lead_ids || []), ...item.lead_ids]),
-    occurrence_count: existing.occurrence_count || indexed?.occurrence_count || null,
-    clinic_id: existing.clinic_id || indexed?.clinic_id || null,
-    contact_point_id: existing.contact_point_id || indexed?.contact_point_id || null,
-    audit_flags: existing.audit_flags || [],
-  });
-}
-
-const validations = [...validationsByEmail.values()].sort((a, b) => a.email.localeCompare(b.email));
-const seedPayload = {
-  ...validationSeed,
-  generated_at: generatedAt,
-  source_exports: mergedSourceExports(validationSeed.source_exports, {
-    name: "campaign-import",
-    path: campaignSources.join(","),
-    exported_at: generatedAt,
-    files: sourceFiles.length,
-    emails: campaignEmails.length,
-  }),
-  counts: {
-    validations: validations.length,
-    indexed_validations: validations.filter((validation) => emailIndex.has(validation.email)).length,
-    not_in_email_index: validations.filter((validation) => !emailIndex.has(validation.email)).length,
-  },
-  validations,
-};
-
+// Campaign history is not evidence of an email review. Keep the complete
+// validation seed (including reset policies and human decisions) byte-for-byte.
 await Promise.all([
   writeFile(emailIndexPath, stringifyJson(emailIndexOutput, emailIndexDocument.pretty)),
   writeFile(emailQueuePath, stringifyJson(emailQueueOutput, emailQueueDocument.pretty)),
   writeFile(usagePath, `${JSON.stringify(usagePayload, null, 2)}\n`),
-  writeFile(validationSeedPath, stringifyJson(seedPayload, validationSeedDocument.pretty)),
 ]);
 
 console.log(`Imported ${campaignEmails.length} campaign emails from ${sourceFiles.length} files.`);
 console.log(`Campaign usage now has ${usageItems.length} total used emails from ${usageSourceFiles.length} source files.`);
 console.log(`Added ${importedEmailItems.length} campaign-only emails to the email dataset.`);
 console.log(`Upserted ${upsertedCampaignOnlyEmailItems.length} campaign-only email dataset rows.`);
-console.log(`Validation seed now has ${validations.length} validations (${seedPayload.counts.not_in_email_index} not in email index).`);
+console.log(`Email validations preserved (${existingValidationByEmail.size} records).`);
