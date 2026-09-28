@@ -698,6 +698,9 @@ const App = {
     const reviewPolicy = computed(() => manifest.value?.review_policy || {});
     const recheckTotal = computed(() => preparedQueue.value.filter(item => item.recheck_cohort).length);
     const recheckPending = computed(() => preparedQueue.value.filter(item => item.recheck_cohort && item.status === "unreviewed").length);
+    watch([validationSeedReady, recheckPending], ([ready, pending]) => {
+      if (ready && pending === 0 && recheckOnly.value) recheckOnly.value = false;
+    }, { immediate: true });
     const locationFilteredQueue = computed(() => preparedQueue.value.filter(item => (!recheckOnly.value || item.recheck_cohort) && itemMatchesRegion(item, selectedRegion.value)));
     function toggleRecheck() {
       recheckOnly.value = !recheckOnly.value;
@@ -2330,7 +2333,7 @@ const App = {
           </button>
         </div>
         <div class="campaign-tabs">
-          <button v-if="recheckTotal" :disabled="emailSaving" :class="{active:recheckOnly}" :aria-pressed="recheckOnly" @click="toggleRecheck">Recheck <strong>{{ recheckTotal }}</strong></button>
+          <button v-if="recheckPending" :disabled="emailSaving" :class="{active:recheckOnly}" :aria-pressed="recheckOnly" @click="toggleRecheck">Recheck <strong>{{ recheckPending }} pending</strong></button>
           <button v-for="filter in ['unused','used']" :key="filter" :disabled="emailSaving" :class="{active:campaignUsageFilter===filter}" @click="campaignUsageFilter=campaignUsageFilter===filter ? 'all' : filter">
             {{ campaignUsageFilterLabel(filter) }} <strong>{{ campaignUsageCounts[filter] || 0 }}</strong>
           </button>

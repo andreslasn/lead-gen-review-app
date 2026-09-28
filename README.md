@@ -407,9 +407,11 @@ lossless gzip/base64 envelope and contain only allowlisted public-source fields.
 
 ### External reviewer recheck
 
-The September 21 reset returns 1,343 existing `external-reviewer` approvals to
-Unreviewed. The **Recheck 195** filter keeps the 195 unused affected emails together
-and shows the remaining pending count. The status tabs show pending or completed
+The September 21 reset affected 1,343 existing `external-reviewer` approvals.
+The September 28 recovery covers 1,148 campaign-used approvals, restoring their
+recorded approval IDs wherever a manual decision has not superseded them. The **Recheck** button
+shows the remaining pending count for the 195 unused affected emails and disappears
+when none remain. The status tabs show pending or completed
 reviews within that group. Confirm each address individually. Independent human
 decisions and all campaign-use history are preserved; the separately labelled
 `external-reviewer-validated-list` group is outside this reset.
@@ -422,6 +424,12 @@ An explicit human review survives the reset; withdrawn evidence IDs are not merg
 into independent decisions. Original decisions remain available in canonical
 history. Missing review/usage state or conflicting reset metadata blocks the
 affected operation. Campaign imports only record usage and never grant approval.
+Restorations are explicit validation records with source `review-reset-restoration`,
+the original approval IDs and the reset ID. A mismatched restoration remains
+Unreviewed; campaign use alone cannot restore an approval.
+`scripts/restore-used-external-reviews.mjs <repo> <private-backup-directory> --apply`
+checks the exact reset cohort and approval IDs, writes a private backup, and is
+safe to rerun after the reviewer export is imported.
 
 `scripts/reset-external-reviews.mjs <repo> <private-backup-directory> --apply` is
 idempotent and checks the audited 1,343/195 counts before its first application.

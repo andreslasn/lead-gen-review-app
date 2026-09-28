@@ -42,6 +42,22 @@ test('human re-reviews, invalid decisions and unrelated addresses survive reset 
   assert.equal(resolve([old], [later])[0].status, 'valid');
 });
 
+test('used approval restoration survives stale reset data but preserves later manual review', () => {
+  const usedReset = { ...reset, targets: [{ ...reset.targets[0], recheck: false }] };
+  const restore = { ...old, source: 'review-reset-restoration', restored_review_reset_id: reset.id,
+    restored_at: '2026-09-28T10:00:00Z', previous_review_source: 'approved-import' };
+  const pending = mergeEmailValidations([usedReset], [old])[0];
+  for (const inputs of [[pending, restore], [restore, pending], [old, restore]]) {
+    assert.equal(mergeEmailValidations([usedReset], inputs)[0].status, 'valid');
+  }
+  assert.equal(mergeEmailValidations([reset], [restore])[0].status, 'unreviewed');
+  assert.equal(mergeEmailValidations([usedReset], [{ ...restore, source_decision_ids: ['other'] }])[0].status, 'unreviewed');
+  assert.equal(mergeEmailValidations([usedReset], [{ ...restore, restored_review_reset_id: 'other' }])[0].status, 'unreviewed');
+  const manual = { ...old, source: 'manual', status: 'invalid', updated_at: '2026-09-25T00:00:00Z' };
+  assert.equal(mergeEmailValidations([usedReset], [restore], [manual])[0].status, 'invalid');
+  assert.equal(mergeEmailValidations([usedReset], [manual], [restore])[0].status, 'invalid');
+});
+
 test('reset metadata survives older exports; conflicting or malformed policies fail closed', () => {
   assert.deepEqual(mergeReviewResets('synthetic', [reset], [], [structuredClone(reset)]), [reset]);
   assert.throws(() => mergeReviewResets('synthetic', [reset], [{ ...reset, targets: [] }]), /Conflicting/);

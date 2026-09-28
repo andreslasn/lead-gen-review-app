@@ -8,6 +8,8 @@ const reset = { id: 'synthetic-reset', dataset_id: 'synthetic', created_at: '202
 const old = emails.map((email, i) => ({ email, display_value: email, status: 'valid', source: 'legacy-decision',
   reviewed_by: i === 4 ? 'reviewer' : 'external-reviewer', updated_at: '2026-07-30T00:00:00Z', source_decision_ids: ['old-' + i] }));
 const manual = { ...old[2], source: 'manual', reviewed_by: 'human', updated_at: '2026-09-20T00:00:00Z' };
+const restoredUsed = { ...old[3], source: 'review-reset-restoration', status: 'valid',
+  restored_review_reset_id: reset.id, restored_at: '2026-09-28T10:00:00Z' };
 const canonical = { format: 'lead-gen-clinic-review', schema_version: 1, dataset_id: 'synthetic', dataset_version: '1', base_data_hash: 'hash',
   reviewer: { id: 'test' }, exported_at: '2026-09-14T00:00:00Z', decisions: [], clinic_states: [], audit_events: [] };
 const payloads = {
@@ -16,7 +18,7 @@ const payloads = {
   'email-review-queue.json': { items: emails.map((email, i) => ({ email, display_value: email, name: 'Synthetic Clinic',
     clinic_id: 'synthetic', contact_point_id: 'c' + i, occurrence_count: 1, region: 'Test',
     occurrences: [{ clinic_id: 'synthetic', contact_point_id: 'c' + i, region: 'Test' }] })) },
-  'email-validation-seed.json': { format: 'lead-gen-email-validation-seed', schema_version: 1, dataset_id: 'synthetic', review_resets: [reset], validations: old },
+  'email-validation-seed.json': { format: 'lead-gen-email-validation-seed', schema_version: 1, dataset_id: 'synthetic', review_resets: [reset], validations: [...old, restoredUsed] },
   'campaign-email-usage.json': { format: 'lead-gen-campaign-email-usage', schema_version: 1, items: [{ email: emails[3], used_in_campaign: true }] },
   'canonical-review-state.json': canonical,
   'synthetic.json': { clinic: { id: 'synthetic', name: 'Synthetic Clinic' }, state: { status: 'confirmed' },
@@ -61,7 +63,7 @@ const payloads = {
       return new Promise(resolve => { const r = db.transaction('email_validations').objectStore('email_validations').getAll(); r.onsuccess = () => { db.close(); resolve(r.result); }; });
     });
     await page.goto(origin);
-    await page.getByRole('button', { name: 'Recheck 3', exact: true }).click();
+    await page.getByRole('button', { name: 'Recheck 2 pending', exact: true }).click();
     await page.getByRole('status').filter({ hasText: '2 pending of 3' }).waitFor();
     assert.equal(await page.locator('.search').inputValue(), '');
     assert.equal(await page.locator('.region-filter').inputValue(), '');
@@ -73,11 +75,12 @@ const payloads = {
       await page.getByRole('status').filter({ hasText: '1 pending of 3' }).waitFor();
     };
     await review();
+    await page.getByRole('button', { name: 'Recheck 1 pending', exact: true }).waitFor();
     let values = await readValidations();
     assert.equal(values.find(v => v.email === emails[0]).status, 'valid');
     assert.equal(values.find(v => v.email === emails[1]).status, 'unreviewed');
     assert.equal(values.find(v => v.email === emails[2]).source, 'manual');
-    assert.equal(values.find(v => v.email === emails[3]).status, 'unreviewed');
+    assert.equal(values.find(v => v.email === emails[3]).status, 'valid');
     await page.locator('.review-identity h3').click(); await page.keyboard.press('u');
     await page.getByRole('status').filter({ hasText: '2 pending of 3' }).waitFor();
     await review();
@@ -95,6 +98,13 @@ const payloads = {
     assert.deepEqual(backup.email_review_resets, [reset]);
     assert.equal(backup.email_validations.find(v => v.email === emails[1]).status, 'unreviewed');
     assert.deepEqual(backup.email_validations.find(v => v.email === emails[0]).reviewed_reset_ids, [reset.id]);
+    await page.getByRole('group', { name: 'Email review status' }).getByRole('button', { name: 'Unreviewed 1', exact: true }).click();
+    await page.getByRole('button', { name: 'Invalid', exact: true }).click();
+    await page.getByRole('button', { name: 'Confirm', exact: true }).click();
+    await page.getByRole('button', { name: /Recheck/ }).waitFor({ state: 'hidden' });
+    assert.equal(await page.getByRole('status').filter({ hasText: 'External reviewer recheck' }).count(), 0);
+    await page.reload();
+    assert.equal(await page.getByRole('button', { name: /Recheck/ }).count(), 0);
     failSeed = true; await page.reload();
     await page.getByRole('alert').filter({ hasText: 'Email review state could not be loaded' }).waitFor();
     assert.ok(await page.locator('.export-unused-btn').isDisabled());

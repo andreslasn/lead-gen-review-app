@@ -43,6 +43,12 @@ function applyReset(validation, targets) {
   // Explicit human actions and negative decisions are never inferred away.
   if (validation.source === 'manual' || validation.status === 'invalid') return validation;
   const entries = targets.get(validation.email) || [];
+  // A compensating restoration must cite the withdrawn approval and its reset.
+  // Campaign use alone never qualifies an address for restoration.
+  if (validation.source === 'review-reset-restoration' && validation.status === 'valid'
+    && entries.some(({ reset, decision_ids, recheck }) => !recheck
+      && validation.restored_review_reset_id === reset.id
+      && (validation.source_decision_ids || []).some(id => decision_ids.includes(id)))) return validation;
   const withdrawn = entries.filter(({ reset, decision_ids }) => (
     validation.review_reset_id === reset.id
     || (validation.source_decision_ids || []).some(id => decision_ids.includes(id))
